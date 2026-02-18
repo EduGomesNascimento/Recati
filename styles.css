@@ -151,6 +151,7 @@ body:not(.gate-locked) .site {
   justify-content: center;
   gap: 12px;
   width: min(680px, 92vw);
+  margin: 0 auto;
 }
 
 .enter-btn::after {
@@ -349,6 +350,13 @@ h3 {
   font-size: 24px;
   line-height: 1;
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.gate-actions .enter-btn,
+.gate-actions .skip-intro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skip-intro-btn:hover {
