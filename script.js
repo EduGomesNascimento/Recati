@@ -15,6 +15,8 @@
   const SEEK_STALL_RESET_MS = 280;
   const BG_SAMPLE_H = 24;
   const BG_SAMPLE_W_RATIO = 0.16;
+  const EDGE_OVERLAP_PX = 2;
+  const TOP_CORNER_SAMPLE_RATIO = 0.14;
 
   const enterBtn = document.getElementById("enterAccessBtn");
   const intro = document.getElementById("intro");
@@ -96,30 +98,38 @@
     const iw = video.videoWidth;
     const ih = video.videoHeight;
 
-    // Draw slightly smaller to improve perceived sharpness from this source video.
     const scale = Math.min(cw / iw, ch / ih) * VIDEO_SCALE;
     const sw = iw * scale;
     const sh = ih * scale;
     const dx = (cw - sw) / 2;
     const dy = (ch - sh) / 2;
 
-    // Start with neutral gray and then mirror safe corner strips from the video.
     ctx.fillStyle = "#c7c7c7";
     ctx.fillRect(0, 0, cw, ch);
 
     const sideW = Math.max(0, Math.floor(dx));
     const rightX = Math.ceil(dx + sw);
     const rightW = Math.max(0, cw - rightX);
+    const topH = Math.max(0, Math.ceil(dy));
     const sampleW = Math.max(2, Math.floor(iw * BG_SAMPLE_W_RATIO));
+    const cornerW = Math.max(2, Math.floor(iw * TOP_CORNER_SAMPLE_RATIO));
+    const overlap = EDGE_OVERLAP_PX;
 
     if (sideW > 0) {
-      // Left side mirrored from top-left corner strip (cat does not appear here).
-      ctx.drawImage(video, 0, 0, sampleW, BG_SAMPLE_H, 0, 0, sideW, ch);
+      ctx.drawImage(video, 0, 0, sampleW, BG_SAMPLE_H, 0, 0, sideW + overlap, ch);
     }
 
     if (rightW > 0) {
-      // Right side mirrored from top-right corner strip.
-      ctx.drawImage(video, iw - sampleW, 0, sampleW, BG_SAMPLE_H, rightX, 0, rightW, ch);
+      ctx.drawImage(video, iw - sampleW, 0, sampleW, BG_SAMPLE_H, rightX - overlap, 0, rightW + overlap, ch);
+    }
+
+    if (topH > 0) {
+      // Fill top gap using only corner strips to avoid ear artifacts near the center.
+      const destX = Math.floor(dx) - overlap;
+      const destW = Math.ceil(sw) + overlap * 2;
+      const halfW = Math.ceil(destW / 2);
+      ctx.drawImage(video, 0, 0, cornerW, BG_SAMPLE_H, destX, 0, halfW, topH);
+      ctx.drawImage(video, iw - cornerW, 0, cornerW, BG_SAMPLE_H, destX + halfW, 0, destW - halfW, topH);
     }
 
     ctx.drawImage(video, dx, dy, sw, sh);

@@ -102,7 +102,7 @@ body:not(.gate-locked) .site {
   display: inline-block;
   color: #dde2e8;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
-  transition: color 0.35s ease, text-shadow 0.35s ease, letter-spacing 0.35s ease, transform 0.35s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .metal-text::after {
@@ -115,14 +115,18 @@ body:not(.gate-locked) .site {
   transform: skewX(-14deg);
   background: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
   pointer-events: none;
-  animation: metalSweep 6s ease-in-out infinite;
+  opacity: 0;
 }
 
 .metal-text:hover {
   color: #f3f6f9;
-  text-shadow: 0 0 14px rgba(255, 255, 255, 0.34);
-  letter-spacing: 0.3px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
+}
+
+.metal-text:hover::after,
+.metal-text:focus-visible::after {
+  animation: metalSweep 0.8s ease-out 1;
 }
 
 .enter-btn {
@@ -449,7 +453,14 @@ h3 {
 
 .inline-link {
   color: #e8edf3;
+  text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+.section-title-underline {
+  text-decoration: underline;
+  text-underline-offset: 6px;
   text-decoration-thickness: 1.5px;
 }
 
