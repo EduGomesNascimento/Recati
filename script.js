@@ -19,13 +19,47 @@
   const TOP_CORNER_SAMPLE_RATIO = 0.14;
 
   const enterBtn = document.getElementById("enterAccessBtn");
+  const skipBtn = document.getElementById("skipIntroBtn");
+  const gate = document.getElementById("gate");
   const intro = document.getElementById("intro");
+  const site = document.getElementById("site");
   const canvas = document.getElementById("heroCanvas");
   const ctx = canvas.getContext("2d", { alpha: false });
   let lockRafId = null;
+  const INTRO_VIEWS_KEY = "recati_intro_views";
+  const params = new URLSearchParams(window.location.search);
+  const skipIntroParam = params.get("skipIntro") === "1";
+  const introViews = Number.parseInt(localStorage.getItem(INTRO_VIEWS_KEY) || "0", 10) || 0;
 
   if (enterBtn && intro) {
-    document.body.classList.add("gate-locked");
+    if (skipBtn && introViews >= 2) {
+      skipBtn.classList.remove("is-hidden");
+    }
+
+    const skipIntroNow = () => {
+      document.body.classList.remove("gate-locked");
+      if (lockRafId) {
+        cancelAnimationFrame(lockRafId);
+        lockRafId = null;
+      }
+      if (gate) gate.style.display = "none";
+      if (intro) intro.style.display = "none";
+      setReadyState(true);
+      if (site) {
+        site.style.visibility = "visible";
+        site.style.opacity = "1";
+        site.style.transform = "translateY(0)";
+      }
+      window.scrollTo({ top: 0, behavior: "auto" });
+      if (site) site.scrollIntoView({ behavior: "auto", block: "start" });
+    };
+
+    if (skipIntroParam) {
+      skipIntroNow();
+    } else {
+      document.body.classList.add("gate-locked");
+    }
+
     const keepTop = () => {
       if (!document.body.classList.contains("gate-locked")) {
         lockRafId = null;
@@ -37,11 +71,14 @@
       lockRafId = requestAnimationFrame(keepTop);
     };
 
-    window.scrollTo(0, 0);
-    keepTop();
+    if (!skipIntroParam) {
+      window.scrollTo(0, 0);
+      keepTop();
+    }
 
     enterBtn.addEventListener("click", (ev) => {
       ev.preventDefault();
+      localStorage.setItem(INTRO_VIEWS_KEY, String(introViews + 1));
       document.body.classList.remove("gate-locked");
       if (lockRafId) {
         cancelAnimationFrame(lockRafId);
@@ -49,6 +86,14 @@
       }
       intro.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+
+    if (skipBtn) {
+      skipBtn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        const base = `${window.location.pathname}?skipIntro=1`;
+        window.location.href = base;
+      });
+    }
   }
 
   const video = document.createElement("video");
@@ -222,8 +267,7 @@
   }
 
   async function init() {
-    const skipIntro = new URLSearchParams(window.location.search).get("skipIntro") === "1";
-    if (skipIntro) {
+    if (skipIntroParam) {
       setReadyState(true);
       initialized = true;
       return;
@@ -338,6 +382,39 @@
     }
 
     requestAnimationFrame(animateGate);
+  }
+
+  const SCROLL_FIX_OFFSET = 120;
+  const SCROLL_FIX_OFFSET_SERVICOS = 136;
+  const fixedAnchors = new Set(["#o-que-fazemos", "#posso-ajudar"]);
+  const scrollToFixedAnchor = (hash, behavior = "smooth") => {
+    if (!fixedAnchors.has(hash)) return false;
+    const target = document.querySelector(hash);
+    if (!target) return false;
+    const header = document.querySelector(".topbar");
+    const headerH = header ? header.offsetHeight : 0;
+    const offset = hash === "#o-que-fazemos" ? SCROLL_FIX_OFFSET_SERVICOS : SCROLL_FIX_OFFSET;
+    const targetTop = window.scrollY + target.getBoundingClientRect().top - headerH - offset;
+    window.scrollTo({ top: Math.max(0, targetTop), behavior });
+    return true;
+  };
+
+  const anchorLinks = document.querySelectorAll('a[href="#o-que-fazemos"], a[href="#posso-ajudar"]');
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", (ev) => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+      if (!scrollToFixedAnchor(href, "smooth")) return;
+      ev.preventDefault();
+      history.replaceState(null, "", href);
+    });
+  });
+
+  const currentHash = window.location.hash;
+  if (fixedAnchors.has(currentHash)) {
+    requestAnimationFrame(() => {
+      scrollToFixedAnchor(currentHash, "auto");
+    });
   }
 
 })();
