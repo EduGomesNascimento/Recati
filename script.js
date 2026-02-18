@@ -1,18 +1,19 @@
 ﻿(() => {
-  const VIDEO_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4";
-  const VIDEO_FALLBACK_SRC = "./Gatinho_Pendurado_na_Borda_Preta.mp4";
+  const VIDEO_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.webm";
+  const VIDEO_FALLBACK_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4";
+  const VIDEO_FALLBACK_2_SRC = "./Gatinho_Pendurado_na_Borda_Preta.mp4";
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
-  const SCROLL_SLOP = 0.02;
-  const SEEK_FPS = 60;
-  const SMOOTH_RESPONSE = 12.5;
+  const SCROLL_SLOP = 0.015;
+  const SEEK_FPS = 30;
+  const SMOOTH_RESPONSE = 7.2;
   const VIDEO_SCALE = 0.86;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
-  const MIN_TIME_STEP = 1 / 120;
-  const END_LOCK_SCROLL = 0.996;
+  const MIN_TIME_STEP = 1 / 36;
+  const END_LOCK_SCROLL = 0.998;
   const END_ZONE_START = 0.9;
-  const SEEK_STALL_RESET_MS = 100;
+  const SEEK_STALL_RESET_MS = 240;
   const BG_SAMPLE_H = 24;
   const BG_SAMPLE_W_RATIO = 0.16;
   const EDGE_OVERLAP_PX = 2;
@@ -312,8 +313,13 @@
 
   video.addEventListener("error", () => {
     const code = video.error ? video.error.code : "unknown";
-    if (video.src.includes("Gatinho_Pendurado_na_Borda_Preta_RS.mp4")) {
+    if (video.src.includes("Gatinho_Pendurado_na_Borda_Preta_RS.webm")) {
       video.src = VIDEO_FALLBACK_SRC;
+      video.load();
+      return;
+    }
+    if (video.src.includes("Gatinho_Pendurado_na_Borda_Preta_RS.mp4")) {
+      video.src = VIDEO_FALLBACK_2_SRC;
       video.load();
       return;
     }

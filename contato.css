@@ -61,6 +61,17 @@ body {
   line-height: 1;
 }
 
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 12px;
+}
+
+.topbar nav a {
+  margin-left: 0;
+}
+
 .topbar nav a:hover {
   color: var(--text);
 }
@@ -210,6 +221,16 @@ body {
 }
 
 @media (max-width: 900px) {
+  .topbar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .topbar nav {
+    justify-content: center;
+  }
+
   .hero,
   .cards {
     grid-template-columns: 1fr;

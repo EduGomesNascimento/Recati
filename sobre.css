@@ -61,6 +61,17 @@ body {
   transition: color 0.28s ease, transform 0.28s ease;
 }
 
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 12px;
+}
+
+.topbar nav a {
+  margin-left: 0;
+}
+
 .topbar nav a:hover {
   color: var(--text);
   transform: translateY(-1px);
@@ -221,6 +232,16 @@ body {
 }
 
 @media (max-width: 860px) {
+  .topbar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .topbar nav {
+    justify-content: center;
+  }
+
   .card, .card.wide { grid-column: span 12; }
   .card img { height: 200px; }
 }
