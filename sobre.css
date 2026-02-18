@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
+  padding: 6px 14px;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
   background: rgba(5, 5, 5, 0.82);
@@ -33,21 +33,31 @@ body {
 
 .logo-wrap {
   display: inline-flex;
-  padding: 4px 10px;
-  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 42px;
+  padding: 2px 8px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: linear-gradient(90deg, rgba(210, 210, 210, 0.2), rgba(120, 120, 120, 0.12));
 }
 
 .logo-wrap img {
-  width: 132px;
-  filter: invert(1) brightness(1.08) contrast(1.04);
+  max-width: 94px;
+  max-height: 28px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.08) contrast(1.08);
 }
 
 .topbar nav a {
   color: var(--muted);
   text-decoration: none;
   margin-left: 14px;
+  display: inline-block;
+  line-height: 1;
   transition: color 0.28s ease, transform 0.28s ease;
 }
 
