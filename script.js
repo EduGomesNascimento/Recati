@@ -1,18 +1,38 @@
 ﻿(() => {
-  const VIDEO_SRC = "./Gatinho_Pendurado_na_Borda_Preta.mp4";
+  const VIDEO_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4";
+  const VIDEO_FALLBACK_SRC = "./Gatinho_Pendurado_na_Borda_Preta.mp4";
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.02;
-  const SEEK_FPS = 42;
-  const SMOOTH_RESPONSE = 9.2;
+  const SEEK_FPS = 20;
+  const SMOOTH_RESPONSE = 6.8;
   const VIDEO_SCALE = 0.86;
-  const BLACK_BAND_START_AT_BEGIN = 0.88;
-  const BLACK_BAND_START_AT_END = 0.72;
-  const MIN_TIME_STEP = 1 / 45;
-  const END_LOCK_SCROLL = 0.995;
+  const BLACK_BAND_START_AT_BEGIN = 0.9;
+  const BLACK_BAND_START_AT_END = 0.702;
+  const MIN_TIME_STEP = 1 / 24;
+  const END_LOCK_SCROLL = 0.985;
+  const END_ZONE_START = 0.9;
+  const SEEK_STALL_RESET_MS = 280;
+  const ACCESS_KEY = "recati_access_granted";
 
+  const enterBtn = document.getElementById("enterAccessBtn");
   const intro = document.getElementById("intro");
   const canvas = document.getElementById("heroCanvas");
   const ctx = canvas.getContext("2d", { alpha: false });
+
+  if (enterBtn && intro) {
+    const granted = sessionStorage.getItem(ACCESS_KEY) === "1";
+    if (!granted) {
+      document.body.classList.add("gate-locked");
+      window.scrollTo(0, 0);
+    }
+
+    enterBtn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      sessionStorage.setItem(ACCESS_KEY, "1");
+      document.body.classList.remove("gate-locked");
+      intro.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   const video = document.createElement("video");
   video.src = VIDEO_SRC;
@@ -29,6 +49,8 @@
   let lastTick = 0;
   let lastSeekAt = 0;
   let lastRequestedTime = -1;
+  let seekBusy = false;
+  let queuedTime = null;
   let hasRVFC = false;
 
   function clamp(n, a, b) {
@@ -59,11 +81,7 @@
     const iw = video.videoWidth;
     const ih = video.videoHeight;
 
-    const bg = ctx.createLinearGradient(0, 0, 0, ch);
-    bg.addColorStop(0, "#cdcdcd");
-    bg.addColorStop(0.5, "#c7c7c7");
-    bg.addColorStop(1, "#c2c2c2");
-    ctx.fillStyle = bg;
+    ctx.fillStyle = "#c7c7c7";
     ctx.fillRect(0, 0, cw, ch);
 
     // Draw slightly smaller to improve perceived sharpness from this source video.
@@ -75,14 +93,17 @@
 
     ctx.drawImage(video, dx, dy, sw, sh);
 
-    // Make the black bar rise with video progress and extend it to full width.
-    const progress = clamp(video.currentTime / FREEZE_TIME, 0, 1);
+    // Keep bar motion tied to smoothed progress so it doesn't freeze on decode stalls.
+    const progress = clamp(smoothTime / FREEZE_TIME, 0, 1);
     const rise = Math.pow(progress, 0.62);
     const barStartRatio = lerp(BLACK_BAND_START_AT_BEGIN, BLACK_BAND_START_AT_END, rise);
-    const bandY = Math.floor(dy + sh * barStartRatio) - 1;
+    const bandY = Math.floor(dy + sh * barStartRatio);
     if (bandY < ch) {
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, Math.max(0, bandY), cw, ch - Math.max(0, bandY));
+      const safeBandY = Math.max(0, bandY);
+      const srcY = clamp((safeBandY - dy) / scale, 0, ih - 2);
+
+      // Extend using the actual video row tone/texture to avoid seam mismatch.
+      ctx.drawImage(video, 0, srcY, iw, 2, 0, safeBandY, cw, ch - safeBandY);
     }
   }
 
@@ -104,27 +125,40 @@
     const nextTime = clamp(time, 0, Math.min(FREEZE_TIME, safeDuration));
     const minSeekInterval = 1000 / SEEK_FPS;
 
-    if (nowMs - lastSeekAt < minSeekInterval) return;
     if (Math.abs(lastRequestedTime - nextTime) <= MIN_TIME_STEP * 0.5) return;
-
     if (Math.abs(video.currentTime - nextTime) <= MIN_TIME_STEP * 0.5) return;
 
+    // Serialize seeks to avoid decode thrash near the end.
+    if (seekBusy || video.seeking || nowMs - lastSeekAt < minSeekInterval) {
+      queuedTime = nextTime;
+      return;
+    }
+
+    seekBusy = true;
     lastSeekAt = nowMs;
     lastRequestedTime = nextTime;
     try {
       video.currentTime = nextTime;
-    } catch {}
+    } catch {
+      seekBusy = false;
+    }
   }
 
   function updateTargetFromScroll() {
     const p = getPageProgress();
-    const eased = 1 - Math.pow(1 - p, 1.35);
+    const eased = p < END_ZONE_START
+      ? 1 - Math.pow(1 - p, 1.2)
+      : 1 - Math.pow(1 - p, 2.2);
     const mapped = clamp(eased * FREEZE_TIME, 0, FREEZE_TIME);
     targetTime = p >= END_LOCK_SCROLL ? FREEZE_TIME : mapped;
   }
 
   function loop(nowMs) {
     if (initialized) {
+      if (seekBusy && nowMs - lastSeekAt > SEEK_STALL_RESET_MS) {
+        seekBusy = false;
+      }
+
       updateTargetFromScroll();
 
       const dt = lastTick ? Math.min((nowMs - lastTick) / 1000, 0.1) : 1 / 60;
@@ -133,7 +167,7 @@
       // Exponential smoothing for a fluid scrub in both directions.
       const alpha = 1 - Math.exp(-SMOOTH_RESPONSE * dt);
       smoothTime += (targetTime - smoothTime) * alpha;
-      if (targetTime === FREEZE_TIME && Math.abs(FREEZE_TIME - smoothTime) < 0.01) {
+      if (targetTime === FREEZE_TIME && Math.abs(FREEZE_TIME - smoothTime) < 0.008) {
         smoothTime = FREEZE_TIME;
       }
 
@@ -176,10 +210,26 @@
 
   video.addEventListener("seeked", drawFrame);
   video.addEventListener("timeupdate", drawFrame);
+  video.addEventListener("timeupdate", () => {
+    seekBusy = false;
+  });
+  video.addEventListener("seeked", () => {
+    seekBusy = false;
+    if (queuedTime !== null) {
+      const next = queuedTime;
+      queuedTime = null;
+      seekToTime(next, performance.now());
+    }
+  });
 
   video.addEventListener("error", () => {
     const code = video.error ? video.error.code : "unknown";
-    console.error("Falha ao carregar video:", VIDEO_SRC, "erro:", code);
+    if (video.src.includes("Gatinho_Pendurado_na_Borda_Preta_RS.mp4")) {
+      video.src = VIDEO_FALLBACK_SRC;
+      video.load();
+      return;
+    }
+    console.error("Falha ao carregar video:", video.src, "erro:", code);
   });
 
   window.addEventListener("resize", () => {
