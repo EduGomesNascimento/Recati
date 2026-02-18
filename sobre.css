@@ -1,0 +1,205 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg: #070707;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.16);
+  --text: #eceff3;
+  --muted: #b8c0ca;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(1200px 500px at 50% -10%, #262626 0%, #101010 45%, #070707 100%);
+  font-family: "Schibsted Grotesk", "Segoe UI", sans-serif;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  background: rgba(5, 5, 5, 0.82);
+}
+
+.logo-wrap {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(210, 210, 210, 0.2), rgba(120, 120, 120, 0.12));
+}
+
+.logo-wrap img {
+  width: 132px;
+  filter: invert(1) brightness(1.08) contrast(1.04);
+}
+
+.topbar nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 14px;
+  transition: color 0.28s ease, transform 0.28s ease;
+}
+
+.topbar nav a:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.sobre-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 36px 16px 48px;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(34px, 5vw, 54px);
+  font-family: "PT Serif", Georgia, serif;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(18px, 2.4vw, 23px);
+  max-width: 70ch;
+}
+
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.card {
+  grid-column: span 6;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(0, 0, 0, 0.35) 100%);
+  padding: 16px;
+  transform: translateY(16px);
+  opacity: 0;
+  animation: cardIn 0.7s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.grid .card:nth-child(1) { animation-delay: 0.1s; }
+.grid .card:nth-child(2) { animation-delay: 0.2s; }
+.grid .card:nth-child(3) { animation-delay: 0.3s; }
+
+.card:hover {
+  transform: translateY(0);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.34);
+}
+
+.card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-aen img {
+  object-position: top center;
+}
+
+.card-tecnicalc img {
+  object-position: top center;
+}
+
+.card-erp img {
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.card h2 {
+  margin: 14px 0 8px;
+  font-family: "PT Serif", Georgia, serif;
+  font-size: clamp(24px, 3vw, 33px);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.card a { color: #dce3eb; }
+
+.card.wide {
+  grid-column: span 12;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.09));
+}
+
+.page-footer {
+  margin-top: 34px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.page-footer p {
+  margin: 6px 0;
+}
+
+.pop-in {
+  animation: popIn 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .card, .card.wide { grid-column: span 12; }
+  .card img { height: 200px; }
+}
