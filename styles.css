@@ -150,6 +150,7 @@ body:not(.gate-locked) .site {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  width: min(680px, 92vw);
 }
 
 .enter-btn::after {
@@ -526,6 +527,15 @@ h3 {
 }
 
 @media (max-width: 860px) {
+  .gate-actions {
+    width: min(520px, 100%);
+  }
+
+  .enter-btn,
+  .skip-intro-btn {
+    width: 100%;
+  }
+
   .highlight-grid {
     grid-template-columns: 1fr;
   }

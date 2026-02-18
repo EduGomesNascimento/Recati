@@ -4,15 +4,15 @@
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.02;
-  const SEEK_FPS = 20;
-  const SMOOTH_RESPONSE = 6.8;
+  const SEEK_FPS = 48;
+  const SMOOTH_RESPONSE = 10.5;
   const VIDEO_SCALE = 0.86;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
-  const MIN_TIME_STEP = 1 / 24;
-  const END_LOCK_SCROLL = 0.985;
+  const MIN_TIME_STEP = 1 / 90;
+  const END_LOCK_SCROLL = 0.996;
   const END_ZONE_START = 0.9;
-  const SEEK_STALL_RESET_MS = 280;
+  const SEEK_STALL_RESET_MS = 140;
   const BG_SAMPLE_H = 24;
   const BG_SAMPLE_W_RATIO = 0.16;
   const EDGE_OVERLAP_PX = 2;
@@ -234,9 +234,10 @@
 
   function updateTargetFromScroll() {
     const p = getPageProgress();
+    const preEnd = 1 - Math.pow(1 - END_ZONE_START, 1.15);
     const eased = p < END_ZONE_START
-      ? 1 - Math.pow(1 - p, 1.2)
-      : 1 - Math.pow(1 - p, 2.2);
+      ? 1 - Math.pow(1 - p, 1.15)
+      : preEnd + ((p - END_ZONE_START) / (1 - END_ZONE_START)) * (1 - preEnd);
     const mapped = clamp(START_TIME + eased * (FREEZE_TIME - START_TIME), START_TIME, FREEZE_TIME);
     targetTime = p >= END_LOCK_SCROLL ? FREEZE_TIME : mapped;
   }
