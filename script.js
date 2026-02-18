@@ -12,7 +12,8 @@
   const END_LOCK_SCROLL = 0.985;
   const END_ZONE_START = 0.9;
   const SEEK_STALL_RESET_MS = 280;
-  const ACCESS_KEY = "recati_access_granted";
+  const BG_SAMPLE_H = 24;
+  const BG_SAMPLE_W_RATIO = 0.16;
 
   const enterBtn = document.getElementById("enterAccessBtn");
   const intro = document.getElementById("intro");
@@ -20,15 +21,11 @@
   const ctx = canvas.getContext("2d", { alpha: false });
 
   if (enterBtn && intro) {
-    const granted = sessionStorage.getItem(ACCESS_KEY) === "1";
-    if (!granted) {
-      document.body.classList.add("gate-locked");
-      window.scrollTo(0, 0);
-    }
+    document.body.classList.add("gate-locked");
+    window.scrollTo(0, 0);
 
     enterBtn.addEventListener("click", (ev) => {
       ev.preventDefault();
-      sessionStorage.setItem(ACCESS_KEY, "1");
       document.body.classList.remove("gate-locked");
       intro.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -81,15 +78,31 @@
     const iw = video.videoWidth;
     const ih = video.videoHeight;
 
-    ctx.fillStyle = "#c7c7c7";
-    ctx.fillRect(0, 0, cw, ch);
-
     // Draw slightly smaller to improve perceived sharpness from this source video.
     const scale = Math.min(cw / iw, ch / ih) * VIDEO_SCALE;
     const sw = iw * scale;
     const sh = ih * scale;
     const dx = (cw - sw) / 2;
     const dy = (ch - sh) / 2;
+
+    // Start with neutral gray and then mirror safe corner strips from the video.
+    ctx.fillStyle = "#c7c7c7";
+    ctx.fillRect(0, 0, cw, ch);
+
+    const sideW = Math.max(0, Math.floor(dx));
+    const rightX = Math.ceil(dx + sw);
+    const rightW = Math.max(0, cw - rightX);
+    const sampleW = Math.max(2, Math.floor(iw * BG_SAMPLE_W_RATIO));
+
+    if (sideW > 0) {
+      // Left side mirrored from top-left corner strip (cat does not appear here).
+      ctx.drawImage(video, 0, 0, sampleW, BG_SAMPLE_H, 0, 0, sideW, ch);
+    }
+
+    if (rightW > 0) {
+      // Right side mirrored from top-right corner strip.
+      ctx.drawImage(video, iw - sampleW, 0, sampleW, BG_SAMPLE_H, rightX, 0, rightW, ch);
+    }
 
     ctx.drawImage(video, dx, dy, sw, sh);
 
