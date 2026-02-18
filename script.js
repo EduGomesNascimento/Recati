@@ -1,6 +1,7 @@
 ﻿(() => {
   const VIDEO_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4";
   const VIDEO_FALLBACK_SRC = "./Gatinho_Pendurado_na_Borda_Preta.mp4";
+  const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.02;
   const SEEK_FPS = 20;
@@ -19,14 +20,31 @@
   const intro = document.getElementById("intro");
   const canvas = document.getElementById("heroCanvas");
   const ctx = canvas.getContext("2d", { alpha: false });
+  let lockRafId = null;
 
   if (enterBtn && intro) {
     document.body.classList.add("gate-locked");
+    const keepTop = () => {
+      if (!document.body.classList.contains("gate-locked")) {
+        lockRafId = null;
+        return;
+      }
+      if (window.scrollY !== 0) {
+        window.scrollTo(0, 0);
+      }
+      lockRafId = requestAnimationFrame(keepTop);
+    };
+
     window.scrollTo(0, 0);
+    keepTop();
 
     enterBtn.addEventListener("click", (ev) => {
       ev.preventDefault();
       document.body.classList.remove("gate-locked");
+      if (lockRafId) {
+        cancelAnimationFrame(lockRafId);
+        lockRafId = null;
+      }
       intro.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
@@ -137,7 +155,7 @@
     if (!initialized) return;
 
     const safeDuration = Number.isFinite(video.duration) ? video.duration : FREEZE_TIME;
-    const nextTime = clamp(time, 0, Math.min(FREEZE_TIME, safeDuration));
+    const nextTime = clamp(time, START_TIME, Math.min(FREEZE_TIME, safeDuration));
     const minSeekInterval = 1000 / SEEK_FPS;
 
     if (Math.abs(lastRequestedTime - nextTime) <= MIN_TIME_STEP * 0.5) return;
@@ -164,7 +182,7 @@
     const eased = p < END_ZONE_START
       ? 1 - Math.pow(1 - p, 1.2)
       : 1 - Math.pow(1 - p, 2.2);
-    const mapped = clamp(eased * FREEZE_TIME, 0, FREEZE_TIME);
+    const mapped = clamp(START_TIME + eased * (FREEZE_TIME - START_TIME), START_TIME, FREEZE_TIME);
     targetTime = p >= END_LOCK_SCROLL ? FREEZE_TIME : mapped;
   }
 
@@ -212,7 +230,7 @@
 
     initialized = true;
     updateTargetFromScroll();
-    smoothTime = targetTime;
+    smoothTime = targetTime || START_TIME;
     seekToTime(smoothTime, performance.now());
 
     if (rafId) cancelAnimationFrame(rafId);

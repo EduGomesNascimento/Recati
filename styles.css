@@ -35,8 +35,19 @@ body.gate-locked {
   height: 100vh;
 }
 
+body.gate-locked .intro,
+body.gate-locked .site {
+  visibility: hidden;
+}
+
+body:not(.gate-locked) .intro,
+body:not(.gate-locked) .site {
+  visibility: visible;
+}
+
 .gate {
   min-height: 100vh;
+  height: 100vh;
   background: #000;
   display: grid;
   place-items: center;
@@ -88,9 +99,23 @@ body.gate-locked {
 
 .metal-text {
   position: relative;
+  display: inline-block;
   color: #dde2e8;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
   transition: color 0.35s ease, text-shadow 0.35s ease, letter-spacing 0.35s ease, transform 0.35s ease;
+}
+
+.metal-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 62%;
+  height: 100%;
+  transform: skewX(-14deg);
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  animation: metalSweep 6s ease-in-out infinite;
 }
 
 .metal-text:hover {
@@ -206,7 +231,7 @@ body.site-ready .site {
 .topbar-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 8px 14px;
+  padding: 6px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -225,9 +250,9 @@ body.site-ready .site {
 }
 
 .top-logo {
-  width: 132px;
+  width: 118px;
   max-width: 38vw;
-  filter: invert(1) brightness(1.06) contrast(1.04);
+  filter: brightness(0.08) contrast(1.08);
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
@@ -240,12 +265,12 @@ body.site-ready .site {
 
 .top-logo-link:hover .top-logo {
   transform: translateY(-1px) scale(1.025);
-  filter: invert(1) brightness(1.12) contrast(1.08) drop-shadow(0 0 14px rgba(255, 255, 255, 0.16));
+  filter: brightness(0.03) contrast(1.12) drop-shadow(0 0 8px rgba(0, 0, 0, 0.22));
 }
 
 .topbar a {
   color: var(--muted);
-  margin-left: 14px;
+  margin-left: 10px;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -422,11 +447,32 @@ h3 {
   background: transparent;
 }
 
+.inline-link {
+  color: #e8edf3;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+.inline-link:hover {
+  color: #ffffff;
+}
+
 .footer {
+  position: relative;
   border-top: 1px solid var(--border);
   padding: 28px 16px;
   color: var(--muted);
   text-align: center;
+}
+
+.footer-favicon {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  opacity: 0.9;
 }
 
 .footer p {
@@ -465,5 +511,23 @@ h3 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes metalSweep {
+  0% {
+    left: -120%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  28% {
+    left: 145%;
+    opacity: 0;
+  }
+  100% {
+    left: 145%;
+    opacity: 0;
   }
 }

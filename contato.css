@@ -41,14 +41,14 @@ body {
 }
 
 .logo-wrap img {
-  width: 132px;
-  filter: invert(1) brightness(1.08) contrast(1.04);
+  width: 116px;
+  filter: brightness(0.08) contrast(1.08);
 }
 
 .topbar nav a {
   color: var(--muted);
   text-decoration: none;
-  margin-left: 14px;
+  margin-left: 10px;
 }
 
 .topbar nav a:hover {
@@ -114,24 +114,63 @@ body {
 }
 
 .mascot-spot {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 18px;
   padding: 18px 14px;
   background: radial-gradient(circle at 50% 32%, #d2d2d2 0%, #c2c2c2 50%, #959595 100%);
-  display: grid;
-  place-items: center;
+  min-height: 410px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .mascot-video {
-  width: min(300px, 100%);
-  display: block;
+  position: absolute;
+  top: -6%;
+  right: -8%;
+  width: 112%;
+  max-width: none;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.42));
+  z-index: 2;
 }
 
-.mascot-spot p {
+.mascot-spot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22%;
+  height: 100%;
+  background: inherit;
+  z-index: 3;
+}
+
+.tail-bg-text {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(30px, 4vw, 44px);
+  font-family: "PT Serif", Georgia, serif;
+  letter-spacing: 4px;
+  color: rgba(35, 35, 35, 0.42);
+  z-index: 1;
+}
+
+.tail-caption {
+  position: relative;
+  z-index: 4;
   margin: 10px 0 0;
   font-weight: 700;
   color: #111;
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 8px 10px;
 }
 
 .cards {
