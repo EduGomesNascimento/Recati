@@ -100,10 +100,12 @@
     const bandY = Math.floor(dy + sh * barStartRatio);
     if (bandY < ch) {
       const safeBandY = Math.max(0, bandY);
-      const srcY = clamp((safeBandY - dy) / scale, 0, ih - 2);
+      // Solid black fill avoids vertical stripe artifacts from stretched rows.
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, safeBandY, cw, ch - safeBandY);
 
-      // Extend using the actual video row tone/texture to avoid seam mismatch.
-      ctx.drawImage(video, 0, srcY, iw, 2, 0, safeBandY, cw, ch - safeBandY);
+      // Cover potential 1px seam between video bar and background bar.
+      ctx.fillRect(0, Math.max(0, safeBandY - 1), cw, 1);
     }
   }
 
