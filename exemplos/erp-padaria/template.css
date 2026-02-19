@@ -1,2 +1,5 @@
-﻿@import url('../exemplos.css');
-
+﻿body { background:#f6f6f8; color:#1c1c1f; }
+.detail-hero { background:#fff; border-color:#ead1d1; }
+.detail-hero h1 { color:#a11212; }
+.badge { border-color:#ebd2d2; color:#7d2b2b; }
+.shot { background: linear-gradient(120deg,#ffffff,#ffe8e8); border-color:#eecbcb; }
