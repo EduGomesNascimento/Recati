@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder de profissional do salao">
+  <defs>
+    <linearGradient id="gp" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2a1a24"/>
+      <stop offset="100%" stop-color="#c8a06a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#gp)"/>
+  <circle cx="400" cy="340" r="170" fill="rgba(255,255,255,.15)"/>
+  <rect x="220" y="550" width="360" height="260" rx="170" fill="rgba(255,255,255,.18)"/>
+  <text x="80" y="940" fill="#fff6ee" font-size="54" font-family="Segoe UI, Arial" font-weight="700">SALAO PREMIUM</text>
+</svg>

@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Placeholder de maquiagem">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#22131f"/>
+      <stop offset="45%" stop-color="#7f4a67"/>
+      <stop offset="100%" stop-color="#f0cfa4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g3)"/>
+  <circle cx="420" cy="380" r="230" fill="rgba(255,255,255,.12)"/>
+  <circle cx="760" cy="520" r="240" fill="rgba(0,0,0,.18)"/>
+  <text x="120" y="150" fill="#fff6ef" font-size="52" font-family="Segoe UI, Arial" font-weight="700">MAKEUP ART</text>
+</svg>

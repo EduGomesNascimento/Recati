@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Placeholder de barbearia premium">
+  <defs>
+    <linearGradient id="g5" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#120f12"/>
+      <stop offset="50%" stop-color="#3e2c37"/>
+      <stop offset="100%" stop-color="#b78f5b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g5)"/>
+  <path d="M260 680L600 260L940 680" stroke="#f7e1c5" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <text x="140" y="170" fill="#faf3ec" font-size="54" font-family="Segoe UI, Arial" font-weight="700">BARBER LOUNGE</text>
+</svg>

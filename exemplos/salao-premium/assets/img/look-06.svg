@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Placeholder de manicure">
+  <defs>
+    <linearGradient id="g6" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#24141f"/>
+      <stop offset="52%" stop-color="#6b3f56"/>
+      <stop offset="100%" stop-color="#e5bf8d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g6)"/>
+  <circle cx="340" cy="430" r="220" fill="rgba(255,255,255,.1)"/>
+  <circle cx="820" cy="380" r="190" fill="rgba(255,255,255,.06)"/>
+  <text x="130" y="160" fill="#fff" font-size="56" font-family="Segoe UI, Arial" font-weight="700">NAIL DESIGN</text>
+</svg>

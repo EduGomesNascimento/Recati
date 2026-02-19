@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Placeholder de penteado rose">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2a1a24"/>
+      <stop offset="55%" stop-color="#5f3449"/>
+      <stop offset="100%" stop-color="#c39a63"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g1)"/>
+  <circle cx="920" cy="180" r="180" fill="rgba(255,255,255,.08)"/>
+  <circle cx="320" cy="700" r="240" fill="rgba(255,255,255,.06)"/>
+  <path d="M200 660C260 490 450 420 600 420C780 420 940 520 980 700" stroke="#f7d9be" stroke-width="24" fill="none" stroke-linecap="round" opacity=".65"/>
+  <text x="80" y="120" fill="#f6efe8" font-size="56" font-family="Segoe UI, Arial" font-weight="700">SALAO PREMIUM</text>
+  <text x="80" y="186" fill="#f7d9be" font-size="34" font-family="Segoe UI, Arial">Placeholder visual</text>
+</svg>

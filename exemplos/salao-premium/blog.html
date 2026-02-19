@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salão Premium | Blog</title>
+    <meta name="description" content="Blog do Salão Premium com dicas de beleza, tendências e manutenção." />
+    <link rel="icon" href="./assets/img/salao-icon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./salao.css" />
+  </head>
+  <body>
+    <header class="sp-header">
+      <div class="container sp-header-inner">
+        <a class="sp-brand" href="./index.html">
+          <img src="./assets/img/salao-icon.png" alt="Salão Premium" />
+          <span>Salão Premium</span>
+        </a>
+
+        <button class="sp-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+
+        <nav class="sp-nav">
+          <a href="./index.html">Início</a>
+          <a href="./sobre.html">Sobre</a>
+          <a href="./servicos.html">Serviços</a>
+          <a href="./equipe.html">Equipe</a>
+          <a href="./galeria.html">Produções</a>
+          <a class="is-active" href="./blog.html">Blog</a>
+          <a href="./contato.html">Contato</a>
+          <a class="sp-back" href="../../index.html">Voltar ao Recati</a>
+        </nav>
+
+        <a class="sp-btn sp-btn-gold header-wa js-wa-link" target="_blank" rel="noreferrer" data-service="Agendamento após leitura do blog">
+          Agendar
+        </a>
+      </div>
+    </header>
+
+    <main class="sp-main">
+      <div class="container">
+        <section class="sp-page-hero sp-reveal">
+          <div class="hero-box">
+            <span class="sp-chip">Blog</span>
+            <h1>Conteúdo para manter seu visual impecável.</h1>
+            <p>
+              Dicas práticas de cuidados, tendências e planejamento para você aproveitar melhor cada atendimento.
+            </p>
+          </div>
+        </section>
+
+        <section class="sp-section sp-reveal">
+          <div class="sp-section-head">
+            <h2>Filtrar por tema</h2>
+          </div>
+          <div class="sp-hero-actions">
+            <button class="sp-filter is-active" type="button" data-post-filter="todos">Todos</button>
+            <button class="sp-filter" type="button" data-post-filter="cabelo">Cabelo</button>
+            <button class="sp-filter" type="button" data-post-filter="noiva">Noiva</button>
+            <button class="sp-filter" type="button" data-post-filter="barba">Barba</button>
+            <button class="sp-filter" type="button" data-post-filter="cuidados">Cuidados</button>
+            <button class="sp-filter" type="button" data-post-filter="tendencias">Tendências</button>
+          </div>
+        </section>
+
+        <section class="sp-section sp-reveal">
+          <div class="sp-blog-grid">
+            <article class="sp-card sp-blog-card" data-post-tags="cabelo,tendencias,cuidados">
+              <img src="./assets/img/look-01.svg" alt="Loiro premium com brilho" />
+              <h3>Loiro premium sem ressecar: rotina de 4 passos</h3>
+              <p>Descubra como manter cor vibrante e fibra protegida entre um atendimento e outro.</p>
+              <div class="sp-post-meta">cabelo • tendências • cuidados</div>
+            </article>
+
+            <article class="sp-card sp-blog-card" data-post-tags="noiva,cuidados">
+              <img src="./assets/img/look-02.svg" alt="Noiva com penteado clássico" />
+              <h3>Planejamento beauty para noivas: quando começar?</h3>
+              <p>Estruture cronograma de pele, cabelo e prova para chegar tranquila ao grande dia.</p>
+              <div class="sp-post-meta">noiva • cuidados</div>
+            </article>
+
+            <article class="sp-card sp-blog-card" data-post-tags="barba,cuidados">
+              <img src="./assets/img/look-03.svg" alt="Barbearia com acabamento" />
+              <h3>Barba alinhada todos os dias sem perder naturalidade</h3>
+              <p>Técnicas simples para manter desenho limpo e conforto na rotina.</p>
+              <div class="sp-post-meta">barba • cuidados</div>
+            </article>
+
+            <article class="sp-card sp-blog-card" data-post-tags="tendencias,cabelo">
+              <img src="./assets/img/look-04.svg" alt="Maquiagem e cabelo em tendência" />
+              <h3>Tendências de cor e finalização para a próxima temporada</h3>
+              <p>Inspire-se em propostas elegantes e personalizáveis para seu estilo.</p>
+              <div class="sp-post-meta">tendências • cabelo</div>
+            </article>
+
+            <article class="sp-card sp-blog-card" data-post-tags="cuidados,cabelo">
+              <img src="./assets/img/look-05.svg" alt="Design de sobrancelhas e visagismo" />
+              <h3>Visagismo aplicado: como acertar no design de sobrancelha</h3>
+              <p>Harmonize expressão facial com ajustes estratégicos e naturais.</p>
+              <div class="sp-post-meta">cuidados • cabelo</div>
+            </article>
+
+            <article class="sp-card sp-blog-card" data-post-tags="tendencias,noiva">
+              <img src="./assets/img/look-06.svg" alt="Nail design elegante" />
+              <h3>Nail design elegante para eventos e cerimônias</h3>
+              <p>Combinações de acabamento e paleta para compor looks sofisticados.</p>
+              <div class="sp-post-meta">tendências • noiva</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="sp-section sp-reveal">
+          <article class="sp-card sp-cta-strip">
+            <h2>Leu, gostou e quer aplicar no seu visual?</h2>
+            <p>Fale conosco e monte um plano de atendimento perfeito para sua rotina.</p>
+            <div class="sp-hero-actions">
+              <a class="sp-btn sp-btn-gold js-wa-link" target="_blank" rel="noreferrer" data-service="Agendamento após conteúdo do blog">Agendar no WhatsApp</a>
+              <a class="sp-btn sp-btn-ghost" href="./contato.html">Abrir contato</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="sp-footer">
+      <div class="container sp-footer-inner">
+        <div>
+          <h4>Salão Premium</h4>
+          <p>Conteúdo autoral para orientar escolhas e potencializar resultados.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="./sobre.html">Sobre</a></li>
+            <li><a href="./servicos.html">Serviços</a></li>
+            <li><a href="./galeria.html">Produções</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p>WhatsApp: (51) 99795-0492</p>
+          <p>E-mail: recati.com@gmail.com</p>
+          <p><a href="../../index.html">Voltar ao Recati</a></p>
+        </div>
+      </div>
+      <div class="container sp-footer-bottom">
+        <span>© <span data-current-year></span> Salão Premium - Demo RECATI.</span>
+      </div>
+    </footer>
+
+    <script src="./salao.js"></script>
+  </body>
+</html>

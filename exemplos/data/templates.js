@@ -1,5 +1,18 @@
 ﻿export const templates = [
   {
+    slug: "salao-premium",
+    title: "Salão Premium (Site completo)",
+    category: "Institucional",
+    segment: "Salão",
+    level: "Avançado",
+    tags: ["site", "salao", "blog", "galeria", "whatsapp", "contato"],
+    summary: "Mini-site completo com múltiplas páginas, galeria, blog, equipe e contato com mapa.",
+    features: ["Hero com slider", "Serviços completos", "Equipe", "Galeria com lightbox", "Blog com filtros", "Formulário e mapa"],
+    stack: "HTML, CSS e JavaScript",
+    detailPath: "./salao-premium/index.html",
+    demoPath: "./salao-premium/index.html",
+  },
+  {
     slug: "salaodebeleza",
     title: "Salão de Beleza",
     category: "Landing",

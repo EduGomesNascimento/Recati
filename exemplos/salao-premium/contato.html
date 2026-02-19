@@ -1,0 +1,174 @@
+﻿<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salão Premium | Contato</title>
+    <meta name="description" content="Fale com o Salão Premium por WhatsApp, e-mail ou formulário de contato." />
+    <link rel="icon" href="./assets/img/salao-icon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./salao.css" />
+  </head>
+  <body>
+    <header class="sp-header">
+      <div class="container sp-header-inner">
+        <a class="sp-brand" href="./index.html">
+          <img src="./assets/img/salao-icon.png" alt="Salão Premium" />
+          <span>Salão Premium</span>
+        </a>
+
+        <button class="sp-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+
+        <nav class="sp-nav">
+          <a href="./index.html">Início</a>
+          <a href="./sobre.html">Sobre</a>
+          <a href="./servicos.html">Serviços</a>
+          <a href="./equipe.html">Equipe</a>
+          <a href="./galeria.html">Produções</a>
+          <a href="./blog.html">Blog</a>
+          <a class="is-active" href="./contato.html">Contato</a>
+          <a class="sp-back" href="../../index.html">Voltar ao Recati</a>
+        </nav>
+
+        <a class="sp-btn sp-btn-gold header-wa js-wa-link" target="_blank" rel="noreferrer" data-service="Contato direto pelo topo">
+          Agendar
+        </a>
+      </div>
+    </header>
+
+    <main class="sp-main">
+      <div class="container">
+        <section class="sp-page-hero sp-reveal">
+          <div class="hero-box">
+            <span class="sp-chip">Contato</span>
+            <h1>Vamos reservar seu próximo horário?</h1>
+            <p>
+              Escolha seu canal favorito. Resposta rápida para agendamentos, dúvidas e consultoria de serviços.
+            </p>
+          </div>
+        </section>
+
+        <section class="sp-section sp-reveal">
+          <div class="sp-grid sp-grid-3">
+            <article class="sp-card">
+              <h3>WhatsApp</h3>
+              <p>Atendimento ágil para agendar, reagendar e tirar dúvidas sobre serviços.</p>
+              <p><a class="sp-btn sp-btn-gold js-wa-link" target="_blank" rel="noreferrer" data-service="Agendamento por WhatsApp">Abrir WhatsApp</a></p>
+            </article>
+            <article class="sp-card">
+              <h3>E-mail</h3>
+              <p>Envie detalhes do que você procura e retornamos com proposta personalizada.</p>
+              <p><a class="sp-btn sp-btn-ghost" href="mailto:recati.com@gmail.com?subject=Agendamento%20no%20Sal%C3%A3o%20Premium&body=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Sal%C3%A3o%20Premium.">Enviar e-mail</a></p>
+            </article>
+            <article class="sp-card">
+              <h3>Endereço</h3>
+              <p>Av. Paulista, 1578 - Bela Vista, São Paulo - SP</p>
+              <p>Segunda a sábado: 09h às 20h | Domingo: somente eventos</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="sp-section sp-reveal">
+          <div class="sp-grid sp-grid-2">
+            <article class="sp-card">
+              <h2 class="sp-title">Envie sua mensagem</h2>
+              <form id="contactForm" class="sp-form" novalidate>
+                <div class="sp-form-row">
+                  <div class="sp-field">
+                    <label for="contactName">Nome completo</label>
+                    <input class="sp-input" id="contactName" name="name" type="text" required />
+                  </div>
+                  <div class="sp-field">
+                    <label for="contactPhone">WhatsApp</label>
+                    <input class="sp-input" id="contactPhone" name="phone" type="tel" placeholder="(00) 00000-0000" required />
+                  </div>
+                </div>
+
+                <div class="sp-form-row">
+                  <div class="sp-field">
+                    <label for="contactService">Serviço de interesse</label>
+                    <select class="sp-select" id="contactService" name="service" required>
+                      <option value="">Selecione</option>
+                      <option value="Hair Stylist Premium">Hair Stylist Premium</option>
+                      <option value="Dia da Noiva">Dia da Noiva</option>
+                      <option value="Barbearia Signature">Barbearia Signature</option>
+                      <option value="Maquiagem Social e Editorial">Maquiagem Social e Editorial</option>
+                      <option value="Sobrancelha e Visagismo">Sobrancelha e Visagismo</option>
+                      <option value="Manicure e Nail Design">Manicure e Nail Design</option>
+                    </select>
+                  </div>
+                  <div class="sp-field">
+                    <label for="contactDatetime">Dia e hora desejados</label>
+                    <input class="sp-input" id="contactDatetime" name="datetime" type="datetime-local" />
+                  </div>
+                </div>
+
+                <div class="sp-field">
+                  <label for="contactMessage">Mensagem</label>
+                  <textarea class="sp-textarea" id="contactMessage" name="message" placeholder="Conte como você quer seu próximo visual."></textarea>
+                </div>
+
+                <div class="sp-hero-actions">
+                  <button class="sp-btn sp-btn-gold" type="submit">Enviar formulário</button>
+                  <a
+                    id="waFromForm"
+                    class="sp-btn sp-btn-ghost js-wa-link"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-service="Atendimento via formulário"
+                    data-service-input="contactService"
+                    data-day-input="contactDatetime"
+                  >
+                    Agendar no WhatsApp
+                  </a>
+                </div>
+              </form>
+            </article>
+
+            <article class="sp-card">
+              <h2 class="sp-title">Onde estamos</h2>
+              <p>Atendimento com hora marcada para garantir experiência exclusiva.</p>
+              <iframe
+                class="sp-map"
+                title="Mapa Salão Premium"
+                src="https://maps.google.com/maps?q=Avenida%20Paulista%201578%20S%C3%A3o%20Paulo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="sp-footer">
+      <div class="container sp-footer-inner">
+        <div>
+          <h4>Salão Premium</h4>
+          <p>Atendimento premium com agendamento inteligente e suporte rápido.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="./sobre.html">Sobre</a></li>
+            <li><a href="./servicos.html">Serviços</a></li>
+            <li><a href="./galeria.html">Produções</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p>WhatsApp: (51) 99795-0492</p>
+          <p>E-mail: recati.com@gmail.com</p>
+          <p><a href="../../index.html">Voltar ao Recati</a></p>
+        </div>
+      </div>
+      <div class="container sp-footer-bottom">
+        <span>© <span data-current-year></span> Salão Premium - Demo RECATI.</span>
+      </div>
+    </footer>
+
+    <div id="formToast" class="sp-toast" role="status" aria-live="polite"></div>
+
+    <script src="./salao.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Placeholder de mechas douradas">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#171218"/>
+      <stop offset="50%" stop-color="#4f2d40"/>
+      <stop offset="100%" stop-color="#d6af7d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g2)"/>
+  <rect x="120" y="120" width="960" height="660" rx="34" fill="rgba(255,255,255,.06)"/>
+  <path d="M220 640C300 520 460 470 600 470C760 470 900 540 980 680" stroke="#f5e1c2" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <text x="170" y="230" fill="#fef7ef" font-size="58" font-family="Segoe UI, Arial" font-weight="700">HAIR STYLE</text>
+</svg>

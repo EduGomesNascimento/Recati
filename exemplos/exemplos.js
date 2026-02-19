@@ -11,50 +11,54 @@ function fillFilters() {
   const categories = unique(templates.map((t) => t.category));
   const segments = unique(templates.map((t) => t.segment));
 
-  categories.forEach((c) => {
+  categories.forEach((category) => {
     const op = document.createElement("option");
-    op.value = c;
-    op.textContent = c;
+    op.value = category;
+    op.textContent = category;
     categorySelect.appendChild(op);
   });
 
-  segments.forEach((s) => {
+  segments.forEach((segment) => {
     const op = document.createElement("option");
-    op.value = s;
-    op.textContent = s;
+    op.value = segment;
+    op.textContent = segment;
     segmentSelect.appendChild(op);
   });
 }
 
-function cardHtml(t) {
-  const tags = t.tags.join(", ");
+function cardHtml(template) {
+  const tags = template.tags.join(", ");
+  const detailHref = template.detailPath || `./${template.slug}/`;
+  const demoHref = template.demoPath || `./${template.slug}/demo/`;
+
   return `
     <article class="card">
-      <h2>${t.title}</h2>
+      <h2>${template.title}</h2>
       <div class="meta">
-        <span class="badge">${t.category}</span>
-        <span class="badge">${t.segment}</span>
-        <span class="badge">${t.level}</span>
+        <span class="badge">${template.category}</span>
+        <span class="badge">${template.segment}</span>
+        <span class="badge">${template.level}</span>
       </div>
-      <p>${t.summary}</p>
+      <p>${template.summary}</p>
       <div class="tags">Tags: ${tags}</div>
       <div class="actions">
-        <a class="btn ghost" href="./${t.slug}/">Detalhes</a>
-        <a class="btn" href="./${t.slug}/demo/">Ver demo</a>
+        <a class="btn ghost" href="${detailHref}">Detalhes</a>
+        <a class="btn" href="${demoHref}">Ver demo</a>
       </div>
     </article>
   `;
 }
 
 function render() {
-  const q = (searchInput.value || "").trim().toLowerCase();
-  const c = categorySelect.value;
-  const s = segmentSelect.value;
+  const query = (searchInput.value || "").trim().toLowerCase();
+  const category = categorySelect.value;
+  const segment = segmentSelect.value;
 
-  const filtered = templates.filter((t) => {
-    const matchQ = !q || (`${t.title} ${t.tags.join(" ")}`.toLowerCase().includes(q));
-    const matchC = !c || t.category === c;
-    const matchS = !s || t.segment === s;
+  const filtered = templates.filter((template) => {
+    const target = `${template.title} ${template.tags.join(" ")}`.toLowerCase();
+    const matchQ = !query || target.includes(query);
+    const matchC = !category || template.category === category;
+    const matchS = !segment || template.segment === segment;
     return matchQ && matchC && matchS;
   });
 
