@@ -14,7 +14,7 @@
   const views = [
     ["espelho", "Espelho do Site"],
     ["institucional", "Institucional"],
-    ["servicos", "Serviços"],
+    ["servicos", "ServiÃ§os"],
     ["cases", "Cases"],
     ["painel", "Painel"],
   ];
@@ -26,8 +26,8 @@
 
   if (!state.logs.length) {
     state.logs = [
-      { data: new Date().toISOString(), evento: "Sincronização de dados finalizada", modulo: "ERP" },
-      { data: new Date().toISOString(), evento: "Relatório semanal gerado", modulo: "BI" },
+      { data: new Date().toISOString(), evento: "SincronizaÃ§Ã£o de dados finalizada", modulo: "ERP" },
+      { data: new Date().toISOString(), evento: "RelatÃ³rio semanal gerado", modulo: "BI" },
     ];
   }
 
@@ -51,7 +51,7 @@
   function renderEspelho() {
     content.innerHTML = `
       <h2>Espelho do Site AEN Systems</h2>
-      <p class="small">Visualização integrada do site oficial dentro da RECATI.</p>
+      <p class="small">VisualizaÃ§Ã£o integrada do site oficial dentro da RECATI.</p>
       <div class="panel mirror-wrap">
         <iframe
           class="site-mirror"
@@ -61,7 +61,7 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <p class="small">Se o navegador bloquear o espelho por segurança (X-Frame-Options/CSP), use o botão abaixo.</p>
+      <p class="small">Se o navegador bloquear o espelho por seguranÃ§a (X-Frame-Options/CSP), use o botÃ£o abaixo.</p>
       <a class="btn mirror-link" target="_blank" rel="noreferrer" href="https://www.aensystems.com.br">Abrir AEN Systems em nova aba</a>
     `;
   }
@@ -69,21 +69,21 @@
   function renderInstitucional() {
     content.innerHTML = `
       <h2>Institucional</h2>
-      <p class="small">Posicionamento técnico com foco em automação, integração e eficiência operacional.</p>
+      <p class="small">Posicionamento tÃ©cnico com foco em automaÃ§Ã£o, integraÃ§Ã£o e eficiÃªncia operacional.</p>
       <div class="grid-2">
-        <div class="panel"><strong>Missão</strong><p class="small">Transformar processos em resultados.</p></div>
-        <div class="panel"><strong>Visão</strong><p class="small">Tecnologia aplicada ao crescimento real.</p></div>
+        <div class="panel"><strong>MissÃ£o</strong><p class="small">Transformar processos em resultados.</p></div>
+        <div class="panel"><strong>VisÃ£o</strong><p class="small">Tecnologia aplicada ao crescimento real.</p></div>
       </div>
     `;
   }
 
   function renderServicos() {
     content.innerHTML = `
-      <h2>Serviços</h2>
+      <h2>ServiÃ§os</h2>
       <ul>
         <li>Apps web sob medida</li>
-        <li>Integrações entre sistemas</li>
-        <li>Automações com notificações inteligentes</li>
+        <li>IntegraÃ§Ãµes entre sistemas</li>
+        <li>AutomaÃ§Ãµes com notificaÃ§Ãµes inteligentes</li>
       </ul>
     `;
   }
@@ -92,7 +92,7 @@
     content.innerHTML = `
       <h2>Cases</h2>
       <div class="grid-2">
-        <div class="panel"><strong>Case 1</strong><p class="small">Redução de retrabalho em 40%.</p></div>
+        <div class="panel"><strong>Case 1</strong><p class="small">ReduÃ§Ã£o de retrabalho em 40%.</p></div>
         <div class="panel"><strong>Case 2</strong><p class="small">Aumento de produtividade de atendimento.</p></div>
       </div>
     `;
@@ -103,16 +103,16 @@
     content.innerHTML = `
       <h2>Painel</h2>
       <div class="grid-2">
-        <div class="panel"><strong>Automações ativas</strong><p>${Math.max(3, totalLogs)}</p></div>
+        <div class="panel"><strong>AutomaÃ§Ãµes ativas</strong><p>${Math.max(3, totalLogs)}</p></div>
         <div class="panel"><strong>Eventos registrados</strong><p>${totalLogs}</p></div>
       </div>
       <div class="actions">
         <button id="newLog" class="btn" type="button">Gerar log</button>
-        <button id="exportCsv" class="btn ghost" type="button">Exportar relatório (CSV)</button>
+        <button id="exportCsv" class="btn ghost" type="button">Exportar relatÃ³rio (CSV)</button>
       </div>
       <div class="panel" style="margin-top:10px;">
         <table>
-          <thead><tr><th>Data</th><th>Módulo</th><th>Evento</th></tr></thead>
+          <thead><tr><th>Data</th><th>MÃ³dulo</th><th>Evento</th></tr></thead>
           <tbody id="logRows"></tbody>
         </table>
       </div>
@@ -126,7 +126,7 @@
       .join("");
 
     document.getElementById("newLog").addEventListener("click", () => {
-      const events = ["Webhook processado", "Lead sincronizado", "Relatório diário enviado", "Integração conciliada"];
+      const events = ["Webhook processado", "Lead sincronizado", "RelatÃ³rio diÃ¡rio enviado", "IntegraÃ§Ã£o conciliada"];
       const modules = ["ERP", "CRM", "BI", "Financeiro"];
       state.logs.push({
         data: new Date().toISOString(),

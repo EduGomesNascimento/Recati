@@ -14,7 +14,7 @@
 
   const views = [
     { id: "home", label: "Home" },
-    { id: "servicos", label: "ServiÁos" },
+    { id: "servicos", label: "Servi√ßos" },
     { id: "agenda", label: "Agenda" },
     { id: "contato", label: "Contato" },
   ];
@@ -23,8 +23,8 @@
     {
       id: crypto.randomUUID(),
       nome: "Camila Rocha",
-      servico: "ColoraÁ„o RosÈ",
-      profissional: "J˙lia",
+      servico: "Colora√ß√£o Ros√©",
+      profissional: "J√∫lia",
       datahora: "2026-02-24T14:30",
       telefone: "(51) 99999-1111",
     },
@@ -79,23 +79,23 @@
       <div class="view">
         <section class="hero-grid">
           <div class="panel">
-            <h2 class="hero-title">Beleza com experiÍncia premium e agenda inteligente.</h2>
-            <p class="small">Um exemplo real de sal„o com foco em convers„o, atendimento humanizado e organizaÁ„o completa da rotina.</p>
+            <h2 class="hero-title">Beleza com experi√™ncia premium e agenda inteligente.</h2>
+            <p class="small">Um exemplo real de sal√£o com foco em convers√£o, atendimento humanizado e organiza√ß√£o completa da rotina.</p>
             <div class="actions">
-              <button class="btn" type="button" id="goAgenda">Agendar hor·rio</button>
-              <button class="btn secondary" type="button" id="goContato">Falar com o sal„o</button>
+              <button class="btn" type="button" id="goAgenda">Agendar hor√°rio</button>
+              <button class="btn secondary" type="button" id="goContato">Falar com o sal√£o</button>
             </div>
             <div class="stats">
               <div class="stat-box"><strong>+1.200</strong><span class="small">Atendimentos/ano</span></div>
-              <div class="stat-box"><strong>98%</strong><span class="small">SatisfaÁ„o de clientes</span></div>
-              <div class="stat-box"><strong>4 min</strong><span class="small">Tempo mÈdio de resposta</span></div>
+              <div class="stat-box"><strong>98%</strong><span class="small">Satisfa√ß√£o de clientes</span></div>
+              <div class="stat-box"><strong>4 min</strong><span class="small">Tempo m√©dio de resposta</span></div>
             </div>
           </div>
           <div class="panel">
             <h3 class="gold">Destaques do Studio</h3>
             <ul>
-              <li>Especialistas em corte, coloraÁ„o e finalizaÁ„o.</li>
-              <li>ConfirmaÁ„o de hor·rios via WhatsApp.</li>
+              <li>Especialistas em corte, colora√ß√£o e finaliza√ß√£o.</li>
+              <li>Confirma√ß√£o de hor√°rios via WhatsApp.</li>
               <li>Fluxo visual e intuitivo para equipe e cliente.</li>
               <li>Layout elegante em rosa, branco, dourado e rose gold.</li>
             </ul>
@@ -112,16 +112,16 @@
 
   function renderServicos() {
     const cards = [
-      { titulo: "Corte & FinalizaÁ„o", desc: "Corte feminino/masculino com escova e finalizaÁ„o personalizada.", preco: "a partir de R$ 95" },
-      { titulo: "ColoraÁ„o RosÈ", desc: "TÈcnicas de cor com an·lise de fio, contraste e manutenÁ„o programada.", preco: "a partir de R$ 210" },
-      { titulo: "Tratamento Gold Repair", desc: "ReconstruÁ„o profunda e brilho imediato com ativos premium.", preco: "a partir de R$ 180" },
+      { titulo: "Corte & Finaliza√ß√£o", desc: "Corte feminino/masculino com escova e finaliza√ß√£o personalizada.", preco: "a partir de R$ 95" },
+      { titulo: "Colora√ß√£o Ros√©", desc: "T√©cnicas de cor com an√°lise de fio, contraste e manuten√ß√£o programada.", preco: "a partir de R$ 210" },
+      { titulo: "Tratamento Gold Repair", desc: "Reconstru√ß√£o profunda e brilho imediato com ativos premium.", preco: "a partir de R$ 180" },
       { titulo: "Noiva & Eventos", desc: "Pacote completo para penteado e maquiagem com prova antecipada.", preco: "sob consulta" },
     ];
 
     content.innerHTML = `
       <div class="view">
-        <h2>ServiÁos em destaque</h2>
-        <p class="small">ServiÁos pensados para fidelizar clientes e elevar o ticket com experiÍncia premium.</p>
+        <h2>Servi√ßos em destaque</h2>
+        <p class="small">Servi√ßos pensados para fidelizar clientes e elevar o ticket com experi√™ncia premium.</p>
         <div class="grid-2">
           ${cards
             .map(
@@ -151,7 +151,7 @@
     content.innerHTML = `
       <div class="view">
         <h2>Agenda inteligente</h2>
-        <p class="small">Cadastre hor·rios, acompanhe atendimentos e mantenha o sal„o sempre organizado.</p>
+        <p class="small">Cadastre hor√°rios, acompanhe atendimentos e mantenha o sal√£o sempre organizado.</p>
 
         <form id="appointmentForm" class="panel">
           <div class="grid-2">
@@ -163,11 +163,11 @@
             </label>
           </div>
           <div class="grid-2">
-            <label>ServiÁo
+            <label>Servi√ßo
               <select name="servico" required>
                 <option value="">Selecione</option>
-                <option>Corte & FinalizaÁ„o</option>
-                <option>ColoraÁ„o RosÈ</option>
+                <option>Corte & Finaliza√ß√£o</option>
+                <option>Colora√ß√£o Ros√©</option>
                 <option>Escova Premium</option>
                 <option>Tratamento Gold Repair</option>
                 <option>Noiva & Eventos</option>
@@ -176,7 +176,7 @@
             <label>Profissional
               <select name="profissional" required>
                 <option value="">Selecione</option>
-                <option>J˙lia</option>
+                <option>J√∫lia</option>
                 <option>Renata</option>
                 <option>Bruna</option>
               </select>
@@ -195,11 +195,11 @@
             <thead>
               <tr>
                 <th>Cliente</th>
-                <th>ServiÁo</th>
+                <th>Servi√ßo</th>
                 <th>Profissional</th>
                 <th>Data/Hora</th>
                 <th>Contato</th>
-                <th>AÁ„o</th>
+                <th>A√ß√£o</th>
               </tr>
             </thead>
             <tbody id="appointmentsBody"></tbody>
@@ -249,45 +249,45 @@
   }
 
   function renderContato() {
-    const whatsMsg = encodeURIComponent("Ol·! Vi o demo do Studio RosÈ no site da RECATI e quero um sistema assim para meu sal„o.");
-    const emailSubject = encodeURIComponent("Quero um site para sal„o com agenda");
+    const whatsMsg = encodeURIComponent("Ol√°! Vi o demo do Studio Ros√© no site da RECATI e quero um sistema assim para meu sal√£o.");
+    const emailSubject = encodeURIComponent("Quero um site para sal√£o com agenda");
     const emailBody = encodeURIComponent(
-      "Ol·, equipe RECATI!\n\nVi o demo do sal„o e quero uma proposta para criar meu site com agenda online, WhatsApp e ·rea de serviÁos.\n\nNome:\nCidade:\nObjetivo do projeto:\nPrazo estimado:\n"
+      "Ol√°, equipe RECATI!\n\nVi o demo do sal√£o e quero uma proposta para criar meu site com agenda online, WhatsApp e √°rea de servi√ßos.\n\nNome:\nCidade:\nObjetivo do projeto:\nPrazo estimado:\n"
     );
 
     content.innerHTML = `
       <div class="view">
         <h2>Contato que converte</h2>
-        <p class="small">Canais prontos para receber leads com mensagem j· direcionada para fechamento.</p>
+        <p class="small">Canais prontos para receber leads com mensagem j√° direcionada para fechamento.</p>
 
         <div class="contact-grid">
           <article class="link-box">
             <strong>WhatsApp direto</strong>
-            <span class="small">Atendimento r·pido para orÁamento e implantaÁ„o.</span>
+            <span class="small">Atendimento r√°pido para or√ßamento e implanta√ß√£o.</span>
             <a class="btn" target="_blank" rel="noreferrer" href="https://wa.me/5551997950492?text=${whatsMsg}">Falar no WhatsApp</a>
           </article>
 
           <article class="link-box">
             <strong>E-mail profissional</strong>
-            <span class="small">Assunto e mensagem j· preenchidos para facilitar.</span>
+            <span class="small">Assunto e mensagem j√° preenchidos para facilitar.</span>
             <a class="btn" href="mailto:recati.com@gmail.com?subject=${emailSubject}&body=${emailBody}">Enviar e-mail</a>
           </article>
 
           <article class="link-box">
-            <strong>Instagram (tempor·rio)</strong>
-            <span class="small">AtÈ o perfil oficial da RECATI ficar pronto.</span>
+            <strong>Instagram (tempor√°rio)</strong>
+            <span class="small">At√© o perfil oficial da RECATI ficar pronto.</span>
             <a class="btn" target="_blank" rel="noreferrer" href="https://www.instagram.com/">Abrir Instagram</a>
           </article>
 
           <article class="link-box">
-            <strong>PrÛximo passo</strong>
-            <span class="small">Se quiser, a RECATI j· entrega esse template personalizado para sua marca.</span>
-            <button class="btn" type="button" id="goAgendaFromContact">Quero agendar uma demonstraÁ„o</button>
+            <strong>Pr√≥ximo passo</strong>
+            <span class="small">Se quiser, a RECATI j√° entrega esse template personalizado para sua marca.</span>
+            <button class="btn" type="button" id="goAgendaFromContact">Quero agendar uma demonstra√ß√£o</button>
           </article>
         </div>
 
         <div class="contact-note">
-          Dica comercial: combine este fluxo com confirmaÁ„o autom·tica de hor·rio e lembrete em WhatsApp para reduzir faltas e aumentar retorno.
+          Dica comercial: combine este fluxo com confirma√ß√£o autom√°tica de hor√°rio e lembrete em WhatsApp para reduzir faltas e aumentar retorno.
         </div>
       </div>
     `;

@@ -240,7 +240,7 @@
             <div class="panel" style="margin-bottom:8px;">
               <strong>${pedido.tipo === "DELIVERY" ? "Delivery" : `Mesa ${pedido.mesa}`}</strong>
               <p class="small">${pedido.item}</p>
-              <p class="small">${pedido.observacao || "Sem observação"}</p>
+              <p class="small">${pedido.observacao || "Sem observaÃ§Ã£o"}</p>
               <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
                 <span class="status-chip">${pedido.status}</span>
                 <select data-status="${pedido.id}">
@@ -254,7 +254,7 @@
           `
           )
           .join("")
-      : `<p class="small">Sem pedidos em produção.</p>`;
+      : `<p class="small">Sem pedidos em produÃ§Ã£o.</p>`;
 
     cozinhaList.querySelectorAll("select[data-status]").forEach((select) => {
       select.addEventListener("change", () => {
@@ -277,7 +277,7 @@
           <label>Mesa
             <select name="mesa" required>${mesaOptions}</select>
           </label>
-          <label>Método
+          <label>MÃ©todo
             <select name="metodo" required>
               <option>DINHEIRO</option>
               <option>PIX</option>
@@ -300,7 +300,7 @@
 
       <div class="panel" style="margin-top:10px;">
         <table>
-          <thead><tr><th>Data</th><th>Mesa</th><th>Método</th><th>Valor</th></tr></thead>
+          <thead><tr><th>Data</th><th>Mesa</th><th>MÃ©todo</th><th>Valor</th></tr></thead>
           <tbody>
             ${state.pagamentos.length
               ? state.pagamentos
@@ -344,7 +344,7 @@
             <input name="telefone" required />
           </label>
         </div>
-        <label>Endereço
+        <label>EndereÃ§o
           <input name="endereco" required />
         </label>
         <div class="grid-2">

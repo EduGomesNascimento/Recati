@@ -18,9 +18,9 @@
   };
 
   const seedProducts = [
-    { id: crypto.randomUUID(), nome: "Pão francês", preco: 1.2, estoque: 150, categoria: "Padaria" },
+    { id: crypto.randomUUID(), nome: "PÃ£o francÃªs", preco: 1.2, estoque: 150, categoria: "Padaria" },
     { id: crypto.randomUUID(), nome: "Cuca de uva", preco: 21.9, estoque: 12, categoria: "Doces" },
-    { id: crypto.randomUUID(), nome: "Café coado", preco: 4.5, estoque: 80, categoria: "Bebidas" },
+    { id: crypto.randomUUID(), nome: "CafÃ© coado", preco: 4.5, estoque: 80, categoria: "Bebidas" },
     { id: crypto.randomUUID(), nome: "Salgado assado", preco: 8.9, estoque: 40, categoria: "Lanches" },
   ];
 
@@ -33,7 +33,7 @@
     {
       id: crypto.randomUUID(),
       codigo: "C-101",
-      mesa: "Balcão",
+      mesa: "BalcÃ£o",
       status: "ABERTO",
       criadoEm: new Date().toISOString(),
       itens: [],
@@ -55,8 +55,8 @@
   const views = [
     ["comandas", "Comandas"],
     ["pagamentos", "Pagamentos"],
-    ["produtos", "Produtos e Serviços"],
-    ["opcoes", "Opções"],
+    ["produtos", "Produtos e ServiÃ§os"],
+    ["opcoes", "OpÃ§Ãµes"],
   ];
 
   const state = {
@@ -112,14 +112,14 @@
     const selected = getSelectedComanda();
 
     content.innerHTML = `
-      <h2>Códigos de Comanda</h2>
+      <h2>CÃ³digos de Comanda</h2>
       <form id="novaComandaForm" class="panel">
         <div class="grid-2">
-          <label>Código
+          <label>CÃ³digo
             <input name="codigo" required placeholder="Ex.: C-303" />
           </label>
-          <label>Mesa/Identificação
-            <input name="mesa" required placeholder="Ex.: Mesa 8 ou Balcão" />
+          <label>Mesa/IdentificaÃ§Ã£o
+            <input name="mesa" required placeholder="Ex.: Mesa 8 ou BalcÃ£o" />
           </label>
         </div>
         <button class="action-btn" type="submit">Cadastrar comanda</button>
@@ -128,7 +128,7 @@
       <div class="panel" style="margin-top:10px;">
         <strong>Comandas</strong>
         <table>
-          <thead><tr><th>Código</th><th>Mesa</th><th>Status</th><th>Total</th><th>Ações</th></tr></thead>
+          <thead><tr><th>CÃ³digo</th><th>Mesa</th><th>Status</th><th>Total</th><th>AÃ§Ãµes</th></tr></thead>
           <tbody id="comandasRows"></tbody>
         </table>
       </div>
@@ -323,7 +323,7 @@
               ${state.comandas.map((comanda) => `<option value="${comanda.id}" ${selected && comanda.id === selected.id ? "selected" : ""}>${comanda.codigo} - ${comanda.mesa}</option>`).join("")}
             </select>
           </label>
-          <label>Método
+          <label>MÃ©todo
             <select name="metodo" required>
               <option>DINHEIRO</option>
               <option>PIX</option>
@@ -349,7 +349,7 @@
       <div class="panel" style="margin-top:10px;">
         <strong>Pagamentos da comanda</strong>
         <table>
-          <thead><tr><th>Data</th><th>Comanda</th><th>Método</th><th>Valor</th></tr></thead>
+          <thead><tr><th>Data</th><th>Comanda</th><th>MÃ©todo</th><th>Valor</th></tr></thead>
           <tbody>
             ${state.payments.length
               ? state.payments
@@ -397,7 +397,7 @@
 
   function renderProdutos() {
     content.innerHTML = `
-      <h2>Produtos e Serviços</h2>
+      <h2>Produtos e ServiÃ§os</h2>
       <div class="grid-2">
         <form id="productForm" class="panel">
           <label>Nome
@@ -407,7 +407,7 @@
             <input name="categoria" required placeholder="Padaria, Bebidas, etc." />
           </label>
           <div class="grid-2">
-            <label>Preço
+            <label>PreÃ§o
               <input name="preco" type="number" min="0.01" step="0.01" required />
             </label>
             <label>Estoque
@@ -421,7 +421,7 @@
           <label>Adicional
             <input name="nome" required placeholder="Ex.: Embalagem premium" />
           </label>
-          <label>Preço
+          <label>PreÃ§o
             <input name="preco" type="number" min="0.01" step="0.01" required />
           </label>
           <button class="action-btn" type="submit">Adicionar adicional</button>
@@ -431,7 +431,7 @@
 
       <div class="panel" style="margin-top:10px;">
         <table>
-          <thead><tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Ações</th></tr></thead>
+          <thead><tr><th>Produto</th><th>Categoria</th><th>PreÃ§o</th><th>Estoque</th><th>AÃ§Ãµes</th></tr></thead>
           <tbody id="productRows"></tbody>
         </table>
       </div>
@@ -469,7 +469,7 @@
           } else {
             const nome = prompt("Nome", product.nome) || product.nome;
             const categoria = prompt("Categoria", product.categoria) || product.categoria;
-            const preco = Number(prompt("Preço", String(product.preco)) || product.preco);
+            const preco = Number(prompt("PreÃ§o", String(product.preco)) || product.preco);
             const estoque = Number(prompt("Estoque", String(product.estoque)) || product.estoque);
             Object.assign(product, { nome, categoria, preco, estoque });
           }
@@ -530,12 +530,12 @@
 
   function renderOpcoes() {
     content.innerHTML = `
-      <h2>Parâmetros customizáveis</h2>
+      <h2>ParÃ¢metros customizÃ¡veis</h2>
       <form id="configForm" class="panel">
         <label>Nome da empresa
           <input name="empresa" value="${state.config.empresa}" required />
         </label>
-        <label>Subtítulo
+        <label>SubtÃ­tulo
           <input name="subtitulo" value="${state.config.subtitulo}" required />
         </label>
         <label>PIX
@@ -543,12 +543,12 @@
         </label>
         <label class="small" style="display:flex;gap:8px;align-items:center;">
           <input type="checkbox" name="temaEscuro" ${state.config.temaEscuro ? "checked" : ""} style="width:auto;margin:0;" />
-          Simular tema escuro na operação
+          Simular tema escuro na operaÃ§Ã£o
         </label>
-        <button class="action-btn" type="submit">Salvar configurações</button>
+        <button class="action-btn" type="submit">Salvar configuraÃ§Ãµes</button>
       </form>
       <div class="panel" style="margin-top:10px;">
-        <p class="small">Essas opções simulam o painel de configuração do ERP original e ficam salvas localmente no navegador.</p>
+        <p class="small">Essas opÃ§Ãµes simulam o painel de configuraÃ§Ã£o do ERP original e ficam salvas localmente no navegador.</p>
       </div>
     `;
 
@@ -563,7 +563,7 @@
         temaEscuro: data.get("temaEscuro") === "on",
       };
       persist();
-      alert("Configurações salvas.");
+      alert("ConfiguraÃ§Ãµes salvas.");
     });
   }
 
