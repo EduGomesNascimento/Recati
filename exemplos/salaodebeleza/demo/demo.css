@@ -69,20 +69,26 @@ body.demo-salao {
 .demo-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 12px;
+  gap: 0;
   margin-top: 12px;
-}
-
-.demo-menu,
-.demo-content {
   border-radius: 16px;
   border: 1px solid #f1ccdc;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 14px 34px rgba(187, 123, 154, 0.14);
 }
 
+.demo-menu,
+.demo-content {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 .demo-menu {
   padding: 12px;
+  border-right: 1px solid #f1ccdc;
 }
 
 .demo-menu button {
@@ -322,7 +328,13 @@ th {
 }
 
 @media (max-width: 980px) {
-  .demo-layout { grid-template-columns: 1fr; }
+  .demo-layout {
+    grid-template-columns: 1fr;
+  }
+  .demo-menu {
+    border-right: 0;
+    border-bottom: 1px solid #f1ccdc;
+  }
   .hero-grid,
   .grid-2,
   .contact-grid,
