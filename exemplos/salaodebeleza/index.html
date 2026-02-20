@@ -3,28 +3,229 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template - salaodebeleza</title>
-    <link rel="stylesheet" href="../exemplos.css" />
-    <link rel="stylesheet" href="./template.css" />
+    <title>Salão Essencial | Home</title>
+    <meta name="description" content="Site de salão com foco em atendimento, agendamento e relacionamento." />
+    <link rel="icon" href="../../assets/icons/salao-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./salao.css" />
   </head>
-  <body data-slug="salaodebeleza">
-    <header class="topbar">
-      <a class="brand" href="../index.html">Exemplos</a>
-      <nav>
-        <a href="../index.html">Galeria</a>
-        <a href="../../index.html">Voltar ao Recati</a>
-      </nav>
+  <body>
+    <header class="sb-header">
+      <div class="container sb-header-inner">
+        <a class="sb-brand" href="./index.html">
+          <img src="../../img/mulherladocabelo.png" alt="Salão Essencial" />
+          <span>Salão Essencial</span>
+        </a>
+
+        <button class="sb-menu-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+
+        <nav class="sb-nav" aria-label="Navegação principal">
+          <a class="is-active" href="./index.html">Home</a>
+          <a href="./sobre.html">Sobre</a>
+          <a href="./contato.html">Contato</a>
+          <a href="../../index.html">Voltar ao Recati</a>
+        </nav>
+
+        <a class="sb-btn sb-btn-primary js-sb-wa" target="_blank" rel="noreferrer" data-service="Agendamento inicial">Agendar</a>
+      </div>
     </header>
 
-    <main class="page">
-      <section id="detailHero" class="detail-hero"></section>
-      <section class="shot"></section>
-      <section class="cta actions">
-        <a id="demoLink" class="btn" href="./demo/">Ver demo</a>
-        <button id="baseBtn" class="btn ghost" type="button">Usar como base (em breve)</button>
-      </section>
+    <section class="sb-hero sb-reveal">
+      <div class="sb-hero-track">
+        <article class="sb-hero-slide is-active">
+          <img src="../../img/salongeneric.png" alt="Fachada de salão elegante" />
+        </article>
+        <article class="sb-hero-slide">
+          <img src="../../img/mulher cabelo.png" alt="Produção feminina com acabamento sofisticado" />
+        </article>
+        <article class="sb-hero-slide">
+          <img src="../../img/cabelosbonitos.png" alt="Cabelos com brilho e finalização" />
+        </article>
+
+        <div class="sb-hero-content">
+          <span class="sb-kicker">Salão de beleza e estética</span>
+          <h1>Seu novo visual começa com um atendimento pensado para você.</h1>
+          <p>
+            Um exemplo completo de home para salão: imagem forte, serviços claros e contato direto no WhatsApp.
+          </p>
+          <div class="sb-hero-actions">
+            <a class="sb-btn sb-btn-primary js-sb-wa" target="_blank" rel="noreferrer" data-service="Quero agendar no Salão Essencial">
+              Agendar no WhatsApp
+            </a>
+            <a class="sb-btn" href="./contato.html">Falar com a equipe</a>
+          </div>
+        </div>
+
+        <div class="sb-hero-dots" aria-label="Navegação do slide"></div>
+      </div>
+    </section>
+
+    <main class="sb-main">
+      <div class="container">
+        <section class="sb-section sb-intro sb-reveal">
+          <h2>Beleza prática com experiência premium</h2>
+          <p class="sb-muted">
+            Do primeiro contato ao pós-atendimento, tudo é feito para facilitar seu agendamento e valorizar seu estilo.
+          </p>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <div class="sb-section-head">
+            <h2>Serviços mais procurados</h2>
+            <a class="sb-btn" href="./contato.html">Montar atendimento</a>
+          </div>
+          <div class="sb-grid sb-grid-3">
+            <article class="sb-card sb-service-card">
+              <img src="../../img/cabelosbonitos.png" alt="Hair stylist" />
+              <div class="sb-card-body">
+                <h3>Hair Stylist</h3>
+                <p>Corte com consultoria de estilo para valorizar o formato do rosto.</p>
+                <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Hair Stylist">Agendar</a>
+              </div>
+            </article>
+            <article class="sb-card sb-service-card">
+              <img src="../../img/mulherladocabelo.png" alt="Dia da noiva" />
+              <div class="sb-card-body">
+                <h3>Dia da Noiva</h3>
+                <p>Pacote completo com maquiagem, penteado e cronograma personalizado.</p>
+                <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Dia da Noiva">Agendar</a>
+              </div>
+            </article>
+            <article class="sb-card sb-service-card">
+              <img src="../../img/mulher cabelo.png" alt="Maquiagem" />
+              <div class="sb-card-body">
+                <h3>Maquiagem</h3>
+                <p>Make social e de eventos com acabamento de longa duração.</p>
+                <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Maquiagem">Agendar</a>
+              </div>
+            </article>
+            <article class="sb-card sb-service-card">
+              <img src="../../img/barbeiro.webp" alt="Barbearia" />
+              <div class="sb-card-body">
+                <h3>Barbearia</h3>
+                <p>Barba e cabelo masculino com execução rápida e precisa.</p>
+                <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Barbearia">Agendar</a>
+              </div>
+            </article>
+            <article class="sb-card sb-service-card">
+              <img src="../../img/loiracabeluda.avif" alt="Coloração" />
+              <div class="sb-card-body">
+                <h3>Coloração</h3>
+                <p>Loiros e ruivos com planejamento para brilho e manutenção saudável.</p>
+                <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Coloração">Agendar</a>
+              </div>
+            </article>
+            <article class="sb-card sb-service-card">
+              <img src="../../img/mulher cabelo.png" alt="Penteados" />
+              <div class="sb-card-body">
+                <h3>Penteados</h3>
+                <p>Modelagens para festas, casamentos e ensaios profissionais.</p>
+                <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Penteado">Agendar</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <div class="sb-about">
+            <article class="sb-card sb-about-media">
+              <img src="../../img/mulher cabelo.png" alt="Equipe e atendimento" />
+            </article>
+            <article class="sb-card">
+              <div class="sb-card-body">
+                <h2>Sobre o Salão Essencial</h2>
+                <p>
+                  Nossa proposta é unir técnica, atendimento acolhedor e agendamento simples.
+                  Você conversa com a equipe, recebe orientações objetivas e sai com um resultado bonito e fácil de manter.
+                </p>
+                <div class="sb-highlights">
+                  <div class="sb-highlight">
+                    <strong>Consultoria personalizada</strong>
+                    <span>Entendemos seu objetivo antes de indicar qualquer procedimento.</span>
+                  </div>
+                  <div class="sb-highlight">
+                    <strong>Equipe especializada</strong>
+                    <span>Profissionais focados em corte, cor, maquiagem e penteados.</span>
+                  </div>
+                  <div class="sb-highlight">
+                    <strong>Agenda inteligente</strong>
+                    <span>Confirmação por WhatsApp para reduzir faltas e atrasos.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <div class="sb-section-head">
+            <h2>Produções em destaque</h2>
+          </div>
+          <div class="sb-grid sb-grid-gallery">
+            <article class="sb-card"><img src="../../img/cabelosbonitos.png" alt="Produção loira" /></article>
+            <article class="sb-card"><img src="../../img/mulherladocabelo.png" alt="Produção para noiva" /></article>
+            <article class="sb-card"><img src="../../img/loiracabeluda.avif" alt="Coloração ruiva" /></article>
+            <article class="sb-card"><img src="../../img/mulher cabelo.png" alt="Maquiagem elegante" /></article>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <div class="sb-section-head">
+            <h2>Depoimentos</h2>
+          </div>
+          <div class="sb-grid sb-grid-3">
+            <article class="sb-card sb-testimonial">
+              <p>"Atendimento impecável, escutaram exatamente o que eu queria e o resultado ficou lindo."</p>
+              <strong>Carla Mendes</strong>
+            </article>
+            <article class="sb-card sb-testimonial">
+              <p>"Consegui agendar tudo pelo WhatsApp em minutos, equipe muito atenciosa."</p>
+              <strong>Priscila Rocha</strong>
+            </article>
+            <article class="sb-card sb-testimonial">
+              <p>"Virei cliente fixa, porque o cuidado no pós-atendimento faz muita diferença."</p>
+              <strong>Juliana Araujo</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <article class="sb-cta">
+            <div>
+              <h3>Pronta para reservar seu horário?</h3>
+              <p>Fale agora com a equipe e monte o atendimento ideal para sua rotina.</p>
+            </div>
+            <div class="sb-cta-actions">
+              <a class="sb-btn sb-btn-primary js-sb-wa" target="_blank" rel="noreferrer" data-service="Agendamento pela home">Agendar</a>
+              <a class="sb-btn" href="./sobre.html">Conhecer o salão</a>
+            </div>
+          </article>
+        </section>
+      </div>
     </main>
 
-    <script type="module" src="./template.js"></script>
+    <footer class="sb-footer">
+      <div class="container sb-footer-inner">
+        <div>
+          <h4>Salão Essencial</h4>
+          <p>Modelo de site para salão com home forte, conteúdo e conversão para WhatsApp.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <p><a href="./index.html">Home</a></p>
+          <p><a href="./sobre.html">Sobre</a></p>
+          <p><a href="./contato.html">Contato</a></p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p>WhatsApp: (51) 99795-0492</p>
+          <p>E-mail: recati.com@gmail.com</p>
+          <p><a href="../../index.html">Voltar ao Recati</a></p>
+        </div>
+      </div>
+      <div class="container sb-footer-bottom">© <span data-current-year></span> Salão Essencial - Demo RECATI.</div>
+    </footer>
+
+    <script src="./salao.js"></script>
   </body>
 </html>
+

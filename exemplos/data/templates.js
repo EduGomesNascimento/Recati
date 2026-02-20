@@ -14,14 +14,16 @@
   },
   {
     slug: "salaodebeleza",
-    title: "Salão de Beleza",
+    title: "Salão Essencial (Site simples)",
     category: "Landing",
     segment: "Salão",
-    level: "Simples",
-    tags: ["agenda", "servicos", "whatsapp", "contato"],
-    summary: "Site completo para salão com agenda e contato rápido.",
-    features: ["Agenda", "WhatsApp", "Serviços", "Contato"],
+    level: "Médio",
+    tags: ["home", "sobre", "contato", "whatsapp", "agendamento", "slider"],
+    summary: "Versão enxuta e moderna com Home, Sobre e Contato, inspirada na estrutura do premium.",
+    features: ["Hero com slider", "Serviços em cards", "Sessões de prova social", "WhatsApp", "Contato com formulário e mapa"],
     stack: "HTML, CSS e JavaScript",
+    detailPath: "./salaodebeleza/index.html",
+    demoPath: "./salaodebeleza/index.html",
   },
   {
     slug: "erp-padaria",
@@ -29,9 +31,9 @@
     category: "ERP",
     segment: "Padaria",
     level: "Avançado",
-    tags: ["caixa", "vendas", "estoque", "clientes", "relatorios"],
-    summary: "Controle de produtos, caixa e relatórios com dados locais.",
-    features: ["Produtos CRUD", "Caixa", "Clientes", "Relatórios"],
+    tags: ["caixa", "mobile", "comandas", "pagamentos", "produtos", "relatorios"],
+    summary: "Espelho funcional do PadariaERP com app mobile, caixa desktop, comandas e relatórios.",
+    features: ["Comandas em tempo real", "Painel mobile", "Pagamentos", "Produtos e adicionais", "Relatórios"],
     stack: "HTML, CSS e JavaScript",
   },
   {
@@ -40,9 +42,9 @@
     category: "ERP",
     segment: "Restaurante",
     level: "Avançado",
-    tags: ["mesas", "pedidos", "cozinha", "delivery"],
-    summary: "Gestão de mesas, pedidos e cozinha em tempo real.",
-    features: ["Mesas", "Pedidos", "Cozinha", "Delivery"],
+    tags: ["churrascaria", "mobile", "caixa", "comandas", "delivery", "pagamentos"],
+    summary: "Espelho funcional do ChurrascariaERP com fluxo completo de pedidos no mobile e no caixa.",
+    features: ["Comandas", "Pedidos", "Caixa desktop", "Pagamentos", "Customização de interface"],
     stack: "HTML, CSS e JavaScript",
   },
   {
@@ -57,3 +59,4 @@
     stack: "HTML, CSS e JavaScript",
   }
 ];
+

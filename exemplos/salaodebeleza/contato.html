@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salão Essencial | Contato</title>
+    <meta name="description" content="Fale com o Salão Essencial por WhatsApp, e-mail ou formulário." />
+    <link rel="icon" href="../../assets/icons/salao-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./salao.css" />
+  </head>
+  <body>
+    <header class="sb-header">
+      <div class="container sb-header-inner">
+        <a class="sb-brand" href="./index.html">
+          <img src="../../img/mulherladocabelo.png" alt="Salão Essencial" />
+          <span>Salão Essencial</span>
+        </a>
+
+        <button class="sb-menu-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+
+        <nav class="sb-nav" aria-label="Navegação principal">
+          <a href="./index.html">Home</a>
+          <a href="./sobre.html">Sobre</a>
+          <a class="is-active" href="./contato.html">Contato</a>
+          <a href="../../index.html">Voltar ao Recati</a>
+        </nav>
+
+        <a class="sb-btn sb-btn-primary js-sb-wa" target="_blank" rel="noreferrer" data-service="Agendamento pela página contato">Agendar</a>
+      </div>
+    </header>
+
+    <main class="sb-main">
+      <div class="container">
+        <section class="sb-page-hero sb-reveal">
+          <div class="sb-page-hero-box">
+            <h1>Contato</h1>
+            <p class="sb-muted">Agende seu horário, tire dúvidas e receba uma sugestão de atendimento em poucos minutos.</p>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <div class="sb-grid sb-grid-3">
+            <article class="sb-card sb-contact-card">
+              <h3>WhatsApp</h3>
+              <p>Resposta rápida para agendamentos e encaixes.</p>
+              <a class="sb-inline-link js-sb-wa" target="_blank" rel="noreferrer" data-service="Contato direto pelo WhatsApp">(51) 99795-0492</a>
+            </article>
+            <article class="sb-card sb-contact-card">
+              <h3>E-mail</h3>
+              <p>Solicitações comerciais e dúvidas gerais.</p>
+              <a class="sb-inline-link" href="mailto:recati.com@gmail.com?subject=Contato%20Sal%C3%A3o%20Essencial&body=Ol%C3%A1%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20do%20Sal%C3%A3o%20Essencial.">recati.com@gmail.com</a>
+            </article>
+            <article class="sb-card sb-contact-card">
+              <h3>Horários</h3>
+              <p>Segunda a sábado</p>
+              <p><strong>09h às 20h</strong></p>
+              <p>Av. Paulista, 1578 - São Paulo/SP</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <div class="sb-grid sb-grid-2">
+            <article class="sb-card">
+              <img src="../../img/mulher cabelo.png" alt="Atendimento do salão" />
+              <div class="sb-card-body">
+                <h3>Fale com a equipe</h3>
+                <p>
+                  Conte como deseja seu atendimento e receba uma proposta rápida com os serviços ideais para seu objetivo.
+                </p>
+                <p>
+                  <a class="sb-btn sb-btn-primary js-sb-wa" target="_blank" rel="noreferrer" data-service="Quero atendimento personalizado">Agendar no WhatsApp</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="sb-card">
+              <div class="sb-card-body">
+                <h3>Mensagem rápida</h3>
+                <form id="sbContactForm" class="sb-form" novalidate>
+                  <div class="sb-form-row">
+                    <input class="sb-input" type="text" name="nome" placeholder="Nome" required />
+                    <input class="sb-input" type="tel" name="telefone" placeholder="WhatsApp" required />
+                  </div>
+                  <div class="sb-form-row">
+                    <select id="sbService" class="sb-select" name="servico" required>
+                      <option value="">Serviço desejado</option>
+                      <option value="Hair Stylist">Hair Stylist</option>
+                      <option value="Dia da Noiva">Dia da Noiva</option>
+                      <option value="Maquiagem">Maquiagem</option>
+                      <option value="Barbearia">Barbearia</option>
+                    </select>
+                    <input id="sbSchedule" class="sb-input" type="datetime-local" name="horario" />
+                  </div>
+                  <textarea class="sb-textarea" name="mensagem" placeholder="Conte como você quer seu atendimento."></textarea>
+                  <div class="sb-form-actions">
+                    <button class="sb-btn sb-btn-primary" type="submit">Enviar</button>
+                    <a
+                      class="sb-btn js-sb-wa"
+                      target="_blank"
+                      rel="noreferrer"
+                      data-service="Atendimento"
+                      data-service-input="sbService"
+                      data-schedule-input="sbSchedule"
+                    >
+                      Agendar via WhatsApp
+                    </a>
+                  </div>
+                </form>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="sb-section sb-reveal">
+          <iframe
+            class="sb-map"
+            title="Mapa Salão Essencial"
+            src="https://maps.google.com/maps?q=Avenida%20Paulista%201578%20S%C3%A3o%20Paulo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
+      </div>
+    </main>
+
+    <footer class="sb-footer">
+      <div class="container sb-footer-inner">
+        <div>
+          <h4>Salão Essencial</h4>
+          <p>Agenda prática, atendimento humano e foco em resultado.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <p><a href="./index.html">Home</a></p>
+          <p><a href="./sobre.html">Sobre</a></p>
+          <p><a href="./contato.html">Contato</a></p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p>WhatsApp: (51) 99795-0492</p>
+          <p>E-mail: recati.com@gmail.com</p>
+        </div>
+      </div>
+      <div class="container sb-footer-bottom">© <span data-current-year></span> Salão Essencial - Demo RECATI.</div>
+    </footer>
+
+    <div id="sbToast" class="sb-toast" role="status" aria-live="polite"></div>
+    <script src="./salao.js"></script>
+  </body>
+</html>
+
