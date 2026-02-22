@@ -47,22 +47,32 @@ body:not(.gate-locked) .site {
 
 .gate {
   min-height: 100vh;
+  min-height: 100svh;
   height: 100vh;
+  height: 100svh;
   background: #000;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: clamp(14px, 2.6vh, 24px);
   text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .gate-inner {
-  max-width: 860px;
+  width: min(860px, 94vw);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.8vh, 18px);
 }
 
 .gate-logo {
   display: block;
-  width: min(460px, 72vw);
-  margin: 0 auto 20px;
+  width: min(390px, 46vh, 64vw);
+  margin: 0 auto;
   padding: 16px 24px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -88,8 +98,8 @@ body:not(.gate-locked) .site {
 }
 
 .gate h1 {
-  margin: 0 0 24px;
-  font-size: clamp(34px, 5.4vw, 72px);
+  margin: 0;
+  font-size: clamp(30px, 6vmin, 62px);
   line-height: 1.12;
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -133,14 +143,14 @@ body:not(.gate-locked) .site {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  padding: 18px 40px;
+  padding: 15px 32px;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
   text-decoration: none;
   font-weight: 800;
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: clamp(20px, 2.6vw, 28px);
   letter-spacing: 0.6px;
   transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
@@ -150,7 +160,7 @@ body:not(.gate-locked) .site {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: min(680px, 92vw);
+  width: min(620px, 92vw);
   margin: 0 auto;
 }
 
@@ -351,14 +361,14 @@ h3 {
 
 .skip-intro-btn {
   display: inline-block;
-  padding: 18px 24px;
+  padding: 15px 22px;
   border-radius: 16px;
   border: 1px solid var(--border);
   color: var(--muted);
   text-decoration: none;
   background: rgba(255, 255, 255, 0.04);
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
@@ -605,6 +615,10 @@ body.site-ready .scroll-hint {
 }
 
 @media (max-width: 860px) {
+  .intro {
+    height: 340vh;
+  }
+
   .topbar-inner {
     flex-direction: column;
     gap: 8px;
@@ -633,6 +647,32 @@ body.site-ready .scroll-hint {
 
   .help-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-height: 860px) {
+  .gate-logo {
+    width: min(320px, 58vw);
+  }
+
+  .gate h1 {
+    font-size: clamp(26px, 4.3vw, 50px);
+  }
+
+  .enter-btn,
+  .skip-intro-btn {
+    padding: 12px 20px;
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+}
+
+@media (max-height: 700px) {
+  .gate-logo {
+    width: min(260px, 50vw);
+  }
+
+  .gate h1 {
+    font-size: clamp(22px, 3.8vw, 40px);
   }
 }
 

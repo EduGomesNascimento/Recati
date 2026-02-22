@@ -6,11 +6,15 @@
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.015;
   const SEEK_FPS = 30;
+  const MOBILE_SEEK_FPS = 20;
   const SMOOTH_RESPONSE = 7.2;
+  const MOBILE_SMOOTH_RESPONSE = 5.2;
   const VIDEO_SCALE = 0.86;
+  const MOBILE_VIDEO_SCALE = 0.9;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
   const MIN_TIME_STEP = 1 / 36;
+  const MOBILE_MIN_TIME_STEP = 1 / 24;
   const END_LOCK_SCROLL = 0.998;
   const END_ZONE_START = 0.9;
   const SEEK_STALL_RESET_MS = 240;
@@ -18,6 +22,9 @@
   const BG_SAMPLE_W_RATIO = 0.16;
   const EDGE_OVERLAP_PX = 2;
   const TOP_CORNER_SAMPLE_RATIO = 0.14;
+  const MOBILE_MEDIA_QUERY = "(max-width: 900px), (pointer: coarse)";
+  const MOBILE_MAX_DPR = 1.25;
+  const DESKTOP_MAX_DPR = 2;
 
   const enterBtn = document.getElementById("enterAccessBtn");
   const skipBtn = document.getElementById("skipIntroBtn");
@@ -25,7 +32,8 @@
   const intro = document.getElementById("intro");
   const site = document.getElementById("site");
   const canvas = document.getElementById("heroCanvas");
-  const ctx = canvas.getContext("2d", { alpha: false });
+  const ctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
+  let mobileMode = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
   let lockRafId = null;
   const INTRO_VIEWS_KEY = "recati_intro_views";
   const params = new URLSearchParams(window.location.search);
@@ -115,6 +123,7 @@
   let seekBusy = false;
   let queuedTime = null;
   let hasRVFC = false;
+  let lastDrawAt = 0;
 
   function clamp(n, a, b) {
     return Math.max(a, Math.min(b, n));
@@ -144,7 +153,7 @@
     const iw = video.videoWidth;
     const ih = video.videoHeight;
 
-    const scale = Math.min(cw / iw, ch / ih) * VIDEO_SCALE;
+    const scale = Math.min(cw / iw, ch / ih) * (mobileMode ? MOBILE_VIDEO_SCALE : VIDEO_SCALE);
     const sw = iw * scale;
     const sh = ih * scale;
     const dx = (cw - sw) / 2;
@@ -161,21 +170,23 @@
     const cornerW = Math.max(2, Math.floor(iw * TOP_CORNER_SAMPLE_RATIO));
     const overlap = EDGE_OVERLAP_PX;
 
-    if (sideW > 0) {
-      ctx.drawImage(video, 0, 0, sampleW, BG_SAMPLE_H, 0, 0, sideW + overlap, ch);
-    }
+    if (!mobileMode) {
+      if (sideW > 0) {
+        ctx.drawImage(video, 0, 0, sampleW, BG_SAMPLE_H, 0, 0, sideW + overlap, ch);
+      }
 
-    if (rightW > 0) {
-      ctx.drawImage(video, iw - sampleW, 0, sampleW, BG_SAMPLE_H, rightX - overlap, 0, rightW + overlap, ch);
-    }
+      if (rightW > 0) {
+        ctx.drawImage(video, iw - sampleW, 0, sampleW, BG_SAMPLE_H, rightX - overlap, 0, rightW + overlap, ch);
+      }
 
-    if (topH > 0) {
-      // Fill top gap using only corner strips to avoid ear artifacts near the center.
-      const destX = Math.floor(dx) - overlap;
-      const destW = Math.ceil(sw) + overlap * 2;
-      const halfW = Math.ceil(destW / 2);
-      ctx.drawImage(video, 0, 0, cornerW, BG_SAMPLE_H, destX, 0, halfW, topH);
-      ctx.drawImage(video, iw - cornerW, 0, cornerW, BG_SAMPLE_H, destX + halfW, 0, destW - halfW, topH);
+      if (topH > 0) {
+        // Fill top gap using only corner strips to avoid ear artifacts near the center.
+        const destX = Math.floor(dx) - overlap;
+        const destW = Math.ceil(sw) + overlap * 2;
+        const halfW = Math.ceil(destW / 2);
+        ctx.drawImage(video, 0, 0, cornerW, BG_SAMPLE_H, destX, 0, halfW, topH);
+        ctx.drawImage(video, iw - cornerW, 0, cornerW, BG_SAMPLE_H, destX + halfW, 0, destW - halfW, topH);
+      }
     }
 
     ctx.drawImage(video, dx, dy, sw, sh);
@@ -197,13 +208,19 @@
   }
 
   function resizeCanvas() {
+    mobileMode = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
     vw = window.innerWidth;
     vh = window.innerHeight;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dprMax = mobileMode ? MOBILE_MAX_DPR : DESKTOP_MAX_DPR;
+    const dpr = Math.min(window.devicePixelRatio || 1, dprMax);
     canvas.width = Math.floor(vw * dpr);
     canvas.height = Math.floor(vh * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    if ("imageSmoothingQuality" in ctx) {
+      ctx.imageSmoothingQuality = mobileMode ? "medium" : "high";
+    }
     drawFrame();
   }
 
@@ -212,10 +229,12 @@
 
     const safeDuration = Number.isFinite(video.duration) ? video.duration : FREEZE_TIME;
     const nextTime = clamp(time, START_TIME, Math.min(FREEZE_TIME, safeDuration));
-    const minSeekInterval = 1000 / SEEK_FPS;
+    const seekFps = mobileMode ? MOBILE_SEEK_FPS : SEEK_FPS;
+    const minSeekInterval = 1000 / seekFps;
+    const minTimeStep = mobileMode ? MOBILE_MIN_TIME_STEP : MIN_TIME_STEP;
 
-    if (Math.abs(lastRequestedTime - nextTime) <= MIN_TIME_STEP * 0.5) return;
-    if (Math.abs(video.currentTime - nextTime) <= MIN_TIME_STEP * 0.5) return;
+    if (Math.abs(lastRequestedTime - nextTime) <= minTimeStep * 0.5) return;
+    if (Math.abs(video.currentTime - nextTime) <= minTimeStep * 0.5) return;
 
     // Serialize seeks to avoid decode thrash near the end.
     if (seekBusy || video.seeking || nowMs - lastSeekAt < minSeekInterval) {
@@ -255,15 +274,21 @@
       lastTick = nowMs;
 
       // Exponential smoothing for a fluid scrub in both directions.
-      const alpha = 1 - Math.exp(-SMOOTH_RESPONSE * dt);
+      const smoothResponse = mobileMode ? MOBILE_SMOOTH_RESPONSE : SMOOTH_RESPONSE;
+      const alpha = 1 - Math.exp(-smoothResponse * dt);
       smoothTime += (targetTime - smoothTime) * alpha;
       if (targetTime === FREEZE_TIME && Math.abs(FREEZE_TIME - smoothTime) < 0.008) {
         smoothTime = FREEZE_TIME;
       }
 
       setReadyState(smoothTime >= FREEZE_TIME - SCROLL_SLOP);
-      seekToTime(smoothTime, nowMs);
-      drawFrame();
+      const minDrawInterval = mobileMode ? 1000 / 45 : 1000 / 60;
+      const shouldDraw = nowMs - lastDrawAt >= minDrawInterval || Math.abs(targetTime - smoothTime) > 0.002;
+      if (shouldDraw) {
+        seekToTime(smoothTime, nowMs);
+        drawFrame();
+        lastDrawAt = nowMs;
+      }
     }
     rafId = requestAnimationFrame(loop);
   }
@@ -291,6 +316,7 @@
 
     if (rafId) cancelAnimationFrame(rafId);
     lastTick = 0;
+    lastDrawAt = 0;
     rafId = requestAnimationFrame(loop);
     setupVideoFrameCallback();
   }
@@ -329,12 +355,13 @@
   window.addEventListener("resize", () => {
     resizeCanvas();
     updateTargetFromScroll();
+    lastDrawAt = 0;
   });
 
   video.load();
 
   function setupVideoFrameCallback() {
-    if (typeof video.requestVideoFrameCallback !== "function" || hasRVFC) return;
+    if (mobileMode || typeof video.requestVideoFrameCallback !== "function" || hasRVFC) return;
     hasRVFC = true;
 
     const onFrame = () => {
