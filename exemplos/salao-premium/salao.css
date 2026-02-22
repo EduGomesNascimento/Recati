@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
 
 :root {
   --bg: #f5f4f1;
@@ -209,6 +209,25 @@ a {
   padding: 24px;
   background: linear-gradient(170deg, #fff, #f8f5f0);
   box-shadow: var(--shadow);
+}
+
+.sp-page-hero-no-box {
+  max-width: 980px;
+}
+
+.sp-page-hero-no-box h1 {
+  margin: 0 0 6px;
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  letter-spacing: 0.02em;
+}
+
+.sp-page-hero-no-box h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.3rem, 2.7vw, 2rem);
+}
+
+.sp-page-hero-no-box p {
+  max-width: 76ch;
 }
 
 .sp-page-hero h1,
@@ -424,7 +443,7 @@ a {
   object-fit: cover;
   border-radius: 7px;
   border: 1px solid rgba(216, 159, 47, 0.24);
-  background: linear-gradient(180deg, #dedede 0%, #cccccc 100%);
+  background: transparent;
 }
 
 .sp-service-meta,
@@ -472,7 +491,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
-  background: linear-gradient(180deg, #dbdbdb 0%, #cfcfcf 100%);
+  background: transparent;
 }
 
 .sp-gallery-item img {
@@ -490,7 +509,7 @@ a {
   all: unset;
   cursor: pointer;
   display: block;
-  background: linear-gradient(180deg, #dbdbdb 0%, #cfcfcf 100%);
+  background: transparent;
 }
 
 .sp-gallery-item .sp-tag {
@@ -545,7 +564,7 @@ a {
   object-fit: contain;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.34);
-  background: #17181c;
+  background: transparent;
 }
 
 .sp-lightbox button {
@@ -669,26 +688,8 @@ a {
   color: var(--muted);
 }
 
-.sp-cta-strip .sp-hero-actions,
-.sp-contact-strip .sp-hero-actions {
+.sp-cta-strip .sp-hero-actions {
   justify-content: center;
-}
-
-.sp-contact-strip {
-  background:
-    linear-gradient(120deg, rgba(8, 8, 10, 0.95), rgba(26, 25, 30, 0.95)),
-    radial-gradient(480px 240px at 92% 20%, rgba(216, 159, 47, 0.25), transparent 75%);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: #eee7dc;
-}
-
-.sp-contact-strip h2 {
-  margin: 0 0 8px;
-  color: #f5d38e;
-}
-
-.sp-contact-strip p {
-  color: #ddcfbc;
 }
 
 .sp-space-top {
