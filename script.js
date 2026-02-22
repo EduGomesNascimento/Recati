@@ -15,18 +15,21 @@
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.015;
-  const SEEK_FPS = 30;
-  const MOBILE_SEEK_FPS = 24;
-  const SMOOTH_RESPONSE = 7.2;
-  const MOBILE_SMOOTH_RESPONSE = 5.2;
+  const SEEK_FPS = 36;
+  const MOBILE_SEEK_FPS = 30;
+  const SMOOTH_RESPONSE = 6.6;
+  const MOBILE_SMOOTH_RESPONSE = 4.8;
   const VIDEO_SCALE = 0.86;
   const MOBILE_VIDEO_SCALE = 0.92;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
-  const MIN_TIME_STEP = 1 / 36;
-  const MOBILE_MIN_TIME_STEP = 1 / 24;
+  const MIN_TIME_STEP = 1 / 48;
+  const MOBILE_MIN_TIME_STEP = 1 / 36;
   const DESKTOP_DRAW_FPS = 60;
-  const MOBILE_DRAW_FPS = 45;
+  const MOBILE_DRAW_FPS = 52;
+  const SCROLL_SYNC_LEAD_DESKTOP = 0.03;
+  const SCROLL_SYNC_LEAD_MOBILE = 0.02;
+  const SCROLL_SYNC_DEADBAND_PX = 2;
   const END_LOCK_SCROLL = 0.998;
   const END_ZONE_START = 0.9;
   const SEEK_STALL_RESET_MS = 240;
@@ -172,6 +175,25 @@
     return introScrollRange > 0 ? scrolled / introScrollRange : 0;
   }
 
+  function syncScrollToPlayback() {
+    if (!intro || !initialized || document.body.classList.contains("gate-locked")) return;
+
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const introStart = introTop;
+    const introEnd = introTop + introScrollRange;
+    const introDone = document.body.classList.contains("site-ready");
+    if (scrollY < introStart) return;
+    if (introDone && scrollY > introEnd + 2) return;
+
+    const playbackProgress = clamp((smoothTime - START_TIME) / (FREEZE_TIME - START_TIME), 0, 1);
+    const lead = mobileMode ? SCROLL_SYNC_LEAD_MOBILE : SCROLL_SYNC_LEAD_DESKTOP;
+    const allowedProgress = clamp(playbackProgress + lead, 0, 1);
+    const maxScroll = introStart + allowedProgress * introScrollRange;
+    if (scrollY > maxScroll + SCROLL_SYNC_DEADBAND_PX) {
+      window.scrollTo(0, maxScroll);
+    }
+  }
+
   function drawFrame() {
     if (!video.videoWidth || !video.videoHeight) return;
     if (video.readyState < 2) return;
@@ -308,6 +330,7 @@
         seekBusy = false;
       }
 
+      syncScrollToPlayback();
       updateTargetFromScroll();
 
       const dt = lastTick ? Math.min((nowMs - lastTick) / 1000, 0.1) : 1 / 60;
@@ -397,6 +420,14 @@
     updateTargetFromScroll();
     lastDrawAt = 0;
   });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      syncScrollToPlayback();
+    },
+    { passive: true }
+  );
 
   video.load();
 

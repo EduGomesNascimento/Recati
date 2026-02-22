@@ -57,6 +57,26 @@
     stack: "HTML, CSS e JavaScript",
     detailPath: "./mecanica-torque/index.html",
     demoPath: "./mecanica-torque/index.html",
+  },
+  {
+    slug: "padaria-lenha",
+    title: "Padaria Lenha Viva (Site de padaria)",
+    category: "Institucional",
+    segment: "Padaria",
+    level: "Avancado",
+    tags: ["padaria", "forno", "catalogo", "blog", "whatsapp", "contato"],
+    summary: "Site demo para padaria com layout editorial, mix de produtos e area de contato.",
+    features: [
+      "Hero com painel de fornadas",
+      "Secoes comerciais de produto",
+      "Processo operacional em etapas",
+      "Blog em cards",
+      "Formulario de contato",
+      "Menu responsivo mobile",
+    ],
+    stack: "HTML, CSS e JavaScript",
+    detailPath: "./padaria-lenha/index.html",
+    demoPath: "./padaria-lenha/index.html",
   }
 ];
 

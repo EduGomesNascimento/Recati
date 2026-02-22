@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padaria Lenha Viva | Exemplo</title>
+    <meta
+      name="description"
+      content="Exemplo de site para padaria com visual editorial, mix de produtos, blog e contato."
+    />
+    <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./padaria.css" />
+  </head>
+  <body>
+    <header class="pd-header">
+      <div class="pd-wrap pd-header-row">
+        <a class="pd-brand" href="#inicio">
+          <img src="../../padarialogo.png" alt="Padaria Lenha Viva" />
+          <span>Lenha Viva</span>
+        </a>
+
+        <button class="pd-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+
+        <nav class="pd-nav" aria-label="Navegacao principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#processo">Processo</a>
+          <a href="#blog">Blog</a>
+          <a href="#contato">Contato</a>
+          <a class="pd-btn pd-btn-line" href="../../index.html#intro">Voltar ao Recati</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="pd-hero pd-reveal">
+        <div class="pd-wrap pd-hero-grid">
+          <div class="pd-hero-copy">
+            <p class="pd-kicker">DESDE 2003 | FORNO QUENTE TODO DIA</p>
+            <h1>Pao artesanal para sua rotina, com entrega organizada e sabor constante.</h1>
+            <p>
+              Uma padaria moderna com cara de bairro: fornadas em horarios fixos, doces autorais e atendimento rapido
+              para familias, cafeterias e pequenos mercados.
+            </p>
+            <div class="pd-actions">
+              <a class="pd-btn pd-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Pedir no WhatsApp</a>
+              <a class="pd-btn pd-btn-line" href="#produtos">Ver mix da semana</a>
+            </div>
+          </div>
+
+          <aside class="pd-hero-panel">
+            <h2>Painel de fornadas</h2>
+            <ul>
+              <li><strong>06:00</strong><span>Pao frances e integral</span></li>
+              <li><strong>09:30</strong><span>Salgados de vitrine</span></li>
+              <li><strong>14:00</strong><span>Bolos e doces frescos</span></li>
+              <li><strong>17:30</strong><span>Reposicao para fim do dia</span></li>
+            </ul>
+            <div class="pd-panel-cta">
+              <a class="pd-btn pd-btn-fill" href="#contato">Reservar lote</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="pd-brands pd-reveal">
+        <div class="pd-wrap">
+          <p>Marcas atendidas e parceiros da casa</p>
+          <div class="pd-brand-strip">
+            <span>Supermercados locais</span>
+            <span>Cafes independentes</span>
+            <span>Escolas e empresas</span>
+            <span>Eventos corporativos</span>
+            <span>Mercados de bairro</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-about pd-reveal" id="sobre">
+        <div class="pd-wrap pd-about-grid">
+          <article class="pd-about-visual">
+            <img src="../../padarialogo.png" alt="Logo da padaria" />
+            <div class="pd-about-stats">
+              <div><strong>+8 mil</strong><span>itens/semana</span></div>
+              <div><strong>4.8/5</strong><span>avaliacao media</span></div>
+              <div><strong>24h</strong><span>prazo em encomendas</span></div>
+            </div>
+          </article>
+
+          <article class="pd-about-copy">
+            <h2>Uma padaria com operacao de verdade</h2>
+            <p>
+              Aqui o cliente nao fica sem resposta. Cada pedido entra em fila, recebe horario e segue um fluxo claro
+              de preparo, conferencia e entrega.
+            </p>
+            <p>
+              O resultado e simples: menos atraso, menos ruptura e mais previsibilidade para quem compra toda semana.
+            </p>
+            <a class="pd-btn pd-btn-line" href="#processo">Entender o processo</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="pd-products pd-reveal" id="produtos">
+        <div class="pd-wrap">
+          <div class="pd-section-head">
+            <h2>Mix de produtos</h2>
+            <p>Categorias com melhor giro, margem e recompra.</p>
+          </div>
+
+          <div class="pd-product-grid">
+            <article class="pd-card">
+              <img src="../erp-padaria/demo/static/img/pao.svg" alt="Paes artesanais" />
+              <h3>Paes artesanais</h3>
+              <p>Fermentacao longa e casca crocante.</p>
+              <span>A partir de R$ 12/kg</span>
+            </article>
+            <article class="pd-card">
+              <img src="../erp-padaria/demo/static/img/pao_queijo.svg" alt="Salgados assados" />
+              <h3>Salgados assados</h3>
+              <p>Linha para lanche rapido e vitrine quente.</p>
+              <span>A partir de R$ 4,90</span>
+            </article>
+            <article class="pd-card">
+              <img src="../erp-padaria/demo/static/img/bolo.svg" alt="Bolos de vitrine" />
+              <h3>Bolos de vitrine</h3>
+              <p>Sabores tradicionais e linha premium.</p>
+              <span>A partir de R$ 38</span>
+            </article>
+            <article class="pd-card">
+              <img src="../erp-padaria/demo/static/img/croissant.svg" alt="Folhados" />
+              <h3>Folhados</h3>
+              <p>Croissant, pain au chocolat e especiais.</p>
+              <span>A partir de R$ 9,50</span>
+            </article>
+            <article class="pd-card">
+              <img src="../erp-padaria/demo/static/img/sanduiche.svg" alt="Linha cafe" />
+              <h3>Linha cafe</h3>
+              <p>Sanduiches e combos para manha e tarde.</p>
+              <span>A partir de R$ 11,90</span>
+            </article>
+            <article class="pd-card">
+              <img src="../erp-padaria/demo/static/img/suco.svg" alt="Bebidas frescas" />
+              <h3>Bebidas frescas</h3>
+              <p>Sucos, cafes e bebidas geladas.</p>
+              <span>A partir de R$ 5,90</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-process pd-reveal" id="processo">
+        <div class="pd-wrap">
+          <div class="pd-section-head">
+            <h2>Como a operacao funciona</h2>
+          </div>
+          <div class="pd-steps">
+            <article><strong>01</strong><h3>Pedido</h3><p>Recebemos no WhatsApp ou no balcão.</p></article>
+            <article><strong>02</strong><h3>Producao</h3><p>Separacao por lote e janela de forno.</p></article>
+            <article><strong>03</strong><h3>Conferencia</h3><p>Quantidade, embalagem e etiqueta final.</p></article>
+            <article><strong>04</strong><h3>Entrega</h3><p>Retirada rapida ou envio no horario combinado.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-blog pd-reveal" id="blog">
+        <div class="pd-wrap">
+          <div class="pd-section-head">
+            <h2>Blog e novidades</h2>
+            <p>Conteudo rapido para aumentar venda de padaria.</p>
+          </div>
+
+          <div class="pd-post-grid">
+            <article class="pd-post">
+              <h3>Como montar vitrine de manha sem desperdicio</h3>
+              <p>3 blocos de produto para equilibrar giro e margem.</p>
+              <a class="pd-btn pd-btn-line" href="#contato">Ler resumo</a>
+            </article>
+            <article class="pd-post">
+              <h3>Combo cafe da tarde que puxa ticket medio</h3>
+              <p>Estrategia simples para vender mais por atendimento.</p>
+              <a class="pd-btn pd-btn-line" href="#contato">Ler resumo</a>
+            </article>
+            <article class="pd-post">
+              <h3>Calendario de encomendas para datas sazonais</h3>
+              <p>Como abrir agenda sem sobrecarregar a equipe.</p>
+              <a class="pd-btn pd-btn-line" href="#contato">Ler resumo</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-contact pd-reveal" id="contato">
+        <div class="pd-wrap pd-contact-grid">
+          <article class="pd-contact-card">
+            <h2>Solicite atendimento</h2>
+            <form>
+              <label for="pdNome">Nome</label>
+              <input id="pdNome" type="text" placeholder="Seu nome" />
+              <label for="pdTelefone">Telefone</label>
+              <input id="pdTelefone" type="tel" placeholder="(00) 00000-0000" />
+              <label for="pdTipo">Tipo de pedido</label>
+              <select id="pdTipo">
+                <option>Atacado recorrente</option>
+                <option>Encomenda para evento</option>
+                <option>Pedido diario</option>
+              </select>
+              <button type="button">Enviar pedido</button>
+            </form>
+          </article>
+          <aside class="pd-info-card">
+            <img src="../../padarialogo.png" alt="Lenha Viva" />
+            <h3>Padaria Lenha Viva</h3>
+            <p>Rua das Fornadas, 245 - Centro</p>
+            <p>Seg a Sab: 5h30 as 20h | Dom: 6h as 12h</p>
+            <a href="tel:+5551997950492">(51) 99795-0492</a>
+            <a href="mailto:recati.com@gmail.com">recati.com@gmail.com</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pd-footer">
+      <div class="pd-wrap pd-footer-row">
+        <small>Lenha Viva - Exemplo de site para padaria</small>
+        <small>(c) <span id="pdYear"></span> Todos os direitos reservados.</small>
+      </div>
+    </footer>
+
+    <script src="./padaria.js"></script>
+  </body>
+</html>
