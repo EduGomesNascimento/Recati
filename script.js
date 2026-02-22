@@ -1,20 +1,30 @@
 ﻿(() => {
-  const VIDEO_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.webm";
-  const VIDEO_FALLBACK_SRC = "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4";
-  const VIDEO_FALLBACK_2_SRC = "./Gatinho_Pendurado_na_Borda_Preta.mp4";
+  const MOBILE_MEDIA_QUERY = "(max-width: 900px), (pointer: coarse)";
+  const mobileBootMode = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
+  const VIDEO_SOURCES = mobileBootMode
+    ? [
+        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
+        "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
+        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
+      ]
+    : [
+        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
+        "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
+        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
+      ];
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.015;
   const SEEK_FPS = 30;
-  const MOBILE_SEEK_FPS = 20;
+  const MOBILE_SEEK_FPS = 14;
   const SMOOTH_RESPONSE = 7.2;
-  const MOBILE_SMOOTH_RESPONSE = 5.2;
+  const MOBILE_SMOOTH_RESPONSE = 3.8;
   const VIDEO_SCALE = 0.86;
-  const MOBILE_VIDEO_SCALE = 0.9;
+  const MOBILE_VIDEO_SCALE = 0.92;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
   const MIN_TIME_STEP = 1 / 36;
-  const MOBILE_MIN_TIME_STEP = 1 / 24;
+  const MOBILE_MIN_TIME_STEP = 1 / 16;
   const END_LOCK_SCROLL = 0.998;
   const END_ZONE_START = 0.9;
   const SEEK_STALL_RESET_MS = 240;
@@ -22,8 +32,7 @@
   const BG_SAMPLE_W_RATIO = 0.16;
   const EDGE_OVERLAP_PX = 2;
   const TOP_CORNER_SAMPLE_RATIO = 0.14;
-  const MOBILE_MEDIA_QUERY = "(max-width: 900px), (pointer: coarse)";
-  const MOBILE_MAX_DPR = 1.25;
+  const MOBILE_MAX_DPR = 1;
   const DESKTOP_MAX_DPR = 2;
 
   const enterBtn = document.getElementById("enterAccessBtn");
@@ -33,12 +42,13 @@
   const site = document.getElementById("site");
   const canvas = document.getElementById("heroCanvas");
   const ctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
-  let mobileMode = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
+  let mobileMode = mobileBootMode;
   let lockRafId = null;
   const INTRO_VIEWS_KEY = "recati_intro_views";
   const params = new URLSearchParams(window.location.search);
   const skipIntroParam = params.get("skipIntro") === "1";
   const introViews = Number.parseInt(localStorage.getItem(INTRO_VIEWS_KEY) || "0", 10) || 0;
+  let sourceIndex = 0;
 
   if (enterBtn && intro) {
     if (skipBtn && introViews >= 2) {
@@ -106,9 +116,12 @@
   }
 
   const video = document.createElement("video");
-  video.src = VIDEO_SRC;
+  video.src = VIDEO_SOURCES[sourceIndex];
   video.muted = true;
   video.playsInline = true;
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.disablePictureInPicture = true;
   video.preload = "auto";
 
   let vw = 0;
@@ -124,6 +137,7 @@
   let queuedTime = null;
   let hasRVFC = false;
   let lastDrawAt = 0;
+  let mobileMaxTime = START_TIME;
 
   function clamp(n, a, b) {
     return Math.max(a, Math.min(b, n));
@@ -235,6 +249,7 @@
 
     if (Math.abs(lastRequestedTime - nextTime) <= minTimeStep * 0.5) return;
     if (Math.abs(video.currentTime - nextTime) <= minTimeStep * 0.5) return;
+    if (mobileMode && nextTime + minTimeStep < video.currentTime) return;
 
     // Serialize seeks to avoid decode thrash near the end.
     if (seekBusy || video.seeking || nowMs - lastSeekAt < minSeekInterval) {
@@ -259,6 +274,16 @@
       ? 1 - Math.pow(1 - p, 1.15)
       : preEnd + ((p - END_ZONE_START) / (1 - END_ZONE_START)) * (1 - preEnd);
     const mapped = clamp(START_TIME + eased * (FREEZE_TIME - START_TIME), START_TIME, FREEZE_TIME);
+    if (mobileMode) {
+      if (p >= END_LOCK_SCROLL) {
+        mobileMaxTime = FREEZE_TIME;
+        targetTime = FREEZE_TIME;
+        return;
+      }
+      mobileMaxTime = Math.max(mobileMaxTime, mapped);
+      targetTime = mobileMaxTime;
+      return;
+    }
     targetTime = p >= END_LOCK_SCROLL ? FREEZE_TIME : mapped;
   }
 
@@ -282,7 +307,7 @@
       }
 
       setReadyState(smoothTime >= FREEZE_TIME - SCROLL_SLOP);
-      const minDrawInterval = mobileMode ? 1000 / 45 : 1000 / 60;
+      const minDrawInterval = mobileMode ? 1000 / 30 : 1000 / 60;
       const shouldDraw = nowMs - lastDrawAt >= minDrawInterval || Math.abs(targetTime - smoothTime) > 0.002;
       if (shouldDraw) {
         seekToTime(smoothTime, nowMs);
@@ -311,6 +336,7 @@
 
     initialized = true;
     updateTargetFromScroll();
+    mobileMaxTime = Math.max(START_TIME, targetTime || START_TIME);
     smoothTime = targetTime || START_TIME;
     seekToTime(smoothTime, performance.now());
 
@@ -339,13 +365,9 @@
 
   video.addEventListener("error", () => {
     const code = video.error ? video.error.code : "unknown";
-    if (video.src.includes("Gatinho_Pendurado_na_Borda_Preta_RS.webm")) {
-      video.src = VIDEO_FALLBACK_SRC;
-      video.load();
-      return;
-    }
-    if (video.src.includes("Gatinho_Pendurado_na_Borda_Preta_RS.mp4")) {
-      video.src = VIDEO_FALLBACK_2_SRC;
+    if (sourceIndex < VIDEO_SOURCES.length - 1) {
+      sourceIndex += 1;
+      video.src = VIDEO_SOURCES[sourceIndex];
       video.load();
       return;
     }
@@ -354,6 +376,7 @@
 
   window.addEventListener("resize", () => {
     resizeCanvas();
+    mobileMaxTime = Math.max(mobileMaxTime, smoothTime || START_TIME);
     updateTargetFromScroll();
     lastDrawAt = 0;
   });
