@@ -110,11 +110,12 @@ a {
   gap: 8px;
   border: 1px solid rgba(216, 159, 47, 0.35);
   border-radius: 999px;
-  padding: 7px 11px;
+  padding: 9px 14px;
   background: var(--gold-soft);
   color: #4d3a16;
   font-size: 0.86rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .sp-chip img,
@@ -394,9 +395,23 @@ a {
 }
 
 .sp-highlight {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(146px, max-content) 1fr;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 8px;
+  padding: 6px 0;
+}
+
+.sp-highlight .sp-chip {
+  min-width: 146px;
+  justify-content: center;
+  text-align: center;
+}
+
+.sp-highlight p {
+  margin: 0;
+  line-height: 1.58;
 }
 
 .sp-service-card img,
@@ -414,6 +429,15 @@ a {
 
 .sp-service-meta,
 .sp-team-meta {
+  margin-top: 10px;
+}
+
+.sp-service-meta .sp-price {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.sp-service-meta .sp-btn {
   margin-top: 10px;
 }
 
@@ -819,6 +843,16 @@ a {
   .sp-form-row,
   .sp-footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .sp-highlight {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .sp-highlight .sp-chip {
+    min-width: 0;
+    width: fit-content;
   }
 
   .sp-footer {
