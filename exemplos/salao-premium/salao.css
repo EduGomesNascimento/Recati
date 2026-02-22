@@ -669,6 +669,11 @@ a {
   color: var(--muted);
 }
 
+.sp-cta-strip .sp-hero-actions,
+.sp-contact-strip .sp-hero-actions {
+  justify-content: center;
+}
+
 .sp-contact-strip {
   background:
     linear-gradient(120deg, rgba(8, 8, 10, 0.95), rgba(26, 25, 30, 0.95)),
