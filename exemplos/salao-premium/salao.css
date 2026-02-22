@@ -213,10 +213,12 @@ a {
 
 .sp-page-hero-no-box {
   max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .sp-page-hero-no-box h1 {
-  margin: 0 0 6px;
+  margin: 0;
   font-size: clamp(2rem, 4.6vw, 3.2rem);
   letter-spacing: 0.02em;
 }
@@ -444,6 +446,17 @@ a {
   border-radius: 7px;
   border: 1px solid rgba(216, 159, 47, 0.24);
   background: transparent;
+}
+
+.sp-owner-grid {
+  align-items: stretch;
+}
+
+.sp-owner-media img {
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .sp-service-meta,
@@ -854,6 +867,10 @@ a {
   .sp-highlight {
     grid-template-columns: 1fr;
     row-gap: 10px;
+  }
+
+  .sp-owner-media img {
+    min-height: 280px;
   }
 
   .sp-highlight .sp-chip {

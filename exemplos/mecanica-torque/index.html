@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MECA Torque | Oficina Inteligente</title>
+    <meta
+      name="description"
+      content="Exemplo de site para oficina mecanica com foco em diagnostico rapido, manutencao preventiva e agendamento online."
+    />
+    <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./mecanica.css" />
+  </head>
+  <body>
+    <header class="mk-header">
+      <div class="mk-container mk-header-row">
+        <a class="mk-brand" href="#inicio">
+          <img src="../../MECA.png" alt="Logo MECA" />
+          <span>MECA Torque</span>
+        </a>
+
+        <button class="mk-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+
+        <nav class="mk-nav" aria-label="Navegacao principal">
+          <a href="#servicos">Servicos</a>
+          <a href="#processo">Processo</a>
+          <a href="#planos">Planos</a>
+          <a href="#clientes">Clientes</a>
+          <a href="#contato">Contato</a>
+          <a class="mk-btn mk-btn-ghost" href="../../index.html#intro">Voltar ao Recati</a>
+          <a class="mk-btn mk-btn-solid" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Agendar agora</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="mk-hero mk-reveal">
+        <div class="mk-container mk-hero-grid">
+          <div class="mk-hero-copy">
+            <p class="mk-eyebrow">OFICINA MECANICA | DIAGNOSTICO EM MINUTOS</p>
+            <h1>Seu carro volta para a rua com seguranca, clareza e prazo real.</h1>
+            <p class="mk-sub">
+              Atendimento tecnico sem enrolacao: scanner, revisao preventiva e reparo completo com explicacao simples.
+            </p>
+            <div class="mk-actions">
+              <a class="mk-btn mk-btn-solid" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
+              <a class="mk-btn mk-btn-outline" href="#servicos">Ver servicos</a>
+            </div>
+            <ul class="mk-points">
+              <li>Orcamento claro antes de iniciar</li>
+              <li>Equipe especializada em carros nacionais e importados</li>
+              <li>Atualizacoes da manutencao pelo WhatsApp</li>
+            </ul>
+          </div>
+
+          <aside class="mk-hero-panel">
+            <img class="mk-panel-logo" src="../../MECA.png" alt="MECA Torque" />
+            <div class="mk-panel-box">
+              <h2>Status da oficina hoje</h2>
+              <dl>
+                <div>
+                  <dt>Entrada media</dt>
+                  <dd>12 min</dd>
+                </div>
+                <div>
+                  <dt>Taxa de retorno</dt>
+                  <dd>94%</dd>
+                </div>
+                <div>
+                  <dt>Entrega no prazo</dt>
+                  <dd>97%</dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="mk-services mk-reveal" id="servicos">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Servicos mais pedidos</h2>
+            <p>Pacotes pensados para manter desempenho, economizar combustivel e reduzir quebra inesperada.</p>
+          </div>
+
+          <div class="mk-service-grid">
+            <article class="mk-card">
+              <h3>Revisao preventiva</h3>
+              <p>Checklist completo com fluidos, filtros, velas e itens de seguranca.</p>
+              <span>A partir de R$ 349</span>
+            </article>
+            <article class="mk-card">
+              <h3>Freio e suspensao</h3>
+              <p>Troca de pastilhas, discos, amortecedores e alinhamento de direcao.</p>
+              <span>A partir de R$ 279</span>
+            </article>
+            <article class="mk-card">
+              <h3>Injecao eletronica</h3>
+              <p>Scanner, leitura de falhas e ajuste fino para consumo mais eficiente.</p>
+              <span>A partir de R$ 189</span>
+            </article>
+            <article class="mk-card">
+              <h3>Motor e arrefecimento</h3>
+              <p>Analise de temperatura, vazamentos e desempenho em uso urbano.</p>
+              <span>A partir de R$ 229</span>
+            </article>
+            <article class="mk-card">
+              <h3>Ar condicionado</h3>
+              <p>Higienizacao, troca de filtro e recarga de gas com teste de vedacao.</p>
+              <span>A partir de R$ 169</span>
+            </article>
+            <article class="mk-card">
+              <h3>Pre compra veicular</h3>
+              <p>Laudo rapido para compra segura, com pontos criticos documentados.</p>
+              <span>A partir de R$ 220</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-process mk-reveal" id="processo">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Processo simples e transparente</h2>
+          </div>
+
+          <div class="mk-steps">
+            <article>
+              <strong>01</strong>
+              <h3>Recepcao tecnica</h3>
+              <p>Coletamos sintomas e historico do carro em poucos minutos.</p>
+            </article>
+            <article>
+              <strong>02</strong>
+              <h3>Diagnostico</h3>
+              <p>Scanner e inspeccao visual com registro do que precisa ser feito.</p>
+            </article>
+            <article>
+              <strong>03</strong>
+              <h3>Aprovacao</h3>
+              <p>Voce recebe o orcamento detalhado e aprova pelo celular.</p>
+            </article>
+            <article>
+              <strong>04</strong>
+              <h3>Entrega</h3>
+              <p>Servico finalizado com checklist e orientacao de proxima revisao.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-metrics mk-reveal">
+        <div class="mk-container mk-metric-grid">
+          <article>
+            <h3>+1.800</h3>
+            <p>ordens de servico no ultimo ano</p>
+          </article>
+          <article>
+            <h3>+320</h3>
+            <p>frotas pequenas atendidas mensalmente</p>
+          </article>
+          <article>
+            <h3>4.9/5</h3>
+            <p>media das avaliacoes dos clientes</p>
+          </article>
+          <article>
+            <h3>30 dias</h3>
+            <p>garantia em itens de manutencao geral</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mk-plans mk-reveal" id="planos">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Planos de manutencao</h2>
+            <p>Para motorista particular, app ou pequena frota.</p>
+          </div>
+
+          <div class="mk-plan-grid">
+            <article class="mk-plan">
+              <h3>Plano Base</h3>
+              <p>Revisao semestral + scanner preventivo.</p>
+              <strong>R$ 79/mes</strong>
+              <a href="#contato">Quero esse</a>
+            </article>
+            <article class="mk-plan mk-plan-featured">
+              <span class="mk-badge">Mais escolhido</span>
+              <h3>Plano Controle</h3>
+              <p>Base + prioridade de agenda + revisao de freios.</p>
+              <strong>R$ 129/mes</strong>
+              <a href="#contato">Quero esse</a>
+            </article>
+            <article class="mk-plan">
+              <h3>Plano Frota</h3>
+              <p>Gestao de manutencao para ate 10 veiculos.</p>
+              <strong>R$ 249/mes</strong>
+              <a href="#contato">Quero esse</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-testimonials mk-reveal" id="clientes">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>O que os clientes falam</h2>
+          </div>
+
+          <div class="mk-testimonial-grid">
+            <article>
+              <p>"Atendimento rapido, explicacao clara e sem empurrar servico."</p>
+              <span>Diego, motorista de app</span>
+            </article>
+            <article>
+              <p>"Organizaram a manutencao da minha frota e reduziu parada de veiculo."</p>
+              <span>Karina, gestora de entregas</span>
+            </article>
+            <article>
+              <p>"Primeira oficina que me mostrou tudo antes de aprovar. Virou minha referencia."</p>
+              <span>Marcio, cliente recorrente</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-contact mk-reveal" id="contato">
+        <div class="mk-container mk-contact-grid">
+          <article class="mk-contact-card">
+            <h2>Agende seu atendimento</h2>
+            <p>Preencha rapido ou chame no WhatsApp. Retorno em poucos minutos.</p>
+            <form>
+              <label for="mkNome">Nome</label>
+              <input id="mkNome" type="text" placeholder="Seu nome" />
+              <label for="mkTelefone">Telefone</label>
+              <input id="mkTelefone" type="tel" placeholder="(00) 00000-0000" />
+              <label for="mkServico">Servico</label>
+              <select id="mkServico">
+                <option>Revisao preventiva</option>
+                <option>Freio e suspensao</option>
+                <option>Injecao eletronica</option>
+                <option>Ar condicionado</option>
+              </select>
+              <button type="button">Solicitar contato</button>
+            </form>
+          </article>
+
+          <aside class="mk-contact-info">
+            <img src="../../MECA.png" alt="MECA Torque" />
+            <h3>MECA Torque</h3>
+            <p>Av. da Oficina, 450 - Centro</p>
+            <p>Seg a Sex: 8h as 18h | Sab: 8h as 13h</p>
+            <a href="tel:+5551997950492">(51) 99795-0492</a>
+            <a href="mailto:recati.com@gmail.com">recati.com@gmail.com</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mk-footer">
+      <div class="mk-container mk-footer-row">
+        <small>MECA Torque - Exemplo demo RECATI</small>
+        <small>(c) <span id="mkYear"></span> Todos os direitos reservados.</small>
+      </div>
+    </footer>
+
+    <script src="./mecanica.js"></script>
+  </body>
+</html>

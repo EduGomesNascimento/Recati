@@ -37,6 +37,26 @@
     stack: "HTML, CSS e JavaScript",
     detailPath: "./aen-systems/index.html",
     demoPath: "./aen-systems/index.html",
+  },
+  {
+    slug: "mecanica-torque",
+    title: "MECA Torque (Site de mecanica)",
+    category: "Institucional",
+    segment: "Mecanica Automotiva",
+    level: "Avancado",
+    tags: ["mecanica", "oficina", "revisao", "diagnostico", "whatsapp", "planos"],
+    summary: "Exemplo completo de oficina com hero, servicos, processo, planos e contato.",
+    features: [
+      "Landing de alta conversao",
+      "Secao de servicos em grade",
+      "Processo em etapas",
+      "Planos de manutencao",
+      "Depoimentos e formulario",
+      "Menu responsivo mobile",
+    ],
+    stack: "HTML, CSS e JavaScript",
+    detailPath: "./mecanica-torque/index.html",
+    demoPath: "./mecanica-torque/index.html",
   }
 ];
 

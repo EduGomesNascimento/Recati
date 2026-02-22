@@ -16,15 +16,17 @@
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.015;
   const SEEK_FPS = 30;
-  const MOBILE_SEEK_FPS = 14;
+  const MOBILE_SEEK_FPS = 24;
   const SMOOTH_RESPONSE = 7.2;
-  const MOBILE_SMOOTH_RESPONSE = 3.8;
+  const MOBILE_SMOOTH_RESPONSE = 5.2;
   const VIDEO_SCALE = 0.86;
   const MOBILE_VIDEO_SCALE = 0.92;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
   const MIN_TIME_STEP = 1 / 36;
-  const MOBILE_MIN_TIME_STEP = 1 / 16;
+  const MOBILE_MIN_TIME_STEP = 1 / 24;
+  const DESKTOP_DRAW_FPS = 60;
+  const MOBILE_DRAW_FPS = 45;
   const END_LOCK_SCROLL = 0.998;
   const END_ZONE_START = 0.9;
   const SEEK_STALL_RESET_MS = 240;
@@ -138,6 +140,8 @@
   let hasRVFC = false;
   let lastDrawAt = 0;
   let mobileMaxTime = START_TIME;
+  let introTop = 0;
+  let introScrollRange = 1;
 
   function clamp(n, a, b) {
     return Math.max(a, Math.min(b, n));
@@ -151,11 +155,21 @@
     document.body.classList.toggle("site-ready", isReady);
   }
 
-  function getPageProgress() {
+  function updateIntroMetrics() {
+    if (!intro) {
+      introTop = 0;
+      introScrollRange = 1;
+      return;
+    }
     const rect = intro.getBoundingClientRect();
-    const total = intro.offsetHeight - window.innerHeight;
-    const scrolled = clamp(-rect.top, 0, total);
-    return total > 0 ? scrolled / total : 0;
+    introTop = window.scrollY + rect.top;
+    introScrollRange = Math.max(1, intro.offsetHeight - window.innerHeight);
+  }
+
+  function getPageProgress() {
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const scrolled = clamp(scrollY - introTop, 0, introScrollRange);
+    return introScrollRange > 0 ? scrolled / introScrollRange : 0;
   }
 
   function drawFrame() {
@@ -246,9 +260,10 @@
     const seekFps = mobileMode ? MOBILE_SEEK_FPS : SEEK_FPS;
     const minSeekInterval = 1000 / seekFps;
     const minTimeStep = mobileMode ? MOBILE_MIN_TIME_STEP : MIN_TIME_STEP;
+    const stepThreshold = minTimeStep * 0.35;
 
-    if (Math.abs(lastRequestedTime - nextTime) <= minTimeStep * 0.5) return;
-    if (Math.abs(video.currentTime - nextTime) <= minTimeStep * 0.5) return;
+    if (Math.abs(lastRequestedTime - nextTime) <= stepThreshold) return;
+    if (Math.abs(video.currentTime - nextTime) <= stepThreshold) return;
     if (mobileMode && nextTime + minTimeStep < video.currentTime) return;
 
     // Serialize seeks to avoid decode thrash near the end.
@@ -307,7 +322,7 @@
       }
 
       setReadyState(smoothTime >= FREEZE_TIME - SCROLL_SLOP);
-      const minDrawInterval = mobileMode ? 1000 / 30 : 1000 / 60;
+      const minDrawInterval = mobileMode ? 1000 / MOBILE_DRAW_FPS : 1000 / DESKTOP_DRAW_FPS;
       const shouldDraw = nowMs - lastDrawAt >= minDrawInterval || Math.abs(targetTime - smoothTime) > 0.002;
       if (shouldDraw) {
         seekToTime(smoothTime, nowMs);
@@ -326,6 +341,7 @@
     }
 
     resizeCanvas();
+    updateIntroMetrics();
 
     try {
       await video.play();
@@ -376,6 +392,7 @@
 
   window.addEventListener("resize", () => {
     resizeCanvas();
+    updateIntroMetrics();
     mobileMaxTime = Math.max(mobileMaxTime, smoothTime || START_TIME);
     updateTargetFromScroll();
     lastDrawAt = 0;
