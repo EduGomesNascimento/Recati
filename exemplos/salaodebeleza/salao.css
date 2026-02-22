@@ -434,6 +434,10 @@ a {
   gap: 10px;
 }
 
+.sb-cta .sb-cta-actions {
+  justify-content: center;
+}
+
 .sb-page-hero {
   padding: 8px 0 14px;
 }
