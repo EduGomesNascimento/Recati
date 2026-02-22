@@ -38,6 +38,30 @@
         background: #fff;
       }
 
+      .recati-back {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 30;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        background: rgba(9, 11, 18, 0.78);
+        color: #f5f7fb;
+        text-decoration: none;
+        font: 700 14px/1 "Segoe UI", Tahoma, sans-serif;
+        border-radius: 8px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .recati-back:hover {
+        background: rgba(16, 19, 28, 0.92);
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+
       .fallback {
         position: fixed;
         inset: 0;
@@ -49,9 +73,19 @@
         background: #11161f;
         text-align: center;
       }
+
+      @media (max-width: 700px) {
+        .recati-back {
+          top: 10px;
+          left: 10px;
+          padding: 9px 11px;
+          font-size: 13px;
+        }
+      }
     </style>
   </head>
   <body>
+    <a class="recati-back" href="../../index.html">← Voltar ao RECATI</a>
     <div id="fallback" class="fallback" role="status" aria-live="polite">
       Não foi possível exibir o espelhamento neste navegador.
     </div>

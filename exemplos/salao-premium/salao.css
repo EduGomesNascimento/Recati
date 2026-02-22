@@ -409,7 +409,7 @@ a {
   object-fit: cover;
   border-radius: 7px;
   border: 1px solid rgba(216, 159, 47, 0.24);
-  background: var(--surface-2);
+  background: linear-gradient(180deg, #dedede 0%, #cccccc 100%);
 }
 
 .sp-service-meta,
@@ -448,7 +448,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
-  background: var(--surface-2);
+  background: linear-gradient(180deg, #dbdbdb 0%, #cfcfcf 100%);
 }
 
 .sp-gallery-item img {
@@ -466,6 +466,7 @@ a {
   all: unset;
   cursor: pointer;
   display: block;
+  background: linear-gradient(180deg, #dbdbdb 0%, #cfcfcf 100%);
 }
 
 .sp-gallery-item .sp-tag {
