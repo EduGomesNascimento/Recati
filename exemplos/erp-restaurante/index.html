@@ -1,30 +1,29 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template - erp-restaurante</title>
-    <link rel="stylesheet" href="../exemplos.css" />
-    <link rel="stylesheet" href="./template.css" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecionando para demo</title>
+    <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="../../assets/icons/recati-favicon.png" type="image/png" />
+    <meta http-equiv="refresh" content="0; url=./demo/" />
+    <script>
+      window.location.replace("./demo/");
+    </script>
   </head>
-  <body data-slug="erp-restaurante">
-    <header class="topbar">
-      <a class="brand" href="../index.html">Exemplos</a>
-      <nav>
-        <a href="../index.html">Galeria</a>
-        <a href="../../index.html">Voltar ao Recati</a>
-      </nav>
-    </header>
-
-    <main class="page">
-      <section id="detailHero" class="detail-hero"></section>
-      <section class="shot"></section>
-      <section class="cta actions">
-        <a id="demoLink" class="btn" href="./demo/">Ver demo</a>
-        <button id="baseBtn" class="btn ghost" type="button">Usar como base (em breve)</button>
-      </section>
-    </main>
-
-    <script type="module" src="./template.js"></script>
+  <body>
+    <p>Abrindo a demo...</p>
   </body>
 </html>

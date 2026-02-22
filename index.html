@@ -1,11 +1,24 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RECATI</title>
-    <link rel="icon" href="./Adobe Express - file (2).png" type="image/png" sizes="32x32" />
-    <link rel="shortcut icon" href="./Adobe Express - file (2).png" type="image/png" />
+    <link rel="icon" href="./assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="./assets/icons/recati-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/icons/recati-favicon.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -82,11 +95,32 @@
 
       <section class="section reveal">
         <h2 id="o-que-fazemos" class="metal-text section-anchor">O que a RECATI faz</h2>
-        <ul>
-          <li>Apps web sob medida (PWA)</li>
-          <li>Automações digitais (WhatsApp, e-mail, planilhas, integrações)</li>
-          <li>ERP e processos (cadastro, vendas, estoque, relatórios)</li>
-        </ul>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Apps Web Sob Medida</h3>
+            <p>Sistemas web rápidos e responsivos para controle de pedidos, vendas, atendimento e operação interna.</p>
+          </article>
+          <article class="service-card">
+            <h3>ERP Customizável</h3>
+            <p>ERPs adaptados ao fluxo real da sua empresa, com telas e processos alinhados ao seu modelo de negócio.</p>
+          </article>
+          <article class="service-card">
+            <h3>Automações Inteligentes</h3>
+            <p>Automações com WhatsApp, e-mail e gatilhos de rotina para reduzir retrabalho e acelerar decisões.</p>
+          </article>
+          <article class="service-card">
+            <h3>Integrações e Processos</h3>
+            <p>Conectamos sistemas, organizamos etapas e eliminamos gargalos entre setores e ferramentas.</p>
+          </article>
+          <article class="service-card">
+            <h3>Implantação Guiada</h3>
+            <p>Entrega com validação prática, ajustes contínuos e suporte para equipe operar com segurança.</p>
+          </article>
+          <article class="service-card">
+            <h3>Escala com Controle</h3>
+            <p>Estrutura tecnológica para crescer com previsibilidade, menos erros operacionais e mais produtividade.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section reveal">
@@ -96,10 +130,25 @@
           <article class="help-item">Criamos apps web sob medida para controle, vendas e gestão.</article>
           <article class="help-item">Integramos sistemas e ERPs para que tudo funcione de forma conectada.</article>
           <article class="help-item">Implementamos automações via WhatsApp, e-mail e notificações inteligentes.</article>
-          <article class="help-item">Desenvolvemos dashboards e relatórios estratégicos em tempo real.</article>
+          <article class="help-item">Criamos relatórios operacionais claros para acompanhar a evolução da operação.</article>
           <article class="help-item">Digitalizamos fluxos internos para reduzir erros e retrabalho.</article>
           <article class="help-item">Melhoramos o controle de estoque, pedidos e financeiro.</article>
           <article class="help-item">Transformamos tecnologia em eficiência, organização e crescimento.</article>
+        </div>
+      </section>
+
+      <section id="exemplos" class="section reveal">
+        <h2 class="metal-text">Exemplos e Templates</h2>
+        <p>
+          No Hub de Exemplos você navega em demos funcionais de sistemas reais, como ERP de padaria/churrascaria,
+          layouts institucionais e outros modelos prontos para acelerar seu projeto.
+        </p>
+        <div class="examples-callout">
+          <p>
+            Use os exemplos para validar ideia, fluxo e interface antes do desenvolvimento final. Isso reduz risco,
+            encurta prazo e deixa a entrega mais fiel ao que sua equipe realmente precisa.
+          </p>
+          <a class="btn" href="./exemplos/">Abrir Hub de Exemplos</a>
         </div>
       </section>
 

@@ -15,7 +15,7 @@
   --ok: #2fb172;
   --danger: #d66262;
   --shadow: 0 18px 32px rgba(27, 20, 9, 0.12);
-  --radius: 16px;
+  --radius: 10px;
 }
 
 * {
@@ -26,6 +26,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -58,19 +59,39 @@ a {
   justify-content: center;
   gap: 8px;
   padding: 12px 18px;
-  border-radius: 10px;
+  border-radius: 0;
   border: 1px solid var(--line);
   background: #fff;
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+  transition:
+    transform 0.26s ease,
+    box-shadow 0.26s ease,
+    background 0.26s ease,
+    border-color 0.26s ease,
+    color 0.26s ease;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 12%, rgba(255, 255, 255, 0.34) 50%, transparent 88%);
+  transform: translateX(-100%);
+  transition: transform 0.55s ease;
 }
 
 .sp-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(32, 24, 13, 0.12);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 24px rgba(32, 24, 13, 0.13);
+}
+
+.sp-btn:hover::after {
+  transform: translateX(100%);
 }
 
 .sp-btn-gold {
@@ -151,7 +172,7 @@ a {
   text-decoration: none;
   color: #ddd6cb;
   padding: 7px 10px;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid transparent;
   transition: all 0.2s ease;
 }
@@ -170,7 +191,7 @@ a {
 .sp-nav-toggle {
   display: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.07);
   color: #fff;
   padding: 10px 12px;
@@ -209,7 +230,7 @@ a {
 
 .sp-hero {
   margin-top: 14px;
-  border-radius: 22px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #101114;
@@ -279,7 +300,7 @@ a {
   margin-top: 18px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;
 }
 
 .sp-hero-dots {
@@ -295,7 +316,7 @@ a {
 .sp-dot {
   width: 11px;
   height: 11px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 0;
   background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
@@ -303,7 +324,7 @@ a {
 
 .sp-dot.is-active {
   width: 30px;
-  border-radius: 999px;
+  border-radius: 2px;
   background: var(--gold);
 }
 
@@ -348,10 +369,17 @@ a {
 
 .sp-card {
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 9px;
   padding: 14px;
   background: linear-gradient(170deg, #ffffff, #faf7f2);
   box-shadow: var(--shadow);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.sp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px rgba(27, 20, 9, 0.15);
+  border-color: rgba(216, 159, 47, 0.35);
 }
 
 .sp-card h3,
@@ -379,7 +407,7 @@ a {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 7px;
   border: 1px solid rgba(216, 159, 47, 0.24);
   background: var(--surface-2);
 }
@@ -418,7 +446,7 @@ a {
 .sp-gallery-item {
   position: relative;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--surface-2);
 }
@@ -445,7 +473,7 @@ a {
   left: 8px;
   bottom: 8px;
   padding: 5px 8px;
-  border-radius: 999px;
+  border-radius: 4px;
   background: rgba(8, 8, 11, 0.74);
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: #fff8eb;
@@ -458,7 +486,7 @@ a {
 
 .sp-filter {
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   padding: 8px 12px;
   background: #fff;
   color: var(--muted);
@@ -490,7 +518,7 @@ a {
   width: min(980px, 94vw);
   max-height: 84vh;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.34);
   background: #17181c;
 }
@@ -499,7 +527,7 @@ a {
   position: absolute;
   top: 18px;
   right: 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
@@ -544,7 +572,7 @@ a {
   border: 1px solid rgba(131, 107, 66, 0.28);
   background: #fff;
   color: var(--text);
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 11px 12px;
 }
 
@@ -581,7 +609,7 @@ a {
   display: none;
   max-width: 340px;
   padding: 11px 13px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(16, 12, 16, 0.95);
   color: #fff;
@@ -680,12 +708,45 @@ a {
 .sp-reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.56s ease, transform 0.56s ease;
+  transition: opacity 0.64s ease, transform 0.64s ease;
 }
 
 .sp-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.sp-chip {
+  animation: spSoftFloat 4.8s ease-in-out infinite;
+}
+
+@keyframes spSoftFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  .sp-btn,
+  .sp-card,
+  .sp-reveal,
+  .sp-chip,
+  .sp-gallery-item img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 1080px) {

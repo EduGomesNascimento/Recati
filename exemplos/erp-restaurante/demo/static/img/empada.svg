@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fff3e5"/>
+  <path d="M58 106c8-36 34-56 62-56s54 20 62 56H58z" fill="#d59a52"/>
+  <path d="M76 98c6-24 24-38 44-38s38 14 44 38H76z" fill="#e6ba7a"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">EMPADA</text>
+</svg>

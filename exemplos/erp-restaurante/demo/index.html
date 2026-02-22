@@ -1,28 +1,27 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo ERP Restaurante</title>
-    <link rel="stylesheet" href="../../exemplos.css" />
-    <link rel="stylesheet" href="./demo.css" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abrindo ERP Restaurante</title>
+    <meta http-equiv="refresh" content="0; url=./caixa/" />
+    <script>
+      window.location.replace("./caixa/");
+    </script>
   </head>
-  <body class="demo-restaurante">
-    <main class="demo-shell">
-      <div class="demo-topbar">
-        <div class="demo-actions">
-          <a class="btn ghost" href="../index.html">← Voltar</a>
-          <a class="btn ghost" href="../../../index.html">Voltar ao Recati</a>
-        </div>
-        <strong>ERP Restaurante</strong>
-        <div><button id="fsToggle" class="btn ghost" type="button">Tela cheia</button> <span class="demo-badge">DEMO</span></div>
-      </div>
-      <div class="demo-layout">
-        <aside class="demo-menu" id="menu"></aside>
-        <section class="demo-content" id="content"></section>
-      </div>
-    </main>
-    <script src="./demo.js"></script>
+  <body>
+    <p>Abrindo ERP Restaurante...</p>
   </body>
 </html>
-

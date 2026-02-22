@@ -1,8 +1,20 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salão Essencial | Sobre</title>
     <meta name="description" content="Conheça a história, diferenciais e forma de trabalho do Salão Essencial." />
     <link rel="icon" href="../../assets/icons/salao-favicon.png" type="image/png" sizes="32x32" />
@@ -163,4 +175,5 @@
     <script src="./salao.js"></script>
   </body>
 </html>
+
 

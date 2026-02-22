@@ -1,8 +1,20 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salão Premium | Home</title>
     <meta name="description" content="Exemplo de site completo para salão premium com agenda no WhatsApp, equipe, serviços e contato." />
     <link rel="icon" href="./assets/img/salao-icon.png" type="image/png" sizes="32x32" />
@@ -40,13 +52,13 @@
         <section class="sp-hero sp-reveal">
           <div class="sp-hero-track">
             <div class="sp-hero-slide is-active">
-              <img src="./assets/img/hero-woman.png" alt="Modelo em ensaio de salão premium" />
+              <img src="../../img/salongeneric.png" alt="Fachada e ambiente do salão" />
             </div>
             <div class="sp-hero-slide">
-              <img src="./assets/img/look-01.svg" alt="Produção premium em tons rosé" />
+              <img src="../../img/cabelosbonitos.png" alt="Produção de cabelo com acabamento premium" />
             </div>
             <div class="sp-hero-slide">
-              <img src="./assets/img/look-03.svg" alt="Finalização com brilho e textura" />
+              <img src="../../img/loiracabeluda.avif" alt="Visual loiro com finalização sofisticada" />
             </div>
 
             <div class="sp-hero-content">
@@ -80,7 +92,7 @@
           </div>
           <div class="sp-grid sp-grid-2">
             <article class="sp-card sp-about-media">
-              <img src="./assets/img/look-02.svg" alt="Ambiente moderno de salão premium" />
+              <img src="../../img/mulherladocabelo.png" alt="Produção feminina em ambiente de salão premium" />
             </article>
             <article class="sp-card">
               <p>
@@ -112,7 +124,7 @@
           </div>
           <div class="sp-grid sp-grid-3">
             <article class="sp-card sp-service-card">
-              <img src="./assets/img/look-01.svg" alt="Hair stylist personalizado" />
+              <img src="../../img/cabelosbonitos.png" alt="Hair stylist personalizado" />
               <div class="sp-service-meta">
                 <h3>Hair Stylist</h3>
                 <p>Corte de precisão com análise de formato e estilo pessoal.</p>
@@ -121,7 +133,7 @@
               </div>
             </article>
             <article class="sp-card sp-service-card">
-              <img src="./assets/img/look-02.svg" alt="Dia da noiva completo" />
+              <img src="../../img/mulherladocabelo.png" alt="Dia da noiva completo" />
               <div class="sp-service-meta">
                 <h3>Dia da Noiva</h3>
                 <p>Pacote especial com cronograma, penteado e maquiagem profissional.</p>
@@ -130,7 +142,7 @@
               </div>
             </article>
             <article class="sp-card sp-service-card">
-              <img src="./assets/img/look-03.svg" alt="Barbearia premium" />
+              <img src="../../img/barbeiro.webp" alt="Barbearia premium" />
               <div class="sp-service-meta">
                 <h3>Barbearia</h3>
                 <p>Barba desenhada, hidratação e acabamento com navalha.</p>
@@ -139,7 +151,7 @@
               </div>
             </article>
             <article class="sp-card sp-service-card">
-              <img src="./assets/img/look-04.svg" alt="Maquiagem profissional" />
+              <img src="../../img/mulher%20cabelo.png" alt="Maquiagem profissional" />
               <div class="sp-service-meta">
                 <h3>Maquiagem</h3>
                 <p>Maquiagem social, editorial e para eventos especiais.</p>
@@ -148,7 +160,7 @@
               </div>
             </article>
             <article class="sp-card sp-service-card">
-              <img src="./assets/img/look-05.svg" alt="Design de sobrancelhas" />
+              <img src="../../img/loiracabeluda.avif" alt="Design de sobrancelhas" />
               <div class="sp-service-meta">
                 <h3>Sobrancelha</h3>
                 <p>Design estratégico com visagismo e coloração.</p>
@@ -157,7 +169,7 @@
               </div>
             </article>
             <article class="sp-card sp-service-card">
-              <img src="./assets/img/look-06.svg" alt="Manicure e nail design" />
+              <img src="../../img/cabelosbonitos.png" alt="Manicure e nail design" />
               <div class="sp-service-meta">
                 <h3>Manicure</h3>
                 <p>Nail design, blindagem e acabamento premium.</p>
@@ -199,28 +211,28 @@
           </div>
           <div class="sp-grid sp-grid-4">
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Especialista em coloração" />
+              <img src="../../img/loiracabeluda.avif" alt="Especialista em coloração" />
               <div class="sp-team-meta">
                 <h3>Camila Viana</h3>
                 <p>Colorista sênior focada em loiros personalizados e correção de cor.</p>
               </div>
             </article>
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Especialista em corte" />
+              <img src="../../img/barbeiro.avif" alt="Especialista em corte" />
               <div class="sp-team-meta">
                 <h3>Rafael Mota</h3>
                 <p>Hair stylist com assinatura em cortes de precisão e visagismo masculino.</p>
               </div>
             </article>
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Especialista em maquiagem" />
+              <img src="../../img/mulherladocabelo.png" alt="Especialista em maquiagem" />
               <div class="sp-team-meta">
                 <h3>Beatriz Nunes</h3>
                 <p>Makeup artist para noivas, eventos e produções editoriais.</p>
               </div>
             </article>
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Especialista em nail design" />
+              <img src="../../img/cabelosbonitos.png" alt="Especialista em nail design" />
               <div class="sp-team-meta">
                 <h3>Lorena Farias</h3>
                 <p>Nail artist com foco em alongamento, arte encapsulada e cuidados intensivos.</p>
@@ -236,26 +248,26 @@
           </div>
           <div class="sp-gallery-grid">
             <article class="sp-gallery-item">
-              <button type="button" data-gallery-open data-gallery-src="./assets/img/look-01.svg" data-gallery-alt="Loiro premium com brilho natural">
-                <img src="./assets/img/look-01.svg" alt="Loiro premium" />
+              <button type="button" data-gallery-open data-gallery-src="../../img/cabelosbonitos.png" data-gallery-alt="Loiro premium com brilho natural">
+                <img src="../../img/cabelosbonitos.png" alt="Loiro premium" />
               </button>
               <span class="sp-tag">Loiro premium</span>
             </article>
             <article class="sp-gallery-item">
-              <button type="button" data-gallery-open data-gallery-src="./assets/img/look-02.svg" data-gallery-alt="Noiva com penteado clássico">
-                <img src="./assets/img/look-02.svg" alt="Noiva clássica" />
+              <button type="button" data-gallery-open data-gallery-src="../../img/mulherladocabelo.png" data-gallery-alt="Noiva com penteado clássico">
+                <img src="../../img/mulherladocabelo.png" alt="Noiva clássica" />
               </button>
               <span class="sp-tag">Noiva</span>
             </article>
             <article class="sp-gallery-item">
-              <button type="button" data-gallery-open data-gallery-src="./assets/img/look-03.svg" data-gallery-alt="Barbearia com acabamento premium">
-                <img src="./assets/img/look-03.svg" alt="Barbearia premium" />
+              <button type="button" data-gallery-open data-gallery-src="../../img/barbeiro.webp" data-gallery-alt="Barbearia com acabamento premium">
+                <img src="../../img/barbeiro.webp" alt="Barbearia premium" />
               </button>
               <span class="sp-tag">Barbearia</span>
             </article>
             <article class="sp-gallery-item">
-              <button type="button" data-gallery-open data-gallery-src="./assets/img/look-04.svg" data-gallery-alt="Maquiagem glow para evento">
-                <img src="./assets/img/look-04.svg" alt="Maquiagem glow" />
+              <button type="button" data-gallery-open data-gallery-src="../../img/mulher%20cabelo.png" data-gallery-alt="Maquiagem glow para evento">
+                <img src="../../img/mulher%20cabelo.png" alt="Maquiagem glow" />
               </button>
               <span class="sp-tag">Make</span>
             </article>
@@ -269,19 +281,19 @@
           </div>
           <div class="sp-blog-grid">
             <article class="sp-card sp-blog-card">
-              <img src="./assets/img/look-05.svg" alt="Cuidados para loiros" />
+              <img src="../../img/loiracabeluda.avif" alt="Cuidados para loiros" />
               <h3>Como manter o loiro luminoso por mais tempo</h3>
               <p>Dicas de rotina e manutenção para brilho e saúde dos fios.</p>
               <div class="sp-post-meta">Tag: cabelo</div>
             </article>
             <article class="sp-card sp-blog-card">
-              <img src="./assets/img/look-06.svg" alt="Preparação para noivas" />
+              <img src="../../img/mulherladocabelo.png" alt="Preparação para noivas" />
               <h3>Checklist de beleza para noivas sem estresse</h3>
               <p>Organize cronograma de pele, cabelo e prova para o grande dia.</p>
               <div class="sp-post-meta">Tag: noiva</div>
             </article>
             <article class="sp-card sp-blog-card">
-              <img src="./assets/img/look-01.svg" alt="Barba e estilo masculino" />
+              <img src="../../img/barbeiro.avif" alt="Barba e estilo masculino" />
               <h3>Barba alinhada: 5 hábitos para visual impecável</h3>
               <p>Cuidados simples para manter definição e conforto diário.</p>
               <div class="sp-post-meta">Tag: barba</div>

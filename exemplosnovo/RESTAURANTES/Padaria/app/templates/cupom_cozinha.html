@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cozinha | {{ comanda_codigo }}</title>
+  <link rel="icon" type="image/png" href="/static/logo.png">
+  <style>
+    :root {
+      --ink: #111;
+      --line: #111;
+      --soft: #666;
+      --paper-width: 80mm;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f2f2f2;
+      color: var(--ink);
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+      line-height: 1.3;
+      padding: 12px;
+    }
+    .ticket {
+      width: min(var(--paper-width), 100%);
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 8px;
+    }
+    .line {
+      border-top: 1px dashed var(--line);
+      margin: 6px 0;
+    }
+    .title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .alteracao {
+      margin-top: 6px;
+      padding: 4px 6px;
+      border: 1px solid #b00020;
+      background: #ffe4e8;
+      color: #b00020;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .meta {
+      display: grid;
+      gap: 2px;
+      margin-top: 6px;
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .meta-row span:first-child {
+      color: var(--soft);
+    }
+    .section-title {
+      margin: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .item {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--line);
+    }
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-weight: 700;
+    }
+    .item-name {
+      flex: 1;
+      word-break: break-word;
+    }
+    .item-extra {
+      margin-top: 3px;
+      padding-left: 8px;
+      color: #222;
+    }
+    .item-extra p {
+      margin: 1px 0;
+    }
+    .obs-comanda {
+      margin-top: 6px;
+      padding: 5px 6px;
+      border: 1px dashed var(--line);
+    }
+    .footer {
+      margin-top: 8px;
+      text-align: center;
+      color: var(--soft);
+      font-size: 11px;
+    }
+    .print-actions {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .print-actions button {
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    @media print {
+      @page { size: 80mm auto; margin: 2mm; }
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .ticket {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      .print-actions {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="ticket">
+    <h1 class="title">Pedido Comanda: {{ comanda_codigo }}</h1>
+    {% if alteracao %}
+    <div class="alteracao">ALTERAÇÃO</div>
+    {% endif %}
+
+    <div class="meta">
+      <div class="meta-row"><span>Mesa</span><strong>{{ mesa or "-" }}</strong></div>
+      <div class="meta-row"><span>Entrega</span><strong>{{ tipo_entrega }}</strong></div>
+      <div class="meta-row"><span>Status</span><strong>{{ status }}</strong></div>
+      <div class="meta-row"><span>Criado em</span><strong>{{ criado_em.strftime('%d/%m/%Y %H:%M') if criado_em else '-' }}</strong></div>
+      <div class="meta-row"><span>Total itens</span><strong>{{ total_itens }}</strong></div>
+    </div>
+
+    {% if observacoes %}
+    <div class="obs-comanda">
+      <strong>Obs comanda:</strong> {{ observacoes }}
+    </div>
+    {% endif %}
+
+    <div class="line"></div>
+    <h2 class="section-title">Itens</h2>
+
+    {% if not itens %}
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Sem itens na comanda.</span>
+      </div>
+    </div>
+    {% endif %}
+
+    {% for item in itens %}
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">{{ loop.index }}. {{ item.produto }}</span>
+        <span>x{{ item.quantidade }}</span>
+      </div>
+      {% if item.adicionais %}
+      <div class="item-extra">
+        {% for ad in item.adicionais %}
+        <p>+ {{ ad.nome }} x{{ ad.quantidade }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if item.observacoes %}
+      <div class="item-extra">
+        <p><strong>Obs:</strong> {{ item.observacoes }}</p>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <div class="line"></div>
+    <div class="footer">
+      Conferencia do garcom: ____________________
+    </div>
+
+    <div class="print-actions">
+      <button type="button" onclick="window.print()">Imprimir cozinha</button>
+    </div>
+  </article>
+
+  {% if auto_print %}
+  <script>
+    window.addEventListener("load", function () {
+      window.print();
+    });
+  </script>
+  {% endif %}
+</body>
+</html>

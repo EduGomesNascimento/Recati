@@ -1,0 +1,254 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relatório de Faturamento</title>
+  <style>
+    :root {
+      --ink: #221716;
+      --muted: #6b5552;
+      --line: #d7c7c4;
+      --brand: #b01f24;
+      --paper: #f8f3f1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      padding: 18px;
+    }
+    .sheet {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 14px 34px rgba(64, 27, 27, 0.12);
+      overflow: hidden;
+    }
+    .head {
+      position: relative;
+      padding: 16px 18px 12px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #fbf7f6);
+    }
+    .logo {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 4px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      color: var(--brand);
+    }
+    .sub {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .meta {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      background: #fff;
+    }
+    .content {
+      padding: 14px 18px 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      gap: 8px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+    .card span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .card strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .section-title {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .metodos {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 5px;
+    }
+    .metodos li {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 0.86rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 7px 6px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    th {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      color: #6f3a39;
+      background: #fff8f7;
+    }
+    td.right,
+    th.right {
+      text-align: right;
+    }
+    .foot {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding-top: 6px;
+    }
+    .print-actions {
+      text-align: center;
+      padding: 0 18px 18px;
+    }
+    .print-actions button {
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #cf1f25, #861216);
+      color: #fff;
+      font-weight: 700;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    @media (max-width: 840px) {
+      .cards { grid-template-columns: repeat(2, minmax(130px, 1fr)); }
+      th,
+      td { font-size: 0.8rem; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 8mm; }
+      body { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: none; border-radius: 0; box-shadow: none; }
+      .print-actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <header class="head">
+      <img class="logo" src="{{ logo_url }}" alt="Logo">
+      <h1>Relatório de Faturamento</h1>
+      <p class="sub">{{ empresa_nome }}</p>
+      <div class="meta">
+        <span class="chip">Período: {{ data.data_inicial.strftime('%d/%m/%Y') }} até {{ data.data_final.strftime('%d/%m/%Y') }}</span>
+        <span class="chip">Emitido: {{ gerado_em }}</span>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="cards">
+        <div class="card"><span>Total de pedidos</span><strong>{{ data.total_pedidos }}</strong></div>
+        <div class="card"><span>Pedidos válidos</span><strong>{{ data.pedidos_validos }}</strong></div>
+        <div class="card"><span>Pedidos cancelados</span><strong>{{ data.pedidos_cancelados }}</strong></div>
+        <div class="card"><span>Ticket médio</span><strong>R$ {{ '%.2f'|format(data.ticket_medio) }}</strong></div>
+        <div class="card"><span>Total vendido</span><strong>R$ {{ '%.2f'|format(data.total_vendido) }}</strong></div>
+        <div class="card"><span>Total recebido</span><strong>R$ {{ '%.2f'|format(data.total_recebido) }}</strong></div>
+        <div class="card"><span>Total cancelado</span><strong>R$ {{ '%.2f'|format(data.total_cancelado) }}</strong></div>
+      </div>
+
+      <div>
+        <h2 class="section-title">Recebimento por Método</h2>
+        <ul class="metodos">
+          {% for metodo, valor in data.pagamentos_por_metodo.items() %}
+          <li><span>{{ metodo }}</span><strong>R$ {{ '%.2f'|format(valor) }}</strong></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="section-title">Detalhamento por Dia</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th class="right">Pedidos</th>
+              <th class="right">Cancelados</th>
+              <th class="right">Vendido</th>
+              <th class="right">Recebido</th>
+              <th class="right">Ticket</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for dia in data.dias %}
+            <tr>
+              <td>{{ dia.data.strftime('%d/%m/%Y') }}</td>
+              <td class="right">{{ dia.total_pedidos }}</td>
+              <td class="right">{{ dia.pedidos_cancelados }}</td>
+              <td class="right">R$ {{ '%.2f'|format(dia.total_vendido) }}</td>
+              <td class="right">R$ {{ '%.2f'|format(dia.total_recebido) }}</td>
+              <td class="right">R$ {{ '%.2f'|format(dia.ticket_medio) }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="foot">Relatório interno para conferência de caixa.</div>
+    </section>
+
+    <div class="print-actions">
+      <button type="button" onclick="window.print()">Imprimir relatório</button>
+    </div>
+  </article>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!window.requestAnimationFrame) return;
+      window.requestAnimationFrame(function () {
+        // Intencionalmente vazio para permitir layout estável antes da impressão manual.
+      });
+    });
+  </script>
+</body>
+</html>

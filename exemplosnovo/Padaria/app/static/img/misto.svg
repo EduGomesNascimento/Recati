@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fef6eb"/>
+  <path d="M56 106l64-54 64 54H56z" fill="#d39a52"/>
+  <path d="M74 96l46-38 46 38H74z" fill="#f6d183"/>
+  <rect x="76" y="94" width="88" height="8" fill="#d44f4f"/>
+  <rect x="76" y="102" width="88" height="6" fill="#f0d25d"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">MISTO</text>
+</svg>

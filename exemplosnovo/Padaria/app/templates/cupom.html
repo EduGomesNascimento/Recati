@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cupom Comanda #{{ pedido_id }}</title>
+  <link rel="icon" type="image/png" href="/static/logo.png">
+  <style>
+    :root {
+      --ink: #210a09;
+      --red: #9f1014;
+      --line: #d7a5a0;
+      --paper: #fffdfc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f2e4e3;
+      color: var(--ink);
+      padding: 18px;
+    }
+    .cupom {
+      max-width: 360px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px dashed var(--red);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 10px 22px rgba(108, 17, 18, 0.16);
+    }
+    .title {
+      text-align: center;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .title h1 {
+      margin: 0;
+      color: var(--red);
+      font-size: 1.28rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .meta p {
+      margin: 3px 0;
+      font-size: 0.92rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border-bottom: 1px dotted var(--line);
+      text-align: left;
+      padding: 6px 3px;
+      vertical-align: top;
+    }
+    th {
+      color: #651113;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .right { text-align: right; }
+    .total {
+      margin-top: 10px;
+      border-top: 2px solid var(--line);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #540608;
+    }
+    .obs {
+      margin-top: 8px;
+      font-size: 0.84rem;
+      background: #ffe9e7;
+      border: 1px solid #f2c5c0;
+      border-radius: 8px;
+      padding: 8px;
+    }
+    .print-actions {
+      text-align: center;
+      margin-top: 12px;
+    }
+    .print-actions button {
+      border: none;
+      background: linear-gradient(180deg, #c7171f, #7d0d10);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .cupom { box-shadow: none; border: none; }
+      .print-actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="cupom">
+    <header class="title">
+      <h1>PadariaERP</h1>
+      <small>Cupom da Comanda #{{ pedido_id }}</small>
+    </header>
+
+    <section class="meta">
+      <p><strong>Cliente:</strong> {{ cliente_nome }}</p>
+      <p><strong>Status:</strong> {{ status }}</p>
+      <p><strong>Entrega:</strong> {{ tipo_entrega }}</p>
+      <p><strong>Criado em:</strong> {{ criado_em.strftime('%Y-%m-%d %H:%M:%S') if criado_em else '-' }}</p>
+    </section>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qtd</th>
+          <th class="right">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in itens %}
+        <tr>
+          <td>{{ item.produto }}<br><small>R$ {{ '%.2f'|format(item.preco_unitario) }} un.</small></td>
+          <td>{{ item.quantidade }}</td>
+          <td class="right">R$ {{ '%.2f'|format(item.subtotal) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p class="total">
+      <span>TOTAL</span>
+      <span>R$ {{ '%.2f'|format(total) }}</span>
+    </p>
+
+    {% if observacoes %}
+    <section class="obs">
+      <strong>Observações:</strong> {{ observacoes }}
+    </section>
+    {% endif %}
+
+    <div class="print-actions">
+      <button type="button" onclick="window.print()">Imprimir cupom</button>
+    </div>
+  </article>
+</body>
+</html>

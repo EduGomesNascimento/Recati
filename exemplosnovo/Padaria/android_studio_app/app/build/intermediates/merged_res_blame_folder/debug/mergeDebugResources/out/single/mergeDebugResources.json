@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.padariaerp.mobile.app-debug-32:/drawable_ic_launcher.xml.flat",
+        "source": "com.padariaerp.mobile.app-main-34:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\egnpo\\.gradle\\daemon\\9.1.0\\com.padariaerp.mobile.app-debug-32:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\egnpo\\.gradle\\daemon\\9.1.0\\com.padariaerp.mobile.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\egnpo\\.gradle\\daemon\\9.1.0\\com.padariaerp.mobile.app-debug-32:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\egnpo\\.gradle\\daemon\\9.1.0\\com.padariaerp.mobile.app-main-34:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "com.padariaerp.mobile.app-debug-32:/drawable_ic_launcher_round.xml.flat",
+        "source": "com.padariaerp.mobile.app-main-34:/drawable/ic_launcher_round.xml"
+    }
+]

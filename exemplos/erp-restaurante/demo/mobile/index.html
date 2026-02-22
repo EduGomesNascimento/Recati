@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ChurrascariaERP Mobile | Anotação de Pedido</title>
+  <link id="app-favicon" rel="icon" type="image/png" href="../static/logo.png">
+  <link rel="shortcut icon" href="../static/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="../static/logo.png">
+  <link rel="stylesheet" href="../static/mobile.css?v=20260217-15">
+</head>
+<body>
+  <header class="top">
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu">&#9776;</button>
+    <div class="top-copy">
+      <p id="brand-app-name" class="app-name">ChurrascariaERP Mobile</p>
+      <h1 id="brand-page-title">Anotar Pedido</h1>
+    </div>
+    <div class="top-kpi">
+      <span id="sel-codigo">Sem comanda</span>
+      <span id="sel-mesa">Mesa -</span>
+      <span id="sel-complexidade">Complexidade -</span>
+      <span id="sel-status" class="badge">-</span>
+    </div>
+  </header>
+
+  <div class="recati-link-row">
+    <a class="recati-link" href="https://www.recati.com.br/">Voltar ao Recati</a>
+  </div>
+
+  <nav class="mobile-tab-nav">
+    <button type="button" class="mobile-tab-btn active" data-tab="pedidos">Pedidos</button>
+    <button type="button" class="mobile-tab-btn" data-tab="comandas">Comandas</button>
+    <button type="button" class="mobile-tab-btn" data-tab="opcoes">Opções</button>
+  </nav>
+
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <div class="sidebar-head">
+      <strong>Opções da Comanda</strong>
+      <button id="sidebar-close" class="menu-toggle" type="button" aria-label="Fechar menu">&#10005;</button>
+    </div>
+
+    <section class="sidebar-section">
+      <h2>Fluxo da Comanda</h2>
+      <div class="selected-info">
+        <p class="kv-row"><strong>Mesa</strong><span id="sel-mesa-side">-</span></p>
+        <p class="kv-row"><strong>Complexidade</strong><span id="sel-complexidade-side">-</span></p>
+        <p class="kv-row"><strong>Total de itens</strong><span id="sel-total-itens">0</span></p>
+        <p class="kv-row"><strong>Total</strong><span>R$ <span id="sel-total">0.00</span></span></p>
+        <p class="kv-row"><strong>Pago</strong><span>R$ <span id="sel-pago">0.00</span></span></p>
+        <p class="kv-row"><strong>Saldo</strong><span>R$ <span id="sel-saldo">0.00</span></span></p>
+      </div>
+      <div class="status-actions">
+        <button data-status="CANCELADO" type="button">Cancelar</button>
+      </div>
+    </section>
+
+    <section class="sidebar-section">
+      <h2>Atalhos</h2>
+      <a class="go-caixa" href="../caixa/">Abrir Caixa Desktop</a>
+    </section>
+  </aside>
+  <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+  <aside id="abrir-sidebar" class="sidebar sidebar-right" aria-hidden="true">
+    <div class="sidebar-head">
+      <strong>Abrir Nova Comanda</strong>
+      <button id="abrir-sidebar-close" class="menu-toggle" type="button" aria-label="Fechar abertura">&#10005;</button>
+    </div>
+    <section class="sidebar-section">
+      <form id="abrir-comanda-form" class="grid">
+        <label>Código da Comanda</label>
+        <select id="codigo-comanda" required></select>
+        <label>Tipo Entrega</label>
+        <select id="tipo-entrega">
+          <option value="RETIRADA">RETIRADA</option>
+          <option value="ENTREGA">ENTREGA</option>
+        </select>
+        <label>Mesa (opcional)</label>
+        <input id="mesa-comanda" maxlength="30" placeholder="Ex.: 12">
+        <label>Observações da Comanda</label>
+        <input id="obs-comanda" maxlength="255" placeholder="Ex.: cliente sem lactose">
+        <button type="submit">Abrir Comanda</button>
+      </form>
+    </section>
+  </aside>
+  <div id="abrir-sidebar-backdrop" class="sidebar-backdrop"></div>
+
+  <main class="container">
+    <div class="mobile-tab-panel active" data-tab-panel="pedidos">
+      <section class="card" id="comanda-uso-card">
+        <h2 class="section-title">Comanda em uso</h2>
+        <div class="use-comanda">
+          <button id="open-abrir-sidebar" class="abrir-comanda-cta" type="button">+ Abrir Comanda</button>
+          <div id="comanda-selecionada-alert" class="comanda-selecionada-alert">Comanda selecionada para alterar: nenhuma</div>
+          <label for="comanda-search">Pesquisar comanda para alterar</label>
+          <input id="comanda-search" placeholder="Ex.: C-004, ABERTO">
+          <label for="comanda-ativa-select">Selecionar comanda para alterar</label>
+          <div class="use-comanda-row">
+            <select id="comanda-ativa-select"></select>
+            <button id="usar-comanda-btn" type="button">Usar</button>
+            <button id="refresh-comandas-btn" class="btn-ghost" type="button">Atualizar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card is-hidden" id="anotacao-card">
+        <div class="anotacao-head">
+        <h2 class="section-title">Anotação de Item</h2>
+          <button id="stop-anotacao-btn" type="button" class="btn-ghost">Parar de anotar pedido</button>
+        </div>
+        <p id="anotacao-lock-message" class="small form-lock-message is-hidden">
+          Selecione uma comanda para liberar a anotação de itens.
+        </p>
+
+        <div class="grid">
+          <label>Busca rápida</label>
+          <input id="produto-search" placeholder="Buscar produto por nome">
+        </div>
+
+        <div class="quick-section">
+          <h3>Mais pedidos</h3>
+          <div id="sugestoes-mais-pedidos" class="sugestoes-list"></div>
+        </div>
+
+        <div class="quick-section">
+          <h3>Catálogo com imagens</h3>
+          <p class="small catalogo-help">
+            Use + e - para ajustar a quantidade no campo de texto e toque em Adicionar. Para ajustes e edição do item, clique na imagem.
+          </p>
+          <div id="catalogo-produtos" class="catalogo-grid"></div>
+        </div>
+
+        <section id="ajuste-fino-section" class="quick-section is-hidden">
+          <h3>Edição do item</h3>
+          <p class="small">Produto selecionado para ajuste detalhado.</p>
+          <div class="produto-selecionado-resumo">
+            <strong id="produto-selecionado-nome">Nenhum produto selecionado</strong>
+            <strong id="produto-selecionado-total">R$ 0,00</strong>
+          </div>
+
+          <form id="item-form" class="grid item-form">
+            <h3 id="item-form-title">Adicionar na comanda</h3>
+            <p id="item-form-mode" class="small is-hidden">Modo alteração de item ativo.</p>
+            <select id="produto-id" class="is-hidden" aria-hidden="true" tabindex="-1" required></select>
+
+            <div class="field-row">
+              <div>
+                <label>Quantidade</label>
+                <input id="item-qtd" type="number" min="1" value="1" required>
+              </div>
+              <div>
+                <label>Desconto (R$)</label>
+                <input id="item-desconto" type="number" min="0" step="0.01" value="0.00">
+              </div>
+            </div>
+
+            <label>Observações do item</label>
+            <input id="item-obs" maxlength="255" placeholder="Ex.: alérgico a glúten">
+            <label>Observações rápidas</label>
+            <div id="obs-rapidas" class="obs-rapidas"></div>
+
+            <label>Valor final (estimado)</label>
+            <input id="item-valor-final" value="R$ 0,00" readonly>
+
+            <label>Adicionais</label>
+            <div id="adicionais-box" class="adicionais-box"></div>
+            <div class="item-form-actions">
+              <button id="item-submit-btn" type="submit">Adicionar Item</button>
+              <button id="item-cancel-edit" type="button" class="btn-ghost is-hidden">Cancelar alteração</button>
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <section class="card is-hidden" id="itens-card">
+        <h2 class="section-title">Itens da Comanda</h2>
+        <div class="nota-total-row">
+          <span>Total da nota</span>
+          <strong id="itens-total-nota">R$ 0,00</strong>
+        </div>
+        <p class="small itens-help">Toque no item para expandir adicionais, desconto e observações.</p>
+        <div id="itens-list" class="itens-list"></div>
+        <div class="kitchen-actions kitchen-actions-bottom">
+          <button id="finalizar-pedido" type="button">Finalizar pedido</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="mobile-tab-panel" data-tab-panel="comandas">
+      <section class="card">
+        <h2 class="section-title">Painel de Comandas</h2>
+        <p class="small">
+          Toque na comanda para editar. Finalizada/cancelada só libera com confirmação.
+        </p>
+        <div class="comandas-panel-controls">
+          <input id="painel-comandas-search" placeholder="Pesquisar código, status ou mesa">
+          <button id="painel-comandas-refresh" type="button" class="btn-ghost">Atualizar</button>
+        </div>
+        <div id="painel-comandas-filtros" class="quick-filters">
+          <button type="button" class="btn-ghost active" data-cmd-filter="TODOS">Todos</button>
+          <button type="button" class="btn-ghost" data-cmd-filter="LIBERADO">Liberadas</button>
+          <button type="button" class="btn-ghost" data-cmd-filter="ABERTO">Abertas</button>
+          <button type="button" class="btn-ghost" data-cmd-filter="FINALIZADA">Finalizadas</button>
+          <button type="button" class="btn-ghost" data-cmd-filter="CANCELADO">Canceladas</button>
+        </div>
+        <div id="painel-comandas-grid" class="comandas-status-grid"></div>
+      </section>
+    </div>
+
+    <div class="mobile-tab-panel" data-tab-panel="opcoes">
+      <section class="card">
+        <h2 class="section-title">Opções de Interface</h2>
+        <form id="mobile-options-form" class="grid mobile-options-grid">
+          <div class="preset-block">
+            <label>Presets rápidos</label>
+            <div class="preset-grid">
+              <button type="button" class="preset-btn" data-mobile-ui-preset="padrao">Padrão</button>
+              <button type="button" class="preset-btn" data-mobile-ui-preset="balcao">Balcão</button>
+              <button type="button" class="preset-btn" data-mobile-ui-preset="toque">Toque grande</button>
+              <button type="button" class="preset-btn" data-mobile-ui-preset="catalogo">Catálogo</button>
+            </div>
+          </div>
+          <label for="mobile-ui-theme">Tema</label>
+          <select id="mobile-ui-theme">
+            <option value="light">Claro</option>
+            <option value="dark">Escuro</option>
+          </select>
+
+          <label for="mobile-ui-density">Densidade</label>
+          <select id="mobile-ui-density">
+            <option value="comfortable">Confortável</option>
+            <option value="compact">Compacto</option>
+          </select>
+
+          <label for="mobile-ui-font-size">Texto</label>
+          <select id="mobile-ui-font-size">
+            <option value="small">Pequeno</option>
+            <option value="normal">Normal</option>
+            <option value="large">Grande</option>
+          </select>
+
+          <label for="mobile-ui-radius">Bordas</label>
+          <select id="mobile-ui-radius">
+            <option value="sharp">Reta</option>
+            <option value="normal">Padrão</option>
+            <option value="round">Arredondada</option>
+          </select>
+
+          <label for="mobile-ui-contrast">Contraste</label>
+          <select id="mobile-ui-contrast">
+            <option value="normal">Normal</option>
+            <option value="high">Alto</option>
+          </select>
+
+          <label for="mobile-ui-layout">Layout</label>
+          <select id="mobile-ui-layout">
+            <option value="full">Expandido</option>
+            <option value="boxed">Centralizado</option>
+          </select>
+
+          <div class="options-check-list">
+            <label class="options-check"><input id="mobile-ui-motion" type="checkbox" checked> Animações suaves</label>
+            <label class="options-check"><input id="mobile-ui-catalog-compact" type="checkbox"> Catálogo compacto</label>
+            <label class="options-check"><input id="mobile-ui-show-icons" type="checkbox" checked> Exibir ícones</label>
+          </div>
+
+          <button id="mobile-ui-reset" type="button" class="btn-ghost">Restaurar aparência</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Customização Global do ERP</h2>
+        <p class="small">Ajustes globais devem ser feitos no ambiente administrativo do caixa.</p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Histórico de Comandas</h2>
+        <p class="small">Histórico limpo automaticamente todo domingo às 23:00.</p>
+        <div class="comandas-panel-controls">
+          <input id="historico-search" placeholder="Pesquisar código, status ou data">
+          <button id="historico-refresh" type="button" class="btn-ghost">Atualizar histórico</button>
+        </div>
+        <div id="historico-list" class="historico-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <img id="brand-footer-logo" src="../static/logo.png" alt="Logo ChurrascariaERP" class="footer-logo">
+    <p id="brand-footer-text">Powered by ChurrascariaERP</p>
+  </footer>
+
+  <dialog id="confirm-check-dialog" class="confirm-check-dialog">
+    <form method="dialog" class="confirm-check-form">
+      <h3 id="confirm-check-title">Confirmar ação</h3>
+      <p id="confirm-check-message" class="small">Confirme para continuar.</p>
+      <label class="confirm-check-toggle">
+        <input id="confirm-check-box" type="checkbox">
+        <span id="confirm-check-label">Confirmo que desejo continuar.</span>
+      </label>
+      <div id="confirm-check-reasons" class="confirm-check-reasons is-hidden">
+        <p id="confirm-check-reasons-title" class="small">Selecione o motivo:</p>
+        <div id="confirm-check-reasons-list" class="confirm-check-reasons-list"></div>
+      </div>
+      <div class="confirm-check-actions">
+        <button id="confirm-check-cancel" type="button" class="btn-ghost">Cancelar</button>
+        <button id="confirm-check-confirm" type="button" disabled>Confirmar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="../static/mock-api.js?v=20260219-2"></script>
+  <script src="../static/mobile.js?v=20260218-21"></script>
+</body>
+</html>
+
+
+
+

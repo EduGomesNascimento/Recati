@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#f9eee9"/>
+  <rect x="56" y="58" width="128" height="56" rx="8" fill="#6a3b2e"/>
+  <rect x="56" y="45" width="128" height="18" rx="8" fill="#8a513f"/>
+  <circle cx="120" cy="39" r="4" fill="#f2dacd"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="16" fill="#5b3024">BOLO CHOCO</text>
+</svg>

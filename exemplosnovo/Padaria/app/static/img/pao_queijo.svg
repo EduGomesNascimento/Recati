@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fff7de"/>
+  <circle cx="74" cy="82" r="30" fill="#d7a14d"/>
+  <circle cx="120" cy="75" r="34" fill="#c98f3f"/>
+  <circle cx="166" cy="84" r="30" fill="#d7a14d"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="16" fill="#6f3d10">PAO QUEIJO</text>
+</svg>

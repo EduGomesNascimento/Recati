@@ -1,8 +1,20 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salão Premium | Blog</title>
     <meta name="description" content="Blog do Salão Premium com dicas de beleza, tendências e manutenção." />
     <link rel="icon" href="./assets/img/salao-icon.png" type="image/png" sizes="32x32" />
@@ -64,42 +76,42 @@
         <section class="sp-section sp-reveal">
           <div class="sp-blog-grid">
             <article class="sp-card sp-blog-card" data-post-tags="cabelo,tendencias,cuidados">
-              <img src="./assets/img/look-01.svg" alt="Loiro premium com brilho" />
+              <img src="../../img/cabelosbonitos.png" alt="Loiro premium com brilho" />
               <h3>Loiro premium sem ressecar: rotina de 4 passos</h3>
               <p>Descubra como manter cor vibrante e fibra protegida entre um atendimento e outro.</p>
               <div class="sp-post-meta">cabelo • tendências • cuidados</div>
             </article>
 
             <article class="sp-card sp-blog-card" data-post-tags="noiva,cuidados">
-              <img src="./assets/img/look-02.svg" alt="Noiva com penteado clássico" />
+              <img src="../../img/mulherladocabelo.png" alt="Noiva com penteado clássico" />
               <h3>Planejamento beauty para noivas: quando começar?</h3>
               <p>Estruture cronograma de pele, cabelo e prova para chegar tranquila ao grande dia.</p>
               <div class="sp-post-meta">noiva • cuidados</div>
             </article>
 
             <article class="sp-card sp-blog-card" data-post-tags="barba,cuidados">
-              <img src="./assets/img/look-03.svg" alt="Barbearia com acabamento" />
+              <img src="../../img/barbeiro.webp" alt="Barbearia com acabamento" />
               <h3>Barba alinhada todos os dias sem perder naturalidade</h3>
               <p>Técnicas simples para manter desenho limpo e conforto na rotina.</p>
               <div class="sp-post-meta">barba • cuidados</div>
             </article>
 
             <article class="sp-card sp-blog-card" data-post-tags="tendencias,cabelo">
-              <img src="./assets/img/look-04.svg" alt="Maquiagem e cabelo em tendência" />
+              <img src="../../img/mulher%20cabelo.png" alt="Maquiagem e cabelo em tendência" />
               <h3>Tendências de cor e finalização para a próxima temporada</h3>
               <p>Inspire-se em propostas elegantes e personalizáveis para seu estilo.</p>
               <div class="sp-post-meta">tendências • cabelo</div>
             </article>
 
             <article class="sp-card sp-blog-card" data-post-tags="cuidados,cabelo">
-              <img src="./assets/img/look-05.svg" alt="Design de sobrancelhas e visagismo" />
+              <img src="../../img/loiracabeluda.avif" alt="Design de sobrancelhas e visagismo" />
               <h3>Visagismo aplicado: como acertar no design de sobrancelha</h3>
               <p>Harmonize expressão facial com ajustes estratégicos e naturais.</p>
               <div class="sp-post-meta">cuidados • cabelo</div>
             </article>
 
             <article class="sp-card sp-blog-card" data-post-tags="tendencias,noiva">
-              <img src="./assets/img/look-06.svg" alt="Nail design elegante" />
+              <img src="../../img/salongeneric.png" alt="Nail design elegante" />
               <h3>Nail design elegante para eventos e cerimônias</h3>
               <p>Combinações de acabamento e paleta para compor looks sofisticados.</p>
               <div class="sp-post-meta">tendências • noiva</div>

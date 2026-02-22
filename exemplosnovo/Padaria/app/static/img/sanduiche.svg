@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fef5e9"/>
+  <rect x="54" y="92" width="132" height="16" rx="6" fill="#d39a52"/>
+  <rect x="56" y="84" width="128" height="10" fill="#7fb14f"/>
+  <rect x="56" y="78" width="128" height="8" fill="#d44f4f"/>
+  <rect x="54" y="64" width="132" height="16" rx="6" fill="#d39a52"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="16" fill="#6f3d10">SANDUICHE</text>
+</svg>

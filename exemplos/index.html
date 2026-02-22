@@ -1,10 +1,24 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exemplos RECATI</title>
-    <link rel="icon" href="../Adobe Express - file (2).png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="../assets/icons/recati-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/recati-favicon.png" />
     <link rel="stylesheet" href="./exemplos.css" />
   </head>
   <body>
@@ -21,7 +35,10 @@
     <main class="page">
       <section class="hero">
         <h1>Hub de Exemplos</h1>
-        <p>Escolha um template, veja os detalhes e abra a demo funcional.</p>
+        <p>Galeria de demos reais para validar layout, fluxo operacional e experiência de uso antes da implementação final.</p>
+        <p class="hero-note">
+          Aqui você testa sites institucionais e páginas de serviço com navegação completa e interação prática.
+        </p>
       </section>
 
       <section class="toolbar">

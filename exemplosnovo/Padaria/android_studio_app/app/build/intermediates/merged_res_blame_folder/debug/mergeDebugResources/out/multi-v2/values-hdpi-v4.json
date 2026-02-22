@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.padariaerp.mobile.app-mergeDebugResources-30:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\egnpo\\.gradle\\caches\\9.1.0\\transforms\\02337bb3e9b63c23501aaeabe8950775\\workspace\\transformed\\appcompat-1.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

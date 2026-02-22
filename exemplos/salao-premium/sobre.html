@@ -1,8 +1,20 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salão Premium | Sobre</title>
     <meta name="description" content="Conheça a história, valores e diferenciais do Salão Premium." />
     <link rel="icon" href="./assets/img/salao-icon.png" type="image/png" sizes="32x32" />
@@ -51,7 +63,7 @@
         <section class="sp-section sp-reveal">
           <div class="sp-grid sp-grid-2">
             <article class="sp-card sp-about-media">
-              <img src="./assets/img/look-04.svg" alt="Ambiente sofisticado do salão" />
+              <img src="../../img/salongeneric.png" alt="Ambiente sofisticado do salão" />
             </article>
             <article class="sp-card">
               <h2 class="sp-title">Nossa essência</h2>

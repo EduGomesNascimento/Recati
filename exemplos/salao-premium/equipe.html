@@ -1,8 +1,20 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salão Premium | Equipe</title>
     <meta name="description" content="Conheça a equipe do Salão Premium: especialistas em cabelo, maquiagem e visagismo." />
     <link rel="icon" href="./assets/img/salao-icon.png" type="image/png" sizes="32x32" />
@@ -51,7 +63,7 @@
         <section class="sp-section sp-reveal">
           <div class="sp-grid sp-grid-3">
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Camila Viana" />
+              <img src="../../img/loiracabeluda.avif" alt="Camila Viana" />
               <div class="sp-team-meta">
                 <h3>Camila Viana</h3>
                 <p class="sp-team-role">Colorista sênior</p>
@@ -61,7 +73,7 @@
             </article>
 
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Rafael Mota" />
+              <img src="../../img/barbeiro.avif" alt="Rafael Mota" />
               <div class="sp-team-meta">
                 <h3>Rafael Mota</h3>
                 <p class="sp-team-role">Hair stylist e barbeiro</p>
@@ -71,7 +83,7 @@
             </article>
 
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Beatriz Nunes" />
+              <img src="../../img/mulherladocabelo.png" alt="Beatriz Nunes" />
               <div class="sp-team-meta">
                 <h3>Beatriz Nunes</h3>
                 <p class="sp-team-role">Makeup artist</p>
@@ -81,7 +93,7 @@
             </article>
 
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Lorena Farias" />
+              <img src="../../img/cabelosbonitos.png" alt="Lorena Farias" />
               <div class="sp-team-meta">
                 <h3>Lorena Farias</h3>
                 <p class="sp-team-role">Nail artist</p>
@@ -91,7 +103,7 @@
             </article>
 
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Bruna Cardoso" />
+              <img src="../../img/mulher%20cabelo.png" alt="Bruna Cardoso" />
               <div class="sp-team-meta">
                 <h3>Bruna Cardoso</h3>
                 <p class="sp-team-role">Designer de sobrancelhas</p>
@@ -101,7 +113,7 @@
             </article>
 
             <article class="sp-card sp-team-card">
-              <img src="./assets/img/team-placeholder.svg" alt="Gabriel Torres" />
+              <img src="../../img/salongeneric.png" alt="Gabriel Torres" />
               <div class="sp-team-meta">
                 <h3>Gabriel Torres</h3>
                 <p class="sp-team-role">Consultor de imagem</p>

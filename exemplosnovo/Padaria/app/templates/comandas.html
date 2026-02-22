@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PadariaERP | Controle de Comanda</title>
+  <link rel="icon" type="image/png" href="/static/logo.png">
+  <link rel="stylesheet" href="/static/comandas.css?v=20260217-2">
+</head>
+<body>
+  <div class="bg-layer"></div>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">PadariaERP</p>
+      <h1>Controle de Comanda</h1>
+    </div>
+    <div class="kpi-grid">
+      <article class="kpi">
+        <span class="kpi-label">Total</span>
+        <strong id="kpi-total">0</strong>
+      </article>
+      <article class="kpi">
+        <span class="kpi-label">Abertas</span>
+        <strong id="kpi-aberto">0</strong>
+      </article>
+      <article class="kpi">
+        <span class="kpi-label">Em preparo</span>
+        <strong id="kpi-em-preparo">0</strong>
+      </article>
+      <article class="kpi">
+        <span class="kpi-label">Prontas</span>
+        <strong id="kpi-pronto">0</strong>
+      </article>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card cadastros">
+      <h2>Cadastros Rápidos</h2>
+      <div class="forms-grid">
+        <form id="cliente-form" class="form-block">
+          <h3>Novo Cliente</h3>
+          <label>Nome</label>
+          <input name="nome" required minlength="2" maxlength="120">
+          <label>Telefone</label>
+          <input name="telefone" maxlength="20">
+          <label>Endereço</label>
+          <input name="endereco" maxlength="255">
+          <button type="submit">Cadastrar Cliente</button>
+        </form>
+
+        <form id="produto-form" class="form-block">
+          <h3>Novo Produto</h3>
+          <label>Nome</label>
+          <input name="nome" required minlength="2" maxlength="120">
+          <label>Preço</label>
+          <input name="preco" type="number" min="0.01" step="0.01" required>
+          <label>Estoque Inicial</label>
+          <input name="estoque_atual" type="number" min="0" value="0" required>
+          <button type="submit">Cadastrar Produto</button>
+        </form>
+
+        <form id="comanda-form" class="form-block">
+          <h3>Abrir Comanda</h3>
+          <label>Cliente</label>
+          <select id="pedido-cliente-id" name="cliente_id" required></select>
+          <label>Tipo Entrega</label>
+          <select name="tipo_entrega">
+            <option value="RETIRADA">RETIRADA</option>
+            <option value="ENTREGA">ENTREGA</option>
+          </select>
+          <label>Observações</label>
+          <input name="observacoes" maxlength="255">
+          <button type="submit">Abrir Comanda</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="card comando-board">
+      <div class="board-left">
+        <div class="board-title">
+          <h2>Comandas</h2>
+          <button id="refresh-comandas" type="button">Atualizar</button>
+        </div>
+        <label>Selecionar Comanda</label>
+        <select id="comanda-id-select"></select>
+        <div id="comanda-list" class="comanda-list"></div>
+      </div>
+
+      <div class="board-right">
+        <h2>Controle da Comanda</h2>
+        <div class="details">
+          <p><strong>Comanda:</strong> <span id="comanda-detalhe-id">-</span></p>
+          <p><strong>Status:</strong> <span id="comanda-detalhe-status">-</span></p>
+          <p><strong>Total:</strong> R$ <span id="comanda-detalhe-total">0.00</span></p>
+        </div>
+        <div class="detail-actions">
+          <button id="print-cupom-btn" type="button" disabled>Imprimir Cupom</button>
+        </div>
+
+        <div class="status-actions">
+          <button data-status="EM_PREPARO" type="button">EM_PREPARO</button>
+          <button data-status="PRONTO" type="button">PRONTO</button>
+          <button data-status="ENTREGUE" type="button">ENTREGUE</button>
+          <button data-status="CANCELADO" type="button">CANCELADO</button>
+        </div>
+
+        <form id="item-form" class="item-form">
+          <h3>Adicionar Item</h3>
+          <label>Produto</label>
+          <select id="item-produto-id" name="produto_id" required></select>
+          <label>Quantidade</label>
+          <input name="quantidade" type="number" min="1" required value="1">
+          <button type="submit">Adicionar na Comanda</button>
+        </form>
+
+        <h3>Itens da Comanda</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Preço Unit.</th>
+                <th>Qtd</th>
+                <th>Subtotal</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="itens-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="card relatorio">
+      <h2>Resumo do Dia</h2>
+      <form id="resumo-form" class="resumo-form">
+        <label>Data</label>
+        <input id="resumo-data" type="date" required>
+        <button type="submit">Carregar Resumo</button>
+      </form>
+      <div class="resumo-grid">
+        <div>
+          <h3>Total Vendido</h3>
+          <p id="resumo-total">R$ 0.00</p>
+        </div>
+        <div>
+          <h3>Pedidos por Status</h3>
+          <ul id="resumo-status"></ul>
+        </div>
+        <div>
+          <h3>Top 5 Produtos</h3>
+          <ul id="resumo-top"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card fechamento">
+      <h2>Fechamento de Caixa</h2>
+      <form id="fechamento-form" class="resumo-form">
+        <label>Data</label>
+        <input id="fechamento-data" type="date" required>
+        <button type="submit">Calcular Fechamento</button>
+        <button id="fc-export-csv-btn" type="button">Exportar CSV</button>
+      </form>
+      <div class="fechamento-grid">
+        <div>
+          <h3>Indicadores</h3>
+          <p>Total pedidos: <strong id="fc-total-pedidos">0</strong></p>
+          <p>Válidos: <strong id="fc-validos">0</strong></p>
+          <p>Cancelados: <strong id="fc-cancelados">0</strong></p>
+          <p>Ticket médio: <strong id="fc-ticket-medio">R$ 0.00</strong></p>
+        </div>
+        <div>
+          <h3>Valores</h3>
+          <p>Total vendido: <strong id="fc-total-vendido">R$ 0.00</strong></p>
+          <p>Total cancelado: <strong id="fc-total-cancelado">R$ 0.00</strong></p>
+        </div>
+        <div>
+          <h3>Por Tipo de Entrega</h3>
+          <ul id="fc-tipo-lista"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card historico-cupom">
+      <h2>Histórico de Cupons</h2>
+      <form id="historico-form" class="historico-form">
+        <div>
+          <label>Data Inicial</label>
+          <input id="historico-data-inicial" type="date">
+        </div>
+        <div>
+          <label>Data Final</label>
+          <input id="historico-data-final" type="date">
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="historico-status">
+            <option value="">Todos</option>
+            <option value="ABERTO">ABERTO</option>
+            <option value="EM_PREPARO">EM_PREPARO</option>
+            <option value="PRONTO">PRONTO</option>
+            <option value="ENTREGUE">ENTREGUE</option>
+            <option value="CANCELADO">CANCELADO</option>
+          </select>
+        </div>
+        <div>
+          <label>Somente Finalizados</label>
+          <select id="historico-somente-finalizados">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
+        <button type="submit">Buscar Histórico</button>
+      </form>
+      <div class="historico-list" id="historico-list"></div>
+    </section>
+
+    <div id="flash" class="flash" aria-live="polite"></div>
+  </main>
+
+  <script src="/static/comandas.js?v=20260217-2"></script>
+</body>
+</html>

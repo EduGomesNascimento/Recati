@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChurrascariaERP Caixa Desktop</title>
+  <link id="app-favicon" rel="icon" type="image/png" href="/static/logo.png">
+  <link rel="stylesheet" href="/static/caixa.css?v=20260217-4">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p id="brand-app-name" class="app-name">ChurrascariaERP Desktop</p>
+      <h1 id="brand-app-subtitle">Caixa, Pagamento e Fechamento</h1>
+    </div>
+    <div class="top-actions">
+      <a class="go-mobile" href="/mobile">Abrir App Mobile</a>
+    </div>
+  </header>
+
+  <nav class="tab-nav">
+    <button type="button" class="tab-btn active" data-tab="comandas">
+      <span class="tab-btn-icon" aria-hidden="true">*</span>
+      Comandas
+    </button>
+    <button type="button" class="tab-btn" data-tab="pagamentos">
+      <span class="tab-btn-icon" aria-hidden="true">*</span>
+      Pagamentos
+    </button>
+    <button type="button" class="tab-btn" data-tab="produtos">
+      Produtos e Serviços
+    </button>
+    <button type="button" class="tab-btn" data-tab="config">
+      <span class="tab-btn-icon" aria-hidden="true">*</span>
+      Opções
+    </button>
+  </nav>
+
+  <main class="layout">
+    <div class="tab-panel active" data-tab-panel="comandas">
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-codigos" class="panel">
+          <summary>Códigos de Comanda</summary>
+          <div class="panel-body">
+            <details class="subpanel">
+              <summary>Novo código</summary>
+              <form id="codigo-form" class="row-form subpanel-body">
+                <input id="novo-codigo" maxlength="50" placeholder="Ex.: C-101" required>
+                <button type="submit">Cadastrar</button>
+              </form>
+            </details>
+            <details class="subpanel">
+              <summary>Lista de códigos</summary>
+              <div class="subpanel-body">
+                <div id="codigos-list" class="codigos-list"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-comandas" class="panel" open>
+          <summary>Comandas</summary>
+          <div class="panel-body">
+            <details class="subpanel">
+              <summary>Filtros avançados</summary>
+              <div class="subpanel-body">
+                <div class="filter-grid">
+                  <div>
+                    <label>Busca por código</label>
+                    <input id="filtro-codigo" placeholder="Ex.: C-001">
+                  </div>
+                  <div>
+                    <label>Mesa</label>
+                    <input id="filtro-mesa" placeholder="Ex.: 12">
+                  </div>
+                  <div>
+                    <label>Status</label>
+                    <select id="filtro-status">
+                      <option value="">Todos</option>
+                      <option value="ABERTO">Aberto</option>
+                      <option value="FINALIZADA">Finalizada</option>
+                      <option value="CANCELADO">Cancelado</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Tipo de entrega</label>
+                    <select id="filtro-tipo-entrega">
+                      <option value="">Todos</option>
+                      <option value="RETIRADA">RETIRADA</option>
+                      <option value="ENTREGA">ENTREGA</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Data inicial</label>
+                    <input id="filtro-data-inicial" type="date">
+                  </div>
+                  <div>
+                    <label>Data final</label>
+                    <input id="filtro-data-final" type="date">
+                  </div>
+                  <div>
+                    <label>Total mínimo</label>
+                    <input id="filtro-total-min" type="number" min="0" step="0.01" placeholder="0.00">
+                  </div>
+                  <div>
+                    <label>Total máximo</label>
+                    <input id="filtro-total-max" type="number" min="0" step="0.01" placeholder="999.99">
+                  </div>
+                  <div>
+                    <label>Ordenar por</label>
+                    <select id="filtro-ordem-campo">
+                      <option value="id">ID</option>
+                      <option value="criado_em">Data</option>
+                      <option value="codigo">Código</option>
+                      <option value="mesa">Mesa</option>
+                      <option value="status">Status</option>
+                      <option value="tipo_entrega">Tipo de entrega</option>
+                      <option value="total">Total</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Direção</label>
+                    <select id="filtro-ordem-direcao">
+                      <option value="desc">Desc</option>
+                      <option value="asc">Asc</option>
+                    </select>
+                  </div>
+                  <div class="filter-actions">
+                    <button id="buscar-comandas" type="button">Filtrar</button>
+                    <button id="limpar-filtros" type="button" class="btn-no">Limpar</button>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <div id="comanda-resumo" class="comanda-resumo"></div>
+            <div class="comanda-quick-actions">
+              <button id="refresh-comandas" type="button">Atualizar Lista</button>
+              <button id="resetar-comandas" type="button" class="btn-no">Resetar Comandas</button>
+              <button id="tempo-real-toggle" type="button" class="btn-no">Tempo real: ON</button>
+            </div>
+            <p id="tempo-real-status" class="small">Atualização automática a cada 5s.</p>
+            <div id="comandas-list" class="comandas-list"></div>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-selecionada" class="panel">
+          <summary>Comanda Selecionada</summary>
+          <div class="panel-body">
+            <div class="selected selected-inline">
+              <span class="resumo-chip"><strong id="sel-codigo">-</strong></span>
+              <span class="resumo-chip" id="sel-status">-</span>
+              <span class="resumo-chip">Complexidade: <strong id="sel-complexidade">-</strong></span>
+              <span class="resumo-chip">Itens: <strong id="sel-total-itens">0</strong></span>
+              <span class="resumo-chip">Total: R$ <strong id="sel-total">0.00</strong></span>
+              <span class="resumo-chip">Pago: R$ <strong id="sel-pago">0.00</strong></span>
+              <span class="resumo-chip">Saldo: R$ <strong id="sel-saldo">0.00</strong></span>
+            </div>
+            <button id="go-pagamento" type="button" class="go-payment-btn">Seguir pro pagamento com a comanda selecionada</button>
+            <div class="acoes-comanda-header">Ações da comanda</div>
+            <div class="status-actions status-actions-highlight">
+              <button data-status="FINALIZADA" type="button">Finalizar</button>
+              <button data-status="CANCELADO" type="button">Cancelar</button>
+              <button id="limpar-comanda" type="button" class="btn-no">Limpar Comanda</button>
+              <button id="delete-comanda" type="button" class="btn-no">Excluir Comanda</button>
+            </div>
+            <details class="subpanel" open>
+              <summary>Itens do Caixa</summary>
+              <div class="subpanel-body">
+                <p class="small">Adicione itens diretamente no caixa para a comanda selecionada.</p>
+                <form id="caixa-item-form" class="row-form">
+                  <select id="caixa-item-produto" required></select>
+                  <input id="caixa-item-qtd" type="number" min="1" step="1" value="1" required>
+                  <input id="caixa-item-desconto" type="number" min="0" step="0.01" value="0.00">
+                  <input id="caixa-item-obs" maxlength="255" placeholder="Observacao (opcional)">
+                  <button type="submit">Adicionar Item</button>
+                </form>
+                <div class="caixa-catalogo-head">
+                  <strong>Catalogo rapido do caixa</strong>
+                  <input id="caixa-catalogo-search" maxlength="80" placeholder="Buscar item no catalogo">
+                </div>
+                <div id="caixa-catalogo-list" class="caixa-catalogo-list"></div>
+                <div id="caixa-itens-list" class="pagamentos-list"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="pagamentos">
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-pagamento" class="panel">
+          <summary>Pagamento Manual</summary>
+          <div class="panel-body">
+            <form id="pagamento-form" class="grid">
+              <label>Método</label>
+              <select id="pag-metodo">
+                <option value="DINHEIRO">DINHEIRO</option>
+                <option value="PIX">PIX</option>
+                <option value="CARTAO_DEBITO">CARTAO_DEBITO</option>
+                <option value="CARTAO_CREDITO">CARTAO_CREDITO</option>
+              </select>
+              <div id="pix-box" class="pix-box">
+                <label>PIX rápido</label>
+                <div class="pix-key-row">
+                  <input id="pix-chave" readonly value="churrascaria@erp.local">
+                  <button id="pix-copy" type="button" class="btn-no">Copiar chave</button>
+                </div>
+                <label>Código copia e cola</label>
+                <textarea id="pix-copia-cola" rows="2" readonly></textarea>
+              </div>
+              <div class="quick-pay">
+                <label>Opções rápidas</label>
+                <div class="quick-pay-actions">
+                  <button type="button" data-quick-pay-target="pag" data-quick-pay-mode="total">Total restante</button>
+                  <button type="button" data-quick-pay-target="pag" data-quick-pay-mode="half">Metade</button>
+                  <button type="button" data-quick-pay-target="pag" data-quick-pay-mode="items">Seleção por itens</button>
+                  <button type="button" data-quick-pay-target="pag" data-quick-pay-mode="custom">Personalizado</button>
+                </div>
+                <p id="quick-pay-info-pag" class="small"></p>
+                <div id="quick-pay-items-pag" class="quick-pay-items"></div>
+              </div>
+              <label>Valor</label>
+              <input id="pag-valor" type="number" min="0.01" step="0.01" required>
+              <button type="submit">Registrar Pagamento</button>
+            </form>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-maquininha" class="panel">
+          <summary>Maquininha (Simulada)</summary>
+          <div class="panel-body">
+            <form id="maq-form" class="grid">
+              <label>Método Cartão</label>
+              <select id="maq-metodo">
+                <option value="CARTAO_DEBITO">CARTAO_DEBITO</option>
+                <option value="CARTAO_CREDITO">CARTAO_CREDITO</option>
+              </select>
+              <div class="quick-pay">
+                <label>Opções rápidas</label>
+                <div class="quick-pay-actions">
+                  <button type="button" data-quick-pay-target="maq" data-quick-pay-mode="total">Total restante</button>
+                  <button type="button" data-quick-pay-target="maq" data-quick-pay-mode="half">Metade</button>
+                  <button type="button" data-quick-pay-target="maq" data-quick-pay-mode="items">Seleção por itens</button>
+                  <button type="button" data-quick-pay-target="maq" data-quick-pay-mode="custom">Personalizado</button>
+                </div>
+                <p id="quick-pay-info-maq" class="small"></p>
+                <div id="quick-pay-items-maq" class="quick-pay-items"></div>
+              </div>
+              <label>Valor</label>
+              <input id="maq-valor" type="number" min="0.01" step="0.01" required>
+              <label>ID Maquininha</label>
+              <input id="maq-id" placeholder="Ex.: MAQ-01">
+              <button type="submit">Iniciar Transação</button>
+            </form>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-pagamentos" class="panel">
+          <summary>Pagamentos da Comanda</summary>
+          <div class="panel-body">
+            <div id="pagamentos-list" class="pagamentos-list"></div>
+            <details class="subpanel">
+              <summary>Ajuste de itens no pagamento (exige certeza)</summary>
+              <div class="subpanel-body">
+                <div id="pagamento-itens-list" class="pagamentos-list"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-fechamento" class="panel">
+          <summary>Fechamento de Caixa</summary>
+          <div class="panel-body">
+            <details class="subpanel" open>
+              <summary>Fechamento diário</summary>
+              <div class="subpanel-body">
+                <form id="fechamento-form" class="row-form">
+                  <input id="fechamento-data" type="date" required>
+                  <button type="submit">Carregar</button>
+                  <button id="exportar-csv" type="button">CSV dia</button>
+                </form>
+                <div class="fechamento-grid">
+                  <p>Total pedidos: <strong id="fc-total-pedidos">0</strong></p>
+                  <p>Total vendido: <strong id="fc-total-vendido">R$ 0.00</strong></p>
+                  <p>Total recebido: <strong id="fc-total-recebido">R$ 0.00</strong></p>
+                  <p>Ticket médio: <strong id="fc-ticket-medio">R$ 0.00</strong></p>
+                </div>
+                <ul id="fc-metodos"></ul>
+              </div>
+            </details>
+
+            <details class="subpanel">
+              <summary>Faturamento por período</summary>
+              <div class="subpanel-body">
+                <form id="faturamento-form" class="row-form">
+                  <input id="faturamento-data-inicial" type="date" required>
+                  <input id="faturamento-data-final" type="date" required>
+                  <button type="submit">Calcular</button>
+                  <button id="exportar-csv-periodo" type="button">CSV período</button>
+                  <button id="exportar-relatorio-periodo" type="button">Relatório</button>
+                </form>
+                <div class="fechamento-grid">
+                  <p>Total pedidos: <strong id="ft-total-pedidos">0</strong></p>
+                  <p>Total vendido: <strong id="ft-total-vendido">R$ 0.00</strong></p>
+                  <p>Total recebido: <strong id="ft-total-recebido">R$ 0.00</strong></p>
+                  <p>Ticket médio: <strong id="ft-ticket-medio">R$ 0.00</strong></p>
+                </div>
+                <ul id="ft-metodos"></ul>
+                <div id="ft-dias-list" class="faturamento-dias"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="produtos">
+      <section class="card">
+        <details id="panel-produtos" class="panel">
+          <summary>Produtos</summary>
+          <div class="panel-body">
+            <details id="subpanel-produto-form" class="subpanel">
+              <summary>Novo / editar produto</summary>
+              <div class="subpanel-body">
+                <form id="produto-form" class="produto-form">
+                  <input id="produto-edit-id" type="hidden">
+                  <div class="pf-nome">
+                    <label for="produto-nome">Nome</label>
+                    <input id="produto-nome" maxlength="120" placeholder="Ex.: Pão de queijo" required>
+                  </div>
+                  <div class="pf-categoria">
+                    <label for="produto-categoria">Categoria</label>
+                    <input id="produto-categoria" maxlength="80" placeholder="Ex.: Salgado, Bebida, Doce">
+                  </div>
+                  <div class="pf-preco">
+                    <label for="produto-preco">Preço (R$)</label>
+                    <input id="produto-preco" type="number" min="0.01" step="0.01" required>
+                  </div>
+                  <div class="pf-estoque">
+                    <label for="produto-estoque">Estoque inicial</label>
+                    <input id="produto-estoque" type="number" min="0" step="1" value="0">
+                  </div>
+                  <div class="pf-estoque-control">
+                    <label class="checkbox-inline" for="produto-controla-estoque">
+                      <input id="produto-controla-estoque" type="checkbox" checked>
+                      Controlar estoque
+                    </label>
+                  </div>
+                  <div class="pf-imagem-url">
+                    <label for="produto-imagem">Imagem (URL)</label>
+                    <input id="produto-imagem" maxlength="255" placeholder="https://...">
+                  </div>
+                  <div class="pf-imagem-file">
+                    <label for="produto-imagem-file">Foto do produto</label>
+                    <input id="produto-imagem-file" type="file" accept="image/*">
+                  </div>
+                  <div class="pf-status">
+                    <label for="produto-ativo">Status</label>
+                    <select id="produto-ativo">
+                      <option value="true">Ativo</option>
+                      <option value="false">Inativo</option>
+                    </select>
+                  </div>
+                  <div class="produto-descricao-wrap pf-descricao">
+                    <label for="produto-descricao">Descrição</label>
+                    <textarea id="produto-descricao" rows="2" maxlength="1000" placeholder="Detalhes de preparo, tamanho, unidade, alérgicos..."></textarea>
+                  </div>
+                  <div class="produto-img-preview-wrap pf-preview">
+                    <label>Preview da foto</label>
+                    <img id="produto-imagem-preview" class="produto-imagem-preview" src="/static/img/pao.svg" alt="Preview do produto">
+                  </div>
+                  <div class="produto-adicionais-wrap pf-adicionais">
+                    <label>Adicionais permitidos</label>
+                    <div id="produto-adicionais-box" class="produto-adicionais-box"></div>
+                    <p class="small">Se não marcar nenhum, todos os adicionais ativos ficam permitidos no pedido.</p>
+                  </div>
+                  <div class="produto-form-actions">
+                    <button id="produto-submit" type="submit">Salvar</button>
+                    <button id="produto-cancel-edit" type="button" class="btn-no">Cancelar</button>
+                  </div>
+                </form>
+              </div>
+            </details>
+            <details class="subpanel">
+              <summary>Filtros de produto</summary>
+              <div class="subpanel-body">
+                <div class="filter-grid produto-filtros">
+                  <div>
+                    <label for="produto-busca">Buscar por nome</label>
+                    <input id="produto-busca" placeholder="Ex.: café">
+                  </div>
+                  <div>
+                    <label for="produto-filtro-ativo">Filtro status</label>
+                    <select id="produto-filtro-ativo">
+                      <option value="">Todos</option>
+                      <option value="true">Ativos</option>
+                      <option value="false">Inativos</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="produto-filtro-categoria">Categoria</label>
+                    <input id="produto-filtro-categoria" placeholder="Ex.: Bebida">
+                  </div>
+                  <div class="filter-actions produto-filter-actions">
+                    <button id="buscar-produtos" type="button">Buscar</button>
+                    <button id="limpar-produtos" type="button" class="btn-no">Limpar</button>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details id="subpanel-mobile-mais-pedidos" class="subpanel">
+              <summary>Mais pedidos customizaveis (mobile)</summary>
+              <div class="subpanel-body">
+                <p class="small">
+                  Vincule um produto existente e, se quiser, personalize o nome exibido no botao de "Mais pedidos" do mobile.
+                </p>
+                <form id="mobile-mais-pedidos-form" class="mobile-mais-pedidos-form">
+                  <div>
+                    <label for="mobile-mais-pedido-produto">Produto vinculado</label>
+                    <select id="mobile-mais-pedido-produto" required></select>
+                  </div>
+                  <div>
+                    <label for="mobile-mais-pedido-nome">Nome exibido no mobile (opcional)</label>
+                    <input id="mobile-mais-pedido-nome" maxlength="120" placeholder="Ex.: Cafe da Vovo">
+                  </div>
+                  <div class="filter-actions">
+                    <button type="submit">Adicionar</button>
+                    <button id="mobile-mais-pedidos-limpar" type="button" class="btn-no">Limpar lista</button>
+                  </div>
+                </form>
+                <div id="mobile-mais-pedidos-list" class="mobile-mais-pedidos-list"></div>
+              </div>
+            </details>
+            <details class="subpanel" open>
+              <summary>Lista de produtos</summary>
+              <div class="subpanel-body">
+                <div id="produtos-list" class="produtos-list"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <details id="panel-adicionais" class="panel">
+          <summary>Adicionais</summary>
+          <div class="panel-body">
+            <details id="subpanel-adicional-form" class="subpanel">
+              <summary>Novo / editar adicional</summary>
+              <div class="subpanel-body">
+                <form id="adicional-form" class="row-form">
+                  <input id="adicional-edit-id" type="hidden">
+                  <input id="adicional-nome" maxlength="120" placeholder="Nome do adicional" required>
+                  <input id="adicional-preco" type="number" min="0.01" step="0.01" placeholder="Preço" required>
+                  <select id="adicional-ativo">
+                    <option value="true">Ativo</option>
+                    <option value="false">Inativo</option>
+                  </select>
+                  <button id="adicional-submit" type="submit">Salvar</button>
+                  <button id="adicional-cancel-edit" type="button" class="btn-no">Cancelar</button>
+                </form>
+              </div>
+            </details>
+            <details class="subpanel" open>
+              <summary>Lista de adicionais</summary>
+              <div class="subpanel-body">
+                <div id="adicionais-list" class="codigos-list"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="config">
+      <section class="card">
+        <span class="card-corner-icon" aria-hidden="true">*</span>
+        <details id="panel-config" class="panel" open>
+          <summary>Parâmetros Customizáveis</summary>
+          <div class="panel-body">
+            <details class="subpanel" open>
+              <summary>Opções de Interface (neste dispositivo)</summary>
+              <div class="subpanel-body">
+                <form id="ui-options-form" class="filter-grid ui-options-grid">
+                  <div class="preset-block ui-form-span-all">
+                    <label>Presets rápidos</label>
+                    <div class="preset-grid">
+                      <button type="button" class="preset-btn" data-ui-preset="padrao">Padrão</button>
+                      <button type="button" class="preset-btn" data-ui-preset="rapido">Caixa rápido</button>
+                      <button type="button" class="preset-btn" data-ui-preset="leitura">Leitura</button>
+                      <button type="button" class="preset-btn" data-ui-preset="touch">Touch</button>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="ui-theme">Tema</label>
+                    <select id="ui-theme">
+                      <option value="light">Claro</option>
+                      <option value="dark">Escuro</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ui-density">Densidade</label>
+                    <select id="ui-density">
+                      <option value="comfortable">Confortável</option>
+                      <option value="compact">Compacto</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ui-font-size">Texto</label>
+                    <select id="ui-font-size">
+                      <option value="small">Pequeno</option>
+                      <option value="normal">Normal</option>
+                      <option value="large">Grande</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ui-radius">Bordas</label>
+                    <select id="ui-radius">
+                      <option value="sharp">Reta</option>
+                      <option value="normal">Padrão</option>
+                      <option value="round">Arredondada</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ui-contrast">Contraste</label>
+                    <select id="ui-contrast">
+                      <option value="normal">Normal</option>
+                      <option value="high">Alto</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ui-layout">Layout</label>
+                    <select id="ui-layout">
+                      <option value="full">Expandido</option>
+                      <option value="boxed">Centralizado</option>
+                    </select>
+                  </div>
+                  <div class="ui-inline-switches ui-form-span-all">
+                    <label class="check-row"><input id="ui-motion" type="checkbox" checked> Animações suaves</label>
+                    <label class="check-row"><input id="ui-show-icons" type="checkbox" checked> Exibir ícones</label>
+                  </div>
+                  <div class="filter-actions">
+                    <button id="ui-options-reset" type="button" class="btn-no">Restaurar aparência</button>
+                  </div>
+                </form>
+              </div>
+            </details>
+
+            <details class="subpanel" open>
+              <summary>Personalização Global do ERP</summary>
+              <div class="subpanel-body">
+            <form id="config-form" class="filter-grid config-grid">
+              <div class="preset-block ui-form-span-all">
+                <label>Paletas de cor</label>
+                <div class="preset-grid">
+                  <button type="button" class="preset-btn" data-cfg-palette="vermelho">Vermelho clássico</button>
+                  <button type="button" class="preset-btn" data-cfg-palette="grafite">Grafite</button>
+                  <button type="button" class="preset-btn" data-cfg-palette="verde">Verde</button>
+                  <button type="button" class="preset-btn" data-cfg-palette="azul">Azul</button>
+                </div>
+              </div>
+              <input id="cfg-email-rodape" type="hidden" maxlength="180">
+              <div class="cfg-field cfg-field-wide">
+                <label for="cfg-empresa-nome">Nome da empresa</label>
+                <input id="cfg-empresa-nome" maxlength="120">
+              </div>
+              <div class="cfg-field cfg-field-wide">
+                <label for="cfg-empresa-subtitulo">Subtítulo</label>
+                <input id="cfg-empresa-subtitulo" maxlength="180">
+              </div>
+              <div class="cfg-field cfg-field-wide">
+                <label for="cfg-logo-url">Logo URL</label>
+                <input id="cfg-logo-url" maxlength="255">
+              </div>
+              <div class="cfg-field cfg-color-field">
+                <label for="cfg-cor-primaria">Cor primária</label>
+                <input id="cfg-cor-primaria" type="color" value="#d8252e">
+              </div>
+              <div class="cfg-field cfg-color-field">
+                <label for="cfg-cor-secundaria">Cor secundária</label>
+                <input id="cfg-cor-secundaria" type="color" value="#860f12">
+              </div>
+              <div class="cfg-field cfg-color-field">
+                <label for="cfg-cor-topo-primaria">Cor topo primária</label>
+                <input id="cfg-cor-topo-primaria" type="color" value="#ce1d24">
+              </div>
+              <div class="cfg-field cfg-color-field">
+                <label for="cfg-cor-topo-secundaria">Cor topo secundária</label>
+                <input id="cfg-cor-topo-secundaria" type="color" value="#7f0d11">
+              </div>
+              <div class="cfg-field">
+                <label for="cfg-tempo-real-segundos">Tempo real (segundos)</label>
+                <input id="cfg-tempo-real-segundos" type="number" min="2" max="120" step="1" value="5">
+              </div>
+              <div class="cfg-field cfg-field-wide">
+                <label for="cfg-mobile-obs-rapidas">Observacoes rapidas do mobile (1 por linha)</label>
+                <textarea id="cfg-mobile-obs-rapidas" rows="5" placeholder="Ex.: Sem cebola"></textarea>
+              </div>
+              <div class="cfg-field cfg-field-wide">
+                <label for="cfg-mobile-motivos-reabertura">Motivos internos (mobile, 1 por linha)</label>
+                <textarea id="cfg-mobile-motivos-reabertura" rows="5" placeholder="Ex.: Pedido nao saiu completo"></textarea>
+              </div>
+              <div class="cfg-switches ui-form-span-all">
+                <label class="check-row"><input id="cfg-tempo-real-ativo" type="checkbox" checked> Tempo real ativo</label>
+                <label class="check-row"><input id="cfg-impressao-cozinha-automatica" type="checkbox" checked> Impressao cozinha automatica</label>
+              </div>
+              <div class="filter-actions config-actions ui-form-span-all">
+                <button id="cfg-save" type="submit">Salvar configurações</button>
+                <button id="cfg-reload" type="button" class="btn-no">Recarregar</button>
+                <button id="cfg-reset" type="button" class="btn-no">Restaurar padrão</button>
+              </div>
+            </form>
+              </div>
+            </details>
+          </div>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <img id="brand-footer-logo" src="/static/logo.png" alt="Logo ChurrascariaERP" class="footer-logo">
+    <p id="brand-footer-text">Powered by ChurrascariaERP</p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="/static/caixa.js?v=20260218-15"></script>
+</body>
+</html>

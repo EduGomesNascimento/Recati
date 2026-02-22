@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cupom {{ comanda_codigo }}</title>
+  <link rel="icon" type="image/png" href="/static/logo.png">
+  <style>
+    :root {
+      --ink: #251110;
+      --accent: #b00e14;
+      --line: #ddb1ab;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f6e9e6;
+      color: var(--ink);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      padding: 16px;
+    }
+    .cupom {
+      max-width: 380px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px dashed var(--accent);
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 10px 24px rgba(127, 20, 20, 0.14);
+    }
+    .head {
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.86rem;
+    }
+    th, td {
+      border-bottom: 1px dashed var(--line);
+      text-align: left;
+      padding: 6px 4px;
+      vertical-align: top;
+    }
+    th { font-size: 0.78rem; color: #631213; text-transform: uppercase; }
+    .right { text-align: right; }
+    .ad {
+      margin-top: 4px;
+      padding-left: 10px;
+      color: #6e2d2b;
+      font-size: 0.8rem;
+    }
+    .totais {
+      margin-top: 10px;
+      border-top: 2px solid var(--line);
+      padding-top: 8px;
+      font-size: 0.95rem;
+      display: grid;
+      gap: 4px;
+    }
+    .totais p {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+    }
+    .print {
+      text-align: center;
+      margin-top: 12px;
+    }
+    button {
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ce1e23, #801012);
+      color: #fff;
+      font-weight: 700;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .cupom { box-shadow: none; border: none; max-width: none; }
+      .print { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="cupom">
+    <header class="head">
+      <h1>ChurrascariaERP</h1>
+      <small>Comanda {{ comanda_codigo }}{% if cozinha %} | Cozinha{% endif %}</small>
+    </header>
+
+    <p><strong>Status:</strong> {{ status }}</p>
+    <p><strong>Entrega:</strong> {{ tipo_entrega }}</p>
+    <p><strong>Complexidade:</strong> {{ complexidade }} ({{ total_itens }} itens)</p>
+    {% if mesa %}
+    <p><strong>Mesa:</strong> {{ mesa }}</p>
+    {% endif %}
+    <p><strong>Criado:</strong> {{ criado_em.strftime('%Y-%m-%d %H:%M:%S') if criado_em else '-' }}</p>
+    {% if observacoes %}
+    <p><strong>Obs comanda:</strong> {{ observacoes }}</p>
+    {% endif %}
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qtd</th>
+          <th class="right">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in itens %}
+        <tr>
+          <td>
+            {{ item.produto }}
+            {% if item.observacoes %}
+            <div class="ad">Obs: {{ item.observacoes }}</div>
+            {% endif %}
+            {% if item.desconto and item.desconto > 0 %}
+            <div class="ad">Desconto: - R$ {{ '%.2f'|format(item.desconto) }}</div>
+            {% endif %}
+            {% for ad in item.adicionais %}
+            <div class="ad">+ {{ ad.nome }} x{{ ad.quantidade }} (R$ {{ '%.2f'|format(ad.subtotal) }})</div>
+            {% endfor %}
+          </td>
+          <td>{{ item.quantidade }}</td>
+          <td class="right">R$ {{ '%.2f'|format(item.subtotal) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <section class="totais">
+      <p><span>Total</span> <strong>R$ {{ '%.2f'|format(total) }}</strong></p>
+      <p><span>Total pago</span> <strong>R$ {{ '%.2f'|format(total_pago) }}</strong></p>
+      <p><span>Saldo</span> <strong>R$ {{ '%.2f'|format(saldo_pendente) }}</strong></p>
+    </section>
+
+    <div class="print">
+      <button type="button" onclick="window.print()">Imprimir</button>
+    </div>
+  </article>
+  {% if auto_print %}
+  <script>
+    window.addEventListener("load", function () {
+      window.print();
+    });
+  </script>
+  {% endif %}
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#f7f0ee"/>
+  <rect x="70" y="66" width="90" height="54" rx="10" fill="#b8643f"/>
+  <rect x="74" y="70" width="82" height="34" rx="8" fill="#7e4632"/>
+  <path d="M160 76h16c10 0 16 7 16 16s-6 16-16 16h-16" fill="none" stroke="#b8643f" stroke-width="8"/>
+  <path d="M92 54c0-8 6-10 6-16M114 54c0-8 6-10 6-16M136 54c0-8 6-10 6-16" stroke="#8f6b56" stroke-width="4" fill="none"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">CAFE</text>
+</svg>

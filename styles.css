@@ -414,6 +414,33 @@ body.site-ready .scroll-hint {
   border-top: 1px solid var(--border);
 }
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.service-card {
+  margin: 0;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.service-card h3 {
+  margin: 0 0 8px;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.service-card p {
+  margin: 0;
+  color: #d6dce4;
+  line-height: 1.5;
+}
+
 .help-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -471,6 +498,18 @@ body.site-ready .scroll-hint {
 
 .highlight-card span {
   color: var(--muted);
+}
+
+.examples-callout {
+  margin-top: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  padding: 14px;
+}
+
+.examples-callout p {
+  margin: 0 0 12px;
 }
 
 
@@ -585,6 +624,10 @@ body.site-ready .scroll-hint {
   }
 
   .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
     grid-template-columns: 1fr;
   }
 

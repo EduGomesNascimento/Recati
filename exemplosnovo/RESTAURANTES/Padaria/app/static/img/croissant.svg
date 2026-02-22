@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fff0da"/>
+  <path d="M45 98c20-45 130-45 150 0-18 12-40 20-75 20s-57-8-75-20z" fill="#d99b4a"/>
+  <path d="M64 96c15-24 94-24 110 0" fill="none" stroke="#f3c17d" stroke-width="8"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">CROISSANT</text>
+</svg>

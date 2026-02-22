@@ -1,30 +1,83 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template - aen-systems</title>
-    <link rel="stylesheet" href="../exemplos.css" />
-    <link rel="stylesheet" href="./template.css" />
+    <title>AEN Systems | Espelhamento</title>
+    <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="../../assets/icons/recati-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/icons/recati-favicon.png" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        background: #fff;
+      }
+
+      .fallback {
+        position: fixed;
+        inset: 0;
+        display: none;
+        place-items: center;
+        padding: 20px;
+        color: #e9edf3;
+        font: 600 15px/1.4 "Segoe UI", Tahoma, sans-serif;
+        background: #11161f;
+        text-align: center;
+      }
+    </style>
   </head>
-  <body data-slug="aen-systems">
-    <header class="topbar">
-      <a class="brand" href="../index.html">Exemplos</a>
-      <nav>
-        <a href="../index.html">Galeria</a>
-        <a href="../../index.html">Voltar ao Recati</a>
-      </nav>
-    </header>
+  <body>
+    <div id="fallback" class="fallback" role="status" aria-live="polite">
+      Nao foi possivel exibir o espelhamento neste navegador.
+    </div>
+    <iframe
+      id="mirror"
+      title="AEN Systems"
+      src="https://aensystems.com.br"
+      loading="eager"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <script>
+      (function () {
+        var frame = document.getElementById("mirror");
+        var fallback = document.getElementById("fallback");
+        if (!frame || !fallback) return;
 
-    <main class="page">
-      <section id="detailHero" class="detail-hero"></section>
-      <section class="shot"></section>
-      <section class="cta actions">
-        <a id="demoLink" class="btn" href="./demo/">Ver demo</a>
-        <button id="baseBtn" class="btn ghost" type="button">Usar como base (em breve)</button>
-      </section>
-    </main>
-
-    <script type="module" src="./template.js"></script>
+        window.setTimeout(function () {
+          try {
+            if (frame.contentWindow && frame.contentWindow.location && frame.contentWindow.location.href === "about:blank") {
+              fallback.style.display = "grid";
+            }
+          } catch (_) {
+            // Cross-origin loaded successfully.
+          }
+        }, 4500);
+      })();
+    </script>
   </body>
 </html>

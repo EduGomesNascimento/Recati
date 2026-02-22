@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fff2ec"/>
+  <path d="M120 48l62 60H58l62-60z" fill="#cf8d4c"/>
+  <circle cx="120" cy="84" r="24" fill="#8c4937"/>
+  <circle cx="110" cy="78" r="4" fill="#5d2c24"/>
+  <circle cx="128" cy="90" r="5" fill="#5d2c24"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">ESFIHA</text>
+</svg>

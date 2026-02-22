@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fff2e6"/>
+  <ellipse cx="120" cy="88" rx="82" ry="44" fill="#d38b43"/>
+  <ellipse cx="98" cy="78" rx="20" ry="10" fill="#e9b072"/>
+  <ellipse cx="122" cy="74" rx="20" ry="10" fill="#e9b072"/>
+  <ellipse cx="146" cy="78" rx="20" ry="10" fill="#e9b072"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">PAO</text>
+</svg>

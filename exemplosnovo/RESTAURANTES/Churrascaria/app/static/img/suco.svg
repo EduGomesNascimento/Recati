@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#fff6e6"/>
+  <rect x="86" y="48" width="68" height="78" rx="10" fill="#f2b03c"/>
+  <rect x="92" y="56" width="56" height="58" rx="8" fill="#f6c04d"/>
+  <rect x="116" y="32" width="8" height="22" fill="#5d6f89"/>
+  <circle cx="154" cy="56" r="14" fill="#ffbf49"/>
+  <text x="120" y="146" text-anchor="middle" font-family="Arial" font-size="18" fill="#6f3d10">SUCO</text>
+</svg>
