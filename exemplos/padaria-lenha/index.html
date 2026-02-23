@@ -3,40 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <script data-recati-force-https>
-(function () {
-  var PROD_HOST = "www.recati.com.br";
-  var host = window.location.hostname;
-  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
-  if (isLocal || window.location.protocol === "file:") return;
-  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
-    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
-    window.location.replace(target);
-  }
-})();
-</script>
+      (function () {
+        var PROD_HOST = "www.recati.com.br";
+        var host = window.location.hostname;
+        var isLocal =
+          host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+        if (isLocal || window.location.protocol === "file:") return;
+        if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+          var target =
+            "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+          window.location.replace(target);
+        }
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Padaria Lenha Viva | Exemplo</title>
     <meta
       name="description"
-      content="Exemplo de site para padaria com visual editorial, mix de produtos, blog e contato."
+      content="Exemplo de site para padaria com visual editorial, mix de produtos, vitrine do dia, blog, encomendas e contato."
     />
+
     <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
     <link rel="stylesheet" href="./padaria.css" />
   </head>
+
   <body>
+    <!-- Barra de aviso/topo -->
+    <div class="pd-topbar">
+      <div class="pd-wrap pd-topbar-row">
+        <span>🔥 Forno quente às <strong>06:00</strong>, <strong>09:30</strong>, <strong>14:00</strong> e <strong>17:30</strong></span>
+        <span class="pd-topbar-dot"></span>
+        <span>📦 Encomendas com <strong>24h</strong> de antecedência</span>
+        <a class="pd-topbar-link" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Pedir no WhatsApp</a>
+      </div>
+    </div>
+
     <header class="pd-header">
       <div class="pd-wrap pd-header-row">
-        <a class="pd-brand" href="#inicio">
+        <a class="pd-brand" href="#inicio" aria-label="Ir para o início">
           <img src="../../padarialogo.png" alt="Padaria Lenha Viva" />
           <span>Lenha Viva</span>
         </a>
 
-        <button class="pd-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+        <button class="pd-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          Menu
+        </button>
 
-        <nav class="pd-nav" aria-label="Navegacao principal">
+        <nav class="pd-nav" aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
+          <a href="#vitrine">Vitrine</a>
           <a href="#produtos">Produtos</a>
           <a href="#processo">Processo</a>
+          <a href="#galeria">Galeria</a>
           <a href="#blog">Blog</a>
           <a href="#contato">Contato</a>
           <a class="pd-btn pd-btn-line" href="../../index.html#intro">Voltar ao Recati</a>
@@ -45,98 +64,235 @@
     </header>
 
     <main id="inicio">
-      <section class="pd-hero pd-reveal">
+      <!-- HERO -->
+      <section class="pd-hero pd-reveal pd-section" aria-label="Apresentação">
         <div class="pd-wrap pd-hero-grid">
           <div class="pd-hero-copy">
-            <p class="pd-kicker">DESDE 2003 | FORNO QUENTE TODO DIA</p>
-            <h1>Pao artesanal para sua rotina, com entrega organizada e sabor constante.</h1>
-            <p>
-              Uma padaria moderna com cara de bairro: fornadas em horarios fixos, doces autorais e atendimento rapido
-              para familias, cafeterias e pequenos mercados.
+            <p class="pd-kicker">DESDE 2003 • ARTESANAL • ROTINA DE BAIRRO</p>
+
+            <h1>
+              Pão artesanal, café fresco e uma vitrine que dá vontade de voltar todo dia.
+            </h1>
+
+            <p class="pd-lead">
+              Fornadas em horários fixos, doces autorais e atendimento rápido para famílias,
+              cafeterias e pequenos mercados. Tudo com organização de pedidos e entrega combinada.
             </p>
+
             <div class="pd-actions">
-              <a class="pd-btn pd-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Pedir no WhatsApp</a>
-              <a class="pd-btn pd-btn-line" href="#produtos">Ver mix da semana</a>
+              <a class="pd-btn pd-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">
+                Pedir no WhatsApp
+              </a>
+              <a class="pd-btn pd-btn-line" href="#vitrine">Ver vitrine do dia</a>
+            </div>
+
+            <div class="pd-badges">
+              <div class="pd-badge">
+                <strong>4.8/5</strong>
+                <span>avaliação média</span>
+              </div>
+              <div class="pd-badge">
+                <strong>+8 mil</strong>
+                <span>itens/semana</span>
+              </div>
+              <div class="pd-badge">
+                <strong>24h</strong>
+                <span>prazo de encomendas</span>
+              </div>
+            </div>
+
+            <div class="pd-hero-note">
+              <span class="pd-dot"></span>
+              <span>Hoje: <strong>pão italiano</strong> + <strong>cuca</strong> saindo às <strong>14:00</strong>.</span>
             </div>
           </div>
 
           <aside class="pd-hero-panel">
             <figure class="pd-hero-shot">
               <img
-                src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1600&q=80"
-                alt="Balcao da padaria com paes frescos"
+                src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1600&q=80"
+                alt="Balcão de padaria com pães e vitrine"
                 loading="lazy"
               />
+              <figcaption>Vitrine organizada, saída rápida e reposição constante.</figcaption>
             </figure>
-            <h2>Painel de fornadas</h2>
-            <ul>
-              <li><strong>06:00</strong><span>Pao frances e integral</span></li>
-              <li><strong>09:30</strong><span>Salgados de vitrine</span></li>
-              <li><strong>14:00</strong><span>Bolos e doces frescos</span></li>
-              <li><strong>17:30</strong><span>Reposicao para fim do dia</span></li>
-            </ul>
-            <div class="pd-panel-cta">
-              <a class="pd-btn pd-btn-fill" href="#contato">Reservar lote</a>
+
+            <div class="pd-panel-box">
+              <h2>Painel de fornadas</h2>
+              <ul class="pd-times">
+                <li><strong>06:00</strong><span>Pão francês • integral</span></li>
+                <li><strong>09:30</strong><span>Salgados assados • combos</span></li>
+                <li><strong>14:00</strong><span>Bolos • doces • cucas</span></li>
+                <li><strong>17:30</strong><span>Reposição para fim do dia</span></li>
+              </ul>
+
+              <div class="pd-panel-cta">
+                <a class="pd-btn pd-btn-fill pd-btn-wide" href="#contato">Reservar lote</a>
+              </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="pd-brands pd-reveal">
+      <!-- MARCAS / STRIP -->
+      <section class="pd-brands pd-reveal pd-section" aria-label="Clientes atendidos">
         <div class="pd-wrap">
-          <p>Marcas atendidas e parceiros da casa</p>
-          <div class="pd-brand-strip">
-            <span>Supermercados locais</span>
-            <span>Cafes independentes</span>
-            <span>Escolas e empresas</span>
-            <span>Eventos corporativos</span>
-            <span>Mercados de bairro</span>
+          <p class="pd-mini-title">Atendemos</p>
+          <div class="pd-marquee" aria-hidden="true">
+            <div class="pd-marquee-track">
+              <span>Supermercados locais</span>
+              <span>Escolas</span>
+              <span>Empresas</span>
+              <span>Cafeterias</span>
+              <span>Eventos</span>
+              <span>Mercados de bairro</span>
+              <span>Supermercados locais</span>
+              <span>Escolas</span>
+              <span>Empresas</span>
+              <span>Cafeterias</span>
+              <span>Eventos</span>
+              <span>Mercados de bairro</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="pd-about pd-reveal" id="sobre">
+      <!-- SOBRE -->
+      <section class="pd-about pd-reveal pd-section" id="sobre">
         <div class="pd-wrap pd-about-grid">
           <article class="pd-about-visual">
             <img
               class="pd-about-photo"
-              src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1600&q=80"
-              alt="Padeiro preparando fornada de paes"
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80"
+              alt="Padeiro preparando massa e fornada"
               loading="lazy"
             />
-            <img class="pd-about-mark" src="../../padarialogo.png" alt="Logo da padaria Lenha Viva" loading="lazy" />
+            <img class="pd-about-mark" src="../../padarialogo.png" alt="Logo da Padaria Lenha Viva" loading="lazy" />
+
             <div class="pd-about-stats">
-              <div><strong>+8 mil</strong><span>itens/semana</span></div>
-              <div><strong>4.8/5</strong><span>avaliacao media</span></div>
-              <div><strong>24h</strong><span>prazo em encomendas</span></div>
+              <div><strong>3</strong><span>turnos de produção</span></div>
+              <div><strong>12+</strong><span>categorias no mix</span></div>
+              <div><strong>1</strong><span>fila organizada de pedidos</span></div>
             </div>
           </article>
 
           <article class="pd-about-copy">
-            <h2>Uma padaria com operacao de verdade</h2>
+            <h2>Uma padaria com operação de verdade</h2>
             <p>
-              Aqui o cliente nao fica sem resposta. Cada pedido entra em fila, recebe horario e segue um fluxo claro
-              de preparo, conferencia e entrega.
+              Aqui o cliente não fica sem resposta. Cada pedido entra em fila, recebe horário
+              e segue um fluxo claro de preparo, conferência e entrega.
             </p>
             <p>
-              O resultado e simples: menos atraso, menos ruptura e mais previsibilidade para quem compra toda semana.
+              Resultado: menos atraso, menos ruptura e mais previsibilidade para quem compra toda semana.
             </p>
+
+            <div class="pd-about-points">
+              <div class="pd-point">
+                <strong>✔ Checklist</strong>
+                <span>conferência por lote</span>
+              </div>
+              <div class="pd-point">
+                <strong>✔ Etiqueta</strong>
+                <span>nome, horário e status</span>
+              </div>
+              <div class="pd-point">
+                <strong>✔ Entrega</strong>
+                <span>janela combinada</span>
+              </div>
+            </div>
+
             <a class="pd-btn pd-btn-line" href="#processo">Entender o processo</a>
           </article>
         </div>
       </section>
 
-      <section class="pd-parallax pd-reveal" aria-label="Fundo fixo de padaria">
-        <div class="pd-wrap">
-          <article class="pd-parallax-copy">
-            <p>Forno em destaque</p>
-            <h2>Imagem fixa no fundo enquanto voce rola.</h2>
-            <span>Visual classico de padaria com leitura clara e foco no produto.</span>
-          </article>
+      <!-- PARALLAX / IMAGEM FIXA -->
+      <section class="pd-parallax pd-reveal pd-section" aria-label="Faixa parallax">
+        <div class="pd-parallax-inner">
+          <div class="pd-wrap">
+            <article class="pd-parallax-card">
+              <p class="pd-mini-title">Forno em destaque</p>
+              <h2>Uma imagem fixa no fundo enquanto você rola.</h2>
+              <p>
+                A ideia é passar por cima da foto como se ela estivesse “parada”.
+                Em mobile, a faixa mantém o visual sem quebrar performance.
+              </p>
+              <div class="pd-actions">
+                <a class="pd-btn pd-btn-fill" href="#vitrine">Ver vitrine</a>
+                <a class="pd-btn pd-btn-line" href="#contato">Fazer encomenda</a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="pd-products pd-reveal" id="produtos">
+      <!-- VITRINE DO DIA -->
+      <section class="pd-feature pd-reveal pd-section" id="vitrine" aria-label="Vitrine do dia">
+        <div class="pd-wrap">
+          <div class="pd-section-head">
+            <h2>Vitrine do dia</h2>
+            <p>Seleção enxuta, bonita e com giro alto. Ideal para “venda por impulso”.</p>
+          </div>
+
+          <div class="pd-feature-grid">
+            <article class="pd-feature-card">
+              <img
+                src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1600&q=80"
+                alt="Croissants dourados"
+                loading="lazy"
+              />
+              <div class="pd-feature-body">
+                <h3>Croissant & folhados</h3>
+                <p>Massa amanteigada, laminada, perfeita para café da manhã.</p>
+                <div class="pd-feature-meta">
+                  <span>⏱ sai às 09:30</span>
+                  <span>⭐ mais pedido</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="pd-feature-card">
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80"
+                alt="Pães artesanais"
+                loading="lazy"
+              />
+              <div class="pd-feature-body">
+                <h3>Pães artesanais</h3>
+                <p>Fermentação longa, casca crocante e miolo macio.</p>
+                <div class="pd-feature-meta">
+                  <span>🔥 sai às 06:00</span>
+                  <span>📌 integral disponível</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="pd-feature-card">
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1600&q=80"
+                alt="Bolos e doces"
+                loading="lazy"
+              />
+              <div class="pd-feature-body">
+                <h3>Bolos & doces</h3>
+                <p>Clássicos e autorais. Ótimos para encomenda e vitrine.</p>
+                <div class="pd-feature-meta">
+                  <span>🍰 sai às 14:00</span>
+                  <span>📦 encomenda 24h</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="pd-cta-row">
+            <a class="pd-btn pd-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Quero pedir agora</a>
+            <a class="pd-btn pd-btn-line" href="#produtos">Ver mix completo</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUTOS -->
+      <section class="pd-products pd-reveal pd-section" id="produtos">
         <div class="pd-wrap">
           <div class="pd-section-head">
             <h2>Mix de produtos</h2>
@@ -146,117 +302,192 @@
           <div class="pd-product-grid">
             <article class="pd-card">
               <img
-                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80"
-                alt="Paes artesanais recem-assados"
+                src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1200&q=80"
+                alt="Pães variados na vitrine"
                 loading="lazy"
               />
-              <h3>Paes artesanais</h3>
-              <p>Fermentacao longa e casca crocante.</p>
+              <h3>Pães artesanais</h3>
+              <p>Fermentação longa e casca crocante.</p>
               <span>A partir de R$ 12/kg</span>
             </article>
+
             <article class="pd-card">
               <img
                 src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=1200&q=80"
-                alt="Salgados assados de vitrine"
+                alt="Salgados assados"
                 loading="lazy"
               />
               <h3>Salgados assados</h3>
-              <p>Linha para lanche rapido e vitrine quente.</p>
+              <p>Linha para lanche rápido e vitrine quente.</p>
               <span>A partir de R$ 4,90</span>
             </article>
+
             <article class="pd-card">
               <img
                 src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1200&q=80"
-                alt="Bolos de vitrine decorados"
+                alt="Bolos decorados"
                 loading="lazy"
               />
               <h3>Bolos de vitrine</h3>
               <p>Sabores tradicionais e linha premium.</p>
               <span>A partir de R$ 38</span>
             </article>
+
             <article class="pd-card">
               <img
                 src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80"
-                alt="Folhados e croissants dourados"
+                alt="Croissants e folhados"
                 loading="lazy"
               />
               <h3>Folhados</h3>
               <p>Croissant, pain au chocolat e especiais.</p>
               <span>A partir de R$ 9,50</span>
             </article>
+
             <article class="pd-card">
               <img
                 src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
-                alt="Xicara de cafe com graos e acompanhamento"
+                alt="Café"
                 loading="lazy"
               />
-              <h3>Linha cafe</h3>
-              <p>Sanduiches e combos para manha e tarde.</p>
+              <h3>Linha café</h3>
+              <p>Sanduíches e combos para manhã e tarde.</p>
               <span>A partir de R$ 11,90</span>
             </article>
+
             <article class="pd-card">
               <img
-                src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1200&q=80"
-                alt="Bebidas frescas de frutas"
+                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80"
+                alt="Doces e sobremesas"
                 loading="lazy"
               />
-              <h3>Bebidas frescas</h3>
-              <p>Sucos, cafes e bebidas geladas.</p>
-              <span>A partir de R$ 5,90</span>
+              <h3>Doces finos</h3>
+              <p>Brigadeiros, tortas e sobremesas em porção.</p>
+              <span>A partir de R$ 6,90</span>
             </article>
           </div>
+
+          <div class="pd-slab">
+            <div class="pd-slab-copy">
+              <h3>Encomendas para eventos</h3>
+              <p>
+                Aniversários, cafés corporativos e datas sazonais. A gente organiza o lote
+                e entrega na janela combinada.
+              </p>
+            </div>
+            <a class="pd-btn pd-btn-fill" href="#contato">Solicitar orçamento</a>
+          </div>
         </div>
       </section>
 
-      <section class="pd-process pd-reveal" id="processo">
+      <!-- PROCESSO -->
+      <section class="pd-process pd-reveal pd-section" id="processo">
         <div class="pd-wrap">
           <div class="pd-section-head">
-            <h2>Como a operacao funciona</h2>
+            <h2>Como a operação funciona</h2>
+            <p>Fluxo claro para manter qualidade e pontualidade.</p>
           </div>
+
           <div class="pd-steps">
-            <article><strong>01</strong><h3>Pedido</h3><p>Recebemos no WhatsApp ou no balcao.</p></article>
-            <article><strong>02</strong><h3>Producao</h3><p>Separacao por lote e janela de forno.</p></article>
-            <article><strong>03</strong><h3>Conferencia</h3><p>Quantidade, embalagem e etiqueta final.</p></article>
-            <article><strong>04</strong><h3>Entrega</h3><p>Retirada rapida ou envio no horario combinado.</p></article>
+            <article><strong>01</strong><h3>Pedido</h3><p>Recebemos no WhatsApp ou no balcão.</p></article>
+            <article><strong>02</strong><h3>Produção</h3><p>Separação por lote e janela de forno.</p></article>
+            <article><strong>03</strong><h3>Conferência</h3><p>Quantidade, embalagem e etiqueta final.</p></article>
+            <article><strong>04</strong><h3>Entrega</h3><p>Retirada rápida ou envio no horário combinado.</p></article>
+          </div>
+
+          <div class="pd-process-extra">
+            <div class="pd-process-card">
+              <h3>Checklist de qualidade</h3>
+              <ul>
+                <li>Temperatura e ponto de forno</li>
+                <li>Embalagem correta por produto</li>
+                <li>Etiqueta com nome e horário</li>
+                <li>Confirmação de retirada/entrega</li>
+              </ul>
+            </div>
+
+            <div class="pd-process-card">
+              <h3>Horários de maior movimento</h3>
+              <div class="pd-bars">
+                <div class="pd-bar"><span>Manhã</span><em style="--w: 88%"></em></div>
+                <div class="pd-bar"><span>Almoço</span><em style="--w: 54%"></em></div>
+                <div class="pd-bar"><span>Tarde</span><em style="--w: 76%"></em></div>
+              </div>
+              <small>Dica: para encomendas grandes, peça com antecedência.</small>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="pd-blog pd-reveal" id="blog">
+      <!-- GALERIA -->
+      <section class="pd-gallery pd-reveal pd-section" id="galeria">
+        <div class="pd-wrap">
+          <div class="pd-section-head">
+            <h2>Galeria</h2>
+            <p>Um pouco do clima da loja, vitrine e produtos.</p>
+          </div>
+
+          <div class="pd-gallery-grid">
+            <figure class="pd-shot">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80" alt="Pães artesanais" loading="lazy" />
+            </figure>
+            <figure class="pd-shot">
+              <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1600&q=80" alt="Balcão de padaria" loading="lazy" />
+            </figure>
+            <figure class="pd-shot">
+              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1600&q=80" alt="Croissants" loading="lazy" />
+            </figure>
+            <figure class="pd-shot">
+              <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1600&q=80" alt="Bolo e sobremesa" loading="lazy" />
+            </figure>
+            <figure class="pd-shot">
+              <img src="https://images.unsplash.com/photo-1514511547118-9bf0262c0d2f?auto=format&fit=crop&w=1600&q=80" alt="Café" loading="lazy" />
+            </figure>
+            <figure class="pd-shot">
+              <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1600&q=80" alt="Vitrine organizada" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section class="pd-blog pd-reveal pd-section" id="blog">
         <div class="pd-wrap">
           <div class="pd-section-head">
             <h2>Blog e novidades</h2>
-            <p>Conteudo rapido para aumentar venda de padaria.</p>
+            <p>Conteúdo rápido para aumentar venda de padaria.</p>
           </div>
 
           <div class="pd-post-grid">
             <article class="pd-post">
               <img
                 src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=80"
-                alt="Vitrine de paes organizados para manha"
+                alt="Vitrine de pães organizada"
                 loading="lazy"
               />
-              <h3>Como montar vitrine de manha sem desperdicio</h3>
+              <h3>Como montar vitrine de manhã sem desperdício</h3>
               <p>3 blocos de produto para equilibrar giro e margem.</p>
               <a class="pd-btn pd-btn-line" href="#contato">Ler resumo</a>
             </article>
+
             <article class="pd-post">
               <img
                 src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1200&q=80"
-                alt="Mesa com cafe e doces para lanche da tarde"
+                alt="Mesa com café e doces"
                 loading="lazy"
               />
-              <h3>Combo cafe da tarde que puxa ticket medio</h3>
-              <p>Estrategia simples para vender mais por atendimento.</p>
+              <h3>Combo café da tarde que puxa ticket médio</h3>
+              <p>Estratégia simples para vender mais por atendimento.</p>
               <a class="pd-btn pd-btn-line" href="#contato">Ler resumo</a>
             </article>
+
             <article class="pd-post">
               <img
                 src="https://images.unsplash.com/photo-1506280754576-f6fa8a873550?auto=format&fit=crop&w=1200&q=80"
-                alt="Selecao de produtos para encomendas sazonais"
+                alt="Seleção de produtos para encomendas"
                 loading="lazy"
               />
-              <h3>Calendario de encomendas para datas sazonais</h3>
+              <h3>Calendário de encomendas para datas sazonais</h3>
               <p>Como abrir agenda sem sobrecarregar a equipe.</p>
               <a class="pd-btn pd-btn-line" href="#contato">Ler resumo</a>
             </article>
@@ -264,31 +495,72 @@
         </div>
       </section>
 
-      <section class="pd-contact pd-reveal" id="contato">
+      <!-- CONTATO -->
+      <section class="pd-contact pd-reveal pd-section" id="contato">
         <div class="pd-wrap pd-contact-grid">
           <article class="pd-contact-card">
             <h2>Solicite atendimento</h2>
-            <form>
+            <p class="pd-muted">Responda rápido e a gente te chama no WhatsApp com o orçamento.</p>
+
+            <form class="pd-form">
               <label for="pdNome">Nome</label>
               <input id="pdNome" type="text" placeholder="Seu nome" />
+
               <label for="pdTelefone">Telefone</label>
               <input id="pdTelefone" type="tel" placeholder="(00) 00000-0000" />
+
               <label for="pdTipo">Tipo de pedido</label>
               <select id="pdTipo">
                 <option>Atacado recorrente</option>
                 <option>Encomenda para evento</option>
-                <option>Pedido diario</option>
+                <option>Pedido diário</option>
               </select>
-              <button type="button">Enviar pedido</button>
+
+              <label for="pdObs">Observações</label>
+              <textarea id="pdObs" rows="4" placeholder="Ex.: 30 combos + 2 tortas para amanhã às 16h"></textarea>
+
+              <button class="pd-btn pd-btn-fill pd-btn-shape" type="button">Enviar pedido</button>
+
+              <div class="pd-form-row">
+                <a class="pd-btn pd-btn-line pd-btn-shape" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">
+                  Falar no WhatsApp
+                </a>
+                <a class="pd-btn pd-btn-line pd-btn-shape" href="#produtos">Ver produtos</a>
+              </div>
             </form>
           </article>
+
           <aside class="pd-info-card">
             <img src="../../padarialogo.png" alt="Lenha Viva" />
             <h3>Padaria Lenha Viva</h3>
-            <p>Rua das Fornadas, 245 - Centro</p>
-            <p>Seg a Sab: 5h30 as 20h | Dom: 6h as 12h</p>
-            <a href="tel:+5551997950492">(51) 99795-0492</a>
-            <a href="mailto:recati.com@gmail.com">recati.com@gmail.com</a>
+            <p>Rua das Fornadas, 245 — Centro</p>
+            <p>Seg a Sáb: 05:30 às 20:00 • Dom: 06:00 às 12:00</p>
+
+            <div class="pd-info-links">
+              <a href="tel:+5551997950492">(51) 99795-0492</a>
+              <a href="mailto:recati.com@gmail.com">recati.com@gmail.com</a>
+            </div>
+
+            <div class="pd-info-mini">
+              <strong>Retirada rápida</strong>
+              <span>pedido etiquetado por nome e horário</span>
+            </div>
+
+            <!-- MAPS -->
+            <div class="pd-map">
+              <iframe
+                title="Mapa - Padaria Lenha Viva"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Rua%20das%20Fornadas%2C%20245&output=embed"
+              ></iframe>
+            </div>
+
+            <div class="pd-info-cta">
+              <a class="pd-btn pd-btn-fill pd-btn-wide" href="https://www.google.com/maps?q=Rua%20das%20Fornadas%2C%20245" target="_blank" rel="noreferrer">
+                Abrir no Maps
+              </a>
+            </div>
           </aside>
         </div>
       </section>
@@ -296,10 +568,16 @@
 
     <footer class="pd-footer">
       <div class="pd-wrap pd-footer-row">
-        <small>Lenha Viva - Exemplo de site para padaria</small>
+        <small>Lenha Viva — Exemplo de site para padaria</small>
         <small>(c) <span id="pdYear"></span> Todos os direitos reservados.</small>
       </div>
     </footer>
+
+    <!-- FAB WhatsApp -->
+    <a class="pd-fab" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
+      <span class="pd-fab-dot"></span>
+      <span class="pd-fab-text">WhatsApp</span>
+    </a>
 
     <script src="./padaria.js"></script>
   </body>
