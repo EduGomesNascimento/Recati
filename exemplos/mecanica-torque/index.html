@@ -3,42 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <script data-recati-force-https>
-(function () {
-  var PROD_HOST = "www.recati.com.br";
-  var host = window.location.hostname;
-  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
-  if (isLocal || window.location.protocol === "file:") return;
-  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
-    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
-    window.location.replace(target);
-  }
-})();
-</script>
+      (function () {
+        var PROD_HOST = "www.recati.com.br";
+        var host = window.location.hostname;
+        var isLocal =
+          host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+        if (isLocal || window.location.protocol === "file:") return;
+        if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+          var target =
+            "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+          window.location.replace(target);
+        }
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MECA Torque | Oficina Inteligente</title>
     <meta
       name="description"
-      content="Exemplo de site para oficina mecanica com foco em diagnostico rapido, manutencao preventiva e agendamento online."
+      content="Exemplo de site para oficina mecânica com foco em diagnóstico rápido, manutenção preventiva e agendamento online."
     />
-    <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="../../mecat.png" type="image/png" />
     <link rel="stylesheet" href="./mecanica.css" />
   </head>
+
   <body>
+    <!-- FAB WhatsApp -->
+    <a class="mk-fab" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer" aria-label="Chamar no WhatsApp">
+      <span class="mk-fab-dot" aria-hidden="true"></span>
+      <span class="mk-fab-text">WhatsApp</span>
+    </a>
+
     <header class="mk-header">
       <div class="mk-container mk-header-row">
         <a class="mk-brand" href="#inicio">
-          <img src="../../MECA.png" alt="Logo MECA" />
+          <img src="../../mecat.png" alt="Logo MECA" />
           <span>MECA Torque</span>
         </a>
 
         <button class="mk-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
 
-        <nav class="mk-nav" aria-label="Navegacao principal">
-          <a href="#servicos">Servicos</a>
+        <nav class="mk-nav" aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#orcamentos">Orçamentos</a>
+          <a href="#galeria">Galeria</a>
           <a href="#processo">Processo</a>
-          <a href="#planos">Planos</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#suporte">Central do Cliente</a>
+          <a href="#localizacao">Localização</a>
           <a href="#clientes">Clientes</a>
           <a href="#contato">Contato</a>
+
           <a class="mk-btn mk-btn-ghost" href="../../index.html#intro">Voltar ao Recati</a>
           <a class="mk-btn mk-btn-solid" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Agendar agora</a>
         </nav>
@@ -46,173 +62,417 @@
     </header>
 
     <main id="inicio">
+      <!-- HERO -->
       <section class="mk-hero mk-reveal">
         <div class="mk-container mk-hero-grid">
-          <div class="mk-hero-copy">
-            <p class="mk-eyebrow">OFICINA MECANICA | DIAGNOSTICO EM MINUTOS</p>
-            <h1>Seu carro volta para a rua com seguranca, clareza e prazo real.</h1>
+          <div class="mk-hero-copy mk-border-glow">
+            <p class="mk-eyebrow">OFICINA MECÂNICA | DIAGNÓSTICO EM MINUTOS</p>
+            <h1>Seu carro volta para a rua com segurança, clareza e prazo real.</h1>
             <p class="mk-sub">
-              Atendimento tecnico sem enrolacao: scanner, revisao preventiva e reparo completo com explicacao simples.
+              Atendimento técnico sem enrolação: scanner, revisão preventiva e reparo completo com explicação simples.
             </p>
+
             <div class="mk-actions">
               <a class="mk-btn mk-btn-solid" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
-              <a class="mk-btn mk-btn-outline" href="#servicos">Ver servicos</a>
+              <a class="mk-btn mk-btn-outline" href="#orcamentos">Pedir orçamento</a>
+              <a class="mk-btn mk-btn-ghost" href="#servicos">Ver serviços</a>
             </div>
+
+            <div class="mk-chips" role="list">
+              <span class="mk-chip" role="listitem">✅ Orçamento antes de iniciar</span>
+              <span class="mk-chip" role="listitem">🛠️ Fotos e vídeos do serviço</span>
+              <span class="mk-chip" role="listitem">📍 Mapa + rota até a oficina</span>
+              <span class="mk-chip" role="listitem">⭐ Avaliações reais</span>
+            </div>
+
             <ul class="mk-points">
-              <li>Orcamento claro antes de iniciar</li>
+              <li>Orçamento claro antes de iniciar</li>
               <li>Equipe especializada em carros nacionais e importados</li>
-              <li>Atualizacoes da manutencao pelo WhatsApp</li>
+              <li>Atualizações da manutenção pelo WhatsApp</li>
             </ul>
           </div>
 
           <aside class="mk-hero-panel">
-            <img class="mk-panel-logo" src="../../MECA.png" alt="MECA Torque" />
-            <div class="mk-panel-box">
+            <figure class="mk-hero-media">
+              <img
+                src="https://images.unsplash.com/photo-1727893332539-95e491ba4d90?auto=format&fit=crop&w=1400&q=80"
+                alt="Mecânico revisando carro na oficina"
+                loading="lazy"
+              />
+              <figcaption>Equipe em ação na linha de revisão</figcaption>
+            </figure>
+
+            <div class="mk-panel-box mk-counter" data-counter>
               <h2>Status da oficina hoje</h2>
               <dl>
                 <div>
-                  <dt>Entrada media</dt>
-                  <dd>12 min</dd>
+                  <dt>Entrada média</dt>
+                  <dd><span data-count="12">0</span> min</dd>
                 </div>
                 <div>
                   <dt>Taxa de retorno</dt>
-                  <dd>94%</dd>
+                  <dd><span data-count="94">0</span>%</dd>
                 </div>
                 <div>
                   <dt>Entrega no prazo</dt>
-                  <dd>97%</dd>
+                  <dd><span data-count="97">0</span>%</dd>
                 </div>
               </dl>
+            </div>
+
+            <div class="mk-mini-cta">
+              <p><strong>Luz da injeção acesa?</strong> A gente lê a falha e explica “em português”.</p>
+              <a class="mk-btn mk-btn-solid" href="#orcamentos">Orçamento rápido</a>
             </div>
           </aside>
         </div>
       </section>
 
+      <!-- SERVIÇOS -->
       <section class="mk-services mk-reveal" id="servicos">
         <div class="mk-container">
           <div class="mk-section-head">
-            <h2>Servicos mais pedidos</h2>
-            <p>Pacotes pensados para manter desempenho, economizar combustivel e reduzir quebra inesperada.</p>
+            <h2>Serviços mais pedidos</h2>
+            <p>Pacotes pensados para manter desempenho, economizar combustível e reduzir quebra inesperada.</p>
           </div>
 
           <div class="mk-service-grid">
-            <article class="mk-card">
-              <h3>Revisao preventiva</h3>
-              <p>Checklist completo com fluidos, filtros, velas e itens de seguranca.</p>
+            <article class="mk-card mk-card-clean">
+              <img
+                src="https://images.unsplash.com/photo-1770656505709-fd97236989b9?auto=format&fit=crop&w=1200&q=80"
+                alt="Revisão de motor com ferramentas"
+                loading="lazy"
+              />
+              <h3>Revisão preventiva</h3>
+              <p>Checklist completo com fluidos, filtros, velas e itens de segurança.</p>
               <span>A partir de R$ 349</span>
+              <button class="mk-quote-btn" type="button" data-quote="Revisão preventiva">Pedir orçamento</button>
             </article>
-            <article class="mk-card">
-              <h3>Freio e suspensao</h3>
-              <p>Troca de pastilhas, discos, amortecedores e alinhamento de direcao.</p>
+
+            <article class="mk-card mk-card-clean">
+              <img
+                src="https://images.unsplash.com/photo-1727893332539-95e491ba4d90?auto=format&fit=crop&w=1200&q=80"
+                alt="Manutenção de freios em elevador"
+                loading="lazy"
+              />
+              <h3>Freio e suspensão</h3>
+              <p>Troca de pastilhas, discos, amortecedores e alinhamento de direção.</p>
               <span>A partir de R$ 279</span>
+              <button class="mk-quote-btn" type="button" data-quote="Freio e suspensão">Pedir orçamento</button>
             </article>
-            <article class="mk-card">
-              <h3>Injecao eletronica</h3>
+
+            <article class="mk-card mk-card-clean">
+              <img
+                src="https://images.unsplash.com/photo-1749952668850-e836c92a3d04?auto=format&fit=crop&w=1200&q=80"
+                alt="Equipe técnica em diagnóstico automotivo"
+                loading="lazy"
+              />
+              <h3>Injeção eletrônica</h3>
               <p>Scanner, leitura de falhas e ajuste fino para consumo mais eficiente.</p>
               <span>A partir de R$ 189</span>
+              <button class="mk-quote-btn" type="button" data-quote="Injeção eletrônica">Pedir orçamento</button>
             </article>
-            <article class="mk-card">
+
+            <article class="mk-card mk-card-clean">
+              <img
+                src="https://images.unsplash.com/photo-1743768321018-b662d30584ab?auto=format&fit=crop&w=1200&q=80"
+                alt="Inspeção mecânica completa"
+                loading="lazy"
+              />
               <h3>Motor e arrefecimento</h3>
-              <p>Analise de temperatura, vazamentos e desempenho em uso urbano.</p>
+              <p>Análise de temperatura, vazamentos e desempenho em uso urbano.</p>
               <span>A partir de R$ 229</span>
+              <button class="mk-quote-btn" type="button" data-quote="Motor e arrefecimento">Pedir orçamento</button>
             </article>
-            <article class="mk-card">
-              <h3>Ar condicionado</h3>
-              <p>Higienizacao, troca de filtro e recarga de gas com teste de vedacao.</p>
+
+            <article class="mk-card mk-card-clean">
+              <img
+                src="https://images.unsplash.com/photo-1632605185825-fd583793fa73?auto=format&fit=crop&w=1200&q=80"
+                alt="Serviço técnico em veículo no elevador"
+                loading="lazy"
+              />
+              <h3>Ar-condicionado</h3>
+              <p>Higienização, troca de filtro e recarga de gás com teste de vedação.</p>
               <span>A partir de R$ 169</span>
+              <button class="mk-quote-btn" type="button" data-quote="Ar-condicionado">Pedir orçamento</button>
             </article>
-            <article class="mk-card">
-              <h3>Pre compra veicular</h3>
-              <p>Laudo rapido para compra segura, com pontos criticos documentados.</p>
+
+            <article class="mk-card mk-card-clean">
+              <img
+                src="https://images.unsplash.com/photo-1761519609252-3b868e540398?auto=format&fit=crop&w=1200&q=80"
+                alt="Ambiente de oficina para avaliação técnica"
+                loading="lazy"
+              />
+              <h3>Pré-compra veicular</h3>
+              <p>Laudo rápido para compra segura, com pontos críticos documentados.</p>
               <span>A partir de R$ 220</span>
+              <button class="mk-quote-btn" type="button" data-quote="Pré-compra veicular">Pedir orçamento</button>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- ORÇAMENTOS -->
+      <section class="mk-quote mk-reveal" id="orcamentos">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Orçamentos por serviço</h2>
+            <p>Escolha o tipo de serviço e mande os dados. A gente responde com opções e prazo.</p>
+          </div>
+
+          <div class="mk-quote-grid">
+            <article class="mk-quote-card mk-border-glow">
+              <h3>Orçamento rápido (WhatsApp)</h3>
+              <p>Gera uma mensagem pronta e já abre no WhatsApp.</p>
+
+              <form class="mk-quote-form" data-quote-form>
+                <label for="qNome">Nome</label>
+                <input id="qNome" name="nome" type="text" placeholder="Seu nome" required />
+
+                <label for="qCarro">Carro (modelo/ano)</label>
+                <input id="qCarro" name="carro" type="text" placeholder="Ex: Gol 1.6 2014" required />
+
+                <label for="qServico">Serviço</label>
+                <select id="qServico" name="servico">
+                  <option>Revisão preventiva</option>
+                  <option>Freio e suspensão</option>
+                  <option>Injeção eletrônica</option>
+                  <option>Motor e arrefecimento</option>
+                  <option>Ar-condicionado</option>
+                  <option>Pré-compra veicular</option>
+                </select>
+
+                <label for="qSintomas">Sintomas / detalhes</label>
+                <textarea id="qSintomas" name="sintomas" rows="4" placeholder="Ex: barulho ao frear, trepidação, luz da injeção acesa..."></textarea>
+
+                <button class="mk-btn mk-btn-solid mk-btn-wide" type="submit">Pedir orçamento no WhatsApp</button>
+              </form>
+
+              <small class="mk-note">Dica: se puder, envie foto do painel / vídeo do barulho.</small>
+            </article>
+
+            <aside class="mk-quote-side">
+              <div class="mk-info-card">
+                <h3>O que vai no orçamento?</h3>
+                <ul>
+                  <li>✅ Diagnóstico / checklist</li>
+                  <li>✅ Peças (originais ou equivalentes)</li>
+                  <li>✅ Mão de obra + prazo</li>
+                  <li>✅ Garantia e recomendações</li>
+                </ul>
+              </div>
+
+              <div class="mk-info-card">
+                <h3>Atendimento por prioridade</h3>
+                <div class="mk-bars">
+                  <div class="mk-bar">
+                    <span>Emergência</span>
+                    <em data-fill="92"></em>
+                  </div>
+                  <div class="mk-bar">
+                    <span>Diagnóstico</span>
+                    <em data-fill="78"></em>
+                  </div>
+                  <div class="mk-bar">
+                    <span>Revisão</span>
+                    <em data-fill="64"></em>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA -->
+      <section class="mk-showcase mk-reveal" id="galeria">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Oficina por dentro</h2>
+            <p>Fotos reais de carros e manutenção para mostrar como o serviço acontece na prática.</p>
+          </div>
+
+          <div class="mk-showcase-grid">
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80"
+                alt="Mecânico avaliando motor com ferramentas na bancada"
+                loading="lazy"
+              />
+              <figcaption>Inspeção técnica antes de iniciar qualquer reparo.</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80"
+                alt="Carro no elevador durante manutenção de suspensão"
+                loading="lazy"
+              />
+              <figcaption>Elevador e checklist de suspensão, freio e direção.</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1600&q=80"
+                alt="Veículo esportivo aguardando entrega após revisão"
+                loading="lazy"
+              />
+              <figcaption>Entrega final com testes e orientação da próxima revisão.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESSO -->
       <section class="mk-process mk-reveal" id="processo">
         <div class="mk-container">
           <div class="mk-section-head">
             <h2>Processo simples e transparente</h2>
+            <p>Sem surpresa: você vê o que foi feito e por quê.</p>
           </div>
 
           <div class="mk-steps">
-            <article>
+            <article class="mk-step">
               <strong>01</strong>
-              <h3>Recepcao tecnica</h3>
-              <p>Coletamos sintomas e historico do carro em poucos minutos.</p>
+              <h3>Recepção técnica</h3>
+              <p>Coletamos sintomas e histórico do carro em poucos minutos.</p>
             </article>
-            <article>
+            <article class="mk-step">
               <strong>02</strong>
-              <h3>Diagnostico</h3>
-              <p>Scanner e inspeccao visual com registro do que precisa ser feito.</p>
+              <h3>Diagnóstico</h3>
+              <p>Scanner + inspeção visual com registro do que precisa ser feito.</p>
             </article>
-            <article>
+            <article class="mk-step">
               <strong>03</strong>
-              <h3>Aprovacao</h3>
-              <p>Voce recebe o orcamento detalhado e aprova pelo celular.</p>
+              <h3>Aprovação</h3>
+              <p>Você recebe o orçamento detalhado e aprova pelo celular.</p>
             </article>
-            <article>
+            <article class="mk-step">
               <strong>04</strong>
               <h3>Entrega</h3>
-              <p>Servico finalizado com checklist e orientacao de proxima revisao.</p>
+              <p>Serviço finalizado com checklist e orientação da próxima revisão.</p>
+            </article>
+          </div>
+
+          <div class="mk-timeline">
+            <div class="mk-tl-item">
+              <span class="mk-tl-dot"></span>
+              <div>
+                <h4>Registro do diagnóstico</h4>
+                <p>Fotos, vídeos e “o que significa” cada falha — sem mistério.</p>
+              </div>
+            </div>
+            <div class="mk-tl-item">
+              <span class="mk-tl-dot"></span>
+              <div>
+                <h4>Opções de peças</h4>
+                <p>Você escolhe: original, equivalente premium ou custo-benefício.</p>
+              </div>
+            </div>
+            <div class="mk-tl-item">
+              <span class="mk-tl-dot"></span>
+              <div>
+                <h4>Pós-serviço</h4>
+                <p>Checklist final e recomendações para economizar no próximo ciclo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DÚVIDAS / FAQ -->
+      <section class="mk-faq mk-reveal" id="duvidas">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Dúvidas frequentes</h2>
+            <p>Respostas rápidas para você decidir com confiança.</p>
+          </div>
+
+          <div class="mk-faq-grid">
+            <details class="mk-acc" open>
+              <summary>Como funciona o diagnóstico?</summary>
+              <p>Usamos scanner + inspeção visual. Você recebe o relatório (e explicação simples) antes de qualquer troca.</p>
+            </details>
+
+            <details class="mk-acc">
+              <summary>Vocês fazem orçamento antes?</summary>
+              <p>Sim. Sempre enviamos orçamento com peças, mão de obra e prazo. Você aprova pelo WhatsApp.</p>
+            </details>
+
+            <details class="mk-acc">
+              <summary>Qual garantia vocês oferecem?</summary>
+              <p>Garantia em itens de manutenção geral e recomendação de uso. (Ajuste conforme sua regra real.)</p>
+            </details>
+
+            <details class="mk-acc">
+              <summary>Posso levar minhas peças?</summary>
+              <p>Pode, mas a garantia e o prazo podem mudar. Preferimos cotar opções para você comparar.</p>
+            </details>
+
+            <details class="mk-acc">
+              <summary>Meu carro trepida ao frear… é perigoso?</summary>
+              <p>Pode ser disco empenado, pastilha, suspensão ou pneu. O ideal é avaliar o quanto antes (segurança).</p>
+            </details>
+
+            <details class="mk-acc">
+              <summary>Quanto tempo leva uma revisão?</summary>
+              <p>Depende do pacote, mas normalmente dá para agendar e entregar no mesmo dia.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CENTRAL DO CLIENTE -->
+      <section class="mk-support mk-reveal" id="suporte">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Central de atendimento ao cliente</h2>
+            <p>Atalhos úteis: segunda via, status do serviço, garantia e recomendações.</p>
+          </div>
+
+          <div class="mk-support-grid">
+            <article class="mk-support-card">
+              <h3>Status do serviço</h3>
+              <p>Quer saber como está? Clique e mande o código da OS.</p>
+              <a class="mk-btn mk-btn-outline mk-btn-wide" href="https://wa.me/5551997950492?text=Olá!%20Quero%20status%20da%20OS:%20" target="_blank" rel="noreferrer">Consultar no WhatsApp</a>
+            </article>
+
+            <article class="mk-support-card">
+              <h3>Garantia e pós-serviço</h3>
+              <p>Orientações, prazos e o que fazer caso volte algum sintoma.</p>
+              <a class="mk-btn mk-btn-ghost mk-btn-wide" href="#duvidas">Ver FAQ</a>
+            </article>
+
+            <article class="mk-support-card">
+              <h3>Orçamento detalhado</h3>
+              <p>Peça as 3 opções de peça (original, premium e custo-benefício).</p>
+              <a class="mk-btn mk-btn-solid mk-btn-wide" href="#orcamentos">Pedir orçamento</a>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- MÉTRICAS -->
       <section class="mk-metrics mk-reveal">
         <div class="mk-container mk-metric-grid">
           <article>
             <h3>+1.800</h3>
-            <p>ordens de servico no ultimo ano</p>
+            <p>Ordens de serviço no último ano</p>
           </article>
           <article>
             <h3>+320</h3>
-            <p>frotas pequenas atendidas mensalmente</p>
+            <p>Frotas pequenas atendidas mensalmente</p>
           </article>
           <article>
-            <h3>4.9/5</h3>
-            <p>media das avaliacoes dos clientes</p>
+            <h3>4,9/5</h3>
+            <p>Média das avaliações dos clientes</p>
           </article>
           <article>
             <h3>30 dias</h3>
-            <p>garantia em itens de manutencao geral</p>
+            <p>Garantia em itens de manutenção geral</p>
           </article>
         </div>
       </section>
 
-      <section class="mk-plans mk-reveal" id="planos">
-        <div class="mk-container">
-          <div class="mk-section-head">
-            <h2>Planos de manutencao</h2>
-            <p>Para motorista particular, app ou pequena frota.</p>
-          </div>
-
-          <div class="mk-plan-grid">
-            <article class="mk-plan">
-              <h3>Plano Base</h3>
-              <p>Revisao semestral + scanner preventivo.</p>
-              <strong>R$ 79/mes</strong>
-              <a href="#contato">Quero esse</a>
-            </article>
-            <article class="mk-plan mk-plan-featured">
-              <span class="mk-badge">Mais escolhido</span>
-              <h3>Plano Controle</h3>
-              <p>Base + prioridade de agenda + revisao de freios.</p>
-              <strong>R$ 129/mes</strong>
-              <a href="#contato">Quero esse</a>
-            </article>
-            <article class="mk-plan">
-              <h3>Plano Frota</h3>
-              <p>Gestao de manutencao para ate 10 veiculos.</p>
-              <strong>R$ 249/mes</strong>
-              <a href="#contato">Quero esse</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
+      <!-- CLIENTES -->
       <section class="mk-testimonials mk-reveal" id="clientes">
         <div class="mk-container">
           <div class="mk-section-head">
@@ -221,47 +481,96 @@
 
           <div class="mk-testimonial-grid">
             <article>
-              <p>"Atendimento rapido, explicacao clara e sem empurrar servico."</p>
+              <p>"Atendimento rápido, explicação clara e sem empurrar serviço."</p>
               <span>Diego, motorista de app</span>
             </article>
             <article>
-              <p>"Organizaram a manutencao da minha frota e reduziu parada de veiculo."</p>
+              <p>"Organizaram a manutenção da minha frota e reduziu parada de veículo."</p>
               <span>Karina, gestora de entregas</span>
             </article>
             <article>
-              <p>"Primeira oficina que me mostrou tudo antes de aprovar. Virou minha referencia."</p>
-              <span>Marcio, cliente recorrente</span>
+              <p>"Primeira oficina que me mostrou tudo antes de aprovar. Virou minha referência."</p>
+              <span>Márcio, cliente recorrente</span>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- LOCALIZAÇÃO + MAPS -->
+      <section class="mk-location mk-reveal" id="localizacao">
+        <div class="mk-container">
+          <div class="mk-section-head">
+            <h2>Localização e rota</h2>
+            <p>Abra o mapa e venha direto — sem perder tempo.</p>
+          </div>
+
+          <div class="mk-location-grid">
+            <article class="mk-location-card">
+              <h3>MECA Torque</h3>
+              <p><strong>Endereço:</strong> Av. da Oficina, 450 - Centro</p>
+              <p><strong>Horário:</strong> Seg a Sex: 8h às 18h | Sáb: 8h às 13h</p>
+
+              <div class="mk-location-actions">
+                <a class="mk-btn mk-btn-solid" href="https://www.google.com/maps/dir/?api=1&destination=-29.000000,-51.000000" target="_blank" rel="noreferrer">
+                  Traçar rota
+                </a>
+                <a class="mk-btn mk-btn-outline" href="https://www.google.com/maps/search/?api=1&query=Av.%20da%20Oficina%2C%20450%20-%20Centro" target="_blank" rel="noreferrer">
+                  Abrir no Google Maps
+                </a>
+              </div>
+
+              <small class="mk-note">Troque as coordenadas e o endereço conforme o “demo” real.</small>
+            </article>
+
+            <aside class="mk-map">
+              <!-- Troque o src do iframe (Google Maps Embed) -->
+              <iframe
+                title="Mapa da MECA Torque"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=-29.000000,-51.000000&z=15&output=embed"
+              ></iframe>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
       <section class="mk-contact mk-reveal" id="contato">
         <div class="mk-container mk-contact-grid">
           <article class="mk-contact-card">
             <h2>Agende seu atendimento</h2>
-            <p>Preencha rapido ou chame no WhatsApp. Retorno em poucos minutos.</p>
-            <form>
+            <p>Preencha rápido ou chame no WhatsApp. Retorno em poucos minutos.</p>
+
+            <form id="mkLeadForm">
               <label for="mkNome">Nome</label>
-              <input id="mkNome" type="text" placeholder="Seu nome" />
+              <input id="mkNome" type="text" placeholder="Seu nome" required />
+
               <label for="mkTelefone">Telefone</label>
-              <input id="mkTelefone" type="tel" placeholder="(00) 00000-0000" />
-              <label for="mkServico">Servico</label>
+              <input id="mkTelefone" type="tel" placeholder="(00) 00000-0000" required />
+
+              <label for="mkServico">Serviço</label>
               <select id="mkServico">
-                <option>Revisao preventiva</option>
-                <option>Freio e suspensao</option>
-                <option>Injecao eletronica</option>
-                <option>Ar condicionado</option>
+                <option>Revisão preventiva</option>
+                <option>Freio e suspensão</option>
+                <option>Injeção eletrônica</option>
+                <option>Motor e arrefecimento</option>
+                <option>Ar-condicionado</option>
+                <option>Pré-compra veicular</option>
               </select>
-              <button type="button">Solicitar contato</button>
+
+              <!-- BOTÃO no mesmo “shape” do WhatsApp -->
+              <button class="mk-btn mk-btn-solid mk-btn-wide" type="submit">Solicitar contato</button>
+
+              <small class="mk-note">Ao enviar, vamos abrir uma mensagem pronta no WhatsApp.</small>
             </form>
           </article>
 
           <aside class="mk-contact-info">
-            <img src="../../MECA.png" alt="MECA Torque" />
+            <img src="../../mecat.png" alt="MECA Torque" />
             <h3>MECA Torque</h3>
             <p>Av. da Oficina, 450 - Centro</p>
-            <p>Seg a Sex: 8h as 18h | Sab: 8h as 13h</p>
+            <p>Seg a Sex: 8h às 18h | Sáb: 8h às 13h</p>
             <a href="tel:+5551997950492">(51) 99795-0492</a>
             <a href="mailto:recati.com@gmail.com">recati.com@gmail.com</a>
           </aside>
@@ -271,8 +580,12 @@
 
     <footer class="mk-footer">
       <div class="mk-container mk-footer-row">
-        <small>MECA Torque - Exemplo demo RECATI</small>
-        <small>(c) <span id="mkYear"></span> Todos os direitos reservados.</small>
+        <a class="mk-footer-brand" href="#inicio">
+          <img src="../../mecat.png" alt="Logo MECA Torque" />
+          <span>MECA Torque</span>
+        </a>
+        <small>MECA Torque — Exemplo demo RECATI</small>
+        <small>© <span id="mkYear"></span> Todos os direitos reservados.</small>
       </div>
     </footer>
 
