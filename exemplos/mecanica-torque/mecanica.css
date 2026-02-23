@@ -22,6 +22,10 @@ body {
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px; /* ajuste fino conforme altura do header */
+}
 
 body {
   min-height: 100vh;
@@ -275,7 +279,7 @@ a {
   filter: blur(14px);
   opacity: 0.55;
   z-index: -1;
-  animation: mkGlow 6s linear infinite;
+  animation: mkGlow 18s linear infinite;
 }
 @keyframes mkGlow {
   0% { transform: rotate(0deg); }
