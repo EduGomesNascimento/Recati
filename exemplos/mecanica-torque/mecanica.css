@@ -11,6 +11,17 @@
   --accent-2: #3dc8ff;
   --radius: 16px;
   --shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+
+  /* ===== ÂNCORAS / HEADER OFFSET (AJUSTE FINO AQUI) ===== */
+  --header-h: 78px;                 /* min-height do header */
+  --anchor-offset: calc(var(--header-h) + 10px); /* folga pequena e precisa */
+
+  /* ===== ESPAÇAMENTOS GERAIS ===== */
+  --gap-1: 10px;
+  --gap-2: 12px;
+  --gap-3: 14px;
+  --gap-4: 18px;
+  --gap-5: 22px;
 }
 
 * {
@@ -22,9 +33,22 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* ===== Scroll “certo” com header sticky ===== */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 92px; /* ajuste fino conforme altura do header */
+  scroll-padding-top: var(--anchor-offset);
+}
+
+/* reforço pra ancoras (evita ir “pra baixo” ou “por baixo”) */
+section[id],
+main[id] {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* fallback extra: quando um alvo é selecionado (#servicos etc) */
+:target {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 body {
@@ -63,14 +87,16 @@ a {
 .mk-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  left: 0;
+  right: 0;
+  z-index: 999;
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
-  background: rgba(10, 13, 18, 0.82);
+  background: rgba(10, 13, 18, 0.88);
 }
 
 .mk-header-row {
-  min-height: 78px;
+  min-height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -251,6 +277,7 @@ a {
   flex-wrap: wrap;
   gap: 8px;
 }
+
 .mk-chip {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.03);
@@ -260,10 +287,11 @@ a {
   font-size: 0.92rem;
 }
 
-/* Glow animado (opcional) */
+/* Glow animado (5x mais lento) */
 .mk-border-glow {
   position: relative;
 }
+
 .mk-border-glow::after {
   content: "";
   position: absolute;
@@ -279,8 +307,9 @@ a {
   filter: blur(14px);
   opacity: 0.55;
   z-index: -1;
-  animation: mkGlow 18s linear infinite;
+  animation: mkGlow 90s linear infinite; /* 18s -> 90s (5x mais lento) */
 }
+
 @keyframes mkGlow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -371,6 +400,7 @@ a {
   padding: 12px;
   background: rgba(0, 0, 0, 0.26);
 }
+
 .mk-mini-cta p {
   margin: 0 0 10px;
   color: #dbe7f2;
@@ -427,30 +457,6 @@ a {
   content: none !important;
 }
 
-/* borda “tech” opcional (se você usar .mk-card-clean no HTML) */
-.mk-card-clean {
-  position: relative;
-}
-.mk-card-clean::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: 14px;
-  background: linear-gradient(
-    135deg,
-    rgba(61, 200, 255, 0.18),
-    rgba(255, 255, 255, 0),
-    rgba(255, 107, 44, 0.12)
-  );
-  pointer-events: none;
-  opacity: 0.75;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  padding: 1px;
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
 .mk-card img {
   width: 100%;
   height: 168px;
@@ -490,6 +496,7 @@ a {
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   transition: transform 0.2s ease, filter 0.2s ease, border-color 0.2s ease;
 }
+
 .mk-quote-btn:hover {
   transform: translateY(-1px);
   filter: brightness(1.06);
@@ -744,14 +751,16 @@ a {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
 }
 
+/* MAIS ESPAÇO ENTRE CAMPOS (form geral quote) */
 .mk-quote-form {
   display: grid;
-  gap: 8px;
+  gap: var(--gap-3);
 }
 
 .mk-quote-form label {
   font-size: 0.88rem;
   color: #d3dce6;
+  margin-top: 2px;
 }
 
 .mk-quote-form input,
@@ -760,7 +769,7 @@ a {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
-  padding: 11px;
+  padding: 12px 12px;
   font: inherit;
   color: var(--text);
   background: rgba(0, 0, 0, 0.3);
@@ -772,7 +781,7 @@ a {
 
 .mk-note {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
   color: var(--muted);
 }
 
@@ -801,31 +810,6 @@ a {
 
 .mk-info-card li {
   margin: 7px 0;
-}
-
-.mk-bars {
-  display: grid;
-  gap: 10px;
-}
-
-.mk-bar {
-  display: grid;
-  gap: 6px;
-}
-
-.mk-bar span {
-  color: #dbe7f2;
-  font-weight: 600;
-}
-
-.mk-bar em {
-  display: block;
-  height: 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-  position: relative;
 }
 
 /* =========================
@@ -964,14 +948,17 @@ a {
   color: var(--muted);
 }
 
+/* MAIS ESPAÇO ENTRE CAMPOS (form contato) */
 .mk-contact-card form {
   display: grid;
-  gap: 8px;
+  gap: var(--gap-3);
+  margin-top: 8px;
 }
 
 .mk-contact-card label {
   font-size: 0.88rem;
   color: #d3dce6;
+  margin-top: 2px;
 }
 
 .mk-contact-card input,
@@ -979,7 +966,7 @@ a {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
-  padding: 11px;
+  padding: 12px 12px;
   font: inherit;
   color: var(--text);
   background: rgba(0, 0, 0, 0.3);
@@ -999,6 +986,7 @@ a {
   color: #121212;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
+
 .mk-contact-card button:hover {
   transform: translateY(-1px);
   filter: brightness(1.06);
@@ -1093,17 +1081,12 @@ a {
   align-items: center;
   gap: 10px;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
-  animation: mkFloat 4.5s ease-in-out infinite;
+  animation: mkFloat 6.5s ease-in-out infinite; /* um pouco mais suave */
 }
 
 @keyframes mkFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 .mk-fab-dot {
@@ -1124,6 +1107,11 @@ a {
    RESPONSIVE
 ========================= */
 @media (max-width: 1080px) {
+  :root {
+    /* em telas menores, normalmente o header "parece" maior */
+    --anchor-offset: calc(var(--header-h) + 12px);
+  }
+
   .mk-hero-grid,
   .mk-contact-grid,
   .mk-quote-grid,
@@ -1156,6 +1144,11 @@ a {
 }
 
 @media (max-width: 760px) {
+  :root {
+    /* mobile costuma precisar de um offset um pouco menor (pra não cair “pra baixo”) */
+    --anchor-offset: calc(var(--header-h) + 6px);
+  }
+
   .mk-nav-toggle {
     display: inline-flex;
   }
@@ -1180,7 +1173,7 @@ a {
 
   .mk-nav > a {
     width: 100%;
-    padding: 7px 10px;
+    padding: 8px 10px;
     justify-content: flex-start;
   }
 
