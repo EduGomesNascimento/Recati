@@ -191,7 +191,7 @@ body {
   font-size: 18px;
   text-align: center;
 
-  background: linear-gradient(90deg, #ffffff 0%, #dcdcdc 100%);
+  background: linear-gradient(90deg, #302f2f 0%, #cfad14 100%);
   box-shadow: 0 10px 24px rgba(255, 255, 255, 0.12);
 
   transition: all 0.35s ease;
