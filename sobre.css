@@ -179,6 +179,8 @@ body {
 }
 
 .btn {
+  position: relative;
+  overflow: hidden;
   display: block;
   width: 100%;
   margin-top: 20px;
@@ -201,6 +203,35 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 16px 36px rgba(255, 255, 255, 0.25);
   background: linear-gradient(90deg,#91790d 0%, #1f1e1e 100%);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  60% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
 }
 
 .page-footer {
