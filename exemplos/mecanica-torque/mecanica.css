@@ -812,6 +812,49 @@ a {
   margin: 7px 0;
 }
 
+.mk-bars {
+  display: grid;
+  gap: 10px;
+}
+
+.mk-bar {
+  display: grid;
+  gap: 5px;
+}
+
+.mk-bar span {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #d6e1ed;
+}
+
+.mk-bar em {
+  display: block;
+  height: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.mk-bar em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(61, 200, 255, 0.72), rgba(255, 107, 44, 0.78));
+  transition: width 0.9s ease;
+}
+
+.mk-bar em.is-on::after {
+  width: var(--mkFill, 0%);
+}
+
 /* =========================
    FAQ
 ========================= */

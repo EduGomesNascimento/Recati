@@ -1,6 +1,12 @@
 const navToggle = document.querySelector(".pd-nav-toggle");
 const nav = document.querySelector(".pd-nav");
 
+function closeMenu() {
+  if (!nav || !navToggle) return;
+  nav.classList.remove("is-open");
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
@@ -9,73 +15,120 @@ if (navToggle && nav) {
 
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+      if ((link.getAttribute("href") || "").startsWith("#")) closeMenu();
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (!nav.classList.contains("is-open")) return;
+    if (nav.contains(target) || navToggle.contains(target)) return;
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
   });
 }
 
-// Ano
 const yearRef = document.getElementById("pdYear");
 if (yearRef) yearRef.textContent = String(new Date().getFullYear());
 
-// Reveal (IntersectionObserver)
 const revealNodes = document.querySelectorAll(".pd-reveal");
 if (revealNodes.length) {
-  const io = new IntersectionObserver(
-    (entries) => {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.14 }
+    { threshold: 0.15 }
   );
-  revealNodes.forEach((node) => io.observe(node));
+
+  revealNodes.forEach((node) => revealObserver.observe(node));
 }
 
-// Barras de "horários de maior movimento"
-function animateBars() {
-  document.querySelectorAll(".pd-bar em").forEach((bar) => {
-    const w = bar.style.getPropertyValue("--w") || "0%";
-    bar.style.setProperty("--w", w);
-    // aplica no pseudo via classe (gatilho simples)
-    bar.classList.add("pd-bar-on");
-  });
-}
-setTimeout(animateBars, 600);
+const sectionLinks = Array.from(document.querySelectorAll(".pd-nav > a"))
+  .filter((link) => (link.getAttribute("href") || "").startsWith("#"));
 
-// Ativar link do header conforme seção visível
-const navLinks = Array.from(document.querySelectorAll(".pd-nav > a"))
-  .filter((a) => (a.getAttribute("href") || "").startsWith("#"));
-
-const sections = navLinks
-  .map((a) => document.querySelector(a.getAttribute("href")))
+const trackedSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
-if (sections.length) {
-  const ioActive = new IntersectionObserver(
+function setActiveNav(hash) {
+  sectionLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === hash);
+  });
+}
+
+if (window.location.hash) setActiveNav(window.location.hash);
+
+if (trackedSections.length) {
+  const activeObserver = new IntersectionObserver(
     (entries) => {
       const visible = entries
-        .filter((e) => e.isIntersecting)
+        .filter((entry) => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
       if (!visible) return;
-
-      const id = "#" + visible.target.id;
-      navLinks.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === id));
+      setActiveNav(`#${visible.target.id}`);
     },
-    { rootMargin: "-40% 0px -55% 0px", threshold: [0.1, 0.2, 0.35] }
+    { rootMargin: "-36% 0px -52% 0px", threshold: [0.2, 0.4, 0.65] }
   );
 
-  sections.forEach((sec) => ioActive.observe(sec));
+  trackedSections.forEach((section) => activeObserver.observe(section));
 }
 
-// CSS helper: anima as barras usando pseudo-element
-const style = document.createElement("style");
-style.textContent = `
-  .pd-bar.pd-bar-on em::after { width: var(--w, 0%); }
-`;
-document.head.appendChild(style);
+window.addEventListener("hashchange", () => {
+  if (window.location.hash) setActiveNav(window.location.hash);
+});
+
+const bars = document.querySelectorAll(".pd-bar em");
+const processSection = document.getElementById("processo");
+
+if (bars.length && processSection) {
+  const barObserver = new IntersectionObserver(
+    (entries, observer) => {
+      const [entry] = entries;
+      if (!entry || !entry.isIntersecting) return;
+
+      bars.forEach((bar, index) => {
+        window.setTimeout(() => {
+          bar.classList.add("is-on");
+        }, index * 120);
+      });
+
+      observer.disconnect();
+    },
+    { threshold: 0.35 }
+  );
+
+  barObserver.observe(processSection);
+}
+
+const form = document.querySelector(".pd-form");
+if (form) {
+  const sendButton = form.querySelector("button[type='button']");
+
+  if (sendButton) {
+    sendButton.addEventListener("click", () => {
+      const nome = String((document.getElementById("pdNome") || {}).value || "").trim();
+      const telefone = String((document.getElementById("pdTelefone") || {}).value || "").trim();
+      const tipo = String((document.getElementById("pdTipo") || {}).value || "").trim();
+      const obs = String((document.getElementById("pdObs") || {}).value || "").trim();
+
+      const msg =
+        "Ola! Quero fazer um pedido na Padaria Lenha Viva.\n\n" +
+        `Nome: ${nome || "Nao informado"}\n` +
+        `Telefone: ${telefone || "Nao informado"}\n` +
+        `Tipo de pedido: ${tipo || "Nao informado"}\n` +
+        `Observacoes: ${obs || "Sem observacoes"}`;
+
+      const url = `https://wa.me/5551997950492?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  }
+}

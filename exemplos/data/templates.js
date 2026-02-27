@@ -77,6 +77,26 @@
     stack: "HTML, CSS e JavaScript",
     detailPath: "./padaria-lenha/index.html",
     demoPath: "./padaria-lenha/index.html",
+  },
+  {
+    slug: "clinica-estetica-aurea",
+    title: "Clinica Estetica Aurea (Site de clinica estetica)",
+    category: "Institucional",
+    segment: "Clinica Estetica",
+    level: "Avancado",
+    tags: ["clinica", "estetica", "corpo", "facial", "faq", "whatsapp", "mapa"],
+    summary: "Landing completa inspirada em clinicas premium, com tratamentos, especialista, FAQ e contato.",
+    features: [
+      "Hero de alta conversao",
+      "Blocos de servicos corporais e faciais",
+      "Secao de tecnologias e especialista",
+      "FAQ em acordeao",
+      "Contato com mapa",
+      "Menu responsivo mobile",
+    ],
+    stack: "HTML, CSS e JavaScript",
+    detailPath: "./clinica-estetica-aurea/index.html",
+    demoPath: "./clinica-estetica-aurea/index.html",
   }
 ];
 

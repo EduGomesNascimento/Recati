@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <script data-recati-force-https>
+(function () {
+  var PROD_HOST = "www.recati.com.br";
+  var host = window.location.hostname;
+  var isLocal = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".local");
+  if (isLocal || window.location.protocol === "file:") return;
+  if (window.location.protocol !== "https:" || host !== PROD_HOST) {
+    var target = "https://" + PROD_HOST + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(target);
+  }
+})();
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cl&iacute;nica Est&eacute;tica &Aacute;urea | Exemplo</title>
+    <meta
+      name="description"
+      content="Exemplo de site para cl&iacute;nica est&eacute;tica com foco em tratamentos corporais, faciais, autoridade m&eacute;dica e atendimento r&aacute;pido."
+    />
+    <link rel="icon" href="../../assets/icons/recati-favicon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./clinica.css" />
+  </head>
+  <body>
+    <header class="ca-header">
+      <div class="ca-topbar">
+        <div class="ca-wrap ca-topbar-row">
+          <p>Atendimento: Seg a Sex, 8h as 19h | Sab, 8h as 13h</p>
+          <a href="tel:+5551997950492">(51) 99795-0492</a>
+        </div>
+      </div>
+
+      <div class="ca-wrap ca-header-row">
+        <a class="ca-brand" href="#inicio" aria-label="Voltar ao inicio">
+          <span>A</span>
+          <strong>Cl&iacute;nica &Aacute;urea</strong>
+        </a>
+
+        <button class="ca-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+
+        <nav class="ca-nav" aria-label="Navegacao principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#corpo">Corpo</a>
+          <a href="#facial">Facial</a>
+          <a href="#tecnologias">Tecnologias</a>
+          <a href="#medico">Especialista</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+          <a class="ca-btn ca-btn-line" href="../../index.html#intro">Voltar ao Recati</a>
+          <a class="ca-btn ca-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Agendar avalia&ccedil;&atilde;o</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="ca-hero ca-reveal">
+        <div class="ca-wrap ca-hero-grid">
+          <article class="ca-hero-copy">
+            <p class="ca-eyebrow">CL&Iacute;NICA EST&Eacute;TICA AVAN&Ccedil;ADA</p>
+            <h1>Resultados naturais, tecnologia moderna e plano de tratamento claro.</h1>
+            <p>
+              Inspirado no visual de cl&iacute;nicas premium: fundo sofisticado, destaque para corpo e face,
+              autoridade m&eacute;dica e convers&atilde;o r&aacute;pida para atendimento.
+            </p>
+            <div class="ca-actions">
+              <a class="ca-btn ca-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Quero minha avalia&ccedil;&atilde;o</a>
+              <a class="ca-btn ca-btn-line" href="#resultados">Ver resultados</a>
+            </div>
+            <ul>
+              <li>Protocolos corporais e faciais personalizados</li>
+              <li>Equipe especializada em harmoniza&ccedil;&atilde;o e contorno corporal</li>
+              <li>Acompanhamento do pr&eacute; ao p&oacute;s-procedimento</li>
+            </ul>
+          </article>
+
+          <aside class="ca-hero-media">
+            <img src="../../maria.webp" alt="Mulher em tratamento est&eacute;tico premium" loading="lazy" />
+            <div class="ca-floating-box">
+              <h2>Atendimento de alto padr&atilde;o</h2>
+              <dl>
+                <div><dt>Avalia&ccedil;&otilde;es</dt><dd>+4.900</dd></div>
+                <div><dt>Satisfa&ccedil;&atilde;o m&eacute;dia</dt><dd>4.9/5</dd></div>
+                <div><dt>Retorno em</dt><dd>15 min</dd></div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="ca-proof ca-reveal">
+        <div class="ca-wrap ca-proof-grid">
+          <article>
+            <h3>Seguran&ccedil;a Cl&iacute;nica</h3>
+            <p>Protocolos claros, ficha completa e orienta&ccedil;&atilde;o detalhada em cada etapa.</p>
+          </article>
+          <article>
+            <h3>Tecnologia Atual</h3>
+            <p>Equipamentos modernos para gordura localizada, pele e rejuvenescimento.</p>
+          </article>
+          <article>
+            <h3>Plano Realista</h3>
+            <p>Objetivo, quantidade de sess&otilde;es e investimento apresentados sem surpresa.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="ca-results ca-reveal" id="resultados">
+        <div class="ca-wrap">
+          <div class="ca-section-head">
+            <h2>Inspire-se com resultados reais</h2>
+            <p>Uma amostra visual para orientar expectativas e definir o protocolo ideal.</p>
+          </div>
+          <div class="ca-results-grid">
+            <img src="../../camila.avif" alt="Resultado facial suave" loading="lazy" />
+            <img src="../../laura.avif" alt="Tratamento de pele e firmeza" loading="lazy" />
+            <img src="../../luana.jpeg" alt="Contorno corporal e harmoniza&ccedil;&atilde;o" loading="lazy" />
+            <img src="../../loira.avif" alt="Rejuvenescimento com naturalidade" loading="lazy" />
+            <img src="../../julia.jpeg" alt="Protocolo combinado para face" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section class="ca-services ca-reveal" id="corpo">
+        <div class="ca-wrap">
+          <div class="ca-section-head">
+            <h2>Tudo para seu contorno corporal</h2>
+            <p>Tratamentos que unem redu&ccedil;&atilde;o de medidas, firmeza da pele e modelagem.</p>
+          </div>
+
+          <div class="ca-card-grid">
+            <article class="ca-service-card">
+              <img src="../../mulher.png" alt="Ultrassom corporal" loading="lazy" />
+              <h3>Ultrassom corporal</h3>
+              <p>Foco em gordura localizada e remodelacao de areas criticas.</p>
+              <span>A partir de R$ 420</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../mulherladocabelo.png" alt="Drenagem modeladora" loading="lazy" />
+              <h3>Drenagem modeladora</h3>
+              <p>Reduz inchaco e melhora o desenho corporal em poucas sess&otilde;es.</p>
+              <span>A partir de R$ 190</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../femea.png" alt="Radiofrequencia para firmeza" loading="lazy" />
+              <h3>Radiofrequencia</h3>
+              <p>Estimulo de colageno para firmeza e textura mais uniforme.</p>
+              <span>A partir de R$ 320</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../maura.webp" alt="Protocolo para celulite" loading="lazy" />
+              <h3>Protocolo celulite</h3>
+              <p>Associacao de tecnologias para melhorar superficie da pele.</p>
+              <span>A partir de R$ 360</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../guria.png" alt="Criolip&oacute;lise de areas localizadas" loading="lazy" />
+              <h3>Criolip&oacute;lise</h3>
+              <p>Alternativa n&atilde;o invasiva para areas resistentes a dieta e treino.</p>
+              <span>A partir de R$ 690</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../maria.webp" alt="Biostimulacao corporal" loading="lazy" />
+              <h3>Biostimulacao</h3>
+              <p>Melhora da qualidade da pele em gluteos, abdomen e bracos.</p>
+              <span>A partir de R$ 540</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ca-services ca-services-light ca-reveal" id="facial">
+        <div class="ca-wrap">
+          <div class="ca-section-head">
+            <h2>Tudo para sua beleza facial</h2>
+            <p>Rejuvenescimento com estrategia, naturalidade e acompanhamento continuo.</p>
+          </div>
+
+          <div class="ca-card-grid">
+            <article class="ca-service-card">
+              <img src="../../camila.avif" alt="Limpeza de pele premium" loading="lazy" />
+              <h3>Limpeza premium</h3>
+              <p>Higiene profunda, controle de oleosidade e preparo para protocolos.</p>
+              <span>A partir de R$ 220</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../julia.jpeg" alt="Peeling quimico progressivo" loading="lazy" />
+              <h3>Peeling progressivo</h3>
+              <p>Renovacao da pele com foco em manchas, poros e textura.</p>
+              <span>A partir de R$ 300</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../laura.avif" alt="Preenchimento facial harm&ocirc;nico" loading="lazy" />
+              <h3>Preenchimento</h3>
+              <p>Rep&oacute;sicao de volume com resultado equilibrado e natural.</p>
+              <span>A partir de R$ 950</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../loira.avif" alt="Botox para linhas de express&atilde;o" loading="lazy" />
+              <h3>Toxina botulinica</h3>
+              <p>Suaviza&ccedil;&atilde;o de linhas de express&atilde;o com plano personalizado.</p>
+              <span>A partir de R$ 1.100</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../luana.jpeg" alt="Skinbooster para hidratacao intensa" loading="lazy" />
+              <h3>Skinbooster</h3>
+              <p>Hidratacao profunda e melhora visivel de viço e elasticidade.</p>
+              <span>A partir de R$ 780</span>
+            </article>
+            <article class="ca-service-card">
+              <img src="../../maria.webp" alt="Tratamento para olheiras e flacidez" loading="lazy" />
+              <h3>Olheiras e papada</h3>
+              <p>Combinacao de t&eacute;cnicas para descansar e definir o rosto.</p>
+              <span>A partir de R$ 540</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ca-tech ca-reveal" id="tecnologias">
+        <div class="ca-wrap">
+          <div class="ca-section-head">
+            <h2>As mais modernas tecnologias de cl&iacute;nica</h2>
+            <p>Equipamentos de apoio para ganho de efici&ecirc;ncia e previsibilidade cl&iacute;nica.</p>
+          </div>
+
+          <div class="ca-tech-grid">
+            <article>
+              <h3>Laser fracionado</h3>
+              <p>Textura, poros e cicatrizes com abordagem controlada por intensidade.</p>
+              <a href="#contato">Solicitar avalia&ccedil;&atilde;o</a>
+            </article>
+            <article>
+              <h3>Plataforma corporal 360</h3>
+              <p>Modo combinado para gordura localizada, celulite e firmeza.</p>
+              <a href="#contato">Solicitar avalia&ccedil;&atilde;o</a>
+            </article>
+            <article>
+              <h3>Diagnostico por imagem</h3>
+              <p>Comparativo visual por etapa para acompanhar sua evolu&ccedil;&atilde;o real.</p>
+              <a href="#contato">Solicitar avalia&ccedil;&atilde;o</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ca-doctor ca-reveal" id="medico">
+        <div class="ca-wrap ca-doctor-grid">
+          <article class="ca-doctor-photo">
+            <img src="../../saddan.avif" alt="Especialista em est&eacute;tica da Cl&iacute;nica &Aacute;urea" loading="lazy" />
+          </article>
+
+          <article class="ca-doctor-copy">
+            <p class="ca-eyebrow">Respons&aacute;vel t&eacute;cnico</p>
+            <h2>Dr. Caio M.</h2>
+            <p>
+              Mais de 15 anos em procedimentos est&eacute;ticos com foco em seguran&ccedil;a, resultado harm&ocirc;nico
+              e plano de manuten&ccedil;&atilde;o para longo prazo.
+            </p>
+            <div class="ca-doctor-badges">
+              <span>CRM ativo</span>
+              <span>Especializa&ccedil;&atilde;o em est&eacute;tica</span>
+              <span>Atualiza&ccedil;&atilde;o anual em protocolos</span>
+            </div>
+            <a class="ca-btn ca-btn-fill" href="#contato">Agendar com especialista</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="ca-process ca-reveal">
+        <div class="ca-wrap">
+          <div class="ca-section-head">
+            <h2>Passo a passo para sua evolu&ccedil;&atilde;o</h2>
+          </div>
+          <div class="ca-steps">
+            <article>
+              <strong>01</strong>
+              <h3>Avalia&ccedil;&atilde;o t&eacute;cnica</h3>
+              <p>Diagn&oacute;stico, objetivo principal e registro inicial de medidas/fotos.</p>
+            </article>
+            <article>
+              <strong>02</strong>
+              <h3>Plano de tratamento</h3>
+              <p>Defini&ccedil;&atilde;o de tecnologias, n&uacute;mero de sess&otilde;es e cronograma de retorno.</p>
+            </article>
+            <article>
+              <strong>03</strong>
+              <h3>Acompanhamento</h3>
+              <p>Revis&atilde;o por etapa e ajuste de protocolo para manter resultados est&aacute;veis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ca-faq ca-reveal" id="faq">
+        <div class="ca-wrap">
+          <div class="ca-section-head">
+            <h2>Perguntas frequentes</h2>
+            <p>Respostas objetivas antes da sua primeira consulta.</p>
+          </div>
+
+          <div class="ca-faq-list">
+            <article class="ca-faq-item">
+              <button type="button" aria-expanded="false">Em quanto tempo vejo resultado?</button>
+              <div class="ca-faq-answer">
+                <p>Depende do protocolo, mas muitos pacientes percebem mudan&ccedil;as iniciais entre 15 e 30 dias.</p>
+              </div>
+            </article>
+            <article class="ca-faq-item">
+              <button type="button" aria-expanded="false">D&oacute;i fazer os procedimentos?</button>
+              <div class="ca-faq-answer">
+                <p>As t&eacute;cnicas s&atilde;o planejadas para conforto. Quando necess&aacute;rio, usamos recursos de analgesia local.</p>
+              </div>
+            </article>
+            <article class="ca-faq-item">
+              <button type="button" aria-expanded="false">Posso voltar ao trabalho no mesmo dia?</button>
+              <div class="ca-faq-answer">
+                <p>Na maioria dos procedimentos minimamente invasivos, sim. Voc&ecirc; recebe orienta&ccedil;&otilde;es detalhadas.</p>
+              </div>
+            </article>
+            <article class="ca-faq-item">
+              <button type="button" aria-expanded="false">Voc&ecirc;s trabalham com pacotes?</button>
+              <div class="ca-faq-answer">
+                <p>Sim. Montamos pacotes por objetivo (corpo, face ou combinado) ap&oacute;s avalia&ccedil;&atilde;o t&eacute;cnica.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ca-contact ca-reveal" id="contato">
+        <div class="ca-wrap ca-contact-grid">
+          <article class="ca-contact-card">
+            <h2>Central de atendimento</h2>
+            <p>Fale com nosso time para montar seu plano de avalia&ccedil;&atilde;o e tratamento.</p>
+            <ul>
+              <li><strong>WhatsApp:</strong> (51) 99795-0492</li>
+              <li><strong>E-mail:</strong> recati.com@gmail.com</li>
+              <li><strong>Endere&ccedil;o:</strong> Rua das Clinicas, 245 - Porto Alegre/RS</li>
+            </ul>
+            <div class="ca-actions">
+              <a class="ca-btn ca-btn-fill" href="https://wa.me/5551997950492" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+              <a class="ca-btn ca-btn-line" href="mailto:recati.com@gmail.com">Enviar e-mail</a>
+            </div>
+          </article>
+
+          <article class="ca-map-card">
+            <iframe
+              class="ca-map"
+              src="https://www.google.com/maps?q=Porto%20Alegre%20RS&output=embed"
+              title="Mapa de localiza&ccedil;&atilde;o da cl&iacute;nica"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ca-footer">
+      <div class="ca-wrap ca-footer-row">
+        <small>Cl&iacute;nica Est&eacute;tica &Aacute;urea - Exemplo RECATI</small>
+        <small>(c) <span id="caYear"></span> Todos os direitos reservados.</small>
+      </div>
+    </footer>
+
+    <script src="./clinica.js"></script>
+  </body>
+</html>
