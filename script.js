@@ -3,42 +3,42 @@
   const mobileBootMode = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
   const VIDEO_SOURCES = mobileBootMode
     ? [
-        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
         "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
+        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
         "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
       ]
     : [
-        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
         "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
         "./Gatinho_Pendurado_na_Borda_Preta.mp4",
+        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
       ];
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.015;
-  const SEEK_FPS = 36;
-  const MOBILE_SEEK_FPS = 30;
-  const SMOOTH_RESPONSE = 6.6;
-  const MOBILE_SMOOTH_RESPONSE = 4.8;
+  const SEEK_FPS = 48;
+  const MOBILE_SEEK_FPS = 42;
+  const SMOOTH_RESPONSE = 7.8;
+  const MOBILE_SMOOTH_RESPONSE = 7.2;
   const VIDEO_SCALE = 0.86;
   const MOBILE_VIDEO_SCALE = 0.92;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
-  const MIN_TIME_STEP = 1 / 48;
-  const MOBILE_MIN_TIME_STEP = 1 / 36;
-  const DESKTOP_DRAW_FPS = 60;
-  const MOBILE_DRAW_FPS = 52;
+  const MIN_TIME_STEP = 1 / 60;
+  const MOBILE_MIN_TIME_STEP = 1 / 48;
+  const DESKTOP_DRAW_FPS = 72;
+  const MOBILE_DRAW_FPS = 60;
   const SCROLL_SYNC_LEAD_DESKTOP = 0.03;
   const SCROLL_SYNC_LEAD_MOBILE = 0.02;
   const SCROLL_SYNC_DEADBAND_PX = 2;
   const END_LOCK_SCROLL = 0.998;
   const END_ZONE_START = 0.9;
-  const SEEK_STALL_RESET_MS = 240;
+  const SEEK_STALL_RESET_MS = 180;
   const BG_SAMPLE_H = 24;
   const BG_SAMPLE_W_RATIO = 0.16;
   const EDGE_OVERLAP_PX = 2;
   const TOP_CORNER_SAMPLE_RATIO = 0.14;
   const MOBILE_MAX_DPR = 1;
-  const DESKTOP_MAX_DPR = 2;
+  const DESKTOP_MAX_DPR = 1.5;
 
   const enterBtn = document.getElementById("enterAccessBtn");
   const skipBtn = document.getElementById("skipIntroBtn");
@@ -286,7 +286,6 @@
 
     if (Math.abs(lastRequestedTime - nextTime) <= stepThreshold) return;
     if (Math.abs(video.currentTime - nextTime) <= stepThreshold) return;
-    if (mobileMode && nextTime + minTimeStep < video.currentTime) return;
 
     // Serialize seeks to avoid decode thrash near the end.
     if (seekBusy || video.seeking || nowMs - lastSeekAt < minSeekInterval) {
@@ -388,13 +387,9 @@
 
   video.addEventListener("loadeddata", init, { once: true });
 
-  video.addEventListener("seeked", drawFrame);
-  video.addEventListener("timeupdate", drawFrame);
-  video.addEventListener("timeupdate", () => {
-    seekBusy = false;
-  });
   video.addEventListener("seeked", () => {
     seekBusy = false;
+    drawFrame();
     if (queuedTime !== null) {
       const next = queuedTime;
       queuedTime = null;
@@ -432,7 +427,7 @@
   video.load();
 
   function setupVideoFrameCallback() {
-    if (mobileMode || typeof video.requestVideoFrameCallback !== "function" || hasRVFC) return;
+    if (typeof video.requestVideoFrameCallback !== "function" || hasRVFC) return;
     hasRVFC = true;
 
     const onFrame = () => {

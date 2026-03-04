@@ -156,7 +156,7 @@ body:not(.gate-locked) .site {
   overflow: hidden;
   display: inline-block;
   padding: 15px 32px;
-  border-radius: 16px;
+  border-radius: 0;
   border: 1px solid transparent;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06)) padding-box,
@@ -381,7 +381,7 @@ h3 {
 .skip-intro-btn {
   display: inline-block;
   padding: 15px 22px;
-  border-radius: 16px;
+  border-radius: 0;
   border: 1px solid transparent;
   color: var(--muted);
   text-decoration: none;
@@ -602,7 +602,7 @@ body.site-ready .scroll-hint {
   overflow: hidden;
   display: inline-block;
   padding: 12px 14px;
-  border-radius: 12px;
+  border-radius: 0;
   border: 1px solid transparent;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)) padding-box,
