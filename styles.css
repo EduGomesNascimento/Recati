@@ -7,6 +7,18 @@
   --text: #efefef;
   --muted: #bdbdbd;
   --border: rgba(255, 255, 255, 0.12);
+  --outline-grad-soft: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.78) 0%,
+    rgba(181, 191, 208, 0.28) 42%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  --outline-grad-strong: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(172, 190, 214, 0.52) 45%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
 }
 
 * {
@@ -145,14 +157,18 @@ body:not(.gate-locked) .site {
   display: inline-block;
   padding: 15px 32px;
   border-radius: 16px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06)) padding-box,
+    var(--outline-grad-soft) border-box;
+  background-size: 100% 100%, 180% 180%;
+  background-position: 0 0, 0% 50%;
   color: var(--text);
   text-decoration: none;
   font-weight: 800;
   font-size: clamp(20px, 2.6vw, 28px);
   letter-spacing: 0.6px;
-  transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-position 0.45s ease, filter 0.35s ease;
 }
 
 .gate-actions {
@@ -177,10 +193,13 @@ body:not(.gate-locked) .site {
 }
 
 .enter-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.3);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08)) padding-box,
+    var(--outline-grad-strong) border-box;
   box-shadow: 0 0 26px rgba(255, 255, 255, 0.2);
+  background-position: 0 0, 100% 50%;
   transform: translateY(-2px) scale(1.02);
+  filter: saturate(1.08);
 }
 
 .enter-btn:hover::after {
@@ -363,14 +382,18 @@ h3 {
   display: inline-block;
   padding: 15px 22px;
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   color: var(--muted);
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)) padding-box,
+    var(--outline-grad-soft) border-box;
+  background-size: 100% 100%, 180% 180%;
+  background-position: 0 0, 0% 50%;
   font-weight: 700;
   font-size: 20px;
   line-height: 1;
-  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background-position 0.4s ease;
 }
 
 .gate-actions .enter-btn,
@@ -382,8 +405,12 @@ h3 {
 
 .skip-intro-btn:hover {
   color: var(--text);
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04)) padding-box,
+    var(--outline-grad-strong) border-box;
+  background-position: 0 0, 100% 50%;
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.12);
 }
 
 .is-hidden {
@@ -422,6 +449,11 @@ body.site-ready .scroll-hint {
   margin: 0 auto;
   padding: 52px 16px;
   border-top: 1px solid var(--border);
+  transition: border-color 0.35s ease;
+}
+
+.section:hover {
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .services-grid {
@@ -436,7 +468,19 @@ body.site-ready .scroll-hint {
   padding: 14px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.01) 45%, rgba(255, 255, 255, 0.07));
+  background-size: 100% 100%, 180% 180%;
+  background-position: 0 0, 0% 50%;
+  transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease, background-position 0.45s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.26);
+  background-position: 0 0, 100% 50%;
 }
 
 .service-card h3 {
@@ -504,10 +548,20 @@ body.site-ready .scroll-hint {
   margin-bottom: 6px;
   font-size: 21px;
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  transition: transform 0.3s ease;
 }
 
 .highlight-card span {
   color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+.highlight-card:hover strong {
+  transform: translateX(2px);
+}
+
+.highlight-card:hover span {
+  color: #d5dbe3;
 }
 
 .examples-callout {
@@ -516,6 +570,13 @@ body.site-ready .scroll-hint {
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
   padding: 14px;
+  transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+}
+
+.examples-callout:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
 }
 
 .examples-callout p {
@@ -542,12 +603,16 @@ body.site-ready .scroll-hint {
   display: inline-block;
   padding: 12px 14px;
   border-radius: 12px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)) padding-box,
+    var(--outline-grad-soft) border-box;
+  background-size: 100% 100%, 180% 180%;
+  background-position: 0 0, 0% 50%;
   color: var(--text);
   text-decoration: none;
   margin-right: 10px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-position 0.45s ease, filter 0.35s ease;
 }
 
 .btn::after {
@@ -561,10 +626,13 @@ body.site-ready .scroll-hint {
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07)) padding-box,
+    var(--outline-grad-strong) border-box;
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.34);
   box-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
+  background-position: 0 0, 100% 50%;
+  filter: saturate(1.08);
 }
 
 .btn:hover::after {
@@ -572,7 +640,9 @@ body.site-ready .scroll-hint {
 }
 
 .btn.ghost {
-  background: transparent;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)) padding-box,
+    var(--outline-grad-soft) border-box;
 }
 
 .inline-link {
