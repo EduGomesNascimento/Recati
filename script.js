@@ -4,35 +4,36 @@
   const VIDEO_SOURCES = mobileBootMode
     ? [
         "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
-        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
         "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
+        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
       ]
     : [
+        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
         "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
         "./Gatinho_Pendurado_na_Borda_Preta.mp4",
-        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
       ];
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
   const SCROLL_SLOP = 0.015;
-  const SEEK_FPS = 48;
-  const MOBILE_SEEK_FPS = 42;
-  const SMOOTH_RESPONSE = 7.8;
-  const MOBILE_SMOOTH_RESPONSE = 7.2;
+  const SEEK_FPS = 30;
+  const MOBILE_SEEK_FPS = 24;
+  const SCRUB_RATE_DESKTOP = 11;
+  const SCRUB_RATE_MOBILE = 9;
   const VIDEO_SCALE = 0.86;
   const MOBILE_VIDEO_SCALE = 0.92;
   const BLACK_BAND_START_AT_BEGIN = 0.9;
   const BLACK_BAND_START_AT_END = 0.702;
-  const MIN_TIME_STEP = 1 / 60;
-  const MOBILE_MIN_TIME_STEP = 1 / 48;
-  const DESKTOP_DRAW_FPS = 72;
-  const MOBILE_DRAW_FPS = 60;
-  const SCROLL_SYNC_LEAD_DESKTOP = 0.03;
-  const SCROLL_SYNC_LEAD_MOBILE = 0.02;
+  const MIN_TIME_STEP = 1 / 40;
+  const MOBILE_MIN_TIME_STEP = 1 / 30;
+  const DESKTOP_DRAW_FPS = 60;
+  const MOBILE_DRAW_FPS = 48;
+  const DESKTOP_FRAME_STEP = 1 / 40;
+  const MOBILE_FRAME_STEP = 1 / 30;
+  const SCROLL_SYNC_LEAD_DESKTOP = 0.012;
+  const SCROLL_SYNC_LEAD_MOBILE = 0.01;
   const SCROLL_SYNC_DEADBAND_PX = 2;
   const END_LOCK_SCROLL = 0.998;
-  const END_ZONE_START = 0.9;
-  const SEEK_STALL_RESET_MS = 180;
+  const SEEK_STALL_RESET_MS = 280;
   const BG_SAMPLE_H = 24;
   const BG_SAMPLE_W_RATIO = 0.16;
   const EDGE_OVERLAP_PX = 2;
@@ -142,7 +143,6 @@
   let queuedTime = null;
   let hasRVFC = false;
   let lastDrawAt = 0;
-  let mobileMaxTime = START_TIME;
   let introTop = 0;
   let introScrollRange = 1;
 
@@ -278,7 +278,9 @@
     if (!initialized) return;
 
     const safeDuration = Number.isFinite(video.duration) ? video.duration : FREEZE_TIME;
-    const nextTime = clamp(time, START_TIME, Math.min(FREEZE_TIME, safeDuration));
+    const frameStep = mobileMode ? MOBILE_FRAME_STEP : DESKTOP_FRAME_STEP;
+    const unclamped = clamp(time, START_TIME, Math.min(FREEZE_TIME, safeDuration));
+    const nextTime = clamp(Math.round(unclamped / frameStep) * frameStep, START_TIME, Math.min(FREEZE_TIME, safeDuration));
     const seekFps = mobileMode ? MOBILE_SEEK_FPS : SEEK_FPS;
     const minSeekInterval = 1000 / seekFps;
     const minTimeStep = mobileMode ? MOBILE_MIN_TIME_STEP : MIN_TIME_STEP;
@@ -297,7 +299,11 @@
     lastSeekAt = nowMs;
     lastRequestedTime = nextTime;
     try {
-      video.currentTime = nextTime;
+      if (typeof video.fastSeek === "function" && Math.abs(video.currentTime - nextTime) > 0.12) {
+        video.fastSeek(nextTime);
+      } else {
+        video.currentTime = nextTime;
+      }
     } catch {
       seekBusy = false;
     }
@@ -305,21 +311,7 @@
 
   function updateTargetFromScroll() {
     const p = getPageProgress();
-    const preEnd = 1 - Math.pow(1 - END_ZONE_START, 1.15);
-    const eased = p < END_ZONE_START
-      ? 1 - Math.pow(1 - p, 1.15)
-      : preEnd + ((p - END_ZONE_START) / (1 - END_ZONE_START)) * (1 - preEnd);
-    const mapped = clamp(START_TIME + eased * (FREEZE_TIME - START_TIME), START_TIME, FREEZE_TIME);
-    if (mobileMode) {
-      if (p >= END_LOCK_SCROLL) {
-        mobileMaxTime = FREEZE_TIME;
-        targetTime = FREEZE_TIME;
-        return;
-      }
-      mobileMaxTime = Math.max(mobileMaxTime, mapped);
-      targetTime = mobileMaxTime;
-      return;
-    }
+    const mapped = clamp(START_TIME + p * (FREEZE_TIME - START_TIME), START_TIME, FREEZE_TIME);
     targetTime = p >= END_LOCK_SCROLL ? FREEZE_TIME : mapped;
   }
 
@@ -335,21 +327,24 @@
       const dt = lastTick ? Math.min((nowMs - lastTick) / 1000, 0.1) : 1 / 60;
       lastTick = nowMs;
 
-      // Exponential smoothing for a fluid scrub in both directions.
-      const smoothResponse = mobileMode ? MOBILE_SMOOTH_RESPONSE : SMOOTH_RESPONSE;
-      const alpha = 1 - Math.exp(-smoothResponse * dt);
-      smoothTime += (targetTime - smoothTime) * alpha;
-      if (targetTime === FREEZE_TIME && Math.abs(FREEZE_TIME - smoothTime) < 0.008) {
-        smoothTime = FREEZE_TIME;
+      // Uniform-rate interpolation: avoids "slow-fast-slow" feel near target.
+      const scrubRate = mobileMode ? SCRUB_RATE_MOBILE : SCRUB_RATE_DESKTOP;
+      const delta = targetTime - smoothTime;
+      const maxStep = scrubRate * dt;
+      if (Math.abs(delta) <= maxStep) {
+        smoothTime = targetTime;
+      } else {
+        smoothTime += Math.sign(delta) * maxStep;
       }
 
       setReadyState(smoothTime >= FREEZE_TIME - SCROLL_SLOP);
-      const minDrawInterval = mobileMode ? 1000 / MOBILE_DRAW_FPS : 1000 / DESKTOP_DRAW_FPS;
-      const shouldDraw = nowMs - lastDrawAt >= minDrawInterval || Math.abs(targetTime - smoothTime) > 0.002;
-      if (shouldDraw) {
-        seekToTime(smoothTime, nowMs);
-        drawFrame();
-        lastDrawAt = nowMs;
+      seekToTime(smoothTime, nowMs);
+      if (!hasRVFC) {
+        const minDrawInterval = mobileMode ? 1000 / MOBILE_DRAW_FPS : 1000 / DESKTOP_DRAW_FPS;
+        if (nowMs - lastDrawAt >= minDrawInterval || Math.abs(targetTime - smoothTime) > 0.002) {
+          drawFrame();
+          lastDrawAt = nowMs;
+        }
       }
     }
     rafId = requestAnimationFrame(loop);
@@ -372,9 +367,16 @@
       // Autoplay unlock can fail; seek-driven rendering still works.
     }
 
+    if (video.readyState >= 1) {
+      try {
+        video.currentTime = START_TIME;
+      } catch {
+        // Ignore if browser blocks immediate seek before decode.
+      }
+    }
+
     initialized = true;
     updateTargetFromScroll();
-    mobileMaxTime = Math.max(START_TIME, targetTime || START_TIME);
     smoothTime = targetTime || START_TIME;
     seekToTime(smoothTime, performance.now());
 
@@ -390,6 +392,7 @@
   video.addEventListener("seeked", () => {
     seekBusy = false;
     drawFrame();
+    lastDrawAt = performance.now();
     if (queuedTime !== null) {
       const next = queuedTime;
       queuedTime = null;
@@ -411,7 +414,6 @@
   window.addEventListener("resize", () => {
     resizeCanvas();
     updateIntroMetrics();
-    mobileMaxTime = Math.max(mobileMaxTime, smoothTime || START_TIME);
     updateTargetFromScroll();
     lastDrawAt = 0;
   });
@@ -432,6 +434,7 @@
 
     const onFrame = () => {
       drawFrame();
+      lastDrawAt = performance.now();
       video.requestVideoFrameCallback(onFrame);
     };
 

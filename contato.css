@@ -7,6 +7,21 @@
   --border: rgba(255, 255, 255, 0.16);
   --text: #eceff3;
   --muted: #b8c0ca;
+  --btn-fill-dark: linear-gradient(180deg, rgba(30, 30, 30, 0.9), rgba(14, 14, 14, 0.92));
+  --btn-fill-dark-hover: linear-gradient(180deg, rgba(44, 44, 44, 0.92), rgba(20, 20, 20, 0.94));
+  --btn-fill-ghost-dark: linear-gradient(180deg, rgba(20, 20, 20, 0.74), rgba(10, 10, 10, 0.86));
+  --outline-grad-soft: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(181, 191, 208, 0.2) 42%,
+    rgba(255, 255, 255, 0.56) 100%
+  );
+  --outline-grad-strong: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.78) 0%,
+    rgba(172, 190, 214, 0.34) 45%,
+    rgba(255, 255, 255, 0.72) 100%
+  );
 }
 
 * { box-sizing: border-box; }
@@ -59,6 +74,7 @@ body {
   margin-left: 14px;
   display: inline-block;
   line-height: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .topbar nav {
@@ -74,6 +90,7 @@ body {
 
 .topbar nav a:hover {
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 .contato-page {
@@ -115,26 +132,57 @@ body {
 
 .actions {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin: 0;
   padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
+  border-radius: 0;
+  border: 1px solid transparent;
   color: var(--text);
   text-decoration: none;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.05));
+  background:
+    var(--btn-fill-dark) padding-box,
+    var(--outline-grad-soft) border-box;
+  background-size: 100% 100%, 180% 180%;
+  background-position: 0 0, 0% 50%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-position 0.45s ease, filter 0.35s ease;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -35%;
+  width: 34%;
+  transform: rotate(20deg) translateX(-220%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0));
+  transition: transform 0.7s ease;
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.09));
+  background:
+    var(--btn-fill-dark-hover) padding-box,
+    var(--outline-grad-strong) border-box;
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.08);
+  background-position: 0 0, 100% 50%;
+  filter: saturate(1.08);
+}
+
+.btn:hover::after {
+  transform: rotate(20deg) translateX(430%);
 }
 
 .btn.ghost {
-  background: rgba(255, 255, 255, 0.03);
+  background:
+    var(--btn-fill-ghost-dark) padding-box,
+    var(--outline-grad-soft) border-box;
 }
 
 .mascot-spot {
@@ -194,6 +242,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+.contact-links {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .cards article {

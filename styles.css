@@ -7,17 +7,20 @@
   --text: #efefef;
   --muted: #bdbdbd;
   --border: rgba(255, 255, 255, 0.12);
+  --btn-fill-dark: linear-gradient(180deg, rgba(30, 30, 30, 0.9), rgba(14, 14, 14, 0.92));
+  --btn-fill-dark-hover: linear-gradient(180deg, rgba(44, 44, 44, 0.92), rgba(20, 20, 20, 0.94));
+  --btn-fill-ghost-dark: linear-gradient(180deg, rgba(20, 20, 20, 0.74), rgba(10, 10, 10, 0.86));
   --outline-grad-soft: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0.78) 0%,
-    rgba(181, 191, 208, 0.28) 42%,
-    rgba(255, 255, 255, 0.7) 100%
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(181, 191, 208, 0.2) 42%,
+    rgba(255, 255, 255, 0.56) 100%
   );
   --outline-grad-strong: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(172, 190, 214, 0.52) 45%,
-    rgba(255, 255, 255, 0.9) 100%
+    rgba(255, 255, 255, 0.78) 0%,
+    rgba(172, 190, 214, 0.34) 45%,
+    rgba(255, 255, 255, 0.72) 100%
   );
 }
 
@@ -159,7 +162,7 @@ body:not(.gate-locked) .site {
   border-radius: 0;
   border: 1px solid transparent;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06)) padding-box,
+    var(--btn-fill-dark) padding-box,
     var(--outline-grad-soft) border-box;
   background-size: 100% 100%, 180% 180%;
   background-position: 0 0, 0% 50%;
@@ -194,9 +197,9 @@ body:not(.gate-locked) .site {
 
 .enter-btn:hover {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08)) padding-box,
+    var(--btn-fill-dark-hover) padding-box,
     var(--outline-grad-strong) border-box;
-  box-shadow: 0 0 26px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.09);
   background-position: 0 0, 100% 50%;
   transform: translateY(-2px) scale(1.02);
   filter: saturate(1.08);
@@ -386,7 +389,7 @@ h3 {
   color: var(--muted);
   text-decoration: none;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)) padding-box,
+    var(--btn-fill-ghost-dark) padding-box,
     var(--outline-grad-soft) border-box;
   background-size: 100% 100%, 180% 180%;
   background-position: 0 0, 0% 50%;
@@ -406,11 +409,11 @@ h3 {
 .skip-intro-btn:hover {
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04)) padding-box,
+    var(--btn-fill-dark) padding-box,
     var(--outline-grad-strong) border-box;
   background-position: 0 0, 100% 50%;
   transform: translateY(-1px);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
 }
 
 .is-hidden {
@@ -605,7 +608,7 @@ body.site-ready .scroll-hint {
   border-radius: 0;
   border: 1px solid transparent;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)) padding-box,
+    var(--btn-fill-dark) padding-box,
     var(--outline-grad-soft) border-box;
   background-size: 100% 100%, 180% 180%;
   background-position: 0 0, 0% 50%;
@@ -627,10 +630,10 @@ body.site-ready .scroll-hint {
 
 .btn:hover {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07)) padding-box,
+    var(--btn-fill-dark-hover) padding-box,
     var(--outline-grad-strong) border-box;
   transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.08);
   background-position: 0 0, 100% 50%;
   filter: saturate(1.08);
 }
@@ -641,7 +644,7 @@ body.site-ready .scroll-hint {
 
 .btn.ghost {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)) padding-box,
+    var(--btn-fill-ghost-dark) padding-box,
     var(--outline-grad-soft) border-box;
 }
 
