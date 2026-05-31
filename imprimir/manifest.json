@@ -1,0 +1,17 @@
+{
+  "name": "PrintBridge",
+  "short_name": "PrintBridge",
+  "description": "Imprima de qualquer dispositivo na sua rede",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/printer-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
