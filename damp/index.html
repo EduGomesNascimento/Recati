@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — controle</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f7fa;      --card: #ffffff;   --linha: #dfe5ec;
+    --txt: #10222f;     --fraco: #64748b;
+    --ok: #2e7d32;      --alerta: #f9a825; --erro: #c62828;
+    --primaria: #00629d; --primaria-fraca: #d6e8f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a;    --card: #172033;   --linha: #263248;
+      --txt: #e8eef6;   --fraco: #94a3b8;
+      --ok: #66bb6a;    --alerta: #ffca28; --erro: #ef5350;
+      --primaria: #6db3f2; --primaria-fraca: #1d3550;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--txt);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 16px 14px calc(24px + env(safe-area-inset-bottom));
+    max-width: 560px; margin-inline: auto;
+    -webkit-user-select: none; user-select: none;
+  }
+  h1 { font-size: 22px; margin: 0; letter-spacing: -.3px; }
+  .sub { color: var(--fraco); font-size: 13px; margin: 2px 0 16px; }
+  .cartao {
+    background: var(--card); border: 1px solid var(--linha); border-radius: 14px;
+    padding: 12px; margin-bottom: 10px;
+  }
+  .cartao.sel { border-color: var(--primaria); box-shadow: 0 0 0 1px var(--primaria); }
+  .linha { display: flex; align-items: center; gap: 8px; }
+  .titulo { font-weight: 600; flex: 1; }
+  .etiqueta { font-size: 11px; color: var(--primaria); font-weight: 600; }
+  .pos { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .barra { height: 6px; background: var(--linha); border-radius: 3px; overflow: hidden; margin: 8px 0 0; }
+  .barra > i { display: block; height: 100%; background: var(--primaria); width: 0; transition: width .12s linear; }
+  .botoes { display: flex; gap: 8px; margin-top: 10px; }
+  button, .seg {
+    font: inherit; font-weight: 600; border-radius: 12px; border: 1px solid transparent;
+    padding: 16px 10px; flex: 1; cursor: pointer; touch-action: none;
+    background: var(--primaria-fraca); color: var(--txt);
+  }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  button.press { background: var(--primaria); color: #fff; }
+  button.acao { background: var(--primaria); color: #fff; }
+  button.parar { background: var(--erro); color: #fff; padding: 18px; font-size: 16px; }
+  input[type=range] { width: 100%; margin: 6px 0 0; accent-color: var(--primaria); }
+  .pt { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .mini { font-size: 11px; color: var(--fraco); }
+  .aviso {
+    background: var(--card); border: 1px solid var(--erro); border-left-width: 4px;
+    border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 14px;
+  }
+  .aviso h2 { font-size: 15px; margin: 0 0 6px; }
+  .aviso a { color: var(--primaria); }
+  code { background: var(--primaria-fraca); padding: 1px 5px; border-radius: 5px; font-size: 12px; }
+  .rodape { color: var(--fraco); font-size: 12px; margin-top: 14px; text-align: center; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<h1>DAMP</h1>
+<div class="sub">Dispositivo Assistivo de Mão e Punho</div>
+
+<div id="semSuporte" class="aviso" hidden>
+  <h2>Este navegador não fala Bluetooth</h2>
+  <p>O controle usa <b>Web Bluetooth</b>, que funciona no <b>Chrome</b> e no <b>Edge</b>
+  — no Android e no computador.</p>
+  <p><b>No iPhone:</b> o Safari não tem Web Bluetooth, e o Chrome de iOS usa o motor do
+  Safari, então também não tem. Use o navegador <b>Bluefy</b> (App Store), que
+  implementa Web Bluetooth e abre esta mesma página normalmente.</p>
+</div>
+
+<div class="cartao" id="cxConexao">
+  <div class="linha">
+    <span class="pt" id="ptConexao" style="background:var(--erro)"></span>
+    <span class="titulo" id="txtConexao">Desconectado</span>
+  </div>
+  <div class="botoes">
+    <button id="btConectar" class="acao">Conectar ao DAMP</button>
+    <button id="btDesconectar" hidden>Desconectar</button>
+  </div>
+  <div class="mini" id="msg" style="margin-top:8px"></div>
+</div>
+
+<div id="controles" hidden>
+
+  <div class="linha" style="margin:14px 2px 8px">
+    <span class="mini" style="flex:1">Joystick controlando: <b id="selecao">—</b></span>
+    <span class="pt" id="ptBat" hidden></span>
+    <span class="mini" id="txtBat"></span>
+  </div>
+
+  <div class="cartao">
+    <div class="linha"><span class="titulo">Velocidade do punho</span>
+      <span class="pos" id="vSpd">200</span></div>
+    <input type="range" id="spd" min="60" max="255" value="200">
+    <div class="linha" style="margin-top:10px"><span class="titulo">Velocidade dos dedos</span>
+      <span class="pos" id="vFspd">60 °/s</span></div>
+    <input type="range" id="fspd" min="10" max="180" value="60">
+  </div>
+
+  <div class="cartao" id="cxPunho">
+    <div class="linha">
+      <span class="titulo">Punho</span>
+      <span class="etiqueta" id="selPunho" hidden>joystick</span>
+      <span class="pt" id="ptFecha"></span><span class="mini" id="txtFecha">fechar</span>
+      <span class="pt" id="ptAbre"></span><span class="mini" id="txtAbre">abrir</span>
+    </div>
+    <div class="botoes">
+      <button id="wUp">Puxar</button>
+      <button id="wDown">Soltar</button>
+    </div>
+  </div>
+
+  <div class="cartao" id="cxMao">
+    <div class="linha">
+      <span class="titulo">Mão inteira</span>
+      <span class="etiqueta" id="selMao" hidden>joystick</span>
+    </div>
+    <div class="botoes">
+      <button id="hClose">Fechar mão</button>
+      <button id="hOpen">Abrir mão</button>
+    </div>
+    <input type="range" id="hPos" min="0" max="100" value="0">
+  </div>
+
+  <div id="dedos"></div>
+
+  <button class="parar" id="btParar" style="width:100%">PARAR TUDO</button>
+</div>
+
+<div class="rodape">
+  Conecta direto no ESP32 por Bluetooth LE. Nada passa por servidor.
+</div>
+
+<script>
+'use strict';
+
+// ---------------------------------------------------------------- protocolo
+// Mesmo Nordic UART Service do firmware (firmware/src/ble_uart.cpp).
+const NUS = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
+const RX  = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';   // navegador -> ESP32
+const TX  = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';   // ESP32 -> navegador
+
+const DEDOS = [
+  { n: 1, nome: 'Mindinho + anelar' },
+  { n: 2, nome: 'Médio' },
+  { n: 3, nome: 'Indicador' },
+  { n: 4, nome: 'Polegar' },
+];
+
+const $ = id => document.getElementById(id);
+let dispositivo = null, carRx = null, carTx = null;
+
+// ---------------------------------------------------------------- conexão
+async function conectar() {
+  try {
+    msg('Procurando o DAMP…');
+    dispositivo = await navigator.bluetooth.requestDevice({
+      filters: [{ services: [NUS] }],
+      optionalServices: [NUS],
+    });
+    dispositivo.addEventListener('gattserverdisconnected', aoDesconectar);
+
+    msg('Conectando…');
+    const servidor = await dispositivo.gatt.connect();
+    const servico  = await servidor.getPrimaryService(NUS);
+    carRx = await servico.getCharacteristic(RX);
+    carTx = await servico.getCharacteristic(TX);
+
+    await carTx.startNotifications();
+    carTx.addEventListener('characteristicvaluechanged', aoReceber);
+
+    conexao(true, dispositivo.name || 'DAMP');
+    enviar('STATUS?');
+  } catch (e) {
+    // Cancelar o seletor de dispositivos cai aqui e não é erro de verdade.
+    msg(e && e.name === 'NotFoundError' ? 'Nenhum dispositivo escolhido.'
+                                        : 'Falhou: ' + (e && e.message || e));
+    conexao(false);
+  }
+}
+
+function desconectar() {
+  enviar('STOP!');                       // nunca largar o link com algo andando
+  setTimeout(() => {
+    if (dispositivo && dispositivo.gatt.connected) dispositivo.gatt.disconnect();
+  }, 150);
+}
+
+function aoDesconectar() {
+  carRx = carTx = null;
+  conexao(false);
+  msg('O DAMP desconectou.');
+}
+
+function conexao(ligado, nome) {
+  $('ptConexao').style.background = ligado ? 'var(--ok)' : 'var(--erro)';
+  $('txtConexao').textContent = ligado ? ('Conectado · ' + nome) : 'Desconectado';
+  $('btConectar').hidden = ligado;
+  $('btDesconectar').hidden = !ligado;
+  $('controles').hidden = !ligado;
+}
+
+function msg(t) { $('msg').textContent = t || ''; }
+
+// ---------------------------------------------------------------- envio
+// Uma escrita GATT por vez: duas ao mesmo tempo dão "operation already in
+// progress". A fila é uma corrente de promessas.
+let fila = Promise.resolve();
+function enviar(cmd) {
+  if (!carRx) return;
+  fila = fila
+    .then(() => carRx.writeValue(new TextEncoder().encode(cmd + '\n')))
+    .catch(() => msg('Falha ao enviar "' + cmd + '"'));
+}
+
+// ---------------------------------------------------------------- recepção
+// As notificações podem vir partidas: remonta por linha.
+let buffer = '';
+function aoReceber(ev) {
+  buffer += new TextDecoder().decode(ev.target.value);
+  let i;
+  while ((i = buffer.search(/[\r\n]/)) >= 0) {
+    const linha = buffer.slice(0, i).trim();
+    buffer = buffer.slice(i + 1);
+    if (linha) tratarLinha(linha);
+  }
+  if (buffer.length > 512) buffer = '';
+}
+
+function tratarLinha(linha) {
+  if (linha.startsWith('ST;')) aplicarStatus(analisarStatus(linha));
+  else msg(linha);                       // OK / BLOCKED / ERR / TEST
+}
+
+/** ST;SEL=F2;SPD=200;FSPD=60;VBAT=13.85,OK;W=STOP,01;F1=STOP,45;… */
+function analisarStatus(linha) {
+  const st = { motores: {} };
+  for (const campo of linha.slice(3).split(';')) {
+    const k = campo.slice(0, campo.indexOf('='));
+    const v = campo.slice(campo.indexOf('=') + 1);
+    if (!k || !v) continue;
+    if (k === 'SEL')       st.sel = v;
+    else if (k === 'SPD')  st.spd = +v;
+    else if (k === 'FSPD') st.fspd = +v;
+    else if (k === 'VBAT') st.bat = v;
+    else if (k === 'W' || /^F[1-4]$/.test(k)) {
+      const [dir, extra] = v.split(',');
+      st.motores[k] = { dir, extra: extra || '' };
+    }
+  }
+  return st;
+}
+
+const ROTULO_SEL = {
+  W: 'punho', F1: 'mindinho + anelar', F2: 'médio',
+  F3: 'indicador', F4: 'polegar', HAND: 'mão inteira',
+};
+
+function aplicarStatus(st) {
+  if (st.sel) {
+    $('selecao').textContent = ROTULO_SEL[st.sel] || st.sel;
+    $('cxPunho').classList.toggle('sel', st.sel === 'W');
+    $('selPunho').hidden = st.sel !== 'W';
+    $('cxMao').classList.toggle('sel', st.sel === 'HAND');
+    $('selMao').hidden = st.sel !== 'HAND';
+  }
+  if (st.spd  != null && !arrastando.spd)  { $('spd').value = st.spd;  $('vSpd').textContent = st.spd; }
+  if (st.fspd != null && !arrastando.fspd) { $('fspd').value = st.fspd; $('vFspd').textContent = st.fspd + ' °/s'; }
+
+  // punho: o campo extra traz as duas chaves, na ordem fechar e abrir
+  const w = st.motores.W;
+  if (w) {
+    const fecha = w.extra[0], abre = w.extra[1];
+    indicador('Fecha', fecha, 'fechar');
+    indicador('Abre',  abre,  'abrir');
+    $('wUp').disabled   = fecha === '1';
+    $('wDown').disabled = abre  === '1';
+  }
+
+  // dedos: o campo extra é a posição em %
+  DEDOS.forEach(d => {
+    const m = st.motores['F' + d.n];
+    if (!m) return;
+    const pct = parseInt(m.extra, 10) || 0;
+    $('pos' + d.n).textContent = pct + ' %';
+    $('bar' + d.n).style.width = pct + '%';
+    if (!arrastando['f' + d.n]) $('sld' + d.n).value = pct;
+    const sel = st.sel === ('F' + d.n);
+    $('cx' + d.n).classList.toggle('sel', sel);
+    $('sel' + d.n).hidden = !sel;
+  });
+
+  if (st.bat) {
+    const [volts, faixa] = st.bat.split(',');
+    if (faixa) {
+      $('ptBat').hidden = false;
+      $('ptBat').style.background =
+        faixa === 'CRIT' ? 'var(--erro)' : faixa === 'LOW' ? 'var(--alerta)' : 'var(--ok)';
+      $('txtBat').textContent = volts + ' V' + (faixa === 'OK' ? '' : ' · recarregar');
+    }
+  }
+}
+
+function indicador(sufixo, valor, rotulo) {
+  const pt = $('pt' + sufixo), tx = $('txt' + sufixo);
+  if (valor === '1')      { pt.style.background = 'var(--erro)';  tx.textContent = 'fim: ' + rotulo; }
+  else if (valor === '0') { pt.style.background = 'var(--ok)';    tx.textContent = rotulo; }
+  else                    { pt.style.background = 'var(--fraco)'; tx.textContent = 'sem chave'; }
+}
+
+// ---------------------------------------------------------------- controles
+// "Segure para mover, solte para parar" — inclusive se o dedo sair do botão.
+function segurar(el, aoApertar, aoSoltar) {
+  const apertar = e => {
+    if (el.disabled) return;
+    e.preventDefault();
+    el.classList.add('press');
+    el.setPointerCapture && e.pointerId != null && el.setPointerCapture(e.pointerId);
+    aoApertar();
+  };
+  const soltar = () => {
+    if (!el.classList.contains('press')) return;
+    el.classList.remove('press');
+    aoSoltar();
+  };
+  el.addEventListener('pointerdown', apertar);
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev => el.addEventListener(ev, soltar));
+}
+
+const arrastando = {};
+function deslizante(el, aoSoltar, chave, aoMover) {
+  el.addEventListener('pointerdown', () => { arrastando[chave] = true; });
+  el.addEventListener('input', () => aoMover && aoMover(+el.value));
+  const fim = () => { if (arrastando[chave]) { arrastando[chave] = false; aoSoltar(+el.value); } };
+  el.addEventListener('change', fim);
+  el.addEventListener('pointerup', fim);
+  el.addEventListener('pointercancel', fim);
+}
+
+// monta os quatro cartões de dedo
+$('dedos').innerHTML = DEDOS.map(d => `
+  <div class="cartao" id="cx${d.n}">
+    <div class="linha">
+      <span class="titulo">${d.nome}</span>
+      <span class="etiqueta" id="sel${d.n}" hidden>joystick</span>
+      <span class="pos" id="pos${d.n}">0 %</span>
+    </div>
+    <div class="barra"><i id="bar${d.n}"></i></div>
+    <div class="botoes">
+      <button id="fc${d.n}">Fechar</button>
+      <button id="fo${d.n}">Abrir</button>
+    </div>
+    <input type="range" id="sld${d.n}" min="0" max="100" value="0">
+  </div>`).join('');
+
+segurar($('wUp'),   () => enviar('W:UP'),   () => enviar('W:STOP'));
+segurar($('wDown'), () => enviar('W:DOWN'), () => enviar('W:STOP'));
+segurar($('hClose'), () => enviar('HAND:CLOSE'), () => enviar('HAND:STOP'));
+segurar($('hOpen'),  () => enviar('HAND:OPEN'),  () => enviar('HAND:STOP'));
+deslizante($('hPos'), v => enviar('HAND:POS:' + v), 'hand');
+
+DEDOS.forEach(d => {
+  segurar($('fc' + d.n), () => enviar('F' + d.n + ':CLOSE'), () => enviar('F' + d.n + ':STOP'));
+  segurar($('fo' + d.n), () => enviar('F' + d.n + ':OPEN'),  () => enviar('F' + d.n + ':STOP'));
+  deslizante($('sld' + d.n), v => enviar('F' + d.n + ':POS:' + v), 'f' + d.n);
+});
+
+deslizante($('spd'),  v => enviar('SPEED:' + v),  'spd', v => $('vSpd').textContent = v);
+deslizante($('fspd'), v => enviar('FSPEED:' + v), 'fspd', v => $('vFspd').textContent = v + ' °/s');
+
+$('btConectar').onclick = conectar;
+$('btDesconectar').onclick = desconectar;
+$('btParar').onclick = () => enviar('STOP!');
+
+// Fechar a aba com um motor andando é o pior jeito de terminar.
+window.addEventListener('pagehide', () => { if (carRx) enviar('STOP!'); });
+
+if (!navigator.bluetooth) {
+  $('semSuporte').hidden = false;
+  $('cxConexao').hidden = true;
+}
+</script>
+</body>
+</html>
