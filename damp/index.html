@@ -63,6 +63,28 @@
   .aviso a { color: var(--primaria); }
   code { background: var(--primaria-fraca); padding: 1px 5px; border-radius: 5px; font-size: 12px; }
   .rodape { color: var(--fraco); font-size: 12px; margin-top: 14px; text-align: center; }
+  /* abas */
+  .abas { display: flex; gap: 6px; margin: 14px 0 10px; }
+  .abas button {
+    flex: 1; padding: 9px 6px; font-size: 14px; font-weight: 600;
+    background: var(--cartao); color: var(--fraco);
+    border: 1px solid var(--borda); border-radius: 10px;
+  }
+  .abas button[aria-selected="true"] {
+    background: var(--primaria-fraca); color: var(--primaria);
+    border-color: var(--primaria);
+  }
+  /* a aba de comunicação: uma linha por placa */
+  .placa { display: flex; align-items: center; gap: 9px; margin-bottom: 4px; }
+  .placa .nome { font-weight: 600; font-size: 15px; flex: 1; }
+  .placa .valor { font-size: 13px; font-weight: 600; }
+  .detalhe { color: var(--fraco); font-size: 12.5px; margin: 2px 0 0 21px; }
+  .conserto {
+    background: var(--primaria-fraca); border-radius: 8px;
+    padding: 9px 11px; margin-top: 9px; font-size: 12.5px; line-height: 1.45;
+  }
+  .conserto ol { margin: 5px 0 0; padding-left: 18px; }
+  .conserto li { margin-bottom: 3px; }
   [hidden] { display: none !important; }
 </style>
 </head>
@@ -93,6 +115,13 @@
 </div>
 
 <div id="controles" hidden>
+
+  <div class="abas" role="tablist">
+    <button id="abaBtControle" role="tab" aria-selected="true">Controle</button>
+    <button id="abaBtComunicacao" role="tab" aria-selected="false">Comunicação</button>
+  </div>
+
+<div id="abaControle">
 
   <div class="linha" style="margin:14px 2px 8px">
     <span class="mini" style="flex:1">Joystick controlando: <b id="selecao">—</b></span>
@@ -137,6 +166,39 @@
   <div id="dedos"></div>
 
   <button class="parar" id="btParar" style="width:100%">PARAR TUDO</button>
+</div><!-- abaControle -->
+
+<div id="abaComunicacao" hidden>
+
+  <div class="cartao">
+    <div class="placa">
+      <span class="pt" id="ptEsp"></span>
+      <span class="nome">ESP32</span>
+      <span class="valor" id="vEsp">—</span>
+    </div>
+    <div class="detalhe" id="dEsp">o cérebro: comando, proteções e Bluetooth</div>
+  </div>
+
+  <div class="cartao">
+    <div class="placa">
+      <span class="pt" id="ptPico"></span>
+      <span class="nome">Raspberry Pi Pico</span>
+      <span class="valor" id="vPico">—</span>
+    </div>
+    <div class="detalhe" id="dPico">lê as 10 chaves de fim de curso e entrega ao ESP32 pelo I²C</div>
+    <div class="conserto" id="conserto" hidden></div>
+  </div>
+
+  <div class="cartao">
+    <div class="linha"><span class="titulo">Última reinicialização do ESP32</span></div>
+    <div class="detalhe" id="dReset" style="margin-left:0">—</div>
+  </div>
+
+  <div class="mini" style="margin:10px 2px; line-height:1.5">
+    Esta aba não comanda nada: só mostra. O LED de bordo do Pico diz o mesmo,
+    mas fica dentro da caixa — com o aparelho vestido, ninguém o vê.
+  </div>
+</div><!-- abaComunicacao -->
 </div>
 
 <div class="rodape">
@@ -255,6 +317,8 @@ function analisarStatus(linha) {
     else if (k === 'SPD')  st.spd = +v;
     else if (k === 'FSPD') st.fspd = +v;
     else if (k === 'VBAT') st.bat = v;
+    else if (k === 'UP')   st.up = +v;
+    else if (k === 'COM')  st.com = analisarCom(v);
     else if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
       st.motores[k] = { dir, extra: extra || '' };
@@ -263,12 +327,30 @@ function analisarStatus(linha) {
   return st;
 }
 
+/**
+ * COM=<expansor>,<batimento>,<respondeuNoBoot>,<motivoDoReset>
+ *
+ *   expansor   OK · MUDO · OFF (desligado no config.h do firmware)
+ *   batimento  V (o Pico bate) · M (parou de bater) · - (o fio não está lá)
+ *   boot       1 · 0 — se ele respondeu à PRIMEIRA conversa, logo ao ligar
+ *   reset      PWR EXT SW PANIC IWDT TWDT WDT BRWN ?
+ *
+ * ⚠ O batimento só quer dizer alguma coisa quando o expansor NÃO está OK: é
+ *   ele que separa "a peça morreu" de "a peça está viva e o barramento é que
+ *   não anda". Com o barramento sadio, o campo é ruído — a tela não o mostra.
+ */
+function analisarCom(v) {
+  const [exp, bat, boot, rst] = v.split(',');
+  return { exp: exp || '?', bat: bat || '-', bootOk: boot === '1', rst: rst || '?' };
+}
+
 const ROTULO_SEL = {
   W: 'punho', F1: 'mindinho + anelar', F2: 'médio',
   F3: 'indicador', F4: 'polegar', HAND: 'mão inteira',
 };
 
 function aplicarStatus(st) {
+  aplicarComunicacao(st);
   if (st.sel) {
     $('selecao').textContent = ROTULO_SEL[st.sel] || st.sel;
     $('cxPunho').classList.toggle('sel', st.sel === 'W');
@@ -311,6 +393,77 @@ function aplicarStatus(st) {
       $('txtBat').textContent = volts + ' V' + (faixa === 'OK' ? '' : ' · recarregar');
     }
   }
+}
+
+// -------------------------------------------------------- aba de comunicação
+const MOTIVO_RESET = {
+  PWR:   ['ligou agora (power-on)', false],
+  EXT:   ['botão EN / reset externo', false],
+  SW:    ['reset por software', false],
+  PANIC: ['PANIC — exceção no firmware', true],
+  IWDT:  ['watchdog de interrupção', true],
+  TWDT:  ['watchdog de tarefa — o laço travou', true],
+  WDT:   ['watchdog', true],
+  BRWN:  ['BROWNOUT — a alimentação afundou', true],
+};
+
+// O que fazer quando o expansor não responde, na ordem em que compensa olhar.
+// É a mesma lista do boot do firmware e do scanner: um texto só, três lugares.
+const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
+  punho também, desde a Rev. I. Confira nesta ordem:
+  <ol>
+    <li>pull-up de SDA e SCL: 4,7 kΩ para o <b>3V3 do ESP32</b> (não o 3V3 OUT
+        do Pico, que é só das chaves);</li>
+    <li>SDA e SCL trocados: GPIO 19 → GP4 e GPIO 23 → GP5;</li>
+    <li>GND comum — pino 38 do Pico na mesma barra do ESP32;</li>
+    <li>o Pico está alimentado? VSYS (39) pelos 5,1 V através do 1N5817.</li>
+  </ol>`;
+
+function tempoDePe(s) {
+  if (s == null) return '';
+  if (s < 60) return s + ' s de pé';
+  if (s < 3600) return Math.floor(s / 60) + ' min de pé';
+  return Math.floor(s / 3600) + ' h ' + Math.floor((s % 3600) / 60) + ' min de pé';
+}
+
+function aplicarComunicacao(st) {
+  // O ESP32: se o quadro chegou, ele está de pé. Não há o que adivinhar.
+  $('ptEsp').style.background = 'var(--ok)';
+  $('vEsp').textContent = 'respondendo';
+  $('dEsp').textContent = 'o cérebro: comando, proteções e Bluetooth'
+    + (st.up != null ? ' · ' + tempoDePe(st.up) : '');
+
+  const c = st.com;
+  if (!c) return;
+
+  const pt = $('ptPico'), v = $('vPico'), d = $('dPico'), cons = $('conserto');
+  if (c.exp === 'OK') {
+    pt.style.background = 'var(--ok)';
+    v.textContent = 'respondendo';
+    d.textContent = 'lê as 10 chaves de fim de curso e entrega ao ESP32 pelo I²C';
+    cons.hidden = true;
+  } else if (c.exp === 'OFF') {
+    pt.style.background = 'var(--fraco)';
+    v.textContent = 'desligado no firmware';
+    d.textContent = 'FC_DEDO_HABILITADO = 0 no config.h — os dedos rodam sem chave';
+    cons.hidden = true;
+  } else {
+    pt.style.background = 'var(--erro)';
+    v.textContent = 'não responde';
+    // O batimento só tem sentido aqui: é ele que separa peça de barramento.
+    d.textContent =
+      c.bat === 'V' ? 'o Pico está VIVO (batendo) e mesmo assim não responde: o problema é o barramento, não a peça'
+    : c.bat === 'M' ? 'nem o batimento chega: a peça parou — troque o Pico'
+    : !c.bootOk     ? 'nunca respondeu, desde que ligou — é coisa de montagem, não de contato'
+    :                 'respondeu quando ligou e parou depois — mau contato ou queda de alimentação';
+    cons.innerHTML = CONSERTO;
+    cons.hidden = false;
+  }
+
+  const [txt, ruim] = MOTIVO_RESET[c.rst] || ['motivo desconhecido', false];
+  const dr = $('dReset');
+  dr.textContent = txt;
+  dr.style.color = ruim ? 'var(--erro)' : 'var(--fraco)';
 }
 
 function indicador(sufixo, valor, rotulo) {
@@ -383,6 +536,20 @@ deslizante($('fspd'), v => enviar('FSPEED:' + v), 'fspd', v => $('vFspd').textCo
 $('btConectar').onclick = conectar;
 $('btDesconectar').onclick = desconectar;
 $('btParar').onclick = () => enviar('STOP!');
+
+// --- troca de aba ---------------------------------------------------------
+// O PARAR TUDO vive na aba de controle. Trocar de aba não pode ser um jeito
+// de perder o botão com um motor andando, então a troca manda STOP! antes.
+function mostrarAba(qual) {
+  const com = qual === 'comunicacao';
+  if (com) enviar('STOP!');
+  $('abaControle').hidden = com;
+  $('abaComunicacao').hidden = !com;
+  $('abaBtControle').setAttribute('aria-selected', String(!com));
+  $('abaBtComunicacao').setAttribute('aria-selected', String(com));
+}
+$('abaBtControle').onclick     = () => mostrarAba('controle');
+$('abaBtComunicacao').onclick  = () => mostrarAba('comunicacao');
 
 // Fechar a aba com um motor andando é o pior jeito de terminar.
 window.addEventListener('pagehide', () => { if (carRx) enviar('STOP!'); });
