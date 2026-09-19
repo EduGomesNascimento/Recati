@@ -254,6 +254,20 @@
     </div>
   </div>
 
+  <div class="cartao" id="cxTeste">
+    <div class="linha"><span class="titulo">Teste guiado de um motor</span></div>
+    <div class="detalhe" style="margin-left:0">
+      Responde a única pergunta que separa os dois mundos: <b>o firmware está
+      acionando o motor, ou está recusando?</b> Se está acionando e nada se
+      move, o defeito é da ponte H para frente — e nenhum ajuste de chave vai
+      resolver.
+    </div>
+    <div class="botoes">
+      <button id="btTeste">Testar o dedo indicador</button>
+    </div>
+    <div class="conserto" id="saidaTeste" hidden></div>
+  </div>
+
   <div class="cartao">
     <div class="linha"><span class="titulo">As dez chaves de fim de curso</span>
       <span class="mini" id="vChaves">—</span></div>
@@ -267,6 +281,7 @@
       entre o contato dela e o pino, não no firmware.
     </div>
     <div id="gradeChaves" class="grade"></div>
+    <div class="detalhe" id="dExp" style="margin-left:0; margin-top:8px"></div>
   </div>
 
   <div class="cartao">
@@ -403,7 +418,17 @@ function aoReceber(ev) {
 }
 
 function tratarLinha(linha) {
-  if (linha.startsWith('ST;')) { aplicarStatus(analisarStatus(linha)); return; }
+  if (linha.startsWith('ST;')) {
+    const st = analisarStatus(linha);
+    // Enquanto o teste guiado corre, qualquer quadro em que o dedo saia de
+    // STOP prova que o firmware ligou a ponte H.
+    if (testeAte && Date.now() < testeAte) {
+      const m = st.motores.F3;
+      if (m && m.dir && m.dir !== 'STOP') testeViuAndar = true;
+    }
+    aplicarStatus(st);
+    return;
+  }
 
   // A linha crua do DIAG?. Vai para a caixa da aba de comunicação em vez de
   // virar uma mensagem de uma linha, que sumiria no quadro seguinte.
@@ -417,6 +442,10 @@ function tratarLinha(linha) {
     if (ultimoDiag) aplicarManche(ultimoDiag);
     return;
   }
+
+  // Durante o teste guiado, a resposta ao comando importa: BLOCKED diz que o
+  // firmware recusou, e é o outro lado da bifurcação.
+  if (testeAte) testeResposta = linha;
 
   if (esperandoJoyCal) {
     esperandoJoyCal = false;
@@ -455,6 +484,7 @@ function analisarStatus(linha) {
     else if (k === 'JOY')  st.joy = analisarJoy(v);
     else if (k === 'JRAW') st.jraw = analisarJraw(v);
     else if (k === 'BLK')  st.blk = v;
+    else if (k === 'EXP')  st.exp = v;
     else if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
       st.motores[k] = { dir, extra: extra || '' };
@@ -852,6 +882,31 @@ const MUDOU = {};
 const ANTERIOR = {};
 const PISCA_MS = 2500;
 
+/**
+ * A palavra crua do expansor, traduzida. É UM número, e ele separa de uma vez
+ * casos que chegam iguais como "nada funciona" — e que mandam consertar
+ * coisas opostas.
+ */
+function lerPalavraCrua(hex) {
+  if (!/^[0-9A-Fa-f]{4}$/.test(hex)) return null;
+  const v = parseInt(hex, 16);
+  // As seis portas de cima (P12..P17) não são usadas e o Pico as manda sempre
+  // altas. Só os dez bits de baixo são chave.
+  const dez = v & 0x03FF;
+  if (dez === 0x03FF) return [
+    'as dez entradas estão ALTAS — nada está puxando nenhuma para baixo',
+    'É o GND comum do chicote que falta, ou as chaves estão no contato NO em '
+    + 'vez do NF, ou o barramento está mudo (o firmware manda FFFF de '
+    + 'propósito nesse caso, que é o lado seguro). Aperte uma chave: se o '
+    + 'número não mudar, o sinal dela não chega ao Pico.', true];
+  if (dez === 0x0000) return [
+    'as dez entradas estão BAIXAS — todas as chaves lendo livre',
+    '<b>Nada está bloqueado.</b> Se mesmo assim nada se move, o defeito é da '
+    + 'ponte H para frente: alimentação dos motores, os jumpers ENA/ENB do '
+    + 'L298N, ou a fiação do motor. Use o teste guiado acima.', true];
+  return ['leitura normal: umas acionadas, outras não', '', false];
+}
+
 function aplicarChaves(st) {
   let lidas = 0, mexidas = 0;
   const agora = Date.now();
@@ -880,6 +935,13 @@ function aplicarChaves(st) {
 
   $('vChaves').textContent = lidas + ' de 10 chegando'
     + (mexidas ? ' · ' + mexidas + ' mexeu agora' : '');
+
+  const d = $('dExp');
+  const leitura = st.exp ? lerPalavraCrua(st.exp) : null;
+  if (!leitura) { d.textContent = ''; return; }
+  d.innerHTML = '<b>Palavra crua do expansor: ' + st.exp + '</b> — ' + leitura[0]
+    + (leitura[1] ? '<br>' + leitura[1] : '');
+  d.style.color = leitura[2] ? 'var(--erro)' : 'var(--fraco)';
 }
 
 /**
@@ -984,6 +1046,50 @@ $('btJoyCal').onclick = () => {
   esperandoJoyCal = true;
   msg('Recalibrando — mantenha o manche solto…');
   enviar('JOYCAL!');
+};
+
+/**
+ * TESTE GUIADO. Manda um comando, olha o quadro por 1,5 s e responde a única
+ * pergunta que separa os dois mundos: o firmware ACIONOU, ou RECUSOU?
+ *
+ * Existe porque os dois casos chegam idênticos no corpo do aparelho — nada se
+ * move — e mandam procurar em lugares opostos. Quem responde isso é o campo de
+ * direção do próprio quadro, que já existia: se ele sai de STOP, o firmware
+ * está com o motor ligado e o defeito é da ponte H para frente.
+ */
+let testeAte = 0, testeViuAndar = false, testeResposta = '';
+$('btTeste').onclick = () => {
+  const cx = $('saidaTeste');
+  cx.hidden = false;
+  cx.innerHTML = 'Testando… (o dedo indicador vai tentar fechar por 1,5 s)';
+  testeViuAndar = false;
+  testeResposta = '';
+  testeAte = Date.now() + 1500;
+  enviar('F3:CLOSE');
+  setTimeout(() => {
+    enviar('F3:STOP');
+    testeAte = 0;
+    if (testeViuAndar) {
+      cx.innerHTML = `<b>O firmware ACIONOU o motor.</b> Ele ligou a ponte H do
+        dedo indicador e manteve ligada. Se o dedo não se moveu, o defeito está
+        <b>da ponte H para frente</b>:
+        <ol>
+          <li>a alimentação dos motores chegando no <b>VS</b> do L298N (o 12 V
+              do pack, não o 5 V da lógica);</li>
+          <li>os jumpers <b>ENA/ENB</b> do módulo — sem eles o PWM não passa;</li>
+          <li>os dois fios do motor, e o motor em si.</li>
+        </ol>
+        Nenhum ajuste de chave de fim de curso vai resolver isto.`;
+    } else if (testeResposta === 'BLOCKED') {
+      cx.innerHTML = `<b>O firmware RECUSOU o comando</b> (respondeu BLOCKED).
+        O motivo está no aviso vermelho do topo desta tela — é ele que diz onde
+        procurar.`;
+    } else {
+      cx.innerHTML = `<b>O firmware não acionou nem recusou.</b> Resposta:
+        <code>${testeResposta || '(nenhuma)'}</code>. Confira se a conexão
+        continua de pé e tente de novo.`;
+    }
+  }, 1500);
 };
 
 $('btDiag').onclick = () => {
