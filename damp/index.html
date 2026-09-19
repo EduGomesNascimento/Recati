@@ -253,7 +253,13 @@
     <div class="linha"><span class="titulo">As dez chaves de fim de curso</span>
       <span class="mini" id="vChaves">—</span></div>
     <div class="detalhe" style="margin-left:0">
-      vermelho = encostou no batente · verde = curso livre
+      vermelho = encostou no batente · verde = curso livre · cinza = não chega
+    </div>
+    <div class="conserto" style="margin-top:8px">
+      <b>Isto é um testador de continuidade.</b> Aperte cada chave com o dedo e
+      solte: o ponto dela tem que dizer <b>mexeu</b>. Uma chave que
+      <b>nunca</b> diz isso não está chegando ao Pico — e aí o defeito está
+      entre o contato dela e o pino, não no firmware.
     </div>
     <div id="gradeChaves" class="grade"></div>
   </div>
@@ -792,16 +798,43 @@ const CHAVES = [
   ['Polegar · abrir',     st => st.fcd && st.fcd[3].abre],
 ];
 
+// A ÚLTIMA VEZ que cada chave mudou de valor, e o valor anterior. É o que
+// transforma esta lista num testador de continuidade: aperta a chave com o
+// dedo e o ponto pisca. Uma chave que nunca pisca não está chegando — e isso
+// é diferente de "está lendo livre", que é o que ela parece quando o fio
+// morreu no meio do caminho.
+const MUDOU = {};
+const ANTERIOR = {};
+const PISCA_MS = 2500;
+
 function aplicarChaves(st) {
-  let lidas = 0;
+  let lidas = 0, mexidas = 0;
+  const agora = Date.now();
+
   CHAVES.forEach(([, ler], i) => {
     const v = ler(st);
-    const pt = $('ch' + i);
+    const pt = $('ch' + i), rot = $('chr' + i);
+
+    if (v !== ANTERIOR[i]) {
+      // A primeira leitura não é "mudança": ela só estabelece o ponto de
+      // partida. Sem isto as dez piscariam juntas ao conectar, e um teste que
+      // sempre passa não é teste.
+      if (ANTERIOR[i] !== undefined) MUDOU[i] = agora;
+      ANTERIOR[i] = v;
+    }
+    const recente = MUDOU[i] && (agora - MUDOU[i]) < PISCA_MS;
+    if (recente) ++mexidas;
+
     if (v === '1')      { pt.style.background = 'var(--erro)';   ++lidas; }
     else if (v === '0') { pt.style.background = 'var(--ok)';     ++lidas; }
     else                  pt.style.background = 'var(--fraco)';
+
+    rot.textContent = recente ? '· mexeu' : '';
+    pt.style.boxShadow = recente ? '0 0 0 4px var(--primaria-fraca)' : '';
   });
-  $('vChaves').textContent = lidas + ' de 10 chegando';
+
+  $('vChaves').textContent = lidas + ' de 10 chegando'
+    + (mexidas ? ' · ' + mexidas + ' mexeu agora' : '');
 }
 
 /**
@@ -889,7 +922,8 @@ deslizante($('fspd'), v => enviar('FSPEED:' + v), 'fspd', v => $('vFspd').textCo
 // a grade das dez chaves, na aba de comunicação
 $('gradeChaves').innerHTML = CHAVES.map(([nome], i) => `
   <div class="linha"><span class="pt" id="ch${i}"></span>
-    <span class="mini">${nome}</span></div>`).join('');
+    <span class="mini">${nome}</span>
+    <span class="mini" id="chr${i}" style="color:var(--primaria);font-weight:600"></span></div>`).join('');
 
 $('btConectar').onclick = conectar;
 $('btDesconectar').onclick = desconectar;
