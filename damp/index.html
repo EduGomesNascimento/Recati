@@ -143,7 +143,7 @@
 <div id="abaControle">
 
   <div class="aviso" id="avisoBloqueio" hidden>
-    <h2>O manche está bloqueado</h2>
+    <h2 id="tituloBloqueio"></h2>
     <p id="txtBloqueio"></p>
   </div>
 
@@ -216,6 +216,11 @@
   <div class="cartao">
     <div class="linha"><span class="titulo">Última reinicialização do ESP32</span></div>
     <div class="detalhe" id="dReset" style="margin-left:0">—</div>
+  </div>
+
+  <div class="aviso" id="avisoBloqueio2" hidden>
+    <h2 id="tituloBloqueio2"></h2>
+    <p id="txtBloqueio2"></p>
   </div>
 
   <div class="cartao">
@@ -607,8 +612,18 @@ function aplicarStatus(st) {
   // simplesmente emudece, e um manche que emudece sem dizer nada é
   // indistinguível de um manche quebrado.
   const bloq = MOTIVO_BLOQUEIO[st.blk];
-  $('avisoBloqueio').hidden = !bloq;
-  if (bloq) $('txtBloqueio').innerHTML = bloq;
+  const titulo = st.blk === 'BAT'   ? 'O manche está bloqueado'
+               : st.blk === 'PUNHO' ? 'O manche está bloqueado'
+               :                      'Nada vai se mover';
+  // O MESMO aviso nas duas abas. Quem está na de comunicação conferindo as
+  // chaves é exatamente quem precisa ler isto, e um aviso que só existe na
+  // outra aba é um aviso que não chega.
+  ['', '2'].forEach(sufixo => {
+    $('avisoBloqueio' + sufixo).hidden = !bloq;
+    if (!bloq) return;
+    $('tituloBloqueio' + sufixo).textContent = titulo;
+    $('txtBloqueio' + sufixo).innerHTML = bloq;
+  });
 
   if (st.bat) {
     const [volts, faixa] = st.bat.split(',');
@@ -650,6 +665,36 @@ const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
 const MOTIVO_BLOQUEIO = {
   BAT: `A bateria está <b>crítica</b>. O manche e os botões são recusados até
         ela subir — não é defeito do manche. Recarregue o pack.`,
+  CHAVES: `<b>AS DEZ chaves estão lendo "acionada" ao mesmo tempo.</b>
+     Isso é mecanicamente impossível — dez batentes não encostam juntos. Com
+     todas acionadas, cada dedo recusa os dois sentidos e o punho recusa os
+     dois: <b>nada anda, nem pelo manche nem pelo celular</b>, e o defeito
+     parece dez defeitos.
+     <br><br>
+     É <b>uma causa só, antes das dez</b>. Nesta ordem:
+     <ol>
+       <li><b>o GND do chicote das chaves.</b> Cada chave é NF: em repouso ela
+           fecha e puxa o pino para o GND. Sem o GND comum no Pico, os 10 kΩ
+           deixam as dez entradas altas — exatamente isto;</li>
+       <li><b>o contato errado.</b> NF, não NO. Ligada no NO, a chave fica
+           aberta em repouso e o 10 kΩ segura o pino alto;</li>
+       <li>o 3V3 OUT indo parar nos pinos de entrada em vez de só nos 10 kΩ.</li>
+     </ol>
+     Aperte uma chave e veja se ela diz <b>mexeu</b> na lista das dez, aqui na
+     aba Comunicação: se nenhuma disser, é o item 1.`,
+
+  DEDOS: `<b>As oito chaves dos dedos estão lendo "acionada" ao mesmo tempo</b>
+     — e o punho não. Oito batentes não encostam juntos: é fiação do chicote
+     dos dedos. Enquanto durar, nenhum dedo anda em nenhum sentido.
+     <br><br>
+     Confira o GND comum das oito e se elas estão no contato <b>NF</b>, não no
+     NO. Aperte uma e veja se ela diz <b>mexeu</b> na lista das dez.`,
+
+  I2C: `<b>O Pico parou de responder.</b> Enquanto o barramento estiver mudo o
+     firmware trata todas as chaves como acionadas — é o lado seguro — e
+     <b>nada anda</b>. Veja o cartão do Raspberry Pi Pico, logo acima: ele diz
+     o que conferir.`,
+
   PUNHO: `<b>As duas chaves do punho aparecem acionadas ao mesmo tempo.</b>
      O fuso não pode estar nos dois extremos, então isto é fiação — e enquanto
      durar, o punho recusa todo movimento.
