@@ -605,10 +605,13 @@ function aplicarStatus(st) {
     // Com o expansor respondendo, '-' é DEFEITO DE FIAÇÃO, não ausência de
     // chave: desde a Rev. I as duas do punho entram pelo Pico (P10 e P11), e
     // ele não responderia "OK" se elas não estivessem lá.
+    // A frase vale para o PAR, não para cada uma: repetida nos dois pontos ela
+    // parecia dois defeitos. Sai uma vez, no primeiro, e o segundo fica com o
+    // próprio nome.
     const ruim = st.com && st.com.exp === 'OK'
       ? 'as duas acionadas: fiação' : 'sem chave';
     indicador('Fecha', fecha, 'fechar', ruim);
-    indicador('Abre',  abre,  'abrir',  ruim);
+    indicador('Abre',  abre,  'abrir',  fecha === abre ? 'abrir' : ruim);
     $('wUp').disabled   = fecha === '1';
     $('wDown').disabled = abre  === '1';
   }
@@ -898,18 +901,24 @@ function lerPalavraCrua(hex) {
     'É o GND comum do chicote que falta, ou as chaves estão no contato NO em '
     + 'vez do NF, ou o barramento está mudo (o firmware manda FFFF de '
     + 'propósito nesse caso, que é o lado seguro). Aperte uma chave: se o '
-    + 'número não mudar, o sinal dela não chega ao Pico.', true];
+    + 'número não mudar, o sinal dela não chega ao Pico.', true, 'alto'];
   if (dez === 0x0000) return [
     'as dez entradas estão BAIXAS — todas as chaves lendo livre',
     '<b>Nada está bloqueado.</b> Se mesmo assim nada se move, o defeito é da '
     + 'ponte H para frente: alimentação dos motores, os jumpers ENA/ENB do '
-    + 'L298N, ou a fiação do motor. Use o teste guiado acima.', true];
-  return ['leitura normal: umas acionadas, outras não', '', false];
+    + 'L298N, ou a fiação do motor. Use o teste guiado acima.', true, 'baixo'];
+  return ['leitura normal: umas acionadas, outras não', '', false, 'misto'];
 }
+
+// Desde quando a página está vendo quadros, e se ALGUMA chave já mudou desde
+// então. É o par que fecha o diagnóstico: "todas altas" sozinho ainda tem três
+// causas possíveis; "todas altas E nenhuma mudou nunca" tem uma.
+let desdeQuando = 0, algumaMudou = false;
 
 function aplicarChaves(st) {
   let lidas = 0, mexidas = 0;
   const agora = Date.now();
+  if (!desdeQuando) desdeQuando = agora;
 
   CHAVES.forEach(([, ler], i) => {
     const v = ler(st);
@@ -919,7 +928,7 @@ function aplicarChaves(st) {
       // A primeira leitura não é "mudança": ela só estabelece o ponto de
       // partida. Sem isto as dez piscariam juntas ao conectar, e um teste que
       // sempre passa não é teste.
-      if (ANTERIOR[i] !== undefined) MUDOU[i] = agora;
+      if (ANTERIOR[i] !== undefined) { MUDOU[i] = agora; algumaMudou = true; }
       ANTERIOR[i] = v;
     }
     const recente = MUDOU[i] && (agora - MUDOU[i]) < PISCA_MS;
@@ -939,8 +948,23 @@ function aplicarChaves(st) {
   const d = $('dExp');
   const leitura = st.exp ? lerPalavraCrua(st.exp) : null;
   if (!leitura) { d.textContent = ''; return; }
+
+  // O VEREDITO. "Todas altas" sozinho ainda tem três causas; "todas altas E
+  // nenhuma das dez mudou em meio minuto de tela aberta" tem uma só, e é a
+  // que a fiação permite sem parecer errada: o retorno comum das chaves
+  // ligado no MESMO nó dos 10 kΩ. Aí o resistor e a chave puxam os dois para
+  // o mesmo lado, e a chave não tem como levar o pino a lugar nenhum —
+  // apertar não muda nada, para sempre.
+  const parado = leitura[3] === 'alto' && !algumaMudou
+                 && (agora - desdeQuando) > 30000;
   d.innerHTML = '<b>Palavra crua do expansor: ' + st.exp + '</b> — ' + leitura[0]
-    + (leitura[1] ? '<br>' + leitura[1] : '');
+    + (leitura[1] ? '<br>' + leitura[1] : '')
+    + (parado ? '<br><br><b>E nenhuma das dez mudou desde que esta tela abriu.</b> '
+        + 'Isso descarta contato ruim e sobra uma causa: <b>o retorno comum das '
+        + 'chaves está no mesmo nó dos 10 kΩ</b> — ou seja, no 3V3 em vez do GND. '
+        + 'Com os dois puxando para cima, fechar ou abrir a chave não muda nada. '
+        + 'O 10 kΩ vai do pino para o 3V3; a chave vai do pino para o <b>GND</b>.'
+      : '');
   d.style.color = leitura[2] ? 'var(--erro)' : 'var(--fraco)';
 }
 
