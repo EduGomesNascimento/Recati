@@ -277,7 +277,8 @@
 </div>
 
 <div class="rodape">
-  Conecta direto no ESP32 por Bluetooth LE. Nada passa por servidor.
+  Conecta direto no ESP32 por Bluetooth LE. Nada passa por servidor.<br>
+  <b id="versao"></b>
 </div>
 
 <script>
@@ -295,6 +296,11 @@ const DEDOS = [
   { n: 3, nome: 'Indicador' },
   { n: 4, nome: 'Polegar' },
 ];
+
+// CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
+// página em cache, e "atualizei o site" e "você está vendo o site atualizado"
+// são duas coisas diferentes. Com o carimbo na tela, basta olhar.
+const VERSAO = 'página de 19/09/2026 · manche + 10 chaves';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -320,6 +326,11 @@ async function conectar() {
 
     conexao(true, dispositivo.name || 'DAMP');
     enviar('STATUS?');
+    // E a linha crua logo de saída. Ela existe em TODO firmware desde a Rev. G,
+    // inclusive no que já está gravado na placa — e é dela que sai o estado do
+    // manche quando o firmware ainda não publica o campo JOY= no quadro.
+    // Sem isto, diagnosticar o manche exigiria regravar o ESP32 primeiro.
+    enviar('DIAG?');
   } catch (e) {
     // Cancelar o seletor de dispositivos cai aqui e não é erro de verdade.
     msg(e && e.name === 'NotFoundError' ? 'Nenhum dispositivo escolhido.'
@@ -363,6 +374,10 @@ function enviar(cmd) {
 }
 
 // ---------------------------------------------------------------- recepção
+// A última leitura do manche vinda da linha crua (DIAG?). Usada só enquanto o
+// firmware não publicar JOY= no quadro periódico.
+let ultimoDiag = null;
+
 // As notificações podem vir partidas: remonta por linha.
 let buffer = '';
 function aoReceber(ev) {
@@ -384,6 +399,11 @@ function tratarLinha(linha) {
   if (linha.startsWith('DG;')) {
     $('linhaCrua').hidden = false;
     $('linhaCrua').textContent = linha;
+    // E, principalmente: com firmware antigo é DAQUI que sai o manche. O
+    // quadro periódico dele não tem JOY= nem JRAW=, e sem esta linha o cartão
+    // do manche ficaria em "sem informação" até alguém regravar o ESP32.
+    ultimoDiag = analisarDiag(linha);
+    if (ultimoDiag) aplicarManche(ultimoDiag);
     return;
   }
 
@@ -460,6 +480,37 @@ function analisarJoy(v) {
   };
 }
 
+/**
+ * A linha crua de diagnóstico:
+ *
+ *   DG;X=2013,C2008;Y=1180,C2001;VERT=-37;LAT=61;BTN=1;FC=10;FCD=00100001
+ *
+ * Todo firmware do DAMP responde isto ao comando DIAG?, inclusive os antigos.
+ * A página aproveita: quando o quadro periódico ainda não traz JOY= e JRAW= —
+ * porque o ESP32 está com firmware anterior a esta revisão — o cartão do
+ * manche se vira com esta linha. Assim dá para descobrir o que há de errado
+ * com o manche SEM regravar nada primeiro.
+ */
+function analisarDiag(linha) {
+  const num = re => { const m = linha.match(re); return m ? +m[1] : null; };
+  const x = num(/;X=(-?\d+)/),  cx = num(/;X=-?\d+,C(\d+)/);
+  const y = num(/;Y=(-?\d+)/),  cy = num(/;Y=-?\d+,C(\d+)/);
+  const vert = num(/;VERT=(-?\d+)/), lat = num(/;LAT=(-?\d+)/);
+  const btn = /;BTN=1/.test(linha);
+  if (x == null || y == null || cx == null || cy == null) return null;
+
+  // O veredito é o MESMO critério do firmware (JOY_CENTRO_MIN/MAX no config.h).
+  // Repetido aqui porque a linha crua não o carrega — e um firmware antigo
+  // nem sequer sabe que ele existe.
+  const fora = c => (c > 2900 ? 2 : c < 1200 ? 1 : 0);
+  const centro = Math.max(fora(cx), fora(cy));
+
+  return {
+    joy: { vert: vert || 0, lat: lat || 0, btn, centro },
+    jraw: { x, cx, y, cy },
+  };
+}
+
 /** JRAW=<x>,<centro x>,<y>,<centro y> — o bruto do ADC ao lado do zero adotado. */
 function analisarJraw(v) {
   const p = v.split(',').map(Number);
@@ -491,7 +542,10 @@ const ROTULO_SEL = {
 
 function aplicarStatus(st) {
   aplicarComunicacao(st);
-  aplicarManche(st);
+  // O quadro periódico tem prioridade — ele é de agora. Só quando ele não
+  // traz o manche é que vale a última linha crua, que pode ser de minutos
+  // atrás mas é melhor que "sem informação".
+  aplicarManche(st.joy ? st : (ultimoDiag || st));
   aplicarChaves(st);
   if (st.sel) {
     $('selecao').textContent = ROTULO_SEL[st.sel] || st.sel;
@@ -679,8 +733,12 @@ function aplicarManche(st) {
   $('txtBtn').textContent = j.btn ? 'botão APERTADO' : 'botão do manche';
 
   const r = st.jraw;
+  // "de agora" vs "de quando você pediu": um número velho que se parece com um
+  // número atual é pior que número nenhum.
+  const vivo = st !== ultimoDiag;
   $('dJoyBruto').textContent = r
     ? `X = ${r.x} (zero ${r.cx}) · Y = ${r.y} (zero ${r.cy}) — escala de 0 a 4095`
+      + (vivo ? '' : ' · leitura do último "Pedir diagnóstico", não ao vivo')
     : '';
 
   const cons = $('consertoJoy'), diag = CENTRO_JOY[j.centro];
@@ -829,6 +887,7 @@ $('btParar').onclick = () => enviar('STOP!');
 // resultado chega como uma linha solta ("OK" ou "ERR") pelo mesmo caminho das
 // outras respostas. Por isso a próxima resposta é interceptada aqui.
 let esperandoJoyCal = false;
+
 $('btJoyCal').onclick = () => {
   esperandoJoyCal = true;
   msg('Recalibrando — mantenha o manche solto…');
@@ -857,6 +916,8 @@ $('abaBtComunicacao').onclick  = () => mostrarAba('comunicacao');
 
 // Fechar a aba com um motor andando é o pior jeito de terminar.
 window.addEventListener('pagehide', () => { if (carRx) enviar('STOP!'); });
+
+$('versao').textContent = VERSAO;
 
 if (!navigator.bluetooth) {
   $('semSuporte').hidden = false;
