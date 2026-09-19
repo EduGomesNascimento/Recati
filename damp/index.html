@@ -644,6 +644,19 @@ const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
 const MOTIVO_BLOQUEIO = {
   BAT: `A bateria está <b>crítica</b>. O manche e os botões são recusados até
         ela subir — não é defeito do manche. Recarregue o pack.`,
+  PUNHO: `<b>As duas chaves do punho aparecem acionadas ao mesmo tempo.</b>
+     O fuso não pode estar nos dois extremos, então isto é fiação — e enquanto
+     durar, o punho recusa todo movimento.
+     <br><br>
+     <b>É por isso que o manche parece morto:</b> ele começa selecionando o
+     punho. <b>Clique o botão do manche</b> para trocar de canal e os dedos
+     andam com o mesmo manche. O manche está bom.
+     <br><br>
+     Desde a Rev. I as duas chaves do punho entram pelo Pico (P10 e P11,
+     GP16 e GP17). Numa placa ainda ligada na Rev. H elas estão nos GPIO 18 e
+     27 do ESP32 — e as portas do Pico, sem nada ligado, leem "acionada".
+     Ou você converte os dois fios, ou compila com
+     <code>FC_PUNHO_NO_EXPANSOR 0</code>.`,
 };
 
 // O veredito do firmware sobre o centro medido do manche (4º subcampo de JOY=).
