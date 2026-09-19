@@ -85,13 +85,32 @@
   }
   .conserto ol { margin: 5px 0 0; padding-left: 18px; }
   .conserto li { margin-bottom: 3px; }
+  /* barra de eixo com o ZERO NO MEIO: o manche vai para os dois lados, e uma
+     barra que só cresce da esquerda mentiria sobre metade do curso. */
+  .barra.eixo { display: flex; }
+  .barra.eixo > .metade { width: 50%; display: flex; }
+  .barra.eixo > .metade.neg { justify-content: flex-end; }
+  /* a barra de dentro é filha da METADE, não da barra: a regra .barra > i
+     não a alcança mais, e sem isto a metade positiva sairia invisível. */
+  .barra.eixo .metade > i {
+    display: block; height: 100%; width: 0;
+    background: var(--primaria); transition: width .08s linear;
+  }
+  .barra.eixo > .metade.neg > i { background: var(--alerta); }
+  .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 10px; margin-top: 8px; }
+  .grade .linha { gap: 7px; }
+  .crua {
+    background: var(--primaria-fraca); border-radius: 8px; padding: 9px 10px;
+    margin: 9px 0 0; font-size: 11.5px; line-height: 1.5;
+    white-space: pre-wrap; word-break: break-all; user-select: text;
+  }
   [hidden] { display: none !important; }
 </style>
 </head>
 <body>
 
 <h1>DAMP</h1>
-<div class="sub">Dispositivo Assistivo de Mão e Punho</div>
+<div class="sub">Dispositivo Assistivo de Mão e Punho · <b>Rev. I</b> — dez chaves de fim de curso</div>
 
 <div id="semSuporte" class="aviso" hidden>
   <h2>Este navegador não fala Bluetooth</h2>
@@ -122,6 +141,11 @@
   </div>
 
 <div id="abaControle">
+
+  <div class="aviso" id="avisoBloqueio" hidden>
+    <h2>O manche está bloqueado</h2>
+    <p id="txtBloqueio"></p>
+  </div>
 
   <div class="linha" style="margin:14px 2px 8px">
     <span class="mini" style="flex:1">Joystick controlando: <b id="selecao">—</b></span>
@@ -194,9 +218,60 @@
     <div class="detalhe" id="dReset" style="margin-left:0">—</div>
   </div>
 
+  <div class="cartao">
+    <div class="linha"><span class="titulo">Manche (joystick)</span>
+      <span class="pt" id="ptJoy"></span><span class="mini" id="vJoy">—</span></div>
+
+    <div class="mini" style="margin-top:8px">Para cima / para baixo
+      <b id="jVert" style="float:right">0</b></div>
+    <div class="barra eixo"><span class="metade neg"><i id="barVertNeg"></i></span><span class="metade"><i id="barVertPos"></i></span></div>
+
+    <div class="mini" style="margin-top:8px">Para os lados
+      <b id="jLat" style="float:right">0</b></div>
+    <div class="barra eixo"><span class="metade neg"><i id="barLatNeg"></i></span><span class="metade"><i id="barLatPos"></i></span></div>
+
+    <div class="linha" style="margin-top:9px">
+      <span class="pt" id="ptBtn"></span>
+      <span class="mini" id="txtBtn">botão do manche</span>
+    </div>
+
+    <div class="detalhe" id="dJoyBruto" style="margin-left:0">—</div>
+    <div class="conserto" id="consertoJoy" hidden></div>
+
+    <div class="botoes">
+      <button id="btJoyCal">Recalibrar o centro</button>
+    </div>
+    <div class="mini" style="margin-top:6px">
+      <b>Solte o manche antes de apertar.</b> O zero é medido uma vez, quando
+      o aparelho liga — se o manche estiver encostado nessa hora, ele nasce
+      torto e o manche parece não funcionar. Isto mede de novo, agora. Uma
+      medida absurda é <b>recusada</b>: nada muda, e o aparelho avisa.
+    </div>
+  </div>
+
+  <div class="cartao">
+    <div class="linha"><span class="titulo">As dez chaves de fim de curso</span>
+      <span class="mini" id="vChaves">—</span></div>
+    <div class="detalhe" style="margin-left:0">
+      vermelho = encostou no batente · verde = curso livre
+    </div>
+    <div id="gradeChaves" class="grade"></div>
+  </div>
+
+  <div class="cartao">
+    <div class="linha"><span class="titulo">Linha crua de diagnóstico</span></div>
+    <div class="detalhe" style="margin-left:0">
+      É o mesmo <code>DIAG?</code> que se digitaria num monitor serial — só que
+      sem monitor serial e sem digitar nada.
+    </div>
+    <div class="botoes"><button id="btDiag">Pedir diagnóstico</button></div>
+    <pre class="crua" id="linhaCrua" hidden></pre>
+  </div>
+
   <div class="mini" style="margin:10px 2px; line-height:1.5">
-    Esta aba não comanda nada: só mostra. O LED de bordo do Pico diz o mesmo,
-    mas fica dentro da caixa — com o aparelho vestido, ninguém o vê.
+    Esta aba não comanda nada — fora o botão de recalibrar, que primeiro
+    <b>para tudo</b>. O LED de bordo do Pico diz parte disto, mas fica dentro
+    da caixa: com o aparelho vestido, ninguém o vê.
   </div>
 </div><!-- abaComunicacao -->
 </div>
@@ -302,11 +377,37 @@ function aoReceber(ev) {
 }
 
 function tratarLinha(linha) {
-  if (linha.startsWith('ST;')) aplicarStatus(analisarStatus(linha));
-  else msg(linha);                       // OK / BLOCKED / ERR / TEST
+  if (linha.startsWith('ST;')) { aplicarStatus(analisarStatus(linha)); return; }
+
+  // A linha crua do DIAG?. Vai para a caixa da aba de comunicação em vez de
+  // virar uma mensagem de uma linha, que sumiria no quadro seguinte.
+  if (linha.startsWith('DG;')) {
+    $('linhaCrua').hidden = false;
+    $('linhaCrua').textContent = linha;
+    return;
+  }
+
+  if (esperandoJoyCal) {
+    esperandoJoyCal = false;
+    if (linha === 'OK')  { msg('Centro do manche remedido. Pode usar.'); return; }
+    if (linha === 'ERR') {
+      msg('Recusado: a leitura não parece um manche solto. Nada foi mudado — '
+        + 'veja o cartão do manche, na aba Comunicação.');
+      return;
+    }
+  }
+  msg(linha);                            // OK / BLOCKED / ERR / TEST
 }
 
-/** ST;SEL=F2;SPD=200;FSPD=60;VBAT=13.85,OK;W=STOP,01;F1=STOP,45;… */
+/**
+ * ST;SEL=F2;SPD=200;FSPD=60;VBAT=13.85,OK;W=STOP,01;F1=STOP,45;…
+ *     …;FCD=00100000;JOY=0,0,0,0;JRAW=2013,2008,1996,2001;BLK=-;COM=…;UP=…
+ *
+ * Campos que a página não conhece são IGNORADOS de propósito: firmware mais
+ * novo que a página não quebra a página, e firmware mais velho que a página
+ * apenas deixa o campo indefinido — que a tela mostra como "sem informação",
+ * e não como "com problema".
+ */
 function analisarStatus(linha) {
   const st = { motores: {} };
   for (const campo of linha.slice(3).split(';')) {
@@ -319,12 +420,51 @@ function analisarStatus(linha) {
     else if (k === 'VBAT') st.bat = v;
     else if (k === 'UP')   st.up = +v;
     else if (k === 'COM')  st.com = analisarCom(v);
+    else if (k === 'FCD')  st.fcd = analisarFcd(v);
+    else if (k === 'JOY')  st.joy = analisarJoy(v);
+    else if (k === 'JRAW') st.jraw = analisarJraw(v);
+    else if (k === 'BLK')  st.blk = v;
     else if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
       st.motores[k] = { dir, extra: extra || '' };
     }
   }
   return st;
+}
+
+/**
+ * FCD=<8 dígitos> — as chaves dos dedos, na ordem F1a F1f F2a F2f F3a F3f F4a F4f.
+ *
+ * São as oito da Rev. I; com as duas do punho (que vêm no campo W=) fecham as
+ * DEZ que o Pico lê. Antes isto só existia na linha de diagnóstico, pedida à
+ * mão num monitor serial — que quem veste o aparelho não tem.
+ *
+ * Um tamanho diferente de oito não é "quase certo": é outro protocolo. Devolve
+ * nulo, e a tela diz "sem informação" em vez de inventar chave.
+ */
+function analisarFcd(v) {
+  if (!/^[01]{8}$/.test(v)) return null;
+  return [0, 1, 2, 3].map(i => ({ abre: v[i * 2], fecha: v[i * 2 + 1] }));
+}
+
+/** JOY=<vertical>,<lateral>,<botão>,<veredito do centro> */
+function analisarJoy(v) {
+  const p = v.split(',');
+  if (p.length < 4) return null;
+  return {
+    vert: +p[0] || 0,
+    lat:  +p[1] || 0,
+    btn:  p[2] === '1',
+    // 0 crível · 1 baixo demais (fio solto/GND) · 2 alto demais (módulo em 5 V)
+    centro: +p[3] || 0,
+  };
+}
+
+/** JRAW=<x>,<centro x>,<y>,<centro y> — o bruto do ADC ao lado do zero adotado. */
+function analisarJraw(v) {
+  const p = v.split(',').map(Number);
+  if (p.length < 4 || p.some(n => !isFinite(n))) return null;
+  return { x: p[0], cx: p[1], y: p[2], cy: p[3] };
 }
 
 /**
@@ -351,6 +491,8 @@ const ROTULO_SEL = {
 
 function aplicarStatus(st) {
   aplicarComunicacao(st);
+  aplicarManche(st);
+  aplicarChaves(st);
   if (st.sel) {
     $('selecao').textContent = ROTULO_SEL[st.sel] || st.sel;
     $('cxPunho').classList.toggle('sel', st.sel === 'W');
@@ -365,8 +507,13 @@ function aplicarStatus(st) {
   const w = st.motores.W;
   if (w) {
     const fecha = w.extra[0], abre = w.extra[1];
-    indicador('Fecha', fecha, 'fechar');
-    indicador('Abre',  abre,  'abrir');
+    // Com o expansor respondendo, '-' é DEFEITO DE FIAÇÃO, não ausência de
+    // chave: desde a Rev. I as duas do punho entram pelo Pico (P10 e P11), e
+    // ele não responderia "OK" se elas não estivessem lá.
+    const ruim = st.com && st.com.exp === 'OK'
+      ? 'as duas acionadas: fiação' : 'sem chave';
+    indicador('Fecha', fecha, 'fechar', ruim);
+    indicador('Abre',  abre,  'abrir',  ruim);
     $('wUp').disabled   = fecha === '1';
     $('wDown').disabled = abre  === '1';
   }
@@ -382,7 +529,26 @@ function aplicarStatus(st) {
     const sel = st.sel === ('F' + d.n);
     $('cx' + d.n).classList.toggle('sel', sel);
     $('sel' + d.n).hidden = !sel;
+
+    // As chaves do dedo. Firmware sem o campo FCD= deixa os dois pontos em
+    // "sem chave", que é diferente de dizer que a chave está livre.
+    const c = st.fcd && st.fcd[d.n - 1];
+    indicador('FF' + d.n, c ? c.fecha : '-', 'fechar');
+    indicador('FA' + d.n, c ? c.abre  : '-', 'abrir');
+
+    // Botão apagado do lado que já encostou, igual ao punho. Quem bloqueia de
+    // verdade é o firmware; isto só evita pedir o que vai voltar recusado.
+    $('fc' + d.n).disabled = !!c && c.fecha === '1';
+    $('fo' + d.n).disabled = !!c && c.abre  === '1';
   });
+
+  // O que está recusando o manche AGORA. O aplicativo recebe "BLOCKED" de
+  // volta quando um comando dele é recusado; o manche não recebe nada — ele
+  // simplesmente emudece, e um manche que emudece sem dizer nada é
+  // indistinguível de um manche quebrado.
+  const bloq = MOTIVO_BLOQUEIO[st.blk];
+  $('avisoBloqueio').hidden = !bloq;
+  if (bloq) $('txtBloqueio').innerHTML = bloq;
 
   if (st.bat) {
     const [volts, faixa] = st.bat.split(',');
@@ -418,6 +584,36 @@ const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
     <li>GND comum — pino 38 do Pico na mesma barra do ESP32;</li>
     <li>o Pico está alimentado? VSYS (39) pelos 5,1 V através do 1N5817.</li>
   </ol>`;
+
+// O que o campo BLK= quer dizer. Um motivo que a página não conhece não vira
+// aviso: firmware mais novo não deve fazer a tela gritar em português torto.
+const MOTIVO_BLOQUEIO = {
+  BAT: `A bateria está <b>crítica</b>. O manche e os botões são recusados até
+        ela subir — não é defeito do manche. Recarregue o pack.`,
+};
+
+// O veredito do firmware sobre o centro medido do manche (4º subcampo de JOY=).
+// Fora da janela crível não é "outro centro": é fiação, e cada caso manda
+// olhar num lugar diferente.
+const CENTRO_JOY = {
+  1: ['centro BAIXO demais — a entrada está perto de zero', `
+      <b>Isto não é calibração, é fiação.</b> Confira nesta ordem:
+      <ol>
+        <li>os fios <b>VRx (GPIO 34)</b> e <b>VRy (GPIO 35)</b> soltos;</li>
+        <li>o <b>+V</b> do KY-023 sem 3V3;</li>
+        <li>VRx/VRy trocados com o <b>GND</b> do módulo.</li>
+      </ol>`],
+  2: ['centro ALTO demais — o conversor saturou', `
+      <b>Isto não é calibração, é fiação — e pode estar maltratando o pino.</b>
+      Confira nesta ordem:
+      <ol>
+        <li>o KY-023 está em <b>3V3</b>? Em 5 V a saída passa do fundo de
+            escala do conversor do ESP32;</li>
+        <li>VRx/VRy trocados com o <b>+V</b> do módulo;</li>
+        <li>o manche estava encostado na hora de ligar — aí basta
+            <b>Recalibrar o centro</b>.</li>
+      </ol>`],
+};
 
 function tempoDePe(s) {
   if (s == null) return '';
@@ -466,11 +662,93 @@ function aplicarComunicacao(st) {
   dr.style.color = ruim ? 'var(--erro)' : 'var(--fraco)';
 }
 
-function indicador(sufixo, valor, rotulo) {
+function aplicarManche(st) {
+  const j = st.joy;
+  if (!j) {                                 // firmware sem o campo JOY=
+    $('ptJoy').style.background = 'var(--fraco)';
+    $('vJoy').textContent = 'sem informação';
+    return;
+  }
+
+  eixo('Vert', j.vert);
+  eixo('Lat',  j.lat);
+  $('jVert').textContent = j.vert;
+  $('jLat').textContent  = j.lat;
+
+  $('ptBtn').style.background = j.btn ? 'var(--primaria)' : 'var(--fraco)';
+  $('txtBtn').textContent = j.btn ? 'botão APERTADO' : 'botão do manche';
+
+  const r = st.jraw;
+  $('dJoyBruto').textContent = r
+    ? `X = ${r.x} (zero ${r.cx}) · Y = ${r.y} (zero ${r.cy}) — escala de 0 a 4095`
+    : '';
+
+  const cons = $('consertoJoy'), diag = CENTRO_JOY[j.centro];
+  if (diag) {
+    $('ptJoy').style.background = 'var(--erro)';
+    $('vJoy').textContent = diag[0];
+    cons.innerHTML = diag[1];
+    cons.hidden = false;
+  } else {
+    cons.hidden = true;
+    // Sem defeito de fiação, o que importa é se ele MEXE. Um manche que lê o
+    // centro certo e nunca sai dele continua sendo um manche que não funciona.
+    const mexeu = j.vert !== 0 || j.lat !== 0 || j.btn;
+    $('ptJoy').style.background = mexeu ? 'var(--ok)' : 'var(--alerta)';
+    $('vJoy').textContent = mexeu ? 'respondendo' : 'no centro, parado';
+  }
+}
+
+// Uma barra com o zero no meio: o valor vai de −100 a +100.
+function eixo(nome, v) {
+  const mag = Math.min(100, Math.abs(v)) + '%';
+  $('bar' + nome + 'Neg').style.width = v < 0 ? mag : '0';
+  $('bar' + nome + 'Pos').style.width = v > 0 ? mag : '0';
+}
+
+// As DEZ chaves num lugar só: duas do punho e duas por dedo. É a conferência
+// da Rev. I — antes dela o punho entrava por GPIO e eram oito.
+const CHAVES = [
+  ['Punho · fechar',      st => st.motores.W && st.motores.W.extra[0]],
+  ['Punho · abrir',       st => st.motores.W && st.motores.W.extra[1]],
+  ['Mindinho+anelar · fechar', st => st.fcd && st.fcd[0].fecha],
+  ['Mindinho+anelar · abrir',  st => st.fcd && st.fcd[0].abre],
+  ['Médio · fechar',      st => st.fcd && st.fcd[1].fecha],
+  ['Médio · abrir',       st => st.fcd && st.fcd[1].abre],
+  ['Indicador · fechar',  st => st.fcd && st.fcd[2].fecha],
+  ['Indicador · abrir',   st => st.fcd && st.fcd[2].abre],
+  ['Polegar · fechar',    st => st.fcd && st.fcd[3].fecha],
+  ['Polegar · abrir',     st => st.fcd && st.fcd[3].abre],
+];
+
+function aplicarChaves(st) {
+  let lidas = 0;
+  CHAVES.forEach(([, ler], i) => {
+    const v = ler(st);
+    const pt = $('ch' + i);
+    if (v === '1')      { pt.style.background = 'var(--erro)';   ++lidas; }
+    else if (v === '0') { pt.style.background = 'var(--ok)';     ++lidas; }
+    else                  pt.style.background = 'var(--fraco)';
+  });
+  $('vChaves').textContent = lidas + ' de 10 chegando';
+}
+
+/**
+ * Um ponto colorido e um rótulo para UMA chave de fim de curso.
+ *
+ * O terceiro caso — o firmware manda '-' — já foi mostrado como "sem chave",
+ * e isso custou uma bancada inteira: com a Rev. I montada e o Pico
+ * respondendo, '-' não quer dizer "não há chave", quer dizer "as DUAS deste
+ * eixo aparecem acionadas ao mesmo tempo", que é impossível na mecânica e
+ * portanto é fiação. Quem sabe distinguir os dois casos é quem chama, que
+ * enxerga o estado do expansor; por isso o texto do '-' vem de fora.
+ */
+function indicador(sufixo, valor, rotulo, semChave) {
   const pt = $('pt' + sufixo), tx = $('txt' + sufixo);
   if (valor === '1')      { pt.style.background = 'var(--erro)';  tx.textContent = 'fim: ' + rotulo; }
   else if (valor === '0') { pt.style.background = 'var(--ok)';    tx.textContent = rotulo; }
-  else                    { pt.style.background = 'var(--fraco)'; tx.textContent = 'sem chave'; }
+  else                    { pt.style.background = 'var(--alerta)';
+                            tx.textContent = semChave || 'sem chave'; }
 }
 
 // ---------------------------------------------------------------- controles
@@ -510,6 +788,10 @@ $('dedos').innerHTML = DEDOS.map(d => `
       <span class="etiqueta" id="sel${d.n}" hidden>joystick</span>
       <span class="pos" id="pos${d.n}">0 %</span>
     </div>
+    <div class="linha" style="margin-top:6px">
+      <span class="pt" id="ptFF${d.n}"></span><span class="mini" id="txtFF${d.n}">fechar</span>
+      <span class="pt" id="ptFA${d.n}"></span><span class="mini" id="txtFA${d.n}">abrir</span>
+    </div>
     <div class="barra"><i id="bar${d.n}"></i></div>
     <div class="botoes">
       <button id="fc${d.n}">Fechar</button>
@@ -533,9 +815,31 @@ DEDOS.forEach(d => {
 deslizante($('spd'),  v => enviar('SPEED:' + v),  'spd', v => $('vSpd').textContent = v);
 deslizante($('fspd'), v => enviar('FSPEED:' + v), 'fspd', v => $('vFspd').textContent = v + ' °/s');
 
+// a grade das dez chaves, na aba de comunicação
+$('gradeChaves').innerHTML = CHAVES.map(([nome], i) => `
+  <div class="linha"><span class="pt" id="ch${i}"></span>
+    <span class="mini">${nome}</span></div>`).join('');
+
 $('btConectar').onclick = conectar;
 $('btDesconectar').onclick = desconectar;
 $('btParar').onclick = () => enviar('STOP!');
+
+// Recalibrar o zero do manche. O firmware PARA TUDO antes de mexer na régua,
+// e recusa uma medida absurda — mas quem aperta merece saber o resultado, e o
+// resultado chega como uma linha solta ("OK" ou "ERR") pelo mesmo caminho das
+// outras respostas. Por isso a próxima resposta é interceptada aqui.
+let esperandoJoyCal = false;
+$('btJoyCal').onclick = () => {
+  esperandoJoyCal = true;
+  msg('Recalibrando — mantenha o manche solto…');
+  enviar('JOYCAL!');
+};
+
+$('btDiag').onclick = () => {
+  $('linhaCrua').hidden = false;
+  $('linhaCrua').textContent = 'pedindo…';
+  enviar('DIAG?');
+};
 
 // --- troca de aba ---------------------------------------------------------
 // O PARAR TUDO vive na aba de controle. Trocar de aba não pode ser um jeito
