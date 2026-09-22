@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — fuso e porca</title>
+<style>
+:root{--bg:#f5f7fa;--card:#F1EFE8;--text:#10222f;--muted:#5F5E5A;--border:#B4B2A9;--hover:#e7e4da;--primaria:#00629d;--linha:#dfe5ec;--painel:#ffffff;}
+@media (prefers-color-scheme: dark){:root{--bg:#0f172a;--card:#2C2C2A;--text:#e8eef6;--muted:#B4B2A9;--border:#5F5E5A;--hover:#3a3a37;--primaria:#6db3f2;--linha:#263248;--painel:#172033;}}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  padding:16px 14px calc(24px + env(safe-area-inset-bottom));}
+main{max-width:420px;margin:0 auto;}
+h1{font-size:22px;margin:0;letter-spacing:-.3px;}
+.sub{color:var(--muted);font-size:13px;margin:2px 0 14px;}
+.paginas{display:flex;gap:6px;margin:0 0 14px;}
+.paginas a{flex:1;text-align:center;text-decoration:none;font-size:14px;font-weight:600;
+  color:var(--muted);background:transparent;border:1px solid var(--linha);
+  border-radius:12px;padding:10px 8px;}
+.paginas a[aria-current="page"]{color:#fff;background:var(--primaria);border-color:var(--primaria);}
+.intro{background:var(--painel);border:1px solid var(--linha);border-radius:14px;
+  padding:12px;margin:0 0 1rem;font-size:14px;line-height:1.5;}
+.intro b{font-weight:600;}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 1rem;}
+.stat{background:var(--card);border-radius:8px;padding:0.75rem 1rem;}
+.stat .l{font-size:13px;color:var(--muted);}
+.stat .v{font-size:22px;font-weight:500;}
+canvas{width:100%;height:470px;display:block;}
+.row{display:flex;align-items:center;gap:12px;margin:1rem 0 0.75rem;}
+.row label{font-size:14px;color:var(--muted);}
+input[type=range]{flex:1;accent-color:#BA7517;}
+.btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+button{font:inherit;font-size:14px;color:var(--text);background:transparent;
+  border:0.5px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;}
+button:hover{background:var(--hover);}
+button:active{transform:scale(0.98);}
+button:focus-visible{outline:2px solid #BA7517;outline-offset:2px;}
+#walls{grid-column:1 / -1;}
+#status{font-size:13px;color:var(--muted);margin:0.75rem 0 0;line-height:1.5;}
+.rodape{margin:1.5rem 0 0;font-size:12px;color:var(--muted);line-height:1.5;}
+</style>
+</head>
+<body>
+<main>
+
+<h1>DAMP</h1>
+<div class="sub">Fuso e porca — como a rotação vira movimento linear</div>
+
+<nav class="paginas">
+  <a href="../">Controle</a>
+  <a href="./" aria-current="page">Animação</a>
+</nav>
+
+<p class="intro">O punho do DAMP é movido por um <b>fuso trapezoidal Tr8×8</b>. O motor gira
+o fuso, e a porca — impedida de girar por um invólucro impresso em 3D — caminha ao longo
+do eixo. É esse deslocamento que traciona o cabo. Tire as paredes e a porca passa a girar
+junto com o fuso, parada no mesmo lugar.</p>
+
+<div class="stats">
+<div class="stat"><div class="l">Rotação do fuso</div><div class="v" id="rpmOut">60 rpm</div></div>
+<div class="stat"><div class="l">Velocidade da porca</div><div class="v" id="linOut">8 mm/s</div></div>
+</div>
+<canvas id="cv" aria-label="Animação de um fuso girado por um motor, com uma porca travada por duas paredes"></canvas>
+<div class="row">
+<label for="rpm">Rotação</label>
+<input type="range" min="0" max="120" step="1" value="60" id="rpm">
+</div>
+<div class="btns">
+<button id="play">Pausar</button>
+<button id="dir">Inverter sentido</button>
+<button id="walls">Remover paredes</button>
+</div>
+<p id="status"></p>
+
+<p class="rodape">DAMP — Dispositivo Assistivo para Auxílio de Movimentos da Mão e do Punho ·
+Fundação Escola Técnica Liberato Salzano Vieira da Cunha</p>
+
+</main>
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const W=380,H=470;
+function size(){const dpr=window.devicePixelRatio||1;const w=cv.clientWidth||W;cv.width=w*dpr;cv.height=H*dpr;ctx.setTransform(dpr*w/W,0,0,dpr,0,0);}
+size();window.addEventListener('resize',size);
+const st={ang:0,dir:1,play:true,walls:true,rpm:60,nutY:200};
+const P=12,LEAD=8,yTop=66,yBot=316,cx=110;
+const txt=()=>getComputedStyle(document.documentElement).getPropertyValue('--muted').trim()||'#888';
+const C={hf:'#FAC775',hs:'#BA7517',sc:'#444441',th:'#888780',nf:'#BA7517',ns:'#633806',nh:'#FAC775',mf:'#5F5E5A',ms:'#2C2C2A',cp:'#B4B2A9',ar:'#D85A30'};
+function rect(x,y,w,h,f,s){ctx.fillStyle=f;ctx.fillRect(x,y,w,h);if(s){ctx.strokeStyle=s;ctx.lineWidth=1;ctx.strokeRect(x+.5,y+.5,w-1,h-1);}}
+function arrowHead(x,y,a,c){ctx.fillStyle=c;ctx.beginPath();ctx.moveTo(x+7*Math.cos(a),y+7*Math.sin(a));ctx.lineTo(x+7*Math.cos(a+2.4),y+7*Math.sin(a+2.4));ctx.lineTo(x+7*Math.cos(a-2.4),y+7*Math.sin(a-2.4));ctx.closePath();ctx.fill();}
+function draw(){
+ctx.clearRect(0,0,W,H);const t=txt();
+ctx.font='12px sans-serif';ctx.fillStyle=t;ctx.textAlign='center';
+ctx.fillText('vista lateral',cx,18);ctx.fillText('vista de cima',290,60);
+rect(99,40,22,356,C.sc);
+ctx.save();ctx.beginPath();ctx.rect(99,40,22,356);ctx.clip();
+const off=((st.ang/(2*Math.PI))*P)%P;
+ctx.strokeStyle=C.th;ctx.lineWidth=3;
+for(let y=40-2*P;y<400+P;y+=P){const yy=y-off;ctx.beginPath();ctx.moveTo(99,yy+P/2);ctx.lineTo(121,yy);ctx.stroke();}
+ctx.restore();
+rect(60,30,100,30,C.hf,C.hs);
+if(st.walls){rect(62,60,18,300,C.hf,C.hs);rect(140,60,18,300,C.hf,C.hs);}
+else{ctx.setLineDash([4,4]);ctx.strokeStyle=C.hs;ctx.strokeRect(62.5,60.5,17,299);ctx.strokeRect(140.5,60.5,17,299);ctx.setLineDash([]);}
+rect(60,360,100,30,C.hf,C.hs);
+const ny=st.nutY;
+rect(84,ny,52,34,C.nf,C.ns);rect(88,ny+34,44,10,C.nf,C.ns);
+if(!st.walls){const s=Math.sin(st.ang);if(Math.cos(st.ang)>0){ctx.fillStyle=C.nh;ctx.fillRect(cx+22*s-3,ny+2,6,30);}}
+else{ctx.fillStyle=C.nh;ctx.fillRect(92,ny+4,4,26);}
+const mv=st.play&&st.rpm>0&&st.walls;
+if(mv){const up=st.dir>0;const ax=176,ay=ny+22;ctx.strokeStyle=C.ar;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay+(up?14:-14));ctx.lineTo(ax,ay+(up?-10:10));ctx.stroke();arrowHead(ax,ay+(up?-12:12),up?-Math.PI/2:Math.PI/2,C.ar);}
+rect(101,396,18,16,C.cp,C.ms);
+ctx.save();ctx.beginPath();ctx.rect(101,396,18,16);ctx.clip();const cs=Math.sin(st.ang);if(Math.cos(st.ang)>0){ctx.fillStyle=C.ms;ctx.fillRect(cx+8*cs-1.5,396,3,16);}ctx.restore();
+rect(75,412,70,50,C.mf,C.ms);
+ctx.fillStyle='#F1EFE8';ctx.font='12px sans-serif';ctx.fillText('motor',cx,441);
+const tx=290,ty=150;
+if(st.walls){rect(248,108,12,84,C.hf,C.hs);rect(320,108,12,84,C.hf,C.hs);}
+ctx.save();ctx.translate(tx,ty);ctx.rotate(st.walls?0:st.ang);rect(-29,-29,58,58,C.nf,C.ns);ctx.restore();
+ctx.fillStyle=C.sc;ctx.beginPath();ctx.arc(tx,ty,12,0,2*Math.PI);ctx.fill();
+ctx.strokeStyle=C.th;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx+11*Math.cos(st.ang),ty+11*Math.sin(st.ang));ctx.stroke();
+if(st.play&&st.rpm>0){ctx.strokeStyle=C.ar;ctx.lineWidth=2;const r=44,a0=-Math.PI*0.75,a1=-Math.PI*0.25;ctx.beginPath();ctx.arc(tx,ty,r,a0,a1,false);ctx.stroke();
+const cw=st.dir>0;const ae=cw?a1:a0;arrowHead(tx+r*Math.cos(ae),ty+r*Math.sin(ae),ae+(cw?Math.PI/2:-Math.PI/2),C.ar);}
+ctx.fillStyle=t;ctx.textAlign='center';
+ctx.fillText(st.walls?'paredes travam a porca':'porca gira junto',tx,222);
+ctx.textAlign='left';ctx.fillText('fuso',168,100);ctx.fillText('porca',180,ny+60<380?ny+62:ny-6);
+ctx.fillText('parede',168,340);
+}
+const $=id=>document.getElementById(id);
+function status(){const lin=st.walls&&st.play?st.rpm*LEAD/60:0;
+$('rpmOut').textContent=(st.play?st.rpm:0)+' rpm';$('linOut').textContent=lin.toFixed(1).replace('.',',')+' mm/s';
+$('status').textContent=st.walls?'Com as paredes, a porca não consegue girar: cada volta do fuso empurra ela um passo de rosca (8 mm num T8). No fim do curso o sentido inverte sozinho.':'Sem as paredes, o atrito faz a porca girar junto com o fuso e ela fica parada no mesmo lugar: nenhuma conversão para movimento linear.';}
+let last=performance.now();
+function loop(now){const dt=Math.min((now-last)/1000,0.05);last=now;
+if(st.play){const w=st.rpm/60*2*Math.PI*st.dir;st.ang+=w*dt;
+if(st.walls){st.nutY-=w*dt/(2*Math.PI)*P;if(st.nutY<yTop){st.nutY=yTop;st.dir=-1;}if(st.nutY>yBot){st.nutY=yBot;st.dir=1;}}}
+draw();status();requestAnimationFrame(loop);}
+$('rpm').oninput=e=>{st.rpm=+e.target.value;};
+$('play').onclick=()=>{st.play=!st.play;$('play').textContent=st.play?'Pausar':'Continuar';};
+$('dir').onclick=()=>{st.dir*=-1;};
+$('walls').onclick=()=>{st.walls=!st.walls;$('walls').textContent=st.walls?'Remover paredes':'Colocar paredes';};
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

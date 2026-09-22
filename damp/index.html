@@ -63,6 +63,15 @@
   .aviso a { color: var(--primaria); }
   code { background: var(--primaria-fraca); padding: 1px 5px; border-radius: 5px; font-size: 12px; }
   .rodape { color: var(--fraco); font-size: 12px; margin-top: 14px; text-align: center; }
+  /* navegação entre as páginas do DAMP */
+  .paginas { display: flex; gap: 6px; margin: 0 0 14px; }
+  .paginas a {
+    flex: 1; text-align: center; text-decoration: none;
+    font-size: 14px; font-weight: 600; color: var(--fraco);
+    border: 1px solid var(--linha); border-radius: 12px; padding: 10px 8px;
+  }
+  .paginas a[aria-current="page"] { color: #fff; background: var(--primaria); border-color: var(--primaria); }
+
   /* abas */
   .abas { display: flex; gap: 6px; margin: 14px 0 10px; }
   .abas button {
@@ -111,6 +120,11 @@
 
 <h1>DAMP</h1>
 <div class="sub">Dispositivo Assistivo de Mão e Punho · <b>Rev. I</b> — dez chaves de fim de curso</div>
+
+<nav class="paginas">
+  <a href="./" aria-current="page">Controle</a>
+  <a href="animacao/">Animação do fuso</a>
+</nav>
 
 <div id="semSuporte" class="aviso" hidden>
   <h2>Este navegador não fala Bluetooth</h2>
