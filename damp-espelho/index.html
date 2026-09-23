@@ -9,69 +9,40 @@
 <link rel="apple-touch-icon" href="../assets/icons/recati-favicon.png">
 <link rel="stylesheet" href="../damp-assets/damp.css">
 <style>
-  .topo { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .topo { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
   .topo h1 { flex:1; }
   .pt { width:10px; height:10px; border-radius:50%; background:var(--linha); flex:none; }
   .pt.on { background:var(--ok); }
 
-  /* ---- o comando, em letra grande: e o que o jurado olha ---- */
-  .comando { text-align:center; padding:18px 14px; }
-  .comando .frase { font-size:26px; font-weight:700; letter-spacing:-.4px; }
-  .comando .frase.nada { color:var(--fraco); font-size:18px; font-weight:600; }
-  .comando .byte { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-                   font-size:13px; color:var(--primaria); margin-top:4px; }
-  .comando .reage { font-size:14px; color:var(--fraco); margin-top:8px; }
-  .comando.vivo { border-color:var(--ok); box-shadow:0 0 0 1px var(--ok); }
+  .palco { background:var(--card); border:1px solid var(--linha); border-radius:14px;
+           padding:8px 8px 4px; }
+  .palco svg { display:block; width:100%; height:auto; }
+  .palco.vivo { border-color:var(--ok); box-shadow:0 0 0 1px var(--ok); }
 
-  /* ---- a foto com os marcadores ---- */
-  .mapa { position:relative; line-height:0; border-radius:12px; overflow:hidden;
-          border:1px solid var(--linha); background:#000; }
-  .mapa img { width:100%; height:auto; display:block; }
-  .marca { position:absolute; transform:translate(-50%,-50%);
-           width:26px; height:26px; border-radius:50%;
-           background:rgba(15,23,42,.72); color:#fff; border:2px solid #fff;
-           font:700 12px/22px sans-serif; text-align:center;
-           box-shadow:0 1px 4px rgba(0,0,0,.5); transition:.15s; }
-  .marca.on { background:var(--ok); border-color:#fff; transform:translate(-50%,-50%) scale(1.35); }
-  .marca.alerta { background:var(--alerta); color:#3a2c00; }
-  .marca.erro { background:var(--erro); }
+  .osso   { fill:var(--primaria-fraca); stroke:var(--primaria); stroke-width:2.5; }
+  .braco  { fill:var(--linha);   stroke:var(--fraco); stroke-width:2.5; }
+  .cabo   { stroke:var(--erro);  stroke-width:2.6; fill:none; stroke-linecap:round; }
+  .fuso   { stroke:var(--fraco); stroke-width:3;   stroke-linecap:round; }
+  .rosca  { stroke:var(--fraco); stroke-width:1.4; fill:none; }
+  .porca  { fill:var(--primaria-fraca); stroke:var(--primaria); stroke-width:2; }
+  .chave  { fill:var(--linha); stroke:var(--fraco); stroke-width:1.5; }
+  .chave.bate { fill:var(--erro); stroke:var(--erro); }
+  .rot    { fill:var(--fraco); font:11px sans-serif; }
 
-  .legenda { list-style:none; margin:10px 0 0; padding:0; font-size:13px; }
-  .legenda li { display:flex; gap:8px; align-items:baseline; padding:4px 0;
-                border-bottom:1px solid var(--linha); }
-  .legenda li:last-child { border-bottom:0; }
-  .legenda .n { flex:none; width:20px; height:20px; border-radius:50%;
-                background:var(--linha); color:var(--txt);
-                font:700 11px/20px sans-serif; text-align:center; }
-  .legenda .n.on { background:var(--ok); color:#fff; }
-  .legenda .est { margin-left:auto; color:var(--fraco); font-size:12px; text-align:right; }
+  .faixa { text-align:center; padding:12px 10px 4px; }
+  .faixa .frase { font-size:24px; font-weight:700; letter-spacing:-.4px; }
+  .faixa .frase.nada { font-size:16px; color:var(--fraco); font-weight:600; }
+  .faixa .sub2 { font-size:13px; color:var(--fraco); margin-top:3px; }
 
-  /* ---- os motores ---- */
-  .motor { display:flex; align-items:center; gap:8px; padding:8px 0;
-           border-bottom:1px solid var(--linha); }
-  .motor:last-child { border-bottom:0; }
-  .motor .nome { flex:1; font-weight:600; font-size:14px; }
-  .motor .dir { font-size:12px; font-weight:700; padding:3px 8px; border-radius:999px;
-                background:var(--linha); color:var(--fraco); }
-  .motor .dir.and { background:var(--ok); color:#fff; }
-  .motor .pos { font-size:13px; font-variant-numeric:tabular-nums; width:42px; text-align:right; }
-  .chaves { display:flex; gap:3px; }
-  .ch { width:9px; height:9px; border-radius:2px; background:var(--linha); }
-  .ch.bate { background:var(--erro); }
+  .cmds { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+  .cmds button { padding:14px 8px; font-size:14px; }
+  .cmds button.parar { grid-column:1 / -1; background:var(--erro); color:#fff; }
 
-  .barra { height:5px; background:var(--linha); border-radius:3px; overflow:hidden; margin-top:4px; }
-  .barra > i { display:block; height:100%; background:var(--primaria); width:0; transition:width .15s linear; }
-
-  /* ---- historico ---- */
-  #hist { list-style:none; margin:0; padding:0; font-size:13px; max-height:240px; overflow:auto; }
-  #hist li { padding:6px 0; border-bottom:1px solid var(--linha); display:flex; gap:8px; }
-  #hist .h { color:var(--fraco); font-variant-numeric:tabular-nums; flex:none; }
-  #hist li:last-child { border-bottom:0; }
-
-  table.ref { width:100%; border-collapse:collapse; font-size:13px; }
-  table.ref th, table.ref td { text-align:left; padding:7px 4px; border-bottom:1px solid var(--linha); }
-  table.ref th { font-size:11px; text-transform:uppercase; color:var(--fraco); letter-spacing:.3px; }
-  table.ref code { color:var(--primaria); }
+  .estado { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .chip { background:var(--bg); border:1px solid var(--linha); border-radius:9px;
+          padding:6px 9px; font-size:12px; }
+  .chip b { font-variant-numeric:tabular-nums; }
+  .chip.and { border-color:var(--ok); }
 </style>
 </head>
 <body>
@@ -82,162 +53,188 @@
   <h1>Espelhamento</h1>
   <span class="pt" id="ptConn"></span>
 </div>
-<p class="sub" id="linhaConn">Conecte no Bluetooth do DAMP para ver, ao vivo, o que ele
-está recebendo e o que deveria estar fazendo.</p>
+<p class="sub" id="linhaConn">A mão desenhada faz o que o aparelho está fazendo.
+Conecte no Bluetooth, ou use os botões para ver cada comando.</p>
 
-<div id="semBle" class="nota ruim" hidden>
-  <b>Este navegador não tem Bluetooth Web.</b> No iPhone, nenhum navegador tem —
-  é limitação do iOS, não da página. Use o <b>Chrome no Android</b> ou no computador.
+<div id="semBle" class="nota atencao" hidden>
+  <b>Este navegador não tem Bluetooth Web</b> — no iPhone nenhum tem, é limitação do
+  iOS. A animação dos botões funciona assim mesmo; só o espelhamento ao vivo precisa
+  do Chrome no Android ou no computador.
 </div>
 
 <button id="btConn" class="acao" style="width:100%">Conectar no DAMP</button>
 
-<!-- ------------------------------------------------------------- comando -->
-<div class="cartao comando" id="cxComando" style="margin-top:12px">
-  <div class="frase nada" id="frase">Nenhum comando ainda</div>
-  <div class="byte" id="byte"></div>
-  <div class="reage" id="reage">O último comando de voz que o aparelho registrou aparece aqui.</div>
-</div>
+<!-- ------------------------------------------------------------- a mão -->
+<div class="palco" id="palco" style="margin-top:12px">
+  <svg viewBox="0 0 400 300" role="img" aria-label="Mão e punho do DAMP; os dedos fecham e o punho dobra conforme o comando">
 
-<!-- ------------------------------------------------------------- o mapa -->
-<div class="cartao">
-  <h2>Onde cada coisa está</h2>
-  <p class="mini" style="margin:0 0 10px">Os marcadores acendem conforme a peça entra em
-  ação. As posições são aproximadas, marcadas sobre a foto do aparelho.</p>
+    <!-- antebraço -->
+    <rect class="braco" x="6" y="88" width="128" height="50" rx="14"/>
+    <text class="rot" x="18" y="80">antebraço</text>
 
-  <div class="mapa" id="mapa">
-    <img src="aparelho.jpg" alt="Foto do DAMP aberto, com as placas na parte de cima e os atuadores dos dedos embaixo">
+    <!-- o mini fuso que puxa os dedos -->
+    <line class="fuso" x1="46" y1="222" x2="300" y2="222"/>
+    <path class="rosca" id="roscas" d=""/>
+    <rect class="porca" id="porca" x="60" y="208" width="30" height="28" rx="4"/>
+    <path class="cabo" id="tendao" d="M90 236 L300 236"/>
+    <circle class="cabo" id="ancora" cx="300" cy="236" r="4" fill="none"/>
+    <text class="rot" x="46" y="262">mini fuso · a porca caminha e o cabo traciona o dedo</text>
+    <rect class="chave" id="chA" x="40" y="206" width="7" height="32" rx="2"/>
+    <rect class="chave" id="chF" x="299" y="206" width="7" height="32" rx="2"/>
+    <text class="rot" x="26" y="200">fim</text>
+    <text class="rot" x="292" y="200">fim</text>
+
+    <!-- a mão, que gira no punho -->
+    <g id="gMao">
+      <rect class="osso" x="142" y="84" width="70" height="56" rx="12"/>
+      <circle cx="146" cy="112" r="5" fill="var(--fraco)"/>
+
+      <g transform="translate(210,92)"><g id="f3p">
+        <rect class="osso" x="0" y="-5.5" width="42" height="11" rx="5.5"/>
+        <g id="f3d" transform="translate(42,0)">
+          <rect class="osso" x="0" y="-4.5" width="32" height="9" rx="4.5"/></g>
+      </g></g>
+
+      <g transform="translate(212,110)"><g id="f2p">
+        <rect class="osso" x="0" y="-5.5" width="46" height="11" rx="5.5"/>
+        <g id="f2d" transform="translate(46,0)">
+          <rect class="osso" x="0" y="-4.5" width="34" height="9" rx="4.5"/></g>
+      </g></g>
+
+      <g transform="translate(210,128)"><g id="f1p">
+        <rect class="osso" x="0" y="-5.5" width="40" height="11" rx="5.5"/>
+        <g id="f1d" transform="translate(40,0)">
+          <rect class="osso" x="0" y="-4.5" width="30" height="9" rx="4.5"/></g>
+      </g></g>
+
+      <!-- o polegar sai do lado de baixo da palma, num angulo proprio: em
+           vista lateral ele nao fica na fila dos outros tres. -->
+      <g transform="translate(170,138) rotate(38)"><g id="f4p">
+        <rect class="osso" x="0" y="-6.5" width="32" height="13" rx="6.5"/>
+        <g id="f4d" transform="translate(32,0)">
+          <rect class="osso" x="0" y="-5.5" width="24" height="11" rx="5.5"/></g>
+      </g></g>
+    </g>
+
+    <text class="rot" x="150" y="76" id="rotPunho">punho</text>
+  </svg>
+
+  <div class="faixa">
+    <div class="frase nada" id="frase">Parado</div>
+    <div class="sub2" id="sub2">Nenhum comando ainda.</div>
   </div>
-
-  <ul class="legenda" id="legenda"></ul>
 </div>
 
-<!-- ------------------------------------------------------------- motores -->
-<div class="cartao">
-  <h2>O que deveria estar se movendo</h2>
-  <p class="mini" style="margin:0 0 6px">Direção, posição e as chaves de fim de curso de
-  cada conjunto. Quadradinho vermelho = chave encostada, e o motor para.</p>
-  <div id="motores"></div>
+<!-- ------------------------------------------------------------- botões -->
+<div class="cmds">
+  <button data-cmd="11">abrir mão</button>
+  <button data-cmd="12">fecha mão</button>
+  <button data-cmd="14">puxa punho</button>
+  <button data-cmd="15">solta punho</button>
+  <button data-cmd="13" class="parar">para DAMP</button>
 </div>
+<p class="mini" style="margin-top:8px">Os botões movem só o desenho — eles não mandam
+nada para o aparelho. Servem para mostrar cada comando sem o DAMP por perto.</p>
 
-<!-- ------------------------------------------------------------- historico -->
-<div class="cartao">
-  <h2>O que foi acontecendo</h2>
-  <ul id="hist"><li class="fraco">Ainda nada — conecte e dê um comando.</li></ul>
-</div>
-
-<!-- ------------------------------------------------------------- referencia -->
-<div class="cartao">
-  <h2>As cinco frases, e o que cada uma faz</h2>
-  <table class="ref">
-    <tr><th>frase</th><th>byte</th><th>o DAMP deve</th></tr>
-    <tr><td>abrir mão</td><td><code>0x11</code></td><td>abrir os quatro dedos</td></tr>
-    <tr><td>fecha mão</td><td><code>0x12</code></td><td>fechar os quatro dedos</td></tr>
-    <tr><td>para DAMP</td><td><code>0x13</code></td><td>parar tudo, na hora</td></tr>
-    <tr><td>puxa punho</td><td><code>0x14</code></td><td>fechar o punho</td></tr>
-    <tr><td>solta punho</td><td><code>0x15</code></td><td>abrir o punho</td></tr>
-  </table>
-  <p class="mini" style="margin-top:8px">Ruído, ou nada reconhecido, não manda byte nenhum
-  — o coprocessador fica calado de propósito.</p>
-</div>
+<div class="estado" id="estado"></div>
 
 <script>
 'use strict';
-
-// ---------------------------------------------------------------- protocolo
-// O mesmo Nordic UART Service do firmware, e o mesmo que o app de controle usa.
 const NUS = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
 const RX  = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
 const TX  = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
-
 const $ = id => document.getElementById(id);
 
+// As cinco frases, e o que cada byte deve provocar no desenho.
 const FRASES = {
-  '11': { f: 'abrir mão',   r: 'abrir os quatro dedos' },
-  '12': { f: 'fecha mão',   r: 'fechar os quatro dedos' },
-  '13': { f: 'para DAMP',   r: 'parar tudo, na hora' },
-  '14': { f: 'puxa punho',  r: 'fechar o punho' },
-  '15': { f: 'solta punho', r: 'abrir o punho' },
+  '11': { f:'abrir mão',   r:'abrindo os quatro dedos',  faz: () => { alvo.dedos = 0;   } },
+  '12': { f:'fecha mão',   r:'fechando os quatro dedos', faz: () => { alvo.dedos = 100; } },
+  '13': { f:'para DAMP',   r:'parando tudo, na hora',    faz: parar },
+  '14': { f:'puxa punho',  r:'fechando o punho',         faz: () => { alvo.punho = 30; } },
+  '15': { f:'solta punho', r:'abrindo o punho',          faz: () => { alvo.punho = -22; } },
 };
 
-const MOTORES = [
-  { k: 'W',  nome: 'Punho' },
-  { k: 'F1', nome: 'Mindinho + anelar' },
-  { k: 'F2', nome: 'Médio' },
-  { k: 'F3', nome: 'Indicador' },
-  { k: 'F4', nome: 'Polegar' },
-];
+// ⚠ GRAUS, NAO PORCENTAGEM: o desenho trabalha em angulo, e a ponte entre os
+//   dois vive so aqui. A posicao que o firmware manda e 0..100, com 100 =
+//   FECHADO (o firmware manda HAND:POS:100 para fechar).
+const FECHADO_P = 82, FECHADO_D = 76;   // quanto cada falange gira, fechada
+const PUNHO_MAX = 30, PUNHO_MIN = -22;
 
-// ⚠ AS POSICOES SAO MARCADAS A OLHO sobre a foto, em % da largura e da altura.
-//   Em % e nao em pixel para a foto poder encolher no celular sem o marcador
-//   desgrudar da peca. Nao sao medidas -- sao anotacoes, e a legenda embaixo e
-//   que diz quem e quem.
-const PECAS = [
-  { id:'l298',  n:1, x:24, y:8.7,  nome:'Driver L298N dos dedos' },
-  { id:'bat',   n:2, x:42, y:9.3,  nome:'Bateria LiPo' },
-  { id:'buck',  n:3, x:68, y:9.7,  nome:'Conversores de tensão' },
-  { id:'manche',n:4, x:66, y:17.5, nome:'Manche (joystick)' },
-  { id:'s3',    n:5, x:18, y:20,   nome:'ESP32-S3 — reconhece a voz' },
-  { id:'esp',   n:6, x:36, y:25,   nome:'ESP32 da placa — o cérebro' },
-  { id:'punho', n:7, x:47, y:30,   nome:'Fuso do punho' },
-  { id:'pico',  n:8, x:20, y:30.5, nome:'Raspberry Pi Pico — lê as 10 chaves' },
-  { id:'dedos', n:9, x:32, y:62,   nome:'Mini fusos dos dedos' },
-];
+// onde o desenho esta, e para onde vai. A animacao so persegue o alvo.
+let atual = { dedos: 0, punho: 0 };
+let alvo  = { dedos: 0, punho: 0 };
+let porFora = { f1:null, f2:null, f3:null, f4:null };   // posicoes vindas do aparelho
+let chaves = { abre:false, fecha:false };
+let vivo = false, ultimoByte = null;
 
-let disp = null, carRx = null, carTx = null, relogio = null;
-let buf = '', ultimoByte = null, ultimoEstado = {};
+function parar() { alvo.dedos = atual.dedos; alvo.punho = atual.punho; porFora = {f1:null,f2:null,f3:null,f4:null}; }
 
-// ---------------------------------------------------------------- tela
-function montar() {
-  const m = $('mapa'), leg = $('legenda');
-  for (const p of PECAS) {
-    const d = document.createElement('div');
-    d.className = 'marca'; d.id = 'mc-' + p.id; d.textContent = p.n;
-    d.style.left = p.x + '%'; d.style.top = p.y + '%';
-    d.title = p.nome;
-    m.appendChild(d);
+// ---- as roscas do fuso, desenhadas uma vez -----------------------------
+(function () {
+  let d = '';
+  for (let x = 50; x < 296; x += 12) d += `M${x} 215l6 14`;
+  $('roscas').setAttribute('d', d);
+})();
 
-    const li = document.createElement('li');
-    li.innerHTML = `<span class="n" id="lg-${p.id}">${p.n}</span>
-                    <span>${p.nome}</span>
-                    <span class="est" id="es-${p.id}">—</span>`;
-    leg.appendChild(li);
+// ---- o laço da animação ------------------------------------------------
+function curva(p) { return p < 0 ? 0 : p > 100 ? 100 : p; }
+
+function desenhar() {
+  // persegue o alvo com passo proporcional: comeca rapido e assenta macio,
+  // que e como um motor com fuso realmente para.
+  atual.dedos += (alvo.dedos - atual.dedos) * 0.12;
+  atual.punho += (alvo.punho - atual.punho) * 0.12;
+
+  for (const [k, id] of [['f1','f1'],['f2','f2'],['f3','f3'],['f4','f4']]) {
+    // Se o aparelho mandou a posicao daquele dedo, ela manda. Senao, todos
+    // seguem o alvo comum -- que e o caso dos botoes de demonstracao.
+    const p = curva(porFora[k] === null || porFora[k] === undefined ? atual.dedos : porFora[k]);
+    const esc = k === 'f4' ? 0.62 : 1;      // o polegar fecha menos
+    $(id + 'p').setAttribute('transform', 'rotate(' + (p / 100 * FECHADO_P * esc) + ')');
+    $(id + 'd').setAttribute('transform',
+      'translate(' + ({f1:40,f2:46,f3:42,f4:32}[k]) + ',0) rotate(' + (p / 100 * FECHADO_D * esc) + ')');
   }
-  const cx = $('motores');
-  for (const mo of MOTORES) {
-    const d = document.createElement('div');
-    d.innerHTML = `<div class="motor">
-        <span class="nome">${mo.nome}</span>
-        <span class="chaves"><i class="ch" id="ca-${mo.k}"></i><i class="ch" id="cf-${mo.k}"></i></span>
-        <span class="dir" id="dir-${mo.k}">parado</span>
-        <span class="pos" id="pos-${mo.k}">—</span>
-      </div>
-      <div class="barra"><i id="bar-${mo.k}"></i></div>`;
-    cx.appendChild(d);
-  }
+
+  $('gMao').setAttribute('transform', 'rotate(' + atual.punho + ',146,112)');
+
+  // o fuso: a porca caminha com o fechamento, e o cabo encurta junto
+  const media = porFora.f1 === null || porFora.f1 === undefined ? atual.dedos
+    : ([porFora.f1,porFora.f2,porFora.f3,porFora.f4].filter(v => v != null)
+        .reduce((a,b) => a+b, 0) / 4);
+  const x = 60 + (media / 100) * 205;
+  $('porca').setAttribute('x', x);
+  $('tendao').setAttribute('d', 'M' + (x + 30) + ' 236 L300 236');
+  $('chA').classList.toggle('bate', chaves.abre  || media <= 1);
+  $('chF').classList.toggle('bate', chaves.fecha || media >= 99);
+
+  requestAnimationFrame(desenhar);
+}
+requestAnimationFrame(desenhar);
+
+// ---- o que a faixa diz -------------------------------------------------
+function dizer(frase, sub, destaque) {
+  $('frase').textContent = frase;
+  $('frase').className = 'frase' + (destaque ? '' : ' nada');
+  $('sub2').textContent = sub;
 }
 
-function acender(id, ligado, classe) {
-  const mc = $('mc-' + id), lg = $('lg-' + id);
-  if (!mc) return;
-  mc.className = 'marca' + (ligado ? ' on' : '') + (classe ? ' ' + classe : '');
-  lg.className = 'n' + (ligado ? ' on' : '');
-}
-const estado = (id, txt) => { const e = $('es-' + id); if (e) e.textContent = txt; };
-
-function anotar(texto) {
-  const ul = $('hist');
-  if (ul.firstElementChild && ul.firstElementChild.classList.contains('fraco')) ul.innerHTML = '';
-  const li = document.createElement('li');
-  const agora = new Date();
-  li.innerHTML = `<span class="h">${String(agora.getHours()).padStart(2,'0')}:` +
-                 `${String(agora.getMinutes()).padStart(2,'0')}:` +
-                 `${String(agora.getSeconds()).padStart(2,'0')}</span><span>${texto}</span>`;
-  ul.insertBefore(li, ul.firstChild);
-  while (ul.children.length > 40) ul.removeChild(ul.lastChild);
+function chips(lista) {
+  $('estado').innerHTML = lista.map(c =>
+    `<span class="chip${c.and ? ' and' : ''}">${c.t} <b>${c.v}</b></span>`).join('');
 }
 
-// ---------------------------------------------------------------- conexão
+// ---- os botões (só o desenho) ------------------------------------------
+document.querySelectorAll('.cmds button').forEach(b => {
+  b.onclick = () => {
+    const c = FRASES[b.dataset.cmd];
+    c.faz();
+    dizer(c.f, (vivo ? 'Só na animação — ' : '') + c.r + '.', true);
+  };
+});
+
+// ---- Bluetooth ---------------------------------------------------------
+let disp = null, carRx = null, carTx = null, relogio = null, buf = '';
+
 async function conectar() {
   try {
     $('linhaConn').textContent = 'Procurando o DAMP…';
@@ -250,40 +247,32 @@ async function conectar() {
     carTx = await svc.getCharacteristic(TX);
     await carTx.startNotifications();
     carTx.addEventListener('characteristicvaluechanged', chegou);
-
+    vivo = true;
     $('ptConn').classList.add('on');
-    $('linhaConn').textContent = 'Ligado em ' + (disp.name || 'DAMP') + '. Fale um comando.';
+    $('palco').classList.add('vivo');
     $('btConn').textContent = 'Desconectar';
-    anotar('Conectado.');
-
-    // ⚠ PERGUNTA DE TEMPOS EM TEMPOS, e nao espera notificacao: o firmware
-    //   responde a quem pergunta, e nao avisa sozinho quando a voz chega. Sem
-    //   este relogio a tela ficaria parada justamente durante o comando.
-    pedir();
-    relogio = setInterval(pedir, 350);
+    $('linhaConn').textContent = 'Ligado em ' + (disp.name || 'DAMP') + '. A mão segue o aparelho.';
+    dizer('Ligado', 'Esperando um comando.', false);
+    // ⚠ O firmware responde a quem pergunta e NAO avisa sozinho quando a voz
+    //   chega. Sem este relogio a mao ficaria parada justamente no comando.
+    pedir(); relogio = setInterval(pedir, 300);
   } catch (e) {
     $('linhaConn').textContent = (e && e.name === 'NotFoundError')
       ? 'Nenhum aparelho escolhido.' : 'Não consegui conectar: ' + (e.message || e);
   }
 }
 
-function desconectar() {
-  if (relogio) { clearInterval(relogio); relogio = null; }
-  if (disp && disp.gatt.connected) disp.gatt.disconnect();
-  caiu();
-}
+function desconectar() { if (disp && disp.gatt.connected) disp.gatt.disconnect(); caiu(); }
 
 function caiu() {
   if (relogio) { clearInterval(relogio); relogio = null; }
+  vivo = false; porFora = {f1:null,f2:null,f3:null,f4:null};
+  chaves = { abre:false, fecha:false };
   $('ptConn').classList.remove('on');
+  $('palco').classList.remove('vivo');
   $('btConn').textContent = 'Conectar no DAMP';
-  $('linhaConn').textContent = 'Desligado.';
-  for (const p of PECAS) { acender(p.id, false); estado(p.id, '—'); }
-  for (const mo of MOTORES) {
-    $('dir-' + mo.k).textContent = 'parado'; $('dir-' + mo.k).className = 'dir';
-    $('pos-' + mo.k).textContent = '—'; $('bar-' + mo.k).style.width = '0';
-  }
-  anotar('Desconectado.');
+  $('linhaConn').textContent = 'Desligado. Os botões continuam animando o desenho.';
+  chips([]);
 }
 
 function pedir() {
@@ -291,19 +280,17 @@ function pedir() {
   carRx.writeValue(new TextEncoder().encode('STATUS?\n')).catch(() => {});
 }
 
-// As notificações podem vir partidas: remonta por linha.
 function chegou(ev) {
   buf += new TextDecoder().decode(ev.target.value);
   let i;
   while ((i = buf.indexOf('\n')) >= 0) {
-    const linha = buf.slice(0, i).trim();
-    buf = buf.slice(i + 1);
-    if (linha.startsWith('ST;')) usar(analisar(linha));
+    const l = buf.slice(0, i).trim(); buf = buf.slice(i + 1);
+    if (l.startsWith('ST;')) usar(analisar(l));
   }
 }
 
-/** Divide no PRIMEIRO '=' e ignora campo que não conhece — firmware mais novo
- *  que a página não quebra a página. É o mesmo critério do app de controle. */
+/** Divide no PRIMEIRO '=' e ignora campo desconhecido: firmware mais novo que
+ *  a página não quebra a página. Mesmo critério do app de controle. */
 function analisar(linha) {
   const st = { motores: {} };
   for (const campo of linha.slice(3).split(';')) {
@@ -312,112 +299,63 @@ function analisar(linha) {
     const k = campo.slice(0, p), v = campo.slice(p + 1);
     if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
-      st.motores[k] = { dir, extra: extra || '' };
+      st.motores[k] = { dir: dir || 'STOP', extra: extra || '' };
     } else st[k] = v;
   }
   return st;
 }
 
 function usar(st) {
+  // ---- as posições dos dedos mandam no desenho -------------------------
+  // 100 = FECHADO. É o mesmo sentido do firmware, que manda HAND:POS:100
+  // para fechar a mão.
+  for (const k of ['F1','F2','F3','F4']) {
+    const m = st.motores[k]; if (!m) continue;
+    const p = parseInt(m.extra, 10);
+    porFora[k.toLowerCase()] = isNaN(p) ? null : p;
+  }
+
+  // ---- o punho não manda posição, só sentido ---------------------------
+  // ⚠ UP e DOWN, nao "parado": foi o que o firmware devolve (punho.cpp).
+  //   Entao o angulo é INTEGRADO enquanto o motor anda, e congela no STOP --
+  //   e é assim que a chave de fim de curso aparece: o desenho para junto.
+  const w = st.motores.W;
+  if (w) {
+    if (w.dir === 'UP')        alvo.punho = PUNHO_MAX;
+    else if (w.dir === 'DOWN') alvo.punho = PUNHO_MIN;
+    else                       alvo.punho = atual.punho;
+    chaves.fecha = w.extra[0] === '1';
+    chaves.abre  = w.extra[1] === '1';
+  }
+
   // ---- o comando de voz ------------------------------------------------
-  // VRAW traz o ULTIMO byte que chegou pela UART da voz. Ele NAO se apaga, e
-  // por isso a tela diz "ultimo comando", e nao "agora": repetir a mesma
-  // frase nao muda o campo, e fingir que mudou seria inventar.
+  // VRAW guarda o ÚLTIMO byte e não se apaga: repetir a mesma frase não muda
+  // o campo. Por isso só se anuncia quando ele MUDA.
   const raw = (st.VRAW || '-').toUpperCase();
   if (raw !== '-' && raw !== ultimoByte) {
     ultimoByte = raw;
     const f = FRASES[raw];
-    $('frase').textContent = f ? f.f : 'byte 0x' + raw;
-    $('frase').className = 'frase';
-    $('byte').textContent = 'byte 0x' + raw + ' pela UART da voz';
-    $('reage').textContent = f ? 'O DAMP deve ' + f.r + '.' : 'Byte fora da tabela das cinco frases.';
-    $('cxComando').classList.add('vivo');
-    anotar('Voz: <b>' + (f ? f.f : '0x' + raw) + '</b>' + (f ? ' — ' + f.r : ''));
-    setTimeout(() => $('cxComando').classList.remove('vivo'), 1800);
-    acender('s3', true); setTimeout(() => acender('s3', false), 1800);
-  }
-  estado('s3', raw === '-' ? 'nenhum byte ainda' : 'último 0x' + raw);
-
-  // ---- os motores -------------------------------------------------------
-  let algumDedo = false, punhoAnda = false;
-  const fcd = (st.FCD && st.FCD.length === 8) ? st.FCD : null;
-  for (let i = 0; i < MOTORES.length; i++) {
-    const mo = MOTORES[i], m = st.motores[mo.k];
-    if (!m) continue;
-    const anda = m.dir && m.dir !== '-' && m.dir.toLowerCase() !== 'parado';
-    const el = $('dir-' + mo.k);
-    el.textContent = anda ? m.dir : 'parado';
-    el.className = 'dir' + (anda ? ' and' : '');
-
-    if (mo.k === 'W') {
-      // No punho o "extra" sao as DUAS chaves: primeiro a de FECHAR, depois a de ABRIR.
-      $('pos-W').textContent = '';
-      const ca = m.extra[1], cf = m.extra[0];
-      $('ca-W').className = 'ch' + (ca && ca !== '-' && ca !== '0' ? ' bate' : '');
-      $('cf-W').className = 'ch' + (cf && cf !== '-' && cf !== '0' ? ' bate' : '');
-      punhoAnda = anda;
-    } else {
-      const pos = parseInt(m.extra, 10);
-      $('pos-' + mo.k).textContent = isNaN(pos) ? '—' : pos + '%';
-      $('bar-' + mo.k).style.width = (isNaN(pos) ? 0 : pos) + '%';
-      if (fcd) {
-        const d = i - 1;   // W e o indice 0
-        $('ca-' + mo.k).className = 'ch' + (fcd[d * 2]     === '1' ? ' bate' : '');
-        $('cf-' + mo.k).className = 'ch' + (fcd[d * 2 + 1] === '1' ? ' bate' : '');
-      }
-      if (anda) algumDedo = true;
-    }
+    dizer(f ? f.f : 'byte 0x' + raw, f ? 'O DAMP está ' + f.r + '.' : 'Byte fora das cinco frases.', true);
   }
 
-  acender('dedos', algumDedo); estado('dedos', algumDedo ? 'movendo' : 'parados');
-  acender('l298', algumDedo); estado('l298', algumDedo ? 'acionando' : 'em repouso');
-  acender('punho', punhoAnda); estado('punho', punhoAnda ? 'movendo' : 'parado');
-
-  // ---- o Pico e as chaves ----------------------------------------------
-  // EXP e a palavra crua do expansor. FFFF quer dizer barramento mudo -- o
-  // firmware finge FFFF de proposito, que e o lado seguro. Isso NAO e "dez
-  // chaves acionadas", e marcar como alerta em vez de verde evita ler ruido
-  // como se fosse medida.
-  if (st.EXP) {
-    const mudo = st.EXP.toUpperCase() === 'FFFF';
-    acender('pico', !mudo, mudo ? 'erro' : '');
-    estado('pico', mudo ? 'MUDO — sem resposta' : 'respondendo · ' + st.EXP);
+  // ---- o rodapé --------------------------------------------------------
+  const anda = k => st.motores[k] && st.motores[k].dir !== 'STOP' && st.motores[k].dir !== '-';
+  const lista = [];
+  if (w) lista.push({ t:'punho', v: w.dir === 'UP' ? 'puxando' : w.dir === 'DOWN' ? 'soltando' : 'parado', and: anda('W') });
+  for (const [k, nome] of [['F3','indicador'],['F2','médio'],['F1','min+anelar'],['F4','polegar']]) {
+    const m = st.motores[k]; if (!m) continue;
+    lista.push({ t: nome, v: (isNaN(parseInt(m.extra,10)) ? '—' : m.extra + '%'), and: anda(k) });
   }
+  if (st.VBAT) lista.push({ t:'bateria', v: st.VBAT.split(',')[0] + ' V' });
+  if (st.EXP && st.EXP.toUpperCase() === 'FFFF') lista.push({ t:'expansor', v:'MUDO' });
+  chips(lista);
 
-  // ---- o cerebro e a bateria -------------------------------------------
-  acender('esp', true); estado('esp', 'conectado');
-  if (st.VBAT) {
-    const [v, faixa] = st.VBAT.split(',');
-    const ruim = faixa && /critic|baix/i.test(faixa);
-    acender('bat', !ruim, ruim ? 'alerta' : '');
-    estado('bat', v + ' V' + (faixa ? ' · ' + faixa : ''));
-    acender('buck', true); estado('buck', 'alimentando');
-  }
-
-  // ---- o manche ---------------------------------------------------------
-  if (st.JOY) {
-    const [vert, lat] = st.JOY.split(',').map(Number);
-    const mexe = Math.abs(vert) > 20 || Math.abs(lat) > 20;
-    acender('manche', mexe);
-    estado('manche', mexe ? 'em uso' : 'no centro');
-  }
-
-  // ---- o que mudou vira historico ---------------------------------------
-  for (const mo of MOTORES) {
-    const m = st.motores[mo.k]; if (!m) continue;
-    const anda = m.dir && m.dir !== '-' && m.dir.toLowerCase() !== 'parado';
-    if (anda && !ultimoEstado[mo.k]) anotar(mo.nome + ': começou a mover (' + m.dir + ')');
-    if (!anda && ultimoEstado[mo.k]) anotar(mo.nome + ': parou');
-    ultimoEstado[mo.k] = anda;
-  }
+  // se nada se move e nenhuma voz chegou, a faixa volta ao repouso
+  if (!anda('W') && !['F1','F2','F3','F4'].some(anda) && raw === '-')
+    dizer('Parado', 'Esperando um comando.', false);
 }
 
-// ---------------------------------------------------------------- partida
-montar();
-if (!navigator.bluetooth) {
-  $('semBle').hidden = false;
-  $('btConn').disabled = true;
-}
+if (!navigator.bluetooth) { $('semBle').hidden = false; $('btConn').disabled = true; }
 $('btConn').onclick = () => (disp && disp.gatt.connected) ? desconectar() : conectar();
 </script>
 </body>
