@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
 <title>DAMP — atuadores</title>
+<link rel="icon" href="../assets/icons/recati-favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icons/recati-favicon.png">
 <link rel="stylesheet" href="../damp-assets/damp.css">
 <style>
   .at { margin-bottom: 14px; }
@@ -12,12 +14,9 @@
   .cab h2 { flex: 1; }
   .ordem { font-size: 11px; font-weight: 700; color: var(--fraco);
            letter-spacing: .4px; text-transform: uppercase; }
-  .figura {
-    margin: 12px 0; background: var(--bg); border: 1px solid var(--linha);
-    border-radius: 10px; overflow: hidden; position: relative;
-  }
-  .figura svg { display: block; width: 100%; height: auto; }
-  .figura img { display: block; width: 100%; height: auto; }
+  .figura { margin: 12px 0; background: var(--bg); border: 1px solid var(--linha);
+            border-radius: 10px; overflow: hidden; }
+  .figura svg, .figura img { display: block; width: 100%; height: auto; }
   .legenda { font-size: 11px; color: var(--fraco); padding: 6px 10px;
              border-top: 1px solid var(--linha); }
   .dados { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 0; }
@@ -25,15 +24,17 @@
           border-radius: 9px; padding: 7px 10px; font-size: 12px; }
   .dado b { display: block; font-size: 14px; font-variant-numeric: tabular-nums; }
   .dado.falta b { color: var(--alerta); }
-  .porque { font-size: 14px; margin: 10px 0 0; }
-  .porque b { color: var(--txt); }
+  .oque, .porque { font-size: 14px; margin: 10px 0 0; }
+  .rotulo { font-size: 11px; font-weight: 700; letter-spacing: .4px;
+            text-transform: uppercase; color: var(--fraco); display: block; }
   .fotoAcao { margin-top: 8px; }
   .fotoAcao button { font-size: 13px; padding: 8px 12px; }
+  .tag.teoria { background: var(--primaria-fraca); color: var(--primaria); }
   svg .peca  { fill: var(--primaria-fraca); stroke: var(--primaria); stroke-width: 2; }
   svg .corpo { fill: var(--linha); stroke: var(--fraco); stroke-width: 2; }
   svg .eixo  { stroke: var(--fraco); stroke-width: 3; stroke-linecap: round; }
   svg .cabo  { stroke: var(--erro); stroke-width: 2.4; fill: none; stroke-linecap: round; }
-  svg .rosca { stroke: var(--fraco); stroke-width: 1.6; }
+  svg .fino  { stroke: var(--fraco); stroke-width: 1.6; fill: none; }
   svg text   { fill: var(--fraco); font: 10px sans-serif; }
 </style>
 </head>
@@ -41,29 +42,195 @@
 
 <a class="voltar" href="../damp-menu/">Voltar ao menu</a>
 
-<h1>Atuadores testados</h1>
-<p class="sub">Quatro configurações passaram pela bancada. Três nos dedos, uma no punho.</p>
+<h1>Atuadores pesquisados</h1>
+<p class="sub">Seis caminhos foram estudados até chegar no que move o DAMP hoje.</p>
 
 <div class="nota">
   <b>O requisito dos dedos:</b> 10&nbsp;N de força e no máximo 500&nbsp;g de massa.
-  É contra esses dois números que cada tentativa abaixo passou ou não.
+  Cinco dos seis ficaram pelo caminho; só o último foi para o projeto.
 </div>
 
-<!-- =================================================================== -->
+<!-- ============================================================ 1 -->
 <section class="cartao at">
-  <div class="cab">
-    <h2>Fuso trapezoidal Tr8×8</h2>
-    <span class="tag usa">Em uso</span>
+  <div class="cab"><h2>Músculo artificial de McKibben</h2>
+    <span class="tag fora">Rejeitado</span></div>
+  <div class="ordem">1º · testado e rejeitado na prática</div>
+
+  <div class="figura" data-foto="mckibben">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Tubo com malha trançada que encurta e engrossa quando recebe ar comprimido">
+      <text x="14" y="26">em repouso</text>
+      <rect class="peca" x="96" y="16" width="200" height="22" rx="11"/>
+      <g class="fino">
+        <path d="M104 16l16 22M124 16l16 22M144 16l16 22M164 16l16 22M184 16l16 22
+                 M204 16l16 22M224 16l16 22M244 16l16 22M264 16l16 22
+                 M120 16l-16 22M140 16l-16 22M160 16l-16 22M180 16l-16 22M200 16l-16 22
+                 M220 16l-16 22M240 16l-16 22M260 16l-16 22M280 16l-16 22"/>
+      </g>
+      <text x="14" y="82">com ar</text>
+      <rect class="peca" x="96" y="60" width="150" height="40" rx="20"/>
+      <g class="fino">
+        <path d="M108 60l12 40M128 60l12 40M148 60l12 40M168 60l12 40M188 60l12 40
+                 M208 60l12 40M228 60l12 40
+                 M120 60l-12 40M140 60l-12 40M160 60l-12 40M180 60l-12 40M200 60l-12 40
+                 M220 60l-12 40M240 60l-12 40"/>
+      </g>
+      <path class="cabo" d="M246 80h46"/>
+      <path class="cabo" d="M286 74l8 6-8 6"/>
+      <text x="300" y="84">encurta</text>
+      <path class="eixo" d="M86 80h-8"/><text x="52" y="106">ar</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — a malha trançada converte a pressão do ar em encurtamento.</div>
   </div>
-  <div class="ordem">O punho · funcionou de primeira</div>
+  <div class="fotoAcao"><button data-add="mckibben">Adicionar foto</button></div>
+
+  <p class="oque"><span class="rotulo">O que é</span>Um tubo elástico dentro de uma
+  malha trançada. Ao receber ar comprimido o tubo incha, a malha obriga o conjunto a
+  engrossar, e ele <b>encurta</b> — puxando o cabo. É o que mais se parece com um
+  músculo de verdade.</p>
+  <p class="porque"><span class="rotulo">Por que saiu</span>Foi montado e ensaiado,
+  e não atendeu. <i class="fraco">O motivo detalhado ainda não está registrado aqui.</i></p>
+</section>
+
+<!-- ============================================================ 2 -->
+<section class="cartao at">
+  <div class="cab"><h2>Nitinol</h2>
+    <span class="tag teoria">Rejeitado na teoria</span></div>
+  <div class="ordem">2º · descartado na pesquisa, sem chegar à bancada</div>
+
+  <div class="figura" data-foto="nitinol">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Fio de nitinol que encurta quando aquecido por corrente elétrica">
+      <text x="14" y="34">frio</text>
+      <path class="fino" style="stroke-width:3" d="M70 40h250"/>
+      <circle class="corpo" cx="66" cy="40" r="6"/><circle class="corpo" cx="324" cy="40" r="6"/>
+      <text x="14" y="92">aquecido</text>
+      <path class="fino" style="stroke-width:3" d="M70 86h190"/>
+      <circle class="corpo" cx="66" cy="86" r="6"/><circle class="corpo" cx="264" cy="86" r="6"/>
+      <path class="cabo" d="M266 86h44"/><path class="cabo" d="M304 80l8 6-8 6"/>
+      <g class="cabo" style="stroke-width:1.8">
+        <path d="M110 74c4-6 8-6 12 0M150 74c4-6 8-6 12 0M190 74c4-6 8-6 12 0M230 74c4-6 8-6 12 0"/>
+      </g>
+      <text x="318" y="90">encurta</text>
+      <text x="150" y="66">corrente aquece o fio</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — liga com memória de forma: a corrente aquece, o fio contrai.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="nitinol">Adicionar foto</button></div>
+
+  <p class="oque"><span class="rotulo">O que é</span>Uma liga com memória de forma.
+  Passando corrente, o fio esquenta e <b>volta a um comprimento menor</b>, puxando o
+  cabo. Ao esfriar, relaxa.</p>
+  <p class="porque"><span class="rotulo">Por que saiu</span>Foi o único descartado
+  <b>ainda na pesquisa</b>, sem protótipo — a análise mostrou que não serviria antes
+  de valer a pena construir. <i class="fraco">O motivo detalhado ainda não está
+  registrado aqui.</i></p>
+</section>
+
+<!-- ============================================================ 3 -->
+<section class="cartao at">
+  <div class="cab"><h2>Corda entrelaçada</h2>
+    <span class="tag fora">Rejeitado</span></div>
+  <div class="ordem">3º · testado e rejeitado na prática</div>
+
+  <div class="figura" data-foto="corda">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Motor torcendo duas cordas, que encurtam ao se enrolarem uma na outra">
+      <rect class="corpo" x="14" y="38" width="54" height="44" rx="6"/>
+      <text x="41" y="98" text-anchor="middle">motor</text>
+      <path class="fino" d="M76 44a14 14 0 0 1 0 32" style="stroke-width:2"/>
+      <path class="fino" d="M74 72l4 6 6-4" style="stroke-width:2"/>
+      <path class="cabo" style="stroke-width:2"
+        d="M88 52c26 0 26 16 52 16s26-16 52-16 26 16 52 16"/>
+      <path class="cabo" style="stroke-width:2"
+        d="M88 68c26 0 26-16 52-16s26 16 52 16 26-16 52-16"/>
+      <path class="cabo" d="M244 60h52"/>
+      <circle class="cabo" cx="302" cy="60" r="5" fill="none"/>
+      <text x="316" y="50">cabo</text>
+      <text x="150" y="104" text-anchor="middle">as duas cordas se enrolam e encurtam</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — a torção das duas cordas vira deslocamento linear.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="corda">Adicionar foto</button></div>
+
+  <p class="oque"><span class="rotulo">O que é</span>Duas cordas presas ao eixo do
+  motor. Girando, elas se enrolam uma na outra e o conjunto <b>encurta</b>. É barato
+  e leve — o motor faz força pequena e a torção multiplica.</p>
+  <p class="porque"><span class="rotulo">Por que saiu</span>Foi montado e ensaiado,
+  e não atendeu. <i class="fraco">O motivo detalhado ainda não está registrado aqui.</i></p>
+</section>
+
+<!-- ============================================================ 4 -->
+<section class="cartao at">
+  <div class="cab"><h2>Sistema de polias</h2>
+    <span class="tag fora">Rejeitado</span></div>
+  <div class="ordem">4º · testado e rejeitado na prática</div>
+
+  <div class="figura" data-foto="polias">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Cabo passando por um conjunto de polias que multiplica a força do motor">
+      <rect class="corpo" x="14" y="44" width="48" height="36" rx="6"/>
+      <text x="38" y="96" text-anchor="middle">motor</text>
+      <circle class="peca" cx="120" cy="34" r="17"/><circle class="corpo" cx="120" cy="34" r="4"/>
+      <circle class="peca" cx="200" cy="86" r="17"/><circle class="corpo" cx="200" cy="86" r="4"/>
+      <circle class="peca" cx="280" cy="34" r="17"/><circle class="corpo" cx="280" cy="34" r="4"/>
+      <path class="cabo" d="M62 58 L103 34 A17 17 0 0 1 137 34 L183 86 A17 17 0 0 1 217 86 L263 34 A17 17 0 0 1 297 34 L340 52"/>
+      <text x="348" y="62">cabo</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — o cabo muda de direção a cada polia.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="polias">Adicionar foto</button></div>
+
+  <p class="oque"><span class="rotulo">O que é</span>O cabo passa por um conjunto de
+  polias antes de chegar ao dedo. As polias <b>desviam a tração</b> e, conforme o
+  arranjo, multiplicam a força em troca de curso.</p>
+  <p class="porque"><span class="rotulo">Por que saiu</span>Foi montado e ensaiado,
+  e não atendeu. <i class="fraco">O motivo detalhado ainda não está registrado aqui.</i></p>
+</section>
+
+<!-- ============================================================ 5 -->
+<section class="cartao at">
+  <div class="cab"><h2>Servomotores</h2>
+    <span class="tag fora">Rejeitado</span></div>
+  <div class="ordem">5º · testado e rejeitado na prática · foi o protótipo da banca</div>
+
+  <div class="figura" data-foto="servo">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Servomotor com braço girando e recolhendo um cabo">
+      <rect class="corpo" x="120" y="34" width="86" height="56" rx="6"/>
+      <text x="163" y="106" text-anchor="middle">servomotor</text>
+      <circle class="peca" cx="163" cy="62" r="13"/>
+      <path class="peca" d="M163 62 L214 36 l6 11 -51 26 z"/>
+      <path class="cabo" d="M217 41 C 260 34, 300 40, 330 58"/>
+      <text x="336" y="56">cabo</text>
+      <path class="fino" d="M196 22 A 46 46 0 0 1 208 52"/>
+      <path class="fino" d="M205 46l3 7 7-3"/>
+      <text x="212" y="20">180°</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — o braço gira e recolhe o cabo.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="servo">Adicionar foto</button></div>
+
+  <div class="dados">
+    <span class="dado">força<b>10 N</b></span>
+    <span class="dado">massa<b>500 g</b></span>
+    <span class="dado">exigido<b>10 N · 500 g</b></span>
+  </div>
+  <p class="oque"><span class="rotulo">O que é</span>Um servo comum de modelismo, com
+  um braço que gira e recolhe o cabo. Traz eletrônica de posição embutida.</p>
+  <p class="porque"><span class="rotulo">Por que saiu</span><b>Atingiu o requisito e
+  saiu mesmo assim.</b> O curso é limitado a 180°, pouco para o movimento que o DAMP
+  precisa, e o servo <b>não mantém a posição sem energia</b> — tirando a força, o dedo
+  volta. Foi o protótipo apresentado à banca.</p>
+</section>
+
+<!-- ============================================================ 6 -->
+<section class="cartao at">
+  <div class="cab"><h2>Fuso</h2>
+    <span class="tag usa">Escolhido</span></div>
+  <div class="ordem">6º · é o que move o DAMP hoje</div>
 
   <div class="figura" data-foto="fuso">
-    <svg viewBox="0 0 420 120" role="img" aria-label="Motor girando um fuso trapezoidal; a porca caminha ao longo do eixo e traciona o cabo">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Motor girando um fuso; a porca caminha ao longo do eixo e traciona o cabo">
       <rect class="corpo" x="14" y="38" width="62" height="44" rx="6"/>
-      <text x="45" y="98" text-anchor="middle">motor DC</text>
-      <line class="eixo" x1="76" y1="60" x2="104" y2="60"/>
-      <line class="eixo" x1="104" y1="60" x2="396" y2="60"/>
-      <g class="rosca">
+      <text x="45" y="98" text-anchor="middle">motor</text>
+      <line class="eixo" x1="76" y1="60" x2="396" y2="60"/>
+      <g class="fino">
         <path d="M112 52l10 16M128 52l10 16M144 52l10 16M160 52l10 16M176 52l10 16
                  M192 52l10 16M208 52l10 16M224 52l10 16M240 52l10 16M256 52l10 16
                  M272 52l10 16M288 52l10 16M304 52l10 16M320 52l10 16M336 52l10 16
@@ -79,151 +246,48 @@
   </div>
   <div class="fotoAcao"><button data-add="fuso">Adicionar foto</button></div>
 
-  <p class="porque">O motor gira o fuso; a porca, travada contra a rotação, caminha
-  ao longo do eixo e traciona o cabo. <b>É autotravante:</b> com o motor desligado,
-  o punho fica onde parou, sem consumir corrente.</p>
-</section>
-
-<!-- =================================================================== -->
-<section class="cartao at">
-  <div class="cab">
-    <h2>Micromotor direto no eixo</h2>
-    <span class="tag fora">Reprovado</span>
-  </div>
-  <div class="ordem">Dedos · 1ª tentativa · mini fuso de 4&nbsp;mm</div>
-
-  <div class="figura" data-foto="micro">
-    <svg viewBox="0 0 420 120" role="img" aria-label="Micromotor pequeno acoplado direto a um mini fuso de 4 milímetros">
-      <rect class="corpo" x="14" y="46" width="44" height="30" rx="5"/>
-      <text x="36" y="96" text-anchor="middle">micromotor</text>
-      <text x="36" y="108" text-anchor="middle">sem redução</text>
-      <line class="eixo" x1="58" y1="61" x2="300" y2="61"/>
-      <g class="rosca">
-        <path d="M74 55l7 12M88 55l7 12M102 55l7 12M116 55l7 12M130 55l7 12
-                 M144 55l7 12M158 55l7 12M172 55l7 12M186 55l7 12M200 55l7 12
-                 M214 55l7 12M228 55l7 12M242 55l7 12M256 55l7 12M270 55l7 12"/>
-      </g>
-      <rect class="peca" x="150" y="47" width="34" height="28" rx="4"/>
-      <path class="cabo" d="M184 61h50"/>
-      <text x="240" y="50">cabo</text>
-      <text x="340" y="65">fuso 4 mm</text>
-    </svg>
-    <div class="legenda">Desenho esquemático — o mesmo princípio do punho, em escala reduzida.</div>
-  </div>
-  <div class="fotoAcao"><button data-add="micro">Adicionar foto</button></div>
-
-  <div class="dados">
-    <span class="dado">força<b>7 N</b></span>
-    <span class="dado">massa<b>564 g</b></span>
-    <span class="dado">exigido<b>10 N · 500 g</b></span>
-  </div>
-  <p class="porque">Ficou abaixo dos 10&nbsp;N. <b>O motivo é construtivo:</b> sem
-  caixa de redução, o micromotor mantém o torque baixo — não era questão de
-  ajuste, e sim do motor escolhido.</p>
-</section>
-
-<!-- =================================================================== -->
-<section class="cartao at">
-  <div class="cab">
-    <h2>Servomotor puxando cabo</h2>
-    <span class="tag fora">Reprovado</span>
-  </div>
-  <div class="ordem">Dedos · 2ª tentativa · foi o protótipo levado à banca</div>
-
-  <div class="figura" data-foto="servo">
-    <svg viewBox="0 0 420 120" role="img" aria-label="Servomotor com braço girando e puxando um cabo">
-      <rect class="corpo" x="120" y="34" width="86" height="56" rx="6"/>
-      <text x="163" y="106" text-anchor="middle">servomotor</text>
-      <circle class="peca" cx="163" cy="62" r="13"/>
-      <path class="peca" d="M163 62 L214 36 l6 11 -51 26 z"/>
-      <path class="cabo" d="M217 41 C 260 34, 300 40, 330 58"/>
-      <text x="336" y="56">cabo</text>
-      <path class="rosca" fill="none" d="M196 22 A 46 46 0 0 1 208 52"/>
-      <path class="rosca" d="M205 46l3 7 7-3" fill="none"/>
-      <text x="212" y="20">180°</text>
-    </svg>
-    <div class="legenda">Desenho esquemático — o braço gira e recolhe o cabo.</div>
-  </div>
-  <div class="fotoAcao"><button data-add="servo">Adicionar foto</button></div>
-
-  <div class="dados">
-    <span class="dado">força<b>10 N</b></span>
-    <span class="dado">massa<b>500 g</b></span>
-    <span class="dado">exigido<b>10 N · 500 g</b></span>
-  </div>
-  <p class="porque"><b>Atingiu o requisito</b> — e mesmo assim saiu. Dois motivos:
-  o curso é limitado a 180°, pouco para o movimento que o DAMP precisa, e o servo
-  <b>não mantém a posição sem energia</b>. Tirou-se a força, o dedo voltou.</p>
-</section>
-
-<!-- =================================================================== -->
-<section class="cartao at">
-  <div class="cab">
-    <h2>Motorredutor N20 + mini fuso</h2>
-    <span class="tag medindo">Em medição</span>
-  </div>
-  <div class="ordem">Dedos · 3ª tentativa · é o que está montado hoje</div>
-
-  <div class="figura" data-foto="n20">
-    <svg viewBox="0 0 420 120" role="img" aria-label="Motorredutor N20 com caixa de redução acoplado a um mini fuso por acoplamento flexível">
-      <rect class="corpo" x="14" y="44" width="40" height="34" rx="5"/>
-      <rect class="peca" x="54" y="48" width="30" height="26" rx="3"/>
-      <text x="48" y="96" text-anchor="middle">N20 12 V 100 rpm</text>
-      <text x="48" y="108" text-anchor="middle">com redução</text>
-      <line class="eixo" x1="84" y1="61" x2="104" y2="61"/>
-      <rect class="peca" x="100" y="52" width="18" height="18" rx="3"/>
-      <text x="126" y="44">acoplamento 3×8</text>
-      <line class="eixo" x1="118" y1="61" x2="330" y2="61"/>
-      <g class="rosca">
-        <path d="M128 55l7 12M142 55l7 12M156 55l7 12M170 55l7 12M184 55l7 12
-                 M198 55l7 12M212 55l7 12M226 55l7 12M240 55l7 12M254 55l7 12
-                 M268 55l7 12M282 55l7 12M296 55l7 12M310 55l7 12"/>
-      </g>
-      <rect class="peca" x="198" y="47" width="34" height="28" rx="4"/>
-      <text x="215" y="96" text-anchor="middle">castanha</text>
-      <path class="cabo" d="M232 61h58"/>
-      <text x="296" y="50">tendão</text>
-    </svg>
-    <div class="legenda">Desenho esquemático — mesmo mecanismo da 1ª tentativa, com motor reduzido.</div>
-  </div>
-  <div class="fotoAcao"><button data-add="n20">Adicionar foto</button></div>
+  <p class="oque"><span class="rotulo">O que é</span>O motor gira o fuso; a porca,
+  travada contra a rotação, caminha ao longo do eixo e traciona o cabo. <b>É
+  autotravante:</b> com o motor desligado, o dedo fica onde parou, sem consumir
+  corrente — exatamente o que faltava ao servo.</p>
+  <p class="porque"><span class="rotulo">Como ficou montado</span>No punho, um <b>fuso
+  trapezoidal Tr8×8</b>, que funcionou de primeira. Nos dedos, mini fusos: a primeira
+  montagem usava micromotores direto no eixo e parou em <b>7&nbsp;N</b> por falta de
+  redução; trocando pelo <b>motorredutor N20 12&nbsp;V 100&nbsp;rpm</b>, o mesmo
+  mecanismo passou a entregar.</p>
 
   <div class="dados">
     <span class="dado falta">força<b>a medir</b></span>
     <span class="dado falta">massa<b>a medir</b></span>
     <span class="dado falta">tempo dos dedos<b>a medir</b></span>
   </div>
-  <p class="porque">O que reprovou a 1ª tentativa <b>não foi o mecanismo, foi o
-  motor</b>. Com a caixa de redução do N20, o mesmo mini fuso passou a entregar —
-  e continua autotravante, o que o servo não fazia.</p>
-
   <div class="nota atencao" style="margin-top:10px">
-    Força, massa e tempo desta configuração <b>ainda não foram medidos</b>. Os
-    10&nbsp;N e os 500&nbsp;g que aparecem no banner são da configuração com
-    servomotor, que foi reprovada — não valem para esta.
+    Os números da configuração com N20 <b>ainda não foram medidos</b>. Os 10&nbsp;N e
+    os 500&nbsp;g que aparecem no banner são do servomotor, que foi rejeitado — não
+    valem para esta.
   </div>
 </section>
 
-<!-- =================================================================== -->
+<!-- ============================================================ -->
 <div class="cartao">
   <h2>O preço da escolha</h2>
-  <p class="porque" style="margin-top:6px">O servo trazia realimentação de posição
-  embutida; o mini fuso não traz. Então cada conjunto precisa de <b>duas chaves de
-  fim de curso</b>, uma em cada ponta — <b>dez no total</b>, oito nos dedos e duas
-  no punho. É o que o aparelho paga por manter a posição com o motor desligado.</p>
+  <p class="oque" style="margin-top:6px">O servo trazia realimentação de posição
+  embutida; o fuso não traz. Então cada conjunto precisa de <b>duas chaves de fim de
+  curso</b>, uma em cada ponta — <b>dez no total</b>, oito nos dedos e duas no punho.
+  É o que o aparelho paga por manter a posição com o motor desligado.</p>
 </div>
 
 <p class="mini">Os desenhos são esquemáticos, para mostrar o mecanismo. As fotos das
-peças reais podem ser acrescentadas nos botões acima — ficam guardadas neste
-aparelho, como o vídeo.</p>
+peças reais podem ser acrescentadas nos botões acima — ficam guardadas neste aparelho,
+como o vídeo.</p>
 
 <script src="../damp-assets/guardar.js"></script>
 <script>
 (function () {
   'use strict';
   var SENHA = 'damp';
+  var IDS = ['mckibben', 'nitinol', 'corda', 'polias', 'servo', 'fuso'];
 
-  /** Troca o desenho pela foto real, quando houver uma guardada. */
   function pintar(id, blob) {
     var cx = document.querySelector('.figura[data-foto="' + id + '"]');
     if (!cx) return;
@@ -234,7 +298,7 @@ aparelho, como o vídeo.</p>
 
     if (!blob) {
       if (svg) svg.style.display = '';
-      if (leg) leg.textContent = leg.dataset.original || leg.textContent;
+      if (leg && leg.dataset.original) leg.textContent = leg.dataset.original;
       if (bt) bt.textContent = 'Adicionar foto';
       return;
     }
@@ -286,7 +350,7 @@ aparelho, como o vídeo.</p>
     };
   });
 
-  ['fuso', 'micro', 'servo', 'n20'].forEach(carregar);
+  IDS.forEach(carregar);
 })();
 </script>
 </body>
