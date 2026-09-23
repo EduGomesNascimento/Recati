@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — perguntas da banca</title>
+<link rel="icon" href="../assets/icons/recati-favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icons/recati-favicon.png">
+<link rel="stylesheet" href="../damp-assets/damp.css">
+<style>
+  details { background:var(--card); border:1px solid var(--linha); border-radius:12px;
+            padding:0; margin-bottom:8px; }
+  details[open] { border-color:var(--primaria); }
+  summary { padding:13px 14px; font-weight:600; cursor:pointer; list-style:none;
+            display:flex; gap:9px; align-items:flex-start; font-size:15px; }
+  summary::-webkit-details-marker { display:none; }
+  summary::before { content:"?"; flex:none; width:20px; height:20px; border-radius:50%;
+    background:var(--primaria-fraca); color:var(--primaria); font:700 12px/20px sans-serif;
+    text-align:center; margin-top:1px; }
+  details[open] summary::before { content:"−"; background:var(--primaria); color:#fff; }
+  .resp { padding:0 14px 14px 43px; font-size:14px; }
+  .resp p { margin:0 0 9px; }
+  .resp p:last-child { margin-bottom:0; }
+  .resp b { color:var(--txt); }
+  .diga { background:var(--bg); border-left:3px solid var(--ok); border-radius:0 8px 8px 0;
+          padding:9px 11px; margin:9px 0; font-style:italic; }
+  .evite { background:var(--bg); border-left:3px solid var(--erro); border-radius:0 8px 8px 0;
+           padding:9px 11px; margin:9px 0; font-size:13px; }
+  h2 { margin:22px 0 9px; font-size:14px; text-transform:uppercase; letter-spacing:.5px;
+       color:var(--fraco); }
+  table.n { width:100%; border-collapse:collapse; font-size:13px; margin:8px 0; }
+  table.n th, table.n td { text-align:left; padding:6px 4px; border-bottom:1px solid var(--linha); }
+  table.n th { font-size:11px; text-transform:uppercase; color:var(--fraco); }
+  table.n td.ok { color:var(--ok); font-weight:600; }
+  table.n td.med { color:var(--alerta); font-weight:600; }
+</style>
+</head>
+<body>
+
+<a class="voltar" href="../damp-menu/">Voltar ao menu</a>
+
+<h1>Perguntas da banca</h1>
+<p class="sub">FEICIT · Novo Hamburgo · 2026 — respostas prontas, com os números do artigo</p>
+
+<div class="nota ruim">
+  <b>⚠ LEIA ISTO PRIMEIRO — o banner e o artigo discordam.</b>
+  <p style="margin:8px 0 0">O banner mostra <b>10 N · 3 s · 500 g</b> como resultado da
+  configuração final. No artigo, o <b>Quadro 4</b> marca esses três campos da coluna
+  “Mini fuso + N20 (adotado)” como <b>“a medir”</b> — eles são da configuração com
+  <b>servomotor</b>, que foi reprovada.</p>
+  <p style="margin:8px 0 0">Se um avaliador ler o artigo, vai perguntar. Tenha a resposta
+  pronta (primeira pergunta abaixo) e <b>não afirme que a configuração da mesa foi medida
+  em força e massa</b> — a não ser que vocês tenham medido depois de fechar o artigo.</p>
+</div>
+
+<h2>A pergunta mais perigosa</h2>
+
+<details open>
+  <summary>Esses 10 N e 500 g são da configuração que está aqui na mesa?</summary>
+  <div class="resp">
+    <p>É <b>a</b> pergunta. Responda de frente — recuar depois é muito pior.</p>
+    <div class="diga">“O curso de 86 mm e os 7,5 s do punho são desta configuração, sim —
+    o atuador do punho nunca mudou, e ele entregou 40 N medidos isoladamente. Já os 10 N
+    e os 500 g vieram da configuração com servomotor. A força e a massa da configuração
+    com N20 estão em medição, e o Quadro 4 do artigo registra isso como ‘a medir’. O que
+    a gente já sabe é que o mecanismo é o mesmo que deu 7 N com micromotor sem redução,
+    e o N20 tem trem de redução — a expectativa é passar dos 10 N, mas a gente só vai
+    afirmar depois de medir.”</div>
+    <p>Isso <b>fortalece</b> você: mostra que sabe separar o que mediu do que supôs. É
+    exatamente o que uma banca de técnico quer ouvir.</p>
+    <div class="evite">Não diga “é praticamente o mesmo” nem “deve dar uns 10 N”. Um
+    número dito sem medição é o que derruba um trabalho bom.</div>
+  </div>
+</details>
+
+<h2>O básico</h2>
+
+<details>
+  <summary>O que é o DAMP, em uma frase?</summary>
+  <div class="resp">
+    <div class="diga">“É uma órtese vestível de baixo custo que auxilia os movimentos da
+    mão e do punho — abrir e fechar os dedos, flexionar e estender o punho — comandada
+    por voz, por aplicativo ou por um joystick no próprio aparelho.”</div>
+  </div>
+</details>
+
+<details>
+  <summary>Para quem serve? Qual doença ele trata?</summary>
+  <div class="resp">
+    <p>Cuidado: ele <b>não trata doença</b>. Esse enquadramento é do artigo e é forte.</p>
+    <div class="diga">“Ele não é definido por diagnóstico, e sim por déficit funcional.
+    A Classificação Internacional de Funcionalidade orienta intervir pela limitação
+    apresentada, não pela doença de origem. AVC, Parkinson, artrite reumatoide, artrose
+    e neuropatias periféricas têm mecanismos diferentes, mas convergem no mesmo desfecho:
+    perda de força de preensão, de destreza e de amplitude. É nesse desfecho que a gente
+    atua.”</div>
+    <p>E o diferencial: <b>a literatura valida exoesqueletos de mão majoritariamente em
+    uma única condição clínica.</b> O DAMP foi pensado para ser independente disso.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Qual o tamanho do problema? Tem dado?</summary>
+  <div class="resp">
+    <p>Censo Demográfico de 2022 (IBGE): <b>14,4 milhões de pessoas com deficiência no
+    Brasil</b>, das quais cerca de <b>2,7 milhões</b> com limitação motora.</p>
+  </div>
+</details>
+
+<h2>Os números — o que está medido</h2>
+
+<details>
+  <summary>Quais requisitos vocês adotaram, e de onde vieram?</summary>
+  <div class="resp">
+    <p>Nenhum foi inventado — todos vêm da literatura, e isso vale ponto.</p>
+    <table class="n">
+      <tr><th>requisito</th><th>valor</th><th>fonte</th></tr>
+      <tr><td>Força na ponta dos dedos</td><td>mín. 10 N (ref. 20 N)</td><td>Achilli (2023)</td></tr>
+      <tr><td>Massa do conjunto</td><td>máx. 500 g</td><td>Achilli (2023)</td></tr>
+      <tr><td>Amplitude do punho</td><td>40° flexão / 40° extensão</td><td>Ryu (1991)</td></tr>
+    </table>
+    <p>A literatura indica que preensão e manipulação exigem <b>entre 10 N e 13 N</b>, e
+    que dispositivos para objetos do dia a dia operam na ordem de <b>8 N</b> na ponta.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Como vocês mediram? Com qual instrumento?</summary>
+  <div class="resp">
+    <p>Responda com o método <b>e</b> com a limitação — a banca valora as duas coisas.</p>
+    <div class="diga">“Curso com paquímetro, tempo com cronômetro digital, e força com
+    balança digital: aciona até o fim de curso, registra a leitura máxima e converte por
+    F = m·g. Massa em balança, com o dispositivo completo e as baterias instaladas. Cada
+    medição foi repetida <b>três vezes</b> e usamos a média, com as baterias carregadas.”</div>
+    <p>Se perguntarem do rigor: <b>“a resolução da balança digital é a nossa maior
+    limitação de medição, e a gente registrou isso como risco no artigo. A repetição em
+    três tentativas e a padronização do posicionamento foram as medidas de controle.”</b></p>
+  </div>
+</details>
+
+<details>
+  <summary>Por que o curso medido (86 mm) deu quase o dobro do teórico (48 mm)?</summary>
+  <div class="resp">
+    <p>Pergunta de quem leu com atenção. A resposta honesta é boa.</p>
+    <div class="diga">“O valor teórico saiu de um modelo simplificado. A divergência vem
+    de perdas e folgas que o modelo não contemplava e do ajuste manual das peças depois
+    da impressão 3D. O que vale é o medido: 86 mm, média de três medições, e é mais que
+    suficiente para os 40°/40° exigidos.”</div>
+  </div>
+</details>
+
+<h2>Mecânica e atuadores</h2>
+
+<details>
+  <summary>Por que fuso, e não outra coisa?</summary>
+  <div class="resp">
+    <p>Foram <b>seis</b> tecnologias pesquisadas, nessa ordem:</p>
+    <p>1. Músculo de McKibben — testado, reprovado<br>
+       2. Nitinol — reprovado <b>na teoria</b>, sem chegar à bancada<br>
+       3. Corda entrelaçada — testado, reprovado<br>
+       4. Sistema de polias — testado, reprovado<br>
+       5. Servomotores — testado, reprovado<br>
+       6. <b>Fuso — escolhido</b></p>
+    <p>Vantagens do fuso: força elevada com motor compacto, precisão de posicionamento,
+    controle simples, baixo custo e <b>autotravamento</b>. Desvantagens que a gente
+    aceitou: velocidade baixa, conjunto mais volumoso e a necessidade de fim de curso nos
+    extremos.</p>
+  </div>
+</details>
+
+<details>
+  <summary>O servomotor atingiu os 10 N. Por que vocês trocaram?</summary>
+  <div class="resp">
+    <p>Essa é ótima para mostrar critério de projeto.</p>
+    <div class="diga">“O servo atendeu a força e era eletricamente mais simples: 2 canais
+    de ponte H contra 8, e 2 fins de curso contra 10. Mas ele sustenta a posição pela
+    malha de realimentação, ou seja, <b>fica energizado o tempo todo</b> em que a mão
+    está fechada. E o curso é limitado a 180°. O fuso é autotravante: com o motor
+    desligado, o dedo fica onde parou, sem consumir corrente. A gente aceitou uma
+    eletrônica mais complexa em troca de comportamento passivo em repouso.”</div>
+  </div>
+</details>
+
+<details>
+  <summary>Por que a primeira tentativa com mini fuso falhou?</summary>
+  <div class="resp">
+    <div class="diga">“Deu 7 N, abaixo dos 10 N exigidos — mas o diagnóstico apontou para
+    o <b>acionamento</b>, não para o mecanismo. A força axial é limitada pelo torque no
+    eixo, e um micromotor sem trem de redução mantém o torque baixo por construção. Por
+    isso voltamos ao mesmo mecanismo com o motorredutor N20.”</div>
+  </div>
+</details>
+
+<details>
+  <summary>São quatro dedos para cinco. Cadê o mínimo?</summary>
+  <div class="resp">
+    <div class="diga">“São quatro conjuntos: polegar, indicador, médio, e um compartilhado
+    entre anelar e mínimo — esses dois trabalham em sinergia na preensão, então um atuador
+    dá conta dos dois sem perder função.”</div>
+  </div>
+</details>
+
+<h2>Eletrônica e controle</h2>
+
+<details>
+  <summary>Como ele é comandado?</summary>
+  <div class="resp">
+    <p>Três vias <b>equivalentes</b>, tratadas pelo mesmo interpretador no ESP32:</p>
+    <p>• joystick analógico KY-023 embarcado<br>
+       • aplicativo Android por Bluetooth de baixa energia<br>
+       • reconhecimento de voz <b>local</b>, que funciona <b>sem internet</b></p>
+    <p>O ponto forte: <b>“as três passam pelo mesmo interpretador, então todas as
+    proteções valem igual para as três. Não existe um caminho privilegiado que escape
+    da segurança.”</b></p>
+  </div>
+</details>
+
+<details>
+  <summary>A voz funciona offline mesmo? Manda dado para algum servidor?</summary>
+  <div class="resp">
+    <div class="diga">“Reconhecimento local, no próprio aparelho. Nada sai para a
+    internet — não tem servidor, não tem nuvem, e funciona sem sinal nenhum.”</div>
+  </div>
+</details>
+
+<details>
+  <summary>Por que a placa é de ponto a ponto e não uma PCI?</summary>
+  <div class="resp">
+    <p>O banner já antecipa isso, e a honestidade é o ponto forte.</p>
+    <div class="diga">“A montagem em ensaio é placa padrão, ponto a ponto. A placa de
+    circuito impresso <b>está projetada, roteada em duas faces, com lista de material e
+    roteiro de continuidade prontos</b> — mas não foi fabricada. É o próximo passo, e a
+    gente registrou isso como próximo passo, não como resultado desta etapa.”</div>
+  </div>
+</details>
+
+<h2>Segurança — prepare-se, vai cair</h2>
+
+<details>
+  <summary>E se travar com a mão de alguém dentro?</summary>
+  <div class="resp">
+    <p>Comece pela frase do banner, que é forte:</p>
+    <div class="diga">“O dispositivo aplica força a articulações de uma pessoa: <b>um motor
+    que não para não é defeito, é lesão.</b> Por isso são quatro proteções independentes.”</div>
+    <p><b>1. Fins de curso normalmente fechados.</b> Fio partido bloqueia o movimento —
+    a falha cai para o lado seguro, em vez de passar batido.<br>
+    <b>2. Tempo máximo de acionamento contínuo</b>, contra obstáculo.<br>
+    <b>3. O comando de voz vira pulso temporizado</b>, que termina sozinho — nunca um
+    acionamento aberto que dependa de alguém mandar parar.<br>
+    <b>4. Parada geral se o Bluetooth cai</b>, bloqueio com bateria crítica, e nada se
+    move ao ligar.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Por que normalmente fechado e não normalmente aberto?</summary>
+  <div class="resp">
+    <div class="diga">“Em normalmente fechado, o circuito está fechado em repouso. Se o
+    fio partir ou o conector soltar, o sistema lê como se a chave estivesse acionada e
+    <b>bloqueia</b>. Em normalmente aberto, um fio partido seria indistinguível de ‘está
+    tudo bem’ — e o motor continuaria contra o batente.”</div>
+  </div>
+</details>
+
+<details>
+  <summary>E se o reconhecimento de voz errar?</summary>
+  <div class="resp">
+    <div class="diga">“Os limiares não são iguais para todos os comandos. Mover exige mais
+    certeza e mais confirmações seguidas; e o comando de voz nunca inicia movimento
+    contínuo — vira pulso temporizado que termina sozinho. Se o reconhecimento falhar,
+    o pior caso é o aparelho não obedecer, nunca obedecer demais.”</div>
+  </div>
+</details>
+
+<h2>Limitações — assuma antes que perguntem</h2>
+
+<details>
+  <summary>Vocês testaram com pacientes?</summary>
+  <div class="resp">
+    <div class="diga">“Não, e isso é deliberado. É uma prova de conceito validada em
+    bancada. Ensaio com usuários reais exige acompanhamento profissional e está nos
+    planos de continuidade — a gente não ia testar força em articulação de ninguém antes
+    de ter as proteções fechadas e medidas.”</div>
+    <p>Dizer isso de frente vale mais do que qualquer justificativa improvisada.</p>
+  </div>
+</details>
+
+<details>
+  <summary>O que vocês fariam diferente? O que falta?</summary>
+  <div class="resp">
+    <p>• Fechar a medição de força, tempo e massa da configuração com N20<br>
+       • Fabricar a PCI já projetada, no lugar da placa padrão<br>
+       • Reduzir tamanho e peso — mais compacto e confortável<br>
+       • <b>Detectar travamento por corrente</b>, somando-se aos fins de curso<br>
+       • Ensaiar com usuários, sob acompanhamento profissional</p>
+  </div>
+</details>
+
+<details>
+  <summary>Quanto custa?</summary>
+  <div class="resp">
+    <p>Se vocês <b>não</b> fecharam o custo, não invente número.</p>
+    <div class="diga">“A gente não fechou o custo unitário ainda. O que orientou o projeto
+    foi escolher componentes nacionais e peças fabricáveis por impressão 3D, justamente
+    para o dispositivo ser acessível — mas o levantamento de custo é trabalho futuro.”</div>
+  </div>
+</details>
+
+<h2>Se travar na hora</h2>
+
+<div class="cartao">
+  <p style="margin:0 0 8px"><b>Três frases que salvam qualquer pergunta:</b></p>
+  <p class="mini" style="margin:0 0 6px">“Essa a gente mediu — foram três medições, e a
+  média deu X.”</p>
+  <p class="mini" style="margin:0 0 6px">“Essa a gente <b>não</b> mediu ainda, está
+  registrada como ‘a medir’ no artigo.”</p>
+  <p class="mini" style="margin:0">“Essa é uma boa pergunta e a gente não tinha pensado
+  nesse ângulo — anota aí que eu levo para o grupo.”</p>
+  <p style="margin:10px 0 0; font-size:13px">A terceira é a mais subestimada. Banca
+  experiente reconhece na hora quem está inventando resposta — e valoriza quem não
+  inventa.</p>
+</div>
+
+<p class="mini" style="margin-top:16px">Todos os números desta página saíram do artigo e
+do banner de vocês. Onde o artigo diz “a medir”, esta página também diz.</p>
+
+</body>
+</html>
