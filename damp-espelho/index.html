@@ -66,23 +66,39 @@ Conecte no Bluetooth, ou use os botões para ver cada comando.</p>
 
 <!-- ------------------------------------------------------------- a mão -->
 <div class="palco" id="palco" style="margin-top:12px">
-  <svg viewBox="0 0 400 300" role="img" aria-label="Mão e punho do DAMP; os dedos fecham e o punho dobra conforme o comando">
+  <svg viewBox="0 0 400 344" role="img" aria-label="Mão e punho do DAMP; os dedos fecham e o punho dobra conforme o comando">
 
     <!-- antebraço -->
     <rect class="braco" x="6" y="88" width="128" height="50" rx="14"/>
     <text class="rot" x="18" y="80">antebraço</text>
 
-    <!-- o mini fuso que puxa os dedos -->
-    <line class="fuso" x1="46" y1="222" x2="300" y2="222"/>
-    <path class="rosca" id="roscas" d=""/>
-    <rect class="porca" id="porca" x="60" y="208" width="30" height="28" rx="4"/>
-    <path class="cabo" id="tendao" d="M90 236 L300 236"/>
-    <circle class="cabo" id="ancora" cx="300" cy="236" r="4" fill="none"/>
-    <text class="rot" x="46" y="262">mini fuso · a porca caminha e o cabo traciona o dedo</text>
-    <rect class="chave" id="chA" x="40" y="206" width="7" height="32" rx="2"/>
-    <rect class="chave" id="chF" x="299" y="206" width="7" height="32" rx="2"/>
-    <text class="rot" x="26" y="200">fim</text>
-    <text class="rot" x="292" y="200">fim</text>
+    <!-- OS DOIS FUSOS. O aparelho tem cinco (um no punho, quatro nos dedos),
+         mas no desenho basta um de cada: o que importa e o SENTIDO. Puxar
+         leva a porca para TRAS, soltar leva para FRENTE -- e fechar a mao faz
+         o mesmo, porque em ambos o cabo e tracionado. -->
+    <g id="fusoW">
+      <line class="fuso" x1="60" y1="240" x2="300" y2="240"/>
+      <path class="rosca" id="roscaW" d=""/>
+      <rect class="chave" id="chWt" x="54" y="226" width="7" height="28" rx="2"/>
+      <rect class="chave" id="chWf" x="299" y="226" width="7" height="28" rx="2"/>
+      <rect class="porca" id="porcaW" x="70" y="227" width="28" height="26" rx="4"/>
+      <path class="cabo" id="caboW" data-y="252" d="M98 252 L300 252"/>
+      <text class="rot" x="60" y="222">fuso do punho</text>
+      <text class="rot" x="18" y="246">trás</text>
+      <text class="rot" x="312" y="246">frente</text>
+    </g>
+
+    <g id="fusoD">
+      <line class="fuso" x1="60" y1="304" x2="300" y2="304"/>
+      <path class="rosca" id="roscaD" d=""/>
+      <rect class="chave" id="chDt" x="54" y="290" width="7" height="28" rx="2"/>
+      <rect class="chave" id="chDf" x="299" y="290" width="7" height="28" rx="2"/>
+      <rect class="porca" id="porcaD" x="70" y="291" width="28" height="26" rx="4"/>
+      <path class="cabo" id="caboD" data-y="316" d="M98 316 L300 316"/>
+      <text class="rot" x="60" y="286">mini fuso dos dedos</text>
+      <text class="rot" x="18" y="310">trás</text>
+      <text class="rot" x="312" y="310">frente</text>
+    </g>
 
     <!-- a mão, que gira no punho -->
     <g id="gMao">
@@ -180,9 +196,11 @@ function parar() { alvo.dedos = atual.dedos; alvo.punho = atual.punho; porFora =
 
 // ---- as roscas do fuso, desenhadas uma vez -----------------------------
 (function () {
-  let d = '';
-  for (let x = 50; x < 296; x += 12) d += `M${x} 215l6 14`;
-  $('roscas').setAttribute('d', d);
+  for (const [id, y] of [['roscaW', 233], ['roscaD', 297]]) {
+    let d = '';
+    for (let x = 64; x < 296; x += 12) d += `M${x} ${y}l6 14`;
+    $(id).setAttribute('d', d);
+  }
 })();
 
 // ---- o laço da animação ------------------------------------------------
@@ -206,15 +224,33 @@ function desenhar() {
 
   $('gMao').setAttribute('transform', 'rotate(' + atual.punho + ',146,112)');
 
-  // o fuso: a porca caminha com o fechamento, e o cabo encurta junto
+  // ---- OS DOIS FUSOS ---------------------------------------------------
+  // ⚠ O SENTIDO ESTAVA AO CONTRARIO. A porca ia para a FRENTE ao fechar a
+  //   mao, e e o oposto: quem fecha o dedo e o cabo sendo TRACIONADO, ou
+  //   seja, a porca recuando. Vale igual para o punho -- puxar e recuar.
+  //   Por isso a fracao abaixo e 1 no estado SOLTO/ABERTO (porca na frente)
+  //   e 0 no PUXADO/FECHADO (porca atras).
+  const X_TRAS = 70, X_FRENTE = 242;
+  const poe = (idPorca, idCabo, idTras, idFrente, frac, bateTras, bateFrente) => {
+    const x = X_TRAS + frac * (X_FRENTE - X_TRAS);
+    $(idPorca).setAttribute('x', x);
+    // o cabo e o trecho entre a porca e a ancora: recuando, ele se estica
+    $(idCabo).setAttribute('d', 'M' + (x + 28) + ' ' + ($(idCabo).dataset.y) + ' L300 ' + $(idCabo).dataset.y);
+    $(idTras).classList.toggle('bate',   bateTras   || frac <= 0.01);
+    $(idFrente).classList.toggle('bate', bateFrente || frac >= 0.99);
+  };
+
+  // punho: 0 = todo puxado (atras), 1 = todo solto (frente)
+  const fw = (atual.punho - PUNHO_PUXADO) / (PUNHO_SOLTO - PUNHO_PUXADO);
+  poe('porcaW', 'caboW', 'chWt', 'chWf', Math.max(0, Math.min(1, fw)),
+      chaves.fecha, chaves.abre);
+
+  // dedos: 0 = fechado (atras), 1 = aberto (frente)
   const media = porFora.f1 === null || porFora.f1 === undefined ? atual.dedos
     : ([porFora.f1,porFora.f2,porFora.f3,porFora.f4].filter(v => v != null)
         .reduce((a,b) => a+b, 0) / 4);
-  const x = 60 + (media / 100) * 205;
-  $('porca').setAttribute('x', x);
-  $('tendao').setAttribute('d', 'M' + (x + 30) + ' 236 L300 236');
-  $('chA').classList.toggle('bate', chaves.abre  || media <= 1);
-  $('chF').classList.toggle('bate', chaves.fecha || media >= 99);
+  poe('porcaD', 'caboD', 'chDt', 'chDf', Math.max(0, Math.min(1, 1 - media / 100)),
+      false, false);
 
   requestAnimationFrame(desenhar);
 }
