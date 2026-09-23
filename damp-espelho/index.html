@@ -64,7 +64,7 @@ Conecte no Bluetooth, ou use os botões para ver cada comando.</p>
 
 <button id="btConn" class="acao" style="width:100%">Conectar no DAMP</button>
 
-<!-- ------------------------------------------------------------- a mão -->
+<!-- ============================================================= a mão -->
 <div class="palco" id="palco" style="margin-top:12px">
   <svg viewBox="0 0 400 344" role="img" aria-label="Mão e punho do DAMP; os dedos fecham e o punho dobra conforme o comando">
 
@@ -74,7 +74,7 @@ Conecte no Bluetooth, ou use os botões para ver cada comando.</p>
 
     <!-- OS DOIS FUSOS. O aparelho tem cinco (um no punho, quatro nos dedos),
          mas no desenho basta um de cada: o que importa e o SENTIDO. Puxar
-         leva a porca para TRAS, soltar leva para FRENTE -- e fechar a mao faz
+         leva a porca para TRAS, soltar leva para FRENTE, e fechar a mao faz
          o mesmo, porque em ambos o cabo e tracionado. -->
     <g id="fusoW">
       <line class="fuso" x1="60" y1="240" x2="300" y2="240"/>
@@ -141,7 +141,7 @@ Conecte no Bluetooth, ou use os botões para ver cada comando.</p>
   </div>
 </div>
 
-<!-- ------------------------------------------------------------- botões -->
+<!-- ============================================================= botões -->
 <div class="cmds">
   <button data-cmd="11">abrir mão</button>
   <button data-cmd="12">fecha mão</button>
@@ -194,7 +194,7 @@ let vivo = false, ultimoByte = null;
 
 function parar() { alvo.dedos = atual.dedos; alvo.punho = atual.punho; porFora = {f1:null,f2:null,f3:null,f4:null}; }
 
-// ---- as roscas do fuso, desenhadas uma vez -----------------------------
+// ---- as roscas dos DOIS fusos, desenhadas uma vez ----------------------
 (function () {
   for (const [id, y] of [['roscaW', 233], ['roscaD', 297]]) {
     let d = '';
