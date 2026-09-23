@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — espelhamento</title>
+<link rel="icon" href="../assets/icons/recati-favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icons/recati-favicon.png">
+<link rel="stylesheet" href="../damp-assets/damp.css">
+<style>
+  .topo { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .topo h1 { flex:1; }
+  .pt { width:10px; height:10px; border-radius:50%; background:var(--linha); flex:none; }
+  .pt.on { background:var(--ok); }
+
+  /* ---- o comando, em letra grande: e o que o jurado olha ---- */
+  .comando { text-align:center; padding:18px 14px; }
+  .comando .frase { font-size:26px; font-weight:700; letter-spacing:-.4px; }
+  .comando .frase.nada { color:var(--fraco); font-size:18px; font-weight:600; }
+  .comando .byte { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+                   font-size:13px; color:var(--primaria); margin-top:4px; }
+  .comando .reage { font-size:14px; color:var(--fraco); margin-top:8px; }
+  .comando.vivo { border-color:var(--ok); box-shadow:0 0 0 1px var(--ok); }
+
+  /* ---- a foto com os marcadores ---- */
+  .mapa { position:relative; line-height:0; border-radius:12px; overflow:hidden;
+          border:1px solid var(--linha); background:#000; }
+  .mapa img { width:100%; height:auto; display:block; }
+  .marca { position:absolute; transform:translate(-50%,-50%);
+           width:26px; height:26px; border-radius:50%;
+           background:rgba(15,23,42,.72); color:#fff; border:2px solid #fff;
+           font:700 12px/22px sans-serif; text-align:center;
+           box-shadow:0 1px 4px rgba(0,0,0,.5); transition:.15s; }
+  .marca.on { background:var(--ok); border-color:#fff; transform:translate(-50%,-50%) scale(1.35); }
+  .marca.alerta { background:var(--alerta); color:#3a2c00; }
+  .marca.erro { background:var(--erro); }
+
+  .legenda { list-style:none; margin:10px 0 0; padding:0; font-size:13px; }
+  .legenda li { display:flex; gap:8px; align-items:baseline; padding:4px 0;
+                border-bottom:1px solid var(--linha); }
+  .legenda li:last-child { border-bottom:0; }
+  .legenda .n { flex:none; width:20px; height:20px; border-radius:50%;
+                background:var(--linha); color:var(--txt);
+                font:700 11px/20px sans-serif; text-align:center; }
+  .legenda .n.on { background:var(--ok); color:#fff; }
+  .legenda .est { margin-left:auto; color:var(--fraco); font-size:12px; text-align:right; }
+
+  /* ---- os motores ---- */
+  .motor { display:flex; align-items:center; gap:8px; padding:8px 0;
+           border-bottom:1px solid var(--linha); }
+  .motor:last-child { border-bottom:0; }
+  .motor .nome { flex:1; font-weight:600; font-size:14px; }
+  .motor .dir { font-size:12px; font-weight:700; padding:3px 8px; border-radius:999px;
+                background:var(--linha); color:var(--fraco); }
+  .motor .dir.and { background:var(--ok); color:#fff; }
+  .motor .pos { font-size:13px; font-variant-numeric:tabular-nums; width:42px; text-align:right; }
+  .chaves { display:flex; gap:3px; }
+  .ch { width:9px; height:9px; border-radius:2px; background:var(--linha); }
+  .ch.bate { background:var(--erro); }
+
+  .barra { height:5px; background:var(--linha); border-radius:3px; overflow:hidden; margin-top:4px; }
+  .barra > i { display:block; height:100%; background:var(--primaria); width:0; transition:width .15s linear; }
+
+  /* ---- historico ---- */
+  #hist { list-style:none; margin:0; padding:0; font-size:13px; max-height:240px; overflow:auto; }
+  #hist li { padding:6px 0; border-bottom:1px solid var(--linha); display:flex; gap:8px; }
+  #hist .h { color:var(--fraco); font-variant-numeric:tabular-nums; flex:none; }
+  #hist li:last-child { border-bottom:0; }
+
+  table.ref { width:100%; border-collapse:collapse; font-size:13px; }
+  table.ref th, table.ref td { text-align:left; padding:7px 4px; border-bottom:1px solid var(--linha); }
+  table.ref th { font-size:11px; text-transform:uppercase; color:var(--fraco); letter-spacing:.3px; }
+  table.ref code { color:var(--primaria); }
+</style>
+</head>
+<body>
+
+<a class="voltar" href="../damp-menu/">Voltar ao menu</a>
+
+<div class="topo">
+  <h1>Espelhamento</h1>
+  <span class="pt" id="ptConn"></span>
+</div>
+<p class="sub" id="linhaConn">Conecte no Bluetooth do DAMP para ver, ao vivo, o que ele
+está recebendo e o que deveria estar fazendo.</p>
+
+<div id="semBle" class="nota ruim" hidden>
+  <b>Este navegador não tem Bluetooth Web.</b> No iPhone, nenhum navegador tem —
+  é limitação do iOS, não da página. Use o <b>Chrome no Android</b> ou no computador.
+</div>
+
+<button id="btConn" class="acao" style="width:100%">Conectar no DAMP</button>
+
+<!-- ------------------------------------------------------------- comando -->
+<div class="cartao comando" id="cxComando" style="margin-top:12px">
+  <div class="frase nada" id="frase">Nenhum comando ainda</div>
+  <div class="byte" id="byte"></div>
+  <div class="reage" id="reage">O último comando de voz que o aparelho registrou aparece aqui.</div>
+</div>
+
+<!-- ------------------------------------------------------------- o mapa -->
+<div class="cartao">
+  <h2>Onde cada coisa está</h2>
+  <p class="mini" style="margin:0 0 10px">Os marcadores acendem conforme a peça entra em
+  ação. As posições são aproximadas, marcadas sobre a foto do aparelho.</p>
+
+  <div class="mapa" id="mapa">
+    <img src="aparelho.jpg" alt="Foto do DAMP aberto, com as placas na parte de cima e os atuadores dos dedos embaixo">
+  </div>
+
+  <ul class="legenda" id="legenda"></ul>
+</div>
+
+<!-- ------------------------------------------------------------- motores -->
+<div class="cartao">
+  <h2>O que deveria estar se movendo</h2>
+  <p class="mini" style="margin:0 0 6px">Direção, posição e as chaves de fim de curso de
+  cada conjunto. Quadradinho vermelho = chave encostada, e o motor para.</p>
+  <div id="motores"></div>
+</div>
+
+<!-- ------------------------------------------------------------- historico -->
+<div class="cartao">
+  <h2>O que foi acontecendo</h2>
+  <ul id="hist"><li class="fraco">Ainda nada — conecte e dê um comando.</li></ul>
+</div>
+
+<!-- ------------------------------------------------------------- referencia -->
+<div class="cartao">
+  <h2>As cinco frases, e o que cada uma faz</h2>
+  <table class="ref">
+    <tr><th>frase</th><th>byte</th><th>o DAMP deve</th></tr>
+    <tr><td>abrir mão</td><td><code>0x11</code></td><td>abrir os quatro dedos</td></tr>
+    <tr><td>fecha mão</td><td><code>0x12</code></td><td>fechar os quatro dedos</td></tr>
+    <tr><td>para DAMP</td><td><code>0x13</code></td><td>parar tudo, na hora</td></tr>
+    <tr><td>puxa punho</td><td><code>0x14</code></td><td>fechar o punho</td></tr>
+    <tr><td>solta punho</td><td><code>0x15</code></td><td>abrir o punho</td></tr>
+  </table>
+  <p class="mini" style="margin-top:8px">Ruído, ou nada reconhecido, não manda byte nenhum
+  — o coprocessador fica calado de propósito.</p>
+</div>
+
+<script>
+'use strict';
+
+// ---------------------------------------------------------------- protocolo
+// O mesmo Nordic UART Service do firmware, e o mesmo que o app de controle usa.
+const NUS = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
+const RX  = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
+const TX  = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
+
+const $ = id => document.getElementById(id);
+
+const FRASES = {
+  '11': { f: 'abrir mão',   r: 'abrir os quatro dedos' },
+  '12': { f: 'fecha mão',   r: 'fechar os quatro dedos' },
+  '13': { f: 'para DAMP',   r: 'parar tudo, na hora' },
+  '14': { f: 'puxa punho',  r: 'fechar o punho' },
+  '15': { f: 'solta punho', r: 'abrir o punho' },
+};
+
+const MOTORES = [
+  { k: 'W',  nome: 'Punho' },
+  { k: 'F1', nome: 'Mindinho + anelar' },
+  { k: 'F2', nome: 'Médio' },
+  { k: 'F3', nome: 'Indicador' },
+  { k: 'F4', nome: 'Polegar' },
+];
+
+// ⚠ AS POSICOES SAO MARCADAS A OLHO sobre a foto, em % da largura e da altura.
+//   Em % e nao em pixel para a foto poder encolher no celular sem o marcador
+//   desgrudar da peca. Nao sao medidas -- sao anotacoes, e a legenda embaixo e
+//   que diz quem e quem.
+const PECAS = [
+  { id:'l298',  n:1, x:24, y:8.7,  nome:'Driver L298N dos dedos' },
+  { id:'bat',   n:2, x:42, y:9.3,  nome:'Bateria LiPo' },
+  { id:'buck',  n:3, x:68, y:9.7,  nome:'Conversores de tensão' },
+  { id:'manche',n:4, x:66, y:17.5, nome:'Manche (joystick)' },
+  { id:'s3',    n:5, x:18, y:20,   nome:'ESP32-S3 — reconhece a voz' },
+  { id:'esp',   n:6, x:36, y:25,   nome:'ESP32 da placa — o cérebro' },
+  { id:'punho', n:7, x:47, y:30,   nome:'Fuso do punho' },
+  { id:'pico',  n:8, x:20, y:30.5, nome:'Raspberry Pi Pico — lê as 10 chaves' },
+  { id:'dedos', n:9, x:32, y:62,   nome:'Mini fusos dos dedos' },
+];
+
+let disp = null, carRx = null, carTx = null, relogio = null;
+let buf = '', ultimoByte = null, ultimoEstado = {};
+
+// ---------------------------------------------------------------- tela
+function montar() {
+  const m = $('mapa'), leg = $('legenda');
+  for (const p of PECAS) {
+    const d = document.createElement('div');
+    d.className = 'marca'; d.id = 'mc-' + p.id; d.textContent = p.n;
+    d.style.left = p.x + '%'; d.style.top = p.y + '%';
+    d.title = p.nome;
+    m.appendChild(d);
+
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="n" id="lg-${p.id}">${p.n}</span>
+                    <span>${p.nome}</span>
+                    <span class="est" id="es-${p.id}">—</span>`;
+    leg.appendChild(li);
+  }
+  const cx = $('motores');
+  for (const mo of MOTORES) {
+    const d = document.createElement('div');
+    d.innerHTML = `<div class="motor">
+        <span class="nome">${mo.nome}</span>
+        <span class="chaves"><i class="ch" id="ca-${mo.k}"></i><i class="ch" id="cf-${mo.k}"></i></span>
+        <span class="dir" id="dir-${mo.k}">parado</span>
+        <span class="pos" id="pos-${mo.k}">—</span>
+      </div>
+      <div class="barra"><i id="bar-${mo.k}"></i></div>`;
+    cx.appendChild(d);
+  }
+}
+
+function acender(id, ligado, classe) {
+  const mc = $('mc-' + id), lg = $('lg-' + id);
+  if (!mc) return;
+  mc.className = 'marca' + (ligado ? ' on' : '') + (classe ? ' ' + classe : '');
+  lg.className = 'n' + (ligado ? ' on' : '');
+}
+const estado = (id, txt) => { const e = $('es-' + id); if (e) e.textContent = txt; };
+
+function anotar(texto) {
+  const ul = $('hist');
+  if (ul.firstElementChild && ul.firstElementChild.classList.contains('fraco')) ul.innerHTML = '';
+  const li = document.createElement('li');
+  const agora = new Date();
+  li.innerHTML = `<span class="h">${String(agora.getHours()).padStart(2,'0')}:` +
+                 `${String(agora.getMinutes()).padStart(2,'0')}:` +
+                 `${String(agora.getSeconds()).padStart(2,'0')}</span><span>${texto}</span>`;
+  ul.insertBefore(li, ul.firstChild);
+  while (ul.children.length > 40) ul.removeChild(ul.lastChild);
+}
+
+// ---------------------------------------------------------------- conexão
+async function conectar() {
+  try {
+    $('linhaConn').textContent = 'Procurando o DAMP…';
+    disp = await navigator.bluetooth.requestDevice({
+      filters: [{ services: [NUS] }], optionalServices: [NUS] });
+    disp.addEventListener('gattserverdisconnected', caiu);
+    const srv = await disp.gatt.connect();
+    const svc = await srv.getPrimaryService(NUS);
+    carRx = await svc.getCharacteristic(RX);
+    carTx = await svc.getCharacteristic(TX);
+    await carTx.startNotifications();
+    carTx.addEventListener('characteristicvaluechanged', chegou);
+
+    $('ptConn').classList.add('on');
+    $('linhaConn').textContent = 'Ligado em ' + (disp.name || 'DAMP') + '. Fale um comando.';
+    $('btConn').textContent = 'Desconectar';
+    anotar('Conectado.');
+
+    // ⚠ PERGUNTA DE TEMPOS EM TEMPOS, e nao espera notificacao: o firmware
+    //   responde a quem pergunta, e nao avisa sozinho quando a voz chega. Sem
+    //   este relogio a tela ficaria parada justamente durante o comando.
+    pedir();
+    relogio = setInterval(pedir, 350);
+  } catch (e) {
+    $('linhaConn').textContent = (e && e.name === 'NotFoundError')
+      ? 'Nenhum aparelho escolhido.' : 'Não consegui conectar: ' + (e.message || e);
+  }
+}
+
+function desconectar() {
+  if (relogio) { clearInterval(relogio); relogio = null; }
+  if (disp && disp.gatt.connected) disp.gatt.disconnect();
+  caiu();
+}
+
+function caiu() {
+  if (relogio) { clearInterval(relogio); relogio = null; }
+  $('ptConn').classList.remove('on');
+  $('btConn').textContent = 'Conectar no DAMP';
+  $('linhaConn').textContent = 'Desligado.';
+  for (const p of PECAS) { acender(p.id, false); estado(p.id, '—'); }
+  for (const mo of MOTORES) {
+    $('dir-' + mo.k).textContent = 'parado'; $('dir-' + mo.k).className = 'dir';
+    $('pos-' + mo.k).textContent = '—'; $('bar-' + mo.k).style.width = '0';
+  }
+  anotar('Desconectado.');
+}
+
+function pedir() {
+  if (!carRx) return;
+  carRx.writeValue(new TextEncoder().encode('STATUS?\n')).catch(() => {});
+}
+
+// As notificações podem vir partidas: remonta por linha.
+function chegou(ev) {
+  buf += new TextDecoder().decode(ev.target.value);
+  let i;
+  while ((i = buf.indexOf('\n')) >= 0) {
+    const linha = buf.slice(0, i).trim();
+    buf = buf.slice(i + 1);
+    if (linha.startsWith('ST;')) usar(analisar(linha));
+  }
+}
+
+/** Divide no PRIMEIRO '=' e ignora campo que não conhece — firmware mais novo
+ *  que a página não quebra a página. É o mesmo critério do app de controle. */
+function analisar(linha) {
+  const st = { motores: {} };
+  for (const campo of linha.slice(3).split(';')) {
+    const p = campo.indexOf('=');
+    if (p <= 0) continue;
+    const k = campo.slice(0, p), v = campo.slice(p + 1);
+    if (k === 'W' || /^F[1-4]$/.test(k)) {
+      const [dir, extra] = v.split(',');
+      st.motores[k] = { dir, extra: extra || '' };
+    } else st[k] = v;
+  }
+  return st;
+}
+
+function usar(st) {
+  // ---- o comando de voz ------------------------------------------------
+  // VRAW traz o ULTIMO byte que chegou pela UART da voz. Ele NAO se apaga, e
+  // por isso a tela diz "ultimo comando", e nao "agora": repetir a mesma
+  // frase nao muda o campo, e fingir que mudou seria inventar.
+  const raw = (st.VRAW || '-').toUpperCase();
+  if (raw !== '-' && raw !== ultimoByte) {
+    ultimoByte = raw;
+    const f = FRASES[raw];
+    $('frase').textContent = f ? f.f : 'byte 0x' + raw;
+    $('frase').className = 'frase';
+    $('byte').textContent = 'byte 0x' + raw + ' pela UART da voz';
+    $('reage').textContent = f ? 'O DAMP deve ' + f.r + '.' : 'Byte fora da tabela das cinco frases.';
+    $('cxComando').classList.add('vivo');
+    anotar('Voz: <b>' + (f ? f.f : '0x' + raw) + '</b>' + (f ? ' — ' + f.r : ''));
+    setTimeout(() => $('cxComando').classList.remove('vivo'), 1800);
+    acender('s3', true); setTimeout(() => acender('s3', false), 1800);
+  }
+  estado('s3', raw === '-' ? 'nenhum byte ainda' : 'último 0x' + raw);
+
+  // ---- os motores -------------------------------------------------------
+  let algumDedo = false, punhoAnda = false;
+  const fcd = (st.FCD && st.FCD.length === 8) ? st.FCD : null;
+  for (let i = 0; i < MOTORES.length; i++) {
+    const mo = MOTORES[i], m = st.motores[mo.k];
+    if (!m) continue;
+    const anda = m.dir && m.dir !== '-' && m.dir.toLowerCase() !== 'parado';
+    const el = $('dir-' + mo.k);
+    el.textContent = anda ? m.dir : 'parado';
+    el.className = 'dir' + (anda ? ' and' : '');
+
+    if (mo.k === 'W') {
+      // No punho o "extra" sao as DUAS chaves: primeiro a de FECHAR, depois a de ABRIR.
+      $('pos-W').textContent = '';
+      const ca = m.extra[1], cf = m.extra[0];
+      $('ca-W').className = 'ch' + (ca && ca !== '-' && ca !== '0' ? ' bate' : '');
+      $('cf-W').className = 'ch' + (cf && cf !== '-' && cf !== '0' ? ' bate' : '');
+      punhoAnda = anda;
+    } else {
+      const pos = parseInt(m.extra, 10);
+      $('pos-' + mo.k).textContent = isNaN(pos) ? '—' : pos + '%';
+      $('bar-' + mo.k).style.width = (isNaN(pos) ? 0 : pos) + '%';
+      if (fcd) {
+        const d = i - 1;   // W e o indice 0
+        $('ca-' + mo.k).className = 'ch' + (fcd[d * 2]     === '1' ? ' bate' : '');
+        $('cf-' + mo.k).className = 'ch' + (fcd[d * 2 + 1] === '1' ? ' bate' : '');
+      }
+      if (anda) algumDedo = true;
+    }
+  }
+
+  acender('dedos', algumDedo); estado('dedos', algumDedo ? 'movendo' : 'parados');
+  acender('l298', algumDedo); estado('l298', algumDedo ? 'acionando' : 'em repouso');
+  acender('punho', punhoAnda); estado('punho', punhoAnda ? 'movendo' : 'parado');
+
+  // ---- o Pico e as chaves ----------------------------------------------
+  // EXP e a palavra crua do expansor. FFFF quer dizer barramento mudo -- o
+  // firmware finge FFFF de proposito, que e o lado seguro. Isso NAO e "dez
+  // chaves acionadas", e marcar como alerta em vez de verde evita ler ruido
+  // como se fosse medida.
+  if (st.EXP) {
+    const mudo = st.EXP.toUpperCase() === 'FFFF';
+    acender('pico', !mudo, mudo ? 'erro' : '');
+    estado('pico', mudo ? 'MUDO — sem resposta' : 'respondendo · ' + st.EXP);
+  }
+
+  // ---- o cerebro e a bateria -------------------------------------------
+  acender('esp', true); estado('esp', 'conectado');
+  if (st.VBAT) {
+    const [v, faixa] = st.VBAT.split(',');
+    const ruim = faixa && /critic|baix/i.test(faixa);
+    acender('bat', !ruim, ruim ? 'alerta' : '');
+    estado('bat', v + ' V' + (faixa ? ' · ' + faixa : ''));
+    acender('buck', true); estado('buck', 'alimentando');
+  }
+
+  // ---- o manche ---------------------------------------------------------
+  if (st.JOY) {
+    const [vert, lat] = st.JOY.split(',').map(Number);
+    const mexe = Math.abs(vert) > 20 || Math.abs(lat) > 20;
+    acender('manche', mexe);
+    estado('manche', mexe ? 'em uso' : 'no centro');
+  }
+
+  // ---- o que mudou vira historico ---------------------------------------
+  for (const mo of MOTORES) {
+    const m = st.motores[mo.k]; if (!m) continue;
+    const anda = m.dir && m.dir !== '-' && m.dir.toLowerCase() !== 'parado';
+    if (anda && !ultimoEstado[mo.k]) anotar(mo.nome + ': começou a mover (' + m.dir + ')');
+    if (!anda && ultimoEstado[mo.k]) anotar(mo.nome + ': parou');
+    ultimoEstado[mo.k] = anda;
+  }
+}
+
+// ---------------------------------------------------------------- partida
+montar();
+if (!navigator.bluetooth) {
+  $('semBle').hidden = false;
+  $('btConn').disabled = true;
+}
+$('btConn').onclick = () => (disp && disp.gatt.connected) ? desconectar() : conectar();
+</script>
+</body>
+</html>
