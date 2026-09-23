@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — menu</title>
+<link rel="stylesheet" href="../damp-assets/damp.css">
+<style>
+  .opcoes { display: grid; gap: 12px; }
+  a.opcao {
+    display: flex; align-items: center; gap: 14px; text-decoration: none;
+    color: inherit; background: var(--card); border: 1px solid var(--linha);
+    border-radius: 14px; padding: 16px 14px;
+  }
+  a.opcao:hover, a.opcao:focus-visible {
+    border-color: var(--primaria); box-shadow: 0 0 0 1px var(--primaria);
+    outline: none;
+  }
+  .icone {
+    flex: none; width: 44px; height: 44px; border-radius: 12px;
+    background: var(--primaria-fraca); color: var(--primaria);
+    display: grid; place-items: center;
+  }
+  .icone svg { width: 24px; height: 24px; fill: none;
+               stroke: currentColor; stroke-width: 1.9;
+               stroke-linecap: round; stroke-linejoin: round; }
+  .texto { flex: 1; min-width: 0; }
+  .texto b { display: block; font-size: 16px; }
+  .texto span { display: block; font-size: 13px; color: var(--fraco); margin-top: 2px; }
+  .seta { flex: none; color: var(--fraco); font-size: 20px; }
+  footer { margin-top: 22px; font-size: 12px; color: var(--fraco); }
+</style>
+</head>
+<body>
+
+<h1>DAMP</h1>
+<p class="sub">Dispositivo Assistivo para Auxílio de Movimentos da Mão e do Punho</p>
+
+<nav class="opcoes">
+
+  <a class="opcao" href="../damp/">
+    <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="3"/><path d="M10 18.5h4"/>
+    </svg></span>
+    <span class="texto">
+      <b>DAMP app</b>
+      <span>Controlar o aparelho por Bluetooth, e ver o diagnóstico</span>
+    </span>
+    <span class="seta" aria-hidden="true">›</span>
+  </a>
+
+  <a class="opcao" href="../damp-animacao/">
+    <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24">
+      <path d="M3 12h4"/><path d="M17 12h4"/>
+      <rect x="7" y="8.5" width="10" height="7" rx="1.5"/>
+      <path d="M9.5 8.5v7M12 8.5v7M14.5 8.5v7"/>
+    </svg></span>
+    <span class="texto">
+      <b>DAMP animação</b>
+      <span>Como o fuso e a porca viram movimento linear</span>
+    </span>
+    <span class="seta" aria-hidden="true">›</span>
+  </a>
+
+  <a class="opcao" href="../damp-video/">
+    <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24">
+      <rect x="2.5" y="5.5" width="13" height="13" rx="2.5"/>
+      <path d="M15.5 10.5l6-3.5v10l-6-3.5z"/>
+    </svg></span>
+    <span class="texto">
+      <b>DAMP vídeo</b>
+      <span>O aparelho funcionando</span>
+    </span>
+    <span class="seta" aria-hidden="true">›</span>
+  </a>
+
+  <a class="opcao" href="../damp-atuadores/">
+    <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24">
+      <circle cx="7" cy="12" r="3.5"/><path d="M10.5 12h8"/>
+      <path d="M13 9.5v5M16 9.5v5M19 9.5v5"/>
+    </svg></span>
+    <span class="texto">
+      <b>DAMP atuadores</b>
+      <span>Os quatro que foram testados, e por que cada um passou ou não</span>
+    </span>
+    <span class="seta" aria-hidden="true">›</span>
+  </a>
+
+</nav>
+
+<footer>
+  Fundação Escola Técnica Liberato Salzano Vieira da Cunha ·
+  <a href="../" style="color:var(--primaria)">recati.com.br</a>
+</footer>
+
+</body>
+</html>

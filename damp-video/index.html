@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — vídeo</title>
+<link rel="stylesheet" href="../damp-assets/damp.css">
+<style>
+  video { width: 100%; border-radius: 12px; background: #000; display: block; }
+  .vazio {
+    border: 2px dashed var(--linha); border-radius: 14px; padding: 34px 18px;
+    text-align: center; color: var(--fraco);
+  }
+  .vazio svg { width: 40px; height: 40px; stroke: currentColor; fill: none;
+               stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .acoes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .acoes button { flex: 1; min-width: 140px; }
+  .campo { margin-top: 10px; }
+  .campo label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .recado { font-size: 13px; margin-top: 10px; min-height: 18px; }
+  .recado.erro { color: var(--erro); font-weight: 600; }
+  .recado.ok   { color: var(--ok);   font-weight: 600; }
+  .escondido { display: none !important; }
+  .ficha { font-size: 12px; color: var(--fraco); margin-top: 8px; }
+  input[type=file] { font: inherit; width: 100%; }
+</style>
+</head>
+<body>
+
+<a class="voltar" href="../damp-menu/">Voltar ao menu</a>
+
+<h1>DAMP em funcionamento</h1>
+<p class="sub">O vídeo do aparelho</p>
+
+<div id="palco" class="cartao">
+  <div id="semVideo" class="vazio">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2.5" y="5.5" width="13" height="13" rx="2.5"/>
+      <path d="M15.5 10.5l6-3.5v10l-6-3.5z"/>
+    </svg>
+    <p style="margin:12px 0 0"><b>Ainda não há vídeo.</b></p>
+    <p class="mini" style="margin:4px 0 0">Use o botão abaixo para adicionar.</p>
+  </div>
+  <video id="player" class="escondido" controls playsinline preload="metadata"></video>
+  <div id="ficha" class="ficha"></div>
+</div>
+
+<div class="acoes">
+  <button id="btAdd" class="acao">Adicionar vídeo</button>
+  <button id="btTroca" class="escondido">Trocar vídeo</button>
+  <button id="btTira" class="perigo escondido">Remover</button>
+</div>
+
+<!-- ---------------------------------------------------------------------- -->
+<div id="formulario" class="cartao escondido" style="margin-top:12px">
+  <h2 id="tituloForm">Adicionar vídeo</h2>
+  <p class="mini" style="margin:0 0 10px">É preciso a senha para adicionar ou trocar.</p>
+
+  <div class="campo">
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" autocomplete="off" inputmode="text">
+  </div>
+
+  <div class="campo">
+    <label for="arquivo">Arquivo de vídeo</label>
+    <input type="file" id="arquivo" accept="video/*">
+  </div>
+
+  <div class="acoes">
+    <button id="btSalvar" class="acao">Salvar</button>
+    <button id="btCancelar">Cancelar</button>
+  </div>
+  <div id="recado" class="recado" role="status" aria-live="polite"></div>
+</div>
+
+<div class="nota atencao" style="margin-top:16px">
+  <b>Onde este vídeo fica guardado.</b> O site é estático — não há servidor para
+  receber arquivo. O vídeo que você adiciona fica <b>neste aparelho, neste
+  navegador</b>. Ele continua aqui depois de fechar a aba e de desligar o
+  celular, mas <b>não aparece para quem abrir o link em outro aparelho</b>.
+  <br><br>
+  Para o vídeo aparecer para todo mundo, o arquivo precisa entrar no site:
+  um <code>video.mp4</code> dentro da pasta <code>damp-video/</code>. Esta
+  página procura por ele primeiro, e só usa o vídeo local se ele não existir.
+  <br><br>
+  Pela mesma razão, a senha aqui é um <b>freio contra troca sem querer</b>, e
+  não segurança: ela viaja no código da página, e o vídeo é local de qualquer
+  forma.
+</div>
+
+<script src="../damp-assets/guardar.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var SENHA  = 'damp';
+  var CHAVE  = 'video';
+  // ⚠ ORDEM DE PREFERENCIA, e ela e deliberada:
+  //   1. o video que ESTA PESSOA adicionou neste navegador (ela escolheu);
+  //   2. o video fixo do site, se algum dia for colocado no repositorio.
+  //   Assim quem adiciona um video ve o proprio, e quem nunca adicionou ve o
+  //   oficial. Inverter isso faria o "trocar video" nao ter efeito visivel,
+  //   que e o jeito mais rapido de alguem achar que o site esta quebrado.
+  var FIXO = 'video.mp4';
+
+  var $ = function (id) { return document.getElementById(id); };
+  var player = $('player'), semVideo = $('semVideo'), ficha = $('ficha');
+  var formulario = $('formulario'), recado = $('recado');
+  var urlAtual = null;
+
+  function mostrar(el, sim) { el.classList.toggle('escondido', !sim); }
+
+  function dizer(texto, tipo) {
+    recado.textContent = texto || '';
+    recado.className = 'recado' + (tipo ? ' ' + tipo : '');
+  }
+
+  function tocar(src, descricao) {
+    // ⚠ Revoga a URL anterior ANTES de criar a proxima. Sem isto, cada troca
+    //   deixa o Blob inteiro preso na memoria da aba -- com video de celular
+    //   isso derruba o navegador depois de algumas trocas.
+    if (urlAtual) { URL.revokeObjectURL(urlAtual); urlAtual = null; }
+    if (src instanceof Blob) { urlAtual = URL.createObjectURL(src); player.src = urlAtual; }
+    else { player.src = src; }
+    mostrar(player, true);
+    mostrar(semVideo, false);
+    ficha.textContent = descricao || '';
+    mostrar($('btAdd'), false);
+    mostrar($('btTroca'), true);
+    mostrar($('btTira'), src instanceof Blob);
+  }
+
+  function semNada() {
+    if (urlAtual) { URL.revokeObjectURL(urlAtual); urlAtual = null; }
+    player.removeAttribute('src'); player.load();
+    mostrar(player, false);
+    mostrar(semVideo, true);
+    ficha.textContent = '';
+    mostrar($('btAdd'), true);
+    mostrar($('btTroca'), false);
+    mostrar($('btTira'), false);
+  }
+
+  /** O video fixo do repositorio existe? Um HEAD resolve sem baixar o arquivo
+   *  inteiro -- baixar um video so para descobrir se ele existe gastaria os
+   *  dados de quem esta no 4G da feira. */
+  function temFixo() {
+    return fetch(FIXO, { method: 'HEAD' })
+      .then(function (r) { return r.ok; })
+      .catch(function () { return false; });
+  }
+
+  function carregar() {
+    return Guardar.ler(CHAVE).then(function (blob) {
+      if (blob) {
+        tocar(blob, 'Vídeo deste aparelho · ' + tamanhoLegivel(blob.size));
+        return;
+      }
+      return temFixo().then(function (existe) {
+        if (existe) tocar(FIXO, 'Vídeo do site');
+        else semNada();
+      });
+    });
+  }
+
+  function abrirForm(titulo) {
+    $('tituloForm').textContent = titulo;
+    $('senha').value = ''; $('arquivo').value = '';
+    dizer('');
+    mostrar(formulario, true);
+    $('senha').focus();
+  }
+
+  $('btAdd').onclick   = function () { abrirForm('Adicionar vídeo'); };
+  $('btTroca').onclick = function () { abrirForm('Trocar vídeo'); };
+  $('btCancelar').onclick = function () { mostrar(formulario, false); };
+
+  $('btTira').onclick = function () {
+    var s = prompt('Senha para remover o vídeo:');
+    if (s === null) return;
+    if (s !== SENHA) { alert('Senha errada.'); return; }
+    Guardar.tirar(CHAVE).then(carregar);
+  };
+
+  $('btSalvar').onclick = function () {
+    // ⚠ A SENHA E CONFERIDA ANTES DE OLHAR O ARQUIVO, e a mensagem de erro
+    //   diz UMA coisa de cada vez. Conferir os dois juntos e responder "algo
+    //   esta errado" faz a pessoa trocar o arquivo quando o problema era a
+    //   senha -- e vice-versa.
+    if ($('senha').value !== SENHA) { dizer('Senha errada.', 'erro'); return; }
+
+    var f = $('arquivo').files && $('arquivo').files[0];
+    if (!f) { dizer('Escolha um arquivo de vídeo.', 'erro'); return; }
+    if (f.type && f.type.indexOf('video/') !== 0) {
+      dizer('Esse arquivo não é um vídeo.', 'erro'); return;
+    }
+
+    dizer('Guardando ' + tamanhoLegivel(f.size) + '…');
+    $('btSalvar').disabled = true;
+
+    Guardar.por(CHAVE, f).then(function () {
+      $('btSalvar').disabled = false;
+      mostrar(formulario, false);
+      return carregar();
+    }).catch(function (e) {
+      $('btSalvar').disabled = false;
+      // ⚠ O motivo verdadeiro importa: "sem espaco" e "aba anonima" pedem
+      //   coisas diferentes de quem esta na frente da tela.
+      var nome = (e && e.name) || '';
+      if (nome === 'QuotaExceededError') {
+        dizer('Não coube: o navegador não tem espaço para um arquivo desse ' +
+              'tamanho. Tente um vídeo menor ou mais curto.', 'erro');
+      } else {
+        dizer('Não consegui guardar aqui. Se esta for uma aba anônima, ou se ' +
+              'os dados de site estiverem bloqueados, o navegador não deixa. ' +
+              'Tente numa aba normal.', 'erro');
+      }
+    });
+  };
+
+  carregar();
+})();
+</script>
+</body>
+</html>

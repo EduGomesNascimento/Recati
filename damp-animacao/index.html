@@ -15,6 +15,10 @@ body{margin:0;background:var(--bg);color:var(--text);
 main{max-width:420px;margin:0 auto;}
 h1{font-size:22px;margin:0;letter-spacing:-.3px;}
 .sub{color:var(--muted);font-size:13px;margin:2px 0 14px;}
+.voltar{display:inline-flex;align-items:center;gap:6px;color:var(--primaria);
+  text-decoration:none;font-weight:600;font-size:14px;margin:0 0 12px;padding:8px 0;}
+.voltar::before{content:"\2190";font-size:17px;line-height:1;}
+.voltar:hover{text-decoration:underline;}
 .paginas{display:flex;gap:6px;margin:0 0 14px;}
 .paginas a{flex:1;text-align:center;text-decoration:none;font-size:14px;font-weight:600;
   color:var(--muted);background:transparent;border:1px solid var(--linha);
@@ -45,13 +49,11 @@ button:focus-visible{outline:2px solid #BA7517;outline-offset:2px;}
 <body>
 <main>
 
+<a class="voltar" href="../damp-menu/">Voltar ao menu</a>
+
 <h1>DAMP</h1>
 <div class="sub">Fuso e porca — como a rotação vira movimento linear</div>
 
-<nav class="paginas">
-  <a href="../">Controle</a>
-  <a href="./" aria-current="page">Animação</a>
-</nav>
 
 <p class="intro">O punho do DAMP é movido por um <b>fuso trapezoidal Tr8×8</b>. O motor gira
 o fuso, e a porca — impedida de girar por um invólucro impresso em 3D — caminha ao longo

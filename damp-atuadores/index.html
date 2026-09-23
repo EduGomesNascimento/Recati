@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — atuadores</title>
+<link rel="stylesheet" href="../damp-assets/damp.css">
+<style>
+  .at { margin-bottom: 14px; }
+  .cab { display: flex; align-items: flex-start; gap: 10px; }
+  .cab h2 { flex: 1; }
+  .ordem { font-size: 11px; font-weight: 700; color: var(--fraco);
+           letter-spacing: .4px; text-transform: uppercase; }
+  .figura {
+    margin: 12px 0; background: var(--bg); border: 1px solid var(--linha);
+    border-radius: 10px; overflow: hidden; position: relative;
+  }
+  .figura svg { display: block; width: 100%; height: auto; }
+  .figura img { display: block; width: 100%; height: auto; }
+  .legenda { font-size: 11px; color: var(--fraco); padding: 6px 10px;
+             border-top: 1px solid var(--linha); }
+  .dados { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 0; }
+  .dado { background: var(--bg); border: 1px solid var(--linha);
+          border-radius: 9px; padding: 7px 10px; font-size: 12px; }
+  .dado b { display: block; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .dado.falta b { color: var(--alerta); }
+  .porque { font-size: 14px; margin: 10px 0 0; }
+  .porque b { color: var(--txt); }
+  .fotoAcao { margin-top: 8px; }
+  .fotoAcao button { font-size: 13px; padding: 8px 12px; }
+  svg .peca  { fill: var(--primaria-fraca); stroke: var(--primaria); stroke-width: 2; }
+  svg .corpo { fill: var(--linha); stroke: var(--fraco); stroke-width: 2; }
+  svg .eixo  { stroke: var(--fraco); stroke-width: 3; stroke-linecap: round; }
+  svg .cabo  { stroke: var(--erro); stroke-width: 2.4; fill: none; stroke-linecap: round; }
+  svg .rosca { stroke: var(--fraco); stroke-width: 1.6; }
+  svg text   { fill: var(--fraco); font: 10px sans-serif; }
+</style>
+</head>
+<body>
+
+<a class="voltar" href="../damp-menu/">Voltar ao menu</a>
+
+<h1>Atuadores testados</h1>
+<p class="sub">Quatro configurações passaram pela bancada. Três nos dedos, uma no punho.</p>
+
+<div class="nota">
+  <b>O requisito dos dedos:</b> 10&nbsp;N de força e no máximo 500&nbsp;g de massa.
+  É contra esses dois números que cada tentativa abaixo passou ou não.
+</div>
+
+<!-- =================================================================== -->
+<section class="cartao at">
+  <div class="cab">
+    <h2>Fuso trapezoidal Tr8×8</h2>
+    <span class="tag usa">Em uso</span>
+  </div>
+  <div class="ordem">O punho · funcionou de primeira</div>
+
+  <div class="figura" data-foto="fuso">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Motor girando um fuso trapezoidal; a porca caminha ao longo do eixo e traciona o cabo">
+      <rect class="corpo" x="14" y="38" width="62" height="44" rx="6"/>
+      <text x="45" y="98" text-anchor="middle">motor DC</text>
+      <line class="eixo" x1="76" y1="60" x2="104" y2="60"/>
+      <line class="eixo" x1="104" y1="60" x2="396" y2="60"/>
+      <g class="rosca">
+        <path d="M112 52l10 16M128 52l10 16M144 52l10 16M160 52l10 16M176 52l10 16
+                 M192 52l10 16M208 52l10 16M224 52l10 16M240 52l10 16M256 52l10 16
+                 M272 52l10 16M288 52l10 16M304 52l10 16M320 52l10 16M336 52l10 16
+                 M352 52l10 16M368 52l10 16"/>
+      </g>
+      <rect class="peca" x="188" y="40" width="46" height="40" rx="5"/>
+      <text x="211" y="98" text-anchor="middle">porca</text>
+      <path class="cabo" d="M234 60h60"/>
+      <circle class="cabo" cx="300" cy="60" r="5" fill="none"/>
+      <text x="316" y="46">cabo</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — a porca é impedida de girar por um invólucro impresso em 3D.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="fuso">Adicionar foto</button></div>
+
+  <p class="porque">O motor gira o fuso; a porca, travada contra a rotação, caminha
+  ao longo do eixo e traciona o cabo. <b>É autotravante:</b> com o motor desligado,
+  o punho fica onde parou, sem consumir corrente.</p>
+</section>
+
+<!-- =================================================================== -->
+<section class="cartao at">
+  <div class="cab">
+    <h2>Micromotor direto no eixo</h2>
+    <span class="tag fora">Reprovado</span>
+  </div>
+  <div class="ordem">Dedos · 1ª tentativa · mini fuso de 4&nbsp;mm</div>
+
+  <div class="figura" data-foto="micro">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Micromotor pequeno acoplado direto a um mini fuso de 4 milímetros">
+      <rect class="corpo" x="14" y="46" width="44" height="30" rx="5"/>
+      <text x="36" y="96" text-anchor="middle">micromotor</text>
+      <text x="36" y="108" text-anchor="middle">sem redução</text>
+      <line class="eixo" x1="58" y1="61" x2="300" y2="61"/>
+      <g class="rosca">
+        <path d="M74 55l7 12M88 55l7 12M102 55l7 12M116 55l7 12M130 55l7 12
+                 M144 55l7 12M158 55l7 12M172 55l7 12M186 55l7 12M200 55l7 12
+                 M214 55l7 12M228 55l7 12M242 55l7 12M256 55l7 12M270 55l7 12"/>
+      </g>
+      <rect class="peca" x="150" y="47" width="34" height="28" rx="4"/>
+      <path class="cabo" d="M184 61h50"/>
+      <text x="240" y="50">cabo</text>
+      <text x="340" y="65">fuso 4 mm</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — o mesmo princípio do punho, em escala reduzida.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="micro">Adicionar foto</button></div>
+
+  <div class="dados">
+    <span class="dado">força<b>7 N</b></span>
+    <span class="dado">massa<b>564 g</b></span>
+    <span class="dado">exigido<b>10 N · 500 g</b></span>
+  </div>
+  <p class="porque">Ficou abaixo dos 10&nbsp;N. <b>O motivo é construtivo:</b> sem
+  caixa de redução, o micromotor mantém o torque baixo — não era questão de
+  ajuste, e sim do motor escolhido.</p>
+</section>
+
+<!-- =================================================================== -->
+<section class="cartao at">
+  <div class="cab">
+    <h2>Servomotor puxando cabo</h2>
+    <span class="tag fora">Reprovado</span>
+  </div>
+  <div class="ordem">Dedos · 2ª tentativa · foi o protótipo levado à banca</div>
+
+  <div class="figura" data-foto="servo">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Servomotor com braço girando e puxando um cabo">
+      <rect class="corpo" x="120" y="34" width="86" height="56" rx="6"/>
+      <text x="163" y="106" text-anchor="middle">servomotor</text>
+      <circle class="peca" cx="163" cy="62" r="13"/>
+      <path class="peca" d="M163 62 L214 36 l6 11 -51 26 z"/>
+      <path class="cabo" d="M217 41 C 260 34, 300 40, 330 58"/>
+      <text x="336" y="56">cabo</text>
+      <path class="rosca" fill="none" d="M196 22 A 46 46 0 0 1 208 52"/>
+      <path class="rosca" d="M205 46l3 7 7-3" fill="none"/>
+      <text x="212" y="20">180°</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — o braço gira e recolhe o cabo.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="servo">Adicionar foto</button></div>
+
+  <div class="dados">
+    <span class="dado">força<b>10 N</b></span>
+    <span class="dado">massa<b>500 g</b></span>
+    <span class="dado">exigido<b>10 N · 500 g</b></span>
+  </div>
+  <p class="porque"><b>Atingiu o requisito</b> — e mesmo assim saiu. Dois motivos:
+  o curso é limitado a 180°, pouco para o movimento que o DAMP precisa, e o servo
+  <b>não mantém a posição sem energia</b>. Tirou-se a força, o dedo voltou.</p>
+</section>
+
+<!-- =================================================================== -->
+<section class="cartao at">
+  <div class="cab">
+    <h2>Motorredutor N20 + mini fuso</h2>
+    <span class="tag medindo">Em medição</span>
+  </div>
+  <div class="ordem">Dedos · 3ª tentativa · é o que está montado hoje</div>
+
+  <div class="figura" data-foto="n20">
+    <svg viewBox="0 0 420 120" role="img" aria-label="Motorredutor N20 com caixa de redução acoplado a um mini fuso por acoplamento flexível">
+      <rect class="corpo" x="14" y="44" width="40" height="34" rx="5"/>
+      <rect class="peca" x="54" y="48" width="30" height="26" rx="3"/>
+      <text x="48" y="96" text-anchor="middle">N20 12 V 100 rpm</text>
+      <text x="48" y="108" text-anchor="middle">com redução</text>
+      <line class="eixo" x1="84" y1="61" x2="104" y2="61"/>
+      <rect class="peca" x="100" y="52" width="18" height="18" rx="3"/>
+      <text x="126" y="44">acoplamento 3×8</text>
+      <line class="eixo" x1="118" y1="61" x2="330" y2="61"/>
+      <g class="rosca">
+        <path d="M128 55l7 12M142 55l7 12M156 55l7 12M170 55l7 12M184 55l7 12
+                 M198 55l7 12M212 55l7 12M226 55l7 12M240 55l7 12M254 55l7 12
+                 M268 55l7 12M282 55l7 12M296 55l7 12M310 55l7 12"/>
+      </g>
+      <rect class="peca" x="198" y="47" width="34" height="28" rx="4"/>
+      <text x="215" y="96" text-anchor="middle">castanha</text>
+      <path class="cabo" d="M232 61h58"/>
+      <text x="296" y="50">tendão</text>
+    </svg>
+    <div class="legenda">Desenho esquemático — mesmo mecanismo da 1ª tentativa, com motor reduzido.</div>
+  </div>
+  <div class="fotoAcao"><button data-add="n20">Adicionar foto</button></div>
+
+  <div class="dados">
+    <span class="dado falta">força<b>a medir</b></span>
+    <span class="dado falta">massa<b>a medir</b></span>
+    <span class="dado falta">tempo dos dedos<b>a medir</b></span>
+  </div>
+  <p class="porque">O que reprovou a 1ª tentativa <b>não foi o mecanismo, foi o
+  motor</b>. Com a caixa de redução do N20, o mesmo mini fuso passou a entregar —
+  e continua autotravante, o que o servo não fazia.</p>
+
+  <div class="nota atencao" style="margin-top:10px">
+    Força, massa e tempo desta configuração <b>ainda não foram medidos</b>. Os
+    10&nbsp;N e os 500&nbsp;g que aparecem no banner são da configuração com
+    servomotor, que foi reprovada — não valem para esta.
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<div class="cartao">
+  <h2>O preço da escolha</h2>
+  <p class="porque" style="margin-top:6px">O servo trazia realimentação de posição
+  embutida; o mini fuso não traz. Então cada conjunto precisa de <b>duas chaves de
+  fim de curso</b>, uma em cada ponta — <b>dez no total</b>, oito nos dedos e duas
+  no punho. É o que o aparelho paga por manter a posição com o motor desligado.</p>
+</div>
+
+<p class="mini">Os desenhos são esquemáticos, para mostrar o mecanismo. As fotos das
+peças reais podem ser acrescentadas nos botões acima — ficam guardadas neste
+aparelho, como o vídeo.</p>
+
+<script src="../damp-assets/guardar.js"></script>
+<script>
+(function () {
+  'use strict';
+  var SENHA = 'damp';
+
+  /** Troca o desenho pela foto real, quando houver uma guardada. */
+  function pintar(id, blob) {
+    var cx = document.querySelector('.figura[data-foto="' + id + '"]');
+    if (!cx) return;
+    var antiga = cx.querySelector('img');
+    if (antiga) { URL.revokeObjectURL(antiga.src); antiga.remove(); }
+    var svg = cx.querySelector('svg'), leg = cx.querySelector('.legenda');
+    var bt = document.querySelector('button[data-add="' + id + '"]');
+
+    if (!blob) {
+      if (svg) svg.style.display = '';
+      if (leg) leg.textContent = leg.dataset.original || leg.textContent;
+      if (bt) bt.textContent = 'Adicionar foto';
+      return;
+    }
+    var img = new Image();
+    img.src = URL.createObjectURL(blob);
+    img.alt = 'Foto da peça';
+    cx.insertBefore(img, leg);
+    if (svg) svg.style.display = 'none';
+    if (leg) {
+      if (!leg.dataset.original) leg.dataset.original = leg.textContent;
+      leg.textContent = 'Foto deste aparelho · ' + tamanhoLegivel(blob.size);
+    }
+    if (bt) bt.textContent = 'Trocar / remover foto';
+  }
+
+  function carregar(id) {
+    return Guardar.ler('foto:' + id).then(function (b) { pintar(id, b); });
+  }
+
+  document.querySelectorAll('button[data-add]').forEach(function (bt) {
+    bt.onclick = function () {
+      var id = bt.dataset.add;
+      var s = prompt('Senha para mexer na foto:');
+      if (s === null) return;
+      if (s !== SENHA) { alert('Senha errada.'); return; }
+
+      Guardar.ler('foto:' + id).then(function (tinha) {
+        if (tinha && confirm('Já existe uma foto aqui.\n\nOK troca por outra.\n' +
+                             'Cancelar remove e volta ao desenho.') === false) {
+          return Guardar.tirar('foto:' + id).then(function () { return carregar(id); });
+        }
+        var esc = document.createElement('input');
+        esc.type = 'file'; esc.accept = 'image/*';
+        esc.onchange = function () {
+          var f = esc.files && esc.files[0];
+          if (!f) return;
+          if (f.type && f.type.indexOf('image/') !== 0) {
+            alert('Esse arquivo não é uma imagem.'); return;
+          }
+          Guardar.por('foto:' + id, f)
+            .then(function () { return carregar(id); })
+            .catch(function () {
+              alert('Não consegui guardar aqui. Em aba anônima, ou com os dados ' +
+                    'de site bloqueados, o navegador não deixa.');
+            });
+        };
+        esc.click();
+      });
+    };
+  });
+
+  ['fuso', 'micro', 'servo', 'n20'].forEach(carregar);
+})();
+</script>
+</body>
+</html>
