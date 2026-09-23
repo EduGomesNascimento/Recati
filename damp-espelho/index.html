@@ -116,7 +116,7 @@ Conecte no Bluetooth, ou use os botões para ver cada comando.</p>
       </g></g>
     </g>
 
-    <text class="rot" x="150" y="76" id="rotPunho">punho</text>
+    <text class="rot" x="102" y="80" id="rotPunho">punho</text>
   </svg>
 
   <div class="faixa">
@@ -145,20 +145,29 @@ const RX  = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
 const TX  = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
 const $ = id => document.getElementById(id);
 
+// ⚠ NEGATIVO E PARA CIMA. Em SVG o y cresce para baixo, entao girar a mao com
+//   angulo negativo levanta a ponta dos dedos. PUXAR o punho leva a mao PARA
+//   CIMA -- foi assim que o aparelho de verdade se comportou na bancada, e a
+//   primeira versao desta pagina tinha os dois trocados.
+//
+//   Os nomes dizem o movimento, e nao "max"/"min": com max e min nada avisa
+//   quando o sinal esta invertido, que e justamente o engano que houve aqui.
+const PUNHO_PUXADO = -30;   // mao para cima
+const PUNHO_SOLTO  =  22;   // mao para baixo
+
 // As cinco frases, e o que cada byte deve provocar no desenho.
 const FRASES = {
   '11': { f:'abrir mão',   r:'abrindo os quatro dedos',  faz: () => { alvo.dedos = 0;   } },
   '12': { f:'fecha mão',   r:'fechando os quatro dedos', faz: () => { alvo.dedos = 100; } },
   '13': { f:'para DAMP',   r:'parando tudo, na hora',    faz: parar },
-  '14': { f:'puxa punho',  r:'fechando o punho',         faz: () => { alvo.punho = 30; } },
-  '15': { f:'solta punho', r:'abrindo o punho',          faz: () => { alvo.punho = -22; } },
+  '14': { f:'puxa punho',  r:'levantando o punho',       faz: () => { alvo.punho = PUNHO_PUXADO; } },
+  '15': { f:'solta punho', r:'baixando o punho',         faz: () => { alvo.punho = PUNHO_SOLTO;  } },
 };
 
 // ⚠ GRAUS, NAO PORCENTAGEM: o desenho trabalha em angulo, e a ponte entre os
 //   dois vive so aqui. A posicao que o firmware manda e 0..100, com 100 =
 //   FECHADO (o firmware manda HAND:POS:100 para fechar).
 const FECHADO_P = 82, FECHADO_D = 76;   // quanto cada falange gira, fechada
-const PUNHO_MAX = 30, PUNHO_MIN = -22;
 
 // onde o desenho esta, e para onde vai. A animacao so persegue o alvo.
 let atual = { dedos: 0, punho: 0 };
@@ -321,8 +330,9 @@ function usar(st) {
   //   e é assim que a chave de fim de curso aparece: o desenho para junto.
   const w = st.motores.W;
   if (w) {
-    if (w.dir === 'UP')        alvo.punho = PUNHO_MAX;
-    else if (w.dir === 'DOWN') alvo.punho = PUNHO_MIN;
+    // W:UP e o "Puxar" do app (e o 0x14 da voz, que vira W:PULSEUP).
+    if (w.dir === 'UP')        alvo.punho = PUNHO_PUXADO;
+    else if (w.dir === 'DOWN') alvo.punho = PUNHO_SOLTO;
     else                       alvo.punho = atual.punho;
     chaves.fecha = w.extra[0] === '1';
     chaves.abre  = w.extra[1] === '1';
