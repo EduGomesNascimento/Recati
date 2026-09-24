@@ -121,9 +121,10 @@ const FASES = [
     itens:[
       { id:'s3dev', nome:'ESP32-S3-DevKitC-1 N16R8 × 1', tag:'est',
         det:'Vocês já têm um. Este é o segundo, para o principal.', min:90, max:130 },
-      { id:'xiao', nome:'XIAO ESP32S3 Sense', tag:'est',
-        det:'21×17,5 mm, com câmera, microfone e 8 MB de PSRAM. Cabe no punho.',
-        min:170, max:260 },
+      { id:'xiao', nome:'XIAO ESP32S3 <b>Sense</b>', tag:'conf',
+        det:'21×17,5 mm, câmera OV2640 + microfone + PSRAM. ⚠ TEM DE SER A VARIAÇÃO ' +
+            '“Sense” — a outra vem sem câmera e sem microfone. Confira que a antena vem junto.',
+        min:67, max:67 },
       { id:'imu', nome:'MPU6050 (IMU)', tag:'est',
         det:'Alternativa mais tratável que a câmera para prever movimento. Barato, vale testar.',
         min:20, max:40 },
