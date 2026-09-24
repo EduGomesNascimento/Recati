@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>DAMP — lista de materiais</title>
+<link rel="icon" href="../assets/icons/recati-favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icons/recati-favicon.png">
+<link rel="stylesheet" href="../damp-assets/damp.css">
+<style>
+  .fase { margin-bottom:16px; }
+  .fase > h2 { font-size:15px; margin:0 0 4px; text-transform:none; letter-spacing:0;
+               color:var(--txt); }
+  .fase .quando { font-size:12px; color:var(--fraco); margin:0 0 10px; }
+  .item { display:flex; gap:10px; align-items:flex-start; padding:10px 0;
+          border-bottom:1px solid var(--linha); }
+  .item:last-child { border-bottom:0; }
+  .item input { flex:none; width:19px; height:19px; margin:2px 0 0; accent-color:var(--ok); }
+  .item .txt { flex:1; min-width:0; }
+  .item .nome { font-weight:600; font-size:14px; }
+  .item .det { font-size:12px; color:var(--fraco); margin-top:2px; }
+  .item .val { flex:none; text-align:right; font-size:13px; font-variant-numeric:tabular-nums; }
+  .item .val b { display:block; }
+  .item .val span { font-size:11px; color:var(--fraco); }
+  .item.feito .nome, .item.feito .det { text-decoration:line-through; opacity:.5; }
+  .soma { display:flex; justify-content:space-between; padding:10px 0 0; margin-top:4px;
+          border-top:2px solid var(--linha); font-weight:700; font-size:14px; }
+  .tag2 { display:inline-block; font-size:10px; font-weight:700; padding:2px 6px;
+          border-radius:4px; margin-left:5px; vertical-align:1px; }
+  .tag2.conf { background:var(--ok); color:#fff; }
+  .tag2.est  { background:var(--linha); color:var(--fraco); }
+  .tag2.opt  { background:var(--primaria-fraca); color:var(--primaria); }
+  .total { background:var(--primaria); color:#fff; border-radius:14px; padding:16px;
+           margin:18px 0; }
+  .total .l { display:flex; justify-content:space-between; font-size:14px; padding:3px 0; }
+  .total .l.g { font-size:18px; font-weight:700; border-top:1px solid rgba(255,255,255,.35);
+                margin-top:8px; padding-top:10px; }
+  #zerar { width:100%; margin-top:6px; font-size:13px; }
+</style>
+</head>
+<body>
+
+<a class="voltar" href="../damp-menu/">Voltar ao menu</a>
+
+<h1>Lista de materiais</h1>
+<p class="sub">Próxima etapa do DAMP · rumo à MOSTRATEC</p>
+
+<div class="nota atencao">
+  <b>Sobre os preços.</b> Só o N20 tem preço confirmado <span class="tag2 conf">visto</span> —
+  foi o que você viu no anúncio. Todo o resto é <span class="tag2 est">estimativa</span> minha,
+  de memória, e <b>precisa ser conferida antes de comprar</b>. Uso a média da faixa para somar.
+</div>
+
+<div class="nota ruim">
+  <b>⚠ Não compre a lista inteira de uma vez.</b> A Fase 0 custa R$ 44 e pode mudar metade
+  das decisões abaixo. Três ensaios de bancada decidem qual motor, qual fuso e se vocês
+  precisam de encoder — comprar antes deles é apostar.
+</div>
+
+<div id="lista"></div>
+
+<div class="total" id="total"></div>
+<button id="zerar">Desmarcar tudo</button>
+
+<div class="cartao" style="margin-top:18px">
+  <h2>Três coisas técnicas que a lista assume</h2>
+  <p style="font-size:14px;margin:8px 0 0"><b>O eixo do N20 é 3 mm × 10 mm.</b> O acoplamento
+  tem que ser <b>3×5</b> ou 3×4 mm — não o 2×4 que aparece em muita loja. Conferir antes.</p>
+  <p style="font-size:14px;margin:8px 0 0"><b>1 A travado × 5 motores = 5 A de pico.</b> A
+  bateria e o buck precisam aguentar isso. O escalonamento de partida já está no firmware
+  de vocês, então o pico real é menor — mas dimensione para o pior caso.</p>
+  <p style="font-size:14px;margin:8px 0 0"><b>O DRV8833 dá 1,5 A por canal.</b> Folgado para
+  1 A, e muito menor e mais eficiente que o L298N, que perde ~2 V na ponte.</p>
+</div>
+
+<p class="mini" style="margin-top:14px">O que você marcar fica guardado neste aparelho, neste
+navegador. Não aparece para os outros.</p>
+
+<script>
+'use strict';
+const FASES = [
+  { n:'Fase 0 — medir antes de comprar',
+    q:'Faça isto primeiro. Decide o resto da lista.',
+    itens:[
+      { id:'n20teste', nome:'N20 GA12-N20-100 (1 un, para ensaio)', tag:'conf',
+        det:'12 V · 100 rpm · 2 kgf·cm · eixo 3×10 mm · 9,5 g. Só se não houver sobrando.',
+        min:44, max:44 },
+      { id:'balanca', nome:'Balança digital', tag:'opt',
+        det:'Provavelmente vocês já têm — é a mesma dos ensaios do artigo.', min:0, max:0 },
+    ]},
+  { n:'Fase 1 — padronizar o acionamento',
+    q:'Ganho grande, risco baixo. Firmware continua sendo o testado.',
+    itens:[
+      { id:'n20', nome:'N20 GA12-N20-100 × 6', tag:'conf',
+        det:'4 dedos + 1 punho + 1 sobressalente. Um motor só para os cinco eixos.',
+        min:264, max:264 },
+      { id:'drv', nome:'DRV8833 (ou TB6612FNG) × 3', tag:'est',
+        det:'Substitui os 3 × L298N. Muito menor, sem a queda de 2 V.', min:45, max:84 },
+      { id:'porca', nome:'Porca POM anti-backlash Tr8 × 5', tag:'est',
+        det:'No lugar da porca impressa. Menos atrito, mais força útil, sem fluência.',
+        min:75, max:150 },
+      { id:'acopl', nome:'Acoplamento flexível 3×5 mm × 5', tag:'est',
+        det:'⚠ 3 mm do lado do motor. Conferir o diâmetro do fuso do outro lado.',
+        min:40, max:75 },
+      { id:'ina', nome:'INA226 (ou INA219) × 3', tag:'est',
+        det:'Corrente por grupo. Detecta travamento e permite estimar força.', min:60, max:105 },
+    ]},
+  { n:'Fase 2 — fim de curso',
+    q:'Escolha UM dos dois caminhos. Teste num dedo antes dos cinco.',
+    itens:[
+      { id:'escova', nome:'Contato de bronze fosforoso / mola dourada', tag:'opt',
+        det:'Caminho A — a trilha invertida. A plaquinha sai junto com a PCI da Fase 4.',
+        min:10, max:30 },
+      { id:'switch', nome:'Microswitch SPDT pequeno × 10', tag:'opt',
+        det:'Caminho B — o simples. Mantém o normalmente fechado, zero firmware novo.',
+        min:20, max:50 },
+    ]},
+  { n:'Fase 3 — microcontroladores',
+    q:'Depois que o acionamento estiver estável. Não faça junto com a Fase 1.',
+    itens:[
+      { id:'s3dev', nome:'ESP32-S3-DevKitC-1 N16R8 × 1', tag:'est',
+        det:'Vocês já têm um. Este é o segundo, para o principal.', min:90, max:130 },
+      { id:'xiao', nome:'XIAO ESP32S3 Sense', tag:'est',
+        det:'21×17,5 mm, com câmera, microfone e 8 MB de PSRAM. Cabe no punho.',
+        min:170, max:260 },
+      { id:'imu', nome:'MPU6050 (IMU)', tag:'est',
+        det:'Alternativa mais tratável que a câmera para prever movimento. Barato, vale testar.',
+        min:20, max:40 },
+      { id:'wroom', nome:'ESP32-S3-WROOM-1-N16R8 (módulo) × 2', tag:'est',
+        det:'Para soldar na PCI, no lugar da placa de desenvolvimento.', min:120, max:180 },
+    ]},
+  { n:'Fase 4 — placa de circuito impresso',
+    q:'Só quando o desenho eletrônico parar de mudar.',
+    itens:[
+      { id:'pcb', nome:'Fabricação JLCPCB 2 camadas (5 un)', tag:'est',
+        det:'Com frete para o Brasil. A placa de vocês já está roteada.', min:90, max:200 },
+      { id:'passivos', nome:'Kit de passivos SMD 0805', tag:'est',
+        det:'0805 é grande o bastante para soldar à mão, pequeno o bastante para caber.',
+        min:40, max:80 },
+      { id:'conect', nome:'Conectores JST-SH 1,0 mm (sortido)', tag:'est',
+        det:'No lugar dos jumpers soldados. Desmontar deixa de arrancar fio.', min:30, max:60 },
+      { id:'estencil', nome:'Estêncil de pasta', tag:'opt',
+        det:'Só se forem soldar SMD em casa, com forno ou chapa.', min:50, max:100 },
+    ]},
+  { n:'Fase 5 — alimentação e mecânica',
+    q:'Acompanha a redução de tamanho e peso.',
+    itens:[
+      { id:'lipo', nome:'LiPo 3S menor (1500–2200 mAh)', tag:'est',
+        det:'Precisa entregar os 5 A de pico. Conferir a taxa C.', min:90, max:180 },
+      { id:'buck', nome:'MP1584EN × 2', tag:'est',
+        det:'Muito menor que os módulos atuais.', min:16, max:30 },
+      { id:'bms', nome:'BMS 3S com balanceamento', tag:'est',
+        det:'Proteção de célula. Hoje vocês dependem só do corte por tensão no firmware.',
+        min:15, max:30 },
+      { id:'fusos', nome:'Fusos menores + rolamentos F623ZZ', tag:'est',
+        det:'⚠ Passo menor dá mais força e menos velocidade. Decidir depois da Fase 0.',
+        min:150, max:300 },
+    ]},
+];
+
+const $ = id => document.getElementById(id);
+let marcado = {};
+try { marcado = JSON.parse(localStorage.getItem('damp-materiais') || '{}'); } catch (e) {}
+
+function guardar() {
+  try { localStorage.setItem('damp-materiais', JSON.stringify(marcado)); } catch (e) {}
+}
+
+const brl = v => 'R$ ' + v.toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+
+function montar() {
+  const cx = $('lista');
+  cx.innerHTML = '';
+  for (const f of FASES) {
+    const d = document.createElement('div');
+    d.className = 'fase cartao';
+    let h = `<h2>${f.n}</h2><p class="quando">${f.q}</p>`;
+    for (const it of f.itens) {
+      const med = (it.min + it.max) / 2;
+      const faixa = it.min === it.max ? brl(it.min)
+                  : brl(it.min) + '–' + brl(it.max).replace('R$ ', '');
+      h += `<label class="item${marcado[it.id] ? ' feito' : ''}" data-id="${it.id}">
+        <input type="checkbox" ${marcado[it.id] ? 'checked' : ''}>
+        <span class="txt">
+          <span class="nome">${it.nome}<span class="tag2 ${it.tag}">${
+            it.tag === 'conf' ? 'visto' : it.tag === 'opt' ? 'opcional' : 'estimado'}</span></span>
+          <span class="det">${it.det}</span>
+        </span>
+        <span class="val"><b>${it.min === 0 ? '—' : faixa}</b>
+          ${it.min === it.max || it.min === 0 ? '' : '<span>média ' + brl(med) + '</span>'}</span>
+      </label>`;
+    }
+    const sub = f.itens.filter(i => !i.tag || i.tag !== 'opt')
+                       .reduce((a, i) => a + (i.min + i.max) / 2, 0);
+    h += `<div class="soma"><span>subtotal (sem os opcionais)</span><span>${brl(sub)}</span></div>`;
+    d.innerHTML = h;
+    cx.appendChild(d);
+  }
+  somar();
+}
+
+function somar() {
+  let tudo = 0, falta = 0, opt = 0;
+  for (const f of FASES) for (const it of f.itens) {
+    const med = (it.min + it.max) / 2;
+    if (it.tag === 'opt') { opt += med; continue; }
+    tudo += med;
+    if (!marcado[it.id]) falta += med;
+  }
+  $('total').innerHTML =
+    `<div class="l"><span>Tudo, sem os opcionais</span><span>${brl(tudo)}</span></div>
+     <div class="l"><span>Já marcado como comprado</span><span>− ${brl(tudo - falta)}</span></div>
+     <div class="l"><span>Opcionais, se levar todos</span><span>+ ${brl(opt)}</span></div>
+     <div class="l g"><span>Falta comprar</span><span>${brl(falta)}</span></div>`;
+}
+
+$('lista').addEventListener('change', e => {
+  const lab = e.target.closest('.item'); if (!lab) return;
+  marcado[lab.dataset.id] = e.target.checked;
+  lab.classList.toggle('feito', e.target.checked);
+  guardar(); somar();
+});
+
+$('zerar').onclick = () => { marcado = {}; guardar(); montar(); };
+
+montar();
+</script>
+</body>
+</html>
