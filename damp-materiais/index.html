@@ -95,8 +95,12 @@ const FASES = [
       { id:'n20', nome:'N20 GA12-N20-100 × 6', tag:'conf',
         det:'4 dedos + 1 punho + 1 sobressalente. Um motor só para os cinco eixos.',
         min:264, max:264 },
-      { id:'drv', nome:'DRV8833 (ou TB6612FNG) × 3', tag:'est',
-        det:'Substitui os 3 × L298N. Muito menor, sem a queda de 2 V.', min:45, max:84 },
+      { id:'drv', nome:'TB6612FNG × 3', tag:'est',
+        det:'Substitui os 3 × L298N: muito menor e sem a queda de ~2 V da ponte. ' +
+            '⚠ NÃO use DRV8833, MX1508 nem MX1616 — todos param antes de 11 V, e o ' +
+            'trilho é de 12 V. O TB6612 vai até 13,5 V. Margem curta contra uma 3S ' +
+            'cheia (12,6 V); se quiser folga, DRV8871 (6,5–45 V), mas aí são 5 un.',
+        min:60, max:105 },
       { id:'porca', nome:'Porca POM anti-backlash Tr8 × 5', tag:'est',
         det:'No lugar da porca impressa. Menos atrito, mais força útil, sem fluência.',
         min:75, max:150 },
