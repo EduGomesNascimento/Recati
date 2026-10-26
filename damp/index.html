@@ -121,7 +121,7 @@
 <body>
 
 <h1>DAMP</h1>
-<div class="sub">Dispositivo Assistivo de Mão e Punho · <b>Rev. I</b> — dez chaves de fim de curso</div>
+<div class="sub">Dispositivo Assistivo de Mão e Punho · serve na <b>Rev. I</b> (dez chaves) e na <b>Rev. B</b> (PCA9685, dedos param pela corrente)</div>
 
 <nav class="paginas">
   <a href="../damp-menu/">← Menu do DAMP</a>
@@ -167,6 +167,7 @@
     <span class="pt" id="ptBat" hidden></span>
     <span class="mini" id="txtBat"></span>
   </div>
+  <div class="mini" id="txtMod" hidden style="margin:-4px 2px 10px"></div>
 
   <div class="cartao">
     <div class="linha"><span class="titulo">Velocidade do punho</span>
@@ -341,7 +342,7 @@ const DEDOS = [
 // CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
 // página em cache, e "atualizei o site" e "você está vendo o site atualizado"
 // são duas coisas diferentes. Com o carimbo na tela, basta olhar.
-const VERSAO = 'página de 19/09/2026 · manche + 10 chaves';
+const VERSAO = 'página de 26/10/2026 · Rev. I e Rev. B (PCA9685)';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -500,6 +501,7 @@ function analisarStatus(linha) {
     else if (k === 'JRAW') st.jraw = analisarJraw(v);
     else if (k === 'BLK')  st.blk = v;
     else if (k === 'EXP')  st.exp = v;
+    else if (k === 'MOD')  st.mod = analisarMod(v);
     else if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
       st.motores[k] = { dir, extra: extra || '' };
@@ -586,6 +588,20 @@ function analisarJraw(v) {
  *   ele que separa "a peça morreu" de "a peça está viva e o barramento é que
  *   não anda". Com o barramento sadio, o campo é ruído — a tela não o mostra.
  */
+/**
+ * MOD=JOY:OFF,MIC:OFF,CAM:AUSENTE,MOT:111,PCA:OK — o que está plugado (Rev. B).
+ * Só existe no firmware modular; é ele que diz que os dedos NÃO têm chave
+ * (param pela corrente, medida nos INA219) em vez de "chave sumida".
+ */
+function analisarMod(v) {
+  const mod = {};
+  for (const par of v.split(',')) {
+    const i = par.indexOf(':');
+    if (i > 0) mod[par.slice(0, i)] = par.slice(i + 1);
+  }
+  return mod.MOT || mod.PCA ? mod : null;
+}
+
 function analisarCom(v) {
   const [exp, bat, boot, rst] = v.split(',');
   return { exp: exp || '?', bat: bat || '-', bootOk: boot === '1', rst: rst || '?' };
@@ -623,7 +639,10 @@ function aplicarStatus(st) {
     // A frase vale para o PAR, não para cada uma: repetida nos dois pontos ela
     // parecia dois defeitos. Sai uma vez, no primeiro, e o segundo fica com o
     // próprio nome.
-    const ruim = st.com && st.com.exp === 'OK'
+    // Na montagem modular sem expansor (MOD= presente, COM exp OFF) as duas
+    // chaves do punho entram direto no U1: '-' também é fiação.
+    const chavesNoU1 = st.mod && st.com && st.com.exp === 'OFF';
+    const ruim = (st.com && st.com.exp === 'OK') || chavesNoU1
       ? 'as duas acionadas: fiação' : 'sem chave';
     indicador('Fecha', fecha, 'fechar', ruim);
     indicador('Abre',  abre,  'abrir',  fecha === abre ? 'abrir' : ruim);
@@ -646,8 +665,15 @@ function aplicarStatus(st) {
     // As chaves do dedo. Firmware sem o campo FCD= deixa os dois pontos em
     // "sem chave", que é diferente de dizer que a chave está livre.
     const c = st.fcd && st.fcd[d.n - 1];
-    indicador('FF' + d.n, c ? c.fecha : '-', 'fechar');
-    indicador('FA' + d.n, c ? c.abre  : '-', 'abrir');
+    if (!c && st.mod) {
+      // Montagem modular: os dedos NÃO têm chave, de projeto. Fechar para
+      // pela corrente (INA219) e abrir vai até o batente. Não é alerta.
+      neutro('FF' + d.n, 'fecha: para pela corrente');
+      neutro('FA' + d.n, 'abre: até o batente');
+    } else {
+      indicador('FF' + d.n, c ? c.fecha : '-', 'fechar');
+      indicador('FA' + d.n, c ? c.abre  : '-', 'abrir');
+    }
 
     // Botão apagado do lado que já encostou, igual ao punho. Quem bloqueia de
     // verdade é o firmware; isto só evita pedir o que vai voltar recusado.
@@ -672,6 +698,19 @@ function aplicarStatus(st) {
     $('tituloBloqueio' + sufixo).textContent = titulo;
     $('txtBloqueio' + sufixo).innerHTML = bloq;
   });
+
+  // O que está plugado (só no firmware modular): PCA9685, INA219, câmera.
+  if (st.mod) {
+    const m = st.mod, partes = [];
+    if (m.PCA) partes.push('PCA9685 ' + (m.PCA === 'OK' ? 'OK' : 'NÃO responde'));
+    if (m.MOT) partes.push('corrente ' + [...m.MOT].map((b, i) =>
+      'ABC'[i] + (b === '1' ? ' ok' : ' MUDO')).join(' · '));
+    if (m.CAM) partes.push('câmera ' + (m.CAM === 'OK' ? 'OK' : m.CAM === 'OFF' ? 'fora' : 'ausente'));
+    const mal = m.PCA && m.PCA !== 'OK' || (m.MOT && m.MOT.includes('0'));
+    $('txtMod').hidden = false;
+    $('txtMod').textContent = partes.join('  ·  ');
+    $('txtMod').style.color = mal ? 'var(--erro)' : 'var(--fraco)';
+  }
 
   if (st.bat) {
     const [volts, faixa] = st.bat.split(',');
@@ -712,7 +751,11 @@ const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
 // aviso: firmware mais novo não deve fazer a tela gritar em português torto.
 const MOTIVO_BLOQUEIO = {
   BAT: `A bateria está <b>crítica</b>. O manche e os botões são recusados até
-        ela subir — não é defeito do manche. Recarregue o pack.`,
+        ela subir — não é defeito do manche. Recarregue o pack.
+        <br><br>
+        <b>Ligado só no USB?</b> Então é isto mesmo: sem a bateria o +12 V fica
+        perto de 0 V e os motores ficam travados de propósito. Tire o USB e
+        ligue a bateria (nunca os dois juntos).`,
   CHAVES: `<b>AS DEZ chaves estão lendo "acionada" ao mesmo tempo.</b>
      Isso é mecanicamente impossível — dez batentes não encostam juntos. Com
      todas acionadas, cada dedo recusa os dois sentidos e o punho recusa os
@@ -993,6 +1036,11 @@ function aplicarChaves(st) {
  * portanto é fiação. Quem sabe distinguir os dois casos é quem chama, que
  * enxerga o estado do expansor; por isso o texto do '-' vem de fora.
  */
+function neutro(sufixo, texto) {
+  $('pt' + sufixo).style.background = 'var(--fraco)';
+  $('txt' + sufixo).textContent = texto;
+}
+
 function indicador(sufixo, valor, rotulo, semChave) {
   const pt = $('pt' + sufixo), tx = $('txt' + sufixo);
   if (valor === '1')      { pt.style.background = 'var(--erro)';  tx.textContent = 'fim: ' + rotulo; }
