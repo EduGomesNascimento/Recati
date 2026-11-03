@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rumo ao ENEM 🚀 — Sua jornada do zero à aprovação</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar" class="hidden">
+      <div class="topbar-inner">
+        <button class="brand" data-nav="#/home" title="Início">🚀 <span>Rumo ao ENEM</span></button>
+        <nav id="mainnav">
+          <button data-nav="#/home">🏠 <span>Início</span></button>
+          <button data-nav="#/trilhas">🗺️ <span>Trilhas</span></button>
+          <button data-nav="#/praticar">✏️ <span>Praticar</span></button>
+          <button data-nav="#/redacao">📝 <span>Redação</span></button>
+          <button data-nav="#/plano">📅 <span>Plano</span></button>
+          <button data-nav="#/recursos">🔗 <span>Recursos</span></button>
+          <button data-nav="#/perfil">👤 <span>Perfil</span></button>
+        </nav>
+      </div>
+    </header>
+    <main id="view" class="container"></main>
+    <footer id="footer" class="hidden">
+      <p>Feito com 💜 para a sua aprovação · Seus dados ficam somente no seu navegador (armazenamento local) · Questões adaptadas de edições anteriores do ENEM/Inep para fins educacionais</p>
+    </footer>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/data/content.js"></script>
+  <script src="js/data/questions.js"></script>
+  <script src="js/data/redacao.js"></script>
+  <script src="js/data/resources.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
