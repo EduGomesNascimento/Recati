@@ -1,14 +1,16 @@
 /* ============================================================
-   BANCO DE QUESTÕES — 704 questões estilo ENEM.
+   BANCO DE QUESTÕES — 762 questões.
    GERADO AUTOMATICAMENTE por build/generate-questions.js
    (NÃO edite à mão — rode o gerador novamente para atualizar).
 
-   Composição:
-   - Conceituais curadas (escritas à mão)  : 115
-   - Quantitativas paramétricas (geradas)  : 589
+   Por fonte:
+   - ENEM (baseadas em habilidades/temas do ENEM)      : 137
+   - Vestibulares e outras provas (estilo FUVEST etc.) : 36
+   - Geradas por IA (paramétricas, com gabarito)       : 589
 
-   Temas e habilidades baseados em edições anteriores do
-   ENEM/Inep, reescritos para fins educacionais.
+   Cada questão tem o campo "fonte": "enem" | "vestibular" | "ia".
+   Temas e habilidades baseados em provas anteriores
+   (ENEM/Inep e vestibulares), reescritos para fins educacionais.
    ============================================================ */
 window.ENEM_QUESTIONS = [
  {
@@ -28,7 +30,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A função conativa é centrada no receptor, buscando convencê-lo à ação. Verbos no imperativo ('Participe', 'Doe', 'salve') são típicos de publicidade e campanhas.",
   "dica": "Imperativo + foco no 'você' + intenção de convencer = função conativa/apelativa.",
   "id": "c-0001",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -47,7 +50,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A função metalinguística ocorre quando a linguagem fala dela mesma — o código explica o código. Dicionários, gramáticas e um poema sobre o ato de escrever são exemplos.",
   "dica": "A língua explicando a própria língua = metalinguagem.",
   "id": "c-0002",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -66,7 +70,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A relação é de conclusão/consequência. 'Portanto' expressa conclusão; 'porém'/'embora' dariam oposição/concessão e 'porque' daria causa.",
   "dica": "Conclusão: portanto, logo, consequentemente.",
   "id": "c-0003",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -85,7 +90,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Há contraste entre não estudar e ser aprovado. 'Contudo' (como 'mas', 'porém', 'todavia') marca oposição/adversidade.",
   "dica": "Oposição: mas, porém, contudo, todavia, entretanto.",
   "id": "c-0004",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -104,7 +110,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A charge dialoga com a história de Pinóquio (intertextualidade) para, de forma irônica, sugerir que o político mente. É leitura inferencial, não literal.",
   "dica": "Charges quase sempre pedem inferência: humor, crítica e referências culturais.",
   "id": "c-0005",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -123,7 +130,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Sociolinguística mostra que a língua é heterogênea: varia no tempo, no espaço e conforme o contexto. Nenhuma variedade é superior; o que existe é adequação ao contexto. O ENEM valoriza o respeito à diversidade linguística.",
   "dica": "Fuja do preconceito linguístico: o critério é adequação ao contexto, não 'certo x errado'.",
   "id": "c-0006",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -142,7 +150,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Machado, expoente do Realismo, é marcado pela ironia fina e pela análise psicológica que expõe a hipocrisia social ('Dom Casmurro', 'Memórias Póstumas de Brás Cubas').",
   "dica": "Narrador irônico + crítica psicológica da hipocrisia = Machado/Realismo.",
   "id": "c-0007",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -161,7 +170,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O Modernismo de 22 propôs ruptura com a estética academicista, liberdade formal (verso livre) e valorização da cultura e identidade brasileiras (antropofagia cultural).",
   "dica": "Modernismo de 22 = ruptura + liberdade formal + 'abrasileiramento' da arte.",
   "id": "c-0008",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -180,7 +190,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "No Romantismo, o indianismo elegeu o indígena como símbolo do herói nacional, idealizado, ligado à construção da identidade do Brasil recém-independente.",
   "dica": "Romantismo = idealização + nacionalismo. O índio vira herói nacional.",
   "id": "c-0009",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -199,7 +210,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O verbo 'fazer' indicando tempo decorrido é impessoal e fica sempre na 3ª pessoa do singular: 'Faz cinco anos'. O mesmo vale para 'haver' no sentido de existir.",
   "dica": "'Fazer' e 'haver' indicando tempo/existência são impessoais: sempre no singular.",
   "id": "c-0010",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -218,7 +230,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Despite' (apesar de) introduz concessão/contraste: mesmo com a chuva (obstáculo), a escola foi reconstruída. Equivale a 'in spite of' / 'although'.",
   "dica": "Contraste em inglês: despite, in spite of, although, however, nevertheless.",
   "id": "c-0011",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -237,7 +250,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Such as' introduz exemplos (wind and solar são exemplos de fontes renováveis). Equivale a 'for example' / 'like'.",
   "dica": "'Such as' e 'for instance' sempre introduzem exemplos.",
   "id": "c-0012",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -256,7 +270,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Actually' é um falso cognato: significa 'na verdade/de fato', não 'atualmente' (que seria 'currently/nowadays').",
   "dica": "Cuidado com falsos cognatos: actually = na verdade; currently = atualmente.",
   "id": "c-0013",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -275,7 +290,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Embarazada' é um falso amigo: significa 'grávida' em português, e não 'envergonhada' (que seria 'avergonzada').",
   "dica": "Falsos amigos do espanhol: embarazada = grávida; exquisito = requintado/saboroso.",
   "id": "c-0014",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -294,7 +310,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Aunque' expressa concessão, equivalente a 'ainda que/embora': mesmo que chova, iremos à praia.",
   "dica": "'Aunque' = ainda que/embora (concessão).",
   "id": "c-0015",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -313,7 +330,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "As vanguardas romperam com a representação tradicional: o Cubismo fragmenta as formas, o Surrealismo explora o inconsciente/sonho, o Dadaísmo provoca e nega a lógica. Todas experimentam o novo e influenciaram o Modernismo.",
   "dica": "Vanguardas = ruptura e experimentação. Cada uma quebra a arte tradicional a seu modo.",
   "id": "c-0016",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -332,7 +350,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Era o revezamento presidencial entre as elites de São Paulo (café) e Minas Gerais (leite/pecuária), sustentado pelo coronelismo e pelo voto de cabresto.",
   "dica": "Café (SP) + Leite (MG). Acordo entre oligarquias, não algo popular.",
   "id": "c-0017",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -351,7 +370,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Vargas consolidou direitos trabalhistas (CLT, 1943) com forte apoio das massas urbanas; ao mesmo tempo instaurou o Estado Novo (1937–45), ditadura com censura. Essa dupla face é cobrada pelo ENEM.",
   "dica": "Vargas não é 'só herói' nem 'só vilão'. Alternativas extremas erram.",
   "id": "c-0018",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -370,7 +390,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O 'milagre' (1969–73) teve alto crescimento do PIB, mas às custas de arrocho salarial, concentração de renda e endividamento externo, em contexto de repressão (AI-5).",
   "dica": "'Milagre econômico' = cresceu o bolo, mas mal repartido.",
   "id": "c-0019",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -389,7 +410,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "No pacto colonial, a colônia era obrigada a comerciar exclusivamente com a metrópole, comprando caro e vendendo barato — lógica mercantilista que garantia lucro à metrópole.",
   "dica": "Pacto colonial = exclusividade comercial forçada com a metrópole.",
   "id": "c-0020",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -408,7 +430,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Quilombos eram comunidades de africanos escravizados fugidos, que se organizavam social, econômica e militarmente — símbolo maior da resistência negra à escravidão.",
   "dica": "O ENEM valoriza a resistência (negra e indígena) e a agência dos escravizados.",
   "id": "c-0021",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -427,7 +450,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na Guerra Fria, EUA e URSS não se enfrentaram diretamente (medo nuclear), mas disputaram influência global por meio de corrida armamentista/espacial, propaganda e apoio a lados em conflitos periféricos (Coreia, Vietnã).",
   "dica": "Guerra Fria = tensão bipolar sem confronto direto. Os choques acontecem na 'periferia'.",
   "id": "c-0022",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -446,7 +470,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A democracia ateniense era direta (o cidadão votava pessoalmente nas assembleias), mas excludente: apenas homens livres nascidos em Atenas eram cidadãos; mulheres, escravizados e estrangeiros ficavam de fora.",
   "dica": "Democracia ateniense = direta, porém restrita. A moderna é representativa e mais ampla.",
   "id": "c-0023",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -465,7 +490,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A gentrificação (enobrecimento) ocorre quando a requalificação de uma área eleva custos e substitui a população original de menor renda por moradores mais ricos.",
   "dica": "Gentrificação = 'gente rica chega, gente pobre sai' após uma reforma urbana.",
   "id": "c-0024",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -484,7 +510,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A agricultura familiar, embora ocupe áreas menores que o agronegócio, produz grande parte dos alimentos do mercado interno (feijão, mandioca, hortaliças, leite), sendo essencial à segurança alimentar.",
   "dica": "Agronegócio = exportação (soja, boi). Agricultura familiar = comida na mesa.",
   "id": "c-0025",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -503,7 +530,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Caatinga é o domínio do semiárido nordestino: baixa pluviosidade, plantas adaptadas à seca (xerófitas) e rios temporários (intermitentes).",
   "dica": "Semiárido + xerófitas (cactos) + rios que secam = Caatinga.",
   "id": "c-0026",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -522,7 +550,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "BRICS reúne grandes economias emergentes — Brasil, Rússia, Índia, China e África do Sul (South Africa) — que buscam maior peso na governança global. O grupo passou a incluir novos membros.",
   "dica": "BRICS = emergentes de grande peso, alternativa ao eixo tradicional (G7).",
   "id": "c-0027",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -541,7 +570,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O Brasil passou de altas taxas de natalidade para baixas; com o aumento da expectativa de vida, a população envelhece e a pirâmide etária se estreita na base e se alarga no topo.",
   "dica": "Pirâmide de base estreita e topo largo = população envelhecendo.",
   "id": "c-0028",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -560,7 +590,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Revolução Verde trouxe mecanização, sementes selecionadas, fertilizantes e agrotóxicos, elevando a produtividade — mas concentrou terras, expulsou trabalhadores (êxodo rural) e gerou impactos ambientais.",
   "dica": "Revolução Verde = mais produtividade, porém mais êxodo rural e impacto ambiental.",
   "id": "c-0029",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -579,7 +610,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A mais-valia é o lucro do capitalista, obtido pela diferença entre o valor que o trabalhador produz e o (menor) valor que recebe como salário — base da exploração no capitalismo.",
   "dica": "Mais-valia = lucro extraído do trabalho não pago. Conceito central de Marx.",
   "id": "c-0030",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -598,7 +630,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Para Durkheim, o fato social é exterior ao indivíduo (existe antes dele), coercitivo (pressiona) e geral (comum ao grupo) — como leis, moral, língua. É o objeto de estudo da Sociologia.",
   "dica": "Fato social de Durkheim: exterior + coercitivo + geral.",
   "id": "c-0031",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -617,7 +650,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Weber parte da ação social: o indivíduo age orientando-se pelo comportamento dos outros e atribuindo sentido à ação. É uma abordagem compreensiva, centrada no sujeito, diferente do foco estrutural de Marx.",
   "dica": "Marx pensa em ESTRUTURA/classe; Weber, no INDIVÍDUO e no sentido da ação.",
   "id": "c-0032",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -636,7 +670,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Para Hobbes, no estado de natureza reina a guerra de todos contra todos ('homo homini lupus'). Por isso os indivíduos firmam um contrato cedendo poder a um Estado forte (o Leviatã) que garante a ordem.",
   "dica": "Hobbes = pessimista (Leviatã forte). Rousseau = otimista ('bom selvagem').",
   "id": "c-0033",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -655,7 +690,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O imperativo categórico kantiano é uma ética do dever: aja de modo que o princípio da sua ação pudesse valer para todos, universalmente. A moralidade está na intenção/dever, não nas consequências.",
   "dica": "Kant = ética do dever: 'e se todos fizessem isso?'.",
   "id": "c-0034",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -674,7 +710,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "No Mito da Caverna, os prisioneiros tomam sombras por realidade. Libertar-se e ver o mundo exterior representa o percurso da opinião/ilusão ao conhecimento verdadeiro (o mundo inteligível das ideias), guiado pela razão.",
   "dica": "Caverna de Platão: sombras = ilusão dos sentidos; sair = conhecer pela razão.",
   "id": "c-0035",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -693,7 +730,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Para Bauman, a modernidade líquida descreve um mundo de vínculos frágeis e transitórios — relações, empregos e identidades tornam-se instáveis e descartáveis, como líquidos que não mantêm a forma.",
   "dica": "Modernidade líquida = laços frágeis, tudo fluido e transitório.",
   "id": "c-0036",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -712,7 +750,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na magnificação trófica, substâncias tóxicas não degradáveis se concentram à medida que sobem os níveis da cadeia, atingindo o máximo nos predadores de topo (inclusive o ser humano).",
   "dica": "Toxina que aumenta a cada nível = magnificação. Peixe grande acumula mais mercúrio.",
   "id": "c-0037",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -731,7 +770,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O excesso de nutrientes provoca crescimento explosivo de algas (floração). Quando morrem, sua decomposição consome o oxigênio dissolvido, causando mortandade de peixes e outros organismos aeróbicos.",
   "dica": "Eutrofização: muito nutriente → muita alga → pouco O₂ → peixe morre.",
   "id": "c-0038",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -750,7 +790,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A energia entra pela fotossíntese e flui em sentido único (produtores → consumidores → decompositores), dissipando-se como calor a cada nível. A matéria, por sua vez, cicla nos ciclos biogeoquímicos (carbono, nitrogênio, água).",
   "dica": "Energia FLUI e some; matéria CICLA e volta. Nunca diga que energia 'circula'.",
   "id": "c-0039",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -769,7 +810,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O soro contém anticorpos prontos (imunização passiva), agindo imediatamente — ideal para tratar uma emergência como envenenamento. A vacina seria lenta e é preventiva, não curativa.",
   "dica": "Soro Socorre (imediato, curativo). Vacina previne (lenta, cria memória).",
   "id": "c-0040",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -788,7 +830,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A variabilidade já existia: algumas bactérias resistentes surgiram por mutação ao acaso. O antibiótico eliminou as sensíveis e 'selecionou' as resistentes, que se reproduziram. A bactéria não 'decide' ficar resistente (isso seria lamarckismo).",
   "dica": "Fuja de 'o ser quis/precisou se adaptar' — isso é lamarckismo, errado no ENEM.",
   "id": "c-0041",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -807,7 +850,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Aa × Aa gera 1 AA : 2 Aa : 1 aa (genótipos). Como A domina a, o fenótipo dominante aparece em AA, Aa e Aa (3/4) e o recessivo só em aa (1/4): proporção 3:1.",
   "dica": "Aa × Aa → 3:1 no fenótipo (proporção mendeliana clássica).",
   "id": "c-0042",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -826,7 +870,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A respiração celular aeróbica (glicólise no citoplasma; ciclo de Krebs e cadeia respiratória na mitocôndria) produz muito ATP com uso de O₂. A mitocôndria é a 'usina de energia' da célula.",
   "dica": "Mitocôndria = respiração (ATP). Cloroplasto = fotossíntese (glicose).",
   "id": "c-0043",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -845,7 +890,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O transporte ativo move substâncias contra o gradiente de concentração (do menos para o mais concentrado), o que exige energia (ATP) e proteínas transportadoras, como a bomba de sódio-potássio.",
   "dica": "ATIVO gasta ATP (contra o gradiente). Passivo é a favor, sem gasto.",
   "id": "c-0044",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -864,7 +910,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Xerófitas têm adaptações para reduzir a perda de água e armazená-la: folhas transformadas em espinhos (menor superfície de transpiração), caules suculentos (reserva de água) e cutícula espessa — como os cactos.",
   "dica": "Xerófitas = adaptadas à seca: espinhos, suculência e menor transpiração.",
   "id": "c-0045",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -883,7 +930,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O sistema reage para minimizar a perturbação. Aumentando um reagente, o equilíbrio se desloca para o lado dos produtos, consumindo o excesso adicionado.",
   "dica": "O equilíbrio sempre 'foge' da perturbação: adicionou reagente → vai para produtos.",
   "id": "c-0046",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -902,7 +950,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Reações exotérmicas liberam calor, com variação de entalpia negativa (ΔH < 0), como a combustão. Endotérmicas absorvem calor (ΔH > 0), como a fotossíntese.",
   "dica": "EXO = calor sai (ΔH<0); ENDO = calor entra (ΔH>0).",
   "id": "c-0047",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -921,7 +970,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O catalisador aumenta a velocidade da reação ao fornecer um caminho de menor energia de ativação. Ele não é consumido, não altera o ΔH e não desloca o equilíbrio (apenas o atinge mais rápido).",
   "dica": "Catalisador: acelera, não é consumido, NÃO desloca equilíbrio. Pegadinha comum.",
   "id": "c-0048",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -940,7 +990,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Óxidos de enxofre (SOₓ) e de nitrogênio (NOₓ), liberados por queima de combustíveis fósseis e indústrias, reagem com a água formando ácidos sulfúrico e nítrico — a chuva ácida.",
   "dica": "Chuva ácida = enxofre + nitrogênio. CO₂ está mais ligado ao efeito estufa.",
   "id": "c-0049",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -959,7 +1010,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Esterificação: ácido carboxílico + álcool → éster + água. Ésteres têm aromas agradáveis. A reação inversa, de um éster com base, é a saponificação (produz sabão).",
   "dica": "ÉSTER → ESTERificação. Aroma de fruta é a pista clássica.",
   "id": "c-0050",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -978,7 +1030,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A água forma ligações de hidrogênio (entre o H e os pares de elétrons do O de moléculas vizinhas), interações intermoleculares fortes que exigem muita energia para serem rompidas — daí o alto ponto de ebulição.",
   "dica": "Pontes de hidrogênio = 'velcro' molecular → ponto de ebulição alto.",
   "id": "c-0051",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -997,7 +1050,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na pilha, a oxidação (perda de elétrons) ocorre no ânodo, e a redução (ganho de elétrons) no cátodo. Os elétrons fluem do ânodo para o cátodo pelo fio externo.",
   "dica": "Mnemônico: 'ânodo = oxidação' (as duas com vogal). Cátodo = redução.",
   "id": "c-0052",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1016,7 +1070,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Sem atrito, a energia mecânica se conserva. Ao cair, o objeto perde altura (energia potencial diminui) e ganha velocidade (energia cinética aumenta), mas a soma permanece constante.",
   "dica": "'Sem atrito' → energia mecânica se conserva. Altura vira velocidade.",
   "id": "c-0053",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1035,7 +1090,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Pela inércia, sem força resultante um corpo em repouso permanece em repouso e um corpo em movimento mantém velocidade constante (retilíneo uniforme). É por isso que usamos cinto de segurança: o corpo tende a continuar em movimento.",
   "dica": "Inércia = tendência de manter o estado. Sem força resultante, nada muda.",
   "id": "c-0054",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1054,7 +1110,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Ação e reação têm mesma intensidade e direção, sentidos opostos, MAS atuam em corpos diferentes — por isso não se anulam. Ao empurrar uma parede, ela te empurra de volta com força igual.",
   "dica": "Ação e reação NÃO se anulam: agem em corpos diferentes.",
   "id": "c-0055",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1073,7 +1130,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na convecção, o fluido aquecido fica menos denso e sobe, enquanto o mais frio desce, formando correntes de convecção. Ocorre em coletores solares, geladeiras e no ar-condicionado.",
   "dica": "Fluido que circula por diferença de densidade = convecção.",
   "id": "c-0056",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1092,7 +1150,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Temperatura é a medida do grau de agitação das partículas. Calor é energia em trânsito, que flui espontaneamente do corpo de maior para o de menor temperatura, até o equilíbrio térmico.",
   "dica": "Temperatura = agitação; calor = energia em trânsito (quente → frio).",
   "id": "c-0057",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1111,7 +1170,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "No efeito Doppler, quando a fonte se aproxima, as ondas chegam mais 'juntas' ao observador, aumentando a frequência aparente (som mais agudo). Ao se afastar, as ondas se 'esticam' e a frequência aparente cai (som mais grave). A frequência real da fonte não muda.",
   "dica": "Aproximando = agudo; afastando = grave. É a frequência APARENTE que muda.",
   "id": "c-0058",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1130,7 +1190,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na miopia, a imagem se forma antes da retina. Lentes divergentes (negativas) 'afastam' os raios, deslocando a imagem para a retina. Já a hipermetropia se corrige com lentes convergentes (positivas).",
   "dica": "Miopia → lente divergente (negativa). Hipermetropia → convergente (positiva).",
   "id": "c-0059",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "natureza",
@@ -1149,7 +1210,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na associação em paralelo, todos os aparelhos ficam sob a mesma tensão da rede e funcionam independentemente (desligar um não afeta os outros). Por isso as tomadas de uma casa são ligadas em paralelo. Em série, a tensão se dividiria e um defeito interromperia todos.",
   "dica": "Tomadas da casa = paralelo: mesma tensão e independência entre aparelhos.",
   "id": "c-0060",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1168,7 +1230,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O termo 'como' estabelece uma comparação explícita entre a pureza da água e a da natureza. Quando a comparação é feita sem o conectivo (identificação direta), tem-se metáfora.",
   "dica": "Comparação usa 'como/tal qual'. Sem o conectivo, vira metáfora.",
   "id": "c-0061",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1187,7 +1250,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A metonímia é a substituição de um termo por outro com relação de proximidade — aqui, o autor pelo que ele escreveu (a obra). Outros exemplos: 'beber um copo', 'ler o jornal'.",
   "dica": "Metonímia = troca por proximidade (autor pela obra, marca pelo produto).",
   "id": "c-0062",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1206,7 +1270,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Crase é a fusão da preposição 'a' com o artigo 'a(s)'. Em 'Entreguei à diretora', há preposição (entregar a) + artigo (a diretora). Não ocorre antes de palavra masculina, verbo, artigo indefinido ('uma') nem em 'casa' sem especificação.",
   "dica": "Sem artigo, sem crase: some antes de verbo, masculino e 'uma'.",
   "id": "c-0063",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1225,7 +1290,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A função poética centra-se na própria mensagem — na elaboração da forma (rimas, ritmo, figuras). É típica de poemas, letras de música e slogans criativos.",
   "dica": "Foco na forma/beleza da mensagem = função poética.",
   "id": "c-0064",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1244,7 +1310,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A função fática serve para testar, abrir ou manter o canal de comunicação. 'Alô?', 'Né?', 'Entende?' são marcas dela.",
   "dica": "Testar/manter o canal ('Alô?', 'tá ligado?') = função fática.",
   "id": "c-0065",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1263,7 +1330,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O Realismo/Naturalismo reage ao subjetivismo romântico com objetividade, crítica social e influência científica (determinismo do meio, raça e momento, sobretudo no Naturalismo). Retrata vícios e contradições sociais sem idealização.",
   "dica": "Romantismo idealiza; Realismo/Naturalismo observa e critica objetivamente.",
   "id": "c-0066",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1282,7 +1350,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Que estudaram' é uma oração subordinada adjetiva restritiva: restringe o sentido de 'alunos' (apenas os que estudaram passaram). Se viesse entre vírgulas, seria explicativa (todos estudaram).",
   "dica": "Adjetiva SEM vírgula = restritiva; COM vírgula = explicativa.",
   "id": "c-0067",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1301,7 +1370,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Educação Física no ENEM discute o corpo como construção social: padrões estéticos impostos pela mídia, mercantilização (indústria fitness, suplementos), pressão por 'corpo ideal' e a distinção entre esporte de rendimento e lazer/saúde.",
   "dica": "Corpo no ENEM = leitura crítica: mídia, estética e mercantilização.",
   "id": "c-0068",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1320,7 +1390,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Therefore' (portanto/por isso) introduz conclusão ou consequência lógica, ligando causa (vício) a efeito/recomendação (limitar o tempo).",
   "dica": "Conclusão em inglês: therefore, thus, hence, so, as a result.",
   "id": "c-0069",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1339,7 +1410,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'To highlight' significa destacar, enfatizar, chamar atenção para algo. O relatório enfatiza que o acesso à água limpa ainda é um desafio.",
   "dica": "highlight = destacar/enfatizar. Sinônimos: emphasize, stress, point out.",
   "id": "c-0070",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1358,7 +1430,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Pronto' em espanhol é um falso amigo: geralmente significa 'logo/cedo/em breve' (ex.: 'hasta pronto' = até breve), e não 'pronto/preparado' (que seria 'listo').",
   "dica": "Falsos amigos: pronto = logo/breve; listo = pronto/preparado.",
   "id": "c-0071",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1377,7 +1450,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Sin embargo' equivale a 'no entanto/contudo', marcando contraste/oposição entre ideias.",
   "dica": "'Sin embargo' = no entanto/contudo (oposição).",
   "id": "c-0072",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1396,7 +1470,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Intertextualidade é o diálogo entre textos: uma paródia, uma citação, uma alusão ou referência a outra obra. Reconhecê-la é essencial para captar o sentido completo (ex.: uma propaganda que reescreve um poema famoso).",
   "dica": "Intertextualidade = um texto conversando com outro (paródia, alusão, citação).",
   "id": "c-0073",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1415,7 +1490,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O patrimônio imaterial engloba práticas, representações, expressões e saberes: festas populares, culinária, danças, músicas e ofícios tradicionais. Diferencia-se do patrimônio material (edificações, objetos).",
   "dica": "Imaterial = saberes e fazeres (festa, música, culinária). Material = coisas físicas.",
   "id": "c-0074",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1434,7 +1510,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Havia muitos problemas' está correto: 'haver' no sentido de existir é impessoal e fica no singular. As demais erram: o certo seria 'existem vários motivos', 'faz dois anos', 'alugam-se casas' e 'deve haver soluções'.",
   "dica": "'Haver' = existir → impessoal (singular). Mas 'existir' concorda normalmente.",
   "id": "c-0075",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1453,7 +1530,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "No feudalismo, o suserano concedia terras (feudo) e proteção ao vassalo, que em troca oferecia fidelidade, serviços e apoio militar. Era uma relação de dependência pessoal, não assalariada.",
   "dica": "Suserano dá terra/proteção; vassalo dá fidelidade e serviço militar.",
   "id": "c-0076",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1472,7 +1550,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Os iluministas (Montesquieu, Voltaire, Rousseau) valorizavam a razão, a liberdade, a igualdade jurídica e a separação dos poderes, criticando o absolutismo e os privilégios do Antigo Regime. Inspiraram a Revolução Francesa e a independência dos EUA.",
   "dica": "Iluminismo = razão + liberdade + crítica ao absolutismo/privilégios.",
   "id": "c-0077",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1491,7 +1570,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A industrialização criou o proletariado urbano, que vendia sua força de trabalho nas fábricas em condições precárias (jornadas de 14h, trabalho infantil, baixos salários), levando ao surgimento dos movimentos operários e sindicais.",
   "dica": "Revolução Industrial = fábricas + proletariado urbano em condições precárias.",
   "id": "c-0078",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1510,7 +1590,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Promulgada após a redemocratização, a Constituição de 1988 ampliou direitos sociais (saúde via SUS, educação, previdência), garantiu liberdades individuais e restabeleceu o voto direto — daí o apelido 'Constituição Cidadã'.",
   "dica": "1988 = Constituição Cidadã: direitos sociais e redemocratização.",
   "id": "c-0079",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1529,7 +1610,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Milton Santos designa como meio técnico-científico-informacional o espaço atual, no qual território, técnica, ciência e informação se integram, comandando a produção e os fluxos da globalização — de modo desigual entre lugares.",
   "dica": "Milton Santos é o geógrafo-chave do ENEM: técnica + ciência + informação.",
   "id": "c-0080",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1548,7 +1630,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Nas chuvas orográficas, o ar úmido encontra uma barreira de relevo (serra), é forçado a subir, resfria-se, condensa e precipita na encosta voltada para o vento (barlavento). A face oposta (sotavento) fica mais seca.",
   "dica": "Chuva orográfica: ar úmido sobe a serra, resfria e chove no barlavento.",
   "id": "c-0081",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1567,7 +1650,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "As ilhas de calor resultam da substituição da vegetação por concreto e asfalto (que absorvem e irradiam calor), somada à poluição, ao adensamento de construções e à emissão de calor por veículos e ar-condicionado, tornando o centro urbano mais quente que a periferia arborizada.",
   "dica": "Ilha de calor = muito concreto/asfalto + pouca vegetação = cidade mais quente.",
   "id": "c-0082",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1586,7 +1670,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Segurança energética é a capacidade de um país assegurar suprimento estável, acessível e contínuo de energia. Explica muitos conflitos e alianças geopolíticas (Oriente Médio, gás russo, transição energética).",
   "dica": "Segurança energética = garantir o abastecimento de energia. Move a geopolítica.",
   "id": "c-0083",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1605,7 +1690,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A maiêutica (do grego 'parto') é o método de Sócrates: por meio de perguntas, ele leva o interlocutor a questionar suas certezas e a construir o próprio conhecimento. Associa-se ao 'só sei que nada sei' e à ironia socrática.",
   "dica": "Maiêutica = 'partejar' ideias por meio de perguntas. Método de Sócrates.",
   "id": "c-0084",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1624,7 +1710,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Para Foucault, o poder não está apenas no Estado: ele se espalha de forma capilar ('microfísica') nas instituições que vigiam, normalizam e disciplinam os indivíduos ('vigiar e punir'). É repertório valioso para redações sobre controle e tecnologia.",
   "dica": "Foucault = microfísica do poder; vigilância e disciplina dos corpos.",
   "id": "c-0085",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1643,7 +1730,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Indústria Cultural, para Adorno e Horkheimer, converte a cultura em mercadoria produzida em série, padronizando o gosto, promovendo o consumo passivo e servindo à manutenção do sistema — em vez de emancipar, aliena.",
   "dica": "Indústria Cultural = cultura virou mercadoria padronizada que aliena. Frankfurt.",
   "id": "c-0086",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1662,7 +1750,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Etnocentrismo é tomar a própria cultura como padrão e medida, julgando as outras como inferiores. Relativismo cultural propõe entender cada cultura segundo seus próprios critérios, sem hierarquização — postura valorizada pela Antropologia e pelo ENEM.",
   "dica": "Etnocentrismo julga (a minha é a melhor); relativismo compreende no contexto.",
   "id": "c-0087",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1681,7 +1770,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na alienação, o trabalhador não se reconhece naquilo que produz: o produto, os meios e o processo lhe são estranhos e pertencem ao capitalista. Ele se torna uma peça, perdendo o sentido criativo do trabalho.",
   "dica": "Alienação (Marx): o trabalhador não se reconhece no que produz.",
   "id": "c-0088",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1700,7 +1790,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A DUDH (1948), formulada após a Segunda Guerra, afirma que todos os seres humanos nascem livres e iguais em dignidade e direitos. É referência central para debates sobre cidadania e para a proposta de intervenção na redação (que deve respeitar os Direitos Humanos).",
   "dica": "DUDH 1948: dignidade e igualdade para todos. Base da redação nota 1000.",
   "id": "c-0089",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1719,7 +1810,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O ouro atraiu enorme fiscalização da Coroa (cobrança do 'quinto', casas de fundição e a temida 'derrama'). Deslocou o eixo econômico para a região das Minas, urbanizou o interior e gerou tensões que culminaram na Inconfidência Mineira.",
   "dica": "Ciclo do ouro = mais impostos (quinto, derrama) e interiorização da colônia.",
   "id": "c-0090",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1738,7 +1830,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Há uma metáfora: comparação implícita (sem 'como') entre o coração e um 'balde despejado', sugerindo esvaziamento emocional. A metáfora identifica um termo ao outro para criar sentido figurado.",
   "dica": "Metáfora identifica ('é'); comparação usa conectivo ('como/tal qual').",
   "id": "c-0091",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1757,7 +1850,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O artigo de opinião (e o editorial) é um gênero argumentativo: apresenta tese, argumentos e posicionamento sobre um tema. Diferencia-se dos gêneros instrucionais (receita, manual) e informativos neutros (verbete).",
   "dica": "Defende tese + opinião explícita + argumentos = artigo de opinião/editorial.",
   "id": "c-0092",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1776,7 +1870,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A função emotiva (expressiva) centra-se no emissor e revela suas emoções/subjetividade ('Que frio!', 'Estou congelando' é hipérbole afetiva). Predomina o 'eu' e a carga emocional.",
   "dica": "Foco no emissor + emoção/exagero afetivo = função emotiva/expressiva.",
   "id": "c-0093",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1795,7 +1890,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A ambiguidade (duplo sentido) vem do adjunto 'na biblioteca': pode indicar o local em que o aluno se encontrava ou o lugar de onde retirou o livro. Reescrever desfaz a dupla leitura.",
   "dica": "Ambiguidade = mais de uma interpretação possível. O ENEM pede identificá-la e resolvê-la.",
   "id": "c-0094",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1814,7 +1910,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O Barroco expressa a tensão entre o mundo material (carne, prazer) e o espiritual (fé, salvação), refletida em jogos de palavras (cultismo) e de ideias (conceptismo), com figuras como antítese e paradoxo. Gregório de Matos é o grande nome.",
   "dica": "Barroco = conflito carne x espírito, antíteses e paradoxos (Gregório de Matos).",
   "id": "c-0095",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1833,7 +1930,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A prosa de 30 é marcada pelo romance regionalista e de denúncia social: a seca, a miséria e as desigualdades do Nordeste em obras como 'Vidas Secas' (Graciliano Ramos) e 'O Quinze' (Rachel de Queiroz).",
   "dica": "Modernismo 2ª fase (prosa) = romance regionalista/social (Graciliano, 'Vidas Secas').",
   "id": "c-0096",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1852,7 +1950,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Chover' em sentido literal (fenômeno da natureza) é impessoal e fica no singular. Mas, em sentido figurado ('choveram críticas' = surgiram muitas críticas), passa a ter sujeito e concorda com ele no plural.",
   "dica": "Verbo de fenômeno natural em sentido FIGURADO passa a concordar normalmente.",
   "id": "c-0097",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1871,7 +1970,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Unlike' (diferentemente de) marca contraste entre gerações. Indica diferença, não semelhança (que seria 'like'/'similar to').",
   "dica": "unlike = diferentemente de (contraste). like = como (semelhança).",
   "id": "c-0098",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1890,7 +1990,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'To warn' (alertar/advertir) mostra que o texto adverte sobre um risco — a perda de biodiversidade pode causar insegurança alimentar. É tom de alerta.",
   "dica": "warn = alertar/advertir sobre um perigo. Marca o propósito de alerta do texto.",
   "id": "c-0099",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1909,7 +2010,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Oficina' é um falso amigo: em espanhol significa 'escritório', não 'oficina mecânica' (que seria 'taller').",
   "dica": "Falsos amigos: oficina = escritório; taller = oficina mecânica.",
   "id": "c-0100",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1928,7 +2030,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "'Todavía' é falso amigo e significa 'ainda' (ex.: 'ainda não terminei'), não 'todo dia' nem 'toda via'.",
   "dica": "todavía = ainda. Não confunda com 'todo día' (todo dia).",
   "id": "c-0101",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1947,7 +2050,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Bossa Nova uniu o samba a elementos do jazz, com batida sincopada no violão, harmonias refinadas e interpretação suave/intimista (João Gilberto, Tom Jobim). Projetou a música brasileira internacionalmente.",
   "dica": "Bossa Nova = samba + jazz, harmonia sofisticada e canto suave (Tom Jobim, João Gilberto).",
   "id": "c-0102",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "linguagens",
@@ -1966,7 +2070,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Ao retomar e modificar um provérbio conhecido com efeito humorístico/persuasivo, o texto usa intertextualidade na forma de paródia. Reconhecer o texto-fonte é essencial para captar o sentido.",
   "dica": "Reescrever um texto famoso com humor/crítica = paródia (tipo de intertextualidade).",
   "id": "c-0103",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -1985,7 +2090,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Independência foi conduzida 'pelo alto', pelas elites agrárias e por D. Pedro I, preservando a monarquia, a escravidão e a concentração de terras. Não houve ruptura social profunda — daí ser vista como uma independência conservadora.",
   "dica": "Independência conservadora: mudou o comando político, manteve escravidão e latifúndio.",
   "id": "c-0104",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2004,7 +2110,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A Revolução Francesa derrubou o Antigo Regime, aboliu privilégios de nobreza e clero e afirmou 'Liberdade, Igualdade e Fraternidade', inspirando as democracias liberais modernas e a Declaração dos Direitos do Homem.",
   "dica": "Revolução Francesa: Liberdade, Igualdade, Fraternidade + fim dos privilégios.",
   "id": "c-0105",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2023,7 +2130,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "O Holocausto foi o extermínio sistemático de cerca de 6 milhões de judeus, além de ciganos, deficientes e opositores, pela Alemanha nazista, com base no racismo e no antissemitismo. É referência central para debates sobre direitos humanos.",
   "dica": "Holocausto = genocídio nazista baseado em racismo. Repertório forte para redação sobre intolerância.",
   "id": "c-0106",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2042,7 +2150,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Essas revoltas expõem o choque entre um Estado que impunha modernização de cima para baixo (reforma urbana, vacinação obrigatória) ou reprimia comunidades pobres (Canudos) e as camadas populares excluídas das decisões e dos benefícios.",
   "dica": "Revoltas da República Velha = povo marginalizado x Estado autoritário/modernizador.",
   "id": "c-0107",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2061,7 +2170,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na divisão internacional do trabalho, os países centrais concentram tecnologia, indústria de alto valor e finanças; aos periféricos historicamente cabe exportar matérias-primas e commodities (agrícolas, minerais) de menor valor agregado.",
   "dica": "Centro = tecnologia e alto valor; periferia = matéria-prima/commodities. Base da dependência.",
   "id": "c-0108",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2080,7 +2190,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A matriz elétrica brasileira é predominantemente renovável, com grande peso das hidrelétricas, além de biomassa, eólica e solar em expansão — mais 'limpa' que a média mundial, ainda muito dependente de combustíveis fósseis.",
   "dica": "Brasil = matriz elétrica renovável, liderada por hidrelétricas. Diferente da média mundial (fóssil).",
   "id": "c-0109",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2099,7 +2210,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Denominador grande (1:1.000.000) = escala pequena: abrange uma área ampla (país/continente) com poucos detalhes. Denominador pequeno (1:1.000) = escala grande: pouca área, muito detalhe (planta de bairro).",
   "dica": "Denominador grande = escala pequena = muita área, pouco detalhe. E vice-versa.",
   "id": "c-0110",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2118,7 +2230,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Para Durkheim, anomia é a situação em que as normas sociais estão ausentes, enfraquecidas ou em conflito, deixando os indivíduos sem referências claras de conduta — comum em períodos de crise e rápidas transformações.",
   "dica": "Anomia (Durkheim) = falta/enfraquecimento de normas. Gera desorientação social.",
   "id": "c-0111",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2137,7 +2250,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Locke, contratualista liberal, defende que os homens possuem direitos naturais (vida, liberdade, propriedade) e formam o governo para protegê-los. Se o Estado os viola, o povo tem direito de resistência. Influenciou o liberalismo político.",
   "dica": "Locke = pai do liberalismo: vida, liberdade e propriedade como direitos naturais.",
   "id": "c-0112",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2156,7 +2270,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A crítica sociológica aponta que a meritocracia pressupõe que todos competem em igualdade de condições, o que é falso: origem social, acesso à educação e recorte racial/de gênero afetam profundamente as chances, tornando o 'mérito' parcialmente ilusório.",
   "dica": "Crítica à meritocracia: os pontos de partida são desiguais. Ótimo repertório de redação.",
   "id": "c-0113",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2175,7 +2290,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A cidadania plena (na trilha de T. H. Marshall) abrange direitos civis (liberdades individuais), políticos (votar e ser votado) e sociais (educação, saúde, trabalho), somados à participação ativa do cidadão na esfera pública.",
   "dica": "Cidadania = direitos civis + políticos + sociais + participação. Não é só votar.",
   "id": "c-0114",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
  },
  {
   "area": "humanas",
@@ -2194,7 +2310,1204 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Embora ambas tenham ocorrido, a escravidão africana tornou-se estrutural: o tráfico atlântico era altamente lucrativo e sustentou a economia colonial (açúcar, mineração). Gerou intensa resistência, como fugas e quilombos, e marcou profundamente a formação social do Brasil.",
   "dica": "O ENEM enfatiza a centralidade e a resistência da escravidão africana na formação do Brasil.",
   "id": "c-0115",
-  "gerada": false
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Vazão e proporção",
+  "nivel": "Fácil",
+  "enunciado": "Uma torneira enche um reservatório de 600 litros em 20 minutos, com vazão constante. Qual é essa vazão, em litros por minuto?",
+  "alternativas": [
+   "20 L/min",
+   "25 L/min",
+   "30 L/min",
+   "40 L/min",
+   "60 L/min"
+  ],
+  "correta": 2,
+  "explicacao": "Vazão = volume ÷ tempo = 600 L ÷ 20 min = 30 L/min.",
+  "dica": "Vazão é quanto passa por unidade de tempo: divida o volume pelo tempo.",
+  "id": "c-0116",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Porcentagem",
+  "nivel": "Fácil",
+  "enunciado": "Uma blusa que custa R$ 80,00 está com 25% de desconto à vista. Qual o preço à vista?",
+  "alternativas": [
+   "R$ 55,00",
+   "R$ 60,00",
+   "R$ 65,00",
+   "R$ 70,00",
+   "R$ 75,00"
+  ],
+  "correta": 1,
+  "explicacao": "Desconto de 25% → paga-se 75%. 80 × 0,75 = R$ 60,00. (Ou: 25% de 80 = 20; 80 − 20 = 60.)",
+  "dica": "Desconto de p% → multiplique por (1 − p/100).",
+  "id": "c-0117",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Velocidade média",
+  "nivel": "Médio",
+  "enunciado": "Um ônibus percorreu 180 km em 2 horas e 30 minutos. Qual foi sua velocidade média?",
+  "alternativas": [
+   "60 km/h",
+   "72 km/h",
+   "75 km/h",
+   "80 km/h",
+   "90 km/h"
+  ],
+  "correta": 1,
+  "explicacao": "2 h 30 min = 2,5 h. Velocidade média = distância ÷ tempo = 180 ÷ 2,5 = 72 km/h.",
+  "dica": "Converta o tempo para horas decimais (30 min = 0,5 h) antes de dividir.",
+  "id": "c-0118",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria/Volume",
+  "nivel": "Médio",
+  "enunciado": "Um reservatório em forma de bloco retangular tem 2 m de comprimento, 3 m de largura e 1 m de altura. Quantos litros de água ele comporta cheio? (1 m³ = 1000 L)",
+  "alternativas": [
+   "600 L",
+   "6 000 L",
+   "60 000 L",
+   "6 m³",
+   "600 000 L"
+  ],
+  "correta": 1,
+  "explicacao": "Volume = 2 × 3 × 1 = 6 m³. Como 1 m³ = 1000 L, são 6 × 1000 = 6 000 L.",
+  "dica": "Volume do bloco = comprimento × largura × altura. Depois converta m³ → litros.",
+  "id": "c-0119",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala",
+  "nivel": "Médio",
+  "enunciado": "Em um mapa de escala 1:50 000, a distância entre duas cidades é de 8 cm. Qual a distância real, em quilômetros?",
+  "alternativas": [
+   "2 km",
+   "4 km",
+   "5 km",
+   "8 km",
+   "40 km"
+  ],
+  "correta": 1,
+  "explicacao": "8 cm × 50 000 = 400 000 cm. Convertendo: 400 000 cm = 4 000 m = 4 km.",
+  "dica": "Multiplique a medida do mapa pela escala e converta (100 000 cm = 1 km).",
+  "id": "c-0120",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Estatística",
+  "nivel": "Médio",
+  "enunciado": "Em uma avaliação, um aluno tirou 6,0 na prova (peso 3) e 8,0 no trabalho (peso 2). Qual a média ponderada?",
+  "alternativas": [
+   "6,4",
+   "6,8",
+   "7,0",
+   "7,2",
+   "7,5"
+  ],
+  "correta": 1,
+  "explicacao": "Média ponderada = (6×3 + 8×2) ÷ (3+2) = (18 + 16) ÷ 5 = 34 ÷ 5 = 6,8.",
+  "dica": "Média ponderada: multiplique nota × peso, some e divida pela soma dos pesos.",
+  "id": "c-0121",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Probabilidade",
+  "nivel": "Médio",
+  "enunciado": "Ao lançar um dado comum de 6 faces, qual a probabilidade de sair um número maior que 4?",
+  "alternativas": [
+   "1/6",
+   "1/3",
+   "1/2",
+   "2/3",
+   "5/6"
+  ],
+  "correta": 1,
+  "explicacao": "Números maiores que 4: apenas 5 e 6 (2 casos). Probabilidade = 2/6 = 1/3.",
+  "dica": "Conte os casos favoráveis e divida pelos 6 resultados possíveis.",
+  "id": "c-0122",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Álgebra e Funções",
+  "nivel": "Médio",
+  "enunciado": "Uma corrida de táxi cobra R$ 5,00 de bandeirada (fixo) mais R$ 2,00 por quilômetro. Quanto custa uma corrida de 10 km?",
+  "alternativas": [
+   "R$ 20,00",
+   "R$ 22,00",
+   "R$ 25,00",
+   "R$ 27,00",
+   "R$ 30,00"
+  ],
+  "correta": 2,
+  "explicacao": "Modelo do 1º grau: C = 5 + 2·x. Para x = 10: C = 5 + 2×10 = 5 + 20 = R$ 25,00.",
+  "dica": "Parte fixa (bandeirada) + parte variável (por km). É uma função do 1º grau.",
+  "id": "c-0123",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "enunciado": "Um capital de R$ 1 000,00 é aplicado a juros simples de 2% ao mês durante 5 meses. Qual o valor dos juros?",
+  "alternativas": [
+   "R$ 20,00",
+   "R$ 50,00",
+   "R$ 100,00",
+   "R$ 200,00",
+   "R$ 1 100,00"
+  ],
+  "correta": 2,
+  "explicacao": "Juros simples: J = C·i·t = 1000 × 0,02 × 5 = R$ 100,00.",
+  "dica": "Juros simples: J = capital × taxa (decimal) × tempo.",
+  "id": "c-0124",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Proporção",
+  "nivel": "Médio",
+  "enunciado": "Em uma sala, a razão entre meninos e meninas é 3 para 2. Se há 30 alunos no total, quantos são meninos?",
+  "alternativas": [
+   "12",
+   "15",
+   "18",
+   "20",
+   "24"
+  ],
+  "correta": 2,
+  "explicacao": "A razão 3:2 divide o total em 3+2 = 5 partes. Cada parte = 30 ÷ 5 = 6. Meninos = 3 × 6 = 18.",
+  "dica": "Some as partes da razão e divida o total por elas para achar o valor de cada parte.",
+  "id": "c-0125",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Fácil",
+  "enunciado": "Para revestir um piso retangular de 4 m por 5 m, usam-se lajotas quadradas de 0,25 m² cada. Quantas lajotas são necessárias?",
+  "alternativas": [
+   "20",
+   "40",
+   "60",
+   "80",
+   "100"
+  ],
+  "correta": 3,
+  "explicacao": "Área do piso = 4 × 5 = 20 m². Nº de lajotas = 20 ÷ 0,25 = 80 lajotas.",
+  "dica": "Divida a área total pela área de cada peça.",
+  "id": "c-0126",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Porcentagem",
+  "nivel": "Médio",
+  "enunciado": "Um trabalhador recebia R$ 1 200,00 e teve um aumento de 15%. Qual seu novo salário?",
+  "alternativas": [
+   "R$ 1 215,00",
+   "R$ 1 320,00",
+   "R$ 1 380,00",
+   "R$ 1 500,00",
+   "R$ 1 800,00"
+  ],
+  "correta": 2,
+  "explicacao": "Aumento de 15% → multiplica por 1,15: 1200 × 1,15 = R$ 1 380,00. (15% de 1200 = 180; 1200 + 180 = 1380.)",
+  "dica": "Aumento de p% → multiplique por (1 + p/100).",
+  "id": "c-0127",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Estatística/Densidade",
+  "nivel": "Médio",
+  "enunciado": "Uma cidade tem 500 000 habitantes e área de 2 000 km². Qual a densidade demográfica (hab/km²)?",
+  "alternativas": [
+   "100 hab/km²",
+   "200 hab/km²",
+   "250 hab/km²",
+   "400 hab/km²",
+   "500 hab/km²"
+  ],
+  "correta": 2,
+  "explicacao": "Densidade demográfica = população ÷ área = 500 000 ÷ 2 000 = 250 hab/km².",
+  "dica": "Densidade demográfica = habitantes ÷ área.",
+  "id": "c-0128",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Porcentagem",
+  "nivel": "Difícil",
+  "enunciado": "Um preço de R$ 100,00 sofre dois descontos sucessivos de 10% e 20%. Qual o preço final?",
+  "alternativas": [
+   "R$ 68,00",
+   "R$ 70,00",
+   "R$ 72,00",
+   "R$ 75,00",
+   "R$ 80,00"
+  ],
+  "correta": 2,
+  "explicacao": "Descontos sucessivos multiplicam os fatores: 100 × 0,90 × 0,80 = R$ 72,00 (não 70, pois não se somam os percentuais).",
+  "dica": "Descontos sucessivos: multiplique (0,90 × 0,80), nunca some as porcentagens.",
+  "id": "c-0129",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Frações",
+  "nivel": "Fácil",
+  "enunciado": "João gastou 3/4 de seus R$ 200,00 em livros. Quanto ele gastou?",
+  "alternativas": [
+   "R$ 50,00",
+   "R$ 100,00",
+   "R$ 120,00",
+   "R$ 150,00",
+   "R$ 180,00"
+  ],
+  "correta": 3,
+  "explicacao": "3/4 de 200 = (3 × 200) ÷ 4 = 600 ÷ 4 = R$ 150,00.",
+  "dica": "Fração de um valor: multiplique pelo numerador e divida pelo denominador.",
+  "id": "c-0130",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Fácil",
+  "enunciado": "Uma pessoa tem 4 camisetas e 3 bermudas. De quantas formas diferentes pode se vestir (uma camiseta e uma bermuda)?",
+  "alternativas": [
+   "7",
+   "9",
+   "10",
+   "12",
+   "16"
+  ],
+  "correta": 3,
+  "explicacao": "Pelo princípio multiplicativo: 4 × 3 = 12 combinações diferentes.",
+  "dica": "Escolhas combinadas (e...e) → multiplique as opções.",
+  "id": "c-0131",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "enunciado": "Uma lâmpada de 60 W fica acesa 5 horas por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "alternativas": [
+   "0,3 kWh",
+   "3 kWh",
+   "9 kWh",
+   "18 kWh",
+   "90 kWh"
+  ],
+  "correta": 2,
+  "explicacao": "60 W = 0,06 kW. Energia = 0,06 × 5 × 30 = 9 kWh.",
+  "dica": "Converta W → kW (÷1000) e multiplique por horas e dias.",
+  "id": "c-0132",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Mecânica/Energia",
+  "nivel": "Médio",
+  "enunciado": "Um objeto é abandonado de uma altura de 20 m (g = 10 m/s², sem resistência do ar). Qual a velocidade ao atingir o solo?",
+  "alternativas": [
+   "10 m/s",
+   "15 m/s",
+   "20 m/s",
+   "40 m/s",
+   "200 m/s"
+  ],
+  "correta": 2,
+  "explicacao": "Conservação de energia: v = √(2·g·h) = √(2×10×20) = √400 = 20 m/s.",
+  "dica": "Queda sem atrito: v = √(2·g·h).",
+  "id": "c-0133",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "enunciado": "Qual é a massa de 2 mols de água (H₂O)? (massa molar da água = 18 g/mol)",
+  "alternativas": [
+   "9 g",
+   "18 g",
+   "20 g",
+   "36 g",
+   "72 g"
+  ],
+  "correta": 3,
+  "explicacao": "massa = nº de mols × massa molar = 2 × 18 = 36 g.",
+  "dica": "massa = mols × massa molar (g/mol).",
+  "id": "c-0134",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Fácil",
+  "enunciado": "Uma solução apresenta pH = 5. Em relação à acidez, essa solução é:",
+  "alternativas": [
+   "Fortemente básica",
+   "Levemente básica",
+   "Neutra",
+   "Ácida",
+   "Sem classificação"
+  ],
+  "correta": 3,
+  "explicacao": "Na escala de 0 a 14, pH < 7 indica solução ácida. Com pH = 5, a solução é ácida.",
+  "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico.",
+  "id": "c-0135",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "natureza",
+  "materia": "biologia",
+  "topico": "Genética",
+  "nivel": "Médio",
+  "enunciado": "No cruzamento de dois indivíduos heterozigotos (Aa × Aa), qual a probabilidade de um descendente apresentar o fenótipo recessivo?",
+  "alternativas": [
+   "0%",
+   "25%",
+   "50%",
+   "75%",
+   "100%"
+  ],
+  "correta": 1,
+  "explicacao": "Aa × Aa gera 1 AA : 2 Aa : 1 aa. O fenótipo recessivo só aparece em aa, ou seja, 1/4 = 25%.",
+  "dica": "Monte o quadro de Punnett: Aa × Aa → 3 dominantes : 1 recessivo (25%).",
+  "id": "c-0136",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "enunciado": "Uma onda sonora propaga-se no ar a 340 m/s com frequência de 20 Hz. Qual o comprimento de onda?",
+  "alternativas": [
+   "7 m",
+   "10 m",
+   "15 m",
+   "17 m",
+   "20 m"
+  ],
+  "correta": 3,
+  "explicacao": "v = λ·f → λ = v/f = 340 ÷ 20 = 17 m.",
+  "dica": "Equação fundamental das ondas: v = λ·f. Isole λ = v/f.",
+  "id": "c-0137",
+  "gerada": false,
+  "fonte": "enem"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Logaritmos",
+  "nivel": "Médio",
+  "banca": "FUVEST",
+  "enunciado": "O valor de log₂ 32 + log₃ 27 é:",
+  "alternativas": [
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "correta": 2,
+  "explicacao": "log₂ 32 = log₂ 2⁵ = 5 (pois 2⁵ = 32) e log₃ 27 = log₃ 3³ = 3. Somando: 5 + 3 = 8. Atenção: a soma correta é 8.",
+  "dica": "logₐ aⁿ = n. Escreva o número como potência da base.",
+  "id": "v-0138",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Equação exponencial",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "Resolvendo a equação 2ˣ⁺¹ = 32, o valor de x é:",
+  "alternativas": [
+   "3",
+   "4",
+   "5",
+   "6",
+   "2"
+  ],
+  "correta": 1,
+  "explicacao": "32 = 2⁵. Então 2ˣ⁺¹ = 2⁵, logo x + 1 = 5 e x = 4.",
+  "dica": "Iguale as bases: se aᵐ = aⁿ, então m = n.",
+  "id": "v-0139",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Difícil",
+  "banca": "FUVEST",
+  "enunciado": "Quantos anagramas distintos podem ser formados com as letras da palavra LIVRO (todas distintas)?",
+  "alternativas": [
+   "24",
+   "60",
+   "100",
+   "120",
+   "720"
+  ],
+  "correta": 3,
+  "explicacao": "LIVRO tem 5 letras distintas. O número de anagramas é 5! = 5×4×3×2×1 = 120.",
+  "dica": "Anagramas de palavra com letras distintas = n! (fatorial do nº de letras).",
+  "id": "v-0140",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressão Geométrica",
+  "nivel": "Médio",
+  "banca": "UNICAMP",
+  "enunciado": "A soma dos 5 primeiros termos da PG (3, 6, 12, 24, 48) é:",
+  "alternativas": [
+   "81",
+   "93",
+   "96",
+   "99",
+   "105"
+  ],
+  "correta": 1,
+  "explicacao": "Basta somar: 3 + 6 + 12 + 24 + 48 = 93. (Ou use Sₙ = a₁(qⁿ−1)/(q−1) = 3(2⁵−1)/(2−1) = 3×31 = 93.)",
+  "dica": "PG: Sₙ = a₁·(qⁿ − 1)/(q − 1).",
+  "id": "v-0141",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Trigonometria",
+  "nivel": "Médio",
+  "banca": "PUC",
+  "enunciado": "O valor de sen 30° + cos 60° é:",
+  "alternativas": [
+   "0",
+   "1/2",
+   "1",
+   "√2/2",
+   "√3/2"
+  ],
+  "correta": 2,
+  "explicacao": "sen 30° = 1/2 e cos 60° = 1/2. Somando: 1/2 + 1/2 = 1.",
+  "dica": "Decore os valores notáveis: sen30=cos60=1/2; sen60=cos30=√3/2; sen45=cos45=√2/2.",
+  "id": "v-0142",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Analítica",
+  "nivel": "Médio",
+  "banca": "UERJ",
+  "enunciado": "A distância entre os pontos A(1, 2) e B(4, 6) no plano cartesiano é:",
+  "alternativas": [
+   "3",
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "correta": 2,
+  "explicacao": "d = √[(4−1)² + (6−2)²] = √(3² + 4²) = √(9 + 16) = √25 = 5.",
+  "dica": "Distância entre pontos: d = √[(x₂−x₁)² + (y₂−y₁)²]. Terna 3-4-5 aparece muito.",
+  "id": "v-0143",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função composta",
+  "nivel": "Difícil",
+  "banca": "FUVEST",
+  "enunciado": "Se f(x) = 2x + 1 e g(x) = x², então f(g(3)) vale:",
+  "alternativas": [
+   "7",
+   "13",
+   "19",
+   "25",
+   "49"
+  ],
+  "correta": 2,
+  "explicacao": "Primeiro g(3) = 3² = 9. Depois f(9) = 2×9 + 1 = 19.",
+  "dica": "Em f(g(x)), resolva de dentro para fora: calcule g primeiro, use o resultado em f.",
+  "id": "v-0144",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Porcentagem",
+  "nivel": "Difícil",
+  "banca": "Mackenzie",
+  "enunciado": "Um produto teve dois aumentos sucessivos de 20% e 50%. O aumento percentual total foi de:",
+  "alternativas": [
+   "70%",
+   "72%",
+   "75%",
+   "80%",
+   "100%"
+  ],
+  "correta": 3,
+  "explicacao": "Fatores: 1,20 × 1,50 = 1,80. Isso corresponde a um aumento total de 80% (não 70%, pois os aumentos não se somam).",
+  "dica": "Aumentos sucessivos: multiplique os fatores (1,20 × 1,50), não some as porcentagens.",
+  "id": "v-0145",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Cinemática",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "Um carro parte do repouso com aceleração constante de 2 m/s². Qual a velocidade após 10 s?",
+  "alternativas": [
+   "5 m/s",
+   "10 m/s",
+   "20 m/s",
+   "40 m/s",
+   "100 m/s"
+  ],
+  "correta": 2,
+  "explicacao": "No MUV, v = v₀ + a·t = 0 + 2×10 = 20 m/s.",
+  "dica": "MUV: v = v₀ + a·t. Partindo do repouso, v₀ = 0.",
+  "id": "v-0146",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Dinâmica",
+  "nivel": "Médio",
+  "banca": "FUVEST",
+  "enunciado": "Uma força resultante de 20 N atua sobre um corpo de massa 4 kg. A aceleração adquirida é:",
+  "alternativas": [
+   "2 m/s²",
+   "4 m/s²",
+   "5 m/s²",
+   "16 m/s²",
+   "80 m/s²"
+  ],
+  "correta": 2,
+  "explicacao": "Pela 2ª Lei de Newton, F = m·a, logo a = F/m = 20/4 = 5 m/s².",
+  "dica": "F = m·a. Isole a aceleração: a = F/m.",
+  "id": "v-0147",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Hidrostática",
+  "nivel": "Difícil",
+  "banca": "UNICAMP",
+  "enunciado": "Qual a pressão exercida por uma coluna de água de 2 m de altura? (densidade = 1000 kg/m³; g = 10 m/s²)",
+  "alternativas": [
+   "2 000 Pa",
+   "5 000 Pa",
+   "10 000 Pa",
+   "20 000 Pa",
+   "200 000 Pa"
+  ],
+  "correta": 3,
+  "explicacao": "Pressão hidrostática: p = ρ·g·h = 1000 × 10 × 2 = 20 000 Pa.",
+  "dica": "Pressão de coluna de fluido: p = ρ·g·h.",
+  "id": "v-0148",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletricidade",
+  "nivel": "Médio",
+  "banca": "PUC",
+  "enunciado": "Um resistor de 10 Ω é percorrido por uma corrente de 2 A. A diferença de potencial em seus terminais é:",
+  "alternativas": [
+   "5 V",
+   "8 V",
+   "12 V",
+   "20 V",
+   "40 V"
+  ],
+  "correta": 3,
+  "explicacao": "Pela 1ª Lei de Ohm, U = R·i = 10 × 2 = 20 V.",
+  "dica": "Lei de Ohm: U = R·i.",
+  "id": "v-0149",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Médio",
+  "banca": "UERJ",
+  "enunciado": "Um objeto está a 30 cm de um espelho plano. A distância entre o objeto e sua imagem é:",
+  "alternativas": [
+   "15 cm",
+   "30 cm",
+   "45 cm",
+   "60 cm",
+   "90 cm"
+  ],
+  "correta": 3,
+  "explicacao": "No espelho plano, a imagem é simétrica: forma-se a 30 cm atrás do espelho. A distância objeto-imagem é 30 + 30 = 60 cm.",
+  "dica": "Espelho plano: imagem virtual, do mesmo tamanho, simétrica. Objeto-imagem = 2× a distância ao espelho.",
+  "id": "v-0150",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Difícil",
+  "banca": "FUVEST",
+  "enunciado": "Qual a concentração em mol/L (molaridade) de uma solução com 0,5 mol de soluto em 250 mL de solução?",
+  "alternativas": [
+   "0,5 mol/L",
+   "1 mol/L",
+   "2 mol/L",
+   "2,5 mol/L",
+   "5 mol/L"
+  ],
+  "correta": 2,
+  "explicacao": "Molaridade = mols ÷ volume (em litros). 250 mL = 0,25 L. M = 0,5 / 0,25 = 2 mol/L.",
+  "dica": "Converta mL para L (÷1000). Molaridade = n° de mols ÷ volume em litros.",
+  "id": "v-0151",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Atomística",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "Um átomo possui número atômico 11 (Z = 11) e número de massa 23 (A = 23). Quantos nêutrons ele tem?",
+  "alternativas": [
+   "11",
+   "12",
+   "23",
+   "34",
+   "1"
+  ],
+  "correta": 1,
+  "explicacao": "Nº de nêutrons = A − Z = 23 − 11 = 12. (Z = prótons = 11; nêutrons = massa − prótons.)",
+  "dica": "Nêutrons = A − Z (massa menos número atômico).",
+  "id": "v-0152",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Gases",
+  "nivel": "Difícil",
+  "banca": "UNICAMP",
+  "enunciado": "Mantendo a temperatura constante, um gás ocupa 4 L a 2 atm. Se a pressão passar a 8 atm, o novo volume será (Lei de Boyle):",
+  "alternativas": [
+   "1 L",
+   "2 L",
+   "4 L",
+   "8 L",
+   "16 L"
+  ],
+  "correta": 0,
+  "explicacao": "Lei de Boyle (T constante): P₁V₁ = P₂V₂. Então 2×4 = 8×V₂ → V₂ = 8/8 = 1 L.",
+  "dica": "Temperatura constante: P·V é constante (quanto maior a pressão, menor o volume).",
+  "id": "v-0153",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Orgânica",
+  "nivel": "Médio",
+  "banca": "PUC",
+  "enunciado": "O composto de fórmula CH₃–CH₂–OH é um:",
+  "alternativas": [
+   "Ácido carboxílico",
+   "Álcool (etanol)",
+   "Aldeído",
+   "Éter",
+   "Cetona"
+  ],
+  "correta": 1,
+  "explicacao": "A presença do grupo hidroxila (–OH) ligado a carbono saturado caracteriza um álcool. CH₃CH₂OH é o etanol.",
+  "dica": "Grupo –OH em carbono saturado = álcool. Terminação -ol.",
+  "id": "v-0154",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "pH",
+  "nivel": "Médio",
+  "banca": "Albert Einstein",
+  "enunciado": "Uma solução tem concentração de íons H⁺ igual a 10⁻³ mol/L. Seu pH é:",
+  "alternativas": [
+   "1",
+   "3",
+   "7",
+   "10",
+   "11"
+  ],
+  "correta": 1,
+  "explicacao": "pH = −log[H⁺] = −log(10⁻³) = 3. Como pH < 7, a solução é ácida.",
+  "dica": "pH = −log[H⁺]. Se [H⁺] = 10⁻ⁿ, então pH = n.",
+  "id": "v-0155",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "biologia",
+  "topico": "Genética",
+  "nivel": "Difícil",
+  "banca": "FUVEST",
+  "enunciado": "No sistema ABO, um casal em que o pai é tipo A (heterozigoto, Iᴬi) e a mãe tipo B (heterozigota, IᴮI) pode ter filhos dos tipos:",
+  "alternativas": [
+   "Somente A e B",
+   "Somente AB",
+   "A, B, AB e O",
+   "Somente O",
+   "Somente A e O"
+  ],
+  "correta": 2,
+  "explicacao": "Iᴬi × IᴮI gera: IᴬIᴮ (AB), Iᴬi (A), Iᴮi (B) e ii (O). Portanto, os quatro tipos sanguíneos são possíveis.",
+  "dica": "Cruze os alelos num quadro de Punnett. Pais heterozigotos A e B podem ter filho O.",
+  "id": "v-0156",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "biologia",
+  "topico": "Citologia",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "A organela responsável pela síntese de proteínas na célula é:",
+  "alternativas": [
+   "Mitocôndria",
+   "Ribossomo",
+   "Lisossomo",
+   "Complexo de Golgi",
+   "Cloroplasto"
+  ],
+  "correta": 1,
+  "explicacao": "Os ribossomos são as organelas onde ocorre a tradução do RNA mensageiro em proteínas (síntese proteica).",
+  "dica": "Ribossomo = fábrica de proteínas. Mitocôndria = energia (ATP).",
+  "id": "v-0157",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "biologia",
+  "topico": "Ecologia",
+  "nivel": "Médio",
+  "banca": "UERJ",
+  "enunciado": "A relação ecológica entre o boi e os micro-organismos que digerem a celulose em seu estômago, beneficiando ambos, é um exemplo de:",
+  "alternativas": [
+   "Parasitismo",
+   "Competição",
+   "Mutualismo",
+   "Predação",
+   "Comensalismo"
+  ],
+  "correta": 2,
+  "explicacao": "No mutualismo, ambas as espécies se beneficiam: o boi obtém nutrientes da celulose digerida e os micro-organismos ganham abrigo e alimento. É uma relação harmônica interespecífica.",
+  "dica": "Mutualismo = os dois ganham. Parasitismo = um ganha e o outro perde.",
+  "id": "v-0158",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "biologia",
+  "topico": "Evolução",
+  "nivel": "Difícil",
+  "banca": "UNICAMP",
+  "enunciado": "Órgãos análogos, como a asa da ave e a asa do inseto, indicam:",
+  "alternativas": [
+   "Mesma origem embrionária",
+   "Evolução convergente (funções semelhantes, origens diferentes)",
+   "Parentesco evolutivo próximo",
+   "Órgãos vestigiais",
+   "Mutação recente"
+  ],
+  "correta": 1,
+  "explicacao": "Órgãos análogos têm função semelhante mas origens embrionárias diferentes — resultam de evolução convergente (adaptação a pressões parecidas). Já órgãos homólogos têm mesma origem e indicam parentesco.",
+  "dica": "Análogos = mesma função, origens diferentes (convergente). Homólogos = mesma origem (divergente).",
+  "id": "v-0159",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "natureza",
+  "materia": "biologia",
+  "topico": "Fisiologia Vegetal",
+  "nivel": "Médio",
+  "banca": "PUC",
+  "enunciado": "Na fotossíntese, o gás liberado para a atmosfera é o:",
+  "alternativas": [
+   "Gás carbônico (CO₂)",
+   "Oxigênio (O₂)",
+   "Nitrogênio (N₂)",
+   "Metano (CH₄)",
+   "Hidrogênio (H₂)"
+  ],
+  "correta": 1,
+  "explicacao": "Na fotossíntese, as plantas absorvem CO₂ e água e, usando luz, produzem glicose, liberando O₂ (proveniente da quebra da água) para a atmosfera.",
+  "dica": "Fotossíntese: entra CO₂, sai O₂. Respiração: o inverso.",
+  "id": "v-0160",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "historia",
+  "topico": "Brasil Colônia",
+  "nivel": "Médio",
+  "banca": "FUVEST",
+  "enunciado": "A Inconfidência Mineira (1789) tinha entre seus objetivos:",
+  "alternativas": [
+   "Manter o pacto colonial com Portugal.",
+   "A independência da capitania e o fim da cobrança de impostos como a derrama.",
+   "A abolição imediata e total da escravidão.",
+   "A união com a Espanha.",
+   "A restauração do absolutismo português."
+  ],
+  "correta": 1,
+  "explicacao": "A Inconfidência Mineira foi um movimento das elites mineiras, influenciado pelo Iluminismo, que buscava a independência e protestava contra a pesada tributação da Coroa (como a derrama). A questão da escravidão era secundária e não consensual entre os inconfidentes.",
+  "dica": "Inconfidência Mineira: influência iluminista, revolta contra impostos (derrama) e desejo de independência.",
+  "id": "v-0161",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "historia",
+  "topico": "História Geral",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "A Revolução Industrial teve início, no século XVIII, principalmente:",
+  "alternativas": [
+   "Na França",
+   "Na Inglaterra",
+   "Na Alemanha",
+   "nos Estados Unidos",
+   "na Itália"
+  ],
+  "correta": 1,
+  "explicacao": "A Revolução Industrial começou na Inglaterra (séc. XVIII), favorecida por acúmulo de capital, mão de obra, carvão, mercado consumidor e pioneirismo tecnológico (máquina a vapor).",
+  "dica": "Revolução Industrial = Inglaterra, século XVIII, máquina a vapor.",
+  "id": "v-0162",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "historia",
+  "topico": "Brasil República",
+  "nivel": "Difícil",
+  "banca": "UERJ",
+  "enunciado": "A Semana de Arte Moderna de 1922 e a fundação do Partido Comunista no mesmo ano evidenciam que a década de 1920 no Brasil foi marcada por:",
+  "alternativas": [
+   "Total estabilidade da República Velha.",
+   "Questionamentos à ordem oligárquica, tanto no campo cultural quanto no político.",
+   "Apoio unânime à política do café com leite.",
+   "Ausência de movimentos sociais.",
+   "Retorno à monarquia."
+  ],
+  "correta": 1,
+  "explicacao": "Os anos 1920 concentraram contestações à hegemonia oligárquica da República Velha: no plano cultural (Modernismo de 22), político (fundação do PCB, tenentismo) e militar (revoltas tenentistas), preparando a crise que levaria à Revolução de 1930.",
+  "dica": "Anos 1920 = efervescência contestatória que mina a República Velha (Modernismo, tenentismo, PCB).",
+  "id": "v-0163",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "historia",
+  "topico": "Idade Moderna",
+  "nivel": "Médio",
+  "banca": "PUC",
+  "enunciado": "O movimento cultural dos séculos XV e XVI que valorizou o humanismo, a razão e a Antiguidade Clássica foi:",
+  "alternativas": [
+   "O Feudalismo",
+   "O Renascimento",
+   "A Reforma Protestante",
+   "O Iluminismo",
+   "O Romantismo"
+  ],
+  "correta": 1,
+  "explicacao": "O Renascimento (séc. XV–XVI) retomou os valores clássicos greco-romanos, valorizando o humanismo (homem no centro), a razão, a ciência e o antropocentrismo, em contraste com o teocentrismo medieval.",
+  "dica": "Renascimento = humanismo + antropocentrismo + retomada da Antiguidade Clássica.",
+  "id": "v-0164",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "geografia",
+  "topico": "Climatologia",
+  "nivel": "Médio",
+  "banca": "FUVEST",
+  "enunciado": "O fenômeno climático El Niño caracteriza-se pelo:",
+  "alternativas": [
+   "Resfriamento anormal das águas do Pacífico.",
+   "Aquecimento anormal das águas superficiais do Pacífico equatorial, alterando o clima global.",
+   "Aumento das chuvas apenas na Europa.",
+   "Congelamento do oceano Atlântico.",
+   "Desaparecimento das monções."
+  ],
+  "correta": 1,
+  "explicacao": "O El Niño é o aquecimento anômalo das águas superficiais do Pacífico equatorial, que desorganiza a circulação atmosférica e provoca alterações climáticas globais (secas no Nordeste, chuvas no Sul do Brasil, por exemplo). A fase fria é a La Niña.",
+  "dica": "El Niño = aquecimento do Pacífico. La Niña = resfriamento. Ambos alteram o clima mundial.",
+  "id": "v-0165",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "geografia",
+  "topico": "Geografia Econômica",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "A sigla PIB (Produto Interno Bruto) representa:",
+  "alternativas": [
+   "A dívida externa de um país.",
+   "A soma de todos os bens e serviços finais produzidos em um país em um período.",
+   "O número de habitantes de um país.",
+   "A taxa de desemprego.",
+   "O total de impostos arrecadados."
+  ],
+  "correta": 1,
+  "explicacao": "O PIB é a soma do valor de todos os bens e serviços finais produzidos em um território durante certo período. É o principal indicador do tamanho de uma economia (mas não mede diretamente a distribuição de renda).",
+  "dica": "PIB = tudo que o país produz. Alto PIB não significa, por si só, boa distribuição de renda.",
+  "id": "v-0166",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "geografia",
+  "topico": "Geopolítica",
+  "nivel": "Difícil",
+  "banca": "UERJ",
+  "enunciado": "A Organização das Nações Unidas (ONU) tem como um de seus principais órgãos o Conselho de Segurança, cujos cinco membros permanentes com poder de veto são:",
+  "alternativas": [
+   "Brasil, Índia, Alemanha, Japão e África do Sul",
+   "EUA, Rússia, China, Reino Unido e França",
+   "EUA, Brasil, China, Índia e Rússia",
+   "Alemanha, Itália, Japão, França e EUA",
+   "China, Índia, Rússia, Brasil e EUA"
+  ],
+  "correta": 1,
+  "explicacao": "Os cinco membros permanentes do Conselho de Segurança da ONU (com poder de veto) são EUA, Rússia, China, Reino Unido e França — as potências vencedoras da Segunda Guerra Mundial.",
+  "dica": "Membros permanentes da ONU = vencedores da 2ª Guerra: EUA, Rússia, China, Reino Unido, França.",
+  "id": "v-0167",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "geografia",
+  "topico": "Geografia do Brasil",
+  "nivel": "Médio",
+  "banca": "Mackenzie",
+  "enunciado": "A principal fonte de energia elétrica do Brasil é a:",
+  "alternativas": [
+   "Termelétrica a carvão",
+   "Hidrelétrica",
+   "Nuclear",
+   "Eólica",
+   "Solar fotovoltaica"
+  ],
+  "correta": 1,
+  "explicacao": "A matriz elétrica brasileira é predominantemente hidrelétrica, graças ao grande potencial hídrico do país (bacias com muitos rios e desníveis). Eólica e solar vêm crescendo, mas a hidrelétrica ainda lidera.",
+  "dica": "Brasil = matriz elétrica majoritariamente hidrelétrica.",
+  "id": "v-0168",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "filosociologia",
+  "topico": "Filosofia",
+  "nivel": "Difícil",
+  "banca": "UNICAMP",
+  "enunciado": "A frase 'Penso, logo existo' (Cogito, ergo sum), que fundamenta o racionalismo moderno, é de:",
+  "alternativas": [
+   "Aristóteles",
+   "René Descartes",
+   "Karl Marx",
+   "Immanuel Kant",
+   "Friedrich Nietzsche"
+  ],
+  "correta": 1,
+  "explicacao": "A célebre proposição 'Penso, logo existo' é de René Descartes. Por meio da dúvida metódica, ele chega à única certeza inabalável: a existência do sujeito que pensa — base do racionalismo moderno.",
+  "dica": "'Cogito, ergo sum' = Descartes, pai do racionalismo e da dúvida metódica.",
+  "id": "v-0169",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "humanas",
+  "materia": "filosociologia",
+  "topico": "Sociologia",
+  "nivel": "Médio",
+  "banca": "UERJ",
+  "enunciado": "O processo pelo qual o indivíduo aprende as normas, valores e costumes de sua sociedade é chamado de:",
+  "alternativas": [
+   "Alienação",
+   "Socialização",
+   "Estratificação",
+   "Anomia",
+   "Mobilidade"
+  ],
+  "correta": 1,
+  "explicacao": "A socialização é o processo contínuo pelo qual o indivíduo internaliza a cultura (normas, valores, papéis) do grupo em que vive, tornando-se membro da sociedade. A família e a escola são agentes socializadores primários.",
+  "dica": "Socialização = aprender a cultura/normas da sociedade. Família e escola são agentes.",
+  "id": "v-0170",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "linguagens",
+  "materia": "portugues",
+  "topico": "Literatura",
+  "nivel": "Difícil",
+  "banca": "FUVEST",
+  "enunciado": "A obra 'Os Lusíadas', de Luís de Camões, é uma epopeia que exalta:",
+  "alternativas": [
+   "A vida urbana contemporânea.",
+   "As grandes navegações e os feitos heroicos do povo português.",
+   "A decadência do Império Romano.",
+   "A Revolução Industrial inglesa.",
+   "A mitologia asteca."
+  ],
+  "correta": 1,
+  "explicacao": "'Os Lusíadas' (1572) é uma epopeia clássica que narra e exalta as grandes navegações portuguesas, especialmente a viagem de Vasco da Gama às Índias, celebrando os feitos heroicos do povo lusitano.",
+  "dica": "'Os Lusíadas' = epopeia de Camões sobre as navegações e a glória de Portugal.",
+  "id": "v-0171",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "linguagens",
+  "materia": "portugues",
+  "topico": "Gramática",
+  "nivel": "Médio",
+  "banca": "UNESP",
+  "enunciado": "Na frase 'Os estudantes dedicados conquistaram boas notas', a palavra 'dedicados' é:",
+  "alternativas": [
+   "Substantivo",
+   "Adjetivo",
+   "Verbo",
+   "Advérbio",
+   "Preposição"
+  ],
+  "correta": 1,
+  "explicacao": "'Dedicados' qualifica o substantivo 'estudantes' (quais estudantes? os dedicados), funcionando como adjetivo (atribui uma característica ao substantivo).",
+  "dica": "Adjetivo caracteriza o substantivo. Pergunte: 'como/qual é o substantivo?'",
+  "id": "v-0172",
+  "gerada": false,
+  "fonte": "vestibular"
+ },
+ {
+  "area": "linguagens",
+  "materia": "ingles",
+  "topico": "Leitura instrumental",
+  "nivel": "Médio",
+  "banca": "PUC",
+  "enunciado": "In the sentence 'The results were not only surprising but also encouraging', the structure 'not only... but also' expresses:",
+  "alternativas": [
+   "contrast",
+   "addition (both ideas together)",
+   "cause",
+   "condition",
+   "time"
+  ],
+  "correta": 1,
+  "explicacao": "A estrutura correlativa 'not only... but also' expressa adição enfática: une duas ideias ('não apenas... mas também'). Aqui, os resultados foram surpreendentes E encorajadores.",
+  "dica": "'not only... but also' = não apenas... mas também (adição enfática).",
+  "id": "v-0173",
+  "gerada": false,
+  "fonte": "vestibular"
  },
  {
   "area": "matematica",
@@ -2213,7 +3526,8 @@ window.ENEM_QUESTIONS = [
    "R$ 539,00"
   ],
   "correta": 1,
-  "id": "g-0116"
+  "id": "g-0174",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2232,7 +3546,8 @@ window.ENEM_QUESTIONS = [
    "R$ 168,00"
   ],
   "correta": 4,
-  "id": "g-0117"
+  "id": "g-0175",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2251,7 +3566,8 @@ window.ENEM_QUESTIONS = [
    "R$ 336,00"
   ],
   "correta": 0,
-  "id": "g-0118"
+  "id": "g-0176",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2270,7 +3586,8 @@ window.ENEM_QUESTIONS = [
    "R$ 119,00"
   ],
   "correta": 0,
-  "id": "g-0119"
+  "id": "g-0177",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2289,7 +3606,8 @@ window.ENEM_QUESTIONS = [
    "R$ 561,60"
   ],
   "correta": 4,
-  "id": "g-0120"
+  "id": "g-0178",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2308,7 +3626,8 @@ window.ENEM_QUESTIONS = [
    "R$ 120,00"
   ],
   "correta": 0,
-  "id": "g-0121"
+  "id": "g-0179",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2327,7 +3646,8 @@ window.ENEM_QUESTIONS = [
    "R$ 290,08"
   ],
   "correta": 4,
-  "id": "g-0122"
+  "id": "g-0180",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2346,7 +3666,8 @@ window.ENEM_QUESTIONS = [
    "R$ 460,00"
   ],
   "correta": 1,
-  "id": "g-0123"
+  "id": "g-0181",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2365,7 +3686,8 @@ window.ENEM_QUESTIONS = [
    "R$ 108,00"
   ],
   "correta": 3,
-  "id": "g-0124"
+  "id": "g-0182",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2384,7 +3706,8 @@ window.ENEM_QUESTIONS = [
    "R$ 448,00"
   ],
   "correta": 0,
-  "id": "g-0125"
+  "id": "g-0183",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2403,7 +3726,8 @@ window.ENEM_QUESTIONS = [
    "R$ 289,00"
   ],
   "correta": 1,
-  "id": "g-0126"
+  "id": "g-0184",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2422,7 +3746,8 @@ window.ENEM_QUESTIONS = [
    "R$ 450,00"
   ],
   "correta": 3,
-  "id": "g-0127"
+  "id": "g-0185",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2441,7 +3766,8 @@ window.ENEM_QUESTIONS = [
    "R$ 126,50"
   ],
   "correta": 1,
-  "id": "g-0128"
+  "id": "g-0186",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2460,7 +3786,8 @@ window.ENEM_QUESTIONS = [
    "R$ 400,00"
   ],
   "correta": 0,
-  "id": "g-0129"
+  "id": "g-0187",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2479,7 +3806,8 @@ window.ENEM_QUESTIONS = [
    "R$ 209,00"
   ],
   "correta": 1,
-  "id": "g-0130"
+  "id": "g-0188",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2498,7 +3826,8 @@ window.ENEM_QUESTIONS = [
    "R$ 382,95"
   ],
   "correta": 4,
-  "id": "g-0131"
+  "id": "g-0189",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2517,7 +3846,8 @@ window.ENEM_QUESTIONS = [
    "R$ 120,00"
   ],
   "correta": 0,
-  "id": "g-0132"
+  "id": "g-0190",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2536,7 +3866,8 @@ window.ENEM_QUESTIONS = [
    "R$ 361,20"
   ],
   "correta": 4,
-  "id": "g-0133"
+  "id": "g-0191",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2555,7 +3886,8 @@ window.ENEM_QUESTIONS = [
    "R$ 248,40"
   ],
   "correta": 3,
-  "id": "g-0134"
+  "id": "g-0192",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2574,7 +3906,8 @@ window.ENEM_QUESTIONS = [
    "R$ 570,00"
   ],
   "correta": 0,
-  "id": "g-0135"
+  "id": "g-0193",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2593,7 +3926,8 @@ window.ENEM_QUESTIONS = [
    "R$ 120,00"
   ],
   "correta": 1,
-  "id": "g-0136"
+  "id": "g-0194",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2612,7 +3946,8 @@ window.ENEM_QUESTIONS = [
    "R$ 306,24"
   ],
   "correta": 2,
-  "id": "g-0137"
+  "id": "g-0195",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2631,7 +3966,8 @@ window.ENEM_QUESTIONS = [
    "R$ 190,00"
   ],
   "correta": 2,
-  "id": "g-0138"
+  "id": "g-0196",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2650,7 +3986,8 @@ window.ENEM_QUESTIONS = [
    "R$ 649,60"
   ],
   "correta": 1,
-  "id": "g-0139"
+  "id": "g-0197",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2669,7 +4006,8 @@ window.ENEM_QUESTIONS = [
    "R$ 99,00"
   ],
   "correta": 2,
-  "id": "g-0140"
+  "id": "g-0198",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2688,7 +4026,8 @@ window.ENEM_QUESTIONS = [
    "R$ 600,00"
   ],
   "correta": 3,
-  "id": "g-0141"
+  "id": "g-0199",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2707,7 +4046,8 @@ window.ENEM_QUESTIONS = [
    "R$ 184,30"
   ],
   "correta": 0,
-  "id": "g-0142"
+  "id": "g-0200",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2726,7 +4066,8 @@ window.ENEM_QUESTIONS = [
    "R$ 324,80"
   ],
   "correta": 0,
-  "id": "g-0143"
+  "id": "g-0201",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2745,7 +4086,8 @@ window.ENEM_QUESTIONS = [
    "R$ 108,00"
   ],
   "correta": 1,
-  "id": "g-0144"
+  "id": "g-0202",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2764,7 +4106,8 @@ window.ENEM_QUESTIONS = [
    "R$ 469,20"
   ],
   "correta": 4,
-  "id": "g-0145"
+  "id": "g-0203",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2783,7 +4126,8 @@ window.ENEM_QUESTIONS = [
    "R$ 344,50"
   ],
   "correta": 3,
-  "id": "g-0146"
+  "id": "g-0204",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2802,7 +4146,8 @@ window.ENEM_QUESTIONS = [
    "R$ 196,00"
   ],
   "correta": 2,
-  "id": "g-0147"
+  "id": "g-0205",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2821,7 +4166,8 @@ window.ENEM_QUESTIONS = [
    "R$ 347,20"
   ],
   "correta": 3,
-  "id": "g-0148"
+  "id": "g-0206",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2840,7 +4186,8 @@ window.ENEM_QUESTIONS = [
    "R$ 530,00"
   ],
   "correta": 0,
-  "id": "g-0149"
+  "id": "g-0207",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2859,7 +4206,8 @@ window.ENEM_QUESTIONS = [
    "R$ 231,00"
   ],
   "correta": 3,
-  "id": "g-0150"
+  "id": "g-0208",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2878,7 +4226,8 @@ window.ENEM_QUESTIONS = [
    "R$ 230,00"
   ],
   "correta": 3,
-  "id": "g-0151"
+  "id": "g-0209",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2897,7 +4246,8 @@ window.ENEM_QUESTIONS = [
    "R$ 280,00"
   ],
   "correta": 3,
-  "id": "g-0152"
+  "id": "g-0210",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2916,7 +4266,8 @@ window.ENEM_QUESTIONS = [
    "R$ 504,00"
   ],
   "correta": 4,
-  "id": "g-0153"
+  "id": "g-0211",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2935,7 +4286,8 @@ window.ENEM_QUESTIONS = [
    "R$ 336,00"
   ],
   "correta": 4,
-  "id": "g-0154"
+  "id": "g-0212",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2954,7 +4306,8 @@ window.ENEM_QUESTIONS = [
    "R$ 368,00"
   ],
   "correta": 2,
-  "id": "g-0155"
+  "id": "g-0213",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2973,7 +4326,8 @@ window.ENEM_QUESTIONS = [
    "R$ 409,50"
   ],
   "correta": 1,
-  "id": "g-0156"
+  "id": "g-0214",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -2992,7 +4346,8 @@ window.ENEM_QUESTIONS = [
    "R$ 117,00"
   ],
   "correta": 0,
-  "id": "g-0157"
+  "id": "g-0215",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3011,7 +4366,8 @@ window.ENEM_QUESTIONS = [
    "150"
   ],
   "correta": 1,
-  "id": "g-0158"
+  "id": "g-0216",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3030,7 +4386,8 @@ window.ENEM_QUESTIONS = [
    "84"
   ],
   "correta": 4,
-  "id": "g-0159"
+  "id": "g-0217",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3049,7 +4406,8 @@ window.ENEM_QUESTIONS = [
    "R$ 32,50"
   ],
   "correta": 2,
-  "id": "g-0160"
+  "id": "g-0218",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3068,7 +4426,8 @@ window.ENEM_QUESTIONS = [
    "R$ 79,17"
   ],
   "correta": 3,
-  "id": "g-0161"
+  "id": "g-0219",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3087,7 +4446,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.100,00"
   ],
   "correta": 1,
-  "id": "g-0162"
+  "id": "g-0220",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3106,7 +4466,8 @@ window.ENEM_QUESTIONS = [
    "R$ 85,00"
   ],
   "correta": 4,
-  "id": "g-0163"
+  "id": "g-0221",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3125,7 +4486,8 @@ window.ENEM_QUESTIONS = [
    "R$ 20,00"
   ],
   "correta": 2,
-  "id": "g-0164"
+  "id": "g-0222",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3144,7 +4506,8 @@ window.ENEM_QUESTIONS = [
    "R$ 23,00"
   ],
   "correta": 2,
-  "id": "g-0165"
+  "id": "g-0223",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3163,7 +4526,8 @@ window.ENEM_QUESTIONS = [
    "1.400"
   ],
   "correta": 1,
-  "id": "g-0166"
+  "id": "g-0224",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3182,7 +4546,8 @@ window.ENEM_QUESTIONS = [
    "R$ 975,00"
   ],
   "correta": 1,
-  "id": "g-0167"
+  "id": "g-0225",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3201,7 +4566,8 @@ window.ENEM_QUESTIONS = [
    "R$ 25,00"
   ],
   "correta": 0,
-  "id": "g-0168"
+  "id": "g-0226",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3220,7 +4586,8 @@ window.ENEM_QUESTIONS = [
    "R$ 92,50"
   ],
   "correta": 0,
-  "id": "g-0169"
+  "id": "g-0227",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3239,7 +4606,8 @@ window.ENEM_QUESTIONS = [
    "14.250"
   ],
   "correta": 2,
-  "id": "g-0170"
+  "id": "g-0228",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3258,7 +4626,8 @@ window.ENEM_QUESTIONS = [
    "47,5"
   ],
   "correta": 0,
-  "id": "g-0171"
+  "id": "g-0229",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3277,7 +4646,8 @@ window.ENEM_QUESTIONS = [
    "R$ 54,00"
   ],
   "correta": 4,
-  "id": "g-0172"
+  "id": "g-0230",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3296,7 +4666,8 @@ window.ENEM_QUESTIONS = [
    "46,3"
   ],
   "correta": 0,
-  "id": "g-0173"
+  "id": "g-0231",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3315,7 +4686,8 @@ window.ENEM_QUESTIONS = [
    "11.700"
   ],
   "correta": 0,
-  "id": "g-0174"
+  "id": "g-0232",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3334,7 +4706,8 @@ window.ENEM_QUESTIONS = [
    "10,4"
   ],
   "correta": 2,
-  "id": "g-0175"
+  "id": "g-0233",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3353,7 +4726,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.350,00"
   ],
   "correta": 0,
-  "id": "g-0176"
+  "id": "g-0234",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3372,7 +4746,8 @@ window.ENEM_QUESTIONS = [
    "720"
   ],
   "correta": 2,
-  "id": "g-0177"
+  "id": "g-0235",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3391,7 +4766,8 @@ window.ENEM_QUESTIONS = [
    "R$ 6,00"
   ],
   "correta": 2,
-  "id": "g-0178"
+  "id": "g-0236",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3410,7 +4786,8 @@ window.ENEM_QUESTIONS = [
    "144"
   ],
   "correta": 4,
-  "id": "g-0179"
+  "id": "g-0237",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3429,7 +4806,8 @@ window.ENEM_QUESTIONS = [
    "R$ 8,25"
   ],
   "correta": 0,
-  "id": "g-0180"
+  "id": "g-0238",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3448,7 +4826,8 @@ window.ENEM_QUESTIONS = [
    "152"
   ],
   "correta": 1,
-  "id": "g-0181"
+  "id": "g-0239",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3467,7 +4846,8 @@ window.ENEM_QUESTIONS = [
    "925"
   ],
   "correta": 3,
-  "id": "g-0182"
+  "id": "g-0240",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3486,7 +4866,8 @@ window.ENEM_QUESTIONS = [
    "166,7"
   ],
   "correta": 2,
-  "id": "g-0183"
+  "id": "g-0241",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3505,7 +4886,8 @@ window.ENEM_QUESTIONS = [
    "R$ 5.400,00"
   ],
   "correta": 3,
-  "id": "g-0184"
+  "id": "g-0242",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3524,7 +4906,8 @@ window.ENEM_QUESTIONS = [
    "R$ 11,00"
   ],
   "correta": 2,
-  "id": "g-0185"
+  "id": "g-0243",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3543,7 +4926,8 @@ window.ENEM_QUESTIONS = [
    "R$ 2.220,00"
   ],
   "correta": 2,
-  "id": "g-0186"
+  "id": "g-0244",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3562,7 +4946,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.440,00"
   ],
   "correta": 2,
-  "id": "g-0187"
+  "id": "g-0245",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3581,7 +4966,8 @@ window.ENEM_QUESTIONS = [
    "70"
   ],
   "correta": 2,
-  "id": "g-0188"
+  "id": "g-0246",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3600,7 +4986,8 @@ window.ENEM_QUESTIONS = [
    "R$ 150,00"
   ],
   "correta": 0,
-  "id": "g-0189"
+  "id": "g-0247",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3619,7 +5006,8 @@ window.ENEM_QUESTIONS = [
    "82,5"
   ],
   "correta": 1,
-  "id": "g-0190"
+  "id": "g-0248",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3638,7 +5026,8 @@ window.ENEM_QUESTIONS = [
    "4.400"
   ],
   "correta": 0,
-  "id": "g-0191"
+  "id": "g-0249",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3657,7 +5046,8 @@ window.ENEM_QUESTIONS = [
    "502,67g"
   ],
   "correta": 3,
-  "id": "g-0192"
+  "id": "g-0250",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3676,7 +5066,8 @@ window.ENEM_QUESTIONS = [
    "12,80 dias"
   ],
   "correta": 2,
-  "id": "g-0193"
+  "id": "g-0251",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3695,7 +5086,8 @@ window.ENEM_QUESTIONS = [
    "11,20 horas"
   ],
   "correta": 4,
-  "id": "g-0194"
+  "id": "g-0252",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3714,7 +5106,8 @@ window.ENEM_QUESTIONS = [
    "30 litros"
   ],
   "correta": 4,
-  "id": "g-0195"
+  "id": "g-0253",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3733,7 +5126,8 @@ window.ENEM_QUESTIONS = [
    "3,09 dias"
   ],
   "correta": 3,
-  "id": "g-0196"
+  "id": "g-0254",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3752,7 +5146,8 @@ window.ENEM_QUESTIONS = [
    "30 litros"
   ],
   "correta": 1,
-  "id": "g-0197"
+  "id": "g-0255",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3771,7 +5166,8 @@ window.ENEM_QUESTIONS = [
    "12 horas"
   ],
   "correta": 1,
-  "id": "g-0198"
+  "id": "g-0256",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3790,7 +5186,8 @@ window.ENEM_QUESTIONS = [
    "18 horas"
   ],
   "correta": 2,
-  "id": "g-0199"
+  "id": "g-0257",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3809,7 +5206,8 @@ window.ENEM_QUESTIONS = [
    "18,67 litros"
   ],
   "correta": 0,
-  "id": "g-0200"
+  "id": "g-0258",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3828,7 +5226,8 @@ window.ENEM_QUESTIONS = [
    "1.180,00g"
   ],
   "correta": 3,
-  "id": "g-0201"
+  "id": "g-0259",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3847,7 +5246,8 @@ window.ENEM_QUESTIONS = [
    "359,33g"
   ],
   "correta": 1,
-  "id": "g-0202"
+  "id": "g-0260",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3866,7 +5266,8 @@ window.ENEM_QUESTIONS = [
    "4,80 dias"
   ],
   "correta": 3,
-  "id": "g-0203"
+  "id": "g-0261",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3885,7 +5286,8 @@ window.ENEM_QUESTIONS = [
    "5,76 horas"
   ],
   "correta": 0,
-  "id": "g-0204"
+  "id": "g-0262",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3904,7 +5306,8 @@ window.ENEM_QUESTIONS = [
    "18,67 litros"
   ],
   "correta": 0,
-  "id": "g-0205"
+  "id": "g-0263",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3923,7 +5326,8 @@ window.ENEM_QUESTIONS = [
    "8,89 dias"
   ],
   "correta": 2,
-  "id": "g-0206"
+  "id": "g-0264",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3942,7 +5346,8 @@ window.ENEM_QUESTIONS = [
    "428,96g"
   ],
   "correta": 3,
-  "id": "g-0207"
+  "id": "g-0265",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3961,7 +5366,8 @@ window.ENEM_QUESTIONS = [
    "6 horas"
   ],
   "correta": 0,
-  "id": "g-0208"
+  "id": "g-0266",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3980,7 +5386,8 @@ window.ENEM_QUESTIONS = [
    "16 litros"
   ],
   "correta": 0,
-  "id": "g-0209"
+  "id": "g-0267",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -3999,7 +5406,8 @@ window.ENEM_QUESTIONS = [
    "12 horas"
   ],
   "correta": 0,
-  "id": "g-0210"
+  "id": "g-0268",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4018,7 +5426,8 @@ window.ENEM_QUESTIONS = [
    "60 litros"
   ],
   "correta": 2,
-  "id": "g-0211"
+  "id": "g-0269",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4037,7 +5446,8 @@ window.ENEM_QUESTIONS = [
    "1.108,33g"
   ],
   "correta": 4,
-  "id": "g-0212"
+  "id": "g-0270",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4056,7 +5466,8 @@ window.ENEM_QUESTIONS = [
    "28,58 dias"
   ],
   "correta": 3,
-  "id": "g-0213"
+  "id": "g-0271",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4075,7 +5486,8 @@ window.ENEM_QUESTIONS = [
    "3,33 dias"
   ],
   "correta": 4,
-  "id": "g-0214"
+  "id": "g-0272",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4094,7 +5506,8 @@ window.ENEM_QUESTIONS = [
    "247,20g"
   ],
   "correta": 2,
-  "id": "g-0215"
+  "id": "g-0273",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4113,7 +5526,8 @@ window.ENEM_QUESTIONS = [
    "8 dias"
   ],
   "correta": 1,
-  "id": "g-0216"
+  "id": "g-0274",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4132,7 +5546,8 @@ window.ENEM_QUESTIONS = [
    "27,14 dias"
   ],
   "correta": 0,
-  "id": "g-0217"
+  "id": "g-0275",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4151,7 +5566,8 @@ window.ENEM_QUESTIONS = [
    "20 litros"
   ],
   "correta": 4,
-  "id": "g-0218"
+  "id": "g-0276",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4170,7 +5586,8 @@ window.ENEM_QUESTIONS = [
    "5,28 dias"
   ],
   "correta": 3,
-  "id": "g-0219"
+  "id": "g-0277",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4189,7 +5606,8 @@ window.ENEM_QUESTIONS = [
    "7,50 dias"
   ],
   "correta": 4,
-  "id": "g-0220"
+  "id": "g-0278",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4208,7 +5626,8 @@ window.ENEM_QUESTIONS = [
    "11,20 horas"
   ],
   "correta": 0,
-  "id": "g-0221"
+  "id": "g-0279",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4227,7 +5646,8 @@ window.ENEM_QUESTIONS = [
    "8 litros"
   ],
   "correta": 2,
-  "id": "g-0222"
+  "id": "g-0280",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4246,7 +5666,8 @@ window.ENEM_QUESTIONS = [
    "5,42 dias"
   ],
   "correta": 2,
-  "id": "g-0223"
+  "id": "g-0281",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4265,7 +5686,8 @@ window.ENEM_QUESTIONS = [
    "18 horas"
   ],
   "correta": 3,
-  "id": "g-0224"
+  "id": "g-0282",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4284,7 +5706,8 @@ window.ENEM_QUESTIONS = [
    "18 litros"
   ],
   "correta": 1,
-  "id": "g-0225"
+  "id": "g-0283",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4303,7 +5726,8 @@ window.ENEM_QUESTIONS = [
    "356,67g"
   ],
   "correta": 3,
-  "id": "g-0226"
+  "id": "g-0284",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4322,7 +5746,8 @@ window.ENEM_QUESTIONS = [
    "18,67 horas"
   ],
   "correta": 1,
-  "id": "g-0227"
+  "id": "g-0285",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4341,7 +5766,8 @@ window.ENEM_QUESTIONS = [
    "520g"
   ],
   "correta": 4,
-  "id": "g-0228"
+  "id": "g-0286",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4360,7 +5786,8 @@ window.ENEM_QUESTIONS = [
    "11,67 horas"
   ],
   "correta": 4,
-  "id": "g-0229"
+  "id": "g-0287",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4379,7 +5806,8 @@ window.ENEM_QUESTIONS = [
    "13,93 dias"
   ],
   "correta": 1,
-  "id": "g-0230"
+  "id": "g-0288",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4398,7 +5826,8 @@ window.ENEM_QUESTIONS = [
    "486g"
   ],
   "correta": 1,
-  "id": "g-0231"
+  "id": "g-0289",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4417,7 +5846,8 @@ window.ENEM_QUESTIONS = [
    "6 dias"
   ],
   "correta": 4,
-  "id": "g-0232"
+  "id": "g-0290",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4436,7 +5866,8 @@ window.ENEM_QUESTIONS = [
    "33 horas"
   ],
   "correta": 2,
-  "id": "g-0233"
+  "id": "g-0291",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4455,7 +5886,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 1,
-  "id": "g-0234"
+  "id": "g-0292",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4474,7 +5906,8 @@ window.ENEM_QUESTIONS = [
    "7"
   ],
   "correta": 0,
-  "id": "g-0235"
+  "id": "g-0293",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4493,7 +5926,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 2,
-  "id": "g-0236"
+  "id": "g-0294",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4512,7 +5946,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 1,
-  "id": "g-0237"
+  "id": "g-0295",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4531,7 +5966,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 2,
-  "id": "g-0238"
+  "id": "g-0296",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4550,7 +5986,8 @@ window.ENEM_QUESTIONS = [
    "10"
   ],
   "correta": 3,
-  "id": "g-0239"
+  "id": "g-0297",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4569,7 +6006,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 2,
-  "id": "g-0240"
+  "id": "g-0298",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4588,7 +6026,8 @@ window.ENEM_QUESTIONS = [
    "6"
   ],
   "correta": 4,
-  "id": "g-0241"
+  "id": "g-0299",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4607,7 +6046,8 @@ window.ENEM_QUESTIONS = [
    "6"
   ],
   "correta": 3,
-  "id": "g-0242"
+  "id": "g-0300",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4626,7 +6066,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 1,
-  "id": "g-0243"
+  "id": "g-0301",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4645,7 +6086,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 3,
-  "id": "g-0244"
+  "id": "g-0302",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4664,7 +6106,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 0,
-  "id": "g-0245"
+  "id": "g-0303",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4683,7 +6126,8 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 2,
-  "id": "g-0246"
+  "id": "g-0304",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4702,7 +6146,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 4,
-  "id": "g-0247"
+  "id": "g-0305",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4721,7 +6166,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 3,
-  "id": "g-0248"
+  "id": "g-0306",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4740,7 +6186,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 1,
-  "id": "g-0249"
+  "id": "g-0307",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4759,7 +6206,8 @@ window.ENEM_QUESTIONS = [
    "2"
   ],
   "correta": 4,
-  "id": "g-0250"
+  "id": "g-0308",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4778,7 +6226,8 @@ window.ENEM_QUESTIONS = [
    "1"
   ],
   "correta": 0,
-  "id": "g-0251"
+  "id": "g-0309",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4797,7 +6246,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 4,
-  "id": "g-0252"
+  "id": "g-0310",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4816,7 +6266,8 @@ window.ENEM_QUESTIONS = [
    "6"
   ],
   "correta": 2,
-  "id": "g-0253"
+  "id": "g-0311",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4835,7 +6286,8 @@ window.ENEM_QUESTIONS = [
    "7"
   ],
   "correta": 3,
-  "id": "g-0254"
+  "id": "g-0312",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4854,7 +6306,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 2,
-  "id": "g-0255"
+  "id": "g-0313",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4873,7 +6326,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 0,
-  "id": "g-0256"
+  "id": "g-0314",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4892,7 +6346,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 2,
-  "id": "g-0257"
+  "id": "g-0315",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4911,7 +6366,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 3,
-  "id": "g-0258"
+  "id": "g-0316",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4930,7 +6386,8 @@ window.ENEM_QUESTIONS = [
    "2"
   ],
   "correta": 4,
-  "id": "g-0259"
+  "id": "g-0317",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4949,7 +6406,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 1,
-  "id": "g-0260"
+  "id": "g-0318",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4968,7 +6426,8 @@ window.ENEM_QUESTIONS = [
    "6"
   ],
   "correta": 0,
-  "id": "g-0261"
+  "id": "g-0319",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -4987,7 +6446,8 @@ window.ENEM_QUESTIONS = [
    "7"
   ],
   "correta": 2,
-  "id": "g-0262"
+  "id": "g-0320",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5006,7 +6466,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 4,
-  "id": "g-0263"
+  "id": "g-0321",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5025,7 +6486,8 @@ window.ENEM_QUESTIONS = [
    "R$ 217,50"
   ],
   "correta": 0,
-  "id": "g-0264"
+  "id": "g-0322",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5044,7 +6506,8 @@ window.ENEM_QUESTIONS = [
    "R$ 10.665,00"
   ],
   "correta": 0,
-  "id": "g-0265"
+  "id": "g-0323",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5063,7 +6526,8 @@ window.ENEM_QUESTIONS = [
    "R$ 7.750,00"
   ],
   "correta": 1,
-  "id": "g-0266"
+  "id": "g-0324",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5082,7 +6546,8 @@ window.ENEM_QUESTIONS = [
    "R$ 283,00"
   ],
   "correta": 3,
-  "id": "g-0267"
+  "id": "g-0325",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5101,7 +6566,8 @@ window.ENEM_QUESTIONS = [
    "R$ 350,00"
   ],
   "correta": 4,
-  "id": "g-0268"
+  "id": "g-0326",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5120,7 +6586,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.178,00"
   ],
   "correta": 1,
-  "id": "g-0269"
+  "id": "g-0327",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5139,7 +6606,8 @@ window.ENEM_QUESTIONS = [
    "R$ 100,00"
   ],
   "correta": 0,
-  "id": "g-0270"
+  "id": "g-0328",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5158,7 +6626,8 @@ window.ENEM_QUESTIONS = [
    "R$ 287,50"
   ],
   "correta": 1,
-  "id": "g-0271"
+  "id": "g-0329",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5177,7 +6646,8 @@ window.ENEM_QUESTIONS = [
    "R$ 355,00"
   ],
   "correta": 3,
-  "id": "g-0272"
+  "id": "g-0330",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5196,7 +6666,8 @@ window.ENEM_QUESTIONS = [
    "R$ 93,00"
   ],
   "correta": 2,
-  "id": "g-0273"
+  "id": "g-0331",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5215,7 +6686,8 @@ window.ENEM_QUESTIONS = [
    "R$ 8.710,00"
   ],
   "correta": 2,
-  "id": "g-0274"
+  "id": "g-0332",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5234,7 +6706,8 @@ window.ENEM_QUESTIONS = [
    "R$ 726,00"
   ],
   "correta": 1,
-  "id": "g-0275"
+  "id": "g-0333",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5253,7 +6726,8 @@ window.ENEM_QUESTIONS = [
    "R$ 5.320,00"
   ],
   "correta": 0,
-  "id": "g-0276"
+  "id": "g-0334",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5272,7 +6746,8 @@ window.ENEM_QUESTIONS = [
    "R$ 520,00"
   ],
   "correta": 2,
-  "id": "g-0277"
+  "id": "g-0335",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5291,7 +6766,8 @@ window.ENEM_QUESTIONS = [
    "R$ 12.600,00"
   ],
   "correta": 1,
-  "id": "g-0278"
+  "id": "g-0336",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5310,7 +6786,8 @@ window.ENEM_QUESTIONS = [
    "R$ 4.300,00"
   ],
   "correta": 2,
-  "id": "g-0279"
+  "id": "g-0337",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5329,7 +6806,8 @@ window.ENEM_QUESTIONS = [
    "R$ 232,00"
   ],
   "correta": 4,
-  "id": "g-0280"
+  "id": "g-0338",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5348,7 +6826,8 @@ window.ENEM_QUESTIONS = [
    "R$ 976,00"
   ],
   "correta": 3,
-  "id": "g-0281"
+  "id": "g-0339",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5367,7 +6846,8 @@ window.ENEM_QUESTIONS = [
    "R$ 362,00"
   ],
   "correta": 4,
-  "id": "g-0282"
+  "id": "g-0340",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5386,7 +6866,8 @@ window.ENEM_QUESTIONS = [
    "R$ 650,00"
   ],
   "correta": 0,
-  "id": "g-0283"
+  "id": "g-0341",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5405,7 +6886,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.174,00"
   ],
   "correta": 1,
-  "id": "g-0284"
+  "id": "g-0342",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5424,7 +6906,8 @@ window.ENEM_QUESTIONS = [
    "R$ 120,00"
   ],
   "correta": 0,
-  "id": "g-0285"
+  "id": "g-0343",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5443,7 +6926,8 @@ window.ENEM_QUESTIONS = [
    "84.780 litros"
   ],
   "correta": 4,
-  "id": "g-0286"
+  "id": "g-0344",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5462,7 +6946,8 @@ window.ENEM_QUESTIONS = [
    "38 litros"
   ],
   "correta": 3,
-  "id": "g-0287"
+  "id": "g-0345",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5481,7 +6966,8 @@ window.ENEM_QUESTIONS = [
    "1.256 litros"
   ],
   "correta": 0,
-  "id": "g-0288"
+  "id": "g-0346",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5500,7 +6986,8 @@ window.ENEM_QUESTIONS = [
    "113.040 litros"
   ],
   "correta": 4,
-  "id": "g-0289"
+  "id": "g-0347",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5519,7 +7006,8 @@ window.ENEM_QUESTIONS = [
    "5.652 litros"
   ],
   "correta": 3,
-  "id": "g-0290"
+  "id": "g-0348",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5538,7 +7026,8 @@ window.ENEM_QUESTIONS = [
    "706 litros"
   ],
   "correta": 3,
-  "id": "g-0291"
+  "id": "g-0349",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5557,7 +7046,8 @@ window.ENEM_QUESTIONS = [
    "28.260 litros"
   ],
   "correta": 4,
-  "id": "g-0292"
+  "id": "g-0350",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5576,7 +7066,8 @@ window.ENEM_QUESTIONS = [
    "628 litros"
   ],
   "correta": 3,
-  "id": "g-0293"
+  "id": "g-0351",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5595,7 +7086,8 @@ window.ENEM_QUESTIONS = [
    "70.650 litros"
   ],
   "correta": 4,
-  "id": "g-0294"
+  "id": "g-0352",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5614,7 +7106,8 @@ window.ENEM_QUESTIONS = [
    "25.120 litros"
   ],
   "correta": 0,
-  "id": "g-0295"
+  "id": "g-0353",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5633,7 +7126,8 @@ window.ENEM_QUESTIONS = [
    "196 litros"
   ],
   "correta": 2,
-  "id": "g-0296"
+  "id": "g-0354",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5652,7 +7146,8 @@ window.ENEM_QUESTIONS = [
    "2.826 litros"
   ],
   "correta": 2,
-  "id": "g-0297"
+  "id": "g-0355",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5671,7 +7166,8 @@ window.ENEM_QUESTIONS = [
    "1.570 litros"
   ],
   "correta": 4,
-  "id": "g-0298"
+  "id": "g-0356",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5690,7 +7186,8 @@ window.ENEM_QUESTIONS = [
    "9 litros"
   ],
   "correta": 0,
-  "id": "g-0299"
+  "id": "g-0357",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5709,7 +7206,8 @@ window.ENEM_QUESTIONS = [
    "25.120 litros"
   ],
   "correta": 4,
-  "id": "g-0300"
+  "id": "g-0358",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5728,7 +7226,8 @@ window.ENEM_QUESTIONS = [
    "8 litros"
   ],
   "correta": 0,
-  "id": "g-0301"
+  "id": "g-0359",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5747,7 +7246,8 @@ window.ENEM_QUESTIONS = [
    "18 litros"
   ],
   "correta": 2,
-  "id": "g-0302"
+  "id": "g-0360",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5766,7 +7266,8 @@ window.ENEM_QUESTIONS = [
    "3.140 litros"
   ],
   "correta": 4,
-  "id": "g-0303"
+  "id": "g-0361",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5785,7 +7286,8 @@ window.ENEM_QUESTIONS = [
    "28.260 litros"
   ],
   "correta": 2,
-  "id": "g-0304"
+  "id": "g-0362",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5804,7 +7306,8 @@ window.ENEM_QUESTIONS = [
    "236 litros"
   ],
   "correta": 3,
-  "id": "g-0305"
+  "id": "g-0363",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5823,7 +7326,8 @@ window.ENEM_QUESTIONS = [
    "1.570 litros"
   ],
   "correta": 2,
-  "id": "g-0306"
+  "id": "g-0364",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5842,7 +7346,8 @@ window.ENEM_QUESTIONS = [
    "50.240 litros"
   ],
   "correta": 4,
-  "id": "g-0307"
+  "id": "g-0365",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5861,7 +7366,8 @@ window.ENEM_QUESTIONS = [
    "3.140 litros"
   ],
   "correta": 1,
-  "id": "g-0308"
+  "id": "g-0366",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5880,7 +7386,8 @@ window.ENEM_QUESTIONS = [
    "3.140 litros"
   ],
   "correta": 4,
-  "id": "g-0309"
+  "id": "g-0367",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5899,7 +7406,8 @@ window.ENEM_QUESTIONS = [
    "14.130 litros"
   ],
   "correta": 2,
-  "id": "g-0310"
+  "id": "g-0368",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5918,7 +7426,8 @@ window.ENEM_QUESTIONS = [
    "18 m"
   ],
   "correta": 2,
-  "id": "g-0311"
+  "id": "g-0369",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5937,7 +7446,8 @@ window.ENEM_QUESTIONS = [
    "170 m"
   ],
   "correta": 4,
-  "id": "g-0312"
+  "id": "g-0370",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5956,7 +7466,8 @@ window.ENEM_QUESTIONS = [
    "27 m"
   ],
   "correta": 3,
-  "id": "g-0313"
+  "id": "g-0371",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5975,7 +7486,8 @@ window.ENEM_QUESTIONS = [
    "72 m"
   ],
   "correta": 1,
-  "id": "g-0314"
+  "id": "g-0372",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -5994,7 +7506,8 @@ window.ENEM_QUESTIONS = [
    "51 m"
   ],
   "correta": 4,
-  "id": "g-0315"
+  "id": "g-0373",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6013,7 +7526,8 @@ window.ENEM_QUESTIONS = [
    "90 m"
   ],
   "correta": 2,
-  "id": "g-0316"
+  "id": "g-0374",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6032,7 +7546,8 @@ window.ENEM_QUESTIONS = [
    "90 m"
   ],
   "correta": 2,
-  "id": "g-0317"
+  "id": "g-0375",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6051,7 +7566,8 @@ window.ENEM_QUESTIONS = [
    "24 m"
   ],
   "correta": 1,
-  "id": "g-0318"
+  "id": "g-0376",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6070,7 +7586,8 @@ window.ENEM_QUESTIONS = [
    "16 m"
   ],
   "correta": 2,
-  "id": "g-0319"
+  "id": "g-0377",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6089,7 +7606,8 @@ window.ENEM_QUESTIONS = [
    "210 m"
   ],
   "correta": 1,
-  "id": "g-0320"
+  "id": "g-0378",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6108,7 +7626,8 @@ window.ENEM_QUESTIONS = [
    "34 m"
   ],
   "correta": 3,
-  "id": "g-0321"
+  "id": "g-0379",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6127,7 +7646,8 @@ window.ENEM_QUESTIONS = [
    "47 m"
   ],
   "correta": 0,
-  "id": "g-0322"
+  "id": "g-0380",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6146,7 +7666,8 @@ window.ENEM_QUESTIONS = [
    "16 m"
   ],
   "correta": 1,
-  "id": "g-0323"
+  "id": "g-0381",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6165,7 +7686,8 @@ window.ENEM_QUESTIONS = [
    "48 m"
   ],
   "correta": 1,
-  "id": "g-0324"
+  "id": "g-0382",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6184,7 +7706,8 @@ window.ENEM_QUESTIONS = [
    "24 m"
   ],
   "correta": 3,
-  "id": "g-0325"
+  "id": "g-0383",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6203,7 +7726,8 @@ window.ENEM_QUESTIONS = [
    "60 m"
   ],
   "correta": 3,
-  "id": "g-0326"
+  "id": "g-0384",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6222,7 +7746,8 @@ window.ENEM_QUESTIONS = [
    "32 m"
   ],
   "correta": 2,
-  "id": "g-0327"
+  "id": "g-0385",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6241,7 +7766,8 @@ window.ENEM_QUESTIONS = [
    "21 m"
   ],
   "correta": 1,
-  "id": "g-0328"
+  "id": "g-0386",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6260,7 +7786,8 @@ window.ENEM_QUESTIONS = [
    "61 m"
   ],
   "correta": 3,
-  "id": "g-0329"
+  "id": "g-0387",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6279,7 +7806,8 @@ window.ENEM_QUESTIONS = [
    "140 m"
   ],
   "correta": 1,
-  "id": "g-0330"
+  "id": "g-0388",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6298,7 +7826,8 @@ window.ENEM_QUESTIONS = [
    "7 m"
   ],
   "correta": 1,
-  "id": "g-0331"
+  "id": "g-0389",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6317,7 +7846,8 @@ window.ENEM_QUESTIONS = [
    "17 m"
   ],
   "correta": 3,
-  "id": "g-0332"
+  "id": "g-0390",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6336,7 +7866,8 @@ window.ENEM_QUESTIONS = [
    "28 m"
   ],
   "correta": 1,
-  "id": "g-0333"
+  "id": "g-0391",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6355,7 +7886,8 @@ window.ENEM_QUESTIONS = [
    "47 m"
   ],
   "correta": 2,
-  "id": "g-0334"
+  "id": "g-0392",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6374,7 +7906,8 @@ window.ENEM_QUESTIONS = [
    "24 m"
   ],
   "correta": 2,
-  "id": "g-0335"
+  "id": "g-0393",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6393,7 +7926,8 @@ window.ENEM_QUESTIONS = [
    "11 m"
   ],
   "correta": 2,
-  "id": "g-0336"
+  "id": "g-0394",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6412,7 +7946,8 @@ window.ENEM_QUESTIONS = [
    "14 m"
   ],
   "correta": 3,
-  "id": "g-0337"
+  "id": "g-0395",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6431,7 +7966,8 @@ window.ENEM_QUESTIONS = [
    "11 m"
   ],
   "correta": 2,
-  "id": "g-0338"
+  "id": "g-0396",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6450,7 +7986,8 @@ window.ENEM_QUESTIONS = [
    "7/9 (≈ 78%)"
   ],
   "correta": 0,
-  "id": "g-0339"
+  "id": "g-0397",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6469,7 +8006,8 @@ window.ENEM_QUESTIONS = [
    "6/16 (≈ 38%)"
   ],
   "correta": 4,
-  "id": "g-0340"
+  "id": "g-0398",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6488,7 +8026,8 @@ window.ENEM_QUESTIONS = [
    "7/11 (≈ 64%)"
   ],
   "correta": 0,
-  "id": "g-0341"
+  "id": "g-0399",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6507,7 +8046,8 @@ window.ENEM_QUESTIONS = [
    "9/10 (≈ 90%)"
   ],
   "correta": 1,
-  "id": "g-0342"
+  "id": "g-0400",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6526,7 +8066,8 @@ window.ENEM_QUESTIONS = [
    "1/11 (≈ 9%)"
   ],
   "correta": 0,
-  "id": "g-0343"
+  "id": "g-0401",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6545,7 +8086,8 @@ window.ENEM_QUESTIONS = [
    "1/10 (≈ 10%)"
   ],
   "correta": 1,
-  "id": "g-0344"
+  "id": "g-0402",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6564,7 +8106,8 @@ window.ENEM_QUESTIONS = [
    "1/10 (≈ 10%)"
   ],
   "correta": 2,
-  "id": "g-0345"
+  "id": "g-0403",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6583,7 +8126,8 @@ window.ENEM_QUESTIONS = [
    "7/10 (≈ 70%)"
   ],
   "correta": 2,
-  "id": "g-0346"
+  "id": "g-0404",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6602,7 +8146,8 @@ window.ENEM_QUESTIONS = [
    "3/11 (≈ 27%)"
   ],
   "correta": 3,
-  "id": "g-0347"
+  "id": "g-0405",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6621,7 +8166,8 @@ window.ENEM_QUESTIONS = [
    "3/12 (≈ 25%)"
   ],
   "correta": 2,
-  "id": "g-0348"
+  "id": "g-0406",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6640,7 +8186,8 @@ window.ENEM_QUESTIONS = [
    "1/11 (≈ 9%)"
   ],
   "correta": 0,
-  "id": "g-0349"
+  "id": "g-0407",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6659,7 +8206,8 @@ window.ENEM_QUESTIONS = [
    "4/10 (≈ 43%)"
   ],
   "correta": 3,
-  "id": "g-0350"
+  "id": "g-0408",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6678,7 +8226,8 @@ window.ENEM_QUESTIONS = [
    "8/16 (≈ 47%)"
   ],
   "correta": 3,
-  "id": "g-0351"
+  "id": "g-0409",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6697,7 +8246,8 @@ window.ENEM_QUESTIONS = [
    "1/11 (≈ 9%)"
   ],
   "correta": 1,
-  "id": "g-0352"
+  "id": "g-0410",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6716,7 +8266,8 @@ window.ENEM_QUESTIONS = [
    "2/12 (≈ 20%)"
   ],
   "correta": 3,
-  "id": "g-0353"
+  "id": "g-0411",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6735,7 +8286,8 @@ window.ENEM_QUESTIONS = [
    "4/10 (≈ 43%)"
   ],
   "correta": 1,
-  "id": "g-0354"
+  "id": "g-0412",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6754,7 +8306,8 @@ window.ENEM_QUESTIONS = [
    "5/8 (≈ 63%)"
   ],
   "correta": 0,
-  "id": "g-0355"
+  "id": "g-0413",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6773,7 +8326,8 @@ window.ENEM_QUESTIONS = [
    "8/13 (≈ 58%)"
   ],
   "correta": 3,
-  "id": "g-0356"
+  "id": "g-0414",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6792,7 +8346,8 @@ window.ENEM_QUESTIONS = [
    "1/11 (≈ 9%)"
   ],
   "correta": 1,
-  "id": "g-0357"
+  "id": "g-0415",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6811,7 +8366,8 @@ window.ENEM_QUESTIONS = [
    "11/13 (≈ 85%)"
   ],
   "correta": 0,
-  "id": "g-0358"
+  "id": "g-0416",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6830,7 +8386,8 @@ window.ENEM_QUESTIONS = [
    "2/12 (≈ 17%)"
   ],
   "correta": 4,
-  "id": "g-0359"
+  "id": "g-0417",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6849,7 +8406,8 @@ window.ENEM_QUESTIONS = [
    "7/12 (≈ 58%)"
   ],
   "correta": 3,
-  "id": "g-0360"
+  "id": "g-0418",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6868,7 +8426,8 @@ window.ENEM_QUESTIONS = [
    "4/10 (≈ 40%)"
   ],
   "correta": 4,
-  "id": "g-0361"
+  "id": "g-0419",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6887,7 +8446,8 @@ window.ENEM_QUESTIONS = [
    "3/10 (≈ 30%)"
   ],
   "correta": 3,
-  "id": "g-0362"
+  "id": "g-0420",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6906,7 +8466,8 @@ window.ENEM_QUESTIONS = [
    "9/12 (≈ 75%)"
   ],
   "correta": 2,
-  "id": "g-0363"
+  "id": "g-0421",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6925,7 +8486,8 @@ window.ENEM_QUESTIONS = [
    "10/10 (≈ 100%)"
   ],
   "correta": 3,
-  "id": "g-0364"
+  "id": "g-0422",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6944,7 +8506,8 @@ window.ENEM_QUESTIONS = [
    "6/15 (≈ 40%)"
   ],
   "correta": 4,
-  "id": "g-0365"
+  "id": "g-0423",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6963,7 +8526,8 @@ window.ENEM_QUESTIONS = [
    "8/13 (≈ 58%)"
   ],
   "correta": 3,
-  "id": "g-0366"
+  "id": "g-0424",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -6982,7 +8546,8 @@ window.ENEM_QUESTIONS = [
    "6/16 (≈ 38%)"
   ],
   "correta": 2,
-  "id": "g-0367"
+  "id": "g-0425",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7001,7 +8566,8 @@ window.ENEM_QUESTIONS = [
    "1/13 (≈ 8%)"
   ],
   "correta": 3,
-  "id": "g-0368"
+  "id": "g-0426",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7020,7 +8586,8 @@ window.ENEM_QUESTIONS = [
    "11/12 (≈ 92%)"
   ],
   "correta": 2,
-  "id": "g-0369"
+  "id": "g-0427",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7039,7 +8606,8 @@ window.ENEM_QUESTIONS = [
    "6/11 (≈ 55%)"
   ],
   "correta": 1,
-  "id": "g-0370"
+  "id": "g-0428",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7058,7 +8626,8 @@ window.ENEM_QUESTIONS = [
    "8"
   ],
   "correta": 1,
-  "id": "g-0371"
+  "id": "g-0429",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7077,7 +8646,8 @@ window.ENEM_QUESTIONS = [
    "3,1"
   ],
   "correta": 0,
-  "id": "g-0372"
+  "id": "g-0430",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7096,7 +8666,8 @@ window.ENEM_QUESTIONS = [
    "44"
   ],
   "correta": 3,
-  "id": "g-0373"
+  "id": "g-0431",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7115,7 +8686,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 4,
-  "id": "g-0374"
+  "id": "g-0432",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7134,7 +8706,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 1,
-  "id": "g-0375"
+  "id": "g-0433",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7153,7 +8726,8 @@ window.ENEM_QUESTIONS = [
    "8"
   ],
   "correta": 4,
-  "id": "g-0376"
+  "id": "g-0434",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7172,7 +8746,8 @@ window.ENEM_QUESTIONS = [
    "9"
   ],
   "correta": 4,
-  "id": "g-0377"
+  "id": "g-0435",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7191,7 +8766,8 @@ window.ENEM_QUESTIONS = [
    "4,2"
   ],
   "correta": 0,
-  "id": "g-0378"
+  "id": "g-0436",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7210,7 +8786,8 @@ window.ENEM_QUESTIONS = [
    "9"
   ],
   "correta": 2,
-  "id": "g-0379"
+  "id": "g-0437",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7229,7 +8806,8 @@ window.ENEM_QUESTIONS = [
    "8"
   ],
   "correta": 3,
-  "id": "g-0380"
+  "id": "g-0438",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7248,7 +8826,8 @@ window.ENEM_QUESTIONS = [
    "7,2"
   ],
   "correta": 0,
-  "id": "g-0381"
+  "id": "g-0439",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7267,7 +8846,8 @@ window.ENEM_QUESTIONS = [
    "6"
   ],
   "correta": 1,
-  "id": "g-0382"
+  "id": "g-0440",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7286,7 +8866,8 @@ window.ENEM_QUESTIONS = [
    "7"
   ],
   "correta": 2,
-  "id": "g-0383"
+  "id": "g-0441",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7305,7 +8886,8 @@ window.ENEM_QUESTIONS = [
    "27"
   ],
   "correta": 2,
-  "id": "g-0384"
+  "id": "g-0442",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7324,7 +8906,8 @@ window.ENEM_QUESTIONS = [
    "5"
   ],
   "correta": 0,
-  "id": "g-0385"
+  "id": "g-0443",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7343,7 +8926,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 1,
-  "id": "g-0386"
+  "id": "g-0444",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7362,7 +8946,8 @@ window.ENEM_QUESTIONS = [
    "4,8"
   ],
   "correta": 4,
-  "id": "g-0387"
+  "id": "g-0445",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7381,7 +8966,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 2,
-  "id": "g-0388"
+  "id": "g-0446",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7400,7 +8986,8 @@ window.ENEM_QUESTIONS = [
    "4"
   ],
   "correta": 4,
-  "id": "g-0389"
+  "id": "g-0447",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7419,7 +9006,8 @@ window.ENEM_QUESTIONS = [
    "8,4"
   ],
   "correta": 4,
-  "id": "g-0390"
+  "id": "g-0448",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7438,7 +9026,8 @@ window.ENEM_QUESTIONS = [
    "29"
   ],
   "correta": 3,
-  "id": "g-0391"
+  "id": "g-0449",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7457,7 +9046,8 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 3,
-  "id": "g-0392"
+  "id": "g-0450",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7476,7 +9066,8 @@ window.ENEM_QUESTIONS = [
    "5,4"
   ],
   "correta": 2,
-  "id": "g-0393"
+  "id": "g-0451",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7495,7 +9086,8 @@ window.ENEM_QUESTIONS = [
    "8,6"
   ],
   "correta": 3,
-  "id": "g-0394"
+  "id": "g-0452",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7514,7 +9106,8 @@ window.ENEM_QUESTIONS = [
    "3,5"
   ],
   "correta": 0,
-  "id": "g-0395"
+  "id": "g-0453",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7533,7 +9126,8 @@ window.ENEM_QUESTIONS = [
    "6,8"
   ],
   "correta": 4,
-  "id": "g-0396"
+  "id": "g-0454",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7552,7 +9146,8 @@ window.ENEM_QUESTIONS = [
    "5,6"
   ],
   "correta": 3,
-  "id": "g-0397"
+  "id": "g-0455",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7571,7 +9166,8 @@ window.ENEM_QUESTIONS = [
    "30"
   ],
   "correta": 2,
-  "id": "g-0398"
+  "id": "g-0456",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7590,7 +9186,8 @@ window.ENEM_QUESTIONS = [
    "3"
   ],
   "correta": 2,
-  "id": "g-0399"
+  "id": "g-0457",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7609,7 +9206,8 @@ window.ENEM_QUESTIONS = [
    "6"
   ],
   "correta": 4,
-  "id": "g-0400"
+  "id": "g-0458",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7628,7 +9226,8 @@ window.ENEM_QUESTIONS = [
    "R$ 877,80"
   ],
   "correta": 2,
-  "id": "g-0401"
+  "id": "g-0459",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7647,7 +9246,8 @@ window.ENEM_QUESTIONS = [
    "R$ 2.508,00"
   ],
   "correta": 4,
-  "id": "g-0402"
+  "id": "g-0460",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7666,7 +9266,8 @@ window.ENEM_QUESTIONS = [
    "R$ 11,00"
   ],
   "correta": 0,
-  "id": "g-0403"
+  "id": "g-0461",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7685,7 +9286,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.716,00"
   ],
   "correta": 1,
-  "id": "g-0404"
+  "id": "g-0462",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7704,7 +9306,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.250,00"
   ],
   "correta": 3,
-  "id": "g-0405"
+  "id": "g-0463",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7723,7 +9326,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.440,00"
   ],
   "correta": 4,
-  "id": "g-0406"
+  "id": "g-0464",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7742,7 +9346,8 @@ window.ENEM_QUESTIONS = [
    "R$ 80,00"
   ],
   "correta": 2,
-  "id": "g-0407"
+  "id": "g-0465",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7761,7 +9366,8 @@ window.ENEM_QUESTIONS = [
    "R$ 135,00"
   ],
   "correta": 0,
-  "id": "g-0408"
+  "id": "g-0466",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7780,7 +9386,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.113,75"
   ],
   "correta": 2,
-  "id": "g-0409"
+  "id": "g-0467",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7799,7 +9406,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.152,00"
   ],
   "correta": 1,
-  "id": "g-0410"
+  "id": "g-0468",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7818,7 +9426,8 @@ window.ENEM_QUESTIONS = [
    "R$ 4.932,40"
   ],
   "correta": 0,
-  "id": "g-0411"
+  "id": "g-0469",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7837,7 +9446,8 @@ window.ENEM_QUESTIONS = [
    "R$ 760,00"
   ],
   "correta": 4,
-  "id": "g-0412"
+  "id": "g-0470",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7856,7 +9466,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.900,00"
   ],
   "correta": 4,
-  "id": "g-0413"
+  "id": "g-0471",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7875,7 +9486,8 @@ window.ENEM_QUESTIONS = [
    "R$ 2.520,00"
   ],
   "correta": 2,
-  "id": "g-0414"
+  "id": "g-0472",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7894,7 +9506,8 @@ window.ENEM_QUESTIONS = [
    "R$ 4.514,00"
   ],
   "correta": 2,
-  "id": "g-0415"
+  "id": "g-0473",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7913,7 +9526,8 @@ window.ENEM_QUESTIONS = [
    "R$ 264,00"
   ],
   "correta": 2,
-  "id": "g-0416"
+  "id": "g-0474",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7932,7 +9546,8 @@ window.ENEM_QUESTIONS = [
    "R$ 165,00"
   ],
   "correta": 0,
-  "id": "g-0417"
+  "id": "g-0475",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7951,7 +9566,8 @@ window.ENEM_QUESTIONS = [
    "R$ 2.662,00"
   ],
   "correta": 4,
-  "id": "g-0418"
+  "id": "g-0476",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7970,7 +9586,8 @@ window.ENEM_QUESTIONS = [
    "R$ 1.554,00"
   ],
   "correta": 0,
-  "id": "g-0419"
+  "id": "g-0477",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -7989,7 +9606,8 @@ window.ENEM_QUESTIONS = [
    "R$ 26,00"
   ],
   "correta": 2,
-  "id": "g-0420"
+  "id": "g-0478",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8008,7 +9626,8 @@ window.ENEM_QUESTIONS = [
    "R$ 3.553,00"
   ],
   "correta": 0,
-  "id": "g-0421"
+  "id": "g-0479",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8027,7 +9646,8 @@ window.ENEM_QUESTIONS = [
    "R$ 175,00"
   ],
   "correta": 3,
-  "id": "g-0422"
+  "id": "g-0480",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8046,7 +9666,8 @@ window.ENEM_QUESTIONS = [
    "R$ 950,00"
   ],
   "correta": 0,
-  "id": "g-0423"
+  "id": "g-0481",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8065,7 +9686,8 @@ window.ENEM_QUESTIONS = [
    "R$ 741,00"
   ],
   "correta": 3,
-  "id": "g-0424"
+  "id": "g-0482",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8084,7 +9706,8 @@ window.ENEM_QUESTIONS = [
    "2.000 m"
   ],
   "correta": 3,
-  "id": "g-0425"
+  "id": "g-0483",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8103,7 +9726,8 @@ window.ENEM_QUESTIONS = [
    "60 km"
   ],
   "correta": 3,
-  "id": "g-0426"
+  "id": "g-0484",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8122,7 +9746,8 @@ window.ENEM_QUESTIONS = [
    "12.000 m"
   ],
   "correta": 1,
-  "id": "g-0427"
+  "id": "g-0485",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8141,7 +9766,8 @@ window.ENEM_QUESTIONS = [
    "5 km"
   ],
   "correta": 4,
-  "id": "g-0428"
+  "id": "g-0486",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8160,7 +9786,8 @@ window.ENEM_QUESTIONS = [
    "9 m"
   ],
   "correta": 3,
-  "id": "g-0429"
+  "id": "g-0487",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8179,7 +9806,8 @@ window.ENEM_QUESTIONS = [
    "10 km"
   ],
   "correta": 4,
-  "id": "g-0430"
+  "id": "g-0488",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8198,7 +9826,8 @@ window.ENEM_QUESTIONS = [
    "10.000 m"
   ],
   "correta": 2,
-  "id": "g-0431"
+  "id": "g-0489",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8217,7 +9846,8 @@ window.ENEM_QUESTIONS = [
    "400.000 km"
   ],
   "correta": 1,
-  "id": "g-0432"
+  "id": "g-0490",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8236,7 +9866,8 @@ window.ENEM_QUESTIONS = [
    "90.000 m"
   ],
   "correta": 1,
-  "id": "g-0433"
+  "id": "g-0491",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8255,7 +9886,8 @@ window.ENEM_QUESTIONS = [
    "5,50 km"
   ],
   "correta": 4,
-  "id": "g-0434"
+  "id": "g-0492",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8274,7 +9906,8 @@ window.ENEM_QUESTIONS = [
    "3.500 m"
   ],
   "correta": 2,
-  "id": "g-0435"
+  "id": "g-0493",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8293,7 +9926,8 @@ window.ENEM_QUESTIONS = [
    "1,50 km"
   ],
   "correta": 4,
-  "id": "g-0436"
+  "id": "g-0494",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8312,7 +9946,8 @@ window.ENEM_QUESTIONS = [
    "5.000 m"
   ],
   "correta": 1,
-  "id": "g-0437"
+  "id": "g-0495",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8331,7 +9966,8 @@ window.ENEM_QUESTIONS = [
    "14 km"
   ],
   "correta": 2,
-  "id": "g-0438"
+  "id": "g-0496",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8350,7 +9986,8 @@ window.ENEM_QUESTIONS = [
    "6.000 m"
   ],
   "correta": 2,
-  "id": "g-0439"
+  "id": "g-0497",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8369,7 +10006,8 @@ window.ENEM_QUESTIONS = [
    "3.000 m"
   ],
   "correta": 1,
-  "id": "g-0440"
+  "id": "g-0498",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8388,7 +10026,8 @@ window.ENEM_QUESTIONS = [
    "8.000 m"
   ],
   "correta": 3,
-  "id": "g-0441"
+  "id": "g-0499",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -8407,7 +10046,8 @@ window.ENEM_QUESTIONS = [
    "220 m"
   ],
   "correta": 1,
-  "id": "g-0442"
+  "id": "g-0500",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8426,7 +10066,8 @@ window.ENEM_QUESTIONS = [
    "1.440,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0443"
+  "id": "g-0501",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8445,7 +10086,8 @@ window.ENEM_QUESTIONS = [
    "72,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0444"
+  "id": "g-0502",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8464,7 +10106,8 @@ window.ENEM_QUESTIONS = [
    "33,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0445"
+  "id": "g-0503",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8483,7 +10126,8 @@ window.ENEM_QUESTIONS = [
    "2.520,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0446"
+  "id": "g-0504",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8502,7 +10146,8 @@ window.ENEM_QUESTIONS = [
    "22,5 kWh"
   ],
   "correta": 0,
-  "id": "g-0447"
+  "id": "g-0505",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8521,7 +10166,8 @@ window.ENEM_QUESTIONS = [
    "30,0 kWh"
   ],
   "correta": 4,
-  "id": "g-0448"
+  "id": "g-0506",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8540,7 +10186,8 @@ window.ENEM_QUESTIONS = [
    "162,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0449"
+  "id": "g-0507",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8559,7 +10206,8 @@ window.ENEM_QUESTIONS = [
    "15,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0450"
+  "id": "g-0508",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8578,7 +10226,8 @@ window.ENEM_QUESTIONS = [
    "81,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0451"
+  "id": "g-0509",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8597,7 +10246,8 @@ window.ENEM_QUESTIONS = [
    "6,0 kWh"
   ],
   "correta": 3,
-  "id": "g-0452"
+  "id": "g-0510",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8616,7 +10266,8 @@ window.ENEM_QUESTIONS = [
    "31,5 kWh"
   ],
   "correta": 2,
-  "id": "g-0453"
+  "id": "g-0511",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8635,7 +10286,8 @@ window.ENEM_QUESTIONS = [
    "36,0 kWh"
   ],
   "correta": 3,
-  "id": "g-0454"
+  "id": "g-0512",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8654,7 +10306,8 @@ window.ENEM_QUESTIONS = [
    "132,0 kWh"
   ],
   "correta": 4,
-  "id": "g-0455"
+  "id": "g-0513",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8673,7 +10326,8 @@ window.ENEM_QUESTIONS = [
    "2.400,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0456"
+  "id": "g-0514",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8692,7 +10346,8 @@ window.ENEM_QUESTIONS = [
    "30,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0457"
+  "id": "g-0515",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8711,7 +10366,8 @@ window.ENEM_QUESTIONS = [
    "90,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0458"
+  "id": "g-0516",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8730,7 +10386,8 @@ window.ENEM_QUESTIONS = [
    "15,0 kWh"
   ],
   "correta": 3,
-  "id": "g-0459"
+  "id": "g-0517",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8749,7 +10406,8 @@ window.ENEM_QUESTIONS = [
    "1.200,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0460"
+  "id": "g-0518",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8768,7 +10426,8 @@ window.ENEM_QUESTIONS = [
    "30,0 kWh"
   ],
   "correta": 0,
-  "id": "g-0461"
+  "id": "g-0519",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8787,7 +10446,8 @@ window.ENEM_QUESTIONS = [
    "1.800,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0462"
+  "id": "g-0520",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8806,7 +10466,8 @@ window.ENEM_QUESTIONS = [
    "60,0 kWh"
   ],
   "correta": 4,
-  "id": "g-0463"
+  "id": "g-0521",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8825,7 +10486,8 @@ window.ENEM_QUESTIONS = [
    "32,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0464"
+  "id": "g-0522",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8844,7 +10506,8 @@ window.ENEM_QUESTIONS = [
    "24,0 kWh"
   ],
   "correta": 4,
-  "id": "g-0465"
+  "id": "g-0523",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8863,7 +10526,8 @@ window.ENEM_QUESTIONS = [
    "54,0 kWh"
   ],
   "correta": 3,
-  "id": "g-0466"
+  "id": "g-0524",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8882,7 +10546,8 @@ window.ENEM_QUESTIONS = [
    "16,9 kWh"
   ],
   "correta": 3,
-  "id": "g-0467"
+  "id": "g-0525",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8901,7 +10566,8 @@ window.ENEM_QUESTIONS = [
    "51,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0468"
+  "id": "g-0526",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8920,7 +10586,8 @@ window.ENEM_QUESTIONS = [
    "18,0 kWh"
   ],
   "correta": 0,
-  "id": "g-0469"
+  "id": "g-0527",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8939,7 +10606,8 @@ window.ENEM_QUESTIONS = [
    "27,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0470"
+  "id": "g-0528",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8958,7 +10626,8 @@ window.ENEM_QUESTIONS = [
    "1.920,0 kWh"
   ],
   "correta": 2,
-  "id": "g-0471"
+  "id": "g-0529",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8977,7 +10646,8 @@ window.ENEM_QUESTIONS = [
    "3.600,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0472"
+  "id": "g-0530",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -8996,7 +10666,8 @@ window.ENEM_QUESTIONS = [
    "2,40 m"
   ],
   "correta": 0,
-  "id": "g-0473"
+  "id": "g-0531",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9015,7 +10686,8 @@ window.ENEM_QUESTIONS = [
    "480 m/s"
   ],
   "correta": 1,
-  "id": "g-0474"
+  "id": "g-0532",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9034,7 +10706,8 @@ window.ENEM_QUESTIONS = [
    "16 m"
   ],
   "correta": 4,
-  "id": "g-0475"
+  "id": "g-0533",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9053,7 +10726,8 @@ window.ENEM_QUESTIONS = [
    "255 Hz"
   ],
   "correta": 1,
-  "id": "g-0476"
+  "id": "g-0534",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9072,7 +10746,8 @@ window.ENEM_QUESTIONS = [
    "25,50 m"
   ],
   "correta": 0,
-  "id": "g-0477"
+  "id": "g-0535",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9091,7 +10766,8 @@ window.ENEM_QUESTIONS = [
    "160.000 Hz"
   ],
   "correta": 2,
-  "id": "g-0478"
+  "id": "g-0536",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9110,7 +10786,8 @@ window.ENEM_QUESTIONS = [
    "200 Hz"
   ],
   "correta": 1,
-  "id": "g-0479"
+  "id": "g-0537",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9129,7 +10806,8 @@ window.ENEM_QUESTIONS = [
    "340 m/s"
   ],
   "correta": 4,
-  "id": "g-0480"
+  "id": "g-0538",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9148,7 +10826,8 @@ window.ENEM_QUESTIONS = [
    "42,50 Hz"
   ],
   "correta": 2,
-  "id": "g-0481"
+  "id": "g-0539",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9167,7 +10846,8 @@ window.ENEM_QUESTIONS = [
    "6 m"
   ],
   "correta": 1,
-  "id": "g-0482"
+  "id": "g-0540",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9186,7 +10866,8 @@ window.ENEM_QUESTIONS = [
    "10 Hz"
   ],
   "correta": 0,
-  "id": "g-0483"
+  "id": "g-0541",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9205,7 +10886,8 @@ window.ENEM_QUESTIONS = [
    "85 Hz"
   ],
   "correta": 4,
-  "id": "g-0484"
+  "id": "g-0542",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9224,7 +10906,8 @@ window.ENEM_QUESTIONS = [
    "10,20 m"
   ],
   "correta": 2,
-  "id": "g-0485"
+  "id": "g-0543",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9243,7 +10926,8 @@ window.ENEM_QUESTIONS = [
    "17.000 Hz"
   ],
   "correta": 0,
-  "id": "g-0486"
+  "id": "g-0544",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9262,7 +10946,8 @@ window.ENEM_QUESTIONS = [
    "30.000 Hz"
   ],
   "correta": 3,
-  "id": "g-0487"
+  "id": "g-0545",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9281,7 +10966,8 @@ window.ENEM_QUESTIONS = [
    "500 Hz"
   ],
   "correta": 4,
-  "id": "g-0488"
+  "id": "g-0546",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9300,7 +10986,8 @@ window.ENEM_QUESTIONS = [
    "200 Hz"
   ],
   "correta": 4,
-  "id": "g-0489"
+  "id": "g-0547",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9319,7 +11006,8 @@ window.ENEM_QUESTIONS = [
    "27.200 m"
   ],
   "correta": 3,
-  "id": "g-0490"
+  "id": "g-0548",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9338,7 +11026,8 @@ window.ENEM_QUESTIONS = [
    "255.000 m/s"
   ],
   "correta": 3,
-  "id": "g-0491"
+  "id": "g-0549",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9357,7 +11046,8 @@ window.ENEM_QUESTIONS = [
    "3,40 m"
   ],
   "correta": 4,
-  "id": "g-0492"
+  "id": "g-0550",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9376,7 +11066,8 @@ window.ENEM_QUESTIONS = [
    "27.200 Hz"
   ],
   "correta": 3,
-  "id": "g-0493"
+  "id": "g-0551",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9395,7 +11086,8 @@ window.ENEM_QUESTIONS = [
    "150 m/s"
   ],
   "correta": 2,
-  "id": "g-0494"
+  "id": "g-0552",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9414,7 +11106,8 @@ window.ENEM_QUESTIONS = [
    "510 m/s"
   ],
   "correta": 1,
-  "id": "g-0495"
+  "id": "g-0553",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9433,7 +11126,8 @@ window.ENEM_QUESTIONS = [
    "57.800 Hz"
   ],
   "correta": 1,
-  "id": "g-0496"
+  "id": "g-0554",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9452,7 +11146,8 @@ window.ENEM_QUESTIONS = [
    "170.000 m"
   ],
   "correta": 1,
-  "id": "g-0497"
+  "id": "g-0555",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9471,7 +11166,8 @@ window.ENEM_QUESTIONS = [
    "3.000 m/s"
   ],
   "correta": 3,
-  "id": "g-0498"
+  "id": "g-0556",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9490,7 +11186,8 @@ window.ENEM_QUESTIONS = [
    "30.000 Hz"
   ],
   "correta": 3,
-  "id": "g-0499"
+  "id": "g-0557",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9509,7 +11206,8 @@ window.ENEM_QUESTIONS = [
    "127.500 m"
   ],
   "correta": 0,
-  "id": "g-0500"
+  "id": "g-0558",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9528,7 +11226,8 @@ window.ENEM_QUESTIONS = [
    "900 m/s"
   ],
   "correta": 3,
-  "id": "g-0501"
+  "id": "g-0559",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9547,7 +11246,8 @@ window.ENEM_QUESTIONS = [
    "14,1 m/s"
   ],
   "correta": 0,
-  "id": "g-0502"
+  "id": "g-0560",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9566,7 +11266,8 @@ window.ENEM_QUESTIONS = [
    "50 m/s"
   ],
   "correta": 0,
-  "id": "g-0503"
+  "id": "g-0561",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9585,7 +11286,8 @@ window.ENEM_QUESTIONS = [
    "28,3 m/s"
   ],
   "correta": 1,
-  "id": "g-0504"
+  "id": "g-0562",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9604,7 +11306,8 @@ window.ENEM_QUESTIONS = [
    "10 m/s"
   ],
   "correta": 0,
-  "id": "g-0505"
+  "id": "g-0563",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9623,7 +11326,8 @@ window.ENEM_QUESTIONS = [
    "100 m/s"
   ],
   "correta": 1,
-  "id": "g-0506"
+  "id": "g-0564",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9642,7 +11346,8 @@ window.ENEM_QUESTIONS = [
    "8.000 cal"
   ],
   "correta": 3,
-  "id": "g-0507"
+  "id": "g-0565",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9661,7 +11366,8 @@ window.ENEM_QUESTIONS = [
    "40.000 cal"
   ],
   "correta": 4,
-  "id": "g-0508"
+  "id": "g-0566",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9680,7 +11386,8 @@ window.ENEM_QUESTIONS = [
    "2.000 cal"
   ],
   "correta": 0,
-  "id": "g-0509"
+  "id": "g-0567",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9699,7 +11406,8 @@ window.ENEM_QUESTIONS = [
    "500 cal"
   ],
   "correta": 3,
-  "id": "g-0510"
+  "id": "g-0568",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9718,7 +11426,8 @@ window.ENEM_QUESTIONS = [
    "14.250 cal"
   ],
   "correta": 1,
-  "id": "g-0511"
+  "id": "g-0569",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9737,7 +11446,8 @@ window.ENEM_QUESTIONS = [
    "250 cal"
   ],
   "correta": 2,
-  "id": "g-0512"
+  "id": "g-0570",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9756,7 +11466,8 @@ window.ENEM_QUESTIONS = [
    "7.500 cal"
   ],
   "correta": 4,
-  "id": "g-0513"
+  "id": "g-0571",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9775,7 +11486,8 @@ window.ENEM_QUESTIONS = [
    "70.000 cal"
   ],
   "correta": 3,
-  "id": "g-0514"
+  "id": "g-0572",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9794,7 +11506,8 @@ window.ENEM_QUESTIONS = [
    "1.250 cal"
   ],
   "correta": 2,
-  "id": "g-0515"
+  "id": "g-0573",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9813,7 +11526,8 @@ window.ENEM_QUESTIONS = [
    "80.000 cal"
   ],
   "correta": 1,
-  "id": "g-0516"
+  "id": "g-0574",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9832,7 +11546,8 @@ window.ENEM_QUESTIONS = [
    "200 cal"
   ],
   "correta": 0,
-  "id": "g-0517"
+  "id": "g-0575",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9851,7 +11566,8 @@ window.ENEM_QUESTIONS = [
    "30.000 cal"
   ],
   "correta": 1,
-  "id": "g-0518"
+  "id": "g-0576",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9870,7 +11586,8 @@ window.ENEM_QUESTIONS = [
    "8.000 cal"
   ],
   "correta": 0,
-  "id": "g-0519"
+  "id": "g-0577",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9889,7 +11606,8 @@ window.ENEM_QUESTIONS = [
    "9.000 cal"
   ],
   "correta": 2,
-  "id": "g-0520"
+  "id": "g-0578",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9908,7 +11626,8 @@ window.ENEM_QUESTIONS = [
    "5.000 cal"
   ],
   "correta": 1,
-  "id": "g-0521"
+  "id": "g-0579",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9927,7 +11646,8 @@ window.ENEM_QUESTIONS = [
    "7.500 cal"
   ],
   "correta": 3,
-  "id": "g-0522"
+  "id": "g-0580",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9946,7 +11666,8 @@ window.ENEM_QUESTIONS = [
    "500 cal"
   ],
   "correta": 3,
-  "id": "g-0523"
+  "id": "g-0581",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9965,7 +11686,8 @@ window.ENEM_QUESTIONS = [
    "19.500 cal"
   ],
   "correta": 1,
-  "id": "g-0524"
+  "id": "g-0582",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -9984,7 +11706,8 @@ window.ENEM_QUESTIONS = [
    "50.000 cal"
   ],
   "correta": 1,
-  "id": "g-0525"
+  "id": "g-0583",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10003,7 +11726,8 @@ window.ENEM_QUESTIONS = [
    "5.000 cal"
   ],
   "correta": 4,
-  "id": "g-0526"
+  "id": "g-0584",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10022,7 +11746,8 @@ window.ENEM_QUESTIONS = [
    "47.000 cal"
   ],
   "correta": 0,
-  "id": "g-0527"
+  "id": "g-0585",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10041,7 +11766,8 @@ window.ENEM_QUESTIONS = [
    "20.000 cal"
   ],
   "correta": 4,
-  "id": "g-0528"
+  "id": "g-0586",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10060,7 +11786,8 @@ window.ENEM_QUESTIONS = [
    "8 mols"
   ],
   "correta": 0,
-  "id": "g-0529"
+  "id": "g-0587",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10079,7 +11806,8 @@ window.ENEM_QUESTIONS = [
    "7 mols"
   ],
   "correta": 3,
-  "id": "g-0530"
+  "id": "g-0588",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10098,7 +11826,8 @@ window.ENEM_QUESTIONS = [
    "10 mols"
   ],
   "correta": 3,
-  "id": "g-0531"
+  "id": "g-0589",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10117,7 +11846,8 @@ window.ENEM_QUESTIONS = [
    "10 mols"
   ],
   "correta": 3,
-  "id": "g-0532"
+  "id": "g-0590",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10136,7 +11866,8 @@ window.ENEM_QUESTIONS = [
    "1,5 mols"
   ],
   "correta": 3,
-  "id": "g-0533"
+  "id": "g-0591",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10155,7 +11886,8 @@ window.ENEM_QUESTIONS = [
    "5 mols"
   ],
   "correta": 4,
-  "id": "g-0534"
+  "id": "g-0592",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10174,7 +11906,8 @@ window.ENEM_QUESTIONS = [
    "12 mols"
   ],
   "correta": 4,
-  "id": "g-0535"
+  "id": "g-0593",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10193,7 +11926,8 @@ window.ENEM_QUESTIONS = [
    "4 mols"
   ],
   "correta": 1,
-  "id": "g-0536"
+  "id": "g-0594",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10212,7 +11946,8 @@ window.ENEM_QUESTIONS = [
    "12 mols"
   ],
   "correta": 4,
-  "id": "g-0537"
+  "id": "g-0595",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10231,7 +11966,8 @@ window.ENEM_QUESTIONS = [
    "24 mols"
   ],
   "correta": 4,
-  "id": "g-0538"
+  "id": "g-0596",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10250,7 +11986,8 @@ window.ENEM_QUESTIONS = [
    "9 mols"
   ],
   "correta": 1,
-  "id": "g-0539"
+  "id": "g-0597",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10269,7 +12006,8 @@ window.ENEM_QUESTIONS = [
    "4 mols"
   ],
   "correta": 4,
-  "id": "g-0540"
+  "id": "g-0598",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10288,7 +12026,8 @@ window.ENEM_QUESTIONS = [
    "12 mols"
   ],
   "correta": 0,
-  "id": "g-0541"
+  "id": "g-0599",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10307,7 +12046,8 @@ window.ENEM_QUESTIONS = [
    "3 mols"
   ],
   "correta": 0,
-  "id": "g-0542"
+  "id": "g-0600",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10326,7 +12066,8 @@ window.ENEM_QUESTIONS = [
    "3 mols"
   ],
   "correta": 0,
-  "id": "g-0543"
+  "id": "g-0601",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10345,7 +12086,8 @@ window.ENEM_QUESTIONS = [
    "4 mols"
   ],
   "correta": 4,
-  "id": "g-0544"
+  "id": "g-0602",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10364,7 +12106,8 @@ window.ENEM_QUESTIONS = [
    "27 mols"
   ],
   "correta": 2,
-  "id": "g-0545"
+  "id": "g-0603",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10383,7 +12126,8 @@ window.ENEM_QUESTIONS = [
    "10 mols"
   ],
   "correta": 4,
-  "id": "g-0546"
+  "id": "g-0604",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10402,7 +12146,8 @@ window.ENEM_QUESTIONS = [
    "4 mols"
   ],
   "correta": 2,
-  "id": "g-0547"
+  "id": "g-0605",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10421,7 +12166,8 @@ window.ENEM_QUESTIONS = [
    "16 mols"
   ],
   "correta": 1,
-  "id": "g-0548"
+  "id": "g-0606",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10440,7 +12186,8 @@ window.ENEM_QUESTIONS = [
    "4 mols"
   ],
   "correta": 4,
-  "id": "g-0549"
+  "id": "g-0607",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10459,7 +12206,8 @@ window.ENEM_QUESTIONS = [
    "20 mols"
   ],
   "correta": 2,
-  "id": "g-0550"
+  "id": "g-0608",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10478,7 +12226,8 @@ window.ENEM_QUESTIONS = [
    "9 mols"
   ],
   "correta": 0,
-  "id": "g-0551"
+  "id": "g-0609",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10497,7 +12246,8 @@ window.ENEM_QUESTIONS = [
    "12 mols"
   ],
   "correta": 4,
-  "id": "g-0552"
+  "id": "g-0610",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10516,7 +12266,8 @@ window.ENEM_QUESTIONS = [
    "1,5 mols"
   ],
   "correta": 3,
-  "id": "g-0553"
+  "id": "g-0611",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10535,7 +12286,8 @@ window.ENEM_QUESTIONS = [
    "2 mols"
   ],
   "correta": 0,
-  "id": "g-0554"
+  "id": "g-0612",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10554,7 +12306,8 @@ window.ENEM_QUESTIONS = [
    "1,5 mols"
   ],
   "correta": 2,
-  "id": "g-0555"
+  "id": "g-0613",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10573,7 +12326,8 @@ window.ENEM_QUESTIONS = [
    "18 mols"
   ],
   "correta": 1,
-  "id": "g-0556"
+  "id": "g-0614",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10592,7 +12346,8 @@ window.ENEM_QUESTIONS = [
    "64 g"
   ],
   "correta": 4,
-  "id": "g-0557"
+  "id": "g-0615",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10611,7 +12366,8 @@ window.ENEM_QUESTIONS = [
    "960,4 g"
   ],
   "correta": 3,
-  "id": "g-0558"
+  "id": "g-0616",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10630,7 +12386,8 @@ window.ENEM_QUESTIONS = [
    "2 mols"
   ],
   "correta": 0,
-  "id": "g-0559"
+  "id": "g-0617",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10649,7 +12406,8 @@ window.ENEM_QUESTIONS = [
    "1 g"
   ],
   "correta": 2,
-  "id": "g-0560"
+  "id": "g-0618",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10668,7 +12426,8 @@ window.ENEM_QUESTIONS = [
    "0,50 mols"
   ],
   "correta": 0,
-  "id": "g-0561"
+  "id": "g-0619",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10687,7 +12446,8 @@ window.ENEM_QUESTIONS = [
    "25 g"
   ],
   "correta": 4,
-  "id": "g-0562"
+  "id": "g-0620",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10706,7 +12466,8 @@ window.ENEM_QUESTIONS = [
    "1.026,7 g"
   ],
   "correta": 0,
-  "id": "g-0563"
+  "id": "g-0621",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10725,7 +12486,8 @@ window.ENEM_QUESTIONS = [
    "6 mols"
   ],
   "correta": 0,
-  "id": "g-0564"
+  "id": "g-0622",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10744,7 +12506,8 @@ window.ENEM_QUESTIONS = [
    "8 g"
   ],
   "correta": 4,
-  "id": "g-0565"
+  "id": "g-0623",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10763,7 +12526,8 @@ window.ENEM_QUESTIONS = [
    "1 mols"
   ],
   "correta": 0,
-  "id": "g-0566"
+  "id": "g-0624",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10782,7 +12546,8 @@ window.ENEM_QUESTIONS = [
    "24,5 g"
   ],
   "correta": 4,
-  "id": "g-0567"
+  "id": "g-0625",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10801,7 +12566,8 @@ window.ENEM_QUESTIONS = [
    "180 g"
   ],
   "correta": 1,
-  "id": "g-0568"
+  "id": "g-0626",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10820,7 +12586,8 @@ window.ENEM_QUESTIONS = [
    "32 mols"
   ],
   "correta": 1,
-  "id": "g-0569"
+  "id": "g-0627",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10839,7 +12606,8 @@ window.ENEM_QUESTIONS = [
    "24,50 mols"
   ],
   "correta": 1,
-  "id": "g-0570"
+  "id": "g-0628",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10858,7 +12626,8 @@ window.ENEM_QUESTIONS = [
    "0,5 g"
   ],
   "correta": 0,
-  "id": "g-0571"
+  "id": "g-0629",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10877,7 +12646,8 @@ window.ENEM_QUESTIONS = [
    "3 g"
   ],
   "correta": 3,
-  "id": "g-0572"
+  "id": "g-0630",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10896,7 +12666,8 @@ window.ENEM_QUESTIONS = [
    "4 mols"
   ],
   "correta": 2,
-  "id": "g-0573"
+  "id": "g-0631",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10915,7 +12686,8 @@ window.ENEM_QUESTIONS = [
    "2.881,2 g"
   ],
   "correta": 0,
-  "id": "g-0574"
+  "id": "g-0632",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10934,7 +12706,8 @@ window.ENEM_QUESTIONS = [
    "8 mols"
   ],
   "correta": 1,
-  "id": "g-0575"
+  "id": "g-0633",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10953,7 +12726,8 @@ window.ENEM_QUESTIONS = [
    "14,6 g"
   ],
   "correta": 4,
-  "id": "g-0576"
+  "id": "g-0634",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10972,7 +12746,8 @@ window.ENEM_QUESTIONS = [
    "16 g"
   ],
   "correta": 0,
-  "id": "g-0577"
+  "id": "g-0635",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -10991,7 +12766,8 @@ window.ENEM_QUESTIONS = [
    "18 mols"
   ],
   "correta": 1,
-  "id": "g-0578"
+  "id": "g-0636",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11010,7 +12786,8 @@ window.ENEM_QUESTIONS = [
    "72 g"
   ],
   "correta": 0,
-  "id": "g-0579"
+  "id": "g-0637",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11029,7 +12806,8 @@ window.ENEM_QUESTIONS = [
    "0,3 g"
   ],
   "correta": 1,
-  "id": "g-0580"
+  "id": "g-0638",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11048,7 +12826,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 2, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 1,
-  "id": "g-0581"
+  "id": "g-0639",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11067,7 +12846,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 8, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
-  "id": "g-0582"
+  "id": "g-0640",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11086,7 +12866,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 9, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
-  "id": "g-0583"
+  "id": "g-0641",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11105,7 +12886,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 0,
-  "id": "g-0584"
+  "id": "g-0642",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11124,7 +12906,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 9, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
-  "id": "g-0585"
+  "id": "g-0643",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11143,7 +12926,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 7, a solução é neutra.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 4,
-  "id": "g-0586"
+  "id": "g-0644",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11162,7 +12946,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 8, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
-  "id": "g-0587"
+  "id": "g-0645",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11181,7 +12966,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 11, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
-  "id": "g-0588"
+  "id": "g-0646",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11200,7 +12986,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
-  "id": "g-0589"
+  "id": "g-0647",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11219,7 +13006,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 2, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
-  "id": "g-0590"
+  "id": "g-0648",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11238,7 +13026,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 13, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 0,
-  "id": "g-0591"
+  "id": "g-0649",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11257,7 +13046,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 0,
-  "id": "g-0592"
+  "id": "g-0650",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11276,7 +13066,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 0,
-  "id": "g-0593"
+  "id": "g-0651",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11295,7 +13086,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 1,
-  "id": "g-0594"
+  "id": "g-0652",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11314,7 +13106,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 3, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
-  "id": "g-0595"
+  "id": "g-0653",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11333,7 +13126,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 0,
-  "id": "g-0596"
+  "id": "g-0654",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11352,7 +13146,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 12, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
-  "id": "g-0597"
+  "id": "g-0655",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -11371,7 +13166,8 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 12, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
-  "id": "g-0598"
+  "id": "g-0656",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11390,7 +13186,8 @@ window.ENEM_QUESTIONS = [
    "764"
   ],
   "correta": 2,
-  "id": "g-0599"
+  "id": "g-0657",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11409,7 +13206,8 @@ window.ENEM_QUESTIONS = [
    "115"
   ],
   "correta": 4,
-  "id": "g-0600"
+  "id": "g-0658",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11428,7 +13226,8 @@ window.ENEM_QUESTIONS = [
    "47"
   ],
   "correta": 3,
-  "id": "g-0601"
+  "id": "g-0659",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11447,7 +13246,8 @@ window.ENEM_QUESTIONS = [
    "347"
   ],
   "correta": 0,
-  "id": "g-0602"
+  "id": "g-0660",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11466,7 +13266,8 @@ window.ENEM_QUESTIONS = [
    "55"
   ],
   "correta": 2,
-  "id": "g-0603"
+  "id": "g-0661",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11485,7 +13286,8 @@ window.ENEM_QUESTIONS = [
    "22"
   ],
   "correta": 2,
-  "id": "g-0604"
+  "id": "g-0662",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11504,7 +13306,8 @@ window.ENEM_QUESTIONS = [
    "79"
   ],
   "correta": 2,
-  "id": "g-0605"
+  "id": "g-0663",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11523,7 +13326,8 @@ window.ENEM_QUESTIONS = [
    "35"
   ],
   "correta": 0,
-  "id": "g-0606"
+  "id": "g-0664",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11542,7 +13346,8 @@ window.ENEM_QUESTIONS = [
    "129"
   ],
   "correta": 1,
-  "id": "g-0607"
+  "id": "g-0665",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11561,7 +13366,8 @@ window.ENEM_QUESTIONS = [
    "86"
   ],
   "correta": 2,
-  "id": "g-0608"
+  "id": "g-0666",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11580,7 +13386,8 @@ window.ENEM_QUESTIONS = [
    "347"
   ],
   "correta": 3,
-  "id": "g-0609"
+  "id": "g-0667",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11599,7 +13406,8 @@ window.ENEM_QUESTIONS = [
    "120"
   ],
   "correta": 3,
-  "id": "g-0610"
+  "id": "g-0668",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11618,7 +13426,8 @@ window.ENEM_QUESTIONS = [
    "36"
   ],
   "correta": 0,
-  "id": "g-0611"
+  "id": "g-0669",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11637,7 +13446,8 @@ window.ENEM_QUESTIONS = [
    "101"
   ],
   "correta": 3,
-  "id": "g-0612"
+  "id": "g-0670",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11656,7 +13466,8 @@ window.ENEM_QUESTIONS = [
    "79"
   ],
   "correta": 2,
-  "id": "g-0613"
+  "id": "g-0671",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11675,7 +13486,8 @@ window.ENEM_QUESTIONS = [
    "64"
   ],
   "correta": 3,
-  "id": "g-0614"
+  "id": "g-0672",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11694,7 +13506,8 @@ window.ENEM_QUESTIONS = [
    "300"
   ],
   "correta": 0,
-  "id": "g-0615"
+  "id": "g-0673",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11713,7 +13526,8 @@ window.ENEM_QUESTIONS = [
    "1.013"
   ],
   "correta": 0,
-  "id": "g-0616"
+  "id": "g-0674",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11732,7 +13546,8 @@ window.ENEM_QUESTIONS = [
    "491"
   ],
   "correta": 3,
-  "id": "g-0617"
+  "id": "g-0675",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11751,7 +13566,8 @@ window.ENEM_QUESTIONS = [
    "71"
   ],
   "correta": 4,
-  "id": "g-0618"
+  "id": "g-0676",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11770,7 +13586,8 @@ window.ENEM_QUESTIONS = [
    "826"
   ],
   "correta": 4,
-  "id": "g-0619"
+  "id": "g-0677",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11789,7 +13606,8 @@ window.ENEM_QUESTIONS = [
    "160"
   ],
   "correta": 1,
-  "id": "g-0620"
+  "id": "g-0678",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11808,7 +13626,8 @@ window.ENEM_QUESTIONS = [
    "972"
   ],
   "correta": 4,
-  "id": "g-0621"
+  "id": "g-0679",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11827,7 +13646,8 @@ window.ENEM_QUESTIONS = [
    "18"
   ],
   "correta": 2,
-  "id": "g-0622"
+  "id": "g-0680",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11846,7 +13666,8 @@ window.ENEM_QUESTIONS = [
    "81"
   ],
   "correta": 2,
-  "id": "g-0623"
+  "id": "g-0681",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11865,7 +13686,8 @@ window.ENEM_QUESTIONS = [
    "320"
   ],
   "correta": 3,
-  "id": "g-0624"
+  "id": "g-0682",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11884,7 +13706,8 @@ window.ENEM_QUESTIONS = [
    "15"
   ],
   "correta": 1,
-  "id": "g-0625"
+  "id": "g-0683",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11903,7 +13726,8 @@ window.ENEM_QUESTIONS = [
    "36"
   ],
   "correta": 0,
-  "id": "g-0626"
+  "id": "g-0684",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11922,7 +13746,8 @@ window.ENEM_QUESTIONS = [
    "768"
   ],
   "correta": 2,
-  "id": "g-0627"
+  "id": "g-0685",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11941,7 +13766,8 @@ window.ENEM_QUESTIONS = [
    "16"
   ],
   "correta": 2,
-  "id": "g-0628"
+  "id": "g-0686",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11960,7 +13786,8 @@ window.ENEM_QUESTIONS = [
    "11"
   ],
   "correta": 3,
-  "id": "g-0629"
+  "id": "g-0687",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11979,7 +13806,8 @@ window.ENEM_QUESTIONS = [
    "8"
   ],
   "correta": 4,
-  "id": "g-0630"
+  "id": "g-0688",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -11998,7 +13826,8 @@ window.ENEM_QUESTIONS = [
    "128"
   ],
   "correta": 0,
-  "id": "g-0631"
+  "id": "g-0689",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12017,7 +13846,8 @@ window.ENEM_QUESTIONS = [
    "22"
   ],
   "correta": 1,
-  "id": "g-0632"
+  "id": "g-0690",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12036,7 +13866,8 @@ window.ENEM_QUESTIONS = [
    "32"
   ],
   "correta": 1,
-  "id": "g-0633"
+  "id": "g-0691",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12055,7 +13886,8 @@ window.ENEM_QUESTIONS = [
    "729"
   ],
   "correta": 2,
-  "id": "g-0634"
+  "id": "g-0692",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12074,7 +13906,8 @@ window.ENEM_QUESTIONS = [
    "80"
   ],
   "correta": 0,
-  "id": "g-0635"
+  "id": "g-0693",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12093,7 +13926,8 @@ window.ENEM_QUESTIONS = [
    "14"
   ],
   "correta": 0,
-  "id": "g-0636"
+  "id": "g-0694",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12112,7 +13946,8 @@ window.ENEM_QUESTIONS = [
    "44"
   ],
   "correta": 3,
-  "id": "g-0637"
+  "id": "g-0695",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12131,7 +13966,8 @@ window.ENEM_QUESTIONS = [
    "45"
   ],
   "correta": 3,
-  "id": "g-0638"
+  "id": "g-0696",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12150,7 +13986,8 @@ window.ENEM_QUESTIONS = [
    "45"
   ],
   "correta": 4,
-  "id": "g-0639"
+  "id": "g-0697",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12169,7 +14006,8 @@ window.ENEM_QUESTIONS = [
    "120"
   ],
   "correta": 3,
-  "id": "g-0640"
+  "id": "g-0698",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12188,7 +14026,8 @@ window.ENEM_QUESTIONS = [
    "60"
   ],
   "correta": 4,
-  "id": "g-0641"
+  "id": "g-0699",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12207,7 +14046,8 @@ window.ENEM_QUESTIONS = [
    "8"
   ],
   "correta": 1,
-  "id": "g-0642"
+  "id": "g-0700",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12226,7 +14066,8 @@ window.ENEM_QUESTIONS = [
    "56"
   ],
   "correta": 2,
-  "id": "g-0643"
+  "id": "g-0701",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12245,7 +14086,8 @@ window.ENEM_QUESTIONS = [
    "2"
   ],
   "correta": 3,
-  "id": "g-0644"
+  "id": "g-0702",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12264,7 +14106,8 @@ window.ENEM_QUESTIONS = [
    "24"
   ],
   "correta": 4,
-  "id": "g-0645"
+  "id": "g-0703",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12283,7 +14126,8 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 1,
-  "id": "g-0646"
+  "id": "g-0704",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12302,7 +14146,8 @@ window.ENEM_QUESTIONS = [
    "30"
   ],
   "correta": 0,
-  "id": "g-0647"
+  "id": "g-0705",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12321,7 +14166,8 @@ window.ENEM_QUESTIONS = [
    "7"
   ],
   "correta": 1,
-  "id": "g-0648"
+  "id": "g-0706",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12340,7 +14186,8 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 3,
-  "id": "g-0649"
+  "id": "g-0707",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12359,7 +14206,8 @@ window.ENEM_QUESTIONS = [
    "13"
   ],
   "correta": 1,
-  "id": "g-0650"
+  "id": "g-0708",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12378,7 +14226,8 @@ window.ENEM_QUESTIONS = [
    "125"
   ],
   "correta": 0,
-  "id": "g-0651"
+  "id": "g-0709",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12397,7 +14246,8 @@ window.ENEM_QUESTIONS = [
    "65"
   ],
   "correta": 3,
-  "id": "g-0652"
+  "id": "g-0710",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12416,7 +14266,8 @@ window.ENEM_QUESTIONS = [
    "14"
   ],
   "correta": 2,
-  "id": "g-0653"
+  "id": "g-0711",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12435,7 +14286,8 @@ window.ENEM_QUESTIONS = [
    "70"
   ],
   "correta": 1,
-  "id": "g-0654"
+  "id": "g-0712",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12454,7 +14306,8 @@ window.ENEM_QUESTIONS = [
    "70"
   ],
   "correta": 3,
-  "id": "g-0655"
+  "id": "g-0713",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12473,7 +14326,8 @@ window.ENEM_QUESTIONS = [
    "36"
   ],
   "correta": 4,
-  "id": "g-0656"
+  "id": "g-0714",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12492,7 +14346,8 @@ window.ENEM_QUESTIONS = [
    "24"
   ],
   "correta": 4,
-  "id": "g-0657"
+  "id": "g-0715",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12511,7 +14366,8 @@ window.ENEM_QUESTIONS = [
    "14"
   ],
   "correta": 0,
-  "id": "g-0658"
+  "id": "g-0716",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12530,7 +14386,8 @@ window.ENEM_QUESTIONS = [
    "16"
   ],
   "correta": 3,
-  "id": "g-0659"
+  "id": "g-0717",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12549,7 +14406,8 @@ window.ENEM_QUESTIONS = [
    "32"
   ],
   "correta": 4,
-  "id": "g-0660"
+  "id": "g-0718",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12568,7 +14426,8 @@ window.ENEM_QUESTIONS = [
    "40"
   ],
   "correta": 0,
-  "id": "g-0661"
+  "id": "g-0719",
+  "fonte": "ia"
  },
  {
   "area": "matematica",
@@ -12587,7 +14446,8 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 2,
-  "id": "g-0662"
+  "id": "g-0720",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12606,7 +14466,8 @@ window.ENEM_QUESTIONS = [
    "40 cm"
   ],
   "correta": 0,
-  "id": "g-0663"
+  "id": "g-0721",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12625,7 +14486,8 @@ window.ENEM_QUESTIONS = [
    "120 cm"
   ],
   "correta": 2,
-  "id": "g-0664"
+  "id": "g-0722",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12644,7 +14506,8 @@ window.ENEM_QUESTIONS = [
    "24 cm"
   ],
   "correta": 4,
-  "id": "g-0665"
+  "id": "g-0723",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12663,7 +14526,8 @@ window.ENEM_QUESTIONS = [
    "90 cm"
   ],
   "correta": 1,
-  "id": "g-0666"
+  "id": "g-0724",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12682,7 +14546,8 @@ window.ENEM_QUESTIONS = [
    "30 cm"
   ],
   "correta": 3,
-  "id": "g-0667"
+  "id": "g-0725",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12701,7 +14566,8 @@ window.ENEM_QUESTIONS = [
    "48 cm"
   ],
   "correta": 0,
-  "id": "g-0668"
+  "id": "g-0726",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12720,7 +14586,8 @@ window.ENEM_QUESTIONS = [
    "5 cm"
   ],
   "correta": 3,
-  "id": "g-0669"
+  "id": "g-0727",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12739,7 +14606,8 @@ window.ENEM_QUESTIONS = [
    "40 cm"
   ],
   "correta": 0,
-  "id": "g-0670"
+  "id": "g-0728",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12758,7 +14626,8 @@ window.ENEM_QUESTIONS = [
    "30 cm"
   ],
   "correta": 2,
-  "id": "g-0671"
+  "id": "g-0729",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12777,7 +14646,8 @@ window.ENEM_QUESTIONS = [
    "5 cm"
   ],
   "correta": 2,
-  "id": "g-0672"
+  "id": "g-0730",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12796,7 +14666,8 @@ window.ENEM_QUESTIONS = [
    "30 cm"
   ],
   "correta": 3,
-  "id": "g-0673"
+  "id": "g-0731",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12815,7 +14686,8 @@ window.ENEM_QUESTIONS = [
    "52,8 cm"
   ],
   "correta": 2,
-  "id": "g-0674"
+  "id": "g-0732",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12834,7 +14706,8 @@ window.ENEM_QUESTIONS = [
    "15 cm"
   ],
   "correta": 0,
-  "id": "g-0675"
+  "id": "g-0733",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12853,7 +14726,8 @@ window.ENEM_QUESTIONS = [
    "37,5 cm"
   ],
   "correta": 4,
-  "id": "g-0676"
+  "id": "g-0734",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12872,7 +14746,8 @@ window.ENEM_QUESTIONS = [
    "120 cm"
   ],
   "correta": 0,
-  "id": "g-0677"
+  "id": "g-0735",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12891,7 +14766,8 @@ window.ENEM_QUESTIONS = [
    "15 cm"
   ],
   "correta": 0,
-  "id": "g-0678"
+  "id": "g-0736",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12910,7 +14786,8 @@ window.ENEM_QUESTIONS = [
    "60 cm"
   ],
   "correta": 4,
-  "id": "g-0679"
+  "id": "g-0737",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12929,7 +14806,8 @@ window.ENEM_QUESTIONS = [
    "210 cm"
   ],
   "correta": 4,
-  "id": "g-0680"
+  "id": "g-0738",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12948,7 +14826,8 @@ window.ENEM_QUESTIONS = [
    "302,7 g"
   ],
   "correta": 3,
-  "id": "g-0681"
+  "id": "g-0739",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12967,7 +14846,8 @@ window.ENEM_QUESTIONS = [
    "337,0 g"
   ],
   "correta": 2,
-  "id": "g-0682"
+  "id": "g-0740",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -12986,7 +14866,8 @@ window.ENEM_QUESTIONS = [
    "21,7 g"
   ],
   "correta": 2,
-  "id": "g-0683"
+  "id": "g-0741",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13005,7 +14886,8 @@ window.ENEM_QUESTIONS = [
    "135 g"
   ],
   "correta": 3,
-  "id": "g-0684"
+  "id": "g-0742",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13024,7 +14906,8 @@ window.ENEM_QUESTIONS = [
    "250 g"
   ],
   "correta": 4,
-  "id": "g-0685"
+  "id": "g-0743",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13043,7 +14926,8 @@ window.ENEM_QUESTIONS = [
    "257,6 g"
   ],
   "correta": 2,
-  "id": "g-0686"
+  "id": "g-0744",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13062,7 +14946,8 @@ window.ENEM_QUESTIONS = [
    "392,7 g"
   ],
   "correta": 1,
-  "id": "g-0687"
+  "id": "g-0745",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13081,7 +14966,8 @@ window.ENEM_QUESTIONS = [
    "70,4 g"
   ],
   "correta": 2,
-  "id": "g-0688"
+  "id": "g-0746",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13100,7 +14986,8 @@ window.ENEM_QUESTIONS = [
    "486,0 g"
   ],
   "correta": 4,
-  "id": "g-0689"
+  "id": "g-0747",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13119,7 +15006,8 @@ window.ENEM_QUESTIONS = [
    "110 g"
   ],
   "correta": 4,
-  "id": "g-0690"
+  "id": "g-0748",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13138,7 +15026,8 @@ window.ENEM_QUESTIONS = [
    "240 g"
   ],
   "correta": 3,
-  "id": "g-0691"
+  "id": "g-0749",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13157,7 +15046,8 @@ window.ENEM_QUESTIONS = [
    "2.584 g"
   ],
   "correta": 4,
-  "id": "g-0692"
+  "id": "g-0750",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13176,7 +15066,8 @@ window.ENEM_QUESTIONS = [
    "480 g"
   ],
   "correta": 2,
-  "id": "g-0693"
+  "id": "g-0751",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13195,7 +15086,8 @@ window.ENEM_QUESTIONS = [
    "70 g"
   ],
   "correta": 4,
-  "id": "g-0694"
+  "id": "g-0752",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13214,7 +15106,8 @@ window.ENEM_QUESTIONS = [
    "193,2 g"
   ],
   "correta": 4,
-  "id": "g-0695"
+  "id": "g-0753",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13233,7 +15126,8 @@ window.ENEM_QUESTIONS = [
    "6.256 g"
   ],
   "correta": 0,
-  "id": "g-0696"
+  "id": "g-0754",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13252,7 +15146,8 @@ window.ENEM_QUESTIONS = [
    "680 g"
   ],
   "correta": 0,
-  "id": "g-0697"
+  "id": "g-0755",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13271,7 +15166,8 @@ window.ENEM_QUESTIONS = [
    "312 g"
   ],
   "correta": 1,
-  "id": "g-0698"
+  "id": "g-0756",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13290,7 +15186,8 @@ window.ENEM_QUESTIONS = [
    "73,6 g"
   ],
   "correta": 4,
-  "id": "g-0699"
+  "id": "g-0757",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13309,7 +15206,8 @@ window.ENEM_QUESTIONS = [
    "195,7 g"
   ],
   "correta": 3,
-  "id": "g-0700"
+  "id": "g-0758",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13328,7 +15226,8 @@ window.ENEM_QUESTIONS = [
    "0%"
   ],
   "correta": 2,
-  "id": "g-0701"
+  "id": "g-0759",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13347,7 +15246,8 @@ window.ENEM_QUESTIONS = [
    "0%"
   ],
   "correta": 3,
-  "id": "g-0702"
+  "id": "g-0760",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13366,7 +15266,8 @@ window.ENEM_QUESTIONS = [
    "25%"
   ],
   "correta": 4,
-  "id": "g-0703"
+  "id": "g-0761",
+  "fonte": "ia"
  },
  {
   "area": "natureza",
@@ -13385,6 +15286,7 @@ window.ENEM_QUESTIONS = [
    "50%"
   ],
   "correta": 3,
-  "id": "g-0704"
+  "id": "g-0762",
+  "fonte": "ia"
  }
 ];

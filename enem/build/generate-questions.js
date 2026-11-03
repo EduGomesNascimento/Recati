@@ -72,9 +72,14 @@ const nid = pfx => `${pfx}-${String(++counter).padStart(4, '0')}`;
 const CURADAS = [].concat(
   require('./curated-questions.js'),
   require('./curated-questions-2.js'),
-  require('./curated-questions-3.js')
+  require('./curated-questions-3.js'),
+  require('./curated-enem-extra.js')
 );
-CURADAS.forEach(q => { q.id = q.id || nid('c'); q.gerada = false; OUT.push(q); });
+CURADAS.forEach(q => { q.id = q.id || nid('c'); q.gerada = false; q.fonte = q.fonte || 'enem'; OUT.push(q); });
+
+// Questões no estilo de vestibulares e outras provas
+const VESTIB = require('./vestibular-questions.js');
+VESTIB.forEach(q => { q.id = q.id || nid('v'); q.gerada = false; q.fonte = 'vestibular'; OUT.push(q); });
 
 /* ============================================================
    2) GERADORES PARAMÉTRICOS
@@ -577,6 +582,7 @@ GERADORES.forEach(([gen, n]) => {
     if (q.correta < 0) continue;          // segurança
     vistos.add(chave);
     q.id = nid('g');
+    q.fonte = 'ia';
     OUT.push(q);
     feitos++;
   }
@@ -585,25 +591,30 @@ GERADORES.forEach(([gen, n]) => {
 /* ============================================================
    SAÍDA
    ============================================================ */
+const porFonte = {};
+OUT.forEach(q => { porFonte[q.fonte] = (porFonte[q.fonte] || 0) + 1; });
+
 const header = `/* ============================================================
-   BANCO DE QUESTÕES — ${OUT.length} questões estilo ENEM.
+   BANCO DE QUESTÕES — ${OUT.length} questões.
    GERADO AUTOMATICAMENTE por build/generate-questions.js
    (NÃO edite à mão — rode o gerador novamente para atualizar).
 
-   Composição:
-   - Conceituais curadas (escritas à mão)  : ${CURADAS.length}
-   - Quantitativas paramétricas (geradas)  : ${OUT.length - CURADAS.length}
+   Por fonte:
+   - ENEM (baseadas em habilidades/temas do ENEM)      : ${porFonte.enem || 0}
+   - Vestibulares e outras provas (estilo FUVEST etc.) : ${porFonte.vestibular || 0}
+   - Geradas por IA (paramétricas, com gabarito)       : ${porFonte.ia || 0}
 
-   Temas e habilidades baseados em edições anteriores do
-   ENEM/Inep, reescritos para fins educacionais.
+   Cada questão tem o campo "fonte": "enem" | "vestibular" | "ia".
+   Temas e habilidades baseados em provas anteriores
+   (ENEM/Inep e vestibulares), reescritos para fins educacionais.
    ============================================================ */
 window.ENEM_QUESTIONS = `;
 const body = JSON.stringify(OUT, null, 1);
 fs.writeFileSync(path.join(__dirname, '..', 'js', 'data', 'questions.js'), header + body + ';\n', 'utf8');
 
-// relatório por área
+// relatório
 const porArea = {};
 OUT.forEach(q => { porArea[q.area] = (porArea[q.area] || 0) + 1; });
 console.log(`Total de questões: ${OUT.length}`);
 console.log('Por área:', porArea);
-console.log(`Curadas: ${CURADAS.length} · Geradas: ${OUT.length - CURADAS.length}`);
+console.log('Por fonte:', porFonte);

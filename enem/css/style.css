@@ -192,6 +192,20 @@ button.nivel-avatar.avatar-btn:hover { transform: scale(1.06); box-shadow: 0 4px
 .avatar-opt:hover { transform: translateY(-2px); border-color: var(--roxo); }
 .avatar-opt.selected { border-color: var(--roxo); background: var(--roxo-claro); }
 
+/* ---------- Seletor de fonte / por área ---------- */
+.radio-cards { display: grid; gap: 8px; }
+.radio-card {
+  display: flex; gap: 10px; align-items: center; cursor: pointer;
+  border: 2px solid var(--grid); border-radius: 14px; padding: 11px 14px;
+  background: var(--surface); transition: border .15s, background .15s;
+}
+.radio-card:hover { border-color: var(--roxo); }
+.radio-card.selected { border-color: var(--roxo); background: var(--roxo-claro); }
+.radio-card input { width: 18px; height: 18px; accent-color: var(--roxo); flex-shrink: 0; }
+.radio-card b { display: block; }
+.area-solo-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.area-solo-row .area-solo { padding: 6px 12px; }
+
 /* ---------- Trilhas ---------- */
 .materia-icone { font-size: 2.2rem; }
 .licao-item {

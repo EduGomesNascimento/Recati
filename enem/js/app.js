@@ -14,6 +14,24 @@
   // avatares disponíveis para o perfil
   const AVATARES = ["🚀", "🦉", "🦊", "🐱", "🐼", "🦁", "🐢", "🦄", "🤓", "😎", "🧠", "⭐", "🔥", "🌱", "👩‍🎓", "👨‍🎓"];
 
+  // metadados das fontes de questões
+  const FONTE_META = {
+    enem: { rotulo: "ENEM", emoji: "📘", chip: "azul" },
+    vestibular: { rotulo: "Vestibular", emoji: "🎓", chip: "amarelo" },
+    ia: { rotulo: "Gerada por IA", emoji: "🤖", chip: "roxo" }
+  };
+  // modos de fonte oferecidos no "Praticar"
+  const FONTE_MODOS = {
+    enem: { label: "Só ENEM", desc: "Questões baseadas em edições anteriores do ENEM", fontes: ["enem"] },
+    enem_vest: { label: "ENEM + vestibulares", desc: "ENEM mais questões de vestibulares e outras provas", fontes: ["enem", "vestibular"] },
+    todas: { label: "ENEM + vestibulares + IA", desc: "Tudo: ENEM, vestibulares e questões geradas por IA", fontes: ["enem", "vestibular", "ia"] }
+  };
+  const fonteContaPorArea = (fontes) => {
+    const o = {};
+    Q.forEach(q => { if (fontes.includes(q.fonte)) o[q.area] = (o[q.area] || 0) + 1; });
+    return o;
+  };
+
   // estado volátil de um simulado em andamento
   let examState = null;
   let examTimer = null;
@@ -369,22 +387,38 @@
 
   // ---------------- Praticar (config do simulado) ----------------
   function renderPraticarConfig() {
-    const areasQ = {};
-    Q.forEach(q => { areasQ[q.area] = (areasQ[q.area] || 0) + 1; });
-    const areaOpts = C.areas.filter(a => a.id !== "redacao").map(a =>
+    const areasLista = C.areas.filter(a => a.id !== "redacao");
+
+    const fonteOpts = Object.entries(FONTE_MODOS).map(([k, m], i) =>
+      `<label class="radio-card ${k === "todas" ? "selected" : ""}">
+         <input type="radio" name="cfg-fonte" value="${k}" ${k === "todas" ? "checked" : ""}>
+         <span><b>${esc(m.label)}</b><span class="muted small">${esc(m.desc)}</span></span>
+       </label>`).join("");
+
+    const areaOpts = areasLista.map(a =>
       `<label class="check-row"><input type="checkbox" class="area-chk" value="${a.id}" checked>
-       <span>${a.emoji} ${esc(a.nome)} <span class="muted small">(${areasQ[a.id] || 0} questões)</span></span></label>`).join("");
+       <span>${a.emoji} ${esc(a.nome)} <span class="muted small cnt" data-area="${a.id}"></span></span></label>`).join("");
+
+    const areaBtns = areasLista.map(a =>
+      `<button type="button" class="btn btn-ghost small area-solo" data-area="${a.id}">${a.emoji} ${esc(a.nome)}</button>`).join("");
 
     view.innerHTML = `
       <div class="section-title">✏️ Monte sua prova customizada</div>
       <div class="card">
-        <h3>Áreas do conhecimento</h3>
+        <h3>📚 Fonte das questões</h3>
+        <div class="radio-cards" id="cfg-fontes">${fonteOpts}</div>
+
+        <h3 style="margin-top:16px">🧭 Áreas do conhecimento</h3>
+        <p class="muted small" style="margin:-4px 0 8px">Marque as áreas ou toque abaixo para um simulado só de uma área:</p>
+        <div class="area-solo-row">${areaBtns}</div>
         ${areaOpts}
+
         <h3 style="margin-top:16px">Quantidade de questões</h3>
         <select id="cfg-qtd">
           <option value="5">5 — rápido</option>
           <option value="10" selected>10 — treino</option>
           <option value="20">20 — simulado</option>
+          <option value="45">45 — prova de área</option>
           <option value="0">Todas disponíveis</option>
         </select>
         <h3 style="margin-top:16px">Dificuldade</h3>
@@ -397,9 +431,39 @@
         <h3 style="margin-top:16px">Modo</h3>
         <label class="check-row"><input type="checkbox" id="cfg-tempo"><span>⏱️ Cronometrar (modo prova real)</span></label>
         <label class="check-row"><input type="checkbox" id="cfg-explica" checked><span>💬 Mostrar explicação após cada resposta</span></label>
-        <button class="btn btn-primary block" style="margin-top:18px" id="cfg-start">Começar simulado 🚀</button>
+        <p class="muted small" id="cfg-disp" style="margin:14px 0 0"></p>
+        <button class="btn btn-primary block" style="margin-top:10px" id="cfg-start">Começar simulado 🚀</button>
       </div>
-      <p class="muted small" style="text-align:center;margin-top:10px">Dica: comece com um simulado de todas as áreas para o app diagnosticar seu nível.</p>`;
+      <p class="muted small" style="text-align:center;margin-top:10px">Dica: comece com "ENEM + vestibulares + IA" e todas as áreas para o app diagnosticar seu nível.</p>`;
+
+    // recalcula contagens por área conforme a fonte escolhida
+    function fonteSelecionada() {
+      const v = (view.querySelector("input[name=cfg-fonte]:checked") || {}).value || "todas";
+      return FONTE_MODOS[v];
+    }
+    function atualizarContagens() {
+      const modo = fonteSelecionada();
+      const cont = fonteContaPorArea(modo.fontes);
+      view.querySelectorAll(".cnt").forEach(el => {
+        const n = cont[el.dataset.area] || 0;
+        el.textContent = `(${n} questões)`;
+      });
+      const areasSel = [...view.querySelectorAll(".area-chk:checked")].map(c => c.value);
+      const total = areasSel.reduce((s, a) => s + (cont[a] || 0), 0);
+      view.querySelector("#cfg-disp").innerHTML = `✅ <b>${total}</b> questões disponíveis com esses filtros.`;
+    }
+    view.querySelectorAll("input[name=cfg-fonte]").forEach(r => r.onchange = () => {
+      view.querySelectorAll("#cfg-fontes .radio-card").forEach(c => c.classList.toggle("selected", c.querySelector("input").checked));
+      atualizarContagens();
+    });
+    view.querySelectorAll(".area-chk").forEach(c => c.onchange = atualizarContagens);
+    // botões de "simulado por área": marca só aquela área
+    view.querySelectorAll(".area-solo").forEach(b => b.onclick = () => {
+      view.querySelectorAll(".area-chk").forEach(c => { c.checked = (c.value === b.dataset.area); });
+      atualizarContagens();
+      toast(`Foco em ${b.textContent.trim()} 🎯`);
+    });
+    atualizarContagens();
 
     view.querySelector("#cfg-start").onclick = () => {
       const areas = [...view.querySelectorAll(".area-chk:checked")].map(c => c.value);
@@ -408,8 +472,11 @@
       const nivel = view.querySelector("#cfg-nivel").value;
       const comTempo = view.querySelector("#cfg-tempo").checked;
       const comExplica = view.querySelector("#cfg-explica").checked;
+      const modoFonte = fonteSelecionada();
 
-      let pool = Q.filter(q => areas.includes(q.area) && (nivel === "todas" || q.nivel === nivel));
+      let pool = Q.filter(q => areas.includes(q.area)
+        && modoFonte.fontes.includes(q.fonte)
+        && (nivel === "todas" || q.nivel === nivel));
       pool = embaralhar(pool);
       if (qtd > 0) pool = pool.slice(0, qtd);
       if (!pool.length) { toast("Sem questões para esse filtro. Tente outro."); return; }
@@ -463,6 +530,7 @@
           <span class="chip roxo">${areaObj ? areaObj.emoji : ""} ${esc(q.area === "matematica" ? "Matemática" : Engine.AREA_NOME[q.area] || q.area)}</span>
           <span class="chip cinza">${esc(q.topico)}</span>
           <span class="chip ${q.nivel === "Fácil" ? "verde" : q.nivel === "Difícil" ? "vermelho" : "amarelo"}">${q.nivel}</span>
+          ${q.fonte && FONTE_META[q.fonte] ? `<span class="chip ${FONTE_META[q.fonte].chip}">${FONTE_META[q.fonte].emoji} ${FONTE_META[q.fonte].rotulo}${q.banca ? " · " + esc(q.banca) : ""}</span>` : ""}
         </div>
         ${st.comTempo ? `<div class="timer" id="timer">--:--</div>` : `<div class="muted small">Questão ${st.atual + 1} de ${st.questoes.length}</div>`}
       </div>
