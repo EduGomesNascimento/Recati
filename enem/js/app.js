@@ -202,6 +202,27 @@
         ${statTile("🏅", s.conquistas.length, "conquistas")}
       </div>
 
+      ${(() => { const ms = Engine.metaSemanal(); return `<div class="card" style="margin-top:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+          <h2 style="margin:0">🗓️ Meta da semana</h2>
+          <span class="chip ${ms.batida ? "verde" : "roxo"}">${ms.feitas}/${ms.meta} questões${ms.batida ? " ✅" : ""}</span>
+        </div>
+        <div class="progress ${ms.batida ? "verde" : ""}" style="margin:10px 0 4px"><span style="width:${ms.pct}%"></span></div>
+        <p class="muted small">${ms.batida ? "Meta semanal batida, parabéns! 🎉" : `Faltam <b>${Math.max(0, ms.meta - ms.feitas)} questões</b> para bater a meta`} · estudou em ${ms.dias} ${ms.dias === 1 ? "dia" : "dias"} esta semana</p>
+      </div>`; })()}
+
+      <div class="card" style="margin-top:16px">
+        <h2>🏆 Seus recordes</h2>
+        <div class="grid cols-3 recordes-grid" style="margin-top:6px">
+          ${Engine.recordes().map(r => `<div class="recorde-item">
+            <div class="emoji">${r.icone}</div>
+            <div class="valor">${r.valor}</div>
+            <div class="rot">${esc(r.titulo)}</div>
+            <div class="det muted small">${esc(r.detalhe)}</div>
+          </div>`).join("")}
+        </div>
+      </div>
+
       ${curva.length >= 2 ? `<div class="card" style="margin-top:16px">
         <h2>📈 Sua curva de aprendizagem</h2>
         <p class="muted small">Percentual de acerto em cada simulado — veja sua evolução.</p>
@@ -916,6 +937,29 @@
         ${Charts.barras(Engine.AREAS.map(a => ({ r: Engine.AREA_NOME[a], v: areas[a].pct })), { sufixo: "%", cor: Charts.cores.roxo, max: 100 })}
       </div>` : ""}
 
+      <div class="section-title" style="font-size:1.1rem">🏆 Recordes pessoais</div>
+      <div class="grid cols-3 recordes-grid">
+        ${Engine.recordes().map(r => `<div class="card recorde-item">
+          <div class="emoji">${r.icone}</div>
+          <div class="valor">${r.valor}</div>
+          <div class="rot">${esc(r.titulo)}</div>
+          <div class="det muted small">${esc(r.detalhe)}</div>
+        </div>`).join("")}
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h3>🎯 Minhas metas</h3>
+        <div class="meta-edit">
+          <span>Meta diária de questões</span>
+          <input type="number" id="meta-dia" min="1" max="200" value="${s.metaDiaria || 20}">
+        </div>
+        <div class="meta-edit">
+          <span>Meta semanal de questões</span>
+          <input type="number" id="meta-semana" min="1" max="2000" value="${s.metaSemanal || 100}">
+        </div>
+        <button class="btn btn-secondary small" id="salvar-metas" style="margin-top:8px">💾 Salvar metas</button>
+      </div>
+
       <div class="section-title" style="font-size:1.1rem">🏅 Conquistas</div>
       <div class="grid cols-4">
         ${badges.map(b => `<div class="badge-item ${b.conquistada ? "" : "bloqueada"}">
@@ -931,6 +975,15 @@
           <button class="btn btn-danger small" id="resetar">🗑️ Apagar tudo e recomeçar</button>
         </div>
       </div>`;
+
+    const salvarMetas = view.querySelector("#salvar-metas");
+    if (salvarMetas) salvarMetas.onclick = () => {
+      const md = Math.max(1, parseInt(view.querySelector("#meta-dia").value, 10) || 20);
+      const ms = Math.max(1, parseInt(view.querySelector("#meta-semana").value, 10) || 100);
+      Store.set({ metaDiaria: md, metaSemanal: ms });
+      toast("Metas atualizadas! 🎯");
+      renderPerfil();
+    };
 
     const picker = view.querySelector("#avatar-picker");
     view.querySelector("#avatar-btn").onclick = () => picker.classList.toggle("hidden");

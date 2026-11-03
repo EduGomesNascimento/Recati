@@ -73,6 +73,7 @@ const CURADAS = [].concat(
   require('./curated-questions.js'),
   require('./curated-questions-2.js'),
   require('./curated-questions-3.js'),
+  require('./curated-questions-4.js'),
   require('./curated-enem-extra.js')
 );
 CURADAS.forEach(q => { q.id = q.id || nid('c'); q.gerada = false; q.fonte = q.fonte || 'enem'; OUT.push(q); });
@@ -560,6 +561,88 @@ function genGenetica() {
   return build(q, pct, [25, 50, 75, 100, 0].filter(v => v !== pct), x => num(x) + '%', v => Math.round(v));
 }
 
+/* --- Matemática: trigonometria (valores notáveis) --- */
+function genTrigNotavel() {
+  const tab = {
+    '30': { sen: '1/2', cos: '√3/2', tg: '√3/3' },
+    '45': { sen: '√2/2', cos: '√2/2', tg: '1' },
+    '60': { sen: '√3/2', cos: '1/2', tg: '√3' }
+  };
+  const ang = pick(['30', '45', '60']);
+  const fn = pick(['sen', 'cos', 'tg']);
+  const correto = tab[ang][fn];
+  const universo = ['1/2', '√2/2', '√3/2', '√3/3', '1', '√3'];
+  let opts = [correto];
+  shuffle(universo.filter(v => v !== correto)).forEach(v => { if (opts.length < 5) opts.push(v); });
+  opts = shuffle(opts);
+  const q = {
+    area: 'matematica', materia: 'matematica', topico: 'Trigonometria', nivel: 'Médio', gerada: true,
+    enunciado: `Qual é o valor de ${fn} ${ang}° ?`,
+    alternativas: opts,
+    explicacao: `Pela tabela de valores notáveis, ${fn} ${ang}° = ${correto}.`,
+    dica: 'Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.'
+  };
+  q.correta = opts.indexOf(correto);
+  return q;
+}
+
+/* --- Matemática: sistema linear (soma e diferença) --- */
+function genSistema() {
+  const x = rint(6, 16), y = rint(1, x - 1);
+  const S = x + y, D = x - y;
+  const q = {
+    area: 'matematica', materia: 'matematica', topico: 'Sistemas Lineares', nivel: 'Médio', gerada: true,
+    enunciado: `A soma de dois números é ${S} e a diferença entre eles é ${D}. Qual é o maior desses números?`,
+    explicacao: `Somando as equações x+y=${S} e x−y=${D}: 2x = ${S + D}, logo x = ${x}. O outro número é ${y}. O maior é ${x}.`,
+    dica: 'Some as duas equações para eliminar y; isso isola o 2x.'
+  };
+  return build(q, x, [y, S, D, x + 1, x - 1, S - y], v => num(v), v => Math.round(v));
+}
+
+/* --- Física: trabalho de uma força --- */
+function genTrabalho() {
+  const F = pick([10, 20, 25, 50, 100, 200]);
+  const d = rint(2, 20);
+  const W = F * d;
+  const q = {
+    area: 'natureza', materia: 'fisica', topico: 'Trabalho e Energia', nivel: 'Médio', gerada: true,
+    enunciado: `Uma força constante de ${F} N desloca um corpo por ${d} m, na mesma direção e sentido do movimento. Qual o trabalho realizado?`,
+    explicacao: `Trabalho de força constante: W = F·d = ${F} × ${d} = ${num(W)} J.`,
+    dica: 'Trabalho (força na direção do movimento): W = F·d, em joules (J).'
+  };
+  return build(q, W, [F + d, W / 2, W * 2, F * 2, d * d], v => num(v) + ' J');
+}
+
+/* --- Química: concentração comum (g/L) --- */
+function genConcentracao() {
+  const m = pick([10, 20, 30, 40, 50, 100]);
+  const V = pick([0.5, 1, 2, 4, 5]);
+  const Cc = m / V;
+  const q = {
+    area: 'natureza', materia: 'quimica', topico: 'Soluções', nivel: 'Médio', gerada: true,
+    enunciado: `Dissolvem-se ${m} g de sal em água até completar ${num(V, V % 1 ? 1 : 0)} L de solução. Qual a concentração comum, em g/L?`,
+    explicacao: `Concentração comum: C = massa ÷ volume = ${m} ÷ ${num(V, V % 1 ? 1 : 0)} = ${num(Cc, Cc % 1 ? 1 : 0)} g/L.`,
+    dica: 'Concentração comum: C = massa (g) ÷ volume (L).'
+  };
+  return build(q, Cc, [m * V, V / m * 100, Cc * 2, Cc / 2, m], v => num(v, v % 1 ? 1 : 0) + ' g/L');
+}
+
+/* --- Matemática: juros compostos --- */
+function genJurosComposto() {
+  const C = pick([100, 200, 500, 1000, 2000]);
+  const i = pick([10, 20, 50]);
+  const t = pick([2, 3]);
+  const M = C * Math.pow(1 + i / 100, t);
+  const Msimples = C * (1 + i * t / 100);
+  const q = {
+    area: 'matematica', materia: 'matematica', topico: 'Matemática Financeira', nivel: 'Difícil', gerada: true,
+    enunciado: `Um capital de ${money(C)} é aplicado a juros compostos de ${i}% ao mês durante ${t} meses. Qual o montante final?`,
+    explicacao: `Juros compostos: M = C·(1 + i)ᵗ = ${money(C)} × (1 + ${num(i / 100, 2)})^${t} = ${money(M)}.`,
+    dica: 'Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.'
+  };
+  return build(q, M, [Msimples, C + C * i / 100, M * 1.1, C * Math.pow(1 + i / 100, t + 1)], money);
+}
+
 /* ---------- registro dos geradores e volumes ---------- */
 const GERADORES = [
   [genPorcSucessiva, 42], [genPorcSimples, 34], [genRegraTres, 42], [genVertice, 30],
@@ -568,7 +651,9 @@ const GERADORES = [
   [genConsumoKwh, 30], [genOndas, 28], [genQueda, 22], [genCalorimetria, 22],
   [genEstequiometria, 28], [genMols, 24], [genPh, 18],
   [genPA, 22], [genPG, 16], [genCombinatoria, 26], [genOptica, 18],
-  [genDensidade, 20], [genGenetica, 20]
+  [genDensidade, 20], [genGenetica, 20],
+  [genTrigNotavel, 20], [genSistema, 20], [genTrabalho, 18],
+  [genConcentracao, 16], [genJurosComposto, 16]
 ];
 
 GERADORES.forEach(([gen, n]) => {

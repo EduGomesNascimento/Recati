@@ -206,6 +206,23 @@ button.nivel-avatar.avatar-btn:hover { transform: scale(1.06); box-shadow: 0 4px
 .area-solo-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .area-solo-row .area-solo { padding: 6px 12px; }
 
+/* ---------- Recordes e metas ---------- */
+.recordes-grid { gap: 12px; }
+.recorde-item {
+  text-align: center; padding: 14px 8px; border-radius: 14px;
+  background: #faf9ff; border: 1.5px solid var(--grid);
+}
+.recorde-item .emoji { font-size: 1.7rem; }
+.recorde-item .valor { font-size: 1.3rem; font-weight: 800; color: var(--roxo); margin-top: 2px; }
+.recorde-item .rot { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
+.recorde-item .det { font-size: 0.72rem; }
+.meta-edit {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid var(--grid); flex-wrap: wrap;
+}
+.meta-edit:last-of-type { border-bottom: none; }
+.meta-edit input { width: 90px; text-align: center; }
+
 /* ---------- Trilhas ---------- */
 .materia-icone { font-size: 2.2rem; }
 .licao-item {

@@ -20,6 +20,8 @@ window.Store = (function () {
     conquistas: [],          // ids de badges
     streak: { dias: 0, ultimoDia: null },
     metaDiaria: 20,          // questões/dia
+    metaSemanal: 100,        // questões/semana
+    streakRecord: 0,         // maior sequência de dias já atingida
     nivelVisto: 1,           // último nível de XP já celebrado
     diario: {}               // "YYYY-MM-DD" -> nº de questões respondidas no dia
   });
@@ -99,6 +101,7 @@ window.Store = (function () {
     if (cache.streak.ultimoDia === ontem) cache.streak.dias += 1;
     else cache.streak.dias = 1;
     cache.streak.ultimoDia = hoje;
+    if ((cache.streak.dias || 0) > (cache.streakRecord || 0)) cache.streakRecord = cache.streak.dias;
   }
 
   function adicionarConquista(id) {

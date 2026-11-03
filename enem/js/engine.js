@@ -207,6 +207,65 @@ window.Engine = (function () {
     return { feitas, meta, pct: Math.min(100, Math.round((feitas / meta) * 100)), batida: feitas >= meta };
   }
 
+  // meta semanal (semana começando na segunda-feira)
+  function inicioSemana(d) {
+    const x = new Date(d); x.setHours(0, 0, 0, 0);
+    const diaSem = (x.getDay() + 6) % 7; // 0 = segunda
+    x.setDate(x.getDate() - diaSem);
+    return x;
+  }
+  function metaSemanal() {
+    const s = Store.get();
+    const ini = inicioSemana(new Date());
+    let feitas = 0, dias = 0;
+    Object.entries(s.diario || {}).forEach(([k, v]) => {
+      const d = new Date(k + "T12:00:00");
+      if (d >= ini) { feitas += v; if (v > 0) dias += 1; }
+    });
+    const meta = s.metaSemanal || 100;
+    return { feitas, meta, pct: Math.min(100, Math.round((feitas / meta) * 100)), batida: feitas >= meta, dias };
+  }
+
+  // recordes pessoais (tudo offline, derivado do histórico)
+  function recordes() {
+    const s = Store.get();
+    const recs = [];
+    // melhor simulado (maior % de acerto)
+    let best = null;
+    s.simulados.forEach(sim => {
+      if (sim.total < 3) return;
+      const pct = Math.round((sim.acertos / sim.total) * 100);
+      if (!best || pct > best.pct || (pct === best.pct && sim.total > best.total))
+        best = { pct, acertos: sim.acertos, total: sim.total, data: sim.data };
+    });
+    recs.push({ icone: "🎯", titulo: "Melhor simulado", valor: best ? best.pct + "%" : "—",
+      detalhe: best ? `${best.acertos}/${best.total} acertos` : "faça um simulado" });
+    // maior sequência de dias
+    recs.push({ icone: "🔥", titulo: "Maior sequência", valor: (s.streakRecord || 0) + (s.streakRecord === 1 ? " dia" : " dias"),
+      detalhe: "dias seguidos estudando" });
+    // mais questões em um dia
+    let maxDia = 0;
+    Object.values(s.diario || {}).forEach(v => { if (v > maxDia) maxDia = v; });
+    recs.push({ icone: "⚡", titulo: "Mais questões num dia", valor: maxDia || "—", detalhe: "recorde diário" });
+    // melhor redação
+    let melhorRed = null;
+    s.redacoes.forEach(r => { if (!melhorRed || r.total > melhorRed) melhorRed = r.total; });
+    recs.push({ icone: "✍️", titulo: "Melhor redação", valor: melhorRed != null ? melhorRed + " pts" : "—",
+      detalhe: "maior nota de redação" });
+    // simulado mais rápido (menor tempo médio por questão)
+    let rapido = null;
+    s.simulados.forEach(sim => {
+      if (sim.total < 5 || !sim.tempo) return;
+      const seg = sim.tempo / sim.total;
+      if (!rapido || seg < rapido.seg) rapido = { seg, total: sim.total };
+    });
+    recs.push({ icone: "⏱️", titulo: "Mais rápido", valor: rapido ? Math.max(1, Math.round(rapido.seg)) + "s/questão" : "—",
+      detalhe: rapido ? `simulado de ${rapido.total} questões` : "simulado de 5+ questões" });
+    // XP total como recorde cumulativo
+    recs.push({ icone: "⭐", titulo: "XP acumulado", valor: totalXP(), detalhe: "pontos de experiência" });
+    return recs;
+  }
+
   // detecta subida de nível desde a última vez que foi celebrada
   function checarLevelUp() {
     const s = Store.get();
@@ -223,6 +282,7 @@ window.Engine = (function () {
   return {
     statsPorArea, statsPorTopico, proficienciaGeral, nivel, recomendacoes,
     curvaAprendizagem, verificarConquistas, todasBadges, AREA_NOME, AREAS,
-    totalXP, progressao, metaDiaria, questoesHoje, checarLevelUp, XP
+    totalXP, progressao, metaDiaria, questoesHoje, checarLevelUp, XP,
+    metaSemanal, recordes
   };
 })();
