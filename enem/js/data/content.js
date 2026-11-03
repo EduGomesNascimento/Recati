@@ -602,7 +602,7 @@ window.ENEM_CONTENT = {
             { t: "p", c: "Romantismo: nacionalismo, idealização (indianismo). Realismo/Naturalismo: crítica social, ironia (Machado de Assis). Modernismo (1922): ruptura, liberdade formal, identidade brasileira." },
             { t: "p", c: "Vanguardas europeias: Cubismo (fragmenta), Expressionismo (emoção), Surrealismo (sonho/inconsciente), Dadaísmo (provocação) — base do Modernismo." }
           ],
-          mnemonico: "Escolas: 'BA-AR-RO-RE-PA-SI-MO' → Barroco, Arcadismo, Romantismo, Realismo, Parnasianismo, Simbolismo, Modernismo.",
+          mnemonico: "Escolas, em ordem: 'QUI-BA-AR-RO-RE-PA-SI-PRÉ-MO' → Quinhentismo, Barroco, Arcadismo, Romantismo, Realismo/Naturalismo, Parnasianismo, Simbolismo, Pré-Modernismo e Modernismo (Realismo, Naturalismo e Parnasianismo são quase simultâneos, no fim do séc. XIX).",
           analogia: "O Modernismo de 22 foi um 'grito de independência' artístico: chega de copiar a Europa, vamos falar do Brasil com liberdade.",
           dica: "Machado = ironia e análise psicológica. Narrador sarcástico observando a hipocrisia social? Provavelmente Realismo.",
           grafico: null

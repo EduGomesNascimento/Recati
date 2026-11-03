@@ -3337,8 +3337,8 @@ window.ENEM_QUESTIONS = [
    "8",
    "9"
   ],
-  "correta": 2,
-  "explicacao": "log₂ 32 = log₂ 2⁵ = 5 (pois 2⁵ = 32) e log₃ 27 = log₃ 3³ = 3. Somando: 5 + 3 = 8. Atenção: a soma correta é 8.",
+  "correta": 3,
+  "explicacao": "log₂ 32 = 5 (pois 2⁵ = 32) e log₃ 27 = 3 (pois 3³ = 27). Somando: 5 + 3 = 8.",
   "dica": "logₐ aⁿ = n. Escreva o número como potência da base.",
   "id": "v-0166",
   "gerada": false,
@@ -3707,7 +3707,7 @@ window.ENEM_QUESTIONS = [
   "topico": "Genética",
   "nivel": "Difícil",
   "banca": "FUVEST",
-  "enunciado": "No sistema ABO, um casal em que o pai é tipo A (heterozigoto, Iᴬi) e a mãe tipo B (heterozigota, IᴮI) pode ter filhos dos tipos:",
+  "enunciado": "No sistema ABO, um casal em que o pai é tipo A (heterozigoto, Iᴬi) e a mãe tipo B (heterozigota, Iᴮi) pode ter filhos dos tipos:",
   "alternativas": [
    "Somente A e B",
    "Somente AB",
@@ -4085,17 +4085,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 490,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 10% → ×1,10. Assim: R$ 490,00 × 0,75 × 1,10 = R$ 404,25.",
+  "enunciado": "O preço de uma bicicleta na promoção é R$ 130,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 130,00 × 0,70 × 1,12 = R$ 101,92.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 416,50",
-   "R$ 404,25",
-   "R$ 367,50",
-   "R$ 490,00",
-   "R$ 539,00"
+   "R$ 101,92",
+   "R$ 130,00",
+   "R$ 91,00",
+   "R$ 145,60",
+   "R$ 106,60"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0202",
   "fonte": "ia"
  },
@@ -4105,17 +4105,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma geladeira na liquidação é R$ 200,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 5% → ×1,05. Assim: R$ 200,00 × 0,80 × 1,05 = R$ 168,00.",
+  "enunciado": "O preço de um eletrodoméstico na loja é R$ 400,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 10% → ×1,10. Assim: R$ 400,00 × 0,75 × 1,10 = R$ 330,00.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 210,00",
-   "R$ 160,00",
-   "R$ 170,00",
-   "R$ 200,00",
-   "R$ 168,00"
+   "R$ 340,00",
+   "R$ 400,00",
+   "R$ 440,00",
+   "R$ 330,00",
+   "R$ 300,00"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0203",
   "fonte": "ia"
  },
@@ -4125,15 +4125,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um celular no e-commerce é R$ 420,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 10% → ×1,10. Assim: R$ 420,00 × 0,80 × 1,10 = R$ 369,60.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 540,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 20% → ×1,20. Assim: R$ 540,00 × 0,80 × 1,20 = R$ 518,40.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 369,60",
-   "R$ 462,00",
-   "R$ 378,00",
-   "R$ 420,00",
-   "R$ 336,00"
+   "R$ 518,40",
+   "R$ 432,00",
+   "R$ 570,24",
+   "R$ 540,00",
+   "R$ 648,00"
   ],
   "correta": 0,
   "id": "g-0204",
@@ -4145,17 +4145,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma geladeira na liquidação é R$ 140,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 10% → ×1,10. Assim: R$ 140,00 × 0,85 × 1,10 = R$ 130,90.",
+  "enunciado": "O preço de um tênis na loja esportiva é R$ 270,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 12% → ×1,12. Assim: R$ 270,00 × 0,75 × 1,12 = R$ 226,80.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 130,90",
-   "R$ 140,00",
-   "R$ 133,00",
-   "R$ 154,00",
-   "R$ 119,00"
+   "R$ 234,90",
+   "R$ 202,50",
+   "R$ 302,40",
+   "R$ 270,00",
+   "R$ 226,80"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0205",
   "fonte": "ia"
  },
@@ -4165,17 +4165,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 520,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 20% → ×1,20. Assim: R$ 520,00 × 0,90 × 1,20 = R$ 561,60.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 590,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 20% → ×1,20. Assim: R$ 590,00 × 0,80 × 1,20 = R$ 566,40.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 572,00",
-   "R$ 520,00",
-   "R$ 468,00",
-   "R$ 624,00",
-   "R$ 561,60"
+   "R$ 708,00",
+   "R$ 566,40",
+   "R$ 472,00",
+   "R$ 623,04",
+   "R$ 590,00"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0206",
   "fonte": "ia"
  },
@@ -4185,17 +4185,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 120,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 5% → ×1,05. Assim: R$ 120,00 × 0,90 × 1,05 = R$ 113,40.",
+  "enunciado": "O preço de um livro na feira é R$ 140,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 15% → ×1,15. Assim: R$ 140,00 × 0,60 × 1,15 = R$ 96,60.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 113,40",
-   "R$ 126,00",
-   "R$ 108,00",
-   "R$ 114,00",
-   "R$ 120,00"
+   "R$ 140,00",
+   "R$ 161,00",
+   "R$ 84,00",
+   "R$ 96,60",
+   "R$ 105,00"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0207",
   "fonte": "ia"
  },
@@ -4205,17 +4205,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 370,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 370,00 × 0,70 × 1,12 = R$ 290,08.",
+  "enunciado": "O preço de um eletrodoméstico na loja é R$ 110,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 12% → ×1,12. Assim: R$ 110,00 × 0,60 × 1,12 = R$ 73,92.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 303,40",
-   "R$ 370,00",
-   "R$ 259,00",
-   "R$ 414,40",
-   "R$ 290,08"
+   "R$ 79,20",
+   "R$ 73,92",
+   "R$ 66,00",
+   "R$ 123,20",
+   "R$ 110,00"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0208",
   "fonte": "ia"
  },
@@ -4225,7 +4225,27 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 460,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 480,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 5% → ×1,05. Assim: R$ 480,00 × 0,80 × 1,05 = R$ 403,20.",
+  "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
+  "alternativas": [
+   "R$ 504,00",
+   "R$ 408,00",
+   "R$ 403,20",
+   "R$ 384,00",
+   "R$ 480,00"
+  ],
+  "correta": 2,
+  "id": "g-0209",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Porcentagem",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 460,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
   "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 12% → ×1,12. Assim: R$ 460,00 × 0,60 × 1,12 = R$ 309,12.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
@@ -4236,26 +4256,6 @@ window.ENEM_QUESTIONS = [
    "R$ 460,00"
   ],
   "correta": 1,
-  "id": "g-0209",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Porcentagem",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O preço de um celular no e-commerce é R$ 150,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 12% → ×1,12. Assim: R$ 150,00 × 0,60 × 1,12 = R$ 100,80.",
-  "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
-  "alternativas": [
-   "R$ 90,00",
-   "R$ 150,00",
-   "R$ 168,00",
-   "R$ 100,80",
-   "R$ 108,00"
-  ],
-  "correta": 3,
   "id": "g-0210",
   "fonte": "ia"
  },
@@ -4265,17 +4265,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma geladeira na liquidação é R$ 560,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 560,00 × 0,60 × 1,20 = R$ 403,20.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 180,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 20% → ×1,20. Assim: R$ 180,00 × 0,90 × 1,20 = R$ 194,40.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 403,20",
-   "R$ 672,00",
-   "R$ 336,00",
-   "R$ 560,00",
-   "R$ 448,00"
+   "R$ 216,00",
+   "R$ 180,00",
+   "R$ 194,40",
+   "R$ 198,00",
+   "R$ 162,00"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0211",
   "fonte": "ia"
  },
@@ -4285,17 +4285,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um celular no e-commerce é R$ 340,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 10% → ×1,10. Assim: R$ 340,00 × 0,75 × 1,10 = R$ 280,50.",
+  "enunciado": "O preço de um livro na feira é R$ 430,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 20% → ×1,20. Assim: R$ 430,00 × 0,70 × 1,20 = R$ 361,20.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 374,00",
-   "R$ 280,50",
-   "R$ 255,00",
-   "R$ 340,00",
-   "R$ 289,00"
+   "R$ 387,00",
+   "R$ 301,00",
+   "R$ 361,20",
+   "R$ 516,00",
+   "R$ 430,00"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0212",
   "fonte": "ia"
  },
@@ -4305,17 +4305,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um celular no e-commerce é R$ 450,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 15% → ×1,15. Assim: R$ 450,00 × 0,75 × 1,15 = R$ 388,12.",
+  "enunciado": "O preço de um tênis na loja esportiva é R$ 530,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 5% → ×1,05. Assim: R$ 530,00 × 0,80 × 1,05 = R$ 445,20.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 337,50",
-   "R$ 517,50",
-   "R$ 405,00",
-   "R$ 388,12",
-   "R$ 450,00"
+   "R$ 450,50",
+   "R$ 556,50",
+   "R$ 445,20",
+   "R$ 530,00",
+   "R$ 424,00"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0213",
   "fonte": "ia"
  },
@@ -4325,17 +4325,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 110,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 15% → ×1,15. Assim: R$ 110,00 × 0,75 × 1,15 = R$ 94,87.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 510,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 12% → ×1,12. Assim: R$ 510,00 × 0,85 × 1,12 = R$ 485,52.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 99,00",
-   "R$ 94,87",
-   "R$ 82,50",
-   "R$ 110,00",
-   "R$ 126,50"
+   "R$ 510,00",
+   "R$ 571,20",
+   "R$ 494,70",
+   "R$ 433,50",
+   "R$ 485,52"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0214",
   "fonte": "ia"
  },
@@ -4345,17 +4345,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 400,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 15% → ×1,15. Assim: R$ 400,00 × 0,60 × 1,15 = R$ 276,00.",
+  "enunciado": "O preço de um livro na feira é R$ 220,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 5% → ×1,05. Assim: R$ 220,00 × 0,75 × 1,05 = R$ 173,25.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 276,00",
-   "R$ 460,00",
-   "R$ 300,00",
-   "R$ 240,00",
-   "R$ 400,00"
+   "R$ 165,00",
+   "R$ 231,00",
+   "R$ 220,00",
+   "R$ 176,00",
+   "R$ 173,25"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0215",
   "fonte": "ia"
  },
@@ -4365,17 +4365,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 190,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 10% → ×1,10. Assim: R$ 190,00 × 0,60 × 1,10 = R$ 125,40.",
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 400,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 400,00 × 0,60 × 1,20 = R$ 288,00.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 114,00",
-   "R$ 125,40",
-   "R$ 133,00",
-   "R$ 190,00",
-   "R$ 209,00"
+   "R$ 400,00",
+   "R$ 320,00",
+   "R$ 288,00",
+   "R$ 480,00",
+   "R$ 240,00"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0216",
   "fonte": "ia"
  },
@@ -4385,17 +4385,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 370,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 15% → ×1,15. Assim: R$ 370,00 × 0,90 × 1,15 = R$ 382,95.",
+  "enunciado": "O preço de um livro na feira é R$ 460,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 12% → ×1,12. Assim: R$ 460,00 × 0,60 × 1,12 = R$ 309,12.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 333,00",
-   "R$ 370,00",
-   "R$ 388,50",
-   "R$ 425,50",
-   "R$ 382,95"
+   "R$ 331,20",
+   "R$ 460,00",
+   "R$ 309,12",
+   "R$ 515,20",
+   "R$ 276,00"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0217",
   "fonte": "ia"
  },
@@ -4405,17 +4405,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 120,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 120,00 × 0,70 × 1,12 = R$ 94,08.",
+  "enunciado": "O preço de uma bicicleta na promoção é R$ 540,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 15% → ×1,15. Assim: R$ 540,00 × 0,85 × 1,15 = R$ 527,85.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 94,08",
-   "R$ 134,40",
-   "R$ 98,40",
-   "R$ 84,00",
-   "R$ 120,00"
+   "R$ 621,00",
+   "R$ 459,00",
+   "R$ 527,85",
+   "R$ 540,00",
+   "R$ 580,64"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0218",
   "fonte": "ia"
  },
@@ -4425,15 +4425,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 430,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 12% → ×1,12. Assim: R$ 430,00 × 0,75 × 1,12 = R$ 361,20.",
+  "enunciado": "O preço de um livro na feira é R$ 370,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 15% → ×1,15. Assim: R$ 370,00 × 0,90 × 1,15 = R$ 382,95.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 481,60",
-   "R$ 374,10",
-   "R$ 322,50",
-   "R$ 430,00",
-   "R$ 361,20"
+   "R$ 333,00",
+   "R$ 370,00",
+   "R$ 388,50",
+   "R$ 425,50",
+   "R$ 382,95"
   ],
   "correta": 4,
   "id": "g-0219",
@@ -4445,17 +4445,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 270,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 12% → ×1,12. Assim: R$ 270,00 × 0,80 × 1,12 = R$ 241,92.",
+  "enunciado": "O preço de um livro na feira é R$ 320,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 15% → ×1,15. Assim: R$ 320,00 × 0,90 × 1,15 = R$ 331,20.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 302,40",
-   "R$ 216,00",
-   "R$ 270,00",
-   "R$ 241,92",
-   "R$ 248,40"
+   "R$ 336,00",
+   "R$ 331,20",
+   "R$ 320,00",
+   "R$ 368,00",
+   "R$ 288,00"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0220",
   "fonte": "ia"
  },
@@ -4465,17 +4465,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 570,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 5% → ×1,05. Assim: R$ 570,00 × 0,90 × 1,05 = R$ 538,65.",
+  "enunciado": "O preço de um tênis na loja esportiva é R$ 130,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 15% → ×1,15. Assim: R$ 130,00 × 0,80 × 1,15 = R$ 119,60.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 538,65",
-   "R$ 541,50",
-   "R$ 513,00",
-   "R$ 598,50",
-   "R$ 570,00"
+   "R$ 123,50",
+   "R$ 130,00",
+   "R$ 119,60",
+   "R$ 104,00",
+   "R$ 149,50"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0221",
   "fonte": "ia"
  },
@@ -4485,15 +4485,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 120,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 10% → ×1,10. Assim: R$ 120,00 × 0,75 × 1,10 = R$ 99,00.",
+  "enunciado": "O preço de um livro na feira é R$ 470,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 470,00 × 0,70 × 1,12 = R$ 368,48.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 132,00",
-   "R$ 99,00",
-   "R$ 102,00",
-   "R$ 90,00",
-   "R$ 120,00"
+   "R$ 329,00",
+   "R$ 368,48",
+   "R$ 526,40",
+   "R$ 470,00",
+   "R$ 385,40"
   ],
   "correta": 1,
   "id": "g-0222",
@@ -4505,15 +4505,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma geladeira na liquidação é R$ 290,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 20% → ×1,20. Assim: R$ 290,00 × 0,80 × 1,20 = R$ 278,40.",
+  "enunciado": "O preço de uma bicicleta na promoção é R$ 360,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 20% → ×1,20. Assim: R$ 360,00 × 0,70 × 1,20 = R$ 302,40.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 232,00",
-   "R$ 348,00",
-   "R$ 278,40",
-   "R$ 290,00",
-   "R$ 306,24"
+   "R$ 324,00",
+   "R$ 252,00",
+   "R$ 302,40",
+   "R$ 360,00",
+   "R$ 432,00"
   ],
   "correta": 2,
   "id": "g-0223",
@@ -4525,17 +4525,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 190,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 20% → ×1,20. Assim: R$ 190,00 × 0,90 × 1,20 = R$ 205,20.",
+  "enunciado": "O preço de um livro na feira é R$ 480,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 480,00 × 0,60 × 1,20 = R$ 345,60.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 228,00",
-   "R$ 209,00",
-   "R$ 205,20",
-   "R$ 171,00",
-   "R$ 190,00"
+   "R$ 576,00",
+   "R$ 384,00",
+   "R$ 480,00",
+   "R$ 288,00",
+   "R$ 345,60"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0224",
   "fonte": "ia"
  },
@@ -4545,17 +4545,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 580,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 580,00 × 0,70 × 1,12 = R$ 454,72.",
+  "enunciado": "O preço de uma bicicleta na promoção é R$ 570,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 10% → ×1,10. Assim: R$ 570,00 × 0,75 × 1,10 = R$ 470,25.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 580,00",
-   "R$ 454,72",
-   "R$ 475,60",
-   "R$ 406,00",
-   "R$ 649,60"
+   "R$ 627,00",
+   "R$ 570,00",
+   "R$ 484,50",
+   "R$ 427,50",
+   "R$ 470,25"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0225",
   "fonte": "ia"
  },
@@ -4565,17 +4565,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 110,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 15% → ×1,15. Assim: R$ 110,00 × 0,90 × 1,15 = R$ 113,85.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 600,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 10% → ×1,10. Assim: R$ 600,00 × 0,60 × 1,10 = R$ 396,00.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 126,50",
-   "R$ 110,00",
-   "R$ 113,85",
-   "R$ 115,50",
-   "R$ 99,00"
+   "R$ 600,00",
+   "R$ 420,00",
+   "R$ 360,00",
+   "R$ 660,00",
+   "R$ 396,00"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0226",
   "fonte": "ia"
  },
@@ -4585,15 +4585,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 600,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 5% → ×1,05. Assim: R$ 600,00 × 0,75 × 1,05 = R$ 472,50.",
+  "enunciado": "O preço de uma bicicleta na promoção é R$ 160,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 160,00 × 0,60 × 1,20 = R$ 115,20.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 450,00",
-   "R$ 630,00",
-   "R$ 480,00",
-   "R$ 472,50",
-   "R$ 600,00"
+   "R$ 160,00",
+   "R$ 128,00",
+   "R$ 96,00",
+   "R$ 115,20",
+   "R$ 192,00"
   ],
   "correta": 3,
   "id": "g-0227",
@@ -4605,17 +4605,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um livro na feira é R$ 190,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 12% → ×1,12. Assim: R$ 190,00 × 0,85 × 1,12 = R$ 180,88.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 580,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 580,00 × 0,70 × 1,12 = R$ 454,72.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 180,88",
-   "R$ 161,50",
-   "R$ 212,80",
-   "R$ 190,00",
-   "R$ 184,30"
+   "R$ 580,00",
+   "R$ 454,72",
+   "R$ 475,60",
+   "R$ 406,00",
+   "R$ 649,60"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0228",
   "fonte": "ia"
  },
@@ -4625,17 +4625,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 290,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 12% → ×1,12. Assim: R$ 290,00 × 0,75 × 1,12 = R$ 243,60.",
+  "enunciado": "O preço de um eletrodoméstico na loja é R$ 510,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 5% → ×1,05. Assim: R$ 510,00 × 0,90 × 1,05 = R$ 481,95.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 243,60",
-   "R$ 252,30",
-   "R$ 217,50",
-   "R$ 290,00",
-   "R$ 324,80"
+   "R$ 459,00",
+   "R$ 481,95",
+   "R$ 510,00",
+   "R$ 484,50",
+   "R$ 535,50"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0229",
   "fonte": "ia"
  },
@@ -4645,17 +4645,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 180,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 15% → ×1,15. Assim: R$ 180,00 × 0,60 × 1,15 = R$ 124,20.",
+  "enunciado": "O preço de um eletrodoméstico na loja é R$ 530,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 530,00 × 0,60 × 1,20 = R$ 381,60.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 135,00",
-   "R$ 124,20",
-   "R$ 180,00",
-   "R$ 207,00",
-   "R$ 108,00"
+   "R$ 424,00",
+   "R$ 530,00",
+   "R$ 318,00",
+   "R$ 381,60",
+   "R$ 636,00"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0230",
   "fonte": "ia"
  },
@@ -4665,15 +4665,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 510,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 15% → ×1,15. Assim: R$ 510,00 × 0,80 × 1,15 = R$ 469,20.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 330,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 330,00 × 0,60 × 1,20 = R$ 237,60.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 484,50",
-   "R$ 510,00",
-   "R$ 408,00",
-   "R$ 586,50",
-   "R$ 469,20"
+   "R$ 198,00",
+   "R$ 330,00",
+   "R$ 396,00",
+   "R$ 264,00",
+   "R$ 237,60"
   ],
   "correta": 4,
   "id": "g-0231",
@@ -4685,17 +4685,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 530,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 5% → ×1,05. Assim: R$ 530,00 × 0,60 × 1,05 = R$ 333,90.",
+  "enunciado": "O preço de uma bicicleta na promoção é R$ 290,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 15% → ×1,15. Assim: R$ 290,00 × 0,60 × 1,15 = R$ 200,10.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 530,00",
-   "R$ 556,50",
-   "R$ 318,00",
-   "R$ 333,90",
-   "R$ 344,50"
+   "R$ 200,10",
+   "R$ 174,00",
+   "R$ 333,50",
+   "R$ 290,00",
+   "R$ 217,50"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0232",
   "fonte": "ia"
  },
@@ -4705,17 +4705,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 280,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 280,00 × 0,70 × 1,12 = R$ 219,52.",
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 510,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 20% → ×1,20. Assim: R$ 510,00 × 0,60 × 1,20 = R$ 367,20.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 313,60",
-   "R$ 229,60",
-   "R$ 219,52",
-   "R$ 280,00",
-   "R$ 196,00"
+   "R$ 306,00",
+   "R$ 408,00",
+   "R$ 612,00",
+   "R$ 510,00",
+   "R$ 367,20"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0233",
   "fonte": "ia"
  },
@@ -4725,15 +4725,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 310,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 12% → ×1,12. Assim: R$ 310,00 × 0,85 × 1,12 = R$ 295,12.",
+  "enunciado": "O preço de um tênis na loja esportiva é R$ 400,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 15% → ×1,15. Assim: R$ 400,00 × 0,60 × 1,15 = R$ 276,00.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 263,50",
-   "R$ 300,70",
-   "R$ 310,00",
-   "R$ 295,12",
-   "R$ 347,20"
+   "R$ 460,00",
+   "R$ 300,00",
+   "R$ 400,00",
+   "R$ 276,00",
+   "R$ 240,00"
   ],
   "correta": 3,
   "id": "g-0234",
@@ -4745,17 +4745,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 530,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 20% → ×1,20. Assim: R$ 530,00 × 0,70 × 1,20 = R$ 445,20.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 410,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 15% → ×1,15. Assim: R$ 410,00 × 0,90 × 1,15 = R$ 424,35.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 445,20",
-   "R$ 371,00",
-   "R$ 636,00",
-   "R$ 477,00",
-   "R$ 530,00"
+   "R$ 410,00",
+   "R$ 369,00",
+   "R$ 424,35",
+   "R$ 430,50",
+   "R$ 471,50"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0235",
   "fonte": "ia"
  },
@@ -4765,17 +4765,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um celular no e-commerce é R$ 220,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 5% → ×1,05. Assim: R$ 220,00 × 0,85 × 1,05 = R$ 196,35.",
+  "enunciado": "O preço de um livro na feira é R$ 590,00. Ele recebe um desconto de 10% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 10% → ×0,90; acréscimo de 10% → ×1,10. Assim: R$ 590,00 × 0,90 × 1,10 = R$ 584,10.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 187,00",
-   "R$ 220,00",
-   "R$ 198,00",
-   "R$ 196,35",
-   "R$ 231,00"
+   "R$ 531,00",
+   "R$ 590,00",
+   "R$ 642,51",
+   "R$ 649,00",
+   "R$ 584,10"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0236",
   "fonte": "ia"
  },
@@ -4785,17 +4785,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um eletrodoméstico na loja é R$ 230,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 15% → ×1,15. Assim: R$ 230,00 × 0,70 × 1,15 = R$ 185,15.",
+  "enunciado": "O preço de um celular no e-commerce é R$ 280,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 280,00 × 0,70 × 1,12 = R$ 219,52.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 195,50",
-   "R$ 264,50",
-   "R$ 161,00",
-   "R$ 185,15",
-   "R$ 230,00"
+   "R$ 313,60",
+   "R$ 229,60",
+   "R$ 219,52",
+   "R$ 280,00",
+   "R$ 196,00"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0237",
   "fonte": "ia"
  },
@@ -4805,17 +4805,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 250,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 12% → ×1,12. Assim: R$ 250,00 × 0,70 × 1,12 = R$ 196,00.",
+  "enunciado": "O preço de um eletrodoméstico na loja é R$ 230,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 10% → ×1,10. Assim: R$ 230,00 × 0,80 × 1,10 = R$ 202,40.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 175,00",
-   "R$ 205,00",
-   "R$ 250,00",
-   "R$ 196,00",
-   "R$ 280,00"
+   "R$ 207,00",
+   "R$ 253,00",
+   "R$ 202,40",
+   "R$ 230,00",
+   "R$ 184,00"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0238",
   "fonte": "ia"
  },
@@ -4825,17 +4825,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 600,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 12% → ×1,12. Assim: R$ 600,00 × 0,75 × 1,12 = R$ 504,00.",
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 200,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 20% → ×1,20. Assim: R$ 200,00 × 0,85 × 1,20 = R$ 204,00.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 672,00",
-   "R$ 600,00",
-   "R$ 522,00",
-   "R$ 450,00",
-   "R$ 504,00"
+   "R$ 210,00",
+   "R$ 204,00",
+   "R$ 170,00",
+   "R$ 200,00",
+   "R$ 240,00"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0239",
   "fonte": "ia"
  },
@@ -4845,17 +4845,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um celular no e-commerce é R$ 400,00. Ele recebe um desconto de 25% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 25% → ×0,75; acréscimo de 12% → ×1,12. Assim: R$ 400,00 × 0,75 × 1,12 = R$ 336,00.",
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 380,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 15% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 15% → ×1,15. Assim: R$ 380,00 × 0,80 × 1,15 = R$ 349,60.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 448,00",
-   "R$ 400,00",
-   "R$ 300,00",
-   "R$ 348,00",
-   "R$ 336,00"
+   "R$ 304,00",
+   "R$ 437,00",
+   "R$ 349,60",
+   "R$ 380,00",
+   "R$ 361,00"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0240",
   "fonte": "ia"
  },
@@ -4865,17 +4865,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de um tênis na loja esportiva é R$ 460,00. Ele recebe um desconto de 30% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 30% → ×0,70; acréscimo de 10% → ×1,10. Assim: R$ 460,00 × 0,70 × 1,10 = R$ 354,20.",
+  "enunciado": "O preço de um eletrodoméstico na loja é R$ 350,00. Ele recebe um desconto de 20% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 20% → ×0,80; acréscimo de 5% → ×1,05. Assim: R$ 350,00 × 0,80 × 1,05 = R$ 294,00.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 460,00",
-   "R$ 322,00",
-   "R$ 354,20",
-   "R$ 506,00",
-   "R$ 368,00"
+   "R$ 294,00",
+   "R$ 350,00",
+   "R$ 280,00",
+   "R$ 297,50",
+   "R$ 367,50"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0241",
   "fonte": "ia"
  },
@@ -4885,17 +4885,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma bicicleta na promoção é R$ 390,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 20% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 20% → ×1,20. Assim: R$ 390,00 × 0,85 × 1,20 = R$ 397,80.",
+  "enunciado": "O preço de um livro na feira é R$ 150,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 12% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 12% → ×1,12. Assim: R$ 150,00 × 0,60 × 1,12 = R$ 100,80.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 390,00",
-   "R$ 397,80",
-   "R$ 331,50",
-   "R$ 468,00",
-   "R$ 409,50"
+   "R$ 90,00",
+   "R$ 108,00",
+   "R$ 100,80",
+   "R$ 150,00",
+   "R$ 168,00"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0242",
   "fonte": "ia"
  },
@@ -4905,17 +4905,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "O preço de uma geladeira na liquidação é R$ 180,00. Ele recebe um desconto de 40% e, em seguida, um acréscimo de 5% por parcelamento. Qual o valor final?",
-  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 40% → ×0,60; acréscimo de 5% → ×1,05. Assim: R$ 180,00 × 0,60 × 1,05 = R$ 113,40.",
+  "enunciado": "O preço de uma geladeira na liquidação é R$ 450,00. Ele recebe um desconto de 15% e, em seguida, um acréscimo de 10% por parcelamento. Qual o valor final?",
+  "explicacao": "Descontos e acréscimos não se somam — multiplicam-se os fatores. Desconto de 15% → ×0,85; acréscimo de 10% → ×1,10. Assim: R$ 450,00 × 0,85 × 1,10 = R$ 420,75.",
   "dica": "Nunca some porcentagens sucessivas: aplique um fator depois do outro sobre o que sobrou.",
   "alternativas": [
-   "R$ 113,40",
-   "R$ 189,00",
-   "R$ 108,00",
-   "R$ 180,00",
-   "R$ 117,00"
+   "R$ 382,50",
+   "R$ 495,00",
+   "R$ 420,75",
+   "R$ 427,50",
+   "R$ 450,00"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0243",
   "fonte": "ia"
  },
@@ -4925,17 +4925,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 300 alunos, 25% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "25% de 300 = 300 × 25/100 = 75.",
+  "enunciado": "De 400 vagas oferecidas, 20% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "20% de 400 = 400 × 20/100 = 80.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "750",
-   "75",
-   "12",
-   "7,5",
-   "150"
+   "8",
+   "20",
+   "160",
+   "80",
+   "800"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0244",
   "fonte": "ia"
  },
@@ -4945,17 +4945,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 700 vagas oferecidas, 12% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "12% de 700 = 700 × 12/100 = 84.",
+  "enunciado": "Em uma escola com 1200 alunos, 25% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "25% de 1.200 = 1.200 × 25/100 = 300.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "840",
-   "8,4",
-   "58,3",
-   "168",
-   "84"
+   "600",
+   "3.000",
+   "300",
+   "48",
+   "30"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0245",
   "fonte": "ia"
  },
@@ -4965,15 +4965,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.950,00 recebeu 60% de gorjeta. Quanto isso representa?",
-  "explicacao": "60% de R$ 1.950,00 = R$ 1.950,00 × 60/100 = R$ 1.170,00.",
+  "enunciado": "Em uma escola com 1500 alunos, 60% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "60% de 1.500 = 1.500 × 60/100 = 900.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 117,00",
-   "R$ 11.700,00",
-   "R$ 1.170,00",
-   "R$ 2.340,00",
-   "R$ 32,50"
+   "1.800",
+   "90",
+   "900",
+   "25",
+   "9.000"
   ],
   "correta": 2,
   "id": "g-0246",
@@ -4985,15 +4985,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Um investimento de R$ 950,00 rendeu 12% no período. Quanto isso representa?",
-  "explicacao": "12% de R$ 950,00 = R$ 950,00 × 12/100 = R$ 114,00.",
+  "enunciado": "Em uma escola com 1300 alunos, 10% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "10% de 1.300 = 1.300 × 10/100 = 130.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 228,00",
-   "R$ 1.140,00",
-   "R$ 11,40",
-   "R$ 114,00",
-   "R$ 79,17"
+   "260",
+   "1.300",
+   "13",
+   "130",
+   "65"
   ],
   "correta": 3,
   "id": "g-0247",
@@ -5005,17 +5005,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.100,00 recebeu 10% de gorjeta. Quanto isso representa?",
-  "explicacao": "10% de R$ 1.100,00 = R$ 1.100,00 × 10/100 = R$ 110,00.",
+  "enunciado": "Em uma escola com 600 alunos, 12% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "12% de 600 = 600 × 12/100 = 72.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 220,00",
-   "R$ 110,00",
-   "R$ 55,00",
-   "R$ 11,00",
-   "R$ 1.100,00"
+   "720",
+   "7,2",
+   "50",
+   "72",
+   "144"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0248",
   "fonte": "ia"
  },
@@ -5025,15 +5025,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.700,00 recebeu 5% de gorjeta. Quanto isso representa?",
-  "explicacao": "5% de R$ 1.700,00 = R$ 1.700,00 × 5/100 = R$ 85,00.",
+  "enunciado": "Em uma escola com 1200 alunos, 30% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "30% de 1.200 = 1.200 × 30/100 = 360.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 850,00",
-   "R$ 170,00",
-   "R$ 340,00",
-   "R$ 8,50",
-   "R$ 85,00"
+   "720",
+   "3.600",
+   "36",
+   "40",
+   "360"
   ],
   "correta": 4,
   "id": "g-0249",
@@ -5045,17 +5045,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 500,00 recebeu 25% de gorjeta. Quanto isso representa?",
-  "explicacao": "25% de R$ 500,00 = R$ 500,00 × 25/100 = R$ 125,00.",
+  "enunciado": "Um investimento de R$ 700,00 rendeu 5% no período. Quanto isso representa?",
+  "explicacao": "5% de R$ 700,00 = R$ 700,00 × 5/100 = R$ 35,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 12,50",
-   "R$ 1.250,00",
-   "R$ 125,00",
-   "R$ 250,00",
-   "R$ 20,00"
+   "R$ 350,00",
+   "R$ 3,50",
+   "R$ 140,00",
+   "R$ 70,00",
+   "R$ 35,00"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0250",
   "fonte": "ia"
  },
@@ -5065,17 +5065,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.150,00 recebeu 20% de gorjeta. Quanto isso representa?",
-  "explicacao": "20% de R$ 1.150,00 = R$ 1.150,00 × 20/100 = R$ 230,00.",
+  "enunciado": "De 600 vagas oferecidas, 60% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "60% de 600 = 600 × 60/100 = 360.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 460,00",
-   "R$ 57,50",
-   "R$ 230,00",
-   "R$ 2.300,00",
-   "R$ 23,00"
+   "36",
+   "360",
+   "10",
+   "3.600",
+   "720"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0251",
   "fonte": "ia"
  },
@@ -5085,17 +5085,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 350 vagas oferecidas, 40% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "40% de 350 = 350 × 40/100 = 140.",
+  "enunciado": "Em uma escola com 1500 alunos, 15% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "15% de 1.500 = 1.500 × 15/100 = 225.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "8,8",
-   "140",
-   "280",
-   "14",
-   "1.400"
+   "100",
+   "2.250",
+   "225",
+   "22,5",
+   "450"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0252",
   "fonte": "ia"
  },
@@ -5105,17 +5105,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 650,00 recebeu 15% de gorjeta. Quanto isso representa?",
-  "explicacao": "15% de R$ 650,00 = R$ 650,00 × 15/100 = R$ 97,50.",
+  "enunciado": "Uma conta de R$ 1.300,00 recebeu 12% de gorjeta. Quanto isso representa?",
+  "explicacao": "12% de R$ 1.300,00 = R$ 1.300,00 × 12/100 = R$ 156,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 9,75",
-   "R$ 97,50",
-   "R$ 195,00",
-   "R$ 43,33",
-   "R$ 975,00"
+   "R$ 1.560,00",
+   "R$ 108,33",
+   "R$ 312,00",
+   "R$ 156,00",
+   "R$ 15,60"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0253",
   "fonte": "ia"
  },
@@ -5125,17 +5125,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Um investimento de R$ 1.250,00 rendeu 20% no período. Quanto isso representa?",
-  "explicacao": "20% de R$ 1.250,00 = R$ 1.250,00 × 20/100 = R$ 250,00.",
+  "enunciado": "Em uma escola com 1800 alunos, 8% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "8% de 1.800 = 1.800 × 8/100 = 144.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 250,00",
-   "R$ 500,00",
-   "R$ 2.500,00",
-   "R$ 62,50",
-   "R$ 25,00"
+   "288",
+   "14,4",
+   "1.440",
+   "144",
+   "225"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0254",
   "fonte": "ia"
  },
@@ -5145,17 +5145,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Um investimento de R$ 1.850,00 rendeu 10% no período. Quanto isso representa?",
-  "explicacao": "10% de R$ 1.850,00 = R$ 1.850,00 × 10/100 = R$ 185,00.",
+  "enunciado": "Uma conta de R$ 1.850,00 recebeu 60% de gorjeta. Quanto isso representa?",
+  "explicacao": "60% de R$ 1.850,00 = R$ 1.850,00 × 60/100 = R$ 1.110,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 185,00",
-   "R$ 1.850,00",
-   "R$ 18,50",
-   "R$ 370,00",
-   "R$ 92,50"
+   "R$ 2.220,00",
+   "R$ 1.110,00",
+   "R$ 30,83",
+   "R$ 11.100,00",
+   "R$ 111,00"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0255",
   "fonte": "ia"
  },
@@ -5165,17 +5165,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 1900 vagas oferecidas, 75% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "75% de 1.900 = 1.900 × 75/100 = 1.425.",
+  "enunciado": "Em uma escola com 1600 alunos, 10% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "10% de 1.600 = 1.600 × 10/100 = 160.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "2.850",
-   "142,5",
-   "1.425",
-   "25,3",
-   "14.250"
+   "320",
+   "80",
+   "1.600",
+   "160",
+   "16"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0256",
   "fonte": "ia"
  },
@@ -5185,17 +5185,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 1900 alunos, 25% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "25% de 1.900 = 1.900 × 25/100 = 475.",
+  "enunciado": "Uma conta de R$ 650,00 recebeu 12% de gorjeta. Quanto isso representa?",
+  "explicacao": "12% de R$ 650,00 = R$ 650,00 × 12/100 = R$ 78,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "475",
-   "76",
-   "4.750",
-   "950",
-   "47,5"
+   "R$ 7,80",
+   "R$ 78,00",
+   "R$ 156,00",
+   "R$ 54,17",
+   "R$ 780,00"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0257",
   "fonte": "ia"
  },
@@ -5205,17 +5205,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 450,00 recebeu 12% de gorjeta. Quanto isso representa?",
-  "explicacao": "12% de R$ 450,00 = R$ 450,00 × 12/100 = R$ 54,00.",
+  "enunciado": "Em uma escola com 1700 alunos, 20% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "20% de 1.700 = 1.700 × 20/100 = 340.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 108,00",
-   "R$ 540,00",
-   "R$ 37,50",
-   "R$ 5,40",
-   "R$ 54,00"
+   "680",
+   "340",
+   "34",
+   "3.400",
+   "85"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0258",
   "fonte": "ia"
  },
@@ -5225,15 +5225,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 1850 vagas oferecidas, 25% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "25% de 1.850 = 1.850 × 25/100 = 462,5.",
+  "enunciado": "De 1700 vagas oferecidas, 60% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "60% de 1.700 = 1.700 × 60/100 = 1.020.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "462,5",
-   "74",
-   "4.625",
-   "925",
-   "46,3"
+   "1.020",
+   "10.200",
+   "102",
+   "2.040",
+   "28,3"
   ],
   "correta": 0,
   "id": "g-0259",
@@ -5245,17 +5245,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 1950 alunos, 60% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "60% de 1.950 = 1.950 × 60/100 = 1.170.",
+  "enunciado": "Uma conta de R$ 1.600,00 recebeu 20% de gorjeta. Quanto isso representa?",
+  "explicacao": "20% de R$ 1.600,00 = R$ 1.600,00 × 20/100 = R$ 320,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "1.170",
-   "117",
-   "32,5",
-   "2.340",
-   "11.700"
+   "R$ 3.200,00",
+   "R$ 640,00",
+   "R$ 80,00",
+   "R$ 32,00",
+   "R$ 320,00"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0260",
   "fonte": "ia"
  },
@@ -5265,17 +5265,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 1300 vagas oferecidas, 8% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "8% de 1.300 = 1.300 × 8/100 = 104.",
+  "enunciado": "De 1200 vagas oferecidas, 15% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "15% de 1.200 = 1.200 × 15/100 = 180.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "208",
-   "1.040",
-   "104",
-   "162,5",
-   "10,4"
+   "360",
+   "18",
+   "80",
+   "180",
+   "1.800"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0261",
   "fonte": "ia"
  },
@@ -5285,15 +5285,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 450,00 recebeu 30% de gorjeta. Quanto isso representa?",
-  "explicacao": "30% de R$ 450,00 = R$ 450,00 × 30/100 = R$ 135,00.",
+  "enunciado": "De 1800 vagas oferecidas, 30% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "30% de 1.800 = 1.800 × 30/100 = 540.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 135,00",
-   "R$ 15,00",
-   "R$ 13,50",
-   "R$ 270,00",
-   "R$ 1.350,00"
+   "540",
+   "60",
+   "5.400",
+   "54",
+   "1.080"
   ],
   "correta": 0,
   "id": "g-0262",
@@ -5312,8 +5312,8 @@ window.ENEM_QUESTIONS = [
    "90",
    "36",
    "360",
-   "3.600",
-   "720"
+   "720",
+   "3.600"
   ],
   "correta": 2,
   "id": "g-0263",
@@ -5325,15 +5325,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 500,00 recebeu 12% de gorjeta. Quanto isso representa?",
-  "explicacao": "12% de R$ 500,00 = R$ 500,00 × 12/100 = R$ 60,00.",
+  "enunciado": "Um investimento de R$ 1.300,00 rendeu 60% no período. Quanto isso representa?",
+  "explicacao": "60% de R$ 1.300,00 = R$ 1.300,00 × 60/100 = R$ 780,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 600,00",
-   "R$ 41,67",
-   "R$ 60,00",
-   "R$ 120,00",
-   "R$ 6,00"
+   "R$ 1.560,00",
+   "R$ 7.800,00",
+   "R$ 780,00",
+   "R$ 21,67",
+   "R$ 78,00"
   ],
   "correta": 2,
   "id": "g-0264",
@@ -5345,17 +5345,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 1800 vagas oferecidas, 8% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "8% de 1.800 = 1.800 × 8/100 = 144.",
+  "enunciado": "Uma conta de R$ 700,00 recebeu 30% de gorjeta. Quanto isso representa?",
+  "explicacao": "30% de R$ 700,00 = R$ 700,00 × 30/100 = R$ 210,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "225",
-   "14,4",
-   "288",
-   "1.440",
-   "144"
+   "R$ 210,00",
+   "R$ 420,00",
+   "R$ 23,33",
+   "R$ 21,00",
+   "R$ 2.100,00"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0265",
   "fonte": "ia"
  },
@@ -5365,17 +5365,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.650,00 recebeu 5% de gorjeta. Quanto isso representa?",
-  "explicacao": "5% de R$ 1.650,00 = R$ 1.650,00 × 5/100 = R$ 82,50.",
+  "enunciado": "Em uma escola com 2000 alunos, 60% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "60% de 2.000 = 2.000 × 60/100 = 1.200.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 82,50",
-   "R$ 165,00",
-   "R$ 825,00",
-   "R$ 330,00",
-   "R$ 8,25"
+   "2.400",
+   "120",
+   "33,3",
+   "1.200",
+   "12.000"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0266",
   "fonte": "ia"
  },
@@ -5385,17 +5385,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "De 950 vagas oferecidas, 8% foram destinadas a cotas. Quanto isso representa?",
-  "explicacao": "8% de 950 = 950 × 8/100 = 76.",
+  "enunciado": "Uma conta de R$ 1.200,00 recebeu 12% de gorjeta. Quanto isso representa?",
+  "explicacao": "12% de R$ 1.200,00 = R$ 1.200,00 × 12/100 = R$ 144,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "760",
-   "76",
-   "7,6",
-   "118,8",
-   "152"
+   "R$ 100,00",
+   "R$ 1.440,00",
+   "R$ 14,40",
+   "R$ 288,00",
+   "R$ 144,00"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0267",
   "fonte": "ia"
  },
@@ -5405,17 +5405,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 1850 alunos, 5% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "5% de 1.850 = 1.850 × 5/100 = 92,5.",
+  "enunciado": "Uma conta de R$ 250,00 recebeu 8% de gorjeta. Quanto isso representa?",
+  "explicacao": "8% de R$ 250,00 = R$ 250,00 × 8/100 = R$ 20,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "185",
-   "370",
-   "9,3",
-   "92,5",
-   "925"
+   "R$ 2,00",
+   "R$ 200,00",
+   "R$ 40,00",
+   "R$ 31,25",
+   "R$ 20,00"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0268",
   "fonte": "ia"
  },
@@ -5425,17 +5425,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 2000 alunos, 12% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "12% de 2.000 = 2.000 × 12/100 = 240.",
+  "enunciado": "Em uma escola com 1600 alunos, 75% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "75% de 1.600 = 1.600 × 75/100 = 1.200.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "480",
+   "1.200",
+   "12.000",
+   "21,3",
    "2.400",
-   "240",
-   "24",
-   "166,7"
+   "120"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0269",
   "fonte": "ia"
  },
@@ -5445,17 +5445,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.350,00 recebeu 40% de gorjeta. Quanto isso representa?",
-  "explicacao": "40% de R$ 1.350,00 = R$ 1.350,00 × 40/100 = R$ 540,00.",
+  "enunciado": "Um investimento de R$ 350,00 rendeu 40% no período. Quanto isso representa?",
+  "explicacao": "40% de R$ 350,00 = R$ 350,00 × 40/100 = R$ 140,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 54,00",
-   "R$ 33,75",
-   "R$ 1.080,00",
-   "R$ 540,00",
-   "R$ 5.400,00"
+   "R$ 14,00",
+   "R$ 1.400,00",
+   "R$ 8,75",
+   "R$ 280,00",
+   "R$ 140,00"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0270",
   "fonte": "ia"
  },
@@ -5465,15 +5465,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Um investimento de R$ 1.100,00 rendeu 10% no período. Quanto isso representa?",
-  "explicacao": "10% de R$ 1.100,00 = R$ 1.100,00 × 10/100 = R$ 110,00.",
+  "enunciado": "Uma conta de R$ 2.000,00 recebeu 8% de gorjeta. Quanto isso representa?",
+  "explicacao": "8% de R$ 2.000,00 = R$ 2.000,00 × 8/100 = R$ 160,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 55,00",
-   "R$ 1.100,00",
-   "R$ 110,00",
-   "R$ 220,00",
-   "R$ 11,00"
+   "R$ 320,00",
+   "R$ 1.600,00",
+   "R$ 160,00",
+   "R$ 16,00",
+   "R$ 250,00"
   ],
   "correta": 2,
   "id": "g-0271",
@@ -5485,17 +5485,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 1.850,00 recebeu 60% de gorjeta. Quanto isso representa?",
-  "explicacao": "60% de R$ 1.850,00 = R$ 1.850,00 × 60/100 = R$ 1.110,00.",
+  "enunciado": "Em uma escola com 700 alunos, 40% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "40% de 700 = 700 × 40/100 = 280.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 111,00",
-   "R$ 30,83",
-   "R$ 1.110,00",
-   "R$ 11.100,00",
-   "R$ 2.220,00"
+   "17,5",
+   "28",
+   "560",
+   "2.800",
+   "280"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0272",
   "fonte": "ia"
  },
@@ -5505,17 +5505,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Um investimento de R$ 1.800,00 rendeu 40% no período. Quanto isso representa?",
-  "explicacao": "40% de R$ 1.800,00 = R$ 1.800,00 × 40/100 = R$ 720,00.",
+  "enunciado": "De 1000 vagas oferecidas, 20% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "20% de 1.000 = 1.000 × 20/100 = 200.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 7.200,00",
-   "R$ 45,00",
-   "R$ 720,00",
-   "R$ 72,00",
-   "R$ 1.440,00"
+   "400",
+   "2.000",
+   "20",
+   "50",
+   "200"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0273",
   "fonte": "ia"
  },
@@ -5525,17 +5525,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 1050 alunos, 15% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "15% de 1.050 = 1.050 × 15/100 = 157,5.",
+  "enunciado": "Em uma escola com 1000 alunos, 20% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "20% de 1.000 = 1.000 × 20/100 = 200.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "315",
-   "15,8",
-   "157,5",
-   "1.575",
-   "70"
+   "200",
+   "2.000",
+   "400",
+   "20",
+   "50"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0274",
   "fonte": "ia"
  },
@@ -5545,17 +5545,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma conta de R$ 300,00 recebeu 25% de gorjeta. Quanto isso representa?",
-  "explicacao": "25% de R$ 300,00 = R$ 300,00 × 25/100 = R$ 75,00.",
+  "enunciado": "Em uma escola com 800 alunos, 60% foram aprovados sem recuperação. Quanto isso representa?",
+  "explicacao": "60% de 800 = 800 × 60/100 = 480.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "R$ 75,00",
-   "R$ 750,00",
-   "R$ 12,00",
-   "R$ 7,50",
-   "R$ 150,00"
+   "960",
+   "13,3",
+   "480",
+   "4.800",
+   "48"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0275",
   "fonte": "ia"
  },
@@ -5565,17 +5565,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 1650 alunos, 20% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "20% de 1.650 = 1.650 × 20/100 = 330.",
+  "enunciado": "Um investimento de R$ 650,00 rendeu 12% no período. Quanto isso representa?",
+  "explicacao": "12% de R$ 650,00 = R$ 650,00 × 12/100 = R$ 78,00.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "660",
-   "330",
-   "33",
-   "3.300",
-   "82,5"
+   "R$ 156,00",
+   "R$ 54,17",
+   "R$ 7,80",
+   "R$ 780,00",
+   "R$ 78,00"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0276",
   "fonte": "ia"
  },
@@ -5585,18 +5585,38 @@ window.ENEM_QUESTIONS = [
   "topico": "Porcentagem",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Em uma turma de 1100 alunos, 40% foram aprovados sem recuperação. Quanto isso representa?",
-  "explicacao": "40% de 1.100 = 1.100 × 40/100 = 440.",
+  "enunciado": "De 1000 vagas oferecidas, 75% foram destinadas a cotas. Quanto isso representa?",
+  "explicacao": "75% de 1.000 = 1.000 × 75/100 = 750.",
   "dica": "X% de V = V × (X ÷ 100). Basta multiplicar.",
   "alternativas": [
-   "440",
-   "27,5",
-   "44",
-   "880",
-   "4.400"
+   "750",
+   "13,3",
+   "1.500",
+   "75",
+   "7.500"
   ],
   "correta": 0,
   "id": "g-0277",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Regra de três",
+  "nivel": "Fácil",
+  "gerada": true,
+  "enunciado": "Um carro percorre 106 km com 7 litros de combustível. Quantos litros para percorrer 212 km, no mesmo consumo?",
+  "explicacao": "Grandezas diretamente proporcionais. Montando a proporção e multiplicando cruzado, obtém-se 14 litros.",
+  "dica": "Ache o valor unitário e multiplique — é o caminho mais rápido.",
+  "alternativas": [
+   "14 litros",
+   "28 litros",
+   "9,33 litros",
+   "11,20 litros",
+   "21 litros"
+  ],
+  "correta": 0,
+  "id": "g-0278",
   "fonte": "ia"
  },
  {
@@ -5616,7 +5636,7 @@ window.ENEM_QUESTIONS = [
    "502,67g"
   ],
   "correta": 3,
-  "id": "g-0278",
+  "id": "g-0279",
   "fonte": "ia"
  },
  {
@@ -5636,7 +5656,7 @@ window.ENEM_QUESTIONS = [
    "12,80 dias"
   ],
   "correta": 2,
-  "id": "g-0279",
+  "id": "g-0280",
   "fonte": "ia"
  },
  {
@@ -5656,7 +5676,7 @@ window.ENEM_QUESTIONS = [
    "11,20 horas"
   ],
   "correta": 4,
-  "id": "g-0280",
+  "id": "g-0281",
   "fonte": "ia"
  },
  {
@@ -5676,7 +5696,7 @@ window.ENEM_QUESTIONS = [
    "30 litros"
   ],
   "correta": 4,
-  "id": "g-0281",
+  "id": "g-0282",
   "fonte": "ia"
  },
  {
@@ -5696,7 +5716,7 @@ window.ENEM_QUESTIONS = [
    "3,09 dias"
   ],
   "correta": 3,
-  "id": "g-0282",
+  "id": "g-0283",
   "fonte": "ia"
  },
  {
@@ -5716,7 +5736,7 @@ window.ENEM_QUESTIONS = [
    "30 litros"
   ],
   "correta": 1,
-  "id": "g-0283",
+  "id": "g-0284",
   "fonte": "ia"
  },
  {
@@ -5736,7 +5756,7 @@ window.ENEM_QUESTIONS = [
    "12 horas"
   ],
   "correta": 1,
-  "id": "g-0284",
+  "id": "g-0285",
   "fonte": "ia"
  },
  {
@@ -5756,7 +5776,7 @@ window.ENEM_QUESTIONS = [
    "18 horas"
   ],
   "correta": 2,
-  "id": "g-0285",
+  "id": "g-0286",
   "fonte": "ia"
  },
  {
@@ -5776,7 +5796,7 @@ window.ENEM_QUESTIONS = [
    "18,67 litros"
   ],
   "correta": 0,
-  "id": "g-0286",
+  "id": "g-0287",
   "fonte": "ia"
  },
  {
@@ -5796,7 +5816,7 @@ window.ENEM_QUESTIONS = [
    "1.180,00g"
   ],
   "correta": 3,
-  "id": "g-0287",
+  "id": "g-0288",
   "fonte": "ia"
  },
  {
@@ -5816,7 +5836,7 @@ window.ENEM_QUESTIONS = [
    "359,33g"
   ],
   "correta": 1,
-  "id": "g-0288",
+  "id": "g-0289",
   "fonte": "ia"
  },
  {
@@ -5836,7 +5856,7 @@ window.ENEM_QUESTIONS = [
    "4,80 dias"
   ],
   "correta": 3,
-  "id": "g-0289",
+  "id": "g-0290",
   "fonte": "ia"
  },
  {
@@ -5856,7 +5876,7 @@ window.ENEM_QUESTIONS = [
    "5,76 horas"
   ],
   "correta": 0,
-  "id": "g-0290",
+  "id": "g-0291",
   "fonte": "ia"
  },
  {
@@ -5876,7 +5896,7 @@ window.ENEM_QUESTIONS = [
    "18,67 litros"
   ],
   "correta": 0,
-  "id": "g-0291",
+  "id": "g-0292",
   "fonte": "ia"
  },
  {
@@ -5896,7 +5916,7 @@ window.ENEM_QUESTIONS = [
    "8,89 dias"
   ],
   "correta": 2,
-  "id": "g-0292",
+  "id": "g-0293",
   "fonte": "ia"
  },
  {
@@ -5916,7 +5936,7 @@ window.ENEM_QUESTIONS = [
    "428,96g"
   ],
   "correta": 3,
-  "id": "g-0293",
+  "id": "g-0294",
   "fonte": "ia"
  },
  {
@@ -5936,7 +5956,7 @@ window.ENEM_QUESTIONS = [
    "6 horas"
   ],
   "correta": 0,
-  "id": "g-0294",
+  "id": "g-0295",
   "fonte": "ia"
  },
  {
@@ -5956,7 +5976,7 @@ window.ENEM_QUESTIONS = [
    "16 litros"
   ],
   "correta": 0,
-  "id": "g-0295",
+  "id": "g-0296",
   "fonte": "ia"
  },
  {
@@ -5976,7 +5996,7 @@ window.ENEM_QUESTIONS = [
    "12 horas"
   ],
   "correta": 0,
-  "id": "g-0296",
+  "id": "g-0297",
   "fonte": "ia"
  },
  {
@@ -5996,7 +6016,7 @@ window.ENEM_QUESTIONS = [
    "60 litros"
   ],
   "correta": 2,
-  "id": "g-0297",
+  "id": "g-0298",
   "fonte": "ia"
  },
  {
@@ -6016,7 +6036,7 @@ window.ENEM_QUESTIONS = [
    "1.108,33g"
   ],
   "correta": 4,
-  "id": "g-0298",
+  "id": "g-0299",
   "fonte": "ia"
  },
  {
@@ -6036,7 +6056,7 @@ window.ENEM_QUESTIONS = [
    "28,58 dias"
   ],
   "correta": 3,
-  "id": "g-0299",
+  "id": "g-0300",
   "fonte": "ia"
  },
  {
@@ -6056,7 +6076,7 @@ window.ENEM_QUESTIONS = [
    "3,33 dias"
   ],
   "correta": 4,
-  "id": "g-0300",
+  "id": "g-0301",
   "fonte": "ia"
  },
  {
@@ -6076,7 +6096,7 @@ window.ENEM_QUESTIONS = [
    "247,20g"
   ],
   "correta": 2,
-  "id": "g-0301",
+  "id": "g-0302",
   "fonte": "ia"
  },
  {
@@ -6096,7 +6116,7 @@ window.ENEM_QUESTIONS = [
    "8 dias"
   ],
   "correta": 1,
-  "id": "g-0302",
+  "id": "g-0303",
   "fonte": "ia"
  },
  {
@@ -6116,7 +6136,7 @@ window.ENEM_QUESTIONS = [
    "27,14 dias"
   ],
   "correta": 0,
-  "id": "g-0303",
+  "id": "g-0304",
   "fonte": "ia"
  },
  {
@@ -6136,7 +6156,7 @@ window.ENEM_QUESTIONS = [
    "20 litros"
   ],
   "correta": 4,
-  "id": "g-0304",
+  "id": "g-0305",
   "fonte": "ia"
  },
  {
@@ -6156,7 +6176,7 @@ window.ENEM_QUESTIONS = [
    "5,28 dias"
   ],
   "correta": 3,
-  "id": "g-0305",
+  "id": "g-0306",
   "fonte": "ia"
  },
  {
@@ -6176,7 +6196,7 @@ window.ENEM_QUESTIONS = [
    "7,50 dias"
   ],
   "correta": 4,
-  "id": "g-0306",
+  "id": "g-0307",
   "fonte": "ia"
  },
  {
@@ -6196,7 +6216,7 @@ window.ENEM_QUESTIONS = [
    "11,20 horas"
   ],
   "correta": 0,
-  "id": "g-0307",
+  "id": "g-0308",
   "fonte": "ia"
  },
  {
@@ -6216,7 +6236,7 @@ window.ENEM_QUESTIONS = [
    "8 litros"
   ],
   "correta": 2,
-  "id": "g-0308",
+  "id": "g-0309",
   "fonte": "ia"
  },
  {
@@ -6236,7 +6256,7 @@ window.ENEM_QUESTIONS = [
    "5,42 dias"
   ],
   "correta": 2,
-  "id": "g-0309",
+  "id": "g-0310",
   "fonte": "ia"
  },
  {
@@ -6256,7 +6276,7 @@ window.ENEM_QUESTIONS = [
    "18 horas"
   ],
   "correta": 3,
-  "id": "g-0310",
+  "id": "g-0311",
   "fonte": "ia"
  },
  {
@@ -6276,7 +6296,7 @@ window.ENEM_QUESTIONS = [
    "18 litros"
   ],
   "correta": 1,
-  "id": "g-0311",
+  "id": "g-0312",
   "fonte": "ia"
  },
  {
@@ -6296,7 +6316,7 @@ window.ENEM_QUESTIONS = [
    "356,67g"
   ],
   "correta": 3,
-  "id": "g-0312",
+  "id": "g-0313",
   "fonte": "ia"
  },
  {
@@ -6316,7 +6336,7 @@ window.ENEM_QUESTIONS = [
    "18,67 horas"
   ],
   "correta": 1,
-  "id": "g-0313",
+  "id": "g-0314",
   "fonte": "ia"
  },
  {
@@ -6336,7 +6356,7 @@ window.ENEM_QUESTIONS = [
    "520g"
   ],
   "correta": 4,
-  "id": "g-0314",
+  "id": "g-0315",
   "fonte": "ia"
  },
  {
@@ -6356,7 +6376,7 @@ window.ENEM_QUESTIONS = [
    "11,67 horas"
   ],
   "correta": 4,
-  "id": "g-0315",
+  "id": "g-0316",
   "fonte": "ia"
  },
  {
@@ -6376,7 +6396,7 @@ window.ENEM_QUESTIONS = [
    "13,93 dias"
   ],
   "correta": 1,
-  "id": "g-0316",
+  "id": "g-0317",
   "fonte": "ia"
  },
  {
@@ -6396,7 +6416,7 @@ window.ENEM_QUESTIONS = [
    "486g"
   ],
   "correta": 1,
-  "id": "g-0317",
+  "id": "g-0318",
   "fonte": "ia"
  },
  {
@@ -6416,26 +6436,6 @@ window.ENEM_QUESTIONS = [
    "6 dias"
   ],
   "correta": 4,
-  "id": "g-0318",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Regra de três",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "9 operários constroem um muro em 11 horas. Quantas horas 6 operários levariam (inversamente proporcional)?",
-  "explicacao": "Grandezas inversamente proporcionais: quando uma aumenta, a outra diminui. Multiplicamos \"reto\": o produto se conserva, resultando em 16,50 horas.",
-  "dica": "\"Mais recursos, menos tempo\" → inversamente proporcional: inverta antes de multiplicar.",
-  "alternativas": [
-   "11 horas",
-   "13,20 horas",
-   "16,50 horas",
-   "24,75 horas",
-   "33 horas"
-  ],
-  "correta": 2,
   "id": "g-0319",
   "fonte": "ia"
  },
@@ -6445,18 +6445,298 @@ window.ENEM_QUESTIONS = [
   "topico": "Função 2º grau",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 10x − 5. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 12x − 9. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "12",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "correta": 2,
+  "id": "g-0320",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 12x − 9. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "6",
+   "12",
+   "5",
+   "7",
+   "8"
+  ],
+  "correta": 0,
+  "id": "g-0321",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 4x − 3. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "2",
+   "1",
+   "6",
+   "3",
+   "4"
+  ],
+  "correta": 0,
+  "id": "g-0322",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 10x − 3. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
   "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
    "10",
    "5",
-   "6",
+   "4",
    "7",
-   "4"
+   "6"
   ],
   "correta": 1,
-  "id": "g-0320",
+  "id": "g-0323",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 12x − 5. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "6",
+   "12",
+   "7",
+   "5",
+   "8"
+  ],
+  "correta": 0,
+  "id": "g-0324",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 6x − 7. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "5",
+   "3",
+   "4",
+   "2",
+   "6"
+  ],
+  "correta": 1,
+  "id": "g-0325",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 10x − 7. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "4",
+   "6",
+   "7",
+   "10",
+   "5"
+  ],
+  "correta": 4,
+  "id": "g-0326",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 8x − 9. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "3",
+   "4",
+   "8",
+   "5",
+   "6"
+  ],
+  "correta": 1,
+  "id": "g-0327",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 12x − 5. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "5",
+   "7",
+   "6",
+   "8",
+   "12"
+  ],
+  "correta": 2,
+  "id": "g-0328",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 4x − 3. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "6",
+   "4",
+   "3",
+   "1",
+   "2"
+  ],
+  "correta": 4,
+  "id": "g-0329",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 4x − 3. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "6",
+   "4",
+   "1",
+   "2",
+   "3"
+  ],
+  "correta": 3,
+  "id": "g-0330",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 8x − 5. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "4",
+   "5",
+   "6",
+   "3",
+   "8"
+  ],
+  "correta": 0,
+  "id": "g-0331",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 10x − 3. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "6",
+   "7",
+   "4",
+   "5",
+   "10"
+  ],
+  "correta": 3,
+  "id": "g-0332",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 10x − 5. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "10",
+   "4",
+   "6",
+   "5",
+   "7"
+  ],
+  "correta": 3,
+  "id": "g-0333",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 8x − 3. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "3",
+   "5",
+   "6",
+   "8",
+   "4"
+  ],
+  "correta": 4,
+  "id": "g-0334",
   "fonte": "ia"
  },
  {
@@ -6471,452 +6751,12 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "6",
    "8",
-   "5",
    "12",
+   "5",
    "7"
   ],
   "correta": 0,
-  "id": "g-0321",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 6x − 3. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "5",
-   "6",
-   "3",
-   "2",
-   "4"
-  ],
-  "correta": 2,
-  "id": "g-0322",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 6x − 5. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "4",
-   "3",
-   "6",
-   "2",
-   "5"
-  ],
-  "correta": 1,
-  "id": "g-0323",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 12x − 7. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "7",
-   "12",
-   "6",
-   "8",
-   "5"
-  ],
-  "correta": 2,
-  "id": "g-0324",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 10x − 7. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "7",
-   "6",
-   "4",
-   "5",
-   "10"
-  ],
-  "correta": 3,
-  "id": "g-0325",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 12x − 3. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "7",
-   "8",
-   "6",
-   "12",
-   "5"
-  ],
-  "correta": 2,
-  "id": "g-0326",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 12x − 9. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "8",
-   "5",
-   "7",
-   "12",
-   "6"
-  ],
-  "correta": 4,
-  "id": "g-0327",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 6x − 5. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "4",
-   "2",
-   "5",
-   "3",
-   "6"
-  ],
-  "correta": 3,
-  "id": "g-0328",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 6x − 3. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "6",
-   "3",
-   "4",
-   "2",
-   "5"
-  ],
-  "correta": 1,
-  "id": "g-0329",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 4x − 9. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "9",
-   "1",
-   "3",
-   "2",
-   "4"
-  ],
-  "correta": 3,
-  "id": "g-0330",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 8x − 7. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "4",
-   "6",
-   "5",
-   "8",
-   "3"
-  ],
-  "correta": 0,
-  "id": "g-0331",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 12x − 5. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "7",
-   "5",
-   "6",
-   "8",
-   "12"
-  ],
-  "correta": 2,
-  "id": "g-0332",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 6x − 3. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "5",
-   "4",
-   "6",
-   "2",
-   "3"
-  ],
-  "correta": 4,
-  "id": "g-0333",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 4x − 3. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "3",
-   "6",
-   "1",
-   "2",
-   "4"
-  ],
-  "correta": 3,
-  "id": "g-0334",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 10x − 7. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "7",
-   "5",
-   "6",
-   "10",
-   "4"
-  ],
-  "correta": 1,
   "id": "g-0335",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 4x − 9. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "3",
-   "4",
-   "1",
-   "9",
-   "2"
-  ],
-  "correta": 4,
-  "id": "g-0336",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 4x − 5. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "2",
-   "5",
-   "4",
-   "3",
-   "1"
-  ],
-  "correta": 0,
-  "id": "g-0337",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 8x − 3. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "3",
-   "8",
-   "5",
-   "6",
-   "4"
-  ],
-  "correta": 4,
-  "id": "g-0338",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 6x − 7. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "2",
-   "4",
-   "3",
-   "5",
-   "6"
-  ],
-  "correta": 2,
-  "id": "g-0339",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 12x − 7. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "12",
-   "5",
-   "8",
-   "6",
-   "7"
-  ],
-  "correta": 3,
-  "id": "g-0340",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 4x − 7. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "3",
-   "1",
-   "2",
-   "7",
-   "4"
-  ],
-  "correta": 2,
-  "id": "g-0341",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 8x − 7. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "4",
-   "8",
-   "6",
-   "3",
-   "5"
-  ],
-  "correta": 0,
-  "id": "g-0342",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Função 2º grau",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 12x − 9. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
-  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
-  "alternativas": [
-   "12",
-   "8",
-   "6",
-   "7",
-   "5"
-  ],
-  "correta": 2,
-  "id": "g-0343",
   "fonte": "ia"
  },
  {
@@ -6930,12 +6770,172 @@ window.ENEM_QUESTIONS = [
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
    "8",
+   "5",
+   "3",
+   "6",
+   "4"
+  ],
+  "correta": 4,
+  "id": "g-0336",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 10x − 3. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "4",
+   "5",
+   "10",
+   "6",
+   "7"
+  ],
+  "correta": 1,
+  "id": "g-0337",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 10x − 7. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "4",
+   "6",
+   "5",
+   "7",
+   "10"
+  ],
+  "correta": 2,
+  "id": "g-0338",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 8x − 3. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "5",
+   "3",
+   "6",
+   "4",
+   "8"
+  ],
+  "correta": 3,
+  "id": "g-0339",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 8x − 7. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "4",
+   "3",
+   "6",
+   "8",
+   "5"
+  ],
+  "correta": 0,
+  "id": "g-0340",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 6x − 7. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "5",
+   "3",
+   "6",
+   "4",
+   "2"
+  ],
+  "correta": 1,
+  "id": "g-0341",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 6x − 3. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "2",
+   "6",
+   "5",
+   "3",
+   "4"
+  ],
+  "correta": 3,
+  "id": "g-0342",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 6x − 3. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −6/(2×(−1)) = 3.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
+   "2",
+   "6",
+   "5",
+   "3",
+   "4"
+  ],
+  "correta": 3,
+  "id": "g-0343",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Função 2º grau",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 10x − 7. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
+  "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
+  "alternativas": [
    "6",
    "5",
    "4",
-   "3"
+   "7",
+   "10"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0344",
   "fonte": "ia"
  },
@@ -6945,17 +6945,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Função 2º grau",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 4x − 5. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 12x − 7. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
-   "5",
-   "3",
-   "4",
-   "1",
-   "2"
+   "12",
+   "7",
+   "6",
+   "8",
+   "5"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0345",
   "fonte": "ia"
  },
@@ -6965,17 +6965,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Função 2º grau",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 4x − 3. Qual é o instante (em s) de altura máxima?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 12x − 3. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −12/(2×(−1)) = 6.",
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
+   "7",
+   "5",
    "6",
-   "2",
-   "3",
-   "1",
-   "4"
+   "12",
+   "8"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0346",
   "fonte": "ia"
  },
@@ -6985,17 +6985,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Função 2º grau",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 4x − 3. Qual é o número de ingressos (em milhares) que maximiza a receita?",
-  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −4/(2×(−1)) = 2.",
+  "enunciado": "A altura (em metros) de um projétil é dada por f(x) = −x² + 10x − 9. Qual é o instante (em s) de altura máxima?",
+  "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
-   "2",
    "4",
-   "1",
-   "3",
-   "6"
+   "6",
+   "10",
+   "5",
+   "7"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0347",
   "fonte": "ia"
  },
@@ -7005,17 +7005,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Função 2º grau",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 10x − 3. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 10x − 5. Qual é o número de ingressos (em milhares) que maximiza a receita?",
   "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −10/(2×(−1)) = 5.",
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
-   "6",
-   "4",
-   "5",
    "10",
-   "7"
+   "6",
+   "7",
+   "5",
+   "4"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0348",
   "fonte": "ia"
  },
@@ -7025,17 +7025,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Função 2º grau",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A receita (em mil reais) de um evento é dada por f(x) = −x² + 8x − 9. Qual é o número de ingressos (em milhares) que maximiza a receita?",
+  "enunciado": "O lucro (em milhares de reais) de uma empresa é dada por f(x) = −x² + 8x − 5. Qual é a quantidade vendida (em milhares) que maximiza o lucro?",
   "explicacao": "Como a = −1 < 0, a parábola tem ponto de MÁXIMO no vértice. x do vértice = −b/(2a) = −8/(2×(−1)) = 4.",
   "dica": "\"Máximo\" ou \"mínimo\" → vértice: x = −b/(2a). Não teste valor por valor.",
   "alternativas": [
+   "4",
    "5",
    "3",
    "6",
-   "8",
-   "4"
+   "8"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0349",
   "fonte": "ia"
  },
@@ -7045,15 +7045,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 215,00 mais R$ 2,50 por unidade produzida. Qual o custo total para 26 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 215 + 2,50·x. Para x = 26: R$ 215,00 + R$ 2,50×26 = R$ 280,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 345,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 59 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 345 + 8·x. Para x = 59: R$ 345,00 + R$ 8,00×59 = R$ 817,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 280,00",
-   "R$ 5.590,00",
-   "R$ 495,00",
-   "R$ 65,00",
-   "R$ 217,50"
+   "R$ 817,00",
+   "R$ 20.355,00",
+   "R$ 1.162,00",
+   "R$ 353,00",
+   "R$ 472,00"
   ],
   "correta": 0,
   "id": "g-0350",
@@ -7065,15 +7065,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 395,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 27 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 395 + 8·x. Para x = 27: R$ 395,00 + R$ 8,00×27 = R$ 611,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 400,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 48 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 400 + 3·x. Para x = 48: R$ 400,00 + R$ 3,00×48 = R$ 544,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 611,00",
-   "R$ 216,00",
-   "R$ 1.006,00",
-   "R$ 403,00",
-   "R$ 10.665,00"
+   "R$ 544,00",
+   "R$ 19.200,00",
+   "R$ 144,00",
+   "R$ 944,00",
+   "R$ 403,00"
   ],
   "correta": 0,
   "id": "g-0351",
@@ -7085,17 +7085,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 250,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 31 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 250 + 5·x. Para x = 31: R$ 250,00 + R$ 5,00×31 = R$ 405,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 190,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 34 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 190 + 4·x. Para x = 34: R$ 190,00 + R$ 4,00×34 = R$ 326,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 655,00",
-   "R$ 405,00",
-   "R$ 255,00",
-   "R$ 155,00",
-   "R$ 7.750,00"
+   "R$ 516,00",
+   "R$ 6.460,00",
+   "R$ 326,00",
+   "R$ 194,00",
+   "R$ 136,00"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0352",
   "fonte": "ia"
  },
@@ -7105,17 +7105,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 280,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 21 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 280 + 3·x. Para x = 21: R$ 280,00 + R$ 3,00×21 = R$ 343,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 215,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 35 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 215 + 4·x. Para x = 35: R$ 215,00 + R$ 4,00×35 = R$ 355,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 63,00",
-   "R$ 623,00",
-   "R$ 5.880,00",
-   "R$ 343,00",
-   "R$ 283,00"
+   "R$ 219,00",
+   "R$ 7.525,00",
+   "R$ 140,00",
+   "R$ 570,00",
+   "R$ 355,00"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0353",
   "fonte": "ia"
  },
@@ -7125,17 +7125,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 290,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 20 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 290 + 3·x. Para x = 20: R$ 290,00 + R$ 3,00×20 = R$ 350,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 220,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 54 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 220 + 8·x. Para x = 54: R$ 220,00 + R$ 8,00×54 = R$ 652,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 5.800,00",
-   "R$ 640,00",
-   "R$ 60,00",
-   "R$ 293,00",
-   "R$ 350,00"
+   "R$ 432,00",
+   "R$ 228,00",
+   "R$ 652,00",
+   "R$ 11.880,00",
+   "R$ 872,00"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0354",
   "fonte": "ia"
  },
@@ -7145,17 +7145,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 365,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 56 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 365 + 8·x. Para x = 56: R$ 365,00 + R$ 8,00×56 = R$ 813,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 190,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 26 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 190 + 4·x. Para x = 26: R$ 190,00 + R$ 4,00×26 = R$ 294,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 373,00",
-   "R$ 813,00",
-   "R$ 20.440,00",
-   "R$ 448,00",
-   "R$ 1.178,00"
+   "R$ 294,00",
+   "R$ 484,00",
+   "R$ 194,00",
+   "R$ 104,00",
+   "R$ 4.940,00"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0355",
   "fonte": "ia"
  },
@@ -7165,17 +7165,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 270,00 mais R$ 2,50 por unidade produzida. Qual o custo total para 40 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 270 + 2,50·x. Para x = 40: R$ 270,00 + R$ 2,50×40 = R$ 370,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 275,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 22 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 275 + 4·x. Para x = 22: R$ 275,00 + R$ 4,00×22 = R$ 363,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 370,00",
-   "R$ 272,50",
-   "R$ 640,00",
-   "R$ 10.800,00",
-   "R$ 100,00"
+   "R$ 638,00",
+   "R$ 6.050,00",
+   "R$ 88,00",
+   "R$ 279,00",
+   "R$ 363,00"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0356",
   "fonte": "ia"
  },
@@ -7185,17 +7185,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 285,00 mais R$ 2,50 por unidade produzida. Qual o custo total para 18 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 285 + 2,50·x. Para x = 18: R$ 285,00 + R$ 2,50×18 = R$ 330,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 190,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 49 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 190 + 5·x. Para x = 49: R$ 190,00 + R$ 5,00×49 = R$ 435,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 45,00",
-   "R$ 330,00",
-   "R$ 5.130,00",
-   "R$ 615,00",
-   "R$ 287,50"
+   "R$ 195,00",
+   "R$ 9.310,00",
+   "R$ 625,00",
+   "R$ 245,00",
+   "R$ 435,00"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0357",
   "fonte": "ia"
  },
@@ -7205,17 +7205,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 350,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 15 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 350 + 5·x. Para x = 15: R$ 350,00 + R$ 5,00×15 = R$ 425,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 190,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 28 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 190 + 8·x. Para x = 28: R$ 190,00 + R$ 8,00×28 = R$ 414,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 75,00",
-   "R$ 5.250,00",
-   "R$ 775,00",
-   "R$ 425,00",
-   "R$ 355,00"
+   "R$ 604,00",
+   "R$ 414,00",
+   "R$ 5.320,00",
+   "R$ 224,00",
+   "R$ 198,00"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0358",
   "fonte": "ia"
  },
@@ -7225,17 +7225,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 395,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 31 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 395 + 3·x. Para x = 31: R$ 395,00 + R$ 3,00×31 = R$ 488,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 125,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 32 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 125 + 5·x. Para x = 32: R$ 125,00 + R$ 5,00×32 = R$ 285,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 883,00",
-   "R$ 12.245,00",
-   "R$ 488,00",
-   "R$ 398,00",
-   "R$ 93,00"
+   "R$ 410,00",
+   "R$ 285,00",
+   "R$ 4.000,00",
+   "R$ 130,00",
+   "R$ 160,00"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0359",
   "fonte": "ia"
  },
@@ -7245,17 +7245,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 335,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 26 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 335 + 3·x. Para x = 26: R$ 335,00 + R$ 3,00×26 = R$ 413,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 155,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 40 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 155 + 4·x. Para x = 40: R$ 155,00 + R$ 4,00×40 = R$ 315,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 78,00",
-   "R$ 748,00",
-   "R$ 413,00",
-   "R$ 338,00",
-   "R$ 8.710,00"
+   "R$ 315,00",
+   "R$ 160,00",
+   "R$ 470,00",
+   "R$ 6.200,00",
+   "R$ 159,00"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0360",
   "fonte": "ia"
  },
@@ -7265,17 +7265,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 295,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 34 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 295 + 4·x. Para x = 34: R$ 295,00 + R$ 4,00×34 = R$ 431,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 130,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 33 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 130 + 4·x. Para x = 33: R$ 130,00 + R$ 4,00×33 = R$ 262,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 136,00",
-   "R$ 431,00",
-   "R$ 299,00",
-   "R$ 10.030,00",
-   "R$ 726,00"
+   "R$ 392,00",
+   "R$ 4.290,00",
+   "R$ 132,00",
+   "R$ 134,00",
+   "R$ 262,00"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0361",
   "fonte": "ia"
  },
@@ -7285,17 +7285,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 280,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 19 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 280 + 3·x. Para x = 19: R$ 280,00 + R$ 3,00×19 = R$ 337,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 380,00 mais R$ 2,50 por unidade produzida. Qual o custo total para 48 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 380 + 2,50·x. Para x = 48: R$ 380,00 + R$ 2,50×48 = R$ 500,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 337,00",
-   "R$ 617,00",
-   "R$ 283,00",
-   "R$ 57,00",
-   "R$ 5.320,00"
+   "R$ 120,00",
+   "R$ 500,00",
+   "R$ 880,00",
+   "R$ 18.240,00",
+   "R$ 382,50"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0362",
   "fonte": "ia"
  },
@@ -7305,17 +7305,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 175,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 34 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 175 + 5·x. Para x = 34: R$ 175,00 + R$ 5,00×34 = R$ 345,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 120,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 56 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 120 + 4·x. Para x = 56: R$ 120,00 + R$ 4,00×56 = R$ 344,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 170,00",
-   "R$ 180,00",
-   "R$ 345,00",
-   "R$ 5.950,00",
-   "R$ 520,00"
+   "R$ 344,00",
+   "R$ 464,00",
+   "R$ 224,00",
+   "R$ 124,00",
+   "R$ 6.720,00"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0363",
   "fonte": "ia"
  },
@@ -7325,17 +7325,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 300,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 42 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 300 + 8·x. Para x = 42: R$ 300,00 + R$ 8,00×42 = R$ 636,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 175,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 26 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 175 + 3·x. Para x = 26: R$ 175,00 + R$ 3,00×26 = R$ 253,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 936,00",
-   "R$ 636,00",
-   "R$ 308,00",
-   "R$ 336,00",
-   "R$ 12.600,00"
+   "R$ 4.550,00",
+   "R$ 428,00",
+   "R$ 78,00",
+   "R$ 178,00",
+   "R$ 253,00"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0364",
   "fonte": "ia"
  },
@@ -7345,17 +7345,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 215,00 mais R$ 2,50 por unidade produzida. Qual o custo total para 20 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 215 + 2,50·x. Para x = 20: R$ 215,00 + R$ 2,50×20 = R$ 265,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 215,00 mais R$ 2,50 por unidade produzida. Qual o custo total para 30 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 215 + 2,50·x. Para x = 30: R$ 215,00 + R$ 2,50×30 = R$ 290,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 50,00",
-   "R$ 480,00",
-   "R$ 265,00",
+   "R$ 75,00",
    "R$ 217,50",
-   "R$ 4.300,00"
+   "R$ 6.450,00",
+   "R$ 505,00",
+   "R$ 290,00"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0365",
   "fonte": "ia"
  },
@@ -7365,17 +7365,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 175,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 19 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 175 + 3·x. Para x = 19: R$ 175,00 + R$ 3,00×19 = R$ 232,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 400,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 55 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 400 + 5·x. Para x = 55: R$ 400,00 + R$ 5,00×55 = R$ 675,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 3.325,00",
-   "R$ 178,00",
-   "R$ 57,00",
-   "R$ 407,00",
-   "R$ 232,00"
+   "R$ 275,00",
+   "R$ 1.075,00",
+   "R$ 675,00",
+   "R$ 22.000,00",
+   "R$ 405,00"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0366",
   "fonte": "ia"
  },
@@ -7385,17 +7385,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 340,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 37 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 340 + 8·x. Para x = 37: R$ 340,00 + R$ 8,00×37 = R$ 636,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 255,00 mais R$ 5,00 por unidade produzida. Qual o custo total para 37 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 255 + 5·x. Para x = 37: R$ 255,00 + R$ 5,00×37 = R$ 440,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 348,00",
-   "R$ 296,00",
-   "R$ 12.580,00",
-   "R$ 636,00",
-   "R$ 976,00"
+   "R$ 9.435,00",
+   "R$ 185,00",
+   "R$ 260,00",
+   "R$ 695,00",
+   "R$ 440,00"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0367",
   "fonte": "ia"
  },
@@ -7405,17 +7405,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 310,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 13 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 310 + 4·x. Para x = 13: R$ 310,00 + R$ 4,00×13 = R$ 362,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 225,00 mais R$ 4,00 por unidade produzida. Qual o custo total para 34 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 225 + 4·x. Para x = 34: R$ 225,00 + R$ 4,00×34 = R$ 361,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 314,00",
-   "R$ 672,00",
-   "R$ 52,00",
-   "R$ 4.030,00",
-   "R$ 362,00"
+   "R$ 361,00",
+   "R$ 586,00",
+   "R$ 136,00",
+   "R$ 7.650,00",
+   "R$ 229,00"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0368",
   "fonte": "ia"
  },
@@ -7425,15 +7425,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 265,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 40 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 265 + 3·x. Para x = 40: R$ 265,00 + R$ 3,00×40 = R$ 385,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 375,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 55 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 375 + 8·x. Para x = 55: R$ 375,00 + R$ 8,00×55 = R$ 815,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 385,00",
-   "R$ 268,00",
-   "R$ 10.600,00",
-   "R$ 120,00",
-   "R$ 650,00"
+   "R$ 815,00",
+   "R$ 440,00",
+   "R$ 383,00",
+   "R$ 20.625,00",
+   "R$ 1.190,00"
   ],
   "correta": 0,
   "id": "g-0369",
@@ -7445,17 +7445,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 375,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 53 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 375 + 8·x. Para x = 53: R$ 375,00 + R$ 8,00×53 = R$ 799,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 230,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 27 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 230 + 8·x. Para x = 27: R$ 230,00 + R$ 8,00×27 = R$ 446,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 424,00",
-   "R$ 799,00",
-   "R$ 383,00",
-   "R$ 19.875,00",
-   "R$ 1.174,00"
+   "R$ 446,00",
+   "R$ 238,00",
+   "R$ 676,00",
+   "R$ 216,00",
+   "R$ 6.210,00"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0370",
   "fonte": "ia"
  },
@@ -7465,38 +7465,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Álgebra e Funções",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 365,00 mais R$ 3,00 por unidade produzida. Qual o custo total para 40 unidades?",
-  "explicacao": "Modelo do 1º grau: C(x) = 365 + 3·x. Para x = 40: R$ 365,00 + R$ 3,00×40 = R$ 485,00.",
+  "enunciado": "Uma empresa cobra uma taxa fixa de R$ 320,00 mais R$ 8,00 por unidade produzida. Qual o custo total para 34 unidades?",
+  "explicacao": "Modelo do 1º grau: C(x) = 320 + 8·x. Para x = 34: R$ 320,00 + R$ 8,00×34 = R$ 592,00.",
   "dica": "Taxa fixa é o \"b\" (valor inicial); o custo por unidade é o \"a\" (inclinação).",
   "alternativas": [
-   "R$ 485,00",
-   "R$ 14.600,00",
-   "R$ 368,00",
-   "R$ 850,00",
-   "R$ 120,00"
-  ],
-  "correta": 0,
-  "id": "g-0371",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria/Volume",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma caixa d'água cilíndrica tem raio 3 m e altura 3 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 3² × 3 = 84,78 m³. Convertendo: 84,78 × 1000 = 84.780 litros.",
-  "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
-  "alternativas": [
-   "85 litros",
-   "169.560 litros",
-   "28.260 litros",
-   "8.478 litros",
-   "84.780 litros"
+   "R$ 272,00",
+   "R$ 912,00",
+   "R$ 10.880,00",
+   "R$ 328,00",
+   "R$ 592,00"
   ],
   "correta": 4,
-  "id": "g-0372",
+  "id": "g-0371",
   "fonte": "ia"
  },
  {
@@ -7516,7 +7496,7 @@ window.ENEM_QUESTIONS = [
    "38 litros"
   ],
   "correta": 3,
-  "id": "g-0373",
+  "id": "g-0372",
   "fonte": "ia"
  },
  {
@@ -7536,7 +7516,7 @@ window.ENEM_QUESTIONS = [
    "1.256 litros"
   ],
   "correta": 0,
-  "id": "g-0374",
+  "id": "g-0373",
   "fonte": "ia"
  },
  {
@@ -7556,7 +7536,7 @@ window.ENEM_QUESTIONS = [
    "113.040 litros"
   ],
   "correta": 4,
-  "id": "g-0375",
+  "id": "g-0374",
   "fonte": "ia"
  },
  {
@@ -7576,7 +7556,7 @@ window.ENEM_QUESTIONS = [
    "5.652 litros"
   ],
   "correta": 3,
-  "id": "g-0376",
+  "id": "g-0375",
   "fonte": "ia"
  },
  {
@@ -7586,7 +7566,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 1,5 m e altura 1 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 1,5² × 1 = 7,06 m³. Convertendo: 7,06 × 1000 = 7.065 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 1,5² × 1 = 7,065 m³. Convertendo: 7,065 × 1000 = 7.065 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "4.710 litros",
@@ -7596,7 +7576,7 @@ window.ENEM_QUESTIONS = [
    "706 litros"
   ],
   "correta": 3,
-  "id": "g-0377",
+  "id": "g-0376",
   "fonte": "ia"
  },
  {
@@ -7616,7 +7596,7 @@ window.ENEM_QUESTIONS = [
    "28.260 litros"
   ],
   "correta": 4,
-  "id": "g-0378",
+  "id": "g-0377",
   "fonte": "ia"
  },
  {
@@ -7636,7 +7616,7 @@ window.ENEM_QUESTIONS = [
    "628 litros"
   ],
   "correta": 3,
-  "id": "g-0379",
+  "id": "g-0378",
   "fonte": "ia"
  },
  {
@@ -7656,7 +7636,7 @@ window.ENEM_QUESTIONS = [
    "70.650 litros"
   ],
   "correta": 4,
-  "id": "g-0380",
+  "id": "g-0379",
   "fonte": "ia"
  },
  {
@@ -7676,7 +7656,7 @@ window.ENEM_QUESTIONS = [
    "25.120 litros"
   ],
   "correta": 0,
-  "id": "g-0381",
+  "id": "g-0380",
   "fonte": "ia"
  },
  {
@@ -7686,7 +7666,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 0,5 m e altura 2,5 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 0,5² × 2,5 = 1,96 m³. Convertendo: 1,96 × 1000 = 1.963 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 0,5² × 2,5 = 1,9625 m³. Convertendo: 1,9625 × 1000 = 1.963 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "3.925 litros",
@@ -7696,7 +7676,7 @@ window.ENEM_QUESTIONS = [
    "196 litros"
   ],
   "correta": 2,
-  "id": "g-0382",
+  "id": "g-0381",
   "fonte": "ia"
  },
  {
@@ -7716,7 +7696,7 @@ window.ENEM_QUESTIONS = [
    "2.826 litros"
   ],
   "correta": 2,
-  "id": "g-0383",
+  "id": "g-0382",
   "fonte": "ia"
  },
  {
@@ -7736,7 +7716,7 @@ window.ENEM_QUESTIONS = [
    "1.570 litros"
   ],
   "correta": 4,
-  "id": "g-0384",
+  "id": "g-0383",
   "fonte": "ia"
  },
  {
@@ -7756,7 +7736,7 @@ window.ENEM_QUESTIONS = [
    "9 litros"
   ],
   "correta": 0,
-  "id": "g-0385",
+  "id": "g-0384",
   "fonte": "ia"
  },
  {
@@ -7776,6 +7756,26 @@ window.ENEM_QUESTIONS = [
    "25.120 litros"
   ],
   "correta": 4,
+  "id": "g-0385",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria/Volume",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma caixa d'água cilíndrica tem raio 3 m e altura 3 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
+  "explicacao": "Volume = π·r²·h = 3,14 × 3² × 3 = 84,78 m³. Convertendo: 84,78 × 1000 = 84.780 litros.",
+  "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
+  "alternativas": [
+   "85 litros",
+   "8.478 litros",
+   "84.780 litros",
+   "169.560 litros",
+   "28.260 litros"
+  ],
+  "correta": 2,
   "id": "g-0386",
   "fonte": "ia"
  },
@@ -7806,7 +7806,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 1,5 m e altura 2,5 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 1,5² × 2,5 = 17,66 m³. Convertendo: 17,66 × 1000 = 17.662 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 1,5² × 2,5 = 17,6625 m³. Convertendo: 17,6625 × 1000 = 17.662 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "1.766 litros",
@@ -7866,7 +7866,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 0,5 m e altura 3 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 0,5² × 3 = 2,36 m³. Convertendo: 2,36 × 1000 = 2.355 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 0,5² × 3 = 2,355 m³. Convertendo: 2,355 × 1000 = 2.355 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "1.178 litros",
@@ -7886,7 +7886,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 0,5 m e altura 1 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 0,5² × 1 = 0,79 m³. Convertendo: 0,79 × 1000 = 785 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 0,5² × 1 = 0,785 m³. Convertendo: 0,785 × 1000 = 785 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "393 litros",
@@ -7926,7 +7926,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 2 m e altura 2,5 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 2² × 2,5 = 31,40 m³. Convertendo: 31,40 × 1000 = 31.400 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 2² × 2,5 = 31,4 m³. Convertendo: 31,4 × 1000 = 31.400 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "15.700 litros",
@@ -7966,7 +7966,7 @@ window.ENEM_QUESTIONS = [
   "nivel": "Difícil",
   "gerada": true,
   "enunciado": "Uma caixa d'água cilíndrica tem raio 1,5 m e altura 3 m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?",
-  "explicacao": "Volume = π·r²·h = 3,14 × 1,5² × 3 = 21,20 m³. Convertendo: 21,20 × 1000 = 21.195 litros.",
+  "explicacao": "Volume = π·r²·h = 3,14 × 1,5² × 3 = 21,195 m³. Convertendo: 21,195 × 1000 = 21.195 litros.",
   "dica": "Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.",
   "alternativas": [
    "42.390 litros",
@@ -7985,138 +7985,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 9 m e 12 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 9² + 12² = 81 + 144 = 225. Logo hip = √225 = 15 m.",
+  "enunciado": "Um mastro de 16 m é preso por um cabo fixado a 12 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 12² + 16² = 144 + 256 = 400. Logo hip = √400 = 20 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "21 m",
-   "14 m",
-   "15 m",
-   "16 m",
-   "18 m"
-  ],
-  "correta": 2,
-  "id": "g-0397",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 80 m e 150 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 80² + 150² = 6400 + 22500 = 28900. Logo hip = √28900 = 170 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "160 m",
-   "204 m",
-   "230 m",
-   "180 m",
-   "170 m"
-  ],
-  "correta": 4,
-  "id": "g-0398",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um mastro de 24 m é preso por um cabo fixado a 18 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 18² + 24² = 324 + 576 = 900. Logo hip = √900 = 30 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "33 m",
-   "42 m",
-   "36 m",
-   "30 m",
-   "27 m"
+   "28 m",
+   "22 m",
+   "18 m",
+   "20 m",
+   "24 m"
   ],
   "correta": 3,
-  "id": "g-0399",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um mastro de 72 m é preso por um cabo fixado a 21 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 21² + 72² = 441 + 5184 = 5625. Logo hip = √5625 = 75 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "93 m",
-   "75 m",
-   "78 m",
-   "90 m",
-   "72 m"
-  ],
-  "correta": 1,
-  "id": "g-0400",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma escada apoiada na parede tem a base a 24 m do muro e o topo a 45 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 24² + 45² = 576 + 2025 = 2601. Logo hip = √2601 = 51 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "54 m",
-   "69 m",
-   "61 m",
-   "48 m",
-   "51 m"
-  ],
-  "correta": 4,
-  "id": "g-0401",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 60 m e 80 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 60² + 80² = 3600 + 6400 = 10000. Logo hip = √10000 = 100 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "110 m",
-   "120 m",
-   "100 m",
-   "140 m",
-   "90 m"
-  ],
-  "correta": 2,
-  "id": "g-0402",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 21 m e 72 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 21² + 72² = 441 + 5184 = 5625. Logo hip = √5625 = 75 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "72 m",
-   "93 m",
-   "75 m",
-   "78 m",
-   "90 m"
-  ],
-  "correta": 2,
-  "id": "g-0403",
+  "id": "g-0397",
   "fonte": "ia"
  },
  {
@@ -8129,11 +8009,131 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Teorema de Pitágoras: hip² = 7² + 24² = 49 + 576 = 625. Logo hip = √625 = 25 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
+   "30 m",
    "31 m",
    "25 m",
-   "30 m",
-   "26 m",
-   "24 m"
+   "24 m",
+   "26 m"
+  ],
+  "correta": 2,
+  "id": "g-0398",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um mastro de 150 m é preso por um cabo fixado a 80 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 80² + 150² = 6400 + 22500 = 28900. Logo hip = √28900 = 170 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "170 m",
+   "204 m",
+   "230 m",
+   "180 m",
+   "160 m"
+  ],
+  "correta": 0,
+  "id": "g-0399",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um terreno retangular tem lados de 9 m e 12 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 9² + 12² = 81 + 144 = 225. Logo hip = √225 = 15 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "18 m",
+   "21 m",
+   "12 m",
+   "11 m",
+   "15 m"
+  ],
+  "correta": 4,
+  "id": "g-0400",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um mastro de 12 m é preso por um cabo fixado a 9 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 9² + 12² = 81 + 144 = 225. Logo hip = √225 = 15 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "18 m",
+   "15 m",
+   "14 m",
+   "16 m",
+   "21 m"
+  ],
+  "correta": 1,
+  "id": "g-0401",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um mastro de 120 m é preso por um cabo fixado a 50 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 50² + 120² = 2500 + 14400 = 16900. Logo hip = √16900 = 130 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "120 m",
+   "130 m",
+   "156 m",
+   "170 m",
+   "140 m"
+  ],
+  "correta": 1,
+  "id": "g-0402",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma escada apoiada na parede tem a base a 80 m do muro e o topo a 150 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 80² + 150² = 6400 + 22500 = 28900. Logo hip = √28900 = 170 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "170 m",
+   "230 m",
+   "204 m",
+   "180 m",
+   "160 m"
+  ],
+  "correta": 0,
+  "id": "g-0403",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma escada apoiada na parede tem a base a 6 m do muro e o topo a 8 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 6² + 8² = 36 + 64 = 100. Logo hip = √100 = 10 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "14 m",
+   "10 m",
+   "12 m",
+   "8 m",
+   "7 m"
   ],
   "correta": 1,
   "id": "g-0404",
@@ -8145,38 +8145,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um mastro de 15 m é preso por um cabo fixado a 8 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 8² + 15² = 64 + 225 = 289. Logo hip = √289 = 17 m.",
+  "enunciado": "Um mastro de 45 m é preso por um cabo fixado a 24 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 24² + 45² = 576 + 2025 = 2601. Logo hip = √2601 = 51 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "20 m",
-   "23 m",
-   "17 m",
-   "18 m",
-   "16 m"
+   "69 m",
+   "61 m",
+   "54 m",
+   "48 m",
+   "51 m"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0405",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma escada apoiada na parede tem a base a 90 m do muro e o topo a 120 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 90² + 120² = 8100 + 14400 = 22500. Logo hip = √22500 = 150 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "180 m",
-   "150 m",
-   "160 m",
-   "140 m",
-   "210 m"
-  ],
-  "correta": 1,
-  "id": "g-0406",
   "fonte": "ia"
  },
  {
@@ -8189,13 +8169,33 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Teorema de Pitágoras: hip² = 10² + 24² = 100 + 576 = 676. Logo hip = √676 = 26 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "28 m",
+   "34 m",
    "31 m",
    "24 m",
    "26 m",
-   "34 m"
+   "28 m"
   ],
   "correta": 3,
+  "id": "g-0406",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma escada apoiada na parede tem a base a 27 m do muro e o topo a 36 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 27² + 36² = 729 + 1296 = 2025. Logo hip = √2025 = 45 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "45 m",
+   "63 m",
+   "42 m",
+   "54 m",
+   "48 m"
+  ],
+  "correta": 0,
   "id": "g-0407",
   "fonte": "ia"
  },
@@ -8210,8 +8210,8 @@ window.ENEM_QUESTIONS = [
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
    "39 m",
-   "36 m",
    "51 m",
+   "36 m",
    "42 m",
    "47 m"
   ],
@@ -8225,17 +8225,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um mastro de 12 m é preso por um cabo fixado a 9 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 9² + 12² = 81 + 144 = 225. Logo hip = √225 = 15 m.",
+  "enunciado": "Um mastro de 72 m é preso por um cabo fixado a 21 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 21² + 72² = 441 + 5184 = 5625. Logo hip = √5625 = 75 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "21 m",
-   "15 m",
-   "18 m",
-   "14 m",
-   "16 m"
+   "75 m",
+   "72 m",
+   "93 m",
+   "78 m",
+   "90 m"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0409",
   "fonte": "ia"
  },
@@ -8245,17 +8245,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 24 m e 45 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 24² + 45² = 576 + 2025 = 2601. Logo hip = √2601 = 51 m.",
+  "enunciado": "Um terreno retangular tem lados de 3 m e 4 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 3² + 4² = 9 + 16 = 25. Logo hip = √25 = 5 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "69 m",
-   "51 m",
-   "54 m",
-   "61 m",
-   "48 m"
+   "7 m",
+   "4 m",
+   "3 m",
+   "6 m",
+   "5 m"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0410",
   "fonte": "ia"
  },
@@ -8265,17 +8265,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma escada apoiada na parede tem a base a 12 m do muro e o topo a 16 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 12² + 16² = 144 + 256 = 400. Logo hip = √400 = 20 m.",
+  "enunciado": "Um terreno retangular tem lados de 60 m e 80 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 60² + 80² = 3600 + 6400 = 10000. Logo hip = √10000 = 100 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "28 m",
-   "18 m",
-   "22 m",
-   "20 m",
-   "24 m"
+   "110 m",
+   "90 m",
+   "100 m",
+   "140 m",
+   "120 m"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0411",
   "fonte": "ia"
  },
@@ -8285,15 +8285,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 14 m e 48 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 14² + 48² = 196 + 2304 = 2500. Logo hip = √2500 = 50 m.",
+  "enunciado": "Uma escada apoiada na parede tem a base a 18 m do muro e o topo a 24 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 18² + 24² = 324 + 576 = 900. Logo hip = √900 = 30 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "48 m",
-   "52 m",
-   "62 m",
-   "50 m",
-   "60 m"
+   "36 m",
+   "42 m",
+   "28 m",
+   "30 m",
+   "32 m"
   ],
   "correta": 3,
   "id": "g-0412",
@@ -8305,18 +8305,158 @@ window.ENEM_QUESTIONS = [
   "topico": "Geometria Plana",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um mastro de 30 m é preso por um cabo fixado a 16 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 16² + 30² = 256 + 900 = 1156. Logo hip = √1156 = 34 m.",
+  "enunciado": "Uma escada apoiada na parede tem a base a 50 m do muro e o topo a 120 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 50² + 120² = 2500 + 14400 = 16900. Logo hip = √16900 = 130 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "41 m",
-   "46 m",
-   "34 m",
-   "36 m",
-   "32 m"
+   "120 m",
+   "140 m",
+   "156 m",
+   "170 m",
+   "130 m"
+  ],
+  "correta": 4,
+  "id": "g-0413",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um terreno retangular tem lados de 15 m e 36 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 15² + 36² = 225 + 1296 = 1521. Logo hip = √1521 = 39 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "51 m",
+   "42 m",
+   "39 m",
+   "47 m",
+   "36 m"
   ],
   "correta": 2,
-  "id": "g-0413",
+  "id": "g-0414",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um mastro de 80 m é preso por um cabo fixado a 60 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 60² + 80² = 3600 + 6400 = 10000. Logo hip = √10000 = 100 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "90 m",
+   "110 m",
+   "100 m",
+   "140 m",
+   "120 m"
+  ],
+  "correta": 2,
+  "id": "g-0415",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um terreno retangular tem lados de 7 m e 24 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 7² + 24² = 49 + 576 = 625. Logo hip = √625 = 25 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "24 m",
+   "31 m",
+   "30 m",
+   "26 m",
+   "25 m"
+  ],
+  "correta": 4,
+  "id": "g-0416",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma escada apoiada na parede tem a base a 60 m do muro e o topo a 80 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 60² + 80² = 3600 + 6400 = 10000. Logo hip = √10000 = 100 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "100 m",
+   "140 m",
+   "120 m",
+   "110 m",
+   "90 m"
+  ],
+  "correta": 0,
+  "id": "g-0417",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um terreno retangular tem lados de 6 m e 8 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 6² + 8² = 36 + 64 = 100. Logo hip = √100 = 10 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "12 m",
+   "10 m",
+   "8 m",
+   "14 m",
+   "7 m"
+  ],
+  "correta": 1,
+  "id": "g-0418",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma escada apoiada na parede tem a base a 70 m do muro e o topo a 240 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 70² + 240² = 4900 + 57600 = 62500. Logo hip = √62500 = 250 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "240 m",
+   "250 m",
+   "310 m",
+   "260 m",
+   "300 m"
+  ],
+  "correta": 1,
+  "id": "g-0419",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma escada apoiada na parede tem a base a 8 m do muro e o topo a 15 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 8² + 15² = 64 + 225 = 289. Logo hip = √289 = 17 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "16 m",
+   "17 m",
+   "23 m",
+   "20 m",
+   "18 m"
+  ],
+  "correta": 1,
+  "id": "g-0420",
   "fonte": "ia"
  },
  {
@@ -8330,193 +8470,13 @@ window.ENEM_QUESTIONS = [
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
    "14 m",
-   "15 m",
+   "21 m",
    "18 m",
-   "16 m",
-   "21 m"
-  ],
-  "correta": 1,
-  "id": "g-0414",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um mastro de 45 m é preso por um cabo fixado a 24 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 24² + 45² = 576 + 2025 = 2601. Logo hip = √2601 = 51 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "54 m",
-   "48 m",
-   "69 m",
-   "51 m",
-   "61 m"
+   "15 m",
+   "16 m"
   ],
   "correta": 3,
-  "id": "g-0415",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma escada apoiada na parede tem a base a 60 m do muro e o topo a 80 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 60² + 80² = 3600 + 6400 = 10000. Logo hip = √10000 = 100 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "110 m",
-   "100 m",
-   "120 m",
-   "90 m",
-   "140 m"
-  ],
-  "correta": 1,
-  "id": "g-0416",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma escada apoiada na parede tem a base a 3 m do muro e o topo a 4 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 3² + 4² = 9 + 16 = 25. Logo hip = √25 = 5 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "3 m",
-   "5 m",
-   "4 m",
-   "6 m",
-   "7 m"
-  ],
-  "correta": 1,
-  "id": "g-0417",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um mastro de 12 m é preso por um cabo fixado a 5 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 5² + 12² = 25 + 144 = 169. Logo hip = √169 = 13 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "16 m",
-   "12 m",
-   "14 m",
-   "13 m",
-   "17 m"
-  ],
-  "correta": 3,
-  "id": "g-0418",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um mastro de 24 m é preso por um cabo fixado a 10 m de sua base. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 10² + 24² = 100 + 576 = 676. Logo hip = √676 = 26 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "31 m",
-   "26 m",
-   "34 m",
-   "24 m",
-   "28 m"
-  ],
-  "correta": 1,
-  "id": "g-0419",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 15 m e 36 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 15² + 36² = 225 + 1296 = 1521. Logo hip = √1521 = 39 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "36 m",
-   "42 m",
-   "39 m",
-   "51 m",
-   "47 m"
-  ],
-  "correta": 2,
-  "id": "g-0420",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 7 m e 24 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 7² + 24² = 49 + 576 = 625. Logo hip = √625 = 25 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "26 m",
-   "31 m",
-   "25 m",
-   "30 m",
-   "24 m"
-  ],
-  "correta": 2,
   "id": "g-0421",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um terreno retangular tem lados de 6 m e 8 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 6² + 8² = 36 + 64 = 100. Logo hip = √100 = 10 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "9 m",
-   "14 m",
-   "10 m",
-   "12 m",
-   "11 m"
-  ],
-  "correta": 2,
-  "id": "g-0422",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Geometria Plana",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma escada apoiada na parede tem a base a 5 m do muro e o topo a 12 m de altura. Qual o comprimento da diagonal/hipotenusa (em metros)?",
-  "explicacao": "Teorema de Pitágoras: hip² = 5² + 12² = 25 + 144 = 169. Logo hip = √169 = 13 m.",
-  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
-  "alternativas": [
-   "12 m",
-   "17 m",
-   "16 m",
-   "13 m",
-   "14 m"
-  ],
-  "correta": 3,
-  "id": "g-0423",
   "fonte": "ia"
  },
  {
@@ -8529,13 +8489,53 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Teorema de Pitágoras: hip² = 6² + 8² = 36 + 64 = 100. Logo hip = √100 = 10 m.",
   "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
   "alternativas": [
-   "14 m",
-   "9 m",
+   "7 m",
    "10 m",
-   "12 m",
-   "11 m"
+   "14 m",
+   "8 m",
+   "12 m"
   ],
-  "correta": 2,
+  "correta": 1,
+  "id": "g-0422",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um terreno retangular tem lados de 8 m e 15 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 8² + 15² = 64 + 225 = 289. Logo hip = √289 = 17 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "20 m",
+   "17 m",
+   "23 m",
+   "16 m",
+   "18 m"
+  ],
+  "correta": 1,
+  "id": "g-0423",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Geometria Plana",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um terreno retangular tem lados de 90 m e 120 m. Qual o comprimento da diagonal/hipotenusa (em metros)?",
+  "explicacao": "Teorema de Pitágoras: hip² = 90² + 120² = 8100 + 14400 = 22500. Logo hip = √22500 = 150 m.",
+  "dica": "Reconheça as ternas pitagóricas (3-4-5, 5-12-13...) e seus múltiplos para ganhar tempo.",
+  "alternativas": [
+   "150 m",
+   "210 m",
+   "180 m",
+   "160 m",
+   "140 m"
+  ],
+  "correta": 0,
   "id": "g-0424",
   "fonte": "ia"
  },
@@ -8545,17 +8545,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas azuis, 2 bolas verdes, 5 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 2+2+5 = 9. Casos favoráveis = 2. Probabilidade = 2/9 ≈ 22,2%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 2 bolas vermelhas, 2 bolas azuis, 3 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 2 + 2 + 3 = 7. Casos favoráveis (vermelhas) = 2. Probabilidade = 2/7 ≈ 28,6%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "2/9 (≈ 22%)",
-   "3/9 (≈ 29%)",
-   "3/9 (≈ 33%)",
-   "1/9 (≈ 11%)",
-   "7/9 (≈ 78%)"
+   "4/7 (≈ 57,1%)",
+   "3/7 (≈ 42,9%)",
+   "2/7 (≈ 28,6%)",
+   "1/7 (≈ 14,3%)",
+   "5/7 (≈ 71,4%)"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0425",
   "fonte": "ia"
  },
@@ -8565,17 +8565,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 6 bolas vermelhas, 6 bolas azuis, 4 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 6+6+4 = 16. Casos favoráveis = 6. Probabilidade = 6/16 ≈ 37,5%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas azuis, 4 bolas vermelhas, 4 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 5 + 4 + 4 = 13. Casos favoráveis (azuis) = 5. Probabilidade = 5/13 ≈ 38,5%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/16 (≈ 6%)",
-   "9/16 (≈ 56%)",
-   "10/16 (≈ 63%)",
-   "10/16 (≈ 60%)",
-   "6/16 (≈ 38%)"
+   "8/13 (≈ 61,5%)",
+   "2.5/13 (≈ 19,2%)",
+   "5/13 (≈ 38,5%)",
+   "6/13 (≈ 46,2%)",
+   "4/13 (≈ 30,8%)"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0426",
   "fonte": "ia"
  },
@@ -8585,17 +8585,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 4 bolas azuis, 6 bolas vermelhas, 1 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 4+6+1 = 11. Casos favoráveis = 4. Probabilidade = 4/11 ≈ 36,4%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 3 bolas verdes, 3 bolas azuis, 4 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 3 + 3 + 4 = 10. Casos favoráveis (verdes) = 3. Probabilidade = 3/10 ≈ 30,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "4/11 (≈ 36%)",
-   "6/11 (≈ 57%)",
-   "1/11 (≈ 9%)",
-   "6/11 (≈ 55%)",
-   "7/11 (≈ 64%)"
+   "4.5/10 (≈ 45,0%)",
+   "7/10 (≈ 70,0%)",
+   "4/10 (≈ 40,0%)",
+   "2/10 (≈ 20,0%)",
+   "3/10 (≈ 30,0%)"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0427",
   "fonte": "ia"
  },
@@ -8605,17 +8605,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 1 bolas verdes, 3 bolas azuis, 6 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 1+3+6 = 10. Casos favoráveis = 1. Probabilidade = 1/10 ≈ 10,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas azuis, 5 bolas vermelhas, 5 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 5 + 5 + 5 = 15. Casos favoráveis (azuis) = 5. Probabilidade = 5/15 ≈ 33,3%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/10 (≈ 5%)",
-   "1/10 (≈ 10%)",
-   "2/10 (≈ 15%)",
-   "1/10 (≈ 11%)",
-   "9/10 (≈ 90%)"
+   "4/15 (≈ 26,7%)",
+   "2.5/15 (≈ 16,7%)",
+   "10/15 (≈ 66,7%)",
+   "6/15 (≈ 40,0%)",
+   "5/15 (≈ 33,3%)"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0428",
   "fonte": "ia"
  },
@@ -8625,17 +8625,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas azuis, 6 bolas vermelhas, 3 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 2+6+3 = 11. Casos favoráveis = 2. Probabilidade = 2/11 ≈ 18,2%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas vermelhas, 3 bolas azuis, 4 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 5 + 3 + 4 = 12. Casos favoráveis (vermelhas) = 5. Probabilidade = 5/12 ≈ 41,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "2/11 (≈ 18%)",
-   "2/11 (≈ 22%)",
-   "9/11 (≈ 82%)",
-   "3/11 (≈ 27%)",
-   "1/11 (≈ 9%)"
+   "4/12 (≈ 33,3%)",
+   "6/12 (≈ 50,0%)",
+   "5/12 (≈ 41,7%)",
+   "3/12 (≈ 25,0%)",
+   "7/12 (≈ 58,3%)"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0429",
   "fonte": "ia"
  },
@@ -8645,17 +8645,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 3 bolas verdes, 2 bolas azuis, 5 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 3+2+5 = 10. Casos favoráveis = 3. Probabilidade = 3/10 ≈ 30,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 2 bolas verdes, 4 bolas vermelhas, 6 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 2 + 4 + 6 = 12. Casos favoráveis (verdes) = 2. Probabilidade = 2/12 ≈ 16,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "4/10 (≈ 43%)",
-   "3/10 (≈ 30%)",
-   "7/10 (≈ 70%)",
-   "5/10 (≈ 45%)",
-   "1/10 (≈ 10%)"
+   "4/12 (≈ 33,3%)",
+   "6/12 (≈ 50,0%)",
+   "3/12 (≈ 25,0%)",
+   "2/12 (≈ 16,7%)",
+   "10/12 (≈ 83,3%)"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0430",
   "fonte": "ia"
  },
@@ -8665,17 +8665,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas azuis, 4 bolas vermelhas, 1 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 5+4+1 = 10. Casos favoráveis = 5. Probabilidade = 5/10 ≈ 50,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 4 bolas vermelhas, 3 bolas verdes, 3 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 4 + 3 + 3 = 10. Casos favoráveis (vermelhas) = 4. Probabilidade = 4/10 ≈ 40,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "3/10 (≈ 25%)",
-   "8/10 (≈ 75%)",
-   "5/10 (≈ 50%)",
-   "10/10 (≈ 100%)",
-   "1/10 (≈ 10%)"
+   "6/10 (≈ 60,0%)",
+   "5/10 (≈ 50,0%)",
+   "3/10 (≈ 30,0%)",
+   "4/10 (≈ 40,0%)",
+   "2/10 (≈ 20,0%)"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0431",
   "fonte": "ia"
  },
@@ -8685,17 +8685,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 3 bolas vermelhas, 2 bolas verdes, 5 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 3+2+5 = 10. Casos favoráveis = 3. Probabilidade = 3/10 ≈ 30,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 6 bolas vermelhas, 3 bolas azuis, 1 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 6 + 3 + 1 = 10. Casos favoráveis (vermelhas) = 6. Probabilidade = 6/10 ≈ 60,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/10 (≈ 10%)",
-   "5/10 (≈ 45%)",
-   "3/10 (≈ 30%)",
-   "4/10 (≈ 43%)",
-   "7/10 (≈ 70%)"
+   "6/10 (≈ 60,0%)",
+   "3/10 (≈ 30,0%)",
+   "1/10 (≈ 10,0%)",
+   "4/10 (≈ 40,0%)",
+   "7/10 (≈ 70,0%)"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0432",
   "fonte": "ia"
  },
@@ -8705,17 +8705,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas vermelhas, 3 bolas verdes, 6 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 2+3+6 = 11. Casos favoráveis = 2. Probabilidade = 2/11 ≈ 18,2%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 3 bolas azuis, 5 bolas vermelhas, 4 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 3 + 5 + 4 = 12. Casos favoráveis (azuis) = 3. Probabilidade = 3/12 ≈ 25,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "2/11 (≈ 22%)",
-   "1/11 (≈ 9%)",
-   "9/11 (≈ 82%)",
-   "2/11 (≈ 18%)",
-   "3/11 (≈ 27%)"
+   "5/12 (≈ 41,7%)",
+   "2/12 (≈ 16,7%)",
+   "3/12 (≈ 25,0%)",
+   "4/12 (≈ 33,3%)",
+   "9/12 (≈ 75,0%)"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0433",
   "fonte": "ia"
  },
@@ -8725,17 +8725,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas verdes, 5 bolas vermelhas, 5 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 2+5+5 = 12. Casos favoráveis = 2. Probabilidade = 2/12 ≈ 16,7%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 2 bolas verdes, 6 bolas vermelhas, 6 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 2 + 6 + 6 = 14. Casos favoráveis (verdes) = 2. Probabilidade = 2/14 ≈ 14,3%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "10/12 (≈ 83%)",
-   "1/12 (≈ 8%)",
-   "2/12 (≈ 17%)",
-   "2/12 (≈ 20%)",
-   "3/12 (≈ 25%)"
+   "1/14 (≈ 7,1%)",
+   "3/14 (≈ 21,4%)",
+   "6/14 (≈ 42,9%)",
+   "12/14 (≈ 85,7%)",
+   "2/14 (≈ 14,3%)"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0434",
   "fonte": "ia"
  },
@@ -8745,17 +8745,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas azuis, 5 bolas vermelhas, 4 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 2+5+4 = 11. Casos favoráveis = 2. Probabilidade = 2/11 ≈ 18,2%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas azuis, 5 bolas vermelhas, 3 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 5 + 5 + 3 = 13. Casos favoráveis (azuis) = 5. Probabilidade = 5/13 ≈ 38,5%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "2/11 (≈ 18%)",
-   "2/11 (≈ 22%)",
-   "3/11 (≈ 27%)",
-   "9/11 (≈ 82%)",
-   "1/11 (≈ 9%)"
+   "8/13 (≈ 61,5%)",
+   "4/13 (≈ 30,8%)",
+   "5/13 (≈ 38,5%)",
+   "6/13 (≈ 46,2%)",
+   "3/13 (≈ 23,1%)"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0435",
   "fonte": "ia"
  },
@@ -8765,17 +8765,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 3 bolas azuis, 6 bolas vermelhas, 1 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 3+6+1 = 10. Casos favoráveis = 3. Probabilidade = 3/10 ≈ 30,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 4 bolas azuis, 2 bolas verdes, 3 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 4 + 2 + 3 = 9. Casos favoráveis (azuis) = 4. Probabilidade = 4/9 ≈ 44,4%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/10 (≈ 10%)",
-   "7/10 (≈ 70%)",
-   "5/10 (≈ 45%)",
-   "3/10 (≈ 30%)",
-   "4/10 (≈ 43%)"
+   "2/9 (≈ 22,2%)",
+   "4/9 (≈ 44,4%)",
+   "3/9 (≈ 33,3%)",
+   "6/9 (≈ 66,7%)",
+   "5/9 (≈ 55,6%)"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0436",
   "fonte": "ia"
  },
@@ -8785,15 +8785,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas verdes, 5 bolas azuis, 6 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 5+5+6 = 16. Casos favoráveis = 5. Probabilidade = 5/16 ≈ 31,3%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 2 bolas verdes, 2 bolas azuis, 6 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 2 + 2 + 6 = 10. Casos favoráveis (verdes) = 2. Probabilidade = 2/10 ≈ 20,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "11/16 (≈ 69%)",
-   "1/16 (≈ 6%)",
-   "7/16 (≈ 45%)",
-   "5/16 (≈ 31%)",
-   "8/16 (≈ 47%)"
+   "1/10 (≈ 10,0%)",
+   "8/10 (≈ 80,0%)",
+   "6/10 (≈ 60,0%)",
+   "2/10 (≈ 20,0%)",
+   "3/10 (≈ 30,0%)"
   ],
   "correta": 3,
   "id": "g-0437",
@@ -8805,17 +8805,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas azuis, 2 bolas vermelhas, 4 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 5+2+4 = 11. Casos favoráveis = 5. Probabilidade = 5/11 ≈ 45,5%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 4 bolas verdes, 6 bolas azuis, 5 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 4 + 6 + 5 = 15. Casos favoráveis (verdes) = 4. Probabilidade = 4/15 ≈ 26,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "7/11 (≈ 68%)",
-   "5/11 (≈ 45%)",
-   "9/11 (≈ 83%)",
-   "6/11 (≈ 55%)",
-   "1/11 (≈ 9%)"
+   "6/15 (≈ 40,0%)",
+   "11/15 (≈ 73,3%)",
+   "5/15 (≈ 33,3%)",
+   "4/15 (≈ 26,7%)",
+   "3/15 (≈ 20,0%)"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0438",
   "fonte": "ia"
  },
@@ -8825,17 +8825,16 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas vermelhas, 4 bolas verdes, 6 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 2+4+6 = 12. Casos favoráveis = 2. Probabilidade = 2/12 ≈ 16,7%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 1 bolas verdes, 2 bolas azuis, 3 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 1 + 2 + 3 = 6. Casos favoráveis (verdes) = 1. Probabilidade = 1/6 ≈ 16,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "10/12 (≈ 83%)",
-   "1/12 (≈ 8%)",
-   "3/12 (≈ 25%)",
-   "2/12 (≈ 17%)",
-   "2/12 (≈ 20%)"
+   "3/6 (≈ 50,0%)",
+   "1/6 (≈ 16,7%)",
+   "5/6 (≈ 83,3%)",
+   "2/6 (≈ 33,3%)"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0439",
   "fonte": "ia"
  },
@@ -8845,17 +8844,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 3 bolas verdes, 3 bolas azuis, 4 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 3+3+4 = 10. Casos favoráveis = 3. Probabilidade = 3/10 ≈ 30,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 4 bolas azuis, 2 bolas verdes, 4 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 4 + 2 + 4 = 10. Casos favoráveis (azuis) = 4. Probabilidade = 4/10 ≈ 40,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/10 (≈ 10%)",
-   "3/10 (≈ 30%)",
-   "7/10 (≈ 70%)",
-   "5/10 (≈ 45%)",
-   "4/10 (≈ 43%)"
+   "6/10 (≈ 60,0%)",
+   "5/10 (≈ 50,0%)",
+   "3/10 (≈ 30,0%)",
+   "4/10 (≈ 40,0%)",
+   "2/10 (≈ 20,0%)"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0440",
   "fonte": "ia"
  },
@@ -8865,17 +8864,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 3 bolas vermelhas, 3 bolas verdes, 2 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 3+3+2 = 8. Casos favoráveis = 3. Probabilidade = 3/8 ≈ 37,5%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 2 bolas azuis, 3 bolas vermelhas, 3 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azul?",
+  "explicacao": "Total de bolas = 2 + 3 + 3 = 8. Casos favoráveis (azuis) = 2. Probabilidade = 2/8 ≈ 25,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "3/8 (≈ 38%)",
-   "5/8 (≈ 60%)",
-   "5/8 (≈ 56%)",
-   "1/8 (≈ 13%)",
-   "5/8 (≈ 63%)"
+   "1/8 (≈ 12,5%)",
+   "3/8 (≈ 37,5%)",
+   "4/8 (≈ 50,0%)",
+   "2/8 (≈ 25,0%)",
+   "6/8 (≈ 75,0%)"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0441",
   "fonte": "ia"
  },
@@ -8885,17 +8884,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas verdes, 6 bolas vermelhas, 2 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 5+6+2 = 13. Casos favoráveis = 5. Probabilidade = 5/13 ≈ 38,5%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas verdes, 6 bolas vermelhas, 3 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 5 + 6 + 3 = 14. Casos favoráveis (verdes) = 5. Probabilidade = 5/14 ≈ 35,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "8/13 (≈ 62%)",
-   "1/13 (≈ 8%)",
-   "8/13 (≈ 63%)",
-   "5/13 (≈ 38%)",
-   "8/13 (≈ 58%)"
+   "9/14 (≈ 64,3%)",
+   "5/14 (≈ 35,7%)",
+   "4/14 (≈ 28,6%)",
+   "3/14 (≈ 21,4%)",
+   "6/14 (≈ 42,9%)"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0442",
   "fonte": "ia"
  },
@@ -8905,15 +8904,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 3 bolas verdes, 4 bolas vermelhas, 4 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 3+4+4 = 11. Casos favoráveis = 3. Probabilidade = 3/11 ≈ 27,3%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 3 bolas vermelhas, 3 bolas verdes, 5 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 3 + 3 + 5 = 11. Casos favoráveis (vermelhas) = 3. Probabilidade = 3/11 ≈ 27,3%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "8/11 (≈ 73%)",
-   "3/11 (≈ 27%)",
-   "4/11 (≈ 38%)",
-   "5/11 (≈ 41%)",
-   "1/11 (≈ 9%)"
+   "8/11 (≈ 72,7%)",
+   "3/11 (≈ 27,3%)",
+   "5/11 (≈ 45,5%)",
+   "2/11 (≈ 18,2%)",
+   "4/11 (≈ 36,4%)"
   ],
   "correta": 1,
   "id": "g-0443",
@@ -8925,17 +8924,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas vermelhas, 6 bolas azuis, 5 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 2+6+5 = 13. Casos favoráveis = 2. Probabilidade = 2/13 ≈ 15,4%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 1 bolas verdes, 5 bolas vermelhas, 3 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 1 + 5 + 3 = 9. Casos favoráveis (verdes) = 1. Probabilidade = 1/9 ≈ 11,1%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "2/13 (≈ 15%)",
-   "3/13 (≈ 23%)",
-   "1/13 (≈ 8%)",
-   "2/13 (≈ 18%)",
-   "11/13 (≈ 85%)"
+   "8/9 (≈ 88,9%)",
+   "5/9 (≈ 55,6%)",
+   "2/9 (≈ 22,2%)",
+   "1/9 (≈ 11,1%)",
+   "3/9 (≈ 33,3%)"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0444",
   "fonte": "ia"
  },
@@ -8945,17 +8944,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas verdes, 4 bolas vermelhas, 6 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 2+4+6 = 12. Casos favoráveis = 2. Probabilidade = 2/12 ≈ 16,7%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 3 bolas verdes, 4 bolas vermelhas, 2 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 3 + 4 + 2 = 9. Casos favoráveis (verdes) = 3. Probabilidade = 3/9 ≈ 33,3%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/12 (≈ 8%)",
-   "2/12 (≈ 20%)",
-   "10/12 (≈ 83%)",
-   "3/12 (≈ 25%)",
-   "2/12 (≈ 17%)"
+   "3/9 (≈ 33,3%)",
+   "4.5/9 (≈ 50,0%)",
+   "6/9 (≈ 66,7%)",
+   "4/9 (≈ 44,4%)",
+   "2/9 (≈ 22,2%)"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0445",
   "fonte": "ia"
  },
@@ -8965,17 +8964,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas vermelhas, 5 bolas verdes, 2 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 5+5+2 = 12. Casos favoráveis = 5. Probabilidade = 5/12 ≈ 41,7%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 1 bolas verdes, 2 bolas azuis, 4 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 1 + 2 + 4 = 7. Casos favoráveis (verdes) = 1. Probabilidade = 1/7 ≈ 14,3%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/12 (≈ 8%)",
-   "9/12 (≈ 71%)",
-   "8/12 (≈ 63%)",
-   "5/12 (≈ 42%)",
-   "7/12 (≈ 58%)"
+   "2/7 (≈ 28,6%)",
+   "6/7 (≈ 85,7%)",
+   "1/7 (≈ 14,3%)",
+   "3/7 (≈ 42,9%)",
+   "4/7 (≈ 57,1%)"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0446",
   "fonte": "ia"
  },
@@ -8985,17 +8984,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 4 bolas vermelhas, 3 bolas verdes, 3 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 4+3+3 = 10. Casos favoráveis = 4. Probabilidade = 4/10 ≈ 40,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas verdes, 3 bolas vermelhas, 4 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 5 + 3 + 4 = 12. Casos favoráveis (verdes) = 5. Probabilidade = 5/12 ≈ 41,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "6/10 (≈ 60%)",
-   "1/10 (≈ 10%)",
-   "2/10 (≈ 20%)",
-   "7/10 (≈ 67%)",
-   "4/10 (≈ 40%)"
+   "4/12 (≈ 33,3%)",
+   "3/12 (≈ 25,0%)",
+   "5/12 (≈ 41,7%)",
+   "6/12 (≈ 50,0%)",
+   "7/12 (≈ 58,3%)"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0447",
   "fonte": "ia"
  },
@@ -9005,17 +9004,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 2 bolas verdes, 5 bolas azuis, 3 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 2+5+3 = 10. Casos favoráveis = 2. Probabilidade = 2/10 ≈ 20,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 4 bolas verdes, 4 bolas azuis, 6 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 4 + 4 + 6 = 14. Casos favoráveis (verdes) = 4. Probabilidade = 4/14 ≈ 28,6%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/10 (≈ 10%)",
-   "3/10 (≈ 25%)",
-   "8/10 (≈ 80%)",
-   "2/10 (≈ 20%)",
-   "3/10 (≈ 30%)"
+   "3/14 (≈ 21,4%)",
+   "4/14 (≈ 28,6%)",
+   "10/14 (≈ 71,4%)",
+   "6/14 (≈ 42,9%)",
+   "5/14 (≈ 35,7%)"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0448",
   "fonte": "ia"
  },
@@ -9025,17 +9024,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 6 bolas azuis, 3 bolas verdes, 3 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 6+3+3 = 12. Casos favoráveis = 6. Probabilidade = 6/12 ≈ 50,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 2 bolas vermelhas, 2 bolas verdes, 5 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 2 + 2 + 5 = 9. Casos favoráveis (vermelhas) = 2. Probabilidade = 2/9 ≈ 22,2%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/12 (≈ 8%)",
-   "3/12 (≈ 25%)",
-   "6/12 (≈ 50%)",
-   "12/12 (≈ 100%)",
-   "9/12 (≈ 75%)"
+   "1/9 (≈ 11,1%)",
+   "5/9 (≈ 55,6%)",
+   "7/9 (≈ 77,8%)",
+   "3/9 (≈ 33,3%)",
+   "2/9 (≈ 22,2%)"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0449",
   "fonte": "ia"
  },
@@ -9045,17 +9044,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas vermelhas, 4 bolas azuis, 1 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
-  "explicacao": "Total de bolas = 5+4+1 = 10. Casos favoráveis = 5. Probabilidade = 5/10 ≈ 50,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 6 bolas vermelhas, 1 bolas verdes, 4 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 6 + 1 + 4 = 11. Casos favoráveis (vermelhas) = 6. Probabilidade = 6/11 ≈ 54,5%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/10 (≈ 10%)",
-   "8/10 (≈ 75%)",
-   "3/10 (≈ 25%)",
-   "5/10 (≈ 50%)",
-   "10/10 (≈ 100%)"
+   "6/11 (≈ 54,5%)",
+   "4/11 (≈ 36,4%)",
+   "7/11 (≈ 63,6%)",
+   "1/11 (≈ 9,1%)",
+   "5/11 (≈ 45,5%)"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0450",
   "fonte": "ia"
  },
@@ -9065,17 +9064,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 6 bolas azuis, 4 bolas verdes, 5 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 6+4+5 = 15. Casos favoráveis = 6. Probabilidade = 6/15 ≈ 40,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas verdes, 6 bolas vermelhas, 2 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 5 + 6 + 2 = 13. Casos favoráveis (verdes) = 5. Probabilidade = 5/13 ≈ 38,5%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "9/15 (≈ 60%)",
-   "1/15 (≈ 7%)",
-   "3/15 (≈ 20%)",
-   "10/15 (≈ 67%)",
-   "6/15 (≈ 40%)"
+   "5/13 (≈ 38,5%)",
+   "4/13 (≈ 30,8%)",
+   "2/13 (≈ 15,4%)",
+   "8/13 (≈ 61,5%)",
+   "6/13 (≈ 46,2%)"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0451",
   "fonte": "ia"
  },
@@ -9085,17 +9084,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 5 bolas verdes, 5 bolas vermelhas, 3 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 5+5+3 = 13. Casos favoráveis = 5. Probabilidade = 5/13 ≈ 38,5%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 4 bolas vermelhas, 5 bolas verdes, 4 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 4 + 5 + 4 = 13. Casos favoráveis (vermelhas) = 4. Probabilidade = 4/13 ≈ 30,8%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "8/13 (≈ 63%)",
-   "1/13 (≈ 8%)",
-   "8/13 (≈ 62%)",
-   "5/13 (≈ 38%)",
-   "8/13 (≈ 58%)"
+   "2/13 (≈ 15,4%)",
+   "5/13 (≈ 38,5%)",
+   "4/13 (≈ 30,8%)",
+   "3/13 (≈ 23,1%)",
+   "9/13 (≈ 69,2%)"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0452",
   "fonte": "ia"
  },
@@ -9105,17 +9104,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 4 bolas verdes, 6 bolas azuis, 6 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 4+6+6 = 16. Casos favoráveis = 4. Probabilidade = 4/16 ≈ 25,0%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 6 bolas vermelhas, 4 bolas verdes, 5 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 6 + 4 + 5 = 15. Casos favoráveis (vermelhas) = 6. Probabilidade = 6/15 ≈ 40,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "12/16 (≈ 75%)",
-   "1/16 (≈ 6%)",
-   "4/16 (≈ 25%)",
-   "5/16 (≈ 33%)",
-   "6/16 (≈ 38%)"
+   "4/15 (≈ 26,7%)",
+   "6/15 (≈ 40,0%)",
+   "9/15 (≈ 60,0%)",
+   "5/15 (≈ 33,3%)",
+   "7/15 (≈ 46,7%)"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0453",
   "fonte": "ia"
  },
@@ -9125,17 +9124,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 6 bolas azuis, 2 bolas vermelhas, 5 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 6+2+5 = 13. Casos favoráveis = 6. Probabilidade = 6/13 ≈ 46,2%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 6 bolas vermelhas, 2 bolas azuis, 3 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 6 + 2 + 3 = 11. Casos favoráveis (vermelhas) = 6. Probabilidade = 6/11 ≈ 54,5%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "9/13 (≈ 69%)",
-   "7/13 (≈ 54%)",
-   "11/13 (≈ 86%)",
-   "6/13 (≈ 46%)",
-   "1/13 (≈ 8%)"
+   "5/11 (≈ 45,5%)",
+   "7/11 (≈ 63,6%)",
+   "3/11 (≈ 27,3%)",
+   "2/11 (≈ 18,2%)",
+   "6/11 (≈ 54,5%)"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0454",
   "fonte": "ia"
  },
@@ -9145,17 +9144,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 1 bolas verdes, 6 bolas vermelhas, 5 bolas azuis. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
-  "explicacao": "Total de bolas = 1+6+5 = 12. Casos favoráveis = 1. Probabilidade = 1/12 ≈ 8,3%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas verdes, 4 bolas azuis, 5 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser verde?",
+  "explicacao": "Total de bolas = 5 + 4 + 5 = 14. Casos favoráveis (verdes) = 5. Probabilidade = 5/14 ≈ 35,7%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/12 (≈ 9%)",
-   "1/12 (≈ 4%)",
-   "1/12 (≈ 8%)",
-   "2/12 (≈ 13%)",
-   "11/12 (≈ 92%)"
+   "9/14 (≈ 64,3%)",
+   "2.5/14 (≈ 17,9%)",
+   "6/14 (≈ 42,9%)",
+   "4/14 (≈ 28,6%)",
+   "5/14 (≈ 35,7%)"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0455",
   "fonte": "ia"
  },
@@ -9165,17 +9164,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Probabilidade",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma urna contém 4 bolas azuis, 1 bolas verdes, 6 bolas vermelhas. Retirando uma bola ao acaso, qual a probabilidade de ela ser azui?",
-  "explicacao": "Total de bolas = 4+1+6 = 11. Casos favoráveis = 4. Probabilidade = 4/11 ≈ 36,4%.",
-  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.",
+  "enunciado": "Uma urna contém 5 bolas vermelhas, 3 bolas azuis, 2 bolas verdes. Retirando uma bola ao acaso, qual a probabilidade de ela ser vermelha?",
+  "explicacao": "Total de bolas = 5 + 3 + 2 = 10. Casos favoráveis (vermelhas) = 5. Probabilidade = 5/10 ≈ 50,0%.",
+  "dica": "Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.",
   "alternativas": [
-   "1/11 (≈ 9%)",
-   "4/11 (≈ 36%)",
-   "6/11 (≈ 57%)",
-   "7/11 (≈ 64%)",
-   "6/11 (≈ 55%)"
+   "3/10 (≈ 30,0%)",
+   "6/10 (≈ 60,0%)",
+   "2/10 (≈ 20,0%)",
+   "5/10 (≈ 50,0%)",
+   "4/10 (≈ 40,0%)"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0456",
   "fonte": "ia"
  },
@@ -9185,15 +9184,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 4, 4, 5, 8. Qual é a média dessas notas?",
-  "explicacao": "Média = (5+4+4+5+8) ÷ 5 = 26 ÷ 5 = 5,2.",
-  "dica": "Média = soma ÷ quantidade.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 5, 5, 3, 10. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 5, 5, 5, 10. A mediana é o valor central = 5.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "26",
-   "5,2",
-   "4",
+   "28",
    "5",
-   "8"
+   "5,6",
+   "3",
+   "10"
   ],
   "correta": 1,
   "id": "g-0457",
@@ -9205,17 +9204,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 10, 5, 5, 6, 5. Qual é a média dessas notas?",
-  "explicacao": "Média = (10+5+5+6+5) ÷ 5 = 31 ÷ 5 = 6,2.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 10, 7, 7, 3, 6. Qual é a média dessas notas?",
+  "explicacao": "Média = (10+7+7+3+6) ÷ 5 = 33 ÷ 5 = 6,6.",
   "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "6,2",
+   "3",
    "10",
-   "31",
-   "5",
-   "3,1"
+   "33",
+   "6,6",
+   "7"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0458",
   "fonte": "ia"
  },
@@ -9225,17 +9224,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 10, 10, 10, 7. Qual é a média dessas notas?",
-  "explicacao": "Média = (7+10+10+10+7) ÷ 5 = 44 ÷ 5 = 8,8.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 4, 4, 7, 4. Qual é a média dessas notas?",
+  "explicacao": "Média = (4+4+4+7+4) ÷ 5 = 23 ÷ 5 = 4,6.",
   "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "4,4",
+   "23",
+   "4",
+   "2,3",
    "7",
-   "10",
-   "8,8",
-   "44"
+   "4,6"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0459",
   "fonte": "ia"
  },
@@ -9245,17 +9244,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 4, 4, 7, 4. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 4, 4, 4, 7, 8. A mediana é o valor central = 4.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 10, 10, 3, 9. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 6, 9, 10, 10. A mediana é o valor central = 9.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "27",
-   "5,4",
-   "8",
-   "2",
-   "4"
+   "3",
+   "38",
+   "9",
+   "7,6",
+   "10"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0460",
   "fonte": "ia"
  },
@@ -9265,17 +9264,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 3, 6, 6, 7, 10. Qual é a média dessas notas?",
-  "explicacao": "Média = (3+6+6+7+10) ÷ 5 = 32 ÷ 5 = 6,4.",
-  "dica": "Média = soma ÷ quantidade.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 8, 8, 10, 3. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 8, 8, 8, 10. A mediana é o valor central = 8.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "32",
-   "6,4",
+   "37",
    "10",
-   "6",
+   "7,4",
+   "8",
    "3"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0461",
   "fonte": "ia"
  },
@@ -9285,17 +9284,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 3, 8, 8, 6, 8. Qual é a moda dessas notas?",
-  "explicacao": "A moda é o valor que mais se repete = 8.",
-  "dica": "Moda = valor mais frequente.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 9, 3, 3, 8, 4. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 3, 4, 8, 9. A mediana é o valor central = 4.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "33",
+   "5,4",
+   "9",
+   "27",
    "4",
-   "3",
-   "6,6",
-   "8"
+   "3"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0462",
   "fonte": "ia"
  },
@@ -9305,17 +9304,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 9, 9, 9, 3. Qual é a moda dessas notas?",
-  "explicacao": "A moda é o valor que mais se repete = 9.",
-  "dica": "Moda = valor mais frequente.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 8, 8, 5, 4. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 4, 5, 8, 8, 8. A mediana é o valor central = 8.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "3",
-   "4,5",
-   "7,2",
-   "36",
-   "9"
+   "8",
+   "33",
+   "12",
+   "4",
+   "6,6"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0463",
   "fonte": "ia"
  },
@@ -9325,15 +9324,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 4, 4, 6, 3. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 4, 4, 4, 6. A mediana é o valor central = 4.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 10, 10, 6, 5. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 5, 6, 7, 10, 10. A mediana é o valor central = 7.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "4",
-   "3",
-   "6",
-   "21",
-   "4,2"
+   "7",
+   "38",
+   "7,6",
+   "10",
+   "5"
   ],
   "correta": 0,
   "id": "g-0464",
@@ -9345,17 +9344,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 7, 7, 5, 9. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 5, 5, 7, 7, 9. A mediana é o valor central = 7.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 5, 5, 5, 6. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 5, 5, 5, 5, 6. A mediana é o valor central = 5.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "33",
-   "6,6",
-   "7",
+   "6",
+   "5,2",
+   "2,5",
    "5",
-   "9"
+   "26"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0465",
   "fonte": "ia"
  },
@@ -9365,17 +9364,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 7, 7, 3, 3. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 3, 7, 7, 8. A mediana é o valor central = 7.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 6, 6, 5, 9. Qual é a média dessas notas?",
+  "explicacao": "Média = (6+6+6+5+9) ÷ 5 = 32 ÷ 5 = 6,4.",
+  "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "3",
-   "28",
-   "5,6",
-   "7",
-   "8"
+   "6",
+   "9",
+   "32",
+   "5",
+   "6,4"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0466",
   "fonte": "ia"
  },
@@ -9385,17 +9384,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 7, 7, 5, 10. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 5, 7, 7, 7, 10. A mediana é o valor central = 7.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 5, 5, 4, 7. Qual é a média dessas notas?",
+  "explicacao": "Média = (8+5+5+4+7) ÷ 5 = 29 ÷ 5 = 5,8.",
+  "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "7",
-   "10",
+   "29",
+   "8",
    "5",
-   "36",
-   "7,2"
+   "4",
+   "5,8"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0467",
   "fonte": "ia"
  },
@@ -9405,17 +9404,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 5, 5, 5, 9. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 5, 5, 5, 6, 9. A mediana é o valor central = 5.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 10, 10, 10, 3, 7. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 7, 10, 10, 10. A mediana é o valor central = 10.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "9",
+   "3",
    "5",
-   "30",
-   "2,5",
-   "6"
+   "8",
+   "10",
+   "40"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0468",
   "fonte": "ia"
  },
@@ -9425,17 +9424,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 5, 5, 7, 4. Qual é a moda dessas notas?",
-  "explicacao": "A moda é o valor que mais se repete = 5.",
-  "dica": "Moda = valor mais frequente.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 6, 6, 9, 10. Qual é a média dessas notas?",
+  "explicacao": "Média = (6+6+6+9+10) ÷ 5 = 37 ÷ 5 = 7,4.",
+  "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "4",
-   "26",
-   "5",
-   "5,2",
-   "7"
+   "10",
+   "37",
+   "3,7",
+   "6",
+   "7,4"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0469",
   "fonte": "ia"
  },
@@ -9445,17 +9444,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 5, 5, 3, 9. Qual é a moda dessas notas?",
-  "explicacao": "A moda é o valor que mais se repete = 5.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 8, 8, 4, 8. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 8.",
   "dica": "Moda = valor mais frequente.",
   "alternativas": [
-   "5,4",
-   "3",
-   "5",
-   "9",
-   "27"
+   "36",
+   "12",
+   "7,2",
+   "4",
+   "8"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0470",
   "fonte": "ia"
  },
@@ -9465,17 +9464,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 4, 4, 3, 10. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 4, 4, 4, 10. A mediana é o valor central = 4.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 8, 8, 9, 3. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 8.",
+  "dica": "Moda = valor mais frequente.",
   "alternativas": [
-   "4",
-   "10",
-   "25",
    "3",
-   "5"
+   "8",
+   "9",
+   "6,4",
+   "32"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0471",
   "fonte": "ia"
  },
@@ -9485,17 +9484,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 3, 6, 6, 6, 3. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 3, 6, 6, 6. A mediana é o valor central = 6.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 9, 9, 4, 6. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 4, 6, 7, 9, 9. A mediana é o valor central = 7.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
+   "4",
+   "3,5",
    "9",
-   "6",
-   "24",
-   "4,8",
-   "3"
+   "7",
+   "35"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0472",
   "fonte": "ia"
  },
@@ -9505,15 +9504,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 9, 3, 3, 3, 6. Qual é a média dessas notas?",
-  "explicacao": "Média = (9+3+3+3+6) ÷ 5 = 24 ÷ 5 = 4,8.",
-  "dica": "Média = soma ÷ quantidade.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 3, 10, 10, 8, 5. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 5, 8, 10, 10. A mediana é o valor central = 8.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "2,4",
    "3",
-   "24",
-   "9",
-   "4,8"
+   "10",
+   "36",
+   "7,2",
+   "8"
   ],
   "correta": 4,
   "id": "g-0473",
@@ -9525,17 +9524,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 8, 8, 3, 8. Qual é a média dessas notas?",
-  "explicacao": "Média = (6+8+8+3+8) ÷ 5 = 33 ÷ 5 = 6,6.",
-  "dica": "Média = soma ÷ quantidade.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 9, 9, 5, 9. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 4, 5, 9, 9, 9. A mediana é o valor central = 9.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "33",
-   "8",
-   "6,6",
-   "3,3",
-   "3"
+   "36",
+   "4,5",
+   "7,2",
+   "4",
+   "9"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0474",
   "fonte": "ia"
  },
@@ -9545,17 +9544,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 4, 4, 10, 8. Qual é a moda dessas notas?",
-  "explicacao": "A moda é o valor que mais se repete = 4.",
-  "dica": "Moda = valor mais frequente.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 3, 3, 9, 10. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 3, 4, 9, 10. A mediana é o valor central = 4.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "7",
+   "4",
    "10",
-   "6,6",
-   "33",
-   "4"
+   "5,8",
+   "3",
+   "29"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0475",
   "fonte": "ia"
  },
@@ -9565,15 +9564,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 10, 8, 8, 9, 7. Qual é a média dessas notas?",
-  "explicacao": "Média = (10+8+8+9+7) ÷ 5 = 42 ÷ 5 = 8,4.",
-  "dica": "Média = soma ÷ quantidade.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 9, 9, 9, 9, 6. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 9.",
+  "dica": "Moda = valor mais frequente.",
   "alternativas": [
-   "7",
-   "8",
-   "10",
+   "6",
    "42",
-   "8,4"
+   "4,5",
+   "8,4",
+   "9"
   ],
   "correta": 4,
   "id": "g-0476",
@@ -9585,17 +9584,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 4, 8, 8, 6, 3. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 4, 6, 8, 8. A mediana é o valor central = 6.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 3, 3, 7, 5. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 3, 5, 6, 7. A mediana é o valor central = 5.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "8",
-   "5,8",
+   "7",
+   "24",
+   "4,8",
    "3",
-   "6",
-   "29"
+   "5"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0477",
   "fonte": "ia"
  },
@@ -9605,17 +9604,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 8, 8, 4, 5. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 4, 5, 8, 8, 8. A mediana é o valor central = 8.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 8, 8, 7, 9. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 8.",
+  "dica": "Moda = valor mais frequente.",
   "alternativas": [
-   "4",
-   "33",
-   "6,6",
-   "8",
-   "12"
+   "38",
+   "7,6",
+   "6",
+   "9",
+   "8"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0478",
   "fonte": "ia"
  },
@@ -9625,15 +9624,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 5, 5, 5, 3, 9. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 5, 5, 5, 9. A mediana é o valor central = 5.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 9, 6, 6, 7, 3. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 6.",
+  "dica": "Moda = valor mais frequente.",
   "alternativas": [
    "9",
-   "27",
-   "5",
+   "31",
+   "6",
    "3",
-   "5,4"
+   "6,2"
   ],
   "correta": 2,
   "id": "g-0479",
@@ -9645,15 +9644,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 10, 9, 9, 5, 10. Qual é a moda dessas notas?",
-  "explicacao": "A moda é o valor que mais se repete = 9.",
-  "dica": "Moda = valor mais frequente.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 10, 10, 9, 4. Qual é a média dessas notas?",
+  "explicacao": "Média = (7+10+10+9+4) ÷ 5 = 40 ÷ 5 = 8.",
+  "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "10",
-   "43",
-   "5",
    "9",
-   "8,6"
+   "4",
+   "40",
+   "8",
+   "10"
   ],
   "correta": 3,
   "id": "g-0480",
@@ -9665,17 +9664,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 9, 7, 7, 9, 7. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 7, 7, 7, 9, 9. A mediana é o valor central = 7.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 3, 9, 9, 6, 4. Qual é a média dessas notas?",
+  "explicacao": "Média = (3+9+9+6+4) ÷ 5 = 31 ÷ 5 = 6,2.",
+  "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
-   "7",
-   "39",
-   "7,8",
-   "9",
-   "3,5"
+   "3",
+   "31",
+   "6",
+   "6,2",
+   "9"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0481",
   "fonte": "ia"
  },
@@ -9685,17 +9684,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 9, 8, 8, 3, 6. Qual é a média dessas notas?",
-  "explicacao": "Média = (9+8+8+3+6) ÷ 5 = 34 ÷ 5 = 6,8.",
-  "dica": "Média = soma ÷ quantidade.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 8, 8, 9, 6. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 6, 8, 8, 8, 9. A mediana é o valor central = 8.",
+  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "34",
+   "6",
    "8",
-   "9",
-   "3",
-   "6,8"
+   "7,8",
+   "39",
+   "9"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0482",
   "fonte": "ia"
  },
@@ -9705,17 +9704,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 6, 6, 3, 7. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 6, 6, 6, 7. A mediana é o valor central = 6.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 7, 5, 5, 5, 5. Qual é a média dessas notas?",
+  "explicacao": "Média = (7+5+5+5+5) ÷ 5 = 27 ÷ 5 = 5,4.",
+  "dica": "Média = soma ÷ quantidade.",
   "alternativas": [
+   "2,7",
+   "5",
+   "27",
    "7",
-   "28",
-   "3",
-   "6",
-   "5,6"
+   "5,4"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0483",
   "fonte": "ia"
  },
@@ -9725,17 +9724,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 8, 6, 6, 7, 3. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 6, 6, 7, 8. A mediana é o valor central = 6.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 3, 3, 4, 9. Qual é a mediana dessas notas?",
+  "explicacao": "Em ordem: 3, 3, 4, 6, 9. A mediana é o valor central = 4.",
   "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
   "alternativas": [
-   "8",
-   "9",
-   "6",
+   "5",
+   "25",
    "3",
-   "30"
+   "4",
+   "9"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0484",
   "fonte": "ia"
  },
@@ -9745,17 +9744,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 6, 6, 4, 8. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 4, 6, 6, 6, 8. A mediana é o valor central = 6.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 6, 5, 5, 9, 8. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 5.",
+  "dica": "Moda = valor mais frequente.",
   "alternativas": [
-   "30",
-   "4",
+   "9",
    "6",
-   "8",
-   "3"
+   "6,6",
+   "33",
+   "5"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0485",
   "fonte": "ia"
  },
@@ -9765,198 +9764,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Estatística",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "As notas de um aluno em 5 avaliações foram: 3, 9, 9, 6, 6. Qual é a mediana dessas notas?",
-  "explicacao": "Em ordem: 3, 6, 6, 9, 9. A mediana é o valor central = 6.",
-  "dica": "Para a mediana, SEMPRE ordene primeiro e pegue o do meio.",
+  "enunciado": "As notas de um aluno em 5 avaliações foram: 10, 8, 8, 6, 7. Qual é a moda dessas notas?",
+  "explicacao": "A moda é o valor que mais se repete = 8.",
+  "dica": "Moda = valor mais frequente.",
   "alternativas": [
-   "9",
-   "33",
-   "6,6",
-   "3",
-   "6"
+   "39",
+   "6",
+   "8",
+   "7,8",
+   "10"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0486",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 700,00 é aplicado a juros simples de 1% ao mês durante 14 meses. Qual o montante final?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 700,00 × 0,010 × 14 = R$ 98,00. Montante = capital + juros = R$ 700,00 + R$ 98,00 = R$ 798,00.",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 98,00",
-   "R$ 7,00",
-   "R$ 798,00",
-   "R$ 196,00",
-   "R$ 877,80"
-  ],
-  "correta": 2,
-  "id": "g-0487",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 2.200,00 é aplicado a juros simples de 2% ao mês durante 7 meses. Qual o montante final?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 2.200,00 × 0,020 × 7 = R$ 308,00. Montante = capital + juros = R$ 2.200,00 + R$ 308,00 = R$ 2.508,00.",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 616,00",
-   "R$ 2.758,80",
-   "R$ 44,00",
-   "R$ 308,00",
-   "R$ 2.508,00"
-  ],
-  "correta": 4,
-  "id": "g-0488",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 1.100,00 é aplicado a juros simples de 1% ao mês durante 14 meses. Qual o montante final?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 1.100,00 × 0,010 × 14 = R$ 154,00. Montante = capital + juros = R$ 1.100,00 + R$ 154,00 = R$ 1.254,00.",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 1.254,00",
-   "R$ 308,00",
-   "R$ 1.379,40",
-   "R$ 154,00",
-   "R$ 11,00"
-  ],
-  "correta": 0,
-  "id": "g-0489",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 3.000,00 é aplicado a juros simples de 4% ao mês durante 13 meses. Qual o valor dos juros?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 3.000,00 × 0,040 × 13 = R$ 1.560,00. ",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 3.120,00",
-   "R$ 1.560,00",
-   "R$ 4.560,00",
-   "R$ 120,00",
-   "R$ 1.716,00"
-  ],
-  "correta": 1,
-  "id": "g-0490",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 2.500,00 é aplicado a juros simples de 5% ao mês durante 10 meses. Qual o montante final?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 2.500,00 × 0,050 × 10 = R$ 1.250,00. Montante = capital + juros = R$ 2.500,00 + R$ 1.250,00 = R$ 3.750,00.",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 125,00",
-   "R$ 4.125,00",
-   "R$ 2.500,00",
-   "R$ 3.750,00",
-   "R$ 1.250,00"
-  ],
-  "correta": 3,
-  "id": "g-0491",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 3.000,00 é aplicado a juros simples de 4% ao mês durante 12 meses. Qual o valor dos juros?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 3.000,00 × 0,040 × 12 = R$ 1.440,00. ",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 4.440,00",
-   "R$ 2.880,00",
-   "R$ 120,00",
-   "R$ 1.584,00",
-   "R$ 1.440,00"
-  ],
-  "correta": 4,
-  "id": "g-0492",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 4.000,00 é aplicado a juros simples de 2% ao mês durante 22 meses. Qual o montante final?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 4.000,00 × 0,020 × 22 = R$ 1.760,00. Montante = capital + juros = R$ 4.000,00 + R$ 1.760,00 = R$ 5.760,00.",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 6.336,00",
-   "R$ 1.760,00",
-   "R$ 5.760,00",
-   "R$ 3.520,00",
-   "R$ 80,00"
-  ],
-  "correta": 2,
-  "id": "g-0493",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 2.700,00 é aplicado a juros simples de 5% ao mês durante 6 meses. Qual o valor dos juros?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 2.700,00 × 0,050 × 6 = R$ 810,00. ",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 810,00",
-   "R$ 3.510,00",
-   "R$ 1.620,00",
-   "R$ 891,00",
-   "R$ 135,00"
-  ],
-  "correta": 0,
-  "id": "g-0494",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 2.700,00 é aplicado a juros simples de 2,5% ao mês durante 15 meses. Qual o valor dos juros?",
-  "explicacao": "Juros simples: J = C·i·t = R$ 2.700,00 × 0,025 × 15 = R$ 1.012,50. ",
-  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
-  "alternativas": [
-   "R$ 67,50",
-   "R$ 2.025,00",
-   "R$ 1.012,50",
-   "R$ 3.712,50",
-   "R$ 1.113,75"
-  ],
-  "correta": 2,
-  "id": "g-0495",
   "fonte": "ia"
  },
  {
@@ -9976,7 +9795,7 @@ window.ENEM_QUESTIONS = [
    "R$ 1.152,00"
   ],
   "correta": 1,
-  "id": "g-0496",
+  "id": "g-0487",
   "fonte": "ia"
  },
  {
@@ -9996,7 +9815,7 @@ window.ENEM_QUESTIONS = [
    "R$ 4.932,40"
   ],
   "correta": 0,
-  "id": "g-0497",
+  "id": "g-0488",
   "fonte": "ia"
  },
  {
@@ -10016,7 +9835,7 @@ window.ENEM_QUESTIONS = [
    "R$ 760,00"
   ],
   "correta": 4,
-  "id": "g-0498",
+  "id": "g-0489",
   "fonte": "ia"
  },
  {
@@ -10036,7 +9855,7 @@ window.ENEM_QUESTIONS = [
    "R$ 1.900,00"
   ],
   "correta": 4,
-  "id": "g-0499",
+  "id": "g-0490",
   "fonte": "ia"
  },
  {
@@ -10056,7 +9875,7 @@ window.ENEM_QUESTIONS = [
    "R$ 2.520,00"
   ],
   "correta": 2,
-  "id": "g-0500",
+  "id": "g-0491",
   "fonte": "ia"
  },
  {
@@ -10076,7 +9895,7 @@ window.ENEM_QUESTIONS = [
    "R$ 4.514,00"
   ],
   "correta": 2,
-  "id": "g-0501",
+  "id": "g-0492",
   "fonte": "ia"
  },
  {
@@ -10096,7 +9915,7 @@ window.ENEM_QUESTIONS = [
    "R$ 264,00"
   ],
   "correta": 2,
-  "id": "g-0502",
+  "id": "g-0493",
   "fonte": "ia"
  },
  {
@@ -10116,7 +9935,7 @@ window.ENEM_QUESTIONS = [
    "R$ 165,00"
   ],
   "correta": 0,
-  "id": "g-0503",
+  "id": "g-0494",
   "fonte": "ia"
  },
  {
@@ -10136,7 +9955,7 @@ window.ENEM_QUESTIONS = [
    "R$ 2.662,00"
   ],
   "correta": 4,
-  "id": "g-0504",
+  "id": "g-0495",
   "fonte": "ia"
  },
  {
@@ -10156,7 +9975,7 @@ window.ENEM_QUESTIONS = [
    "R$ 1.554,00"
   ],
   "correta": 0,
-  "id": "g-0505",
+  "id": "g-0496",
   "fonte": "ia"
  },
  {
@@ -10176,7 +9995,7 @@ window.ENEM_QUESTIONS = [
    "R$ 26,00"
   ],
   "correta": 2,
-  "id": "g-0506",
+  "id": "g-0497",
   "fonte": "ia"
  },
  {
@@ -10196,7 +10015,7 @@ window.ENEM_QUESTIONS = [
    "R$ 3.553,00"
   ],
   "correta": 0,
-  "id": "g-0507",
+  "id": "g-0498",
   "fonte": "ia"
  },
  {
@@ -10216,7 +10035,7 @@ window.ENEM_QUESTIONS = [
    "R$ 175,00"
   ],
   "correta": 3,
-  "id": "g-0508",
+  "id": "g-0499",
   "fonte": "ia"
  },
  {
@@ -10236,7 +10055,7 @@ window.ENEM_QUESTIONS = [
    "R$ 950,00"
   ],
   "correta": 0,
-  "id": "g-0509",
+  "id": "g-0500",
   "fonte": "ia"
  },
  {
@@ -10256,27 +10075,187 @@ window.ENEM_QUESTIONS = [
    "R$ 741,00"
   ],
   "correta": 3,
-  "id": "g-0510",
+  "id": "g-0501",
   "fonte": "ia"
  },
  {
   "area": "matematica",
   "materia": "matematica",
-  "topico": "Escala e Proporção",
+  "topico": "Matemática Financeira",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em um mapa de escala 1:1.000, dois pontos distam 2 cm. Qual a distância real (em metros)?",
-  "explicacao": "A escala 1:1.000 significa que 1 cm no mapa = 1.000 cm reais. Assim, 2 cm × 1.000 = 2.000 cm = 20 m.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "enunciado": "Um capital de R$ 500,00 é aplicado a juros simples de 1% ao mês durante 20 meses. Qual o montante final?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 500,00 × 0,010 × 20 = R$ 100,00. Montante = capital + juros = R$ 500,00 + R$ 100,00 = R$ 600,00.",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
   "alternativas": [
-   "200 m",
-   "2 m",
-   "40 m",
-   "20 m",
-   "2.000 m"
+   "R$ 100,00",
+   "R$ 200,00",
+   "R$ 5,00",
+   "R$ 660,00",
+   "R$ 600,00"
+  ],
+  "correta": 4,
+  "id": "g-0502",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 1.200,00 é aplicado a juros simples de 1% ao mês durante 10 meses. Qual o valor dos juros?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 1.200,00 × 0,010 × 10 = R$ 120,00. ",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 132,00",
+   "R$ 1.320,00",
+   "R$ 120,00",
+   "R$ 240,00",
+   "R$ 12,00"
+  ],
+  "correta": 2,
+  "id": "g-0503",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 3.200,00 é aplicado a juros simples de 1% ao mês durante 17 meses. Qual o valor dos juros?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 3.200,00 × 0,010 × 17 = R$ 544,00. ",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 32,00",
+   "R$ 1.088,00",
+   "R$ 598,40",
+   "R$ 3.744,00",
+   "R$ 544,00"
+  ],
+  "correta": 4,
+  "id": "g-0504",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 600,00 é aplicado a juros simples de 4% ao mês durante 15 meses. Qual o montante final?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 600,00 × 0,040 × 15 = R$ 360,00. Montante = capital + juros = R$ 600,00 + R$ 360,00 = R$ 960,00.",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 720,00",
+   "R$ 360,00",
+   "R$ 24,00",
+   "R$ 1.056,00",
+   "R$ 960,00"
+  ],
+  "correta": 4,
+  "id": "g-0505",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 700,00 é aplicado a juros simples de 2% ao mês durante 22 meses. Qual o valor dos juros?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 700,00 × 0,020 × 22 = R$ 308,00. ",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 338,80",
+   "R$ 616,00",
+   "R$ 14,00",
+   "R$ 308,00",
+   "R$ 1.008,00"
   ],
   "correta": 3,
-  "id": "g-0511",
+  "id": "g-0506",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 700,00 é aplicado a juros simples de 2% ao mês durante 21 meses. Qual o valor dos juros?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 700,00 × 0,020 × 21 = R$ 294,00. ",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 323,40",
+   "R$ 294,00",
+   "R$ 14,00",
+   "R$ 994,00",
+   "R$ 588,00"
+  ],
+  "correta": 1,
+  "id": "g-0507",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 1.800,00 é aplicado a juros simples de 4% ao mês durante 17 meses. Qual o valor dos juros?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 1.800,00 × 0,040 × 17 = R$ 1.224,00. ",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 1.224,00",
+   "R$ 2.448,00",
+   "R$ 1.346,40",
+   "R$ 3.024,00",
+   "R$ 72,00"
+  ],
+  "correta": 0,
+  "id": "g-0508",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 500,00 é aplicado a juros simples de 3% ao mês durante 8 meses. Qual o valor dos juros?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 500,00 × 0,030 × 8 = R$ 120,00. ",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 240,00",
+   "R$ 132,00",
+   "R$ 120,00",
+   "R$ 15,00",
+   "R$ 620,00"
+  ],
+  "correta": 2,
+  "id": "g-0509",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 1.000,00 é aplicado a juros simples de 4% ao mês durante 15 meses. Qual o montante final?",
+  "explicacao": "Juros simples: J = C·i·t = R$ 1.000,00 × 0,040 × 15 = R$ 600,00. Montante = capital + juros = R$ 1.000,00 + R$ 600,00 = R$ 1.600,00.",
+  "dica": "Juros simples incidem sempre sobre o capital inicial: J = C·i·t (taxa em decimal).",
+  "alternativas": [
+   "R$ 600,00",
+   "R$ 1.760,00",
+   "R$ 40,00",
+   "R$ 1.200,00",
+   "R$ 1.600,00"
+  ],
+  "correta": 4,
+  "id": "g-0510",
   "fonte": "ia"
  },
  {
@@ -10289,214 +10268,14 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A escala 1:100.000 significa que 1 cm no mapa = 100.000 cm reais. Assim, 6 cm × 100.000 = 600.000 cm = 6 km.",
   "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
   "alternativas": [
+   "60 km",
    "600.000 km",
-   "0,60 km",
-   "12 km",
    "6 km",
-   "60 km"
-  ],
-  "correta": 3,
-  "id": "g-0512",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:10.000, dois pontos distam 12 cm. Qual a distância real (em metros)?",
-  "explicacao": "A escala 1:10.000 significa que 1 cm no mapa = 10.000 cm reais. Assim, 12 cm × 10.000 = 120.000 cm = 1.200 m.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "2.400 m",
-   "1.200 m",
-   "120.000 m",
-   "120 m",
-   "12.000 m"
-  ],
-  "correta": 1,
-  "id": "g-0513",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:50.000, dois pontos distam 10 cm. Qual a distância real (em km)?",
-  "explicacao": "A escala 1:50.000 significa que 1 cm no mapa = 50.000 cm reais. Assim, 10 cm × 50.000 = 500.000 cm = 5 km.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "0,50 km",
-   "500.000 km",
-   "10 km",
-   "50 km",
-   "5 km"
-  ],
-  "correta": 4,
-  "id": "g-0514",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:1.000, dois pontos distam 9 cm. Qual a distância real (em metros)?",
-  "explicacao": "A escala 1:1.000 significa que 1 cm no mapa = 1.000 cm reais. Assim, 9 cm × 1.000 = 9.000 cm = 90 m.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "900 m",
-   "180 m",
-   "9.000 m",
-   "90 m",
-   "9 m"
-  ],
-  "correta": 3,
-  "id": "g-0515",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:100.000, dois pontos distam 10 cm. Qual a distância real (em km)?",
-  "explicacao": "A escala 1:100.000 significa que 1 cm no mapa = 100.000 cm reais. Assim, 10 cm × 100.000 = 1.000.000 cm = 10 km.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "20 km",
-   "1.000.000 km",
-   "1 km",
-   "100 km",
-   "10 km"
-  ],
-  "correta": 4,
-  "id": "g-0516",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:5.000, dois pontos distam 2 cm. Qual a distância real (em metros)?",
-  "explicacao": "A escala 1:5.000 significa que 1 cm no mapa = 5.000 cm reais. Assim, 2 cm × 5.000 = 10.000 cm = 100 m.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "200 m",
-   "10 m",
-   "100 m",
-   "1.000 m",
-   "10.000 m"
+   "12 km",
+   "0,60 km"
   ],
   "correta": 2,
-  "id": "g-0517",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:50.000, dois pontos distam 8 cm. Qual a distância real (em km)?",
-  "explicacao": "A escala 1:50.000 significa que 1 cm no mapa = 50.000 cm reais. Assim, 8 cm × 50.000 = 400.000 cm = 4 km.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "8 km",
-   "4 km",
-   "0,40 km",
-   "40 km",
-   "400.000 km"
-  ],
-  "correta": 1,
-  "id": "g-0518",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:10.000, dois pontos distam 9 cm. Qual a distância real (em metros)?",
-  "explicacao": "A escala 1:10.000 significa que 1 cm no mapa = 10.000 cm reais. Assim, 9 cm × 10.000 = 90.000 cm = 900 m.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "1.800 m",
-   "900 m",
-   "9.000 m",
-   "90 m",
-   "90.000 m"
-  ],
-  "correta": 1,
-  "id": "g-0519",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:50.000, dois pontos distam 11 cm. Qual a distância real (em km)?",
-  "explicacao": "A escala 1:50.000 significa que 1 cm no mapa = 50.000 cm reais. Assim, 11 cm × 50.000 = 550.000 cm = 5,50 km.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "550.000 km",
-   "55 km",
-   "11 km",
-   "0,55 km",
-   "5,50 km"
-  ],
-  "correta": 4,
-  "id": "g-0520",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:5.000, dois pontos distam 7 cm. Qual a distância real (em metros)?",
-  "explicacao": "A escala 1:5.000 significa que 1 cm no mapa = 5.000 cm reais. Assim, 7 cm × 5.000 = 35.000 cm = 350 m.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "35 m",
-   "700 m",
-   "350 m",
-   "35.000 m",
-   "3.500 m"
-  ],
-  "correta": 2,
-  "id": "g-0521",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Escala e Proporção",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Em um mapa de escala 1:25.000, dois pontos distam 6 cm. Qual a distância real (em km)?",
-  "explicacao": "A escala 1:25.000 significa que 1 cm no mapa = 25.000 cm reais. Assim, 6 cm × 25.000 = 150.000 cm = 1,50 km.",
-  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
-  "alternativas": [
-   "15 km",
-   "3 km",
-   "0,15 km",
-   "150.000 km",
-   "1,50 km"
-  ],
-  "correta": 4,
-  "id": "g-0522",
+  "id": "g-0511",
   "fonte": "ia"
  },
  {
@@ -10516,7 +10295,7 @@ window.ENEM_QUESTIONS = [
    "5.000 m"
   ],
   "correta": 1,
-  "id": "g-0523",
+  "id": "g-0512",
   "fonte": "ia"
  },
  {
@@ -10536,7 +10315,7 @@ window.ENEM_QUESTIONS = [
    "14 km"
   ],
   "correta": 2,
-  "id": "g-0524",
+  "id": "g-0513",
   "fonte": "ia"
  },
  {
@@ -10556,7 +10335,7 @@ window.ENEM_QUESTIONS = [
    "6.000 m"
   ],
   "correta": 2,
-  "id": "g-0525",
+  "id": "g-0514",
   "fonte": "ia"
  },
  {
@@ -10576,7 +10355,27 @@ window.ENEM_QUESTIONS = [
    "3.000 m"
   ],
   "correta": 1,
-  "id": "g-0526",
+  "id": "g-0515",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:10.000, dois pontos distam 12 cm. Qual a distância real (em metros)?",
+  "explicacao": "A escala 1:10.000 significa que 1 cm no mapa = 10.000 cm reais. Assim, 12 cm × 10.000 = 120.000 cm = 1.200 m.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "120 m",
+   "120.000 m",
+   "2.400 m",
+   "1.200 m",
+   "12.000 m"
+  ],
+  "correta": 3,
+  "id": "g-0516",
   "fonte": "ia"
  },
  {
@@ -10596,7 +10395,7 @@ window.ENEM_QUESTIONS = [
    "8.000 m"
   ],
   "correta": 3,
-  "id": "g-0527",
+  "id": "g-0517",
   "fonte": "ia"
  },
  {
@@ -10616,107 +10415,207 @@ window.ENEM_QUESTIONS = [
    "220 m"
   ],
   "correta": 1,
+  "id": "g-0518",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:25.000, dois pontos distam 11 cm. Qual a distância real (em km)?",
+  "explicacao": "A escala 1:25.000 significa que 1 cm no mapa = 25.000 cm reais. Assim, 11 cm × 25.000 = 275.000 cm = 2,75 km.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "275.000 km",
+   "27,50 km",
+   "5,50 km",
+   "0,28 km",
+   "2,75 km"
+  ],
+  "correta": 4,
+  "id": "g-0519",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:25.000, dois pontos distam 5 cm. Qual a distância real (em km)?",
+  "explicacao": "A escala 1:25.000 significa que 1 cm no mapa = 25.000 cm reais. Assim, 5 cm × 25.000 = 125.000 cm = 1,25 km.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "12,50 km",
+   "0,13 km",
+   "1,25 km",
+   "2,50 km",
+   "125.000 km"
+  ],
+  "correta": 2,
+  "id": "g-0520",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:1.000, dois pontos distam 12 cm. Qual a distância real (em metros)?",
+  "explicacao": "A escala 1:1.000 significa que 1 cm no mapa = 1.000 cm reais. Assim, 12 cm × 1.000 = 12.000 cm = 120 m.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "12.000 m",
+   "1.200 m",
+   "240 m",
+   "120 m",
+   "12 m"
+  ],
+  "correta": 3,
+  "id": "g-0521",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:50.000, dois pontos distam 11 cm. Qual a distância real (em km)?",
+  "explicacao": "A escala 1:50.000 significa que 1 cm no mapa = 50.000 cm reais. Assim, 11 cm × 50.000 = 550.000 cm = 5,50 km.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "550.000 km",
+   "11 km",
+   "5,50 km",
+   "0,55 km",
+   "55 km"
+  ],
+  "correta": 2,
+  "id": "g-0522",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:1.000, dois pontos distam 7 cm. Qual a distância real (em metros)?",
+  "explicacao": "A escala 1:1.000 significa que 1 cm no mapa = 1.000 cm reais. Assim, 7 cm × 1.000 = 7.000 cm = 70 m.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "7 m",
+   "7.000 m",
+   "700 m",
+   "140 m",
+   "70 m"
+  ],
+  "correta": 4,
+  "id": "g-0523",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:10.000, dois pontos distam 2 cm. Qual a distância real (em metros)?",
+  "explicacao": "A escala 1:10.000 significa que 1 cm no mapa = 10.000 cm reais. Assim, 2 cm × 10.000 = 20.000 cm = 200 m.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "2.000 m",
+   "20 m",
+   "20.000 m",
+   "400 m",
+   "200 m"
+  ],
+  "correta": 4,
+  "id": "g-0524",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:10.000, dois pontos distam 4 cm. Qual a distância real (em metros)?",
+  "explicacao": "A escala 1:10.000 significa que 1 cm no mapa = 10.000 cm reais. Assim, 4 cm × 10.000 = 40.000 cm = 400 m.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "40 m",
+   "40.000 m",
+   "800 m",
+   "400 m",
+   "4.000 m"
+  ],
+  "correta": 3,
+  "id": "g-0525",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:50.000, dois pontos distam 12 cm. Qual a distância real (em km)?",
+  "explicacao": "A escala 1:50.000 significa que 1 cm no mapa = 50.000 cm reais. Assim, 12 cm × 50.000 = 600.000 cm = 6 km.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "0,60 km",
+   "60 km",
+   "12 km",
+   "600.000 km",
+   "6 km"
+  ],
+  "correta": 4,
+  "id": "g-0526",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:25.000, dois pontos distam 7 cm. Qual a distância real (em km)?",
+  "explicacao": "A escala 1:25.000 significa que 1 cm no mapa = 25.000 cm reais. Assim, 7 cm × 25.000 = 175.000 cm = 1,75 km.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "17,50 km",
+   "175.000 km",
+   "0,18 km",
+   "3,50 km",
+   "1,75 km"
+  ],
+  "correta": 4,
+  "id": "g-0527",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Escala e Proporção",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Em um mapa de escala 1:10.000, dois pontos distam 10 cm. Qual a distância real (em metros)?",
+  "explicacao": "A escala 1:10.000 significa que 1 cm no mapa = 10.000 cm reais. Assim, 10 cm × 10.000 = 100.000 cm = 1.000 m.",
+  "dica": "Multiplique a medida do mapa pela escala e converta a unidade (100 cm = 1 m; 100000 cm = 1 km).",
+  "alternativas": [
+   "10.000 m",
+   "2.000 m",
+   "100.000 m",
+   "100 m",
+   "1.000 m"
+  ],
+  "correta": 4,
   "id": "g-0528",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um secador de cabelo de 1.600 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.600 W = 1,6 kW; 30 min = 0,50 h. Energia = P × t = 1,6 × 0,50 × 30 = 24,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "36,0 kWh",
-   "24,0 kWh",
-   "48,0 kWh",
-   "12,0 kWh",
-   "1.440,0 kWh"
-  ],
-  "correta": 1,
-  "id": "g-0529",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um micro-ondas de 1.200 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.200 W = 1,2 kW; 60 min = 1,00 h. Energia = P × t = 1,2 × 1,00 × 30 = 36,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "18,0 kWh",
-   "2.160,0 kWh",
-   "36,0 kWh",
-   "54,0 kWh",
-   "72,0 kWh"
-  ],
-  "correta": 2,
-  "id": "g-0530",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um chuveiro elétrico de 4.400 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 4.400 W = 4,4 kW; 30 min = 0,50 h. Energia = P × t = 4,4 × 0,50 × 30 = 66,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "132,0 kWh",
-   "99,0 kWh",
-   "66,0 kWh",
-   "3.960,0 kWh",
-   "33,0 kWh"
-  ],
-  "correta": 2,
-  "id": "g-0531",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um ar-condicionado de 1.400 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.400 W = 1,4 kW; 60 min = 1,00 h. Energia = P × t = 1,4 × 1,00 × 30 = 42,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "84,0 kWh",
-   "42,0 kWh",
-   "63,0 kWh",
-   "21,0 kWh",
-   "2.520,0 kWh"
-  ],
-  "correta": 1,
-  "id": "g-0532",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um secador de cabelo de 2.000 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 2.000 W = 2 kW; 15 min = 0,25 h. Energia = P × t = 2,0 × 0,25 × 30 = 15,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "15,0 kWh",
-   "30,0 kWh",
-   "7,5 kWh",
-   "900,0 kWh",
-   "22,5 kWh"
-  ],
-  "correta": 0,
-  "id": "g-0533",
   "fonte": "ia"
  },
  {
@@ -10729,34 +10628,14 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Converta: 2.000 W = 2 kW; 30 min = 0,50 h. Energia = P × t = 2,0 × 0,50 × 30 = 30,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "1.800,0 kWh",
    "60,0 kWh",
+   "30,0 kWh",
    "15,0 kWh",
    "45,0 kWh",
-   "30,0 kWh"
-  ],
-  "correta": 4,
-  "id": "g-0534",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um chuveiro elétrico de 5.400 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 5.400 W = 5,4 kW; 30 min = 0,50 h. Energia = P × t = 5,4 × 0,50 × 30 = 81,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "4.860,0 kWh",
-   "81,0 kWh",
-   "121,5 kWh",
-   "40,5 kWh",
-   "162,0 kWh"
+   "1.800,0 kWh"
   ],
   "correta": 1,
-  "id": "g-0535",
+  "id": "g-0529",
   "fonte": "ia"
  },
  {
@@ -10765,18 +10644,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um ferro de passar de 1.000 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.000 W = 1 kW; 20 min = 0,33 h. Energia = P × t = 1,0 × 0,33 × 30 = 10,0 kWh.",
+  "enunciado": "Um micro-ondas de 1.200 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.200 W = 1,2 kW; 15 min = 0,25 h. Energia = P × t = 1,2 × 0,25 × 30 = 9,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "600,0 kWh",
-   "5,0 kWh",
-   "10,0 kWh",
-   "20,0 kWh",
-   "15,0 kWh"
+   "9,0 kWh",
+   "4,5 kWh",
+   "540,0 kWh",
+   "13,5 kWh",
+   "18,0 kWh"
   ],
-  "correta": 2,
-  "id": "g-0536",
+  "correta": 0,
+  "id": "g-0530",
   "fonte": "ia"
  },
  {
@@ -10785,58 +10664,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um chuveiro elétrico de 5.400 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 5.400 W = 5,4 kW; 20 min = 0,33 h. Energia = P × t = 5,4 × 0,33 × 30 = 54,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "108,0 kWh",
-   "27,0 kWh",
-   "54,0 kWh",
-   "3.240,0 kWh",
-   "81,0 kWh"
-  ],
-  "correta": 2,
-  "id": "g-0537",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um secador de cabelo de 1.600 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.600 W = 1,6 kW; 15 min = 0,25 h. Energia = P × t = 1,6 × 0,25 × 30 = 12,0 kWh.",
+  "enunciado": "Um ferro de passar de 1.200 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.200 W = 1,2 kW; 15 min = 0,25 h. Energia = P × t = 1,2 × 0,25 × 30 = 9,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
    "18,0 kWh",
-   "720,0 kWh",
-   "24,0 kWh",
-   "12,0 kWh",
-   "6,0 kWh"
-  ],
-  "correta": 3,
-  "id": "g-0538",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um ar-condicionado de 1.400 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.400 W = 1,4 kW; 30 min = 0,50 h. Energia = P × t = 1,4 × 0,50 × 30 = 21,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "1.260,0 kWh",
-   "42,0 kWh",
-   "21,0 kWh",
-   "10,5 kWh",
-   "31,5 kWh"
+   "540,0 kWh",
+   "9,0 kWh",
+   "13,5 kWh",
+   "4,5 kWh"
   ],
   "correta": 2,
-  "id": "g-0539",
+  "id": "g-0531",
   "fonte": "ia"
  },
  {
@@ -10845,18 +10684,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um ferro de passar de 1.200 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.200 W = 1,2 kW; 40 min = 0,67 h. Energia = P × t = 1,2 × 0,67 × 30 = 24,0 kWh.",
+  "enunciado": "Um chuveiro elétrico de 5.400 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 5.400 W = 5,4 kW; 60 min = 1,00 h. Energia = P × t = 5,4 × 1,00 × 30 = 162,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "48,0 kWh",
-   "12,0 kWh",
-   "1.440,0 kWh",
-   "24,0 kWh",
-   "36,0 kWh"
+   "324,0 kWh",
+   "243,0 kWh",
+   "162,0 kWh",
+   "9.720,0 kWh",
+   "81,0 kWh"
   ],
-  "correta": 3,
-  "id": "g-0540",
+  "correta": 2,
+  "id": "g-0532",
   "fonte": "ia"
  },
  {
@@ -10865,38 +10704,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um chuveiro elétrico de 4.400 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 4.400 W = 4,4 kW; 60 min = 1,00 h. Energia = P × t = 4,4 × 1,00 × 30 = 132,0 kWh.",
+  "enunciado": "Um ferro de passar de 1.000 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.000 W = 1 kW; 15 min = 0,25 h. Energia = P × t = 1,0 × 0,25 × 30 = 7,5 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "264,0 kWh",
-   "198,0 kWh",
-   "7.920,0 kWh",
-   "66,0 kWh",
-   "132,0 kWh"
+   "450,0 kWh",
+   "11,3 kWh",
+   "3,8 kWh",
+   "15,0 kWh",
+   "7,5 kWh"
   ],
   "correta": 4,
-  "id": "g-0541",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um ar-condicionado de 2.000 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 2.000 W = 2 kW; 40 min = 0,67 h. Energia = P × t = 2,0 × 0,67 × 30 = 40,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "20,0 kWh",
-   "80,0 kWh",
-   "40,0 kWh",
-   "60,0 kWh",
-   "2.400,0 kWh"
-  ],
-  "correta": 2,
-  "id": "g-0542",
+  "id": "g-0533",
   "fonte": "ia"
  },
  {
@@ -10911,92 +10730,52 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "10,0 kWh",
    "40,0 kWh",
-   "20,0 kWh",
    "1.200,0 kWh",
-   "30,0 kWh"
-  ],
-  "correta": 2,
-  "id": "g-0543",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um micro-ondas de 1.500 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.500 W = 1,5 kW; 60 min = 1,00 h. Energia = P × t = 1,5 × 1,00 × 30 = 45,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "67,5 kWh",
-   "45,0 kWh",
-   "2.700,0 kWh",
-   "22,5 kWh",
-   "90,0 kWh"
-  ],
-  "correta": 1,
-  "id": "g-0544",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um secador de cabelo de 2.000 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 2.000 W = 2 kW; 30 min = 0,50 h. Energia = P × t = 2,0 × 0,50 × 30 = 30,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "60,0 kWh",
-   "1.800,0 kWh",
-   "45,0 kWh",
-   "30,0 kWh",
-   "15,0 kWh"
-  ],
-  "correta": 3,
-  "id": "g-0545",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um ferro de passar de 1.000 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.000 W = 1 kW; 40 min = 0,67 h. Energia = P × t = 1,0 × 0,67 × 30 = 20,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "30,0 kWh",
    "20,0 kWh",
-   "10,0 kWh",
-   "40,0 kWh",
-   "1.200,0 kWh"
-  ],
-  "correta": 1,
-  "id": "g-0546",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um ar-condicionado de 2.000 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 2.000 W = 2 kW; 15 min = 0,25 h. Energia = P × t = 2,0 × 0,25 × 30 = 15,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "15,0 kWh",
-   "7,5 kWh",
-   "900,0 kWh",
-   "22,5 kWh",
    "30,0 kWh"
   ],
+  "correta": 3,
+  "id": "g-0534",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ar-condicionado de 1.400 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.400 W = 1,4 kW; 20 min = 0,33 h. Energia = P × t = 1,4 × 0,33 × 30 = 14,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "21,0 kWh",
+   "28,0 kWh",
+   "840,0 kWh",
+   "14,0 kWh",
+   "7,0 kWh"
+  ],
+  "correta": 3,
+  "id": "g-0535",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ar-condicionado de 1.400 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.400 W = 1,4 kW; 40 min = 0,67 h. Energia = P × t = 1,4 × 0,67 × 30 = 28,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "28,0 kWh",
+   "42,0 kWh",
+   "56,0 kWh",
+   "14,0 kWh",
+   "1.680,0 kWh"
+  ],
   "correta": 0,
-  "id": "g-0547",
+  "id": "g-0536",
   "fonte": "ia"
  },
  {
@@ -11005,58 +10784,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um ferro de passar de 1.000 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.000 W = 1 kW; 60 min = 1,00 h. Energia = P × t = 1,0 × 1,00 × 30 = 30,0 kWh.",
+  "enunciado": "Um micro-ondas de 1.500 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.500 W = 1,5 kW; 30 min = 0,50 h. Energia = P × t = 1,5 × 0,50 × 30 = 22,5 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "15,0 kWh",
-   "30,0 kWh",
+   "1.350,0 kWh",
+   "11,3 kWh",
+   "22,5 kWh",
    "45,0 kWh",
-   "60,0 kWh",
-   "1.800,0 kWh"
-  ],
-  "correta": 1,
-  "id": "g-0548",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um secador de cabelo de 2.000 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 2.000 W = 2 kW; 60 min = 1,00 h. Energia = P × t = 2,0 × 1,00 × 30 = 60,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "30,0 kWh",
-   "90,0 kWh",
-   "3.600,0 kWh",
-   "120,0 kWh",
-   "60,0 kWh"
-  ],
-  "correta": 4,
-  "id": "g-0549",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um secador de cabelo de 1.600 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.600 W = 1,6 kW; 20 min = 0,33 h. Energia = P × t = 1,6 × 0,33 × 30 = 16,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "960,0 kWh",
-   "24,0 kWh",
-   "16,0 kWh",
-   "8,0 kWh",
-   "32,0 kWh"
+   "33,8 kWh"
   ],
   "correta": 2,
-  "id": "g-0550",
+  "id": "g-0537",
   "fonte": "ia"
  },
  {
@@ -11065,98 +10804,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um micro-ondas de 1.200 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.200 W = 1,2 kW; 40 min = 0,67 h. Energia = P × t = 1,2 × 0,67 × 30 = 24,0 kWh.",
+  "enunciado": "Um ar-condicionado de 1.400 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.400 W = 1,4 kW; 60 min = 1,00 h. Energia = P × t = 1,4 × 1,00 × 30 = 42,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "36,0 kWh",
-   "1.440,0 kWh",
-   "48,0 kWh",
-   "12,0 kWh",
-   "24,0 kWh"
-  ],
-  "correta": 4,
-  "id": "g-0551",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um chuveiro elétrico de 5.400 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 5.400 W = 5,4 kW; 40 min = 0,67 h. Energia = P × t = 5,4 × 0,67 × 30 = 108,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "162,0 kWh",
-   "216,0 kWh",
-   "6.480,0 kWh",
-   "108,0 kWh",
-   "54,0 kWh"
-  ],
-  "correta": 3,
-  "id": "g-0552",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um micro-ondas de 1.500 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.500 W = 1,5 kW; 15 min = 0,25 h. Energia = P × t = 1,5 × 0,25 × 30 = 11,3 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "5,6 kWh",
-   "675,0 kWh",
-   "22,5 kWh",
-   "11,3 kWh",
-   "16,9 kWh"
-  ],
-  "correta": 3,
-  "id": "g-0553",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um chuveiro elétrico de 6.800 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 6.800 W = 6,8 kW; 30 min = 0,50 h. Energia = P × t = 6,8 × 0,50 × 30 = 102,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "204,0 kWh",
-   "102,0 kWh",
-   "6.120,0 kWh",
-   "153,0 kWh",
-   "51,0 kWh"
-  ],
-  "correta": 1,
-  "id": "g-0554",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Eletrodinâmica",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um micro-ondas de 1.200 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.200 W = 1,2 kW; 15 min = 0,25 h. Energia = P × t = 1,2 × 0,25 × 30 = 9,0 kWh.",
-  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
-  "alternativas": [
-   "9,0 kWh",
-   "13,5 kWh",
-   "4,5 kWh",
-   "540,0 kWh",
-   "18,0 kWh"
+   "42,0 kWh",
+   "2.520,0 kWh",
+   "63,0 kWh",
+   "21,0 kWh",
+   "84,0 kWh"
   ],
   "correta": 0,
-  "id": "g-0555",
+  "id": "g-0538",
   "fonte": "ia"
  },
  {
@@ -11171,11 +10830,351 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "1.080,0 kWh",
    "9,0 kWh",
-   "18,0 kWh",
    "36,0 kWh",
+   "18,0 kWh",
    "27,0 kWh"
   ],
+  "correta": 3,
+  "id": "g-0539",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ar-condicionado de 2.000 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 2.000 W = 2 kW; 15 min = 0,25 h. Energia = P × t = 2,0 × 0,25 × 30 = 15,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "15,0 kWh",
+   "22,5 kWh",
+   "30,0 kWh",
+   "900,0 kWh",
+   "7,5 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0540",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um chuveiro elétrico de 6.800 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 6.800 W = 6,8 kW; 60 min = 1,00 h. Energia = P × t = 6,8 × 1,00 × 30 = 204,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "204,0 kWh",
+   "408,0 kWh",
+   "12.240,0 kWh",
+   "102,0 kWh",
+   "306,0 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0541",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ferro de passar de 1.000 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.000 W = 1 kW; 20 min = 0,33 h. Energia = P × t = 1,0 × 0,33 × 30 = 10,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "10,0 kWh",
+   "20,0 kWh",
+   "15,0 kWh",
+   "600,0 kWh",
+   "5,0 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0542",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um chuveiro elétrico de 6.800 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 6.800 W = 6,8 kW; 15 min = 0,25 h. Energia = P × t = 6,8 × 0,25 × 30 = 51,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "51,0 kWh",
+   "3.060,0 kWh",
+   "76,5 kWh",
+   "102,0 kWh",
+   "25,5 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0543",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um micro-ondas de 1.200 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.200 W = 1,2 kW; 40 min = 0,67 h. Energia = P × t = 1,2 × 0,67 × 30 = 24,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "48,0 kWh",
+   "24,0 kWh",
+   "1.440,0 kWh",
+   "12,0 kWh",
+   "36,0 kWh"
+  ],
+  "correta": 1,
+  "id": "g-0544",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um secador de cabelo de 1.600 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.600 W = 1,6 kW; 30 min = 0,50 h. Energia = P × t = 1,6 × 0,50 × 30 = 24,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "1.440,0 kWh",
+   "48,0 kWh",
+   "36,0 kWh",
+   "12,0 kWh",
+   "24,0 kWh"
+  ],
+  "correta": 4,
+  "id": "g-0545",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um secador de cabelo de 1.600 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.600 W = 1,6 kW; 20 min = 0,33 h. Energia = P × t = 1,6 × 0,33 × 30 = 16,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "32,0 kWh",
+   "960,0 kWh",
+   "8,0 kWh",
+   "24,0 kWh",
+   "16,0 kWh"
+  ],
+  "correta": 4,
+  "id": "g-0546",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ferro de passar de 1.000 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.000 W = 1 kW; 40 min = 0,67 h. Energia = P × t = 1,0 × 0,67 × 30 = 20,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "20,0 kWh",
+   "10,0 kWh",
+   "30,0 kWh",
+   "1.200,0 kWh",
+   "40,0 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0547",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um micro-ondas de 1.500 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.500 W = 1,5 kW; 60 min = 1,00 h. Energia = P × t = 1,5 × 1,00 × 30 = 45,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "90,0 kWh",
+   "67,5 kWh",
+   "2.700,0 kWh",
+   "22,5 kWh",
+   "45,0 kWh"
+  ],
+  "correta": 4,
+  "id": "g-0548",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um micro-ondas de 1.500 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.500 W = 1,5 kW; 20 min = 0,33 h. Energia = P × t = 1,5 × 0,33 × 30 = 15,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "15,0 kWh",
+   "22,5 kWh",
+   "900,0 kWh",
+   "30,0 kWh",
+   "7,5 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0549",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um chuveiro elétrico de 4.400 W é usado 20 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 4.400 W = 4,4 kW; 20 min = 0,33 h. Energia = P × t = 4,4 × 0,33 × 30 = 44,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "88,0 kWh",
+   "44,0 kWh",
+   "2.640,0 kWh",
+   "66,0 kWh",
+   "22,0 kWh"
+  ],
+  "correta": 1,
+  "id": "g-0550",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ar-condicionado de 2.000 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 2.000 W = 2 kW; 40 min = 0,67 h. Energia = P × t = 2,0 × 0,67 × 30 = 40,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "40,0 kWh",
+   "20,0 kWh",
+   "80,0 kWh",
+   "60,0 kWh",
+   "2.400,0 kWh"
+  ],
+  "correta": 0,
+  "id": "g-0551",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ar-condicionado de 1.400 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.400 W = 1,4 kW; 30 min = 0,50 h. Energia = P × t = 1,4 × 0,50 × 30 = 21,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "31,5 kWh",
+   "1.260,0 kWh",
+   "21,0 kWh",
+   "10,5 kWh",
+   "42,0 kWh"
+  ],
   "correta": 2,
+  "id": "g-0552",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um chuveiro elétrico de 5.400 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 5.400 W = 5,4 kW; 30 min = 0,50 h. Energia = P × t = 5,4 × 0,50 × 30 = 81,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "162,0 kWh",
+   "40,5 kWh",
+   "121,5 kWh",
+   "81,0 kWh",
+   "4.860,0 kWh"
+  ],
+  "correta": 3,
+  "id": "g-0553",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um secador de cabelo de 2.000 W é usado 15 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 2.000 W = 2 kW; 15 min = 0,25 h. Energia = P × t = 2,0 × 0,25 × 30 = 15,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "900,0 kWh",
+   "30,0 kWh",
+   "22,5 kWh",
+   "15,0 kWh",
+   "7,5 kWh"
+  ],
+  "correta": 3,
+  "id": "g-0554",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um ferro de passar de 1.200 W é usado 30 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.200 W = 1,2 kW; 30 min = 0,50 h. Energia = P × t = 1,2 × 0,50 × 30 = 18,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "9,0 kWh",
+   "18,0 kWh",
+   "36,0 kWh",
+   "1.080,0 kWh",
+   "27,0 kWh"
+  ],
+  "correta": 1,
+  "id": "g-0555",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Eletrodinâmica",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um secador de cabelo de 1.600 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.600 W = 1,6 kW; 60 min = 1,00 h. Energia = P × t = 1,6 × 1,00 × 30 = 48,0 kWh.",
+  "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
+  "alternativas": [
+   "48,0 kWh",
+   "2.880,0 kWh",
+   "96,0 kWh",
+   "72,0 kWh",
+   "24,0 kWh"
+  ],
+  "correta": 0,
   "id": "g-0556",
   "fonte": "ia"
  },
@@ -11185,17 +11184,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um secador de cabelo de 1.600 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 1.600 W = 1,6 kW; 40 min = 0,67 h. Energia = P × t = 1,6 × 0,67 × 30 = 32,0 kWh.",
+  "enunciado": "Um ferro de passar de 1.200 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 1.200 W = 1,2 kW; 60 min = 1,00 h. Energia = P × t = 1,2 × 1,00 × 30 = 36,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "64,0 kWh",
-   "16,0 kWh",
-   "32,0 kWh",
-   "48,0 kWh",
-   "1.920,0 kWh"
+   "18,0 kWh",
+   "2.160,0 kWh",
+   "72,0 kWh",
+   "54,0 kWh",
+   "36,0 kWh"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0557",
   "fonte": "ia"
  },
@@ -11205,17 +11204,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Eletrodinâmica",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um ar-condicionado de 2.000 W é usado 60 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
-  "explicacao": "Converta: 2.000 W = 2 kW; 60 min = 1,00 h. Energia = P × t = 2,0 × 1,00 × 30 = 60,0 kWh.",
+  "enunciado": "Um chuveiro elétrico de 5.400 W é usado 40 minutos por dia durante 30 dias. Qual o consumo mensal de energia?",
+  "explicacao": "Converta: 5.400 W = 5,4 kW; 40 min = 0,67 h. Energia = P × t = 5,4 × 0,67 × 30 = 108,0 kWh.",
   "dica": "kWh = potência (kW) × horas de uso. Converta W→kW (÷1000) e min→h (÷60).",
   "alternativas": [
-   "120,0 kWh",
-   "60,0 kWh",
-   "90,0 kWh",
-   "30,0 kWh",
-   "3.600,0 kWh"
+   "6.480,0 kWh",
+   "54,0 kWh",
+   "216,0 kWh",
+   "162,0 kWh",
+   "108,0 kWh"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0558",
   "fonte": "ia"
  },
@@ -11225,17 +11224,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda se propaga a 300 m/s com frequência 250 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 300/250 = 1,20 m.",
+  "enunciado": "Uma onda de frequência 20 Hz tem comprimento de onda 17 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 17 × 20 = 340 m/s.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "1,20 m",
-   "75.000 m",
-   "0,60 m",
-   "1,80 m",
-   "2,40 m"
+   "680 m/s",
+   "340 m/s",
+   "510 m/s",
+   "170 m/s",
+   "6.800 m/s"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0559",
   "fonte": "ia"
  },
@@ -11245,17 +11244,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de frequência 20 Hz tem comprimento de onda 16 m. Qual a velocidade de propagação?",
-  "explicacao": "v = λ·f = 16 × 20 = 320 m/s.",
+  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 1,36 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 340/1,36 = 250 Hz.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "6.400 m/s",
-   "320 m/s",
-   "640 m/s",
-   "160 m/s",
-   "480 m/s"
+   "500 Hz",
+   "375 Hz",
+   "250 Hz",
+   "125 Hz",
+   "85.000 Hz"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0560",
   "fonte": "ia"
  },
@@ -11265,17 +11264,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda se propaga a 320 m/s com frequência 20 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 320/20 = 16 m.",
+  "enunciado": "Uma onda de frequência 50 Hz tem comprimento de onda 6,80 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 6,80 × 50 = 340 m/s.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "6.400 m",
-   "24 m",
-   "32 m",
-   "8 m",
-   "16 m"
+   "340 m/s",
+   "680 m/s",
+   "17.000 m/s",
+   "510 m/s",
+   "170 m/s"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0561",
   "fonte": "ia"
  },
@@ -11285,17 +11284,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de velocidade 300 m/s tem comprimento de onda 1,76 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 300/1,76 = 170 Hz.",
+  "enunciado": "Uma onda se propaga a 340 m/s com frequência 500 Hz. Qual o comprimento de onda?",
+  "explicacao": "v = λ·f → λ = v/f = 340/500 = 0,68 m.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "85 Hz",
-   "170 Hz",
-   "51.000 Hz",
-   "340 Hz",
-   "255 Hz"
+   "170.000 m",
+   "1,36 m",
+   "0,68 m",
+   "1,02 m",
+   "0,34 m"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0562",
   "fonte": "ia"
  },
@@ -11309,14 +11308,174 @@ window.ENEM_QUESTIONS = [
   "explicacao": "v = λ·f → λ = v/f = 340/20 = 17 m.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "17 m",
+   "34 m",
    "6.800 m",
    "8,50 m",
-   "34 m",
+   "17 m",
    "25,50 m"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0563",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 3,40 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 340/3,40 = 100 Hz.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "150 Hz",
+   "50 Hz",
+   "200 Hz",
+   "34.000 Hz",
+   "100 Hz"
+  ],
+  "correta": 4,
+  "id": "g-0564",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda se propaga a 300 m/s com frequência 85 Hz. Qual o comprimento de onda?",
+  "explicacao": "v = λ·f → λ = v/f = 300/85 = 3,53 m.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "7,06 m",
+   "5,29 m",
+   "1,76 m",
+   "3,53 m",
+   "25.500 m"
+  ],
+  "correta": 3,
+  "id": "g-0565",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 100 Hz tem comprimento de onda 3,20 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 3,20 × 100 = 320 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "160 m/s",
+   "320 m/s",
+   "32.000 m/s",
+   "640 m/s",
+   "480 m/s"
+  ],
+  "correta": 1,
+  "id": "g-0566",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 170 Hz tem comprimento de onda 2 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 2 × 170 = 340 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "57.800 m/s",
+   "340 m/s",
+   "510 m/s",
+   "170 m/s",
+   "680 m/s"
+  ],
+  "correta": 1,
+  "id": "g-0567",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 4 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 340/4 = 85 Hz.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "127,50 Hz",
+   "170 Hz",
+   "85 Hz",
+   "42,50 Hz",
+   "28.900 Hz"
+  ],
+  "correta": 2,
+  "id": "g-0568",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 170 Hz tem comprimento de onda 1,88 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 1,88 × 170 = 320 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "480 m/s",
+   "54.400 m/s",
+   "160 m/s",
+   "640 m/s",
+   "320 m/s"
+  ],
+  "correta": 4,
+  "id": "g-0569",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 500 Hz tem comprimento de onda 0,60 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 0,60 × 500 = 300 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "600 m/s",
+   "450 m/s",
+   "150.000 m/s",
+   "300 m/s",
+   "150 m/s"
+  ],
+  "correta": 3,
+  "id": "g-0570",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de velocidade 320 m/s tem comprimento de onda 1,28 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 320/1,28 = 250 Hz.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "80.000 Hz",
+   "375 Hz",
+   "125 Hz",
+   "250 Hz",
+   "500 Hz"
+  ],
+  "correta": 3,
+  "id": "g-0571",
   "fonte": "ia"
  },
  {
@@ -11331,92 +11490,12 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "750 Hz",
    "1.000 Hz",
-   "500 Hz",
+   "160.000 Hz",
    "250 Hz",
-   "160.000 Hz"
-  ],
-  "correta": 2,
-  "id": "g-0564",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 3,40 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 340/3,40 = 100 Hz.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "50 Hz",
-   "100 Hz",
-   "34.000 Hz",
-   "150 Hz",
-   "200 Hz"
-  ],
-  "correta": 1,
-  "id": "g-0565",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de frequência 200 Hz tem comprimento de onda 1,70 m. Qual a velocidade de propagação?",
-  "explicacao": "v = λ·f = 1,70 × 200 = 340 m/s.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "680 m/s",
-   "68.000 m/s",
-   "170 m/s",
-   "510 m/s",
-   "340 m/s"
+   "500 Hz"
   ],
   "correta": 4,
-  "id": "g-0566",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de velocidade 300 m/s tem comprimento de onda 3,53 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 300/3,53 = 85 Hz.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "127,50 Hz",
-   "170 Hz",
-   "85 Hz",
-   "25.500 Hz",
-   "42,50 Hz"
-  ],
-  "correta": 2,
-  "id": "g-0567",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda se propaga a 340 m/s com frequência 85 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 340/85 = 4 m.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "28.900 m",
-   "4 m",
-   "2 m",
-   "8 m",
-   "6 m"
-  ],
-  "correta": 1,
-  "id": "g-0568",
+  "id": "g-0572",
   "fonte": "ia"
  },
  {
@@ -11429,93 +11508,13 @@ window.ENEM_QUESTIONS = [
   "explicacao": "v = λ·f → f = v/λ = 340/17 = 20 Hz.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "20 Hz",
-   "40 Hz",
    "30 Hz",
+   "10 Hz",
+   "40 Hz",
    "6.800 Hz",
-   "10 Hz"
-  ],
-  "correta": 0,
-  "id": "g-0569",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 4 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 340/4 = 85 Hz.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "42,50 Hz",
-   "28.900 Hz",
-   "170 Hz",
-   "127,50 Hz",
-   "85 Hz"
+   "20 Hz"
   ],
   "correta": 4,
-  "id": "g-0570",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda se propaga a 340 m/s com frequência 50 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 340/50 = 6,80 m.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "3,40 m",
-   "13,60 m",
-   "6,80 m",
-   "17.000 m",
-   "10,20 m"
-  ],
-  "correta": 2,
-  "id": "g-0571",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 6,80 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 340/6,80 = 50 Hz.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "50 Hz",
-   "100 Hz",
-   "25 Hz",
-   "75 Hz",
-   "17.000 Hz"
-  ],
-  "correta": 0,
-  "id": "g-0572",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de velocidade 300 m/s tem comprimento de onda 3 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 300/3 = 100 Hz.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "50 Hz",
-   "200 Hz",
-   "150 Hz",
-   "100 Hz",
-   "30.000 Hz"
-  ],
-  "correta": 3,
   "id": "g-0573",
   "fonte": "ia"
  },
@@ -11525,17 +11524,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 0,68 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 340/0,68 = 500 Hz.",
+  "enunciado": "Uma onda se propaga a 300 m/s com frequência 170 Hz. Qual o comprimento de onda?",
+  "explicacao": "v = λ·f → λ = v/f = 300/170 = 1,76 m.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "1.000 Hz",
-   "750 Hz",
-   "250 Hz",
-   "170.000 Hz",
-   "500 Hz"
+   "3,53 m",
+   "0,88 m",
+   "2,65 m",
+   "1,76 m",
+   "51.000 m"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0574",
   "fonte": "ia"
  },
@@ -11545,17 +11544,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de velocidade 300 m/s tem comprimento de onda 1,50 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 300/1,50 = 200 Hz.",
+  "enunciado": "Uma onda de frequência 200 Hz tem comprimento de onda 7,50 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 7,50 × 200 = 1.500 m/s.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "100 Hz",
-   "400 Hz",
-   "300 Hz",
-   "60.000 Hz",
-   "200 Hz"
+   "2.250 m/s",
+   "1.500 m/s",
+   "3.000 m/s",
+   "750 m/s",
+   "300.000 m/s"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0575",
   "fonte": "ia"
  },
@@ -11565,17 +11564,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda se propaga a 320 m/s com frequência 85 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 320/85 = 3,76 m.",
+  "enunciado": "Uma onda de velocidade 1.500 m/s tem comprimento de onda 8,82 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 1.500/8,82 = 170 Hz.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "1,88 m",
-   "5,65 m",
-   "7,53 m",
-   "3,76 m",
-   "27.200 m"
+   "255.000 Hz",
+   "170 Hz",
+   "340 Hz",
+   "85 Hz",
+   "255 Hz"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0576",
   "fonte": "ia"
  },
@@ -11585,17 +11584,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de frequência 170 Hz tem comprimento de onda 8,82 m. Qual a velocidade de propagação?",
-  "explicacao": "v = λ·f = 8,82 × 170 = 1.500 m/s.",
+  "enunciado": "Uma onda de frequência 100 Hz tem comprimento de onda 3,40 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 3,40 × 100 = 340 m/s.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "2.250 m/s",
-   "750 m/s",
-   "3.000 m/s",
-   "1.500 m/s",
-   "255.000 m/s"
+   "340 m/s",
+   "680 m/s",
+   "510 m/s",
+   "170 m/s",
+   "34.000 m/s"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0577",
   "fonte": "ia"
  },
@@ -11605,18 +11604,98 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda se propaga a 340 m/s com frequência 100 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 340/100 = 3,40 m.",
+  "enunciado": "Uma onda de velocidade 320 m/s tem comprimento de onda 6,40 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 320/6,40 = 50 Hz.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "1,70 m",
-   "34.000 m",
-   "5,10 m",
-   "6,80 m",
-   "3,40 m"
+   "75 Hz",
+   "25 Hz",
+   "16.000 Hz",
+   "50 Hz",
+   "100 Hz"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0578",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 500 Hz tem comprimento de onda 0,64 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 0,64 × 500 = 320 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "320 m/s",
+   "160 m/s",
+   "640 m/s",
+   "480 m/s",
+   "160.000 m/s"
+  ],
+  "correta": 0,
+  "id": "g-0579",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 85 Hz tem comprimento de onda 17,65 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 17,65 × 85 = 1.500 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "750 m/s",
+   "3.000 m/s",
+   "1.500 m/s",
+   "127.500 m/s",
+   "2.250 m/s"
+  ],
+  "correta": 2,
+  "id": "g-0580",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda se propaga a 1.500 m/s com frequência 170 Hz. Qual o comprimento de onda?",
+  "explicacao": "v = λ·f → λ = v/f = 1.500/170 = 8,82 m.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "8,82 m",
+   "13,24 m",
+   "4,41 m",
+   "255.000 m",
+   "17,65 m"
+  ],
+  "correta": 0,
+  "id": "g-0581",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Ondulatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma onda de frequência 85 Hz tem comprimento de onda 4 m. Qual a velocidade de propagação?",
+  "explicacao": "v = λ·f = 4 × 85 = 340 m/s.",
+  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
+  "alternativas": [
+   "340 m/s",
+   "680 m/s",
+   "28.900 m/s",
+   "510 m/s",
+   "170 m/s"
+  ],
+  "correta": 0,
+  "id": "g-0582",
   "fonte": "ia"
  },
  {
@@ -11629,93 +11708,13 @@ window.ENEM_QUESTIONS = [
   "explicacao": "v = λ·f → f = v/λ = 320/3,76 = 85 Hz.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
+   "85 Hz",
+   "170 Hz",
    "42,50 Hz",
    "127,50 Hz",
-   "170 Hz",
-   "85 Hz",
    "27.200 Hz"
   ],
-  "correta": 3,
-  "id": "g-0579",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de frequência 100 Hz tem comprimento de onda 3 m. Qual a velocidade de propagação?",
-  "explicacao": "v = λ·f = 3 × 100 = 300 m/s.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "450 m/s",
-   "600 m/s",
-   "300 m/s",
-   "30.000 m/s",
-   "150 m/s"
-  ],
-  "correta": 2,
-  "id": "g-0580",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de frequência 250 Hz tem comprimento de onda 1,36 m. Qual a velocidade de propagação?",
-  "explicacao": "v = λ·f = 1,36 × 250 = 340 m/s.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "170 m/s",
-   "340 m/s",
-   "680 m/s",
-   "85.000 m/s",
-   "510 m/s"
-  ],
-  "correta": 1,
-  "id": "g-0581",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda de velocidade 340 m/s tem comprimento de onda 2 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 340/2 = 170 Hz.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "255 Hz",
-   "170 Hz",
-   "85 Hz",
-   "340 Hz",
-   "57.800 Hz"
-  ],
-  "correta": 1,
-  "id": "g-0582",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Ondulatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma onda se propaga a 340 m/s com frequência 500 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 340/500 = 0,68 m.",
-  "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
-  "alternativas": [
-   "1,36 m",
-   "0,68 m",
-   "1,02 m",
-   "0,34 m",
-   "170.000 m"
-  ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0583",
   "fonte": "ia"
  },
@@ -11725,17 +11724,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de frequência 500 Hz tem comprimento de onda 3 m. Qual a velocidade de propagação?",
-  "explicacao": "v = λ·f = 3 × 500 = 1.500 m/s.",
+  "enunciado": "Uma onda se propaga a 340 m/s com frequência 100 Hz. Qual o comprimento de onda?",
+  "explicacao": "v = λ·f → λ = v/f = 340/100 = 3,40 m.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "750.000 m/s",
-   "750 m/s",
-   "2.250 m/s",
-   "1.500 m/s",
-   "3.000 m/s"
+   "3,40 m",
+   "6,80 m",
+   "5,10 m",
+   "34.000 m",
+   "1,70 m"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0584",
   "fonte": "ia"
  },
@@ -11745,17 +11744,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda de velocidade 1.500 m/s tem comprimento de onda 75 m. Qual a frequência?",
-  "explicacao": "v = λ·f → f = v/λ = 1.500/75 = 20 Hz.",
+  "enunciado": "Uma onda se propaga a 1.500 m/s com frequência 200 Hz. Qual o comprimento de onda?",
+  "explicacao": "v = λ·f → λ = v/f = 1.500/200 = 7,50 m.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "10 Hz",
-   "40 Hz",
-   "30 Hz",
-   "20 Hz",
-   "30.000 Hz"
+   "300.000 m",
+   "7,50 m",
+   "15 m",
+   "11,25 m",
+   "3,75 m"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0585",
   "fonte": "ia"
  },
@@ -11765,17 +11764,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Ondulatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma onda se propaga a 1.500 m/s com frequência 85 Hz. Qual o comprimento de onda?",
-  "explicacao": "v = λ·f → λ = v/f = 1.500/85 = 17,65 m.",
+  "enunciado": "Uma onda de velocidade 1.500 m/s tem comprimento de onda 3 m. Qual a frequência?",
+  "explicacao": "v = λ·f → f = v/λ = 1.500/3 = 500 Hz.",
   "dica": "Fórmula-mãe da ondulatória: v = λ·f. Isole a grandeza pedida.",
   "alternativas": [
-   "17,65 m",
-   "8,82 m",
-   "26,47 m",
-   "35,29 m",
-   "127.500 m"
+   "750.000 Hz",
+   "500 Hz",
+   "250 Hz",
+   "750 Hz",
+   "1.000 Hz"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0586",
   "fonte": "ia"
  },
@@ -11785,38 +11784,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Mecânica/Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um objeto é abandonado de uma altura de 45 m (g = 10 m/s², sem resistência do ar). Com que velocidade ele atinge o solo?",
-  "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×45) = √900 = 30 m/s.",
+  "enunciado": "Um objeto é abandonado de uma altura de 10 m (g = 10 m/s², sem resistência do ar). Com que velocidade ele atinge o solo?",
+  "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×10) = √200 = 14,1 m/s.",
   "dica": "Sem atrito, energia potencial vira cinética: v = √(2·g·h). A massa se cancela.",
   "alternativas": [
-   "60 m/s",
-   "21,2 m/s",
-   "450 m/s",
-   "30 m/s",
-   "900 m/s"
-  ],
-  "correta": 3,
-  "id": "g-0587",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Mecânica/Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um objeto é abandonado de uma altura de 20 m (g = 10 m/s², sem resistência do ar). Com que velocidade ele atinge o solo?",
-  "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×20) = √400 = 20 m/s.",
-  "dica": "Sem atrito, energia potencial vira cinética: v = √(2·g·h). A massa se cancela.",
-  "alternativas": [
-   "20 m/s",
-   "400 m/s",
-   "40 m/s",
+   "10 m/s",
+   "14,1 m/s",
    "200 m/s",
-   "14,1 m/s"
+   "28,3 m/s",
+   "100 m/s"
   ],
-  "correta": 0,
-  "id": "g-0588",
+  "correta": 1,
+  "id": "g-0587",
   "fonte": "ia"
  },
  {
@@ -11830,13 +11809,13 @@ window.ENEM_QUESTIONS = [
   "dica": "Sem atrito, energia potencial vira cinética: v = √(2·g·h). A massa se cancela.",
   "alternativas": [
    "10 m/s",
-   "100 m/s",
-   "7,1 m/s",
    "20 m/s",
+   "7,1 m/s",
+   "100 m/s",
    "50 m/s"
   ],
   "correta": 0,
-  "id": "g-0589",
+  "id": "g-0588",
   "fonte": "ia"
  },
  {
@@ -11849,14 +11828,14 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×80) = √1600 = 40 m/s.",
   "dica": "Sem atrito, energia potencial vira cinética: v = √(2·g·h). A massa se cancela.",
   "alternativas": [
-   "80 m/s",
-   "40 m/s",
-   "1.600 m/s",
    "800 m/s",
-   "28,3 m/s"
+   "80 m/s",
+   "1.600 m/s",
+   "28,3 m/s",
+   "40 m/s"
   ],
-  "correta": 1,
-  "id": "g-0590",
+  "correta": 4,
+  "id": "g-0589",
   "fonte": "ia"
  },
  {
@@ -11865,18 +11844,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Mecânica/Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um objeto é abandonado de uma altura de 10 m (g = 10 m/s², sem resistência do ar). Com que velocidade ele atinge o solo?",
-  "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×10) = √200 = 14,1 m/s.",
+  "enunciado": "Um objeto é abandonado de uma altura de 45 m (g = 10 m/s², sem resistência do ar). Com que velocidade ele atinge o solo?",
+  "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×45) = √900 = 30 m/s.",
   "dica": "Sem atrito, energia potencial vira cinética: v = √(2·g·h). A massa se cancela.",
   "alternativas": [
-   "14,1 m/s",
-   "100 m/s",
-   "28,3 m/s",
-   "200 m/s",
-   "10 m/s"
+   "450 m/s",
+   "900 m/s",
+   "60 m/s",
+   "21,2 m/s",
+   "30 m/s"
   ],
-  "correta": 0,
-  "id": "g-0591",
+  "correta": 4,
+  "id": "g-0590",
   "fonte": "ia"
  },
  {
@@ -11891,11 +11870,31 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "35,4 m/s",
    "50 m/s",
+   "100 m/s",
    "2.500 m/s",
-   "1.250 m/s",
-   "100 m/s"
+   "1.250 m/s"
   ],
   "correta": 1,
+  "id": "g-0591",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Mecânica/Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um objeto é abandonado de uma altura de 20 m (g = 10 m/s², sem resistência do ar). Com que velocidade ele atinge o solo?",
+  "explicacao": "Conservação de energia: m·g·h = m·v²/2 → v = √(2·g·h) = √(2×10×20) = √400 = 20 m/s.",
+  "dica": "Sem atrito, energia potencial vira cinética: v = √(2·g·h). A massa se cancela.",
+  "alternativas": [
+   "40 m/s",
+   "14,1 m/s",
+   "20 m/s",
+   "200 m/s",
+   "400 m/s"
+  ],
+  "correta": 2,
   "id": "g-0592",
   "fonte": "ia"
  },
@@ -11905,17 +11904,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 200 g de água (c = 1 cal/g°C) de 30°C até 50°C?",
-  "explicacao": "Q = m·c·ΔT = 200 × 1 × (50−30) = 200 × 20 = 4.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 21°C até 51°C?",
+  "explicacao": "Q = m·c·ΔT = 250 × 1 × (51−21) = 250 × 30 = 7.500 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "200 cal",
-   "2.000 cal",
-   "10.000 cal",
-   "4.000 cal",
-   "8.000 cal"
+   "7.500 cal",
+   "250 cal",
+   "12.750 cal",
+   "15.000 cal",
+   "3.750 cal"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0593",
   "fonte": "ia"
  },
@@ -11925,17 +11924,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 23°C até 63°C?",
-  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (63−23) = 1.000 × 40 = 40.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 24°C até 44°C?",
+  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (44−24) = 1.000 × 20 = 20.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "80.000 cal",
-   "1.000 cal",
+   "44.000 cal",
+   "10.000 cal",
    "20.000 cal",
-   "63.000 cal",
-   "40.000 cal"
+   "40.000 cal",
+   "1.000 cal"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0594",
   "fonte": "ia"
  },
@@ -11945,17 +11944,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 100 g de água (c = 1 cal/g°C) de 27°C até 37°C?",
-  "explicacao": "Q = m·c·ΔT = 100 × 1 × (37−27) = 100 × 10 = 1.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 25°C até 65°C?",
+  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (65−25) = 1.000 × 40 = 40.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
    "1.000 cal",
-   "100 cal",
-   "500 cal",
-   "3.700 cal",
-   "2.000 cal"
+   "20.000 cal",
+   "80.000 cal",
+   "65.000 cal",
+   "40.000 cal"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0595",
   "fonte": "ia"
  },
@@ -11965,17 +11964,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 24°C até 34°C?",
-  "explicacao": "Q = m·c·ΔT = 500 × 1 × (34−24) = 500 × 10 = 5.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 17°C até 57°C?",
+  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (57−17) = 1.000 × 40 = 40.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "10.000 cal",
-   "17.000 cal",
-   "2.500 cal",
-   "5.000 cal",
-   "500 cal"
+   "40.000 cal",
+   "80.000 cal",
+   "1.000 cal",
+   "20.000 cal",
+   "57.000 cal"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0596",
   "fonte": "ia"
  },
@@ -11985,15 +11984,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 17°C até 57°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (57−17) = 250 × 40 = 10.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 17°C até 57°C?",
+  "explicacao": "Q = m·c·ΔT = 500 × 1 × (57−17) = 500 × 40 = 20.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "250 cal",
-   "10.000 cal",
+   "40.000 cal",
    "20.000 cal",
-   "5.000 cal",
-   "14.250 cal"
+   "10.000 cal",
+   "500 cal",
+   "28.500 cal"
   ],
   "correta": 1,
   "id": "g-0597",
@@ -12005,17 +12004,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 17°C até 47°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (47−17) = 250 × 30 = 7.500 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 25°C até 55°C?",
+  "explicacao": "Q = m·c·ΔT = 250 × 1 × (55−25) = 250 × 30 = 7.500 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "11.750 cal",
    "3.750 cal",
-   "7.500 cal",
    "15.000 cal",
-   "250 cal"
+   "250 cal",
+   "13.750 cal",
+   "7.500 cal"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0598",
   "fonte": "ia"
  },
@@ -12025,17 +12024,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 28°C até 58°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (58−28) = 250 × 30 = 7.500 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 200 g de água (c = 1 cal/g°C) de 27°C até 67°C?",
+  "explicacao": "Q = m·c·ΔT = 200 × 1 × (67−27) = 200 × 40 = 8.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "3.750 cal",
-   "250 cal",
-   "14.500 cal",
-   "15.000 cal",
-   "7.500 cal"
+   "13.400 cal",
+   "4.000 cal",
+   "200 cal",
+   "8.000 cal",
+   "16.000 cal"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0599",
   "fonte": "ia"
  },
@@ -12045,17 +12044,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 30°C até 70°C?",
-  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (70−30) = 1.000 × 40 = 40.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 100 g de água (c = 1 cal/g°C) de 15°C até 55°C?",
+  "explicacao": "Q = m·c·ΔT = 100 × 1 × (55−15) = 100 × 40 = 4.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "80.000 cal",
-   "1.000 cal",
-   "20.000 cal",
-   "40.000 cal",
-   "70.000 cal"
+   "8.000 cal",
+   "4.000 cal",
+   "2.000 cal",
+   "100 cal",
+   "5.500 cal"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0600",
   "fonte": "ia"
  },
@@ -12065,15 +12064,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 28°C até 38°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (38−28) = 250 × 10 = 2.500 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 30°C até 80°C?",
+  "explicacao": "Q = m·c·ΔT = 250 × 1 × (80−30) = 250 × 50 = 12.500 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "5.000 cal",
-   "9.500 cal",
-   "2.500 cal",
-   "250 cal",
-   "1.250 cal"
+   "25.000 cal",
+   "20.000 cal",
+   "12.500 cal",
+   "6.250 cal",
+   "250 cal"
   ],
   "correta": 2,
   "id": "g-0601",
@@ -12085,17 +12084,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 28°C até 68°C?",
-  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (68−28) = 1.000 × 40 = 40.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 100 g de água (c = 1 cal/g°C) de 24°C até 44°C?",
+  "explicacao": "Q = m·c·ΔT = 100 × 1 × (44−24) = 100 × 20 = 2.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "68.000 cal",
-   "40.000 cal",
-   "20.000 cal",
+   "4.400 cal",
    "1.000 cal",
-   "80.000 cal"
+   "2.000 cal",
+   "100 cal",
+   "4.000 cal"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0602",
   "fonte": "ia"
  },
@@ -12105,118 +12104,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 200 g de água (c = 1 cal/g°C) de 30°C até 70°C?",
-  "explicacao": "Q = m·c·ΔT = 200 × 1 × (70−30) = 200 × 40 = 8.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 28°C até 78°C?",
+  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (78−28) = 1.000 × 50 = 50.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "8.000 cal",
-   "16.000 cal",
-   "14.000 cal",
-   "4.000 cal",
-   "200 cal"
-  ],
-  "correta": 0,
-  "id": "g-0603",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Termologia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 20°C até 40°C?",
-  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (40−20) = 1.000 × 20 = 20.000 cal.",
-  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
-  "alternativas": [
-   "10.000 cal",
-   "20.000 cal",
+   "100.000 cal",
+   "50.000 cal",
    "1.000 cal",
-   "40.000 cal",
-   "30.000 cal"
+   "78.000 cal",
+   "25.000 cal"
   ],
   "correta": 1,
-  "id": "g-0604",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Termologia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 22°C até 32°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (32−22) = 250 × 10 = 2.500 cal.",
-  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
-  "alternativas": [
-   "2.500 cal",
-   "1.250 cal",
-   "250 cal",
-   "5.000 cal",
-   "8.000 cal"
-  ],
-  "correta": 0,
-  "id": "g-0605",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Termologia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 200 g de água (c = 1 cal/g°C) de 30°C até 60°C?",
-  "explicacao": "Q = m·c·ΔT = 200 × 1 × (60−30) = 200 × 30 = 6.000 cal.",
-  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
-  "alternativas": [
-   "3.000 cal",
-   "12.000 cal",
-   "6.000 cal",
-   "200 cal",
-   "9.000 cal"
-  ],
-  "correta": 2,
-  "id": "g-0606",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Termologia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 15°C até 55°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (55−15) = 250 × 40 = 10.000 cal.",
-  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
-  "alternativas": [
-   "20.000 cal",
-   "10.000 cal",
-   "250 cal",
-   "13.750 cal",
-   "5.000 cal"
-  ],
-  "correta": 1,
-  "id": "g-0607",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Termologia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 20°C até 40°C?",
-  "explicacao": "Q = m·c·ΔT = 250 × 1 × (40−20) = 250 × 20 = 5.000 cal.",
-  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
-  "alternativas": [
-   "10.000 cal",
-   "2.500 cal",
-   "250 cal",
-   "5.000 cal",
-   "7.500 cal"
-  ],
-  "correta": 3,
-  "id": "g-0608",
+  "id": "g-0603",
   "fonte": "ia"
  },
  {
@@ -12229,11 +12128,111 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Q = m·c·ΔT = 500 × 1 × (70−30) = 500 × 40 = 20.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "40.000 cal",
-   "10.000 cal",
    "35.000 cal",
+   "10.000 cal",
    "20.000 cal",
+   "40.000 cal",
    "500 cal"
+  ],
+  "correta": 2,
+  "id": "g-0604",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Termologia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 17°C até 47°C?",
+  "explicacao": "Q = m·c·ΔT = 500 × 1 × (47−17) = 500 × 30 = 15.000 cal.",
+  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
+  "alternativas": [
+   "7.500 cal",
+   "30.000 cal",
+   "23.500 cal",
+   "15.000 cal",
+   "500 cal"
+  ],
+  "correta": 3,
+  "id": "g-0605",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Termologia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 250 g de água (c = 1 cal/g°C) de 20°C até 50°C?",
+  "explicacao": "Q = m·c·ΔT = 250 × 1 × (50−20) = 250 × 30 = 7.500 cal.",
+  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
+  "alternativas": [
+   "12.500 cal",
+   "3.750 cal",
+   "250 cal",
+   "7.500 cal",
+   "15.000 cal"
+  ],
+  "correta": 3,
+  "id": "g-0606",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Termologia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 17°C até 67°C?",
+  "explicacao": "Q = m·c·ΔT = 500 × 1 × (67−17) = 500 × 50 = 25.000 cal.",
+  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
+  "alternativas": [
+   "25.000 cal",
+   "12.500 cal",
+   "33.500 cal",
+   "50.000 cal",
+   "500 cal"
+  ],
+  "correta": 0,
+  "id": "g-0607",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Termologia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 100 g de água (c = 1 cal/g°C) de 16°C até 66°C?",
+  "explicacao": "Q = m·c·ΔT = 100 × 1 × (66−16) = 100 × 50 = 5.000 cal.",
+  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
+  "alternativas": [
+   "100 cal",
+   "5.000 cal",
+   "2.500 cal",
+   "6.600 cal",
+   "10.000 cal"
+  ],
+  "correta": 1,
+  "id": "g-0608",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Termologia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 200 g de água (c = 1 cal/g°C) de 19°C até 49°C?",
+  "explicacao": "Q = m·c·ΔT = 200 × 1 × (49−19) = 200 × 30 = 6.000 cal.",
+  "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
+  "alternativas": [
+   "200 cal",
+   "3.000 cal",
+   "9.800 cal",
+   "6.000 cal",
+   "12.000 cal"
   ],
   "correta": 3,
   "id": "g-0609",
@@ -12245,17 +12244,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 29°C até 39°C?",
-  "explicacao": "Q = m·c·ΔT = 500 × 1 × (39−29) = 500 × 10 = 5.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 200 g de água (c = 1 cal/g°C) de 22°C até 62°C?",
+  "explicacao": "Q = m·c·ΔT = 200 × 1 × (62−22) = 200 × 40 = 8.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "500 cal",
-   "5.000 cal",
-   "10.000 cal",
-   "2.500 cal",
-   "19.500 cal"
+   "4.000 cal",
+   "16.000 cal",
+   "200 cal",
+   "8.000 cal",
+   "12.400 cal"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0610",
   "fonte": "ia"
  },
@@ -12265,17 +12264,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 28°C até 78°C?",
-  "explicacao": "Q = m·c·ΔT = 500 × 1 × (78−28) = 500 × 50 = 25.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 28°C até 48°C?",
+  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (48−28) = 1.000 × 20 = 20.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "12.500 cal",
-   "25.000 cal",
-   "39.000 cal",
-   "500 cal",
-   "50.000 cal"
+   "40.000 cal",
+   "1.000 cal",
+   "10.000 cal",
+   "48.000 cal",
+   "20.000 cal"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0611",
   "fonte": "ia"
  },
@@ -12285,14 +12284,14 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 100 g de água (c = 1 cal/g°C) de 17°C até 67°C?",
-  "explicacao": "Q = m·c·ΔT = 100 × 1 × (67−17) = 100 × 50 = 5.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 500 g de água (c = 1 cal/g°C) de 30°C até 40°C?",
+  "explicacao": "Q = m·c·ΔT = 500 × 1 × (40−30) = 500 × 10 = 5.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
    "10.000 cal",
-   "100 cal",
-   "6.700 cal",
    "2.500 cal",
+   "500 cal",
+   "20.000 cal",
    "5.000 cal"
   ],
   "correta": 4,
@@ -12305,15 +12304,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 27°C até 47°C?",
-  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (47−27) = 1.000 × 20 = 20.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 29°C até 49°C?",
+  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (49−29) = 1.000 × 20 = 20.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
    "20.000 cal",
-   "40.000 cal",
-   "10.000 cal",
+   "49.000 cal",
    "1.000 cal",
-   "47.000 cal"
+   "40.000 cal",
+   "10.000 cal"
   ],
   "correta": 0,
   "id": "g-0613",
@@ -12325,18 +12324,38 @@ window.ENEM_QUESTIONS = [
   "topico": "Termologia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 1.000 g de água (c = 1 cal/g°C) de 15°C até 35°C?",
-  "explicacao": "Q = m·c·ΔT = 1.000 × 1 × (35−15) = 1.000 × 20 = 20.000 cal.",
+  "enunciado": "Quanto calor (em calorias) é necessário para aquecer 100 g de água (c = 1 cal/g°C) de 21°C até 61°C?",
+  "explicacao": "Q = m·c·ΔT = 100 × 1 × (61−21) = 100 × 40 = 4.000 cal.",
   "dica": "Calor sensível: Q = m·c·ΔT. ΔT é a variação (final − inicial).",
   "alternativas": [
-   "40.000 cal",
-   "1.000 cal",
-   "10.000 cal",
-   "35.000 cal",
-   "20.000 cal"
+   "8.000 cal",
+   "2.000 cal",
+   "6.100 cal",
+   "100 cal",
+   "4.000 cal"
   ],
   "correta": 4,
   "id": "g-0614",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 3 mols de CH₄ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 3 mols de CH₄ produzem 3 × (2/1) = 6 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "5 mols",
+   "6 mols",
+   "1,5 mols",
+   "3 mols",
+   "12 mols"
+  ],
+  "correta": 1,
+  "id": "g-0615",
   "fonte": "ia"
  },
  {
@@ -12350,32 +12369,12 @@ window.ENEM_QUESTIONS = [
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
    "4 mols",
-   "2 mols",
    "1 mols",
-   "6 mols",
-   "8 mols"
+   "8 mols",
+   "2 mols",
+   "6 mols"
   ],
   "correta": 0,
-  "id": "g-0615",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 5 mols de CH₄ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 5 mols de CH₄ produzem 5 × (2/1) = 10 mols de H₂O.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "20 mols",
-   "5 mols",
-   "2,5 mols",
-   "10 mols",
-   "7 mols"
-  ],
-  "correta": 3,
   "id": "g-0616",
   "fonte": "ia"
  },
@@ -12389,134 +12388,14 @@ window.ENEM_QUESTIONS = [
   "explicacao": "A proporção estequiométrica é 2 C₂H₆ : 4 CO₂. Logo, 10 mols de C₂H₆ produzem 10 × (4/2) = 20 mols de CO₂.",
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
-   "40 mols",
    "5 mols",
-   "14 mols",
    "20 mols",
-   "10 mols"
-  ],
-  "correta": 3,
-  "id": "g-0617",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 8 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 8 mols de H₂ produzem 8 × (2/2) = 8 mols de H₂O.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "12 mols",
-   "16 mols",
-   "4 mols",
-   "8 mols",
-   "10 mols"
-  ],
-  "correta": 3,
-  "id": "g-0618",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 3 mols de C (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 3 mols de C produzem 3 × (1/1) = 3 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "6 mols",
-   "4,5 mols",
-   "4 mols",
-   "3 mols",
-   "1,5 mols"
-  ],
-  "correta": 3,
-  "id": "g-0619",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 5 mols de C (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 5 mols de C produzem 5 × (1/1) = 5 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
    "10 mols",
-   "7,5 mols",
-   "2,5 mols",
-   "6 mols",
-   "5 mols"
-  ],
-  "correta": 4,
-  "id": "g-0620",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 6 mols de CH₄ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 6 mols de CH₄ produzem 6 × (2/1) = 12 mols de H₂O.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "6 mols",
-   "24 mols",
-   "3 mols",
-   "8 mols",
-   "12 mols"
-  ],
-  "correta": 4,
-  "id": "g-0621",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 3 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 3 mols de H₂ produzem 3 × (2/3) = 2 mols de NH₃.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "1 mols",
-   "2 mols",
-   "3 mols",
-   "4,5 mols",
-   "4 mols"
+   "40 mols",
+   "14 mols"
   ],
   "correta": 1,
-  "id": "g-0622",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação 2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O, quantos mols de CO₂ se formam a partir de 6 mols de C₂H₆ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 2 C₂H₆ : 4 CO₂. Logo, 6 mols de C₂H₆ produzem 6 × (4/2) = 12 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "24 mols",
-   "3 mols",
-   "6 mols",
-   "10 mols",
-   "12 mols"
-  ],
-  "correta": 4,
-  "id": "g-0623",
+  "id": "g-0617",
   "fonte": "ia"
  },
  {
@@ -12530,213 +12409,33 @@ window.ENEM_QUESTIONS = [
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
    "48 mols",
-   "6 mols",
-   "12 mols",
-   "16 mols",
-   "24 mols"
-  ],
-  "correta": 4,
-  "id": "g-0624",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 6 mols de C (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 6 mols de C produzem 6 × (1/1) = 6 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "7 mols",
-   "6 mols",
-   "3 mols",
-   "12 mols",
-   "9 mols"
-  ],
-  "correta": 1,
-  "id": "g-0625",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 4 mols de C (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 4 mols de C produzem 4 × (1/1) = 4 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "2 mols",
-   "6 mols",
-   "5 mols",
-   "8 mols",
-   "4 mols"
-  ],
-  "correta": 4,
-  "id": "g-0626",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 9 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 9 mols de H₂ produzem 9 × (2/3) = 6 mols de NH₃.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "6 mols",
-   "9 mols",
-   "3 mols",
-   "13,5 mols",
-   "12 mols"
-  ],
-  "correta": 0,
-  "id": "g-0627",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 3 mols de CH₄ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 3 mols de CH₄ produzem 3 × (2/1) = 6 mols de H₂O.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "6 mols",
-   "5 mols",
-   "12 mols",
-   "1,5 mols",
-   "3 mols"
-  ],
-  "correta": 0,
-  "id": "g-0628",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 2 mols de C (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 2 mols de C produzem 2 × (1/1) = 2 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "2 mols",
-   "1,5 mols",
-   "4 mols",
-   "1 mols",
-   "3 mols"
-  ],
-  "correta": 0,
-  "id": "g-0629",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 4 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 4 mols de H₂ produzem 4 × (2/2) = 4 mols de H₂O.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "2 mols",
-   "6 mols",
-   "8 mols",
-   "3 mols",
-   "4 mols"
-  ],
-  "correta": 4,
-  "id": "g-0630",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 18 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 18 mols de H₂ produzem 18 × (2/3) = 12 mols de NH₃.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
    "24 mols",
    "6 mols",
-   "12 mols",
-   "18 mols",
-   "27 mols"
-  ],
-  "correta": 2,
-  "id": "g-0631",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 15 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 15 mols de H₂ produzem 15 × (2/3) = 10 mols de NH₃.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "20 mols",
-   "22,5 mols",
-   "15 mols",
-   "5 mols",
-   "10 mols"
-  ],
-  "correta": 4,
-  "id": "g-0632",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 1 mols de CH₄ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 1 mols de CH₄ produzem 1 × (2/1) = 2 mols de H₂O.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "3 mols",
-   "0,5 mols",
-   "2 mols",
-   "1 mols",
-   "4 mols"
-  ],
-  "correta": 2,
-  "id": "g-0633",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Estequiometria",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Na reação 2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O, quantos mols de CO₂ se formam a partir de 4 mols de C₂H₆ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 2 C₂H₆ : 4 CO₂. Logo, 4 mols de C₂H₆ produzem 4 × (4/2) = 8 mols de CO₂.",
-  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
-  "alternativas": [
-   "4 mols",
-   "8 mols",
-   "2 mols",
    "12 mols",
    "16 mols"
   ],
   "correta": 1,
-  "id": "g-0634",
+  "id": "g-0618",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 12 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 12 mols de H₂ produzem 12 × (2/2) = 12 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "6 mols",
+   "12 mols",
+   "14 mols",
+   "18 mols",
+   "24 mols"
+  ],
+  "correta": 1,
+  "id": "g-0619",
   "fonte": "ia"
  },
  {
@@ -12751,12 +12450,12 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "1 mols",
    "8 mols",
-   "2 mols",
    "6 mols",
+   "2 mols",
    "4 mols"
   ],
   "correta": 4,
-  "id": "g-0635",
+  "id": "g-0620",
   "fonte": "ia"
  },
  {
@@ -12765,18 +12464,78 @@ window.ENEM_QUESTIONS = [
   "topico": "Estequiometria",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 10 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 10 mols de H₂ produzem 10 × (2/2) = 10 mols de H₂O.",
+  "enunciado": "Na reação 2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O, quantos mols de CO₂ se formam a partir de 8 mols de C₂H₆ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 C₂H₆ : 4 CO₂. Logo, 8 mols de C₂H₆ produzem 8 × (4/2) = 16 mols de CO₂.",
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
+   "4 mols",
    "12 mols",
-   "15 mols",
-   "10 mols",
-   "5 mols",
-   "20 mols"
+   "16 mols",
+   "8 mols",
+   "32 mols"
   ],
   "correta": 2,
-  "id": "g-0636",
+  "id": "g-0621",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 9 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 9 mols de H₂ produzem 9 × (2/3) = 6 mols de NH₃.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "9 mols",
+   "13,5 mols",
+   "3 mols",
+   "6 mols",
+   "12 mols"
+  ],
+  "correta": 3,
+  "id": "g-0622",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 8 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 8 mols de H₂ produzem 8 × (2/2) = 8 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "10 mols",
+   "12 mols",
+   "4 mols",
+   "16 mols",
+   "8 mols"
+  ],
+  "correta": 4,
+  "id": "g-0623",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 1 mols de C (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 1 mols de C produzem 1 × (1/1) = 1 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "1,5 mols",
+   "1 mols",
+   "0,5 mols",
+   "0,8 mols",
+   "2 mols"
+  ],
+  "correta": 1,
+  "id": "g-0624",
   "fonte": "ia"
  },
  {
@@ -12791,12 +12550,12 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "6 mols",
    "12 mols",
+   "9 mols",
    "3 mols",
-   "8 mols",
-   "9 mols"
+   "8 mols"
   ],
   "correta": 0,
-  "id": "g-0637",
+  "id": "g-0625",
   "fonte": "ia"
  },
  {
@@ -12805,18 +12564,218 @@ window.ENEM_QUESTIONS = [
   "topico": "Estequiometria",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 12 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 12 mols de H₂ produzem 12 × (2/2) = 12 mols de H₂O.",
+  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 15 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 15 mols de H₂ produzem 15 × (2/3) = 10 mols de NH₃.",
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
-   "6 mols",
-   "24 mols",
+   "15 mols",
+   "10 mols",
+   "22,5 mols",
+   "20 mols",
+   "5 mols"
+  ],
+  "correta": 1,
+  "id": "g-0626",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 5 mols de CH₄ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 5 mols de CH₄ produzem 5 × (2/1) = 10 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "5 mols",
+   "20 mols",
+   "7 mols",
+   "2,5 mols",
+   "10 mols"
+  ],
+  "correta": 4,
+  "id": "g-0627",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 18 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 18 mols de H₂ produzem 18 × (2/3) = 12 mols de NH₃.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
    "18 mols",
-   "14 mols",
+   "27 mols",
+   "24 mols",
+   "6 mols",
    "12 mols"
   ],
   "correta": 4,
-  "id": "g-0638",
+  "id": "g-0628",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 5 mols de C (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 5 mols de C produzem 5 × (1/1) = 5 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "6 mols",
+   "2,5 mols",
+   "10 mols",
+   "7,5 mols",
+   "5 mols"
+  ],
+  "correta": 4,
+  "id": "g-0629",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 6 mols de CH₄ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 6 mols de CH₄ produzem 6 × (2/1) = 12 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "3 mols",
+   "6 mols",
+   "8 mols",
+   "12 mols",
+   "24 mols"
+  ],
+  "correta": 3,
+  "id": "g-0630",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação 2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O, quantos mols de CO₂ se formam a partir de 6 mols de C₂H₆ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 C₂H₆ : 4 CO₂. Logo, 6 mols de C₂H₆ produzem 6 × (4/2) = 12 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "10 mols",
+   "6 mols",
+   "24 mols",
+   "3 mols",
+   "12 mols"
+  ],
+  "correta": 4,
+  "id": "g-0631",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 6 mols de C (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 6 mols de C produzem 6 × (1/1) = 6 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "7 mols",
+   "6 mols",
+   "9 mols",
+   "12 mols",
+   "3 mols"
+  ],
+  "correta": 1,
+  "id": "g-0632",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 6 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 6 mols de H₂ produzem 6 × (2/3) = 4 mols de NH₃.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "9 mols",
+   "8 mols",
+   "4 mols",
+   "6 mols",
+   "2 mols"
+  ],
+  "correta": 2,
+  "id": "g-0633",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 10 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 10 mols de H₂ produzem 10 × (2/2) = 10 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "15 mols",
+   "20 mols",
+   "5 mols",
+   "12 mols",
+   "10 mols"
+  ],
+  "correta": 4,
+  "id": "g-0634",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 2 mols de C (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 2 mols de C produzem 2 × (1/1) = 2 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "1,5 mols",
+   "1 mols",
+   "2 mols",
+   "4 mols",
+   "3 mols"
+  ],
+  "correta": 2,
+  "id": "g-0635",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação 2 H₂ + O₂ → 2 H₂O, quantos mols de H₂O se formam a partir de 4 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 H₂ : 2 H₂O. Logo, 4 mols de H₂ produzem 4 × (2/2) = 4 mols de H₂O.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "8 mols",
+   "4 mols",
+   "2 mols",
+   "3 mols",
+   "6 mols"
+  ],
+  "correta": 1,
+  "id": "g-0636",
   "fonte": "ia"
  },
  {
@@ -12831,11 +12790,51 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "1 mols",
    "3 mols",
-   "4 mols",
    "2 mols",
+   "4 mols",
    "1,5 mols"
   ],
-  "correta": 3,
+  "correta": 2,
+  "id": "g-0637",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 4 mols de C (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 4 mols de C produzem 4 × (1/1) = 4 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "2 mols",
+   "8 mols",
+   "5 mols",
+   "6 mols",
+   "4 mols"
+  ],
+  "correta": 4,
+  "id": "g-0638",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Estequiometria",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Na reação 2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O, quantos mols de CO₂ se formam a partir de 4 mols de C₂H₆ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 2 C₂H₆ : 4 CO₂. Logo, 4 mols de C₂H₆ produzem 4 × (4/2) = 8 mols de CO₂.",
+  "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
+  "alternativas": [
+   "4 mols",
+   "16 mols",
+   "2 mols",
+   "12 mols",
+   "8 mols"
+  ],
+  "correta": 4,
   "id": "g-0639",
   "fonte": "ia"
  },
@@ -12845,15 +12844,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Estequiometria",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 6 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 6 mols de H₂ produzem 6 × (2/3) = 4 mols de NH₃.",
+  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 3 mols de H₂ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 3 mols de H₂ produzem 3 × (2/3) = 2 mols de NH₃.",
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
-   "4 mols",
-   "6 mols",
-   "9 mols",
-   "8 mols",
-   "2 mols"
+   "2 mols",
+   "4,5 mols",
+   "3 mols",
+   "1 mols",
+   "4 mols"
   ],
   "correta": 0,
   "id": "g-0640",
@@ -12865,17 +12864,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estequiometria",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 1 mols de C (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 1 mols de C produzem 1 × (1/1) = 1 mols de CO₂.",
+  "enunciado": "Na reação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de H₂O se formam a partir de 4 mols de CH₄ (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 CH₄ : 2 H₂O. Logo, 4 mols de CH₄ produzem 4 × (2/1) = 8 mols de H₂O.",
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
+   "16 mols",
+   "8 mols",
+   "4 mols",
    "2 mols",
-   "0,8 mols",
-   "1 mols",
-   "0,5 mols",
-   "1,5 mols"
+   "6 mols"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0641",
   "fonte": "ia"
  },
@@ -12885,17 +12884,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Estequiometria",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Na reação N₂ + 3 H₂ → 2 NH₃, quantos mols de NH₃ se formam a partir de 12 mols de H₂ (demais reagentes em excesso)?",
-  "explicacao": "A proporção estequiométrica é 3 H₂ : 2 NH₃. Logo, 12 mols de H₂ produzem 12 × (2/3) = 8 mols de NH₃.",
+  "enunciado": "Na reação C + O₂ → CO₂, quantos mols de CO₂ se formam a partir de 3 mols de C (demais reagentes em excesso)?",
+  "explicacao": "A proporção estequiométrica é 1 C : 1 CO₂. Logo, 3 mols de C produzem 3 × (1/1) = 3 mols de CO₂.",
   "dica": "Use os coeficientes balanceados como proporção. Balanceie ANTES de calcular.",
   "alternativas": [
-   "12 mols",
-   "8 mols",
+   "1,5 mols",
+   "6 mols",
    "4 mols",
-   "16 mols",
-   "18 mols"
+   "4,5 mols",
+   "3 mols"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0642",
   "fonte": "ia"
  },
@@ -12905,17 +12904,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 2 mol de O₂? (massa molar = 32 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 2 × 32 = 64 g.",
+  "enunciado": "Quantos mols há em 96 g de O₂? (massa molar = 32 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 96 ÷ 32 = 3 mols.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "204,8 g",
-   "2 g",
-   "128 g",
-   "32 g",
-   "64 g"
+   "96 mols",
+   "9,60 mols",
+   "1,50 mols",
+   "3 mols",
+   "6 mols"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0643",
   "fonte": "ia"
  },
@@ -12925,17 +12924,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 1 mol de H₂SO₄? (massa molar = 98 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 1 × 98 = 98 g.",
+  "enunciado": "Quantos mols há em 128 g de O₂? (massa molar = 32 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 128 ÷ 32 = 4 mols.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "49 g",
-   "196 g",
-   "1 g",
-   "98 g",
-   "960,4 g"
+   "4 mols",
+   "12,80 mols",
+   "128 mols",
+   "2 mols",
+   "8 mols"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0644",
   "fonte": "ia"
  },
@@ -12945,17 +12944,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quantos mols há em 100 g de CaCO₃? (massa molar = 100 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 100 ÷ 100 = 1 mols.",
+  "enunciado": "Qual a massa de 0,50 mol de H₂O? (massa molar = 18 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,50 × 18 = 9 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "1 mols",
-   "0,50 mols",
-   "10 mols",
-   "100 mols",
-   "2 mols"
+   "16,2 g",
+   "0,5 g",
+   "18 g",
+   "9 g",
+   "4,5 g"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0645",
   "fonte": "ia"
  },
@@ -12965,178 +12964,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 1 mol de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 1 × 180 = 180 g.",
+  "enunciado": "Qual a massa de 0,50 mol de O₂? (massa molar = 32 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,50 × 32 = 16 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "3.240 g",
-   "360 g",
-   "180 g",
-   "90 g",
-   "1 g"
-  ],
-  "correta": 2,
-  "id": "g-0646",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quantos mols há em 4,5 g de H₂O? (massa molar = 18 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 4,5 ÷ 18 = 0,25 mols.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "0,25 mols",
-   "0,45 mols",
-   "4,50 mols",
-   "0,13 mols",
-   "0,50 mols"
-  ],
-  "correta": 0,
-  "id": "g-0647",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Qual a massa de 0,25 mol de CaCO₃? (massa molar = 100 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 0,25 × 100 = 25 g.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "250 g",
-   "50 g",
-   "12,5 g",
-   "0,3 g",
-   "25 g"
-  ],
-  "correta": 4,
-  "id": "g-0648",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Qual a massa de 3 mol de NaCl? (massa molar = 58,5 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 3 × 58,5 = 175,5 g.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "175,5 g",
-   "87,8 g",
-   "351 g",
-   "3 g",
-   "1.026,7 g"
-  ],
-  "correta": 0,
-  "id": "g-0649",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quantos mols há em 54 g de H₂O? (massa molar = 18 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 54 ÷ 18 = 3 mols.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "3 mols",
-   "5,40 mols",
-   "1,50 mols",
-   "54 mols",
-   "6 mols"
-  ],
-  "correta": 0,
-  "id": "g-0650",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Qual a massa de 0,25 mol de O₂? (massa molar = 32 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 0,25 × 32 = 8 g.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "25,6 g",
+   "32 g",
+   "0,5 g",
+   "51,2 g",
    "16 g",
-   "4 g",
-   "0,3 g",
    "8 g"
   ],
-  "correta": 4,
-  "id": "g-0651",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Quantos mols há em 29,3 g de NaCl? (massa molar = 58,5 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 29,3 ÷ 58,5 = 0,50 mols.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "0,50 mols",
-   "0,25 mols",
-   "2,93 mols",
-   "29,25 mols",
-   "1 mols"
-  ],
-  "correta": 0,
-  "id": "g-0652",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Qual a massa de 0,25 mol de H₂SO₄? (massa molar = 98 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 0,25 × 98 = 24,5 g.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "12,3 g",
-   "49 g",
-   "0,3 g",
-   "240,1 g",
-   "24,5 g"
-  ],
-  "correta": 4,
-  "id": "g-0653",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Qual a massa de 2 mol de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 2 × 180 = 360 g.",
-  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
-  "alternativas": [
-   "720 g",
-   "360 g",
-   "6.480 g",
-   "2 g",
-   "180 g"
-  ],
-  "correta": 1,
-  "id": "g-0654",
+  "correta": 3,
+  "id": "g-0646",
   "fonte": "ia"
  },
  {
@@ -13150,12 +12989,172 @@ window.ENEM_QUESTIONS = [
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
    "0,50 mols",
-   "1 mols",
+   "32 mols",
    "3,20 mols",
-   "2 mols",
-   "32 mols"
+   "1 mols",
+   "2 mols"
   ],
-  "correta": 1,
+  "correta": 3,
+  "id": "g-0647",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quantos mols há em 400 g de CaCO₃? (massa molar = 100 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 400 ÷ 100 = 4 mols.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "4 mols",
+   "8 mols",
+   "400 mols",
+   "40 mols",
+   "2 mols"
+  ],
+  "correta": 0,
+  "id": "g-0648",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual a massa de 0,50 mol de CaCO₃? (massa molar = 100 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,50 × 100 = 50 g.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "100 g",
+   "0,5 g",
+   "50 g",
+   "500 g",
+   "25 g"
+  ],
+  "correta": 2,
+  "id": "g-0649",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual a massa de 0,25 mol de O₂? (massa molar = 32 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,25 × 32 = 8 g.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "25,6 g",
+   "0,3 g",
+   "8 g",
+   "16 g",
+   "4 g"
+  ],
+  "correta": 2,
+  "id": "g-0650",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual a massa de 1 mol de CaCO₃? (massa molar = 100 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 1 × 100 = 100 g.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "1.000 g",
+   "200 g",
+   "100 g",
+   "1 g",
+   "50 g"
+  ],
+  "correta": 2,
+  "id": "g-0651",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual a massa de 3 mol de H₂O? (massa molar = 18 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 3 × 18 = 54 g.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "108 g",
+   "27 g",
+   "3 g",
+   "97,2 g",
+   "54 g"
+  ],
+  "correta": 4,
+  "id": "g-0652",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Quantos mols há em 175,5 g de NaCl? (massa molar = 58,5 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 175,5 ÷ 58,5 = 3 mols.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "3 mols",
+   "17,55 mols",
+   "6 mols",
+   "1,50 mols",
+   "175,50 mols"
+  ],
+  "correta": 0,
+  "id": "g-0653",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual a massa de 2 mol de CaCO₃? (massa molar = 100 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 2 × 100 = 200 g.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "200 g",
+   "400 g",
+   "100 g",
+   "2.000 g",
+   "2 g"
+  ],
+  "correta": 0,
+  "id": "g-0654",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual a massa de 0,25 mol de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,25 × 180 = 45 g.",
+  "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
+  "alternativas": [
+   "810 g",
+   "0,3 g",
+   "45 g",
+   "90 g",
+   "22,5 g"
+  ],
+  "correta": 2,
   "id": "g-0655",
   "fonte": "ia"
  },
@@ -13165,17 +13164,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quantos mols há em 24,5 g de H₂SO₄? (massa molar = 98 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 24,5 ÷ 98 = 0,25 mols.",
+  "enunciado": "Qual a massa de 0,50 mol de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,50 × 180 = 90 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "0,50 mols",
-   "0,25 mols",
-   "2,45 mols",
-   "0,13 mols",
-   "24,50 mols"
+   "0,5 g",
+   "180 g",
+   "1.620 g",
+   "90 g",
+   "45 g"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0656",
   "fonte": "ia"
  },
@@ -13185,17 +13184,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 0,50 mol de NaCl? (massa molar = 58,5 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 0,50 × 58,5 = 29,3 g.",
+  "enunciado": "Qual a massa de 2 mol de H₂SO₄? (massa molar = 98 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 2 × 98 = 196 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "29,3 g",
-   "58,5 g",
-   "171,1 g",
-   "14,6 g",
-   "0,5 g"
+   "98 g",
+   "1.920,8 g",
+   "196 g",
+   "2 g",
+   "392 g"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0657",
   "fonte": "ia"
  },
@@ -13205,17 +13204,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 3 mol de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 3 × 180 = 540 g.",
+  "enunciado": "Quantos mols há em 720 g de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 720 ÷ 180 = 4 mols.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "270 g",
-   "1.080 g",
-   "9.720 g",
-   "540 g",
-   "3 g"
+   "72 mols",
+   "8 mols",
+   "4 mols",
+   "2 mols",
+   "720 mols"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0658",
   "fonte": "ia"
  },
@@ -13225,15 +13224,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quantos mols há em 200 g de CaCO₃? (massa molar = 100 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 200 ÷ 100 = 2 mols.",
+  "enunciado": "Qual a massa de 0,25 mol de H₂SO₄? (massa molar = 98 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 0,25 × 98 = 24,5 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "200 mols",
-   "20 mols",
-   "2 mols",
-   "1 mols",
-   "4 mols"
+   "49 g",
+   "240,1 g",
+   "24,5 g",
+   "12,3 g",
+   "0,3 g"
   ],
   "correta": 2,
   "id": "g-0659",
@@ -13245,15 +13244,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 3 mol de H₂SO₄? (massa molar = 98 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 3 × 98 = 294 g.",
+  "enunciado": "Quantos mols há em 100 g de CaCO₃? (massa molar = 100 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 100 ÷ 100 = 1 mols.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "294 g",
-   "3 g",
-   "588 g",
-   "147 g",
-   "2.881,2 g"
+   "1 mols",
+   "100 mols",
+   "2 mols",
+   "10 mols",
+   "0,50 mols"
   ],
   "correta": 0,
   "id": "g-0660",
@@ -13269,13 +13268,13 @@ window.ENEM_QUESTIONS = [
   "explicacao": "n° de mols = massa ÷ massa molar = 8 ÷ 32 = 0,25 mols.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "0,50 mols",
    "0,25 mols",
-   "0,80 mols",
    "0,13 mols",
-   "8 mols"
+   "0,80 mols",
+   "8 mols",
+   "0,50 mols"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0661",
   "fonte": "ia"
  },
@@ -13285,17 +13284,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 0,25 mol de NaCl? (massa molar = 58,5 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 0,25 × 58,5 = 14,6 g.",
+  "enunciado": "Qual a massa de 3 mol de H₂SO₄? (massa molar = 98 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 3 × 98 = 294 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "29,3 g",
-   "0,3 g",
-   "7,3 g",
-   "85,6 g",
-   "14,6 g"
+   "588 g",
+   "2.881,2 g",
+   "294 g",
+   "147 g",
+   "3 g"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0662",
   "fonte": "ia"
  },
@@ -13305,15 +13304,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 1 mol de O₂? (massa molar = 32 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 1 × 32 = 32 g.",
+  "enunciado": "Quantos mols há em 9 g de H₂O? (massa molar = 18 g/mol)",
+  "explicacao": "n° de mols = massa ÷ massa molar = 9 ÷ 18 = 0,50 mols.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "32 g",
-   "64 g",
-   "102,4 g",
-   "1 g",
-   "16 g"
+   "0,50 mols",
+   "1 mols",
+   "0,25 mols",
+   "0,90 mols",
+   "9 mols"
   ],
   "correta": 0,
   "id": "g-0663",
@@ -13325,17 +13324,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Quantos mols há em 180 g de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
-  "explicacao": "n° de mols = massa ÷ massa molar = 180 ÷ 180 = 1 mols.",
+  "enunciado": "Qual a massa de 4 mol de H₂SO₄? (massa molar = 98 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 4 × 98 = 392 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "0,50 mols",
-   "1 mols",
-   "180 mols",
-   "2 mols",
-   "18 mols"
+   "392 g",
+   "3.841,6 g",
+   "784 g",
+   "196 g",
+   "4 g"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0664",
   "fonte": "ia"
  },
@@ -13345,15 +13344,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 2 mol de H₂O? (massa molar = 18 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 2 × 18 = 36 g.",
+  "enunciado": "Qual a massa de 1 mol de C₆H₁₂O₆ (glicose)? (massa molar = 180 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 1 × 180 = 180 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "36 g",
-   "2 g",
-   "64,8 g",
-   "18 g",
-   "72 g"
+   "180 g",
+   "3.240 g",
+   "1 g",
+   "90 g",
+   "360 g"
   ],
   "correta": 0,
   "id": "g-0665",
@@ -13365,15 +13364,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual a massa de 0,25 mol de H₂O? (massa molar = 18 g/mol)",
-  "explicacao": "massa = n° de mols × massa molar = 0,25 × 18 = 4,5 g.",
+  "enunciado": "Qual a massa de 3 mol de CO₂? (massa molar = 44 g/mol)",
+  "explicacao": "massa = n° de mols × massa molar = 3 × 44 = 132 g.",
   "dica": "Relação-chave: massa = mols × massa molar (g/mol da tabela periódica).",
   "alternativas": [
-   "2,3 g",
-   "4,5 g",
-   "9 g",
-   "8,1 g",
-   "0,3 g"
+   "580,8 g",
+   "132 g",
+   "3 g",
+   "264 g",
+   "66 g"
   ],
   "correta": 1,
   "id": "g-0666",
@@ -13385,17 +13384,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (vinagre) apresenta pH = 2. Essa solução é classificada como:",
+  "enunciado": "Uma solução (suco de limão) apresenta pH = 4. Essa solução é classificada como:",
   "alternativas": [
    "neutra",
+   "sempre corrosiva",
    "ácida",
    "básica (alcalina)",
-   "sem classificação",
-   "sempre corrosiva"
+   "sem classificação"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 2, a solução é ácida.",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 1,
+  "correta": 2,
   "id": "g-0667",
   "fonte": "ia"
  },
@@ -13405,17 +13404,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 8. Essa solução é classificada como:",
+  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 12. Essa solução é classificada como:",
   "alternativas": [
    "neutra",
-   "sempre corrosiva",
    "básica (alcalina)",
+   "ácida",
    "sem classificação",
-   "ácida"
+   "sempre corrosiva"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 8, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 12, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 2,
+  "correta": 1,
   "id": "g-0668",
   "fonte": "ia"
  },
@@ -13425,15 +13424,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 9. Essa solução é classificada como:",
+  "enunciado": "Uma solução (sabão) apresenta pH = 12. Essa solução é classificada como:",
   "alternativas": [
-   "neutra",
    "ácida",
+   "neutra",
    "básica (alcalina)",
-   "sempre corrosiva",
-   "sem classificação"
+   "sem classificação",
+   "sempre corrosiva"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 9, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 12, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
   "id": "g-0669",
@@ -13445,17 +13444,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (água sanitária) apresenta pH = 10. Essa solução é classificada como:",
+  "enunciado": "Uma solução (água pura) apresenta pH = 7. Essa solução é classificada como:",
   "alternativas": [
-   "básica (alcalina)",
-   "ácida",
-   "neutra",
    "sem classificação",
-   "sempre corrosiva"
+   "ácida",
+   "sempre corrosiva",
+   "neutra",
+   "básica (alcalina)"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 7, a solução é neutra.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 0,
+  "correta": 3,
   "id": "g-0670",
   "fonte": "ia"
  },
@@ -13465,15 +13464,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (água sanitária) apresenta pH = 9. Essa solução é classificada como:",
+  "enunciado": "Uma solução (vinagre) apresenta pH = 3. Essa solução é classificada como:",
   "alternativas": [
-   "ácida",
+   "sem classificação",
    "sempre corrosiva",
    "neutra",
-   "básica (alcalina)",
-   "sem classificação"
+   "ácida",
+   "básica (alcalina)"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 9, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 3, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
   "id": "g-0671",
@@ -13485,17 +13484,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (água pura) apresenta pH = 7. Essa solução é classificada como:",
+  "enunciado": "Uma solução (água sanitária) apresenta pH = 13. Essa solução é classificada como:",
   "alternativas": [
-   "ácida",
    "básica (alcalina)",
    "sempre corrosiva",
+   "neutra",
    "sem classificação",
-   "neutra"
+   "ácida"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 7, a solução é neutra.",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 13, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 4,
+  "correta": 0,
   "id": "g-0672",
   "fonte": "ia"
  },
@@ -13505,15 +13504,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (sabão) apresenta pH = 8. Essa solução é classificada como:",
+  "enunciado": "Uma solução (vinagre) apresenta pH = 2. Essa solução é classificada como:",
   "alternativas": [
-   "ácida",
+   "sempre corrosiva",
    "sem classificação",
-   "neutra",
    "básica (alcalina)",
-   "sempre corrosiva"
+   "ácida",
+   "neutra"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 8, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 2, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
   "id": "g-0673",
@@ -13525,17 +13524,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 11. Essa solução é classificada como:",
+  "enunciado": "Uma solução (refrigerante) apresenta pH = 4. Essa solução é classificada como:",
   "alternativas": [
    "neutra",
-   "ácida",
    "sempre corrosiva",
+   "ácida",
    "básica (alcalina)",
    "sem classificação"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 11, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 3,
+  "correta": 2,
   "id": "g-0674",
   "fonte": "ia"
  },
@@ -13545,17 +13544,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 10. Essa solução é classificada como:",
+  "enunciado": "Uma solução (refrigerante) apresenta pH = 3. Essa solução é classificada como:",
   "alternativas": [
-   "sempre corrosiva",
    "ácida",
    "neutra",
+   "sem classificação",
    "básica (alcalina)",
-   "sem classificação"
+   "sempre corrosiva"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 3, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 3,
+  "correta": 0,
   "id": "g-0675",
   "fonte": "ia"
  },
@@ -13565,15 +13564,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (refrigerante) apresenta pH = 2. Essa solução é classificada como:",
+  "enunciado": "Uma solução (sabão) apresenta pH = 10. Essa solução é classificada como:",
   "alternativas": [
+   "ácida",
    "sem classificação",
    "básica (alcalina)",
-   "ácida",
-   "neutra",
-   "sempre corrosiva"
+   "sempre corrosiva",
+   "neutra"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 2, a solução é ácida.",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
   "id": "g-0676",
@@ -13585,58 +13584,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 13. Essa solução é classificada como:",
+  "enunciado": "Uma solução (suco de limão) apresenta pH = 1. Essa solução é classificada como:",
   "alternativas": [
-   "básica (alcalina)",
-   "sem classificação",
+   "sempre corrosiva",
    "neutra",
-   "sempre corrosiva",
-   "ácida"
-  ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 13, a solução é básica (alcalina).",
-  "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 0,
-  "id": "g-0677",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Fácil",
-  "gerada": true,
-  "enunciado": "Uma solução (refrigerante) apresenta pH = 4. Essa solução é classificada como:",
-  "alternativas": [
-   "ácida",
-   "sem classificação",
    "básica (alcalina)",
-   "sempre corrosiva",
-   "neutra"
-  ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
-  "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 0,
-  "id": "g-0678",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Química Geral",
-  "nivel": "Fácil",
-  "gerada": true,
-  "enunciado": "Uma solução (suco de limão) apresenta pH = 4. Essa solução é classificada como:",
-  "alternativas": [
    "ácida",
-   "sempre corrosiva",
-   "básica (alcalina)",
-   "neutra",
    "sem classificação"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 1, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 0,
-  "id": "g-0679",
+  "correta": 3,
+  "id": "g-0677",
   "fonte": "ia"
  },
  {
@@ -13648,14 +13607,54 @@ window.ENEM_QUESTIONS = [
   "enunciado": "Uma solução (vinagre) apresenta pH = 4. Essa solução é classificada como:",
   "alternativas": [
    "sem classificação",
+   "básica (alcalina)",
    "ácida",
    "neutra",
-   "sempre corrosiva",
-   "básica (alcalina)"
+   "sempre corrosiva"
   ],
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 4, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 1,
+  "correta": 2,
+  "id": "g-0678",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Fácil",
+  "gerada": true,
+  "enunciado": "Uma solução (sabão) apresenta pH = 9. Essa solução é classificada como:",
+  "alternativas": [
+   "básica (alcalina)",
+   "neutra",
+   "sem classificação",
+   "ácida",
+   "sempre corrosiva"
+  ],
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 9, a solução é básica (alcalina).",
+  "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
+  "correta": 0,
+  "id": "g-0679",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Química Geral",
+  "nivel": "Fácil",
+  "gerada": true,
+  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 9. Essa solução é classificada como:",
+  "alternativas": [
+   "sempre corrosiva",
+   "sem classificação",
+   "ácida",
+   "básica (alcalina)",
+   "neutra"
+  ],
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 9, a solução é básica (alcalina).",
+  "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
+  "correta": 3,
   "id": "g-0680",
   "fonte": "ia"
  },
@@ -13667,11 +13666,11 @@ window.ENEM_QUESTIONS = [
   "gerada": true,
   "enunciado": "Uma solução (suco de limão) apresenta pH = 3. Essa solução é classificada como:",
   "alternativas": [
-   "neutra",
-   "básica (alcalina)",
-   "ácida",
+   "sem classificação",
    "sempre corrosiva",
-   "sem classificação"
+   "ácida",
+   "neutra",
+   "básica (alcalina)"
   ],
   "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 3, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
@@ -13685,17 +13684,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (sabão) apresenta pH = 10. Essa solução é classificada como:",
+  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 13. Essa solução é classificada como:",
   "alternativas": [
+   "sempre corrosiva",
+   "sem classificação",
    "básica (alcalina)",
    "ácida",
-   "sempre corrosiva",
-   "neutra",
-   "sem classificação"
+   "neutra"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 10, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 13, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
-  "correta": 0,
+  "correta": 2,
   "id": "g-0682",
   "fonte": "ia"
  },
@@ -13705,15 +13704,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 12. Essa solução é classificada como:",
+  "enunciado": "Uma solução (leite de magnésia) apresenta pH = 8. Essa solução é classificada como:",
   "alternativas": [
    "sempre corrosiva",
-   "ácida",
    "sem classificação",
+   "neutra",
    "básica (alcalina)",
-   "neutra"
+   "ácida"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 12, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 8, a solução é básica (alcalina).",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 3,
   "id": "g-0683",
@@ -13725,15 +13724,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Química Geral",
   "nivel": "Fácil",
   "gerada": true,
-  "enunciado": "Uma solução (sabão) apresenta pH = 12. Essa solução é classificada como:",
+  "enunciado": "Uma solução (suco de limão) apresenta pH = 2. Essa solução é classificada como:",
   "alternativas": [
-   "neutra",
    "sempre corrosiva",
    "básica (alcalina)",
    "ácida",
-   "sem classificação"
+   "sem classificação",
+   "neutra"
   ],
-  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 12, a solução é básica (alcalina).",
+  "explicacao": "Na escala de 0 a 14: pH < 7 é ácido, pH = 7 é neutro e pH > 7 é básico. Com pH = 2, a solução é ácida.",
   "dica": "pH < 7 ácido · pH = 7 neutro · pH > 7 básico. O 7 (água pura) é a referência.",
   "correta": 2,
   "id": "g-0684",
@@ -13745,17 +13744,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 4 e razão 4, qual é a soma dos 19 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 4 + 18×4 = 76. Soma: Sₙ = (a₁+aₙ)·n/2 = (4+76)×19/2 = 760.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 3 e razão 8. Qual é o 13º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 3 + (13−1)×8 = 3 + 96 = 99.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "756",
-   "76",
-   "760",
-   "80",
-   "764"
+   "99",
+   "39",
+   "663",
+   "91",
+   "107"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0685",
   "fonte": "ia"
  },
@@ -13765,15 +13764,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 10 e razão 7. Qual é o 16º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 10 + (16−1)×7 = 10 + 105 = 115.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 2 e razão 3. Qual é o 11º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 2 + (11−1)×3 = 2 + 30 = 32.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "122",
-   "160",
-   "1.000",
-   "108",
-   "115"
+   "22",
+   "187",
+   "29",
+   "35",
+   "32"
   ],
   "correta": 4,
   "id": "g-0686",
@@ -13785,17 +13784,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 11 e razão 4, qual é a soma dos 10 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 11 + 9×4 = 47. Soma: Sₙ = (a₁+aₙ)·n/2 = (11+47)×10/2 = 290.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 10 e razão 6. Qual é o 18º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 10 + (18−1)×6 = 10 + 102 = 112.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "286",
-   "294",
-   "51",
-   "290",
-   "47"
+   "112",
+   "1.098",
+   "106",
+   "118",
+   "180"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0687",
   "fonte": "ia"
  },
@@ -13805,15 +13804,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 7 e razão 5, qual é a soma dos 11 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 7 + 10×5 = 57. Soma: Sₙ = (a₁+aₙ)·n/2 = (7+57)×11/2 = 352.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 11 e razão 3. Qual é o 16º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 11 + (16−1)×3 = 11 + 45 = 56.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "352",
-   "357",
-   "62",
-   "57",
-   "347"
+   "56",
+   "176",
+   "536",
+   "53",
+   "59"
   ],
   "correta": 0,
   "id": "g-0688",
@@ -13825,17 +13824,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 7 e razão 4, qual é a soma dos 13 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 7 + 12×4 = 55. Soma: Sₙ = (a₁+aₙ)·n/2 = (7+55)×13/2 = 403.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 2 e razão 7, qual é a soma dos 7 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 2 + 6×7 = 44. Soma: Sₙ = (a₁+aₙ)·n/2 = (2+44)×7/2 = 161.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "407",
-   "59",
-   "403",
-   "399",
-   "55"
+   "168",
+   "161",
+   "154",
+   "44",
+   "51"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0689",
   "fonte": "ia"
  },
@@ -13845,17 +13844,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 4 e razão 2, qual é a soma dos 10 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 4 + 9×2 = 22. Soma: Sₙ = (a₁+aₙ)·n/2 = (4+22)×10/2 = 130.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 3 e razão 8, qual é a soma dos 20 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 3 + 19×8 = 155. Soma: Sₙ = (a₁+aₙ)·n/2 = (3+155)×20/2 = 1.580.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "24",
-   "132",
-   "130",
-   "128",
-   "22"
+   "1.572",
+   "1.580",
+   "163",
+   "1.588",
+   "155"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0690",
   "fonte": "ia"
  },
@@ -13865,17 +13864,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 7 e razão 6. Qual é o 12º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 7 + (12−1)×6 = 7 + 66 = 73.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 12 e razão 6, qual é a soma dos 18 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 12 + 17×6 = 114. Soma: Sₙ = (a₁+aₙ)·n/2 = (12+114)×18/2 = 1.134.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "480",
-   "84",
-   "73",
-   "67",
-   "79"
+   "1.134",
+   "1.128",
+   "1.140",
+   "114",
+   "120"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0691",
   "fonte": "ia"
  },
@@ -13885,17 +13884,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 5 e razão 6. Qual é o 7º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 5 + (7−1)×6 = 5 + 36 = 41.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 10 e razão 9, qual é a soma dos 19 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 10 + 18×9 = 172. Soma: Sₙ = (a₁+aₙ)·n/2 = (10+172)×19/2 = 1.729.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "41",
-   "161",
-   "47",
-   "21",
-   "35"
+   "1.738",
+   "1.729",
+   "172",
+   "181",
+   "1.720"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0692",
   "fonte": "ia"
  },
@@ -13905,15 +13904,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 10 e razão 7. Qual é o 19º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 10 + (19−1)×7 = 10 + 126 = 136.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 7 e razão 3. Qual é o 13º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 7 + (13−1)×3 = 7 + 36 = 43.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "1.387",
-   "136",
-   "190",
-   "143",
-   "129"
+   "325",
+   "43",
+   "91",
+   "40",
+   "46"
   ],
   "correta": 1,
   "id": "g-0693",
@@ -13925,17 +13924,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 9 e razão 7. Qual é o 13º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 9 + (13−1)×7 = 9 + 84 = 93.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 1 e razão 4. Qual é o 15º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 1 + (15−1)×4 = 1 + 56 = 57.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "117",
-   "663",
-   "93",
-   "100",
-   "86"
+   "61",
+   "15",
+   "435",
+   "53",
+   "57"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0694",
   "fonte": "ia"
  },
@@ -13945,15 +13944,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 1 e razão 5, qual é a soma dos 12 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 1 + 11×5 = 56. Soma: Sₙ = (a₁+aₙ)·n/2 = (1+56)×12/2 = 342.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 3 e razão 5, qual é a soma dos 20 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 3 + 19×5 = 98. Soma: Sₙ = (a₁+aₙ)·n/2 = (3+98)×20/2 = 1.010.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "61",
-   "56",
-   "337",
-   "342",
-   "347"
+   "1.015",
+   "1.005",
+   "103",
+   "1.010",
+   "98"
   ],
   "correta": 3,
   "id": "g-0695",
@@ -13965,17 +13964,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 12 e razão 2. Qual é o 10º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 12 + (10−1)×2 = 12 + 18 = 30.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 6 e razão 8. Qual é o 10º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 6 + (10−1)×8 = 6 + 72 = 78.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "28",
-   "210",
-   "32",
-   "30",
-   "120"
+   "60",
+   "78",
+   "86",
+   "420",
+   "70"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0696",
   "fonte": "ia"
  },
@@ -13985,17 +13984,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 10 e razão 2, qual é a soma dos 13 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 10 + 12×2 = 34. Soma: Sₙ = (a₁+aₙ)·n/2 = (10+34)×13/2 = 286.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 5 e razão 8, qual é a soma dos 11 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 5 + 10×8 = 85. Soma: Sₙ = (a₁+aₙ)·n/2 = (5+85)×11/2 = 495.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "286",
-   "34",
-   "284",
-   "288",
-   "36"
+   "85",
+   "487",
+   "93",
+   "495",
+   "503"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0697",
   "fonte": "ia"
  },
@@ -14005,17 +14004,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 11 e razão 5. Qual é o 18º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 11 + (18−1)×5 = 11 + 85 = 96.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 7 e razão 9. Qual é o 14º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 7 + (14−1)×9 = 7 + 117 = 124.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "198",
-   "91",
-   "963",
-   "96",
-   "101"
+   "98",
+   "115",
+   "124",
+   "133",
+   "917"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0698",
   "fonte": "ia"
  },
@@ -14025,17 +14024,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 7 e razão 6. Qual é o 14º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 7 + (14−1)×6 = 7 + 78 = 85.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 9 e razão 4. Qual é o 14º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 9 + (14−1)×4 = 9 + 52 = 61.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "98",
-   "91",
-   "85",
-   "644",
-   "79"
+   "490",
+   "126",
+   "57",
+   "61",
+   "65"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0699",
   "fonte": "ia"
  },
@@ -14045,17 +14044,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 8 e razão 7. Qual é o 8º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 8 + (8−1)×7 = 8 + 49 = 57.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 12 e razão 4, qual é a soma dos 18 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 12 + 17×4 = 80. Soma: Sₙ = (a₁+aₙ)·n/2 = (12+80)×18/2 = 828.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "260",
-   "29",
-   "50",
-   "57",
-   "64"
+   "828",
+   "80",
+   "824",
+   "84",
+   "832"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0700",
   "fonte": "ia"
  },
@@ -14065,17 +14064,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 12 e razão 3, qual é a soma dos 11 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 12 + 10×3 = 42. Soma: Sₙ = (a₁+aₙ)·n/2 = (12+42)×11/2 = 297.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 5 e razão 3. Qual é o 15º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 5 + (15−1)×3 = 5 + 42 = 47.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "297",
-   "294",
-   "42",
-   "45",
-   "300"
+   "44",
+   "75",
+   "390",
+   "47",
+   "50"
   ],
-  "correta": 0,
+  "correta": 3,
   "id": "g-0701",
   "fonte": "ia"
  },
@@ -14085,17 +14084,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 4 e razão 7, qual é a soma dos 17 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 4 + 16×7 = 116. Soma: Sₙ = (a₁+aₙ)·n/2 = (4+116)×17/2 = 1.020.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 7 e razão 2. Qual é o 15º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 7 + (15−1)×2 = 7 + 28 = 35.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "1.020",
-   "123",
-   "1.027",
-   "116",
-   "1.013"
+   "33",
+   "37",
+   "35",
+   "105",
+   "315"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0702",
   "fonte": "ia"
  },
@@ -14105,17 +14104,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 5 e razão 4, qual é a soma dos 15 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 5 + 14×4 = 61. Soma: Sₙ = (a₁+aₙ)·n/2 = (5+61)×15/2 = 495.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 6 e razão 9. Qual é o 10º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 6 + (10−1)×9 = 6 + 81 = 87.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "499",
-   "65",
-   "61",
-   "495",
-   "491"
+   "87",
+   "78",
+   "96",
+   "465",
+   "60"
   ],
-  "correta": 3,
+  "correta": 0,
   "id": "g-0703",
   "fonte": "ia"
  },
@@ -14125,17 +14124,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 7 e razão 8. Qual é o 9º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 7 + (9−1)×8 = 7 + 64 = 71.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 10 e razão 6, qual é a soma dos 12 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 10 + 11×6 = 76. Soma: Sₙ = (a₁+aₙ)·n/2 = (10+76)×12/2 = 516.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "63",
-   "36",
-   "79",
-   "351",
-   "71"
+   "76",
+   "516",
+   "510",
+   "522",
+   "82"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0704",
   "fonte": "ia"
  },
@@ -14145,17 +14144,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Em uma progressão aritmética de primeiro termo 7 e razão 8, qual é a soma dos 14 primeiros termos?",
-  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 7 + 13×8 = 111. Soma: Sₙ = (a₁+aₙ)·n/2 = (7+111)×14/2 = 826.",
+  "enunciado": "Uma progressão aritmética tem primeiro termo 12 e razão 7. Qual é o 8º termo?",
+  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 12 + (8−1)×7 = 12 + 49 = 61.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "834",
-   "818",
-   "119",
-   "111",
-   "826"
+   "68",
+   "292",
+   "96",
+   "61",
+   "54"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0705",
   "fonte": "ia"
  },
@@ -14165,17 +14164,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma progressão aritmética tem primeiro termo 10 e razão 2. Qual é o 16º termo?",
-  "explicacao": "Termo geral da PA: aₙ = a₁ + (n−1)·r = 10 + (16−1)×2 = 10 + 30 = 40.",
+  "enunciado": "Em uma progressão aritmética de primeiro termo 12 e razão 7, qual é a soma dos 12 primeiros termos?",
+  "explicacao": "Termo geral: aₙ = a₁ + (n−1)·r = 12 + 11×7 = 89. Soma: Sₙ = (a₁+aₙ)·n/2 = (12+89)×12/2 = 606.",
   "dica": "PA: aₙ = a₁ + (n−1)·r. Soma: Sₙ = (a₁+aₙ)·n/2.",
   "alternativas": [
-   "38",
-   "40",
-   "400",
-   "42",
-   "160"
+   "89",
+   "599",
+   "606",
+   "96",
+   "613"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0706",
   "fonte": "ia"
  },
@@ -14185,17 +14184,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 4 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 5 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 4·3^5 = 972.",
+  "enunciado": "Uma cultura de bactérias começa com 3 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 7 horas?",
+  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 3·3^7 = 6.561.",
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
-   "19",
-   "2.916",
-   "324",
-   "60",
-   "972"
+   "63",
+   "24",
+   "19.683",
+   "6.561",
+   "2.187"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0707",
   "fonte": "ia"
  },
@@ -14205,98 +14204,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 6 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·3^6 = 729.",
+  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 6 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·2^6 = 64.",
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
-   "243",
-   "2.187",
-   "729",
-   "19",
-   "18"
-  ],
-  "correta": 2,
-  "id": "g-0708",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 3 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 4 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 3·3^4 = 243.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "729",
-   "36",
-   "243",
-   "15",
-   "81"
-  ],
-  "correta": 2,
-  "id": "g-0709",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 5 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 7 horas?",
-  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 5·2^7 = 640.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "19",
-   "70",
-   "1.280",
-   "640",
-   "320"
+   "32",
+   "12",
+   "13",
+   "64",
+   "128"
   ],
   "correta": 3,
-  "id": "g-0710",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 7 horas?",
-  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·2^7 = 128.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "64",
-   "128",
-   "14",
-   "256",
-   "15"
-  ],
-  "correta": 1,
-  "id": "g-0711",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 4 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 3 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 4·3^3 = 108.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "108",
-   "13",
-   "324",
-   "54",
-   "36"
-  ],
-  "correta": 0,
-  "id": "g-0712",
+  "id": "g-0708",
   "fonte": "ia"
  },
  {
@@ -14310,10 +14229,90 @@ window.ENEM_QUESTIONS = [
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
    "17",
-   "192",
-   "384",
+   "768",
    "42",
-   "768"
+   "192",
+   "384"
+  ],
+  "correta": 4,
+  "id": "g-0709",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 5 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 5 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 5·2^5 = 160.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "50",
+   "80",
+   "320",
+   "15",
+   "160"
+  ],
+  "correta": 4,
+  "id": "g-0710",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 6 horas?",
+  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·3^6 = 729.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "243",
+   "729",
+   "19",
+   "2.187",
+   "18"
+  ],
+  "correta": 1,
+  "id": "g-0711",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 5 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 3 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 5·2^3 = 40.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "40",
+   "20",
+   "11",
+   "30",
+   "80"
+  ],
+  "correta": 0,
+  "id": "g-0712",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 2 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 3 horas?",
+  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 2·3^3 = 54.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "162",
+   "11",
+   "54",
+   "27",
+   "18"
   ],
   "correta": 2,
   "id": "g-0713",
@@ -14325,17 +14324,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 5 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·3^5 = 243.",
+  "enunciado": "Uma cultura de bactérias começa com 2 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 6 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 2·2^6 = 128.",
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
-   "15",
-   "81",
-   "243",
-   "729",
-   "16"
+   "64",
+   "256",
+   "14",
+   "24",
+   "128"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0714",
   "fonte": "ia"
  },
@@ -14345,18 +14344,98 @@ window.ENEM_QUESTIONS = [
   "topico": "Progressões",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 3 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 4 horas?",
-  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 3·2^4 = 48.",
+  "enunciado": "Uma cultura de bactérias começa com 3 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 3 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 3·2^3 = 24.",
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
-   "96",
-   "24",
-   "72",
+   "12",
+   "9",
    "48",
-   "11"
+   "24",
+   "18"
   ],
   "correta": 3,
   "id": "g-0715",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 5 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 4 horas?",
+  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 5·3^4 = 405.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "17",
+   "60",
+   "135",
+   "1.215",
+   "405"
+  ],
+  "correta": 4,
+  "id": "g-0716",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 6 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 7 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 6·2^7 = 768.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "384",
+   "1.536",
+   "84",
+   "768",
+   "20"
+  ],
+  "correta": 3,
+  "id": "g-0717",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 6 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 7 horas?",
+  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 6·3^7 = 13.122.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "4.374",
+   "126",
+   "27",
+   "39.366",
+   "13.122"
+  ],
+  "correta": 4,
+  "id": "g-0718",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 4 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 6 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 4·2^6 = 256.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "48",
+   "256",
+   "128",
+   "512",
+   "16"
+  ],
+  "correta": 1,
+  "id": "g-0719",
   "fonte": "ia"
  },
  {
@@ -14369,74 +14448,34 @@ window.ENEM_QUESTIONS = [
   "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·2^3 = 8.",
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
-   "16",
-   "7",
-   "4",
    "6",
-   "8"
-  ],
-  "correta": 4,
-  "id": "g-0716",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 2 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 7 horas?",
-  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 2·2^7 = 256.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "256",
-   "512",
+   "4",
    "16",
-   "28",
-   "128"
-  ],
-  "correta": 0,
-  "id": "g-0717",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 4 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 6 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 4·3^6 = 2.916.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "972",
-   "2.916",
-   "8.748",
-   "72",
-   "22"
-  ],
-  "correta": 1,
-  "id": "g-0718",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 4 horas?",
-  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·2^4 = 16.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
    "8",
-   "16",
-   "9",
-   "24",
-   "32"
+   "7"
   ],
-  "correta": 1,
-  "id": "g-0719",
+  "correta": 3,
+  "id": "g-0720",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Progressões",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Uma cultura de bactérias começa com 4 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 3 horas?",
+  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 4·2^3 = 32.",
+  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
+  "alternativas": [
+   "64",
+   "10",
+   "32",
+   "16",
+   "24"
+  ],
+  "correta": 2,
+  "id": "g-0721",
   "fonte": "ia"
  },
  {
@@ -14450,52 +14489,12 @@ window.ENEM_QUESTIONS = [
   "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
   "alternativas": [
    "6.561",
-   "21",
    "2.187",
+   "21",
    "22",
    "729"
   ],
-  "correta": 2,
-  "id": "g-0720",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 5 indivíduo(s) e dobra a cada hora. Quantas bactérias haverá após 5 horas?",
-  "explicacao": "É uma PG de razão 2. Termo geral: aₙ = a₁·qⁿ⁻¹ = 5·2^5 = 160.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "160",
-   "320",
-   "50",
-   "15",
-   "80"
-  ],
-  "correta": 0,
-  "id": "g-0721",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Progressões",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Uma cultura de bactérias começa com 1 indivíduo(s) e triplica a cada hora. Quantas bactérias haverá após 3 horas?",
-  "explicacao": "É uma PG de razão 3. Termo geral: aₙ = a₁·qⁿ⁻¹ = 1·3^3 = 27.",
-  "dica": "PG (crescimento que multiplica): aₙ = a₁·qⁿ⁻¹. Cresce exponencialmente.",
-  "alternativas": [
-   "27",
-   "10",
-   "9",
-   "81",
-   "14"
-  ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0722",
   "fonte": "ia"
  },
@@ -14505,58 +14504,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Análise Combinatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Um cardápio oferece 4 tipos de entrada, 5 de prato principal e 2 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
-  "explicacao": "Pelo princípio multiplicativo da contagem: 4 × 5 × 2 = 40 menus.",
+  "enunciado": "Um cardápio oferece 4 tipos de entrada, 3 de prato principal e 3 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
+  "explicacao": "Pelo princípio multiplicativo da contagem: 4 × 3 × 3 = 36 menus.",
   "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
   "alternativas": [
-   "35",
-   "22",
-   "11",
    "40",
-   "44"
-  ],
-  "correta": 3,
-  "id": "g-0723",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Análise Combinatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um cardápio oferece 5 tipos de entrada, 4 de prato principal e 2 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
-  "explicacao": "Pelo princípio multiplicativo da contagem: 5 × 4 × 2 = 40 menus.",
-  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
-  "alternativas": [
-   "22",
    "36",
-   "11",
-   "40",
-   "45"
+   "33",
+   "10",
+   "15"
   ],
-  "correta": 3,
-  "id": "g-0724",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Análise Combinatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um cardápio oferece 5 tipos de entrada, 3 de prato principal e 3 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
-  "explicacao": "Pelo princípio multiplicativo da contagem: 5 × 3 × 3 = 45 menus.",
-  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
-  "alternativas": [
-   "18",
-   "11",
-   "42",
-   "50",
-   "45"
-  ],
-  "correta": 4,
-  "id": "g-0725",
+  "correta": 1,
+  "id": "g-0723",
   "fonte": "ia"
  },
  {
@@ -14571,72 +14530,12 @@ window.ENEM_QUESTIONS = [
   "alternativas": [
    "30",
    "36",
+   "120",
    "360",
-   "720",
-   "120"
-  ],
-  "correta": 3,
-  "id": "g-0726",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Análise Combinatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um cardápio oferece 4 tipos de entrada, 5 de prato principal e 3 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
-  "explicacao": "Pelo princípio multiplicativo da contagem: 4 × 5 × 3 = 60 menus.",
-  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
-  "alternativas": [
-   "64",
-   "55",
-   "23",
-   "12",
-   "60"
+   "720"
   ],
   "correta": 4,
-  "id": "g-0727",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Análise Combinatória",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "De um grupo de 5 pessoas, quantas comissões diferentes de 3 membros podem ser formadas (a ordem não importa)?",
-  "explicacao": "A ordem não importa → combinação: C(5,3) = 5! / (3!·2!) = 10.",
-  "dica": "Ordem NÃO importa (comissão, grupo) → combinação. Ordem importa (pódio, senha) → arranjo.",
-  "alternativas": [
-   "60",
-   "10",
-   "20",
-   "15",
-   "8"
-  ],
-  "correta": 1,
-  "id": "g-0728",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Análise Combinatória",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "De um grupo de 8 pessoas, quantas comissões diferentes de 2 membros podem ser formadas (a ordem não importa)?",
-  "explicacao": "A ordem não importa → combinação: C(8,2) = 8! / (2!·6!) = 28.",
-  "dica": "Ordem NÃO importa (comissão, grupo) → combinação. Ordem importa (pódio, senha) → arranjo.",
-  "alternativas": [
-   "30",
-   "16",
-   "28",
-   "10",
-   "56"
-  ],
-  "correta": 2,
-  "id": "g-0729",
+  "id": "g-0724",
   "fonte": "ia"
  },
  {
@@ -14649,14 +14548,14 @@ window.ENEM_QUESTIONS = [
   "explicacao": "É uma permutação de 3 elementos: P = 3! = 3×2×1 = 6.",
   "dica": "Ordenar TODOS os elementos numa fila = permutação = n! (fatorial).",
   "alternativas": [
-   "9",
-   "5",
-   "3",
    "6",
-   "2"
+   "9",
+   "3",
+   "2",
+   "5"
   ],
-  "correta": 3,
-  "id": "g-0730",
+  "correta": 0,
+  "id": "g-0725",
   "fonte": "ia"
  },
  {
@@ -14665,18 +14564,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Análise Combinatória",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "De quantas maneiras diferentes 4 pessoas podem ser organizadas em fila?",
-  "explicacao": "É uma permutação de 4 elementos: P = 4! = 4×3×2×1 = 24.",
-  "dica": "Ordenar TODOS os elementos numa fila = permutação = n! (fatorial).",
+  "enunciado": "Um cardápio oferece 2 tipos de entrada, 3 de prato principal e 4 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
+  "explicacao": "Pelo princípio multiplicativo da contagem: 2 × 3 × 4 = 24 menus.",
+  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
   "alternativas": [
-   "6",
-   "8",
-   "16",
-   "12",
-   "24"
+   "9",
+   "10",
+   "21",
+   "24",
+   "26"
   ],
-  "correta": 4,
-  "id": "g-0731",
+  "correta": 3,
+  "id": "g-0726",
   "fonte": "ia"
  },
  {
@@ -14690,13 +14589,73 @@ window.ENEM_QUESTIONS = [
   "dica": "Ordem NÃO importa (comissão, grupo) → combinação. Ordem importa (pódio, senha) → arranjo.",
   "alternativas": [
    "7",
-   "10",
    "5",
+   "10",
    "20",
    "12"
   ],
-  "correta": 1,
-  "id": "g-0732",
+  "correta": 2,
+  "id": "g-0727",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "De um grupo de 8 pessoas, quantas comissões diferentes de 2 membros podem ser formadas (a ordem não importa)?",
+  "explicacao": "A ordem não importa → combinação: C(8,2) = 8! / (2!·6!) = 28.",
+  "dica": "Ordem NÃO importa (comissão, grupo) → combinação. Ordem importa (pódio, senha) → arranjo.",
+  "alternativas": [
+   "30",
+   "56",
+   "28",
+   "16",
+   "10"
+  ],
+  "correta": 2,
+  "id": "g-0728",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um cardápio oferece 2 tipos de entrada, 5 de prato principal e 2 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
+  "explicacao": "Pelo princípio multiplicativo da contagem: 2 × 5 × 2 = 20 menus.",
+  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
+  "alternativas": [
+   "12",
+   "22",
+   "15",
+   "9",
+   "20"
+  ],
+  "correta": 4,
+  "id": "g-0729",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Um cardápio oferece 2 tipos de entrada, 4 de prato principal e 2 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
+  "explicacao": "Pelo princípio multiplicativo da contagem: 2 × 4 × 2 = 16 menus.",
+  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
+  "alternativas": [
+   "10",
+   "8",
+   "12",
+   "16",
+   "18"
+  ],
+  "correta": 3,
+  "id": "g-0730",
   "fonte": "ia"
  },
  {
@@ -14716,7 +14675,7 @@ window.ENEM_QUESTIONS = [
    "30"
   ],
   "correta": 0,
-  "id": "g-0733",
+  "id": "g-0731",
   "fonte": "ia"
  },
  {
@@ -14736,7 +14695,7 @@ window.ENEM_QUESTIONS = [
    "7"
   ],
   "correta": 1,
-  "id": "g-0734",
+  "id": "g-0732",
   "fonte": "ia"
  },
  {
@@ -14756,7 +14715,7 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 3,
-  "id": "g-0735",
+  "id": "g-0733",
   "fonte": "ia"
  },
  {
@@ -14776,7 +14735,7 @@ window.ENEM_QUESTIONS = [
    "13"
   ],
   "correta": 1,
-  "id": "g-0736",
+  "id": "g-0734",
   "fonte": "ia"
  },
  {
@@ -14796,7 +14755,7 @@ window.ENEM_QUESTIONS = [
    "125"
   ],
   "correta": 0,
-  "id": "g-0737",
+  "id": "g-0735",
   "fonte": "ia"
  },
  {
@@ -14816,7 +14775,7 @@ window.ENEM_QUESTIONS = [
    "65"
   ],
   "correta": 3,
-  "id": "g-0738",
+  "id": "g-0736",
   "fonte": "ia"
  },
  {
@@ -14836,7 +14795,27 @@ window.ENEM_QUESTIONS = [
    "14"
   ],
   "correta": 2,
-  "id": "g-0739",
+  "id": "g-0737",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "De quantas maneiras diferentes 4 pessoas podem ser organizadas em fila?",
+  "explicacao": "É uma permutação de 4 elementos: P = 4! = 4×3×2×1 = 24.",
+  "dica": "Ordenar TODOS os elementos numa fila = permutação = n! (fatorial).",
+  "alternativas": [
+   "24",
+   "12",
+   "8",
+   "16",
+   "6"
+  ],
+  "correta": 0,
+  "id": "g-0738",
   "fonte": "ia"
  },
  {
@@ -14856,7 +14835,7 @@ window.ENEM_QUESTIONS = [
    "70"
   ],
   "correta": 1,
-  "id": "g-0740",
+  "id": "g-0739",
   "fonte": "ia"
  },
  {
@@ -14876,7 +14855,7 @@ window.ENEM_QUESTIONS = [
    "70"
   ],
   "correta": 3,
-  "id": "g-0741",
+  "id": "g-0740",
   "fonte": "ia"
  },
  {
@@ -14896,27 +14875,7 @@ window.ENEM_QUESTIONS = [
    "36"
   ],
   "correta": 4,
-  "id": "g-0742",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Análise Combinatória",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Um cardápio oferece 2 tipos de entrada, 3 de prato principal e 4 de sobremesa. Quantos menus diferentes (uma opção de cada) podem ser montados?",
-  "explicacao": "Pelo princípio multiplicativo da contagem: 2 × 3 × 4 = 24 menus.",
-  "dica": "Escolhas em sequência (e...e...e) → MULTIPLIQUE as opções.",
-  "alternativas": [
-   "10",
-   "26",
-   "21",
-   "9",
-   "24"
-  ],
-  "correta": 4,
-  "id": "g-0743",
+  "id": "g-0741",
   "fonte": "ia"
  },
  {
@@ -14936,7 +14895,7 @@ window.ENEM_QUESTIONS = [
    "14"
   ],
   "correta": 0,
-  "id": "g-0744",
+  "id": "g-0742",
   "fonte": "ia"
  },
  {
@@ -14956,7 +14915,27 @@ window.ENEM_QUESTIONS = [
    "16"
   ],
   "correta": 3,
-  "id": "g-0745",
+  "id": "g-0743",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "De um grupo de 5 pessoas, quantas comissões diferentes de 3 membros podem ser formadas (a ordem não importa)?",
+  "explicacao": "A ordem não importa → combinação: C(5,3) = 5! / (3!·2!) = 10.",
+  "dica": "Ordem NÃO importa (comissão, grupo) → combinação. Ordem importa (pódio, senha) → arranjo.",
+  "alternativas": [
+   "60",
+   "8",
+   "15",
+   "20",
+   "10"
+  ],
+  "correta": 4,
+  "id": "g-0744",
   "fonte": "ia"
  },
  {
@@ -14976,7 +14955,7 @@ window.ENEM_QUESTIONS = [
    "32"
   ],
   "correta": 4,
-  "id": "g-0746",
+  "id": "g-0745",
   "fonte": "ia"
  },
  {
@@ -14996,7 +14975,7 @@ window.ENEM_QUESTIONS = [
    "40"
   ],
   "correta": 0,
-  "id": "g-0747",
+  "id": "g-0746",
   "fonte": "ia"
  },
  {
@@ -15016,7 +14995,87 @@ window.ENEM_QUESTIONS = [
    "12"
   ],
   "correta": 2,
+  "id": "g-0747",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Análise Combinatória",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "De um grupo de 8 pessoas, quantas comissões diferentes de 3 membros podem ser formadas (a ordem não importa)?",
+  "explicacao": "A ordem não importa → combinação: C(8,3) = 8! / (3!·5!) = 56.",
+  "dica": "Ordem NÃO importa (comissão, grupo) → combinação. Ordem importa (pódio, senha) → arranjo.",
+  "alternativas": [
+   "24",
+   "11",
+   "56",
+   "112",
+   "336"
+  ],
+  "correta": 2,
   "id": "g-0748",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 30 cm de uma lente convergente de distância focal 10 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/10 − 1/30, resultando em p' = 15 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "15 cm",
+   "40 cm",
+   "10 cm",
+   "30 cm",
+   "20 cm"
+  ],
+  "correta": 0,
+  "id": "g-0749",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 90 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/90, resultando em p' = 45 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "90 cm",
+   "120 cm",
+   "45 cm",
+   "60 cm",
+   "30 cm"
+  ],
+  "correta": 2,
+  "id": "g-0750",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 35 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/35, resultando em p' = 210 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "420 cm",
+   "65 cm",
+   "210 cm",
+   "5 cm",
+   "30 cm"
+  ],
+  "correta": 2,
+  "id": "g-0751",
   "fonte": "ia"
  },
  {
@@ -15029,14 +15088,214 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/20 − 1/60, resultando em p' = 30 cm (imagem real, do outro lado).",
   "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
   "alternativas": [
+   "60 cm",
+   "40 cm",
+   "30 cm",
+   "80 cm",
+   "20 cm"
+  ],
+  "correta": 2,
+  "id": "g-0752",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 40 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/40, resultando em p' = 120 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "240 cm",
+   "30 cm",
+   "120 cm",
+   "70 cm",
+   "10 cm"
+  ],
+  "correta": 2,
+  "id": "g-0753",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 17 cm de uma lente convergente de distância focal 12 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/12 − 1/17, resultando em p' = 40,8 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "81,6 cm",
+   "12 cm",
+   "29 cm",
+   "40,8 cm",
+   "5 cm"
+  ],
+  "correta": 3,
+  "id": "g-0754",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 40 cm de uma lente convergente de distância focal 20 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/20 − 1/40, resultando em p' = 40 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
    "30 cm",
    "20 cm",
-   "60 cm",
+   "40 cm",
    "80 cm",
-   "40 cm"
+   "60 cm"
+  ],
+  "correta": 2,
+  "id": "g-0755",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 20 cm de uma lente convergente de distância focal 10 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/10 − 1/20, resultando em p' = 20 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "20 cm",
+   "40 cm",
+   "15 cm",
+   "30 cm",
+   "10 cm"
   ],
   "correta": 0,
-  "id": "g-0749",
+  "id": "g-0756",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 15 cm de uma lente convergente de distância focal 10 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/10 − 1/15, resultando em p' = 30 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "60 cm",
+   "5 cm",
+   "25 cm",
+   "10 cm",
+   "30 cm"
+  ],
+  "correta": 4,
+  "id": "g-0757",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 22 cm de uma lente convergente de distância focal 12 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/12 − 1/22, resultando em p' = 26,4 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "52,8 cm",
+   "34 cm",
+   "12 cm",
+   "26,4 cm",
+   "10 cm"
+  ],
+  "correta": 3,
+  "id": "g-0758",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 20 cm de uma lente convergente de distância focal 15 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/20, resultando em p' = 60 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "5 cm",
+   "120 cm",
+   "35 cm",
+   "15 cm",
+   "60 cm"
+  ],
+  "correta": 4,
+  "id": "g-0759",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 45 cm de uma lente convergente de distância focal 15 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/45, resultando em p' = 22,5 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "22,5 cm",
+   "15 cm",
+   "30 cm",
+   "45 cm",
+   "60 cm"
+  ],
+  "correta": 0,
+  "id": "g-0760",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 36 cm de uma lente convergente de distância focal 12 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/12 − 1/36, resultando em p' = 18 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "48 cm",
+   "12 cm",
+   "24 cm",
+   "18 cm",
+   "36 cm"
+  ],
+  "correta": 3,
+  "id": "g-0761",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Óptica",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um objeto é colocado a 30 cm de uma lente convergente de distância focal 15 cm. A que distância da lente se forma a imagem?",
+  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/30, resultando em p' = 30 cm (imagem real, do outro lado).",
+  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
+  "alternativas": [
+   "22,5 cm",
+   "60 cm",
+   "45 cm",
+   "15 cm",
+   "30 cm"
+  ],
+  "correta": 4,
+  "id": "g-0762",
   "fonte": "ia"
  },
  {
@@ -15056,7 +15315,7 @@ window.ENEM_QUESTIONS = [
    "120 cm"
   ],
   "correta": 2,
-  "id": "g-0750",
+  "id": "g-0763",
   "fonte": "ia"
  },
  {
@@ -15069,134 +15328,14 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/12 − 1/24, resultando em p' = 24 cm (imagem real, do outro lado).",
   "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
   "alternativas": [
-   "12 cm",
    "36 cm",
-   "18 cm",
    "48 cm",
-   "24 cm"
-  ],
-  "correta": 4,
-  "id": "g-0751",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 90 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/90, resultando em p' = 45 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "30 cm",
-   "45 cm",
-   "60 cm",
-   "120 cm",
-   "90 cm"
-  ],
-  "correta": 1,
-  "id": "g-0752",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 30 cm de uma lente convergente de distância focal 10 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/10 − 1/30, resultando em p' = 15 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "10 cm",
-   "40 cm",
-   "20 cm",
-   "15 cm",
-   "30 cm"
-  ],
-  "correta": 3,
-  "id": "g-0753",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 36 cm de uma lente convergente de distância focal 12 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/12 − 1/36, resultando em p' = 18 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
    "18 cm",
-   "12 cm",
    "24 cm",
-   "36 cm",
-   "48 cm"
-  ],
-  "correta": 0,
-  "id": "g-0754",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 15 cm de uma lente convergente de distância focal 10 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/10 − 1/15, resultando em p' = 30 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "10 cm",
-   "25 cm",
-   "60 cm",
-   "30 cm",
-   "5 cm"
+   "12 cm"
   ],
   "correta": 3,
-  "id": "g-0755",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 20 cm de uma lente convergente de distância focal 10 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/10 − 1/20, resultando em p' = 20 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "20 cm",
-   "15 cm",
-   "10 cm",
-   "30 cm",
-   "40 cm"
-  ],
-  "correta": 0,
-  "id": "g-0756",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 40 cm de uma lente convergente de distância focal 20 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/20 − 1/40, resultando em p' = 40 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "80 cm",
-   "60 cm",
-   "40 cm",
-   "20 cm",
-   "30 cm"
-  ],
-  "correta": 2,
-  "id": "g-0757",
+  "id": "g-0764",
   "fonte": "ia"
  },
  {
@@ -15210,73 +15349,13 @@ window.ENEM_QUESTIONS = [
   "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
   "alternativas": [
    "45 cm",
-   "20 cm",
    "100 cm",
    "200 cm",
-   "5 cm"
+   "5 cm",
+   "20 cm"
   ],
-  "correta": 2,
-  "id": "g-0758",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 40 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/40, resultando em p' = 120 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "240 cm",
-   "10 cm",
-   "70 cm",
-   "120 cm",
-   "30 cm"
-  ],
-  "correta": 3,
-  "id": "g-0759",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 22 cm de uma lente convergente de distância focal 12 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/12 − 1/22, resultando em p' = 26,4 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "10 cm",
-   "12 cm",
-   "26,4 cm",
-   "34 cm",
-   "52,8 cm"
-  ],
-  "correta": 2,
-  "id": "g-0760",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 45 cm de uma lente convergente de distância focal 15 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/45, resultando em p' = 22,5 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "22,5 cm",
-   "30 cm",
-   "45 cm",
-   "60 cm",
-   "15 cm"
-  ],
-  "correta": 0,
-  "id": "g-0761",
+  "correta": 1,
+  "id": "g-0765",
   "fonte": "ia"
  },
  {
@@ -15289,93 +15368,13 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/25, resultando em p' = 37,5 cm (imagem real, do outro lado).",
   "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
   "alternativas": [
-   "15 cm",
    "75 cm",
-   "40 cm",
-   "10 cm",
-   "37,5 cm"
-  ],
-  "correta": 4,
-  "id": "g-0762",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 60 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/60, resultando em p' = 60 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "60 cm",
-   "30 cm",
-   "45 cm",
-   "90 cm",
-   "120 cm"
-  ],
-  "correta": 0,
-  "id": "g-0763",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 30 cm de uma lente convergente de distância focal 15 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/30, resultando em p' = 30 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "30 cm",
-   "22,5 cm",
-   "45 cm",
-   "60 cm",
-   "15 cm"
-  ],
-  "correta": 0,
-  "id": "g-0764",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 20 cm de uma lente convergente de distância focal 15 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/15 − 1/20, resultando em p' = 60 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "5 cm",
-   "35 cm",
    "15 cm",
-   "120 cm",
-   "60 cm"
+   "40 cm",
+   "37,5 cm",
+   "10 cm"
   ],
-  "correta": 4,
-  "id": "g-0765",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Óptica",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um objeto é colocado a 35 cm de uma lente convergente de distância focal 30 cm. A que distância da lente se forma a imagem?",
-  "explicacao": "Equação de Gauss: 1/f = 1/p + 1/p'. Assim 1/p' = 1/30 − 1/35, resultando em p' = 210 cm (imagem real, do outro lado).",
-  "dica": "Equação dos pontos conjugados: 1/f = 1/p + 1/p'. Isole 1/p' e inverta.",
-  "alternativas": [
-   "5 cm",
-   "420 cm",
-   "65 cm",
-   "30 cm",
-   "210 cm"
-  ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0766",
   "fonte": "ia"
  },
@@ -15385,15 +15384,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de alumínio tem volume 300 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 300 = 810 g.",
+  "enunciado": "Uma amostra de óleo tem volume 350 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 350 = 280 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "405 g",
-   "1.620 g",
-   "111,1 g",
-   "810 g",
-   "302,7 g"
+   "437,5 g",
+   "140 g",
+   "350,8 g",
+   "280 g",
+   "560 g"
   ],
   "correta": 3,
   "id": "g-0767",
@@ -15405,17 +15404,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de gelo tem volume 310 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 310 = 285,2 g.",
+  "enunciado": "Uma amostra de óleo tem volume 30 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 30 = 24 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "310,9 g",
-   "142,6 g",
-   "285,2 g",
-   "570,4 g",
-   "337,0 g"
+   "24 g",
+   "12 g",
+   "30,8 g",
+   "48 g",
+   "37,5 g"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0768",
   "fonte": "ia"
  },
@@ -15425,15 +15424,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de gelo tem volume 20 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 20 = 18,4 g.",
+  "enunciado": "Uma amostra de ferro tem volume 300 cm³ e densidade 7,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 7,80 × 300 = 2.340 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "9,2 g",
-   "36,8 g",
-   "18,4 g",
-   "20,9 g",
-   "21,7 g"
+   "4.680 g",
+   "38,5 g",
+   "2.340 g",
+   "307,8 g",
+   "1.170 g"
   ],
   "correta": 2,
   "id": "g-0769",
@@ -15445,17 +15444,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de alumínio tem volume 100 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 100 = 270 g.",
+  "enunciado": "Uma amostra de ferro tem volume 270 cm³ e densidade 7,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 7,80 × 270 = 2.106 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "102,7 g",
-   "540 g",
-   "37,0 g",
-   "270 g",
-   "135 g"
+   "1.053 g",
+   "2.106 g",
+   "34,6 g",
+   "277,8 g",
+   "4.212 g"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0770",
   "fonte": "ia"
  },
@@ -15465,17 +15464,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de água tem volume 250 cm³ e densidade 1,0 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 1,0 × 250 = 250 g.",
+  "enunciado": "Uma amostra de mercúrio tem volume 170 cm³ e densidade 13,60 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 13,60 × 170 = 2.312 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "375 g",
-   "500 g",
-   "251 g",
-   "125 g",
-   "250 g"
+   "4.624 g",
+   "2.312 g",
+   "1.156 g",
+   "12,5 g",
+   "183,6 g"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0771",
   "fonte": "ia"
  },
@@ -15485,17 +15484,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de gelo tem volume 140 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 140 = 128,8 g.",
+  "enunciado": "Uma amostra de óleo tem volume 240 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 240 = 192 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "152,2 g",
-   "140,9 g",
-   "128,8 g",
-   "64,4 g",
-   "257,6 g"
+   "96 g",
+   "192 g",
+   "240,8 g",
+   "300 g",
+   "384 g"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0772",
   "fonte": "ia"
  },
@@ -15505,17 +15504,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de alumínio tem volume 390 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 390 = 1.053 g.",
+  "enunciado": "Uma amostra de alumínio tem volume 60 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 60 = 162 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "2.106 g",
-   "1.053 g",
-   "144,4 g",
-   "526,5 g",
-   "392,7 g"
+   "162 g",
+   "81 g",
+   "22,2 g",
+   "324 g",
+   "62,7 g"
   ],
-  "correta": 1,
+  "correta": 0,
   "id": "g-0773",
   "fonte": "ia"
  },
@@ -15525,17 +15524,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de alumínio tem volume 190 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 190 = 513 g.",
+  "enunciado": "Uma amostra de ferro tem volume 100 cm³ e densidade 7,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 7,80 × 100 = 780 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "1.026 g",
-   "256,5 g",
-   "513 g",
-   "192,7 g",
-   "70,4 g"
+   "780 g",
+   "107,8 g",
+   "1.560 g",
+   "12,8 g",
+   "390 g"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0774",
   "fonte": "ia"
  },
@@ -15545,17 +15544,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de alumínio tem volume 180 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 180 = 486,0 g.",
+  "enunciado": "Uma amostra de alumínio tem volume 140 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 140 = 378 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "182,7 g",
-   "66,7 g",
-   "243,0 g",
-   "972,0 g",
-   "486,0 g"
+   "51,9 g",
+   "189 g",
+   "378 g",
+   "756 g",
+   "142,7 g"
   ],
-  "correta": 4,
+  "correta": 2,
   "id": "g-0775",
   "fonte": "ia"
  },
@@ -15565,15 +15564,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de água tem volume 110 cm³ e densidade 1,0 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 1,0 × 110 = 110 g.",
+  "enunciado": "Uma amostra de óleo tem volume 80 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 80 = 64 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "220 g",
-   "111 g",
-   "165 g",
-   "55 g",
-   "110 g"
+   "128 g",
+   "100 g",
+   "32 g",
+   "80,8 g",
+   "64 g"
   ],
   "correta": 4,
   "id": "g-0776",
@@ -15585,17 +15584,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de óleo tem volume 150 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 150 = 120 g.",
+  "enunciado": "Uma amostra de óleo tem volume 70 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 70 = 56 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "150,8 g",
-   "60 g",
-   "187,5 g",
-   "120 g",
-   "240 g"
+   "87,5 g",
+   "70,8 g",
+   "56 g",
+   "28 g",
+   "112 g"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0777",
   "fonte": "ia"
  },
@@ -15605,17 +15604,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de mercúrio tem volume 190 cm³ e densidade 13,60 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 13,60 × 190 = 2.584 g.",
+  "enunciado": "Uma amostra de óleo tem volume 360 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 360 = 288 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "203,6 g",
-   "14,0 g",
-   "5.168 g",
-   "1.292 g",
-   "2.584 g"
+   "576 g",
+   "288 g",
+   "144 g",
+   "450 g",
+   "360,8 g"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0778",
   "fonte": "ia"
  },
@@ -15625,17 +15624,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de água tem volume 240 cm³ e densidade 1,0 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 1,0 × 240 = 240 g.",
+  "enunciado": "Uma amostra de óleo tem volume 230 cm³ e densidade 0,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,80 × 230 = 184 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "120 g",
-   "360 g",
-   "240 g",
-   "241 g",
-   "480 g"
+   "184 g",
+   "368 g",
+   "287,5 g",
+   "230,8 g",
+   "92 g"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0779",
   "fonte": "ia"
  },
@@ -15645,17 +15644,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de água tem volume 70 cm³ e densidade 1,0 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 1,0 × 70 = 70 g.",
+  "enunciado": "Uma amostra de ferro tem volume 320 cm³ e densidade 7,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 7,80 × 320 = 2.496 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "71 g",
-   "105 g",
-   "140 g",
-   "35 g",
-   "70 g"
+   "327,8 g",
+   "2.496 g",
+   "4.992 g",
+   "1.248 g",
+   "41,0 g"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0780",
   "fonte": "ia"
  },
@@ -15665,17 +15664,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de gelo tem volume 210 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 210 = 193,2 g.",
+  "enunciado": "Uma amostra de mercúrio tem volume 340 cm³ e densidade 13,60 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 13,60 × 340 = 4.624 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "210,9 g",
-   "228,3 g",
-   "386,4 g",
-   "96,6 g",
-   "193,2 g"
+   "353,6 g",
+   "4.624 g",
+   "2.312 g",
+   "25 g",
+   "9.248 g"
   ],
-  "correta": 4,
+  "correta": 1,
   "id": "g-0781",
   "fonte": "ia"
  },
@@ -15685,17 +15684,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de mercúrio tem volume 230 cm³ e densidade 13,60 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 13,60 × 230 = 3.128 g.",
+  "enunciado": "Uma amostra de mercúrio tem volume 200 cm³ e densidade 13,60 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 13,60 × 200 = 2.720 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "3.128 g",
-   "16,9 g",
-   "1.564 g",
-   "243,6 g",
-   "6.256 g"
+   "14,7 g",
+   "2.720 g",
+   "5.440 g",
+   "213,6 g",
+   "1.360 g"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0782",
   "fonte": "ia"
  },
@@ -15705,17 +15704,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de água tem volume 340 cm³ e densidade 1,0 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 1,0 × 340 = 340 g.",
+  "enunciado": "Uma amostra de alumínio tem volume 120 cm³ e densidade 2,70 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 2,70 × 120 = 324 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "340 g",
-   "170 g",
-   "341 g",
-   "510 g",
-   "680 g"
+   "44,4 g",
+   "122,7 g",
+   "162 g",
+   "648 g",
+   "324 g"
   ],
-  "correta": 0,
+  "correta": 4,
   "id": "g-0783",
   "fonte": "ia"
  },
@@ -15725,17 +15724,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de ferro tem volume 80 cm³ e densidade 7,80 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 7,80 × 80 = 624 g.",
+  "enunciado": "Uma amostra de água tem volume 20 cm³ e densidade 1,0 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 1,0 × 20 = 20 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "87,8 g",
-   "624 g",
-   "1.248 g",
-   "10,3 g",
-   "312 g"
+   "21 g",
+   "10 g",
+   "40 g",
+   "20 g",
+   "30 g"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0784",
   "fonte": "ia"
  },
@@ -15745,17 +15744,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de gelo tem volume 80 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 80 = 73,6 g.",
+  "enunciado": "Uma amostra de ferro tem volume 90 cm³ e densidade 7,80 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 7,80 × 90 = 702 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "87,0 g",
-   "36,8 g",
-   "147,2 g",
-   "80,9 g",
-   "73,6 g"
+   "702 g",
+   "97,8 g",
+   "351 g",
+   "11,5 g",
+   "1.404 g"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0785",
   "fonte": "ia"
  },
@@ -15765,17 +15764,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Hidrostática",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma amostra de gelo tem volume 180 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
-  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 180 = 165,6 g.",
+  "enunciado": "Uma amostra de gelo tem volume 100 cm³ e densidade 0,92 g/cm³. Qual é a sua massa?",
+  "explicacao": "Densidade d = m/V, logo m = d·V = 0,92 × 100 = 92 g.",
   "dica": "Relação-chave: densidade = massa ÷ volume. Isole a grandeza pedida.",
   "alternativas": [
-   "331,2 g",
-   "180,9 g",
-   "82,8 g",
-   "165,6 g",
-   "195,7 g"
+   "108,7 g",
+   "184 g",
+   "92 g",
+   "46 g",
+   "100,9 g"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0786",
   "fonte": "ia"
  },
@@ -15785,17 +15784,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Genética",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "No cruzamento Aa × Aa (A domina a), qual a probabilidade de os descendentes apresentem o fenótipo dominante?",
-  "explicacao": "Aa × Aa gera 3/4 com pelo menos um alelo A (AA e Aa) → fenótipo dominante = 75%.",
+  "enunciado": "No cruzamento AA × aa (A domina a), qual a probabilidade de os descendentes serem heterozigotos?",
+  "explicacao": "AA × aa gera 100% Aa (heterozigotos). Toda a prole recebe um A e um a.",
   "dica": "Monte o quadro de Punnett (2×2) e conte as proporções. Aa × Aa → 3:1.",
   "alternativas": [
+   "0%",
    "100%",
-   "25%",
-   "75%",
    "50%",
-   "0%"
+   "75%",
+   "25%"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0787",
   "fonte": "ia"
  },
@@ -15805,17 +15804,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Genética",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "No cruzamento Aa × aa (A domina a), qual a probabilidade de os descendentes apresentem o fenótipo recessivo?",
-  "explicacao": "Aa × aa gera 1 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/2 = 50%.",
+  "enunciado": "No cruzamento Aa × Aa (A domina a), qual a probabilidade de os descendentes apresentarem o fenótipo dominante?",
+  "explicacao": "Aa × Aa gera 3/4 com pelo menos um alelo A (AA e Aa) → fenótipo dominante = 75%.",
   "dica": "Monte o quadro de Punnett (2×2) e conte as proporções. Aa × Aa → 3:1.",
   "alternativas": [
    "25%",
-   "75%",
-   "100%",
    "50%",
-   "0%"
+   "75%",
+   "0%",
+   "100%"
   ],
-  "correta": 3,
+  "correta": 2,
   "id": "g-0788",
   "fonte": "ia"
  },
@@ -15825,15 +15824,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Genética",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "No cruzamento Aa × Aa (A domina a), qual a probabilidade de os descendentes apresentem o fenótipo recessivo?",
-  "explicacao": "Aa × Aa gera 1 AA : 2 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/4 = 25%.",
+  "enunciado": "No cruzamento Aa × aa (A domina a), qual a probabilidade de os descendentes apresentarem o fenótipo recessivo?",
+  "explicacao": "Aa × aa gera 1 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/2 = 50%.",
   "dica": "Monte o quadro de Punnett (2×2) e conte as proporções. Aa × Aa → 3:1.",
   "alternativas": [
-   "100%",
-   "50%",
-   "0%",
+   "25%",
    "75%",
-   "25%"
+   "0%",
+   "100%",
+   "50%"
   ],
   "correta": 4,
   "id": "g-0789",
@@ -15845,15 +15844,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Genética",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "No cruzamento AA × aa (A domina a), qual a probabilidade de os descendentes sejam heterozigotos?",
-  "explicacao": "AA × aa gera 100% Aa (heterozigotos). Toda a prole recebe um A e um a.",
+  "enunciado": "No cruzamento Aa × Aa (A domina a), qual a probabilidade de os descendentes apresentarem o fenótipo recessivo?",
+  "explicacao": "Aa × Aa gera 1 AA : 2 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/4 = 25%.",
   "dica": "Monte o quadro de Punnett (2×2) e conte as proporções. Aa × Aa → 3:1.",
   "alternativas": [
-   "75%",
    "0%",
+   "50%",
+   "75%",
    "25%",
-   "100%",
-   "50%"
+   "100%"
   ],
   "correta": 3,
   "id": "g-0790",
@@ -15865,15 +15864,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de tg 60° ?",
+  "enunciado": "Qual é o valor de tg 30°?",
   "alternativas": [
-   "√3/3",
+   "√3",
    "1",
-   "1/2",
    "√2/2",
-   "√3"
+   "1/2",
+   "√3/3"
   ],
-  "explicacao": "Pela tabela de valores notáveis, tg 60° = √3.",
+  "explicacao": "Pela tabela de valores notáveis, tg 30° = √3/3.",
   "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
   "correta": 4,
   "id": "g-0791",
@@ -15885,15 +15884,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de cos 45° ?",
+  "enunciado": "Qual é o valor de tg 60°?",
   "alternativas": [
-   "1/2",
-   "1",
-   "√3",
    "√2/2",
-   "√3/2"
+   "√3/2",
+   "1/2",
+   "√3",
+   "1"
   ],
-  "explicacao": "Pela tabela de valores notáveis, cos 45° = √2/2.",
+  "explicacao": "Pela tabela de valores notáveis, tg 60° = √3.",
   "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
   "correta": 3,
   "id": "g-0792",
@@ -15905,17 +15904,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de tg 30° ?",
+  "enunciado": "Qual é o valor de cos 60°?",
   "alternativas": [
-   "√3/3",
+   "1",
    "1/2",
-   "√2/2",
+   "√3/3",
    "√3/2",
-   "√3"
+   "√2/2"
   ],
-  "explicacao": "Pela tabela de valores notáveis, tg 30° = √3/3.",
+  "explicacao": "Pela tabela de valores notáveis, cos 60° = 1/2.",
   "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
-  "correta": 0,
+  "correta": 1,
   "id": "g-0793",
   "fonte": "ia"
  },
@@ -15925,13 +15924,13 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de sen 30° ?",
+  "enunciado": "Qual é o valor de sen 30°?",
   "alternativas": [
-   "√3/3",
+   "√3/2",
    "√3",
    "1/2",
-   "√2/2",
-   "√3/2"
+   "1",
+   "√3/3"
   ],
   "explicacao": "Pela tabela de valores notáveis, sen 30° = 1/2.",
   "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
@@ -15945,15 +15944,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de cos 60° ?",
+  "enunciado": "Qual é o valor de cos 30°?",
   "alternativas": [
-   "√2/2",
-   "√3",
-   "√3/3",
    "1/2",
-   "√3/2"
+   "√3",
+   "1",
+   "√3/2",
+   "√2/2"
   ],
-  "explicacao": "Pela tabela de valores notáveis, cos 60° = 1/2.",
+  "explicacao": "Pela tabela de valores notáveis, cos 30° = √3/2.",
   "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
   "correta": 3,
   "id": "g-0795",
@@ -15965,27 +15964,7 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de cos 30° ?",
-  "alternativas": [
-   "√3/3",
-   "√3",
-   "√3/2",
-   "1",
-   "√2/2"
-  ],
-  "explicacao": "Pela tabela de valores notáveis, cos 30° = √3/2.",
-  "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
-  "correta": 2,
-  "id": "g-0796",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Trigonometria",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Qual é o valor de sen 45° ?",
+  "enunciado": "Qual é o valor de sen 45°?",
   "alternativas": [
    "1",
    "√2/2",
@@ -15996,6 +15975,26 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Pela tabela de valores notáveis, sen 45° = √2/2.",
   "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
   "correta": 1,
+  "id": "g-0796",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Trigonometria",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Qual é o valor de cos 45°?",
+  "alternativas": [
+   "√2/2",
+   "1/2",
+   "1",
+   "√3/3",
+   "√3/2"
+  ],
+  "explicacao": "Pela tabela de valores notáveis, cos 45° = √2/2.",
+  "dica": "Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.",
+  "correta": 0,
   "id": "g-0797",
   "fonte": "ia"
  },
@@ -16005,7 +16004,7 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de sen 60° ?",
+  "enunciado": "Qual é o valor de sen 60°?",
   "alternativas": [
    "√3/2",
    "√3",
@@ -16025,7 +16024,7 @@ window.ENEM_QUESTIONS = [
   "topico": "Trigonometria",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Qual é o valor de tg 45° ?",
+  "enunciado": "Qual é o valor de tg 45°?",
   "alternativas": [
    "√3",
    "√3/2",
@@ -16045,15 +16044,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 13 e a diferença entre eles é 3. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=13 e x−y=3: 2x = 16, logo x = 8. O outro número é 5. O maior é 8.",
+  "enunciado": "A soma de dois números é 22 e a diferença entre eles é 4. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=22 e x−y=4: 2x = 26, logo x = 13. O outro número é 9. O maior é 13.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "8",
-   "5",
-   "3",
    "13",
-   "9"
+   "14",
+   "9",
+   "22",
+   "4"
   ],
   "correta": 0,
   "id": "g-0800",
@@ -16065,17 +16064,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 25 e a diferença entre eles é 3. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=25 e x−y=3: 2x = 28, logo x = 14. O outro número é 11. O maior é 14.",
+  "enunciado": "A soma de dois números é 13 e a diferença entre eles é 7. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=13 e x−y=7: 2x = 20, logo x = 10. O outro número é 3. O maior é 10.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
+   "11",
+   "13",
    "3",
-   "15",
-   "14",
-   "25",
-   "11"
+   "10",
+   "7"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0801",
   "fonte": "ia"
  },
@@ -16085,17 +16084,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 16 e a diferença entre eles é 2. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=16 e x−y=2: 2x = 18, logo x = 9. O outro número é 7. O maior é 9.",
+  "enunciado": "A soma de dois números é 17 e a diferença entre eles é 9. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=17 e x−y=9: 2x = 26, logo x = 13. O outro número é 4. O maior é 13.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "10",
+   "14",
+   "17",
    "9",
-   "16",
-   "7",
-   "2"
+   "13",
+   "4"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0802",
   "fonte": "ia"
  },
@@ -16105,17 +16104,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 30 e a diferença entre eles é 2. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=30 e x−y=2: 2x = 32, logo x = 16. O outro número é 14. O maior é 16.",
+  "enunciado": "A soma de dois números é 13 e a diferença entre eles é 5. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=13 e x−y=5: 2x = 18, logo x = 9. O outro número é 4. O maior é 9.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "17",
-   "14",
-   "16",
-   "30",
-   "2"
+   "10",
+   "13",
+   "4",
+   "5",
+   "9"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0803",
   "fonte": "ia"
  },
@@ -16125,17 +16124,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 11 e a diferença entre eles é 1. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=11 e x−y=1: 2x = 12, logo x = 6. O outro número é 5. O maior é 6.",
+  "enunciado": "A soma de dois números é 9 e a diferença entre eles é 3. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=9 e x−y=3: 2x = 12, logo x = 6. O outro número é 3. O maior é 6.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "11",
+   "9",
+   "3",
+   "7",
    "6",
-   "5",
-   "1",
-   "7"
+   "5"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0804",
   "fonte": "ia"
  },
@@ -16145,17 +16144,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 7 e a diferença entre eles é 5. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=7 e x−y=5: 2x = 12, logo x = 6. O outro número é 1. O maior é 6.",
+  "enunciado": "A soma de dois números é 19 e a diferença entre eles é 7. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=19 e x−y=7: 2x = 26, logo x = 13. O outro número é 6. O maior é 13.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "5",
-   "1",
    "7",
-   "3",
-   "6"
+   "6",
+   "19",
+   "13",
+   "14"
   ],
-  "correta": 4,
+  "correta": 3,
   "id": "g-0805",
   "fonte": "ia"
  },
@@ -16165,15 +16164,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 27 e a diferença entre eles é 5. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=27 e x−y=5: 2x = 32, logo x = 16. O outro número é 11. O maior é 16.",
+  "enunciado": "A soma de dois números é 12 e a diferença entre eles é 10. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=12 e x−y=10: 2x = 22, logo x = 11. O outro número é 1. O maior é 11.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "5",
-   "16",
+   "12",
    "11",
-   "17",
-   "27"
+   "6",
+   "1",
+   "10"
   ],
   "correta": 1,
   "id": "g-0806",
@@ -16185,15 +16184,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 23 e a diferença entre eles é 1. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=23 e x−y=1: 2x = 24, logo x = 12. O outro número é 11. O maior é 12.",
+  "enunciado": "A soma de dois números é 17 e a diferença entre eles é 5. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=17 e x−y=5: 2x = 22, logo x = 11. O outro número é 6. O maior é 11.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "23",
-   "1",
-   "11",
-   "13",
-   "12"
+   "17",
+   "5",
+   "12",
+   "6",
+   "11"
   ],
   "correta": 4,
   "id": "g-0807",
@@ -16205,17 +16204,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 20 e a diferença entre eles é 6. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=20 e x−y=6: 2x = 26, logo x = 13. O outro número é 7. O maior é 13.",
+  "enunciado": "A soma de dois números é 10 e a diferença entre eles é 6. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=10 e x−y=6: 2x = 16, logo x = 8. O outro número é 2. O maior é 8.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
    "6",
-   "13",
-   "20",
-   "7",
-   "14"
+   "2",
+   "8",
+   "10",
+   "9"
   ],
-  "correta": 1,
+  "correta": 2,
   "id": "g-0808",
   "fonte": "ia"
  },
@@ -16225,17 +16224,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 23 e a diferença entre eles é 7. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=23 e x−y=7: 2x = 30, logo x = 15. O outro número é 8. O maior é 15.",
+  "enunciado": "A soma de dois números é 15 e a diferença entre eles é 13. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=15 e x−y=13: 2x = 28, logo x = 14. O outro número é 1. O maior é 14.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
+   "1",
+   "14",
    "7",
-   "16",
-   "8",
-   "15",
-   "23"
+   "13",
+   "15"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0809",
   "fonte": "ia"
  },
@@ -16245,17 +16244,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 10 e a diferença entre eles é 2. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=10 e x−y=2: 2x = 12, logo x = 6. O outro número é 4. O maior é 6.",
+  "enunciado": "A soma de dois números é 21 e a diferença entre eles é 7. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=21 e x−y=7: 2x = 28, logo x = 14. O outro número é 7. O maior é 14.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
+   "21",
+   "14",
    "7",
-   "2",
-   "6",
-   "4",
-   "10"
+   "13",
+   "15"
   ],
-  "correta": 2,
+  "correta": 1,
   "id": "g-0810",
   "fonte": "ia"
  },
@@ -16265,14 +16264,14 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 14 e a diferença entre eles é 4. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=14 e x−y=4: 2x = 18, logo x = 9. O outro número é 5. O maior é 9.",
+  "enunciado": "A soma de dois números é 12 e a diferença entre eles é 6. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=12 e x−y=6: 2x = 18, logo x = 9. O outro número é 3. O maior é 9.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "5",
    "10",
-   "4",
-   "14",
+   "12",
+   "6",
+   "3",
    "9"
   ],
   "correta": 4,
@@ -16285,17 +16284,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 23 e a diferença entre eles é 9. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=23 e x−y=9: 2x = 32, logo x = 16. O outro número é 7. O maior é 16.",
+  "enunciado": "A soma de dois números é 22 e a diferença entre eles é 8. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=22 e x−y=8: 2x = 30, logo x = 15. O outro número é 7. O maior é 15.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "16",
    "7",
-   "17",
-   "23",
-   "9"
+   "15",
+   "8",
+   "22",
+   "16"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0812",
   "fonte": "ia"
  },
@@ -16305,17 +16304,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 20 e a diferença entre eles é 2. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=20 e x−y=2: 2x = 22, logo x = 11. O outro número é 9. O maior é 11.",
+  "enunciado": "A soma de dois números é 15 e a diferença entre eles é 11. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=15 e x−y=11: 2x = 26, logo x = 13. O outro número é 2. O maior é 13.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
+   "15",
    "2",
-   "11",
-   "12",
-   "9",
-   "20"
+   "14",
+   "13",
+   "11"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0813",
   "fonte": "ia"
  },
@@ -16325,17 +16324,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 19 e a diferença entre eles é 5. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=19 e x−y=5: 2x = 24, logo x = 12. O outro número é 7. O maior é 12.",
+  "enunciado": "A soma de dois números é 11 e a diferença entre eles é 7. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=11 e x−y=7: 2x = 18, logo x = 9. O outro número é 2. O maior é 9.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "13",
-   "19",
-   "12",
+   "10",
    "7",
-   "5"
+   "11",
+   "2",
+   "9"
   ],
-  "correta": 2,
+  "correta": 4,
   "id": "g-0814",
   "fonte": "ia"
  },
@@ -16345,17 +16344,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 11 e a diferença entre eles é 5. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=11 e x−y=5: 2x = 16, logo x = 8. O outro número é 3. O maior é 8.",
+  "enunciado": "A soma de dois números é 26 e a diferença entre eles é 6. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=26 e x−y=6: 2x = 32, logo x = 16. O outro número é 10. O maior é 16.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "11",
-   "5",
-   "8",
-   "9",
-   "3"
+   "16",
+   "17",
+   "10",
+   "6",
+   "26"
   ],
-  "correta": 2,
+  "correta": 0,
   "id": "g-0815",
   "fonte": "ia"
  },
@@ -16365,17 +16364,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 19 e a diferença entre eles é 1. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=19 e x−y=1: 2x = 20, logo x = 10. O outro número é 9. O maior é 10.",
+  "enunciado": "A soma de dois números é 27 e a diferença entre eles é 1. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=27 e x−y=1: 2x = 28, logo x = 14. O outro número é 13. O maior é 14.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "9",
-   "11",
+   "14",
+   "15",
    "1",
-   "19",
-   "10"
+   "13",
+   "27"
   ],
-  "correta": 4,
+  "correta": 0,
   "id": "g-0816",
   "fonte": "ia"
  },
@@ -16385,15 +16384,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 17 e a diferença entre eles é 3. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=17 e x−y=3: 2x = 20, logo x = 10. O outro número é 7. O maior é 10.",
+  "enunciado": "A soma de dois números é 20 e a diferença entre eles é 10. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=20 e x−y=10: 2x = 30, logo x = 15. O outro número é 5. O maior é 15.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "11",
+   "16",
+   "15",
    "10",
-   "17",
-   "7",
-   "3"
+   "5",
+   "20"
   ],
   "correta": 1,
   "id": "g-0817",
@@ -16405,17 +16404,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 24 e a diferença entre eles é 4. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=24 e x−y=4: 2x = 28, logo x = 14. O outro número é 10. O maior é 14.",
+  "enunciado": "A soma de dois números é 17 e a diferença entre eles é 11. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=17 e x−y=11: 2x = 28, logo x = 14. O outro número é 3. O maior é 14.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "10",
-   "4",
-   "15",
+   "11",
    "14",
-   "24"
+   "3",
+   "15",
+   "17"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0818",
   "fonte": "ia"
  },
@@ -16425,15 +16424,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Sistemas Lineares",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "A soma de dois números é 15 e a diferença entre eles é 7. Qual é o maior desses números?",
-  "explicacao": "Somando as equações x+y=15 e x−y=7: 2x = 22, logo x = 11. O outro número é 4. O maior é 11.",
+  "enunciado": "A soma de dois números é 12 e a diferença entre eles é 2. Qual é o maior desses números?",
+  "explicacao": "Somando as equações x+y=12 e x−y=2: 2x = 14, logo x = 7. O outro número é 5. O maior é 7.",
   "dica": "Some as duas equações para eliminar y; isso isola o 2x.",
   "alternativas": [
-   "4",
+   "8",
+   "2",
    "7",
-   "11",
    "12",
-   "15"
+   "5"
   ],
   "correta": 2,
   "id": "g-0819",
@@ -16445,17 +16444,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Trabalho e Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma força constante de 20 N desloca um corpo por 13 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 20 × 13 = 260 J.",
+  "enunciado": "Uma força constante de 100 N desloca um corpo por 4 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 100 × 4 = 400 J.",
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
-   "520 J",
-   "40 J",
-   "130 J",
-   "260 J",
-   "33 J"
+   "200 J",
+   "400 J",
+   "104 J",
+   "800 J",
+   "16 J"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0820",
   "fonte": "ia"
  },
@@ -16465,17 +16464,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Trabalho e Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma força constante de 10 N desloca um corpo por 16 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 10 × 16 = 160 J.",
+  "enunciado": "Uma força constante de 20 N desloca um corpo por 7 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 20 × 7 = 140 J.",
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
-   "20 J",
-   "80 J",
-   "26 J",
-   "160 J",
-   "320 J"
+   "27 J",
+   "280 J",
+   "40 J",
+   "70 J",
+   "140 J"
   ],
-  "correta": 3,
+  "correta": 4,
   "id": "g-0821",
   "fonte": "ia"
  },
@@ -16485,17 +16484,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Trabalho e Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma força constante de 100 N desloca um corpo por 10 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 100 × 10 = 1.000 J.",
+  "enunciado": "Uma força constante de 20 N desloca um corpo por 2 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 20 × 2 = 40 J.",
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
-   "1.000 J",
-   "110 J",
-   "200 J",
-   "500 J",
-   "2.000 J"
+   "80 J",
+   "4 J",
+   "40 J",
+   "22 J",
+   "20 J"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0822",
   "fonte": "ia"
  },
@@ -16505,198 +16504,18 @@ window.ENEM_QUESTIONS = [
   "topico": "Trabalho e Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma força constante de 25 N desloca um corpo por 9 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 25 × 9 = 225 J.",
+  "enunciado": "Uma força constante de 20 N desloca um corpo por 5 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 20 × 5 = 100 J.",
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
-   "450 J",
-   "113 J",
-   "225 J",
-   "50 J",
-   "34 J"
-  ],
-  "correta": 2,
-  "id": "g-0823",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 50 N desloca um corpo por 19 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 50 × 19 = 950 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "950 J",
-   "1.900 J",
-   "475 J",
-   "69 J",
-   "100 J"
-  ],
-  "correta": 0,
-  "id": "g-0824",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 200 N desloca um corpo por 4 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 200 × 4 = 800 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "400 J",
-   "16 J",
-   "204 J",
-   "800 J",
-   "1.600 J"
-  ],
-  "correta": 3,
-  "id": "g-0825",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 20 N desloca um corpo por 14 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 20 × 14 = 280 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "40 J",
-   "140 J",
-   "560 J",
-   "280 J",
-   "34 J"
-  ],
-  "correta": 3,
-  "id": "g-0826",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 200 N desloca um corpo por 12 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 200 × 12 = 2.400 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "2.400 J",
-   "4.800 J",
-   "212 J",
-   "1.200 J",
-   "400 J"
-  ],
-  "correta": 0,
-  "id": "g-0827",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 50 N desloca um corpo por 13 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 50 × 13 = 650 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "325 J",
-   "650 J",
-   "63 J",
-   "100 J",
-   "1.300 J"
-  ],
-  "correta": 1,
-  "id": "g-0828",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 25 N desloca um corpo por 18 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 25 × 18 = 450 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "225 J",
-   "450 J",
-   "900 J",
-   "43 J",
-   "50 J"
-  ],
-  "correta": 1,
-  "id": "g-0829",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 25 N desloca um corpo por 2 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 25 × 2 = 50 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "4 J",
    "25 J",
-   "27 J",
-   "50 J",
-   "100 J"
-  ],
-  "correta": 3,
-  "id": "g-0830",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 50 N desloca um corpo por 6 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 50 × 6 = 300 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "150 J",
-   "600 J",
-   "300 J",
    "100 J",
-   "56 J"
+   "40 J",
+   "50 J",
+   "200 J"
   ],
-  "correta": 2,
-  "id": "g-0831",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 200 N desloca um corpo por 14 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 200 × 14 = 2.800 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "400 J",
-   "5.600 J",
-   "214 J",
-   "1.400 J",
-   "2.800 J"
-  ],
-  "correta": 4,
-  "id": "g-0832",
+  "correta": 1,
+  "id": "g-0823",
   "fonte": "ia"
  },
  {
@@ -16709,54 +16528,94 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Trabalho de força constante: W = F·d = 10 × 6 = 60 J.",
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
-   "20 J",
-   "16 J",
-   "30 J",
    "60 J",
-   "120 J"
-  ],
-  "correta": 3,
-  "id": "g-0833",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 20 N desloca um corpo por 4 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 20 × 4 = 80 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "40 J",
-   "160 J",
-   "16 J",
-   "80 J",
-   "24 J"
-  ],
-  "correta": 3,
-  "id": "g-0834",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "fisica",
-  "topico": "Trabalho e Energia",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Uma força constante de 10 N desloca um corpo por 8 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 10 × 8 = 80 J.",
-  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
-  "alternativas": [
-   "160 J",
-   "40 J",
+   "120 J",
    "20 J",
-   "80 J",
-   "18 J"
+   "16 J",
+   "30 J"
   ],
-  "correta": 3,
-  "id": "g-0835",
+  "correta": 0,
+  "id": "g-0824",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 10 N desloca um corpo por 15 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 10 × 15 = 150 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "300 J",
+   "75 J",
+   "25 J",
+   "20 J",
+   "150 J"
+  ],
+  "correta": 4,
+  "id": "g-0825",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 25 N desloca um corpo por 4 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 25 × 4 = 100 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "100 J",
+   "29 J",
+   "16 J",
+   "200 J",
+   "50 J"
+  ],
+  "correta": 0,
+  "id": "g-0826",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 20 N desloca um corpo por 8 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 20 × 8 = 160 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "40 J",
+   "160 J",
+   "320 J",
+   "28 J",
+   "80 J"
+  ],
+  "correta": 1,
+  "id": "g-0827",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 200 N desloca um corpo por 17 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 200 × 17 = 3.400 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "1.700 J",
+   "3.400 J",
+   "217 J",
+   "6.800 J",
+   "400 J"
+  ],
+  "correta": 1,
+  "id": "g-0828",
   "fonte": "ia"
  },
  {
@@ -16770,12 +16629,152 @@ window.ENEM_QUESTIONS = [
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
    "1.000 J",
-   "400 J",
-   "4.000 J",
    "210 J",
+   "2.000 J",
+   "400 J",
+   "4.000 J"
+  ],
+  "correta": 2,
+  "id": "g-0829",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 50 N desloca um corpo por 12 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 50 × 12 = 600 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "300 J",
+   "1.200 J",
+   "62 J",
+   "600 J",
+   "100 J"
+  ],
+  "correta": 3,
+  "id": "g-0830",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 200 N desloca um corpo por 5 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 200 × 5 = 1.000 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "205 J",
+   "500 J",
+   "1.000 J",
+   "400 J",
    "2.000 J"
   ],
-  "correta": 4,
+  "correta": 2,
+  "id": "g-0831",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 25 N desloca um corpo por 16 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 25 × 16 = 400 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "50 J",
+   "41 J",
+   "400 J",
+   "800 J",
+   "200 J"
+  ],
+  "correta": 2,
+  "id": "g-0832",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 200 N desloca um corpo por 4 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 200 × 4 = 800 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "800 J",
+   "16 J",
+   "400 J",
+   "204 J",
+   "1.600 J"
+  ],
+  "correta": 0,
+  "id": "g-0833",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 100 N desloca um corpo por 7 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 100 × 7 = 700 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "1.400 J",
+   "200 J",
+   "700 J",
+   "107 J",
+   "350 J"
+  ],
+  "correta": 2,
+  "id": "g-0834",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 100 N desloca um corpo por 2 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 100 × 2 = 200 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "400 J",
+   "4 J",
+   "200 J",
+   "100 J",
+   "102 J"
+  ],
+  "correta": 2,
+  "id": "g-0835",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "fisica",
+  "topico": "Trabalho e Energia",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Uma força constante de 25 N desloca um corpo por 11 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 25 × 11 = 275 J.",
+  "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
+  "alternativas": [
+   "138 J",
+   "50 J",
+   "275 J",
+   "550 J",
+   "36 J"
+  ],
+  "correta": 2,
   "id": "g-0836",
   "fonte": "ia"
  },
@@ -16785,18 +16784,118 @@ window.ENEM_QUESTIONS = [
   "topico": "Trabalho e Energia",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Uma força constante de 200 N desloca um corpo por 19 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
-  "explicacao": "Trabalho de força constante: W = F·d = 200 × 19 = 3.800 J.",
+  "enunciado": "Uma força constante de 50 N desloca um corpo por 20 m, na mesma direção e sentido do movimento. Qual o trabalho realizado?",
+  "explicacao": "Trabalho de força constante: W = F·d = 50 × 20 = 1.000 J.",
   "dica": "Trabalho (força na direção do movimento): W = F·d, em joules (J).",
   "alternativas": [
-   "219 J",
-   "7.600 J",
-   "400 J",
-   "1.900 J",
-   "3.800 J"
+   "1.000 J",
+   "100 J",
+   "70 J",
+   "2.000 J",
+   "500 J"
+  ],
+  "correta": 0,
+  "id": "g-0837",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 50 g de sal em água até completar 0,5 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 50 ÷ 0,5 = 100 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "100 g/L",
+   "1 g/L",
+   "25 g/L",
+   "50 g/L",
+   "200 g/L"
+  ],
+  "correta": 0,
+  "id": "g-0838",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 100 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 100 ÷ 4 = 25 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "4 g/L",
+   "50 g/L",
+   "12,5 g/L",
+   "400 g/L",
+   "25 g/L"
   ],
   "correta": 4,
-  "id": "g-0837",
+  "id": "g-0839",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 20 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 20 ÷ 2 = 10 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "5 g/L",
+   "15 g/L",
+   "10 g/L",
+   "20 g/L",
+   "40 g/L"
+  ],
+  "correta": 2,
+  "id": "g-0840",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 100 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 100 ÷ 5 = 20 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "40 g/L",
+   "5 g/L",
+   "10 g/L",
+   "500 g/L",
+   "20 g/L"
+  ],
+  "correta": 4,
+  "id": "g-0841",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 20 g de sal em água até completar 1 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 20 ÷ 1 = 20 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "30 g/L",
+   "5 g/L",
+   "10 g/L",
+   "20 g/L",
+   "40 g/L"
+  ],
+  "correta": 3,
+  "id": "g-0842",
   "fonte": "ia"
  },
  {
@@ -16810,53 +16909,133 @@ window.ENEM_QUESTIONS = [
   "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
   "alternativas": [
    "5 g/L",
-   "40 g/L",
-   "160 g/L",
-   "10 g/L",
-   "20 g/L"
-  ],
-  "correta": 3,
-  "id": "g-0838",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 50 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 50 ÷ 4 = 12,5 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "8 g/L",
-   "12,5 g/L",
-   "25 g/L",
-   "6,3 g/L",
-   "200 g/L"
-  ],
-  "correta": 1,
-  "id": "g-0839",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 40 g de sal em água até completar 0,5 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 40 ÷ 0,5 = 80 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "80 g/L",
    "20 g/L",
-   "1,3 g/L",
-   "160 g/L",
-   "40 g/L"
+   "10 g/L",
+   "40 g/L",
+   "160 g/L"
+  ],
+  "correta": 2,
+  "id": "g-0843",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 50 g de sal em água até completar 1 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 50 ÷ 1 = 50 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "50 g/L",
+   "25 g/L",
+   "100 g/L",
+   "75 g/L",
+   "2 g/L"
   ],
   "correta": 0,
-  "id": "g-0840",
+  "id": "g-0844",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 40 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 40 ÷ 5 = 8 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "200 g/L",
+   "4 g/L",
+   "12,5 g/L",
+   "8 g/L",
+   "16 g/L"
+  ],
+  "correta": 3,
+  "id": "g-0845",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 100 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 100 ÷ 2 = 50 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "50 g/L",
+   "2 g/L",
+   "100 g/L",
+   "25 g/L",
+   "200 g/L"
+  ],
+  "correta": 0,
+  "id": "g-0846",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 20 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 20 ÷ 5 = 4 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "4 g/L",
+   "8 g/L",
+   "2 g/L",
+   "100 g/L",
+   "25 g/L"
+  ],
+  "correta": 0,
+  "id": "g-0847",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 30 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 30 ÷ 2 = 15 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "6,7 g/L",
+   "60 g/L",
+   "7,5 g/L",
+   "15 g/L",
+   "30 g/L"
+  ],
+  "correta": 3,
+  "id": "g-0848",
+  "fonte": "ia"
+ },
+ {
+  "area": "natureza",
+  "materia": "quimica",
+  "topico": "Soluções",
+  "nivel": "Médio",
+  "gerada": true,
+  "enunciado": "Dissolvem-se 10 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 10 ÷ 4 = 2,5 g/L.",
+  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
+  "alternativas": [
+   "10 g/L",
+   "40 g/L",
+   "5 g/L",
+   "2,5 g/L",
+   "1,3 g/L"
+  ],
+  "correta": 3,
+  "id": "g-0849",
   "fonte": "ia"
  },
  {
@@ -16876,186 +17055,6 @@ window.ENEM_QUESTIONS = [
    "60 g/L"
   ],
   "correta": 0,
-  "id": "g-0841",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 20 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 20 ÷ 5 = 4 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "100 g/L",
-   "4 g/L",
-   "2 g/L",
-   "25 g/L",
-   "8 g/L"
-  ],
-  "correta": 1,
-  "id": "g-0842",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 30 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 30 ÷ 2 = 15 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "30 g/L",
-   "60 g/L",
-   "6,7 g/L",
-   "15 g/L",
-   "7,5 g/L"
-  ],
-  "correta": 3,
-  "id": "g-0843",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 10 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 10 ÷ 2 = 5 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "5 g/L",
-   "7,5 g/L",
-   "20 g/L",
-   "2,5 g/L",
-   "10 g/L"
-  ],
-  "correta": 0,
-  "id": "g-0844",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 10 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 10 ÷ 4 = 2,5 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "40 g/L",
-   "1,3 g/L",
-   "5 g/L",
-   "2,5 g/L",
-   "10 g/L"
-  ],
-  "correta": 3,
-  "id": "g-0845",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 100 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 100 ÷ 5 = 20 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "40 g/L",
-   "10 g/L",
-   "5 g/L",
-   "20 g/L",
-   "500 g/L"
-  ],
-  "correta": 3,
-  "id": "g-0846",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 100 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 100 ÷ 2 = 50 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "2 g/L",
-   "50 g/L",
-   "25 g/L",
-   "200 g/L",
-   "100 g/L"
-  ],
-  "correta": 1,
-  "id": "g-0847",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 20 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 20 ÷ 4 = 5 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "5 g/L",
-   "20 g/L",
-   "10 g/L",
-   "2,5 g/L",
-   "80 g/L"
-  ],
-  "correta": 0,
-  "id": "g-0848",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 10 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 10 ÷ 5 = 2 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "2 g/L",
-   "10 g/L",
-   "50 g/L",
-   "1 g/L",
-   "4 g/L"
-  ],
-  "correta": 0,
-  "id": "g-0849",
-  "fonte": "ia"
- },
- {
-  "area": "natureza",
-  "materia": "quimica",
-  "topico": "Soluções",
-  "nivel": "Médio",
-  "gerada": true,
-  "enunciado": "Dissolvem-se 20 g de sal em água até completar 1 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 20 ÷ 1 = 20 g/L.",
-  "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
-  "alternativas": [
-   "5 g/L",
-   "20 g/L",
-   "10 g/L",
-   "40 g/L",
-   "30 g/L"
-  ],
-  "correta": 1,
   "id": "g-0850",
   "fonte": "ia"
  },
@@ -17065,17 +17064,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Soluções",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Dissolvem-se 10 g de sal em água até completar 0,5 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 10 ÷ 0,5 = 20 g/L.",
+  "enunciado": "Dissolvem-se 50 g de sal em água até completar 5 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 50 ÷ 5 = 10 g/L.",
   "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
   "alternativas": [
-   "40 g/L",
-   "20 g/L",
-   "30 g/L",
+   "250 g/L",
+   "50 g/L",
    "5 g/L",
+   "20 g/L",
    "10 g/L"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0851",
   "fonte": "ia"
  },
@@ -17085,17 +17084,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Soluções",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Dissolvem-se 100 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 100 ÷ 4 = 25 g/L.",
+  "enunciado": "Dissolvem-se 30 g de sal em água até completar 4 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 30 ÷ 4 = 7,5 g/L.",
   "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
   "alternativas": [
-   "50 g/L",
-   "25 g/L",
-   "12,5 g/L",
-   "4 g/L",
-   "400 g/L"
+   "120 g/L",
+   "15 g/L",
+   "13,3 g/L",
+   "3,8 g/L",
+   "7,5 g/L"
   ],
-  "correta": 1,
+  "correta": 4,
   "id": "g-0852",
   "fonte": "ia"
  },
@@ -17105,17 +17104,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Soluções",
   "nivel": "Médio",
   "gerada": true,
-  "enunciado": "Dissolvem-se 50 g de sal em água até completar 0,5 L de solução. Qual a concentração comum, em g/L?",
-  "explicacao": "Concentração comum: C = massa ÷ volume = 50 ÷ 0,5 = 100 g/L.",
+  "enunciado": "Dissolvem-se 50 g de sal em água até completar 2 L de solução. Qual a concentração comum, em g/L?",
+  "explicacao": "Concentração comum: C = massa ÷ volume = 50 ÷ 2 = 25 g/L.",
   "dica": "Concentração comum: C = massa (g) ÷ volume (L).",
   "alternativas": [
-   "200 g/L",
    "100 g/L",
+   "50 g/L",
+   "4 g/L",
    "25 g/L",
-   "1 g/L",
-   "50 g/L"
+   "12,5 g/L"
   ],
-  "correta": 1,
+  "correta": 3,
   "id": "g-0853",
   "fonte": "ia"
  },
@@ -17125,17 +17124,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Matemática Financeira",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Um capital de R$ 500,00 é aplicado a juros compostos de 20% ao mês durante 2 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 500,00 × (1 + 0,20)^2 = R$ 720,00.",
+  "enunciado": "Um capital de R$ 2.000,00 é aplicado a juros compostos de 10% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,10)^3 = R$ 2.662,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 792,00",
-   "R$ 700,00",
-   "R$ 720,00",
-   "R$ 600,00",
-   "R$ 864,00"
+   "R$ 2.928,20",
+   "R$ 2.600,00",
+   "R$ 2.200,00",
+   "R$ 2.662,00",
+   "R$ 1.331,00"
   ],
-  "correta": 2,
+  "correta": 3,
   "id": "g-0854",
   "fonte": "ia"
  },
@@ -17145,15 +17144,15 @@ window.ENEM_QUESTIONS = [
   "topico": "Matemática Financeira",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Um capital de R$ 1.000,00 é aplicado a juros compostos de 20% ao mês durante 2 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,20)^2 = R$ 1.440,00.",
+  "enunciado": "Um capital de R$ 1.000,00 é aplicado a juros compostos de 50% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,50)^3 = R$ 3.375,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 1.200,00",
-   "R$ 1.400,00",
-   "R$ 1.728,00",
-   "R$ 1.440,00",
-   "R$ 1.584,00"
+   "R$ 2.500,00",
+   "R$ 5.062,50",
+   "R$ 3.712,50",
+   "R$ 3.375,00",
+   "R$ 1.500,00"
   ],
   "correta": 3,
   "id": "g-0855",
@@ -17169,13 +17168,13 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,50)^2 = R$ 4.500,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 4.500,00",
    "R$ 4.000,00",
-   "R$ 6.750,00",
+   "R$ 4.500,00",
+   "R$ 3.000,00",
    "R$ 4.950,00",
-   "R$ 3.000,00"
+   "R$ 6.750,00"
   ],
-  "correta": 0,
+  "correta": 1,
   "id": "g-0856",
   "fonte": "ia"
  },
@@ -17185,18 +17184,118 @@ window.ENEM_QUESTIONS = [
   "topico": "Matemática Financeira",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Um capital de R$ 100,00 é aplicado a juros compostos de 20% ao mês durante 2 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 100,00 × (1 + 0,20)^2 = R$ 144,00.",
+  "enunciado": "Um capital de R$ 200,00 é aplicado a juros compostos de 20% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 200,00 × (1 + 0,20)^3 = R$ 345,60.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 172,80",
-   "R$ 158,40",
-   "R$ 144,00",
-   "R$ 140,00",
-   "R$ 120,00"
+   "R$ 320,00",
+   "R$ 380,16",
+   "R$ 345,60",
+   "R$ 240,00",
+   "R$ 414,72"
   ],
   "correta": 2,
   "id": "g-0857",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 2.000,00 é aplicado a juros compostos de 50% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,50)^3 = R$ 6.750,00.",
+  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
+  "alternativas": [
+   "R$ 3.000,00",
+   "R$ 6.750,00",
+   "R$ 7.425,00",
+   "R$ 10.125,00",
+   "R$ 5.000,00"
+  ],
+  "correta": 1,
+  "id": "g-0858",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 200,00 é aplicado a juros compostos de 10% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 200,00 × (1 + 0,10)^3 = R$ 266,20.",
+  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
+  "alternativas": [
+   "R$ 266,20",
+   "R$ 260,00",
+   "R$ 220,00",
+   "R$ 292,82",
+   "R$ 133,10"
+  ],
+  "correta": 0,
+  "id": "g-0859",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 2.000,00 é aplicado a juros compostos de 10% ao mês durante 2 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,10)^2 = R$ 2.420,00.",
+  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
+  "alternativas": [
+   "R$ 2.662,00",
+   "R$ 2.400,00",
+   "R$ 2.420,00",
+   "R$ 2.200,00",
+   "R$ 1.210,00"
+  ],
+  "correta": 2,
+  "id": "g-0860",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 500,00 é aplicado a juros compostos de 50% ao mês durante 2 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 500,00 × (1 + 0,50)^2 = R$ 1.125,00.",
+  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
+  "alternativas": [
+   "R$ 1.237,50",
+   "R$ 1.125,00",
+   "R$ 750,00",
+   "R$ 1.687,50",
+   "R$ 1.000,00"
+  ],
+  "correta": 1,
+  "id": "g-0861",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 2.000,00 é aplicado a juros compostos de 20% ao mês durante 2 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,20)^2 = R$ 2.880,00.",
+  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
+  "alternativas": [
+   "R$ 2.800,00",
+   "R$ 2.400,00",
+   "R$ 3.168,00",
+   "R$ 2.880,00",
+   "R$ 3.456,00"
+  ],
+  "correta": 3,
+  "id": "g-0862",
   "fonte": "ia"
  },
  {
@@ -17209,14 +17308,34 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,10)^3 = R$ 1.331,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 1.331,00",
    "R$ 1.464,10",
-   "R$ 1.300,00",
    "R$ 1.100,00",
-   "R$ 665,50"
+   "R$ 665,50",
+   "R$ 1.331,00",
+   "R$ 1.300,00"
+  ],
+  "correta": 3,
+  "id": "g-0863",
+  "fonte": "ia"
+ },
+ {
+  "area": "matematica",
+  "materia": "matematica",
+  "topico": "Matemática Financeira",
+  "nivel": "Difícil",
+  "gerada": true,
+  "enunciado": "Um capital de R$ 200,00 é aplicado a juros compostos de 50% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 200,00 × (1 + 0,50)^3 = R$ 675,00.",
+  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
+  "alternativas": [
+   "R$ 675,00",
+   "R$ 500,00",
+   "R$ 742,50",
+   "R$ 1.012,50",
+   "R$ 300,00"
   ],
   "correta": 0,
-  "id": "g-0858",
+  "id": "g-0864",
   "fonte": "ia"
  },
  {
@@ -17230,113 +17349,13 @@ window.ENEM_QUESTIONS = [
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
    "R$ 750,00",
-   "R$ 1.250,00",
    "R$ 1.687,50",
+   "R$ 2.531,25",
    "R$ 1.856,25",
-   "R$ 2.531,25"
-  ],
-  "correta": 2,
-  "id": "g-0859",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 1.000,00 é aplicado a juros compostos de 10% ao mês durante 2 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,10)^2 = R$ 1.210,00.",
-  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
-  "alternativas": [
-   "R$ 1.100,00",
-   "R$ 1.210,00",
-   "R$ 1.331,00",
-   "R$ 605,00",
-   "R$ 1.200,00"
+   "R$ 1.250,00"
   ],
   "correta": 1,
-  "id": "g-0860",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 200,00 é aplicado a juros compostos de 50% ao mês durante 3 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 200,00 × (1 + 0,50)^3 = R$ 675,00.",
-  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
-  "alternativas": [
-   "R$ 1.012,50",
-   "R$ 742,50",
-   "R$ 675,00",
-   "R$ 500,00",
-   "R$ 300,00"
-  ],
-  "correta": 2,
-  "id": "g-0861",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 2.000,00 é aplicado a juros compostos de 10% ao mês durante 3 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,10)^3 = R$ 2.662,00.",
-  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
-  "alternativas": [
-   "R$ 2.662,00",
-   "R$ 2.600,00",
-   "R$ 2.928,20",
-   "R$ 1.331,00",
-   "R$ 2.200,00"
-  ],
-  "correta": 0,
-  "id": "g-0862",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 500,00 é aplicado a juros compostos de 50% ao mês durante 2 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 500,00 × (1 + 0,50)^2 = R$ 1.125,00.",
-  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
-  "alternativas": [
-   "R$ 750,00",
-   "R$ 1.237,50",
-   "R$ 1.000,00",
-   "R$ 1.125,00",
-   "R$ 1.687,50"
-  ],
-  "correta": 3,
-  "id": "g-0863",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 1.000,00 é aplicado a juros compostos de 50% ao mês durante 3 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,50)^3 = R$ 3.375,00.",
-  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
-  "alternativas": [
-   "R$ 2.500,00",
-   "R$ 3.712,50",
-   "R$ 3.375,00",
-   "R$ 1.500,00",
-   "R$ 5.062,50"
-  ],
-  "correta": 2,
-  "id": "g-0864",
+  "id": "g-0865",
   "fonte": "ia"
  },
  {
@@ -17349,31 +17368,11 @@ window.ENEM_QUESTIONS = [
   "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,20)^3 = R$ 1.728,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 1.600,00",
-   "R$ 1.900,80",
-   "R$ 1.200,00",
    "R$ 2.073,60",
+   "R$ 1.200,00",
+   "R$ 1.900,80",
+   "R$ 1.600,00",
    "R$ 1.728,00"
-  ],
-  "correta": 4,
-  "id": "g-0865",
-  "fonte": "ia"
- },
- {
-  "area": "matematica",
-  "materia": "matematica",
-  "topico": "Matemática Financeira",
-  "nivel": "Difícil",
-  "gerada": true,
-  "enunciado": "Um capital de R$ 2.000,00 é aplicado a juros compostos de 20% ao mês durante 3 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 2.000,00 × (1 + 0,20)^3 = R$ 3.456,00.",
-  "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
-  "alternativas": [
-   "R$ 4.147,20",
-   "R$ 2.400,00",
-   "R$ 3.200,00",
-   "R$ 3.801,60",
-   "R$ 3.456,00"
   ],
   "correta": 4,
   "id": "g-0866",
@@ -17385,17 +17384,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Matemática Financeira",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Um capital de R$ 100,00 é aplicado a juros compostos de 50% ao mês durante 3 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 100,00 × (1 + 0,50)^3 = R$ 337,50.",
+  "enunciado": "Um capital de R$ 500,00 é aplicado a juros compostos de 20% ao mês durante 2 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 500,00 × (1 + 0,20)^2 = R$ 720,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 337,50",
-   "R$ 150,00",
-   "R$ 506,25",
-   "R$ 371,25",
-   "R$ 250,00"
+   "R$ 864,00",
+   "R$ 792,00",
+   "R$ 720,00",
+   "R$ 600,00",
+   "R$ 700,00"
   ],
-  "correta": 0,
+  "correta": 2,
   "id": "g-0867",
   "fonte": "ia"
  },
@@ -17405,17 +17404,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Matemática Financeira",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Um capital de R$ 1.000,00 é aplicado a juros compostos de 50% ao mês durante 2 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 1.000,00 × (1 + 0,50)^2 = R$ 2.250,00.",
+  "enunciado": "Um capital de R$ 100,00 é aplicado a juros compostos de 20% ao mês durante 3 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 100,00 × (1 + 0,20)^3 = R$ 172,80.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 1.500,00",
-   "R$ 3.375,00",
-   "R$ 2.475,00",
-   "R$ 2.250,00",
-   "R$ 2.000,00"
+   "R$ 207,36",
+   "R$ 172,80",
+   "R$ 160,00",
+   "R$ 190,08",
+   "R$ 120,00"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0868",
   "fonte": "ia"
  },
@@ -17425,17 +17424,17 @@ window.ENEM_QUESTIONS = [
   "topico": "Matemática Financeira",
   "nivel": "Difícil",
   "gerada": true,
-  "enunciado": "Um capital de R$ 500,00 é aplicado a juros compostos de 20% ao mês durante 3 meses. Qual o montante final?",
-  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 500,00 × (1 + 0,20)^3 = R$ 864,00.",
+  "enunciado": "Um capital de R$ 100,00 é aplicado a juros compostos de 20% ao mês durante 2 meses. Qual o montante final?",
+  "explicacao": "Juros compostos: M = C·(1 + i)ᵗ = R$ 100,00 × (1 + 0,20)^2 = R$ 144,00.",
   "dica": "Juros compostos: M = C·(1+i)ᵗ (juros sobre juros), sempre maior que o simples.",
   "alternativas": [
-   "R$ 1.036,80",
-   "R$ 800,00",
-   "R$ 950,40",
-   "R$ 864,00",
-   "R$ 600,00"
+   "R$ 140,00",
+   "R$ 144,00",
+   "R$ 158,40",
+   "R$ 172,80",
+   "R$ 120,00"
   ],
-  "correta": 3,
+  "correta": 1,
   "id": "g-0869",
   "fonte": "ia"
  }

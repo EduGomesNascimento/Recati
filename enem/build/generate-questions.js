@@ -33,6 +33,8 @@ function shuffle(arr) {
 /* ---------- formatação pt-BR ---------- */
 const money = v => 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const num = (v, d = 0) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+// até maxD casas decimais, sem zeros sobrando (ex.: 7,065 / 6,28 / 12)
+const numMax = (v, maxD = 3) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: maxD });
 
 /* ---------- montador de alternativas ----------
    correctVal + lista de distratores → 5 alternativas embaralhadas.
@@ -93,7 +95,6 @@ function genPorcSucessiva() {
     ['um celular', 'no e-commerce'], ['uma geladeira', 'na liquidação'],
     ['um tênis', 'na loja esportiva'], ['um livro', 'na feira']
   ]);
-  const base = rint(80, 60) * 10 / 1; // multiplos de 10
   const preco = rint(10, 60) * 10;
   const desc = pick([10, 15, 20, 25, 30, 40]);
   const acr = pick([5, 10, 12, 15, 20]);
@@ -114,15 +115,13 @@ function genPorcSucessiva() {
 /* --- Matemática: X% de V (porcentagem simples) --- */
 function genPorcSimples() {
   const p = pick([5, 8, 10, 12, 15, 20, 25, 30, 40, 60, 75]);
-  const v = rint(4, 40) * 50;
+  const isMoney = rng() < 0.5;
+  // contagens de pessoas/vagas usam múltiplos de 100 → resultado sempre inteiro
+  const v = isMoney ? rint(4, 40) * 50 : rint(2, 20) * 100;
   const correto = v * p / 100;
-  const ctx = pick([
-    `Em uma turma de ${v} alunos, ${p}% foram aprovados sem recuperação.`,
-    `Uma conta de ${money(v)} recebeu ${p}% de gorjeta.`,
-    `De ${v} vagas oferecidas, ${p}% foram destinadas a cotas.`,
-    `Um investimento de ${money(v)} rendeu ${p}% no período.`
-  ]);
-  const isMoney = ctx.includes('R$');
+  const ctx = isMoney
+    ? pick([`Uma conta de ${money(v)} recebeu ${p}% de gorjeta.`, `Um investimento de ${money(v)} rendeu ${p}% no período.`])
+    : pick([`Em uma escola com ${v} alunos, ${p}% foram aprovados sem recuperação.`, `De ${v} vagas oferecidas, ${p}% foram destinadas a cotas.`]);
   const fmt = isMoney ? money : (x => num(x, x % 1 ? 1 : 0));
   const q = {
     area: 'matematica', materia: 'matematica', topico: 'Porcentagem', nivel: 'Fácil', gerada: true,
@@ -159,8 +158,9 @@ function genRegraTres() {
 function genVertice() {
   const b = pick([4, 6, 8, 10, 12]);
   const a = -1;
-  const c0 = -pick([3, 5, 7, 9]);
   const xv = -b / (2 * a); // = b/2
+  // garante valor máximo positivo: f(xv) = xv² − c > 0
+  const c0 = -pick([3, 5, 7, 9].filter(c => c < xv * xv));
   const contexto = pick([
     ['O lucro (em milhares de reais) de uma empresa é', 'a quantidade vendida (em milhares) que maximiza o lucro'],
     ['A altura (em metros) de um projétil é', 'o instante (em s) de altura máxima'],
@@ -201,7 +201,7 @@ function genVolumeCilindro() {
   const q = {
     area: 'matematica', materia: 'matematica', topico: 'Geometria/Volume', nivel: 'Difícil', gerada: true,
     enunciado: `Uma caixa d'água cilíndrica tem raio ${num(r, r % 1 ? 1 : 0)} m e altura ${num(h, h % 1 ? 1 : 0)} m. Usando π ≈ 3,14, quantos litros ela comporta (1 m³ = 1000 L)?`,
-    explicacao: `Volume = π·r²·h = 3,14 × ${num(r, r % 1 ? 1 : 0)}² × ${num(h, h % 1 ? 1 : 0)} = ${num(vol, 2)} m³. Convertendo: ${num(vol, 2)} × 1000 = ${num(litros)} litros.`,
+    explicacao: `Volume = π·r²·h = 3,14 × ${num(r, r % 1 ? 1 : 0)}² × ${num(h, h % 1 ? 1 : 0)} = ${numMax(vol, 4)} m³. Convertendo: ${numMax(vol, 4)} × 1000 = ${num(Math.round(litros))} litros.`,
     dica: 'Pegadinha clássica: 1 m³ = 1000 L. Calcule em m³ e multiplique por 1000.'
   };
   return build(q, litros, [vol, litros / 10, PI * r * h * 1000, litros * 2, litros / 2], x => num(Math.round(x)) + ' litros');
@@ -229,30 +229,39 @@ function genPitagoras() {
 
 /* --- Matemática: probabilidade (urna) --- */
 function genProbabilidade() {
+  const SING = { azuis: 'azul', vermelhas: 'vermelha', verdes: 'verde' };
   const cores = shuffle([['azuis', rint(2, 6)], ['vermelhas', rint(2, 6)], ['verdes', rint(1, 5)]]);
   const total = cores.reduce((s, c) => s + c[1], 0);
   const alvo = cores[0];
-  const frac = alvo[1] / total;
   const q = {
     area: 'matematica', materia: 'matematica', topico: 'Probabilidade', nivel: 'Médio', gerada: true,
-    enunciado: `Uma urna contém ${cores.map(c => `${c[1]} bolas ${c[0]}`).join(', ')}. Retirando uma bola ao acaso, qual a probabilidade de ela ser ${alvo[0].replace('s', '')}?`,
-    explicacao: `Total de bolas = ${cores.map(c => c[1]).join('+')} = ${total}. Casos favoráveis = ${alvo[1]}. Probabilidade = ${alvo[1]}/${total} ≈ ${num(frac * 100, 1)}%.`,
-    dica: 'Probabilidade = casos favoráveis ÷ casos totais. Some tudo para o total.'
+    enunciado: `Uma urna contém ${cores.map(c => `${c[1]} bolas ${c[0]}`).join(', ')}. Retirando uma bola ao acaso, qual a probabilidade de ela ser ${SING[alvo[0]]}?`,
+    explicacao: `Total de bolas = ${cores.map(c => c[1]).join(' + ')} = ${total}. Casos favoráveis (${alvo[0]}) = ${alvo[1]}. Probabilidade = ${alvo[1]}/${total} ≈ ${num(alvo[1] / total * 100, 1)}%.`,
+    dica: 'Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.'
   };
-  return build(q, frac, [alvo[1] / (total - alvo[1]), (total - alvo[1]) / total, 1 / total, alvo[1] / total * 1.5], x => `${Math.round(x * total)}/${total} (≈ ${num(x * 100, 0)}%)`, v => Math.round(v * 1000));
+  // trabalhamos com o NUMERADOR (sobre o mesmo total) para que todas as alternativas sejam coerentes
+  const distr = [cores[1][1], cores[2][1], total - alvo[1], alvo[1] + 1, alvo[1] - 1]
+    .filter(n => n > 0 && n < total);
+  return build(q, alvo[1], distr, n => `${n}/${total} (≈ ${num(n / total * 100, 1)}%)`, n => Math.round(n));
 }
 
 /* --- Matemática: média / moda / mediana --- */
 function genEstatistica() {
   const n = 5;
-  const vals = Array.from({ length: n }, () => rint(3, 10));
-  vals[1] = vals[2]; // garante uma moda
+  let vals, freq, moda;
+  // sorteia até haver UMA única moda (evita conjuntos bimodais, que tornariam a resposta ambígua)
+  do {
+    vals = Array.from({ length: n }, () => rint(3, 10));
+    vals[1] = vals[2];
+    freq = {}; vals.forEach(v => freq[v] = (freq[v] || 0) + 1);
+    const maxF = Math.max(...Object.values(freq));
+    const modas = Object.keys(freq).filter(k => freq[k] === maxF);
+    moda = modas.length === 1 ? modas[0] : null;
+  } while (moda === null);
   const soma = vals.reduce((a, b) => a + b, 0);
   const media = soma / n;
   const ord = vals.slice().sort((a, b) => a - b);
   const mediana = ord[2];
-  const freq = {}; vals.forEach(v => freq[v] = (freq[v] || 0) + 1);
-  const moda = Object.keys(freq).sort((a, b) => freq[b] - freq[a])[0];
   const tipo = pick(['média', 'mediana', 'moda']);
   const correto = tipo === 'média' ? media : tipo === 'mediana' ? mediana : Number(moda);
   const q = {
@@ -545,10 +554,10 @@ function genDensidade() {
 /* --- Biologia: genética (quadro de Punnett, proporções) --- */
 function genGenetica() {
   const casos = [
-    { cruz: 'Aa × Aa', pergunta: 'apresentem o fenótipo recessivo', frac: 1 / 4, expl: 'Aa × Aa gera 1 AA : 2 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/4 = 25%.' },
-    { cruz: 'Aa × Aa', pergunta: 'apresentem o fenótipo dominante', frac: 3 / 4, expl: 'Aa × Aa gera 3/4 com pelo menos um alelo A (AA e Aa) → fenótipo dominante = 75%.' },
-    { cruz: 'Aa × aa', pergunta: 'apresentem o fenótipo recessivo', frac: 1 / 2, expl: 'Aa × aa gera 1 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/2 = 50%.' },
-    { cruz: 'AA × aa', pergunta: 'sejam heterozigotos', frac: 1, expl: 'AA × aa gera 100% Aa (heterozigotos). Toda a prole recebe um A e um a.' }
+    { cruz: 'Aa × Aa', pergunta: 'apresentarem o fenótipo recessivo', frac: 1 / 4, expl: 'Aa × Aa gera 1 AA : 2 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/4 = 25%.' },
+    { cruz: 'Aa × Aa', pergunta: 'apresentarem o fenótipo dominante', frac: 3 / 4, expl: 'Aa × Aa gera 3/4 com pelo menos um alelo A (AA e Aa) → fenótipo dominante = 75%.' },
+    { cruz: 'Aa × aa', pergunta: 'apresentarem o fenótipo recessivo', frac: 1 / 2, expl: 'Aa × aa gera 1 Aa : 1 aa. O fenótipo recessivo (aa) corresponde a 1/2 = 50%.' },
+    { cruz: 'AA × aa', pergunta: 'serem heterozigotos', frac: 1, expl: 'AA × aa gera 100% Aa (heterozigotos). Toda a prole recebe um A e um a.' }
   ];
   const c = pick(casos);
   const pct = Math.round(c.frac * 100);
@@ -577,7 +586,7 @@ function genTrigNotavel() {
   opts = shuffle(opts);
   const q = {
     area: 'matematica', materia: 'matematica', topico: 'Trigonometria', nivel: 'Médio', gerada: true,
-    enunciado: `Qual é o valor de ${fn} ${ang}° ?`,
+    enunciado: `Qual é o valor de ${fn} ${ang}°?`,
     alternativas: opts,
     explicacao: `Pela tabela de valores notáveis, ${fn} ${ang}° = ${correto}.`,
     dica: 'Decore: sen30=1/2, sen45=√2/2, sen60=√3/2; o cosseno é o espelho; tg30=√3/3, tg45=1, tg60=√3.'

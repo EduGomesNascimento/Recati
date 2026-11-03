@@ -21,7 +21,7 @@ window.ENEM_RESOURCES = {
   materiais: [
     { nome: "Provas e gabaritos anteriores (Inep)", url: "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos", desc: "Todas as provas oficiais do ENEM para treinar.", tag: "Provas" },
     { nome: "Redações nota 1000 comentadas", url: "https://www.google.com/search?q=reda%C3%A7%C3%B5es+nota+1000+enem+comentadas", desc: "Exemplos reais de redações que gabaritaram.", tag: "Redação" },
-    { nome: "Cartilha do Participante (Redação)", url: "https://www.gov.br/inep/pt-br/centrais-de-conteudo/acervo-linha-editorial/publicacoes-institucionais/avaliacoes-e-exames-da-educacao-basica/a-redacao-no-enem-2024-cartilha-do-participante", desc: "Documento oficial do Inep sobre as 5 competências.", tag: "Oficial" }
+    { nome: "Cartilha do Participante — Redação (Inep)", url: "https://www.google.com/search?q=cartilha+do+participante+reda%C3%A7%C3%A3o+enem+inep", desc: "Documento oficial do Inep com as 5 competências e redações nota 1000. Abra sempre a edição do ano da sua prova.", tag: "Oficial" }
   ],
   estilos: [
     { icone: "👀", nome: "Visual", dica: "Aprende melhor com imagens, mapas mentais e gráficos.", sugestao: "Use os blocos gráficos e mapas mentais das lições; assista videoaulas." },

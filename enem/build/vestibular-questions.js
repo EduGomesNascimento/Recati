@@ -7,8 +7,8 @@ module.exports = [
   {
     area: "matematica", materia: "matematica", topico: "Logaritmos", nivel: "Médio", banca: "FUVEST",
     enunciado: "O valor de log₂ 32 + log₃ 27 é:",
-    alternativas: ["5", "6", "7", "8", "9"], correta: 2,
-    explicacao: "log₂ 32 = log₂ 2⁵ = 5 (pois 2⁵ = 32) e log₃ 27 = log₃ 3³ = 3. Somando: 5 + 3 = 8. Atenção: a soma correta é 8.",
+    alternativas: ["5", "6", "7", "8", "9"], correta: 3,
+    explicacao: "log₂ 32 = 5 (pois 2⁵ = 32) e log₃ 27 = 3 (pois 3³ = 27). Somando: 5 + 3 = 8.",
     dica: "logₐ aⁿ = n. Escreva o número como potência da base."
   },
   {
@@ -138,7 +138,7 @@ module.exports = [
   /* ===================== BIOLOGIA ===================== */
   {
     area: "natureza", materia: "biologia", topico: "Genética", nivel: "Difícil", banca: "FUVEST",
-    enunciado: "No sistema ABO, um casal em que o pai é tipo A (heterozigoto, Iᴬi) e a mãe tipo B (heterozigota, IᴮI) pode ter filhos dos tipos:",
+    enunciado: "No sistema ABO, um casal em que o pai é tipo A (heterozigoto, Iᴬi) e a mãe tipo B (heterozigota, Iᴮi) pode ter filhos dos tipos:",
     alternativas: ["Somente A e B", "Somente AB", "A, B, AB e O", "Somente O", "Somente A e O"], correta: 2,
     explicacao: "Iᴬi × IᴮI gera: IᴬIᴮ (AB), Iᴬi (A), Iᴮi (B) e ii (O). Portanto, os quatro tipos sanguíneos são possíveis.",
     dica: "Cruze os alelos num quadro de Punnett. Pais heterozigotos A e B podem ter filho O."

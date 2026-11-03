@@ -23,6 +23,7 @@ window.Store = (function () {
     metaSemanal: 100,        // questões/semana
     streakRecord: 0,         // maior sequência de dias já atingida
     nivelVisto: 1,           // último nível de XP já celebrado
+    normaStats: { feitos: 0, acertos: 0 }, // exercícios de norma padrão
     diario: {}               // "YYYY-MM-DD" -> nº de questões respondidas no dia
   });
 

@@ -137,7 +137,8 @@ window.Engine = (function () {
     licao: 60,
     redacaoBase: 20,      // + nota/10
     conquista: 40,
-    diaStreak: 15
+    diaStreak: 15,
+    normaCerta: 3         // exercício de norma padrão certo
   };
 
   function totalXP() {
@@ -153,6 +154,7 @@ window.Engine = (function () {
     s.redacoes.forEach(r => { xp += XP.redacaoBase + Math.round((r.total || 0) / 10); });
     xp += (s.conquistas.length || 0) * XP.conquista;
     xp += (s.streak.dias || 0) * XP.diaStreak;
+    xp += ((s.normaStats && s.normaStats.acertos) || 0) * XP.normaCerta;
     return xp;
   }
 

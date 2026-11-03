@@ -69,24 +69,30 @@
     const raw = location.hash || "#/home";
     const [path, param] = raw.replace(/^#\//, "").split("/");
     window.scrollTo(0, 0);
+    pararCarrossel();
 
     switch (path) {
       case "": case "home": renderHome(); break;
+      case "intensivao": renderIntensivao(); break;
       case "trilhas": param ? renderMateria(param) : renderTrilhas(); break;
       case "licao": renderLicao(param); break;
       case "praticar": renderPraticarConfig(); break;
       case "simulado": renderSimulado(); break;
       case "resultado": renderResultado(param); break;
       case "redacao": renderRedacao(); break;
+      case "temas": param ? renderTemaDetalhe(param) : renderTemas(); break;
+      case "treino": renderTreino(param); break;
+      case "modelos": renderModelos(); break;
+      case "vocabulario": renderVocabulario(); break;
       case "plano": renderPlano(); break;
       case "recursos": renderRecursos(); break;
       case "perfil": renderPerfil(); break;
       default: renderHome();
     }
-    // marca nav ativa
+    // marca nav ativa (temas/treino/modelos ficam sob "Redação")
+    const navPath = ["temas", "treino", "modelos", "vocabulario"].includes(path) ? "redacao" : (path || "home");
     document.querySelectorAll("#mainnav button").forEach(b => {
-      b.classList.toggle("active", b.dataset.nav === "#/" + (path || "home") ||
-        (path === "" && b.dataset.nav === "#/home"));
+      b.classList.toggle("active", b.dataset.nav === "#/" + navPath);
     });
   }
 
@@ -113,6 +119,7 @@
           ${RES.estilos.map(e => `<div class="opt-card" data-val="${e.nome}"><span class="emoji">${e.icone}</span><span><b>${e.nome}</b><span class="muted small">${esc(e.dica)}</span></span></div>`).join("")}
         </div>
         <button class="btn btn-primary block" id="ob-go" style="margin-top:10px">Começar minha jornada 🚀</button>
+        <button class="btn btn-ghost block" id="ob-skip" style="margin-top:8px">⚡ Pular e estudar agora</button>
       </div>`;
 
     let objetivo = null, estilo = null, avatar = AVATARES[0];
@@ -132,10 +139,15 @@
       const nome = view.querySelector("#ob-nome").value.trim();
       if (!nome) { view.querySelector("#ob-nome").focus(); toast("Digite seu nome para começar 🙂"); return; }
       Store.set({ nome, avatar, objetivo, estiloAprendizado: estilo });
-      go("#/home"); router();
+      go("#/intensivao");
       setTimeout(() => toast(`Vamos nessa, ${nome}! ${avatar}`), 400);
     };
     view.querySelector("#ob-go").onclick = start;
+    view.querySelector("#ob-skip").onclick = () => {
+      const nome = view.querySelector("#ob-nome").value.trim() || "Estudante";
+      Store.set({ nome, avatar, objetivo, estiloAprendizado: estilo });
+      go("#/intensivao");
+    };
     view.querySelector("#ob-nome").addEventListener("keydown", e => { if (e.key === "Enter") start(); });
   }
 
@@ -157,6 +169,7 @@
     }));
 
     view.innerHTML = `
+      <a class="cta-intensivao" href="#/intensivao">⚡ <b>Modo Intensivão</b> — questões por área e tópico, reforço dos seus erros e redação em 1 clique <span>→</span></a>
       <div class="card nivel-banner">
         <div class="nivel-avatar">${esc(s.avatar || "🚀")}</div>
         <div style="flex:1;min-width:180px">
@@ -495,20 +508,35 @@
       const comExplica = view.querySelector("#cfg-explica").checked;
       const modoFonte = fonteSelecionada();
 
-      let pool = Q.filter(q => areas.includes(q.area)
-        && modoFonte.fontes.includes(q.fonte)
-        && (nivel === "todas" || q.nivel === nivel));
-      pool = embaralhar(pool);
-      if (qtd > 0) pool = pool.slice(0, qtd);
-      if (!pool.length) { toast("Sem questões para esse filtro. Tente outro."); return; }
-
-      examState = {
-        questoes: pool, respostas: new Array(pool.length).fill(null),
-        atual: 0, comTempo, comExplica, revelada: new Array(pool.length).fill(false),
-        inicio: Date.now(), tempoRestante: comTempo ? pool.length * 180 : null // 3min/questão
-      };
-      go("#/simulado"); router();
+      iniciarSimulado({ areas, fontes: modoFonte.fontes, nivel, qtd, comTempo, comExplica });
     };
+  }
+
+  /* Cria e abre um simulado a partir de filtros. Usado pelo Praticar e pelo Intensivão.
+     opts: { areas?, fontes?, nivel?, qtd?, topicos?, materias?, comTempo?, comExplica?, priorizarErros? } */
+  function iniciarSimulado(opts) {
+    const o = Object.assign({ fontes: ["enem", "vestibular", "ia"], nivel: "todas", qtd: 10, comTempo: false, comExplica: true }, opts || {});
+    let pool = Q.filter(q =>
+      (!o.areas || o.areas.includes(q.area)) &&
+      (!o.materias || o.materias.includes(q.materia)) &&
+      (!o.topicos || o.topicos.includes(q.topico)) &&
+      (!o.ids || o.ids.includes(q.id)) &&
+      o.fontes.includes(q.fonte) &&
+      (o.nivel === "todas" || q.nivel === o.nivel));
+    pool = embaralhar(pool);
+    if (o.priorizarErros) {
+      // coloca primeiro as questões que a pessoa já errou
+      const rq = Store.get().respostasQuestoes || {};
+      pool.sort((a, b) => (rq[a.id] && !rq[a.id].acertou ? 0 : 1) - (rq[b.id] && !rq[b.id].acertou ? 0 : 1));
+    }
+    if (o.qtd > 0) pool = pool.slice(0, o.qtd);
+    if (!pool.length) { toast("Sem questões para esse filtro. Tente outro."); return; }
+    examState = {
+      questoes: pool, respostas: new Array(pool.length).fill(null),
+      atual: 0, comTempo: o.comTempo, comExplica: o.comExplica, revelada: new Array(pool.length).fill(false),
+      inicio: Date.now(), tempoRestante: o.comTempo ? pool.length * 180 : null // 3 min/questão
+    };
+    if (location.hash === "#/simulado") router(); else go("#/simulado");
   }
 
   function embaralhar(arr) {
@@ -702,14 +730,35 @@
       </div>`;
   }
 
-  // ---------------- Redação ----------------
-  function renderRedacao() {
-    const s = Store.get();
-    view.innerHTML = `
-      <div class="section-title">📝 Redação nota 1000 <small>dissertativo-argumentativo</small></div>
-      <div class="card"><p>${esc(R.intro)}</p></div>
+  // ================================================================
+  //  REDAÇÃO (hub) · TEMAS · TREINADOR · MODELOS · REPERTÓRIO · INTENSIVÃO
+  // ================================================================
+  const T = window.ENEM_TEMAS;
+  const REP = window.ENEM_REPERTORIO;
+  const NORMA = window.ENEM_NORMA;
+  const ORDEM_PROB = ["quase-certo", "muito-provavel", "provavel", "pouco-provavel"];
+  const DIF_CHIP = { "Fácil": "verde", "Médio": "amarelo", "Difícil": "vermelho", "Extrema": "roxo" };
+  const chipProb = p => { const m = T.probabilidades[p]; return `<span class="chip ${m.chip}">${m.emoji} ${m.rotulo}</span>`; };
+  const chipDif = d => `<span class="chip ${DIF_CHIP[d] || "cinza"}">${d === "Extrema" ? "💀" : "🎚️"} ${d}</span>`;
 
-      <div class="section-title" style="font-size:1.1rem">🏗️ Estrutura em 4 partes</div>
+  // ---------- Redação: hub ----------
+  function renderRedacao() {
+    view.innerHTML = `
+      <div class="section-title">📝 Redação nota 1000 <small>tudo em um lugar</small></div>
+      <div class="grid cols-4">
+        ${atalho("🎯", "Temas prováveis", `${T.temas.length} temas com folha de estudo`, "#/temas")}
+        ${atalho("✍️", "Escrever e verificar", "Sem corretor + verificação de norma", "#/treino")}
+        ${atalho("🧩", "Exercícios de norma", "Acento, crase, concordância…", "#/treino/exercicios")}
+        ${atalho("📐", "Modelos e dicas", "Esqueletos prontos + redação-modelo", "#/modelos")}
+      </div>
+      <div style="margin-top:16px">${atalho("📖", "Dicionário de vocabulário formal", `${window.ENEM_VOCABULARIO.palavras.length} palavras e expressões formais, claras e atuais`, "#/vocabulario")}</div>
+
+      <div class="section-title" style="font-size:1.1rem">💡 Enriquecedor de repertório</div>
+      <div id="carrossel"></div>
+
+      <div class="card" style="margin-top:16px"><p>${esc(R.intro)}</p></div>
+
+      <div class="section-title" style="font-size:1.1rem">🏗️ Estrutura em 4 parágrafos <small>6 a 8 linhas cada</small></div>
       <div class="grid cols-2">
         ${R.estrutura.map(e => `<div class="card">
           <h3>${esc(e.parte)}</h3>
@@ -731,85 +780,569 @@
           <span class="chip roxo">${esc(p.el)}</span><span class="nome small">${esc(p.ex)}</span></div>`).join("")}
       </div>
 
-      <div class="section-title" style="font-size:1.1rem">📚 Repertórios coringa</div>
+      <div class="section-title" style="font-size:1.1rem">⛔ O que zera a redação</div>
+      <div class="card">
+        <ul class="lista">${R.zeram.map(z => `<li>${esc(z)}</li>`).join("")}</ul>
+        <div class="bloco-especial bloco-atencao"><b>⚖️ Direitos Humanos</b>${esc(R.avisoDH)}</div>
+      </div>
+
+      <div class="section-title" style="font-size:1.1rem">📚 Repertórios por eixo</div>
       <div class="scroll-x"><table class="tabela-simples">
         <tr><th>Eixo</th><th>Fontes legitimadas</th><th>Como usar</th></tr>
         ${R.repertorios.map(r => `<tr><td><b>${esc(r.eixo)}</b></td><td>${esc(r.fontes)}</td><td>${esc(r.uso)}</td></tr>`).join("")}
-      </table></div>
+      </table></div>`;
+    montarCarrossel("carrossel");
+  }
 
-      <div class="section-title" style="font-size:1.1rem">✍️ Treinar uma redação</div>
+  // ---------- Temas: lista ----------
+  function renderTemas() {
+    let filtroP = "todos", filtroD = "todos";
+    view.innerHTML = `
+      <button class="btn btn-ghost small" onclick="location.hash='#/redacao'">← Redação</button>
+      <div class="section-title" style="margin-top:12px">🎯 Temas prováveis — ENEM 2026 <small id="temas-cont"></small></div>
+      <div class="bloco-especial bloco-atencao"><b>⚠️ Leia antes</b>${esc(T.disclaimer)}</div>
+      <div class="filtros">
+        <div class="filtro-grupo"><span class="muted small">Probabilidade:</span>
+          ${[["todos", "Todos"]].concat(ORDEM_PROB.map(p => [p, T.probabilidades[p].emoji + " " + T.probabilidades[p].rotulo]))
+        .map(([v, l]) => `<button class="filtro ${v === "todos" ? "ativo" : ""}" data-fp="${v}">${l}</button>`).join("")}
+        </div>
+        <div class="filtro-grupo"><span class="muted small">Dificuldade:</span>
+          ${["todos", "Fácil", "Médio", "Difícil", "Extrema"].map(v => `<button class="filtro ${v === "todos" ? "ativo" : ""}" data-fd="${v}">${v === "todos" ? "Todas" : v}</button>`).join("")}
+        </div>
+      </div>
+      <div class="grid cols-2" id="temas-lista"></div>
+      <details class="acordeao" style="margin-top:16px"><summary>📜 Temas que já caíram (não aposte neles)</summary>
+        <div class="corpo"><ul class="lista">${T.jaCairam.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div></details>`;
+
+    const desenhar = () => {
+      const lista = T.temas
+        .filter(t => (filtroP === "todos" || t.probabilidade === filtroP) && (filtroD === "todos" || t.dificuldade === filtroD))
+        .sort((a, b) => ORDEM_PROB.indexOf(a.probabilidade) - ORDEM_PROB.indexOf(b.probabilidade));
+      view.querySelector("#temas-lista").innerHTML = lista.map(t => `
+        <div class="card clickable tema-card prob-${t.probabilidade}" onclick="location.hash='#/temas/${t.id}'">
+          <div class="tema-chips">${chipProb(t.probabilidade)} ${chipDif(t.dificuldade)} <span class="chip cinza">${esc(t.eixo)}</span></div>
+          <h3>${esc(t.titulo)}</h3>
+          <p class="muted small">${esc(t.porque)}</p>
+          <span class="link-mais">Abrir folha de estudo →</span>
+        </div>`).join("") || `<p class="muted">Nenhum tema com esse filtro.</p>`;
+      view.querySelector("#temas-cont").textContent = `${lista.length} tema(s)`;
+    };
+    view.querySelectorAll("[data-fp]").forEach(b => b.onclick = () => {
+      filtroP = b.dataset.fp; view.querySelectorAll("[data-fp]").forEach(x => x.classList.toggle("ativo", x === b)); desenhar();
+    });
+    view.querySelectorAll("[data-fd]").forEach(b => b.onclick = () => {
+      filtroD = b.dataset.fd; view.querySelectorAll("[data-fd]").forEach(x => x.classList.toggle("ativo", x === b)); desenhar();
+    });
+    desenhar();
+  }
+
+  // ---------- Tema: folha de estudo ----------
+  function renderTemaDetalhe(id) {
+    const t = T.temas.find(x => x.id === id);
+    if (!t) { renderTemas(); return; }
+    const prop = esc(t.proposta).replace(/\((AGENTE|AÇÃO|MEIO|FINALIDADE|DETALHAMENTO)\)/g, (m, k) => ` <span class="tag-el">${k}</span>`);
+    view.innerHTML = `
+      <div class="no-print" style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-ghost small" onclick="location.hash='#/temas'">← Temas</button>
+        <button class="btn btn-secondary small" id="imprimir">🖨️ Imprimir / salvar PDF</button>
+        <button class="btn btn-primary small" onclick="location.hash='#/treino/escrever-${t.id}'">✍️ Escrever sobre este tema</button>
+      </div>
+      <div class="card folha" style="margin-top:12px">
+        <div class="tema-chips">${chipProb(t.probabilidade)} ${chipDif(t.dificuldade)} <span class="chip cinza">${esc(t.eixo)}</span></div>
+        <h2 style="margin-top:8px">${esc(t.titulo)}</h2>
+        <p class="muted small"><b>Por que pode cair:</b> ${esc(t.porque)}</p>
+
+        <h3>📌 Resumo</h3>
+        <p>${esc(t.resumo)}</p>
+        <div class="bloco-especial bloco-analogia"><b>🎯 Tese pronta</b>${esc(t.tese)}</div>
+
+        <h3>🧱 Construção dos argumentos</h3>
+        <ol class="lista">${t.argumentos.map(a => `<li>${esc(a)}</li>`).join("")}</ol>
+
+        <h3>📊 Dados e fontes</h3>
+        <ul class="lista">${t.dados.map(d => `<li>${esc(d.texto)} <span class="fonte">— ${esc(d.fonte)}</span></li>`).join("")}</ul>
+
+        <h3>📚 Repertórios legitimados</h3>
+        <ul class="lista">${t.repertorios.map(r => `<li><b>${esc(r.ref)}:</b> ${esc(r.uso)}</li>`).join("")}</ul>
+
+        <div class="bloco-especial bloco-mnemonico"><b>🧠 Jeito de lembrar</b>${esc(t.lembrar)}</div>
+
+        <h3>🛠️ Proposta de intervenção (5 elementos)</h3>
+        <p class="proposta">${prop}</p>
+        <p class="muted small" style="margin-top:12px">Dados são referências de estudo: cite a fonte e o ano na redação e, se der tempo, confirme no site oficial.</p>
+      </div>`;
+    view.querySelector("#imprimir").onclick = () => window.print();
+  }
+
+  // ---------- Treinador de norma padrão ----------
+  const RASCUNHO_KEY = "rumo_enem_rascunho";
+  const lerRascunho = () => { try { return JSON.parse(localStorage.getItem(RASCUNHO_KEY) || "{}"); } catch (e) { return {}; } };
+  const salvarRascunho = o => { try { localStorage.setItem(RASCUNHO_KEY, JSON.stringify(o)); } catch (e) { /* armazenamento indisponível */ } };
+
+  function renderTreino(param) {
+    let aba = "escrever", temaInicial = null;
+    if (param === "exercicios") aba = "exercicios";
+    else if (param === "regras") aba = "regras";
+    else if (param && param.indexOf("escrever-") === 0) temaInicial = param.slice(9);
+    view.innerHTML = `
+      <button class="btn btn-ghost small" onclick="location.hash='#/redacao'">← Redação</button>
+      <div class="section-title" style="margin-top:12px">✍️ Treinador de norma padrão</div>
+      <div class="abas">
+        <button class="aba" data-aba="escrever">✍️ Escrever e verificar</button>
+        <button class="aba" data-aba="exercicios">🧩 Exercícios</button>
+        <button class="aba" data-aba="regras">📌 Regras rápidas</button>
+      </div>
+      <div id="aba-conteudo"></div>`;
+    const abrir = a => {
+      view.querySelectorAll(".aba").forEach(b => b.classList.toggle("ativa", b.dataset.aba === a));
+      const box = view.querySelector("#aba-conteudo");
+      if (a === "escrever") abaEscrever(box, temaInicial);
+      else if (a === "exercicios") abaExercicios(box);
+      else abaRegras(box, () => abrir("exercicios"));
+    };
+    view.querySelectorAll(".aba").forEach(b => b.onclick = () => abrir(b.dataset.aba));
+    abrir(aba);
+  }
+
+  function abaEscrever(box, temaInicial) {
+    const s = Store.get();
+    const rasc = lerRascunho();
+    const temaSel = temaInicial || rasc.tema || T.temas[0].id;
+    box.innerHTML = `
       <div class="card">
-        <label class="small"><b>Escolha um tema:</b></label>
-        <select id="red-tema" style="width:100%;margin:8px 0">
-          ${R.temas.map((t, i) => `<option value="${i}">${esc(t.titulo)} — ${t.nivel}</option>`).join("")}
+        <label class="small"><b>Tema:</b></label>
+        <select id="tr-tema" style="width:100%;margin:6px 0">
+          ${ORDEM_PROB.map(p => `<optgroup label="${T.probabilidades[p].emoji} ${T.probabilidades[p].rotulo}">
+            ${T.temas.filter(t => t.probabilidade === p).map(t => `<option value="${t.id}" ${t.id === temaSel ? "selected" : ""}>${esc(t.titulo)}</option>`).join("")}
+          </optgroup>`).join("")}
         </select>
-        <p class="muted small" id="red-eixo"></p>
-        <textarea id="red-texto" placeholder="Escreva sua redação aqui (introdução, 2 desenvolvimentos e conclusão com proposta de intervenção)..."
-          style="width:100%;min-height:200px;padding:14px;border-radius:12px;border:1.5px solid var(--grid);font-family:inherit;font-size:0.95rem;margin-top:6px"></textarea>
-        <div class="muted small" id="red-contador" style="margin-top:6px">0 palavras · mínimo recomendado: 8 linhas autorais</div>
+        <p class="small" id="tr-tese"></p>
+        <div class="bloco-especial bloco-dica" style="margin:8px 0"><b>✍️ Modo prova: sem corretor</b>O corretor do navegador está desligado neste campo, como na folha do ENEM. Separe os parágrafos com Enter. Meta: 4 parágrafos de 6 a 8 linhas (≈ 24 a 30 linhas). O texto é salvo automaticamente neste aparelho.</div>
+        <textarea id="tr-texto" class="folha-texto" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off"
+          data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false" placeholder="Escreva sua redação aqui…">${esc(rasc.texto || "")}</textarea>
+        <div class="contadores" id="tr-cont"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn btn-primary" id="tr-verificar">🔍 Verificar norma padrão</button>
+          <button class="btn btn-ghost" id="tr-limpar">🗑️ Limpar</button>
+        </div>
+      </div>
+      <div id="tr-relatorio"></div>
 
-        <h3 style="margin-top:16px">Autoavaliação guiada (arraste cada competência)</h3>
-        <div id="red-sliders">
+      <div class="card" style="margin-top:16px">
+        <h3>📷 Escreveu no papel? Envie a foto</h3>
+        <p class="muted small">A foto fica só neste aparelho, ao lado do campo de texto, para você revisar com calma. O app não lê letra manuscrita: para a verificação automática, digite o texto (ou o trecho que quiser conferir) no campo acima.</p>
+        <input type="file" id="tr-foto" accept="image/*">
+        <div id="tr-foto-prev"></div>
+      </div>
+
+      <details class="acordeao" style="margin-top:16px"><summary>🧮 Autoavaliação e salvar no histórico</summary>
+        <div class="corpo">
+          <p class="muted small">Dê a nota de cada competência com base no relatório e nas dicas. A nota entra no seu progresso (XP e recordes).</p>
           ${R.competencias.map(c => `<div class="slider-row">
             <span style="min-width:150px" class="small"><b>${c.n}</b> ${esc(c.titulo)}</span>
             <input type="range" min="0" max="200" step="40" value="120" class="comp-slider" data-c="${c.n}">
             <span class="val" data-for="${c.n}">120</span>
           </div>`).join("")}
+          <div class="card" style="background:var(--roxo-claro);text-align:center;margin-top:12px">
+            <div class="muted small">Nota estimada</div>
+            <div style="font-size:2rem;font-weight:800;color:var(--roxo)" id="tr-total">600</div>
+          </div>
+          <button class="btn btn-primary block" id="tr-salvar" style="margin-top:12px">💾 Salvar redação e nota</button>
         </div>
-        <div class="card" style="background:var(--roxo-claro);text-align:center;margin-top:12px">
-          <div class="muted small">Nota estimada</div>
-          <div style="font-size:2rem;font-weight:800;color:var(--roxo)" id="red-total">600</div>
-        </div>
-        <button class="btn btn-primary block" id="red-salvar" style="margin-top:12px">💾 Salvar redação e nota</button>
-      </div>
+      </details>
 
-      ${s.redacoes.length ? `<div class="section-title" style="font-size:1.1rem">📈 Suas redações (${s.redacoes.length})</div>
+      ${s.redacoes.length ? `<div class="section-title" style="font-size:1.05rem">📈 Suas redações (${s.redacoes.length})</div>
         ${s.redacoes.slice().reverse().map(r => `<div class="card" style="margin-bottom:8px">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
             <b class="small">${esc(r.tema)}</b>
             <span class="chip ${r.total >= 800 ? "verde" : r.total >= 500 ? "amarelo" : "vermelho"}">${r.total} pts</span>
           </div>
-          <p class="muted small">${new Date(r.data).toLocaleDateString("pt-BR")} · ${(r.texto || "").split(/\s+/).filter(Boolean).length} palavras</p>
+          <p class="muted small">${new Date(r.data).toLocaleDateString("pt-BR")} · ${(r.texto || "").split(/\s+/).filter(Boolean).length} palavras${r.alertas != null ? ` · ${r.alertas} alerta(s) de norma` : ""}</p>
         </div>`).join("")}` : ""}`;
 
-    const temaSel = view.querySelector("#red-tema");
-    const eixoP = view.querySelector("#red-eixo");
-    const updEixo = () => { eixoP.textContent = "Eixo temático: " + R.temas[temaSel.value].eixo; };
-    temaSel.onchange = updEixo; updEixo();
+    const ta = box.querySelector("#tr-texto"), sel = box.querySelector("#tr-tema");
+    const temaAtual = () => T.temas.find(x => x.id === sel.value);
+    const atualizarTese = () => {
+      const t = temaAtual();
+      box.querySelector("#tr-tese").innerHTML = t ? `<b>Ideia de tese:</b> ${esc(t.tese)} <a href="#/temas/${t.id}">ver folha do tema →</a>` : "";
+    };
+    const contar = () => {
+      const pars = ta.value.split(/\n+/).map(p => p.trim()).filter(p => (p.match(/\S+/g) || []).length >= 5);
+      const pal = (ta.value.match(/\S+/g) || []).length;
+      const linhas = pars.map(p => Math.max(1, Math.round((p.match(/\S+/g) || []).length / 11)));
+      const tot = linhas.reduce((a, b) => a + b, 0);
+      box.querySelector("#tr-cont").innerHTML =
+        `<span>📝 ${pal} palavras</span><span>¶ ${pars.length} parágrafo(s)</span>` +
+        `<span class="${tot > 30 || (pal > 0 && tot <= 7) ? "alerta" : ""}">📏 ~${tot} linhas (máx. 30)</span>` +
+        linhas.map((l, i) => `<span class="${l < 6 || l > 8 ? "alerta" : "ok"}">§${i + 1}: ~${l} lin.</span>`).join("");
+      salvarRascunho({ tema: sel.value, texto: ta.value });
+    };
+    ta.oninput = contar;
+    sel.onchange = () => { atualizarTese(); contar(); };
+    atualizarTese(); contar();
 
-    const texto = view.querySelector("#red-texto");
-    const contador = view.querySelector("#red-contador");
-    texto.oninput = () => {
-      const n = texto.value.split(/\s+/).filter(Boolean).length;
-      contador.textContent = `${n} palavras · mínimo recomendado: 8 linhas autorais`;
+    box.querySelector("#tr-verificar").onclick = () => {
+      mostrarRelatorio(box.querySelector("#tr-relatorio"), ta.value);
+      box.querySelector("#tr-relatorio").scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    box.querySelector("#tr-limpar").onclick = () => {
+      if (ta.value && !confirm("Apagar o texto?")) return;
+      ta.value = ""; contar(); box.querySelector("#tr-relatorio").innerHTML = "";
     };
 
-    const sliders = view.querySelectorAll(".comp-slider");
-    const totalEl = view.querySelector("#red-total");
+    // foto (só pré-visualização local)
+    box.querySelector("#tr-foto").onchange = ev => {
+      const f = ev.target.files && ev.target.files[0];
+      if (!f) return;
+      const url = URL.createObjectURL(f);
+      box.querySelector("#tr-foto-prev").innerHTML = `<img src="${url}" alt="Foto da redação" class="foto-redacao">`;
+    };
+
+    // autoavaliação
+    const sliders = box.querySelectorAll(".comp-slider");
     const recalc = () => {
       let tot = 0;
-      sliders.forEach(sl => {
-        tot += parseInt(sl.value, 10);
-        view.querySelector(`.val[data-for="${sl.dataset.c}"]`).textContent = sl.value;
-      });
-      totalEl.textContent = tot;
+      sliders.forEach(sl => { tot += +sl.value; box.querySelector(`.val[data-for="${sl.dataset.c}"]`).textContent = sl.value; });
+      box.querySelector("#tr-total").textContent = tot;
     };
-    sliders.forEach(sl => sl.oninput = recalc);
-    recalc();
-
-    view.querySelector("#red-salvar").onclick = () => {
-      const notas = {};
-      let tot = 0;
-      sliders.forEach(sl => { notas[sl.dataset.c] = parseInt(sl.value, 10); tot += notas[sl.dataset.c]; });
-      Store.registrarRedacao({
-        id: "red-" + Date.now(), data: Date.now(),
-        tema: R.temas[temaSel.value].titulo, texto: texto.value, notas, total: tot
-      });
+    sliders.forEach(sl => sl.oninput = recalc); recalc();
+    box.querySelector("#tr-salvar").onclick = () => {
+      if ((ta.value.match(/\S+/g) || []).length < 30) { toast("Escreva um pouco mais antes de salvar 🙂"); return; }
+      const notas = {}; let tot = 0;
+      sliders.forEach(sl => { notas[sl.dataset.c] = +sl.value; tot += +sl.value; });
+      const t = temaAtual();
+      const rel = RedacaoCheck.analisar(ta.value);
+      Store.registrarRedacao({ id: "red-" + Date.now(), data: Date.now(), tema: t ? t.titulo : "", texto: ta.value, notas, total: tot, alertas: rel.resumo.total });
       toast(`Redação salva! Nota: ${tot} · +${Engine.XP.redacaoBase + Math.round(tot / 10)} XP 📝`);
-      celebrarConquistas();
-      celebrarProgresso();
-      renderRedacao();
+      celebrarConquistas(); celebrarProgresso();
+      abaEscrever(box, sel.value);
     };
+  }
+
+  function mostrarRelatorio(el, texto) {
+    const r = RedacaoCheck.analisar(texto);
+    if (r.vazio) { el.innerHTML = `<div class="card" style="margin-top:16px"><p class="muted">Escreva algo para verificar.</p></div>`; return; }
+    const M = RedacaoCheck.CAT_META;
+    const grupos = {};
+    r.achados.forEach(a => (grupos[a.cat] = grupos[a.cat] || []).push(a));
+    el.innerHTML = `<div class="card" style="margin-top:16px">
+      <h3>🔍 Relatório de norma padrão</h3>
+      <p class="muted small">${r.palavras} palavras · ~${r.linhasEstimadas} linhas estimadas · <b>${r.resumo.total}</b> ponto(s) de atenção</p>
+      ${r.resumo.total === 0 ? `<div class="bloco-especial bloco-dica"><b>✅ Nada encontrado</b>Nenhum desvio detectado pelos verificadores automáticos. Mesmo assim, releia: sentido, coesão e argumentação exigem leitura humana.</div>` : ""}
+      <div class="tema-chips">${Object.keys(grupos).map(c => `<span class="chip ${M[c].chip}">${M[c].emoji} ${M[c].rotulo}: ${grupos[c].length}</span>`).join(" ")}</div>
+      ${Object.keys(grupos).map(c => `<details class="acordeao" open><summary>${M[c].emoji} ${M[c].rotulo} (${grupos[c].length})</summary>
+        <div class="corpo">${grupos[c].map(a => `<div class="achado grav-${a.grav}"><div class="trecho">“${esc(a.trecho)}”</div><div class="small">${esc(a.msg)}</div></div>`).join("")}</div>
+      </details>`).join("")}
+      <p class="muted small" style="margin-top:8px">⚠️ A verificação automática é um apoio de treino: verifica truncamento, justaposição, excesso de elementos, paralelismo, regência, concordância, acentuação, ortografia, vírgula em adjunto adverbial longo e tamanho dos parágrafos. Pode deixar passar erros e, raramente, apontar algo correto.</p>
+    </div>`;
+  }
+
+  function registrarNorma(ok) {
+    const ns = Object.assign({ feitos: 0, acertos: 0 }, Store.get().normaStats || {});
+    ns.feitos += 1; if (ok) ns.acertos += 1;
+    Store.set({ normaStats: ns });
+    if (ok) celebrarProgresso();
+  }
+
+  function abaExercicios(box) {
+    const cats = NORMA.categorias;
+    let cat = "todos", fila = [], i = 0, acertos = 0, feitos = 0;
+    const semAcento = x => x.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const nova = () => {
+      fila = embaralhar(NORMA.exercicios.filter(e => cat === "todos" || e.cat === cat));
+      i = 0; acertos = 0; feitos = 0; desenhar();
+    };
+    const ligarFiltros = () => box.querySelectorAll("[data-cat]").forEach(b => b.onclick = () => { cat = b.dataset.cat; nova(); });
+    function desenhar() {
+      const e = fila[i];
+      const ns = Store.get().normaStats || { feitos: 0, acertos: 0 };
+      const topo = `<div class="filtros"><div class="filtro-grupo">
+          ${[["todos", "Todos"]].concat(Object.entries(cats)).map(([k, l]) => `<button class="filtro ${k === cat ? "ativo" : ""}" data-cat="${k}">${esc(l)}</button>`).join("")}
+        </div></div>
+        <div class="muted small" style="margin:6px 0">Rodada: <b>${acertos}/${feitos}</b> · exercício ${Math.min(i + 1, fila.length)} de ${fila.length} · total geral: ${ns.acertos}/${ns.feitos}</div>`;
+      if (!e) {
+        box.innerHTML = topo + `<div class="card nota-hero"><div class="emoji">🏁</div><div class="nota">${acertos}/${feitos}</div>
+          <p class="muted">Rodada concluída!</p><button class="btn btn-primary" id="ex-de-novo">🔁 Nova rodada</button></div>`;
+        ligarFiltros(); box.querySelector("#ex-de-novo").onclick = nova; return;
+      }
+      const corpo = e.tipo === "digitar"
+        ? `<div class="questao-texto">${esc(e.pergunta)}</div>
+           <input type="text" id="ex-resp" class="input-norma" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" placeholder="Digite a palavra correta">
+           <div style="margin-top:10px"><button class="btn btn-primary" id="ex-conferir">Conferir</button></div>
+           <p class="muted small" style="margin-top:6px">No celular, segure a vogal no teclado para ver os acentos.</p>`
+        : `<div class="questao-texto">${esc(e.pergunta)}</div>
+           <div>${e.alternativas.map((a, k) => `<button class="alternativa" data-k="${k}"><span class="letra">${String.fromCharCode(65 + k)}</span><span>${esc(a)}</span></button>`).join("")}</div>`;
+      box.innerHTML = topo + `<div class="card">
+        <div class="tema-chips"><span class="chip roxo">${esc(cats[e.cat])}</span> <span class="chip ${DIF_CHIP[e.nivel] || "cinza"}">${e.nivel}</span></div>
+        ${corpo}<div id="ex-fb"></div></div>`;
+      ligarFiltros();
+
+      const responder = (ok, titulo) => {
+        feitos++; if (ok) acertos++;
+        registrarNorma(ok);
+        box.querySelector("#ex-fb").innerHTML = `<div class="explicacao" style="border-left-color:${ok ? "var(--verde)" : "var(--vermelho)"};background:${ok ? "var(--verde-claro)" : "var(--vermelho-claro)"}">
+            <b>${titulo}</b><p style="margin-top:6px">${esc(e.explicacao)}</p></div>
+          <button class="btn btn-primary" id="ex-prox" style="margin-top:10px">Próximo →</button>`;
+        const prox = box.querySelector("#ex-prox");
+        prox.onclick = () => { i++; desenhar(); };
+        prox.focus();
+      };
+      if (e.tipo === "digitar") {
+        const inp = box.querySelector("#ex-resp");
+        const conferir = () => {
+          const v = inp.value.trim().toLowerCase();
+          if (!v || inp.disabled) return;
+          const certo = e.resposta.toLowerCase();
+          const ok = v === certo;
+          const quase = !ok && semAcento(v) === semAcento(certo);
+          inp.disabled = true; box.querySelector("#ex-conferir").disabled = true;
+          responder(ok, ok ? "✅ Correto!" : quase
+            ? `🟡 Quase! As letras estão certas, mas o acento não. Resposta: ${esc(e.resposta)}`
+            : `❌ Resposta correta: ${esc(e.resposta)}`);
+        };
+        box.querySelector("#ex-conferir").onclick = conferir;
+        inp.addEventListener("keydown", ev => { if (ev.key === "Enter") conferir(); });
+        inp.focus();
+      } else {
+        box.querySelectorAll(".alternativa").forEach(b => b.onclick = () => {
+          const k = +b.dataset.k, ok = k === e.correta;
+          box.querySelectorAll(".alternativa").forEach((x, j) => {
+            x.disabled = true;
+            if (j === e.correta) x.classList.add("correta"); else if (j === k) x.classList.add("errada");
+          });
+          responder(ok, ok ? "✅ Correto!" : `❌ Resposta correta: ${String.fromCharCode(65 + e.correta)}`);
+        });
+      }
+    }
+    nova();
+  }
+
+  function abaRegras(box, irParaExercicios) {
+    const porCat = {};
+    NORMA.regras.forEach(r => (porCat[r.cat] = porCat[r.cat] || []).push(r));
+    box.innerHTML = Object.entries(porCat).map(([c, rs]) => `<div class="card" style="margin-bottom:12px">
+        <h3>${esc(NORMA.categorias[c])}</h3>
+        ${rs.map(r => `<div class="regra"><b>${esc(r.titulo)}:</b> ${esc(r.texto)}</div>`).join("")}
+      </div>`).join("") + `<button class="btn btn-primary" id="ir-ex">🧩 Treinar com exercícios</button>`;
+    box.querySelector("#ir-ex").onclick = irParaExercicios;
+  }
+
+  // ---------- Modelos prontos e dicas ----------
+  function renderModelos() {
+    const M = R.modelos;
+    const marca = s => esc(s).replace(/\[([^\]]+)\]/g, '<span class="lacuna">[$1]</span>');
+    const bloco = (titulo, texto) => `<div class="card modelo">
+        <h3>${esc(titulo)}</h3><p>${marca(texto)}</p>
+        <button class="btn btn-ghost small copiar" data-txt="${esc(texto)}">📋 Copiar</button></div>`;
+    view.innerHTML = `
+      <button class="btn btn-ghost small" onclick="location.hash='#/redacao'">← Redação</button>
+      <div class="section-title" style="margin-top:12px">📐 Modelos prontos e dicas</div>
+      <div class="bloco-especial bloco-atencao"><b>⚠️ Como usar</b>${esc(M.aviso)}</div>
+
+      <div class="section-title" style="font-size:1.05rem">1️⃣ Introdução — escolha um modelo</div>
+      ${M.introducoes.map(m => bloco(m.nome, m.texto)).join("")}
+      <div class="section-title" style="font-size:1.05rem">2️⃣ Desenvolvimento 1</div>
+      ${bloco("Argumento 1", M.desenvolvimento1)}
+      <div class="section-title" style="font-size:1.05rem">3️⃣ Desenvolvimento 2</div>
+      ${bloco("Argumento 2", M.desenvolvimento2)}
+      <div class="section-title" style="font-size:1.05rem">4️⃣ Conclusão</div>
+      ${M.conclusoes.map(m => bloco(m.nome, m.texto)).join("")}
+
+      <div class="section-title" style="font-size:1.05rem">📄 Redação-modelo comentada</div>
+      <div class="card">
+        <p class="muted small"><b>Tema:</b> ${esc(M.exemplo.tema)} · 4 parágrafos de ~7 linhas</p>
+        ${M.exemplo.paragrafos.map((p, i) => `<p class="par-modelo"><span class="num-par">§${i + 1}</span>${esc(p)}</p>`).join("")}
+        <h3>🔎 Por que funciona</h3>
+        <ul class="lista">${M.exemplo.anotacoes.map(a => `<li>${esc(a)}</li>`).join("")}</ul>
+      </div>
+
+      <div class="section-title" style="font-size:1.05rem">🔗 Conectivos por função</div>
+      <div class="grid cols-2">${R.conectivos.map(c => `<div class="card"><h3>${esc(c.funcao)}</h3>
+        <div class="tema-chips">${c.lista.map(x => `<span class="chip cinza">${esc(x)}</span>`).join(" ")}</div></div>`).join("")}</div>
+
+      <div class="section-title" style="font-size:1.05rem">💡 Dicas de prova</div>
+      <div class="grid cols-2">${R.dicas.map(d => `<div class="card"><h3>${esc(d.titulo)}</h3><p class="small">${esc(d.texto)}</p></div>`).join("")}</div>`;
+    view.querySelectorAll(".copiar").forEach(b => b.onclick = () => {
+      const txt = b.dataset.txt;
+      const ok = () => toast("Modelo copiado! 📋");
+      try { navigator.clipboard.writeText(txt).then(ok, () => toast("Não foi possível copiar — selecione o texto.")); }
+      catch (e) { toast("Não foi possível copiar — selecione o texto."); }
+    });
+  }
+
+  // ---------- Dicionário de vocabulário formal ----------
+  function renderVocabulario() {
+    const V = window.ENEM_VOCABULARIO;
+    let cat = "todos", busca = "";
+    const semAcento = x => x.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    view.innerHTML = `
+      <button class="btn btn-ghost small" onclick="location.hash='#/redacao'">← Redação</button>
+      <div class="section-title" style="margin-top:12px">📖 Dicionário de vocabulário formal <small id="voc-cont"></small></div>
+      <div class="bloco-especial bloco-dica"><b>💡 Como usar</b>${esc(V.aviso)}</div>
+      <input type="search" id="voc-busca" class="input-busca" placeholder="Buscar palavra ou significado (ex.: diminuir, urgente)…" autocomplete="off">
+      <div class="filtros"><div class="filtro-grupo">
+        ${[["todos", "Todas"]].concat(Object.entries(V.categorias)).map(([k, l]) => `<button class="filtro ${k === "todos" ? "ativo" : ""}" data-vc="${k}">${esc(l)}</button>`).join("")}
+      </div></div>
+      <div class="grid cols-2" id="voc-lista"></div>`;
+    const desenhar = () => {
+      const b = semAcento(busca.trim());
+      const lista = V.palavras.filter(w => (cat === "todos" || w.cat === cat) &&
+        (!b || semAcento(w.p + " " + w.sig + " " + (w.troca || "")).includes(b)));
+      view.querySelector("#voc-cont").textContent = `${lista.length} de ${V.palavras.length}`;
+      view.querySelector("#voc-lista").innerHTML = lista.map(w => `<div class="card voc-card">
+          <div class="voc-topo"><span class="voc-palavra">${esc(w.p)}</span>
+            <span class="chip cinza">${esc(V.categorias[w.cat])}</span>${w.moderacao ? ` <span class="chip amarelo">⚠️ use com moderação</span>` : ""}</div>
+          <p class="small"><b>Significa:</b> ${esc(w.sig)}</p>
+          ${w.troca && w.cat !== "troca" && w.cat !== "paronimo" ? `<p class="small muted"><b>Em vez de:</b> ${esc(w.troca)}</p>` : ""}
+          <p class="small voc-ex">“${esc(w.ex)}”</p>
+        </div>`).join("") || `<p class="muted">Nada encontrado.</p>`;
+    };
+    view.querySelector("#voc-busca").oninput = ev => { busca = ev.target.value; desenhar(); };
+    view.querySelectorAll("[data-vc]").forEach(b => b.onclick = () => {
+      cat = b.dataset.vc; view.querySelectorAll("[data-vc]").forEach(x => x.classList.toggle("ativo", x === b)); desenhar();
+    });
+    desenhar();
+  }
+
+  // ---------- Carrossel de repertório ----------
+  let carrosselTimer = null;
+  function pararCarrossel() { if (carrosselTimer) { clearInterval(carrosselTimer); carrosselTimer = null; } }
+  function montarCarrossel(elId) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    let cat = "todos", idx = 0, lista = [], pausado = false;
+    el.innerHTML = `<div class="carrossel">
+      <div class="filtros"><div class="filtro-grupo">
+        ${[["todos", "Todos"]].concat(Object.entries(REP.categorias).map(([k, v]) => [k, v.emoji + " " + v.rotulo]))
+        .map(([k, l]) => `<button class="filtro ${k === "todos" ? "ativo" : ""}" data-rc="${k}">${l}</button>`).join("")}
+      </div></div>
+      <div class="card rep-card" aria-live="polite"></div>
+      <div class="rep-ctrl">
+        <button class="btn btn-ghost small" data-mv="-1">← Anterior</button>
+        <span class="muted small rep-pos"></span>
+        <button class="btn btn-ghost small" data-pausa>⏸️ Pausar</button>
+        <button class="btn btn-ghost small" data-mv="1">Próximo →</button>
+      </div></div>`;
+    const filtrar = () => { lista = embaralhar(REP.cards.filter(c => cat === "todos" || c.cat === cat)); idx = 0; };
+    const desenhar = () => {
+      const c = lista[idx], m = REP.categorias[c.cat];
+      el.querySelector(".rep-card").innerHTML = `
+        <div class="rep-cat">${m.emoji} ${m.rotulo}</div>
+        <div class="rep-titulo">${esc(c.titulo)}</div>
+        <div class="rep-texto">${esc(c.texto)}</div>
+        <div class="rep-fonte">${esc(c.fonte)}</div>
+        <div class="rep-uso"><b>Use em:</b> ${esc(c.uso)}</div>`;
+      el.querySelector(".rep-pos").textContent = `${idx + 1}/${lista.length}`;
+    };
+    const avancar = d => { idx = (idx + d + lista.length) % lista.length; desenhar(); };
+    const iniciar = () => { pararCarrossel(); if (!pausado) carrosselTimer = setInterval(() => avancar(1), 8000); };
+    el.querySelectorAll("[data-mv]").forEach(b => b.onclick = () => { avancar(+b.dataset.mv); iniciar(); });
+    el.querySelector("[data-pausa]").onclick = ev => {
+      pausado = !pausado; ev.currentTarget.textContent = pausado ? "▶️ Continuar" : "⏸️ Pausar"; iniciar();
+    };
+    el.querySelectorAll("[data-rc]").forEach(b => b.onclick = () => {
+      cat = b.dataset.rc; el.querySelectorAll("[data-rc]").forEach(x => x.classList.toggle("ativo", x === b));
+      filtrar(); desenhar(); iniciar();
+    });
+    filtrar(); desenhar(); iniciar();
+  }
+
+  // ---------- Intensivão (reta final) ----------
+  function renderIntensivao() {
+    const s = Store.get();
+    const fracos = Engine.statsPorTopico().filter(t => t.total >= 2 && t.pct < 70).sort((a, b) => a.pct - b.pct).slice(0, 6);
+    const nErros = Object.values(s.respostasQuestoes || {}).filter(r => !r.acertou).length;
+    const porArea = {};
+    Q.forEach(q => { porArea[q.area] = porArea[q.area] || {}; porArea[q.area][q.topico] = (porArea[q.area][q.topico] || 0) + 1; });
+    const areasLista = C.areas.filter(a => a.id !== "redacao");
+    const quick = (emoji, titulo, desc, acao) => `<button class="card clickable quick" data-acao="${acao}">
+        <div class="quick-emoji">${emoji}</div><b>${esc(titulo)}</b><span class="muted small">${esc(desc)}</span></button>`;
+    const temasTop = T.temas.filter(t => t.probabilidade === "quase-certo");
+
+    view.innerHTML = `
+      <div class="card intensivao-hero">
+        <div style="font-size:2.4rem">⚡</div>
+        <div>
+          <h2 style="margin:0">Intensivão — reta final</h2>
+          <p class="muted small">Sem rotina, sem enrolação: escolha e comece. Tudo liberado — ${Q.length} questões, ${T.temas.length} temas de redação e ${NORMA.exercicios.length} exercícios de norma.</p>
+        </div>
+      </div>
+
+      <div class="section-title">🚀 Comece agora <small>1 clique</small></div>
+      <div class="grid cols-4">
+        ${quick("🎲", "10 questões mistas", "todas as áreas", "mix10")}
+        ${quick("⏱️", "Simulado de 20", "cronometrado, 3 min/questão", "sim20")}
+        ${quick("🔁", "Refazer meus erros", nErros ? `${nErros} questão(ões) errada(s)` : "nenhum erro ainda", "erros")}
+        ${quick("📘", "Só questões ENEM", "10 questões estilo oficial", "enem10")}
+        ${areasLista.map(a => quick(a.emoji, a.nome, "10 questões da área", "area:" + a.id)).join("")}
+      </div>
+
+      <div class="section-title">🔧 Reforce seus pontos fracos</div>
+      ${fracos.length ? `<div class="grid cols-2">${fracos.map(t => `<button class="card clickable reforco" data-topico="${esc(t.topico)}">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:center">
+            <b>${esc(t.topico)}</b><span class="chip ${t.pct < 40 ? "vermelho" : "amarelo"}">${t.pct}% de acerto</span>
+          </div>
+          <div class="muted small">${esc(Engine.AREA_NOME[t.area] || t.area)} · ${t.certos}/${t.total} · treinar 10 questões (seus erros primeiro)</div>
+        </button>`).join("")}</div>`
+        : `<div class="card"><p class="muted">Ainda não sei seus pontos fracos. Faça as <b>10 questões mistas</b> acima e o reforço aparece aqui automaticamente.</p></div>`}
+
+      <div class="section-title">🎯 Escolha o tópico <small>10 questões do assunto</small></div>
+      ${areasLista.map(a => `<details class="acordeao"><summary>${a.emoji} ${esc(a.nome)} <span class="muted small">(${Object.keys(porArea[a.id] || {}).length} tópicos)</span></summary>
+        <div class="corpo topicos">${Object.entries(porArea[a.id] || {}).sort((x, y) => y[1] - x[1])
+          .map(([tp, n]) => `<button class="filtro topico-btn" data-topico="${esc(tp)}">${esc(tp)} <span class="muted">(${n})</span></button>`).join("")}</div>
+      </details>`).join("")}
+
+      <div class="section-title">📝 Redação</div>
+      <div class="card">
+        <h3>🔥 Temas "quase certos"</h3>
+        ${temasTop.map(t => `<a class="link-item" href="#/temas/${t.id}"><b>${esc(t.titulo)}</b><div class="small muted">${esc(t.porque)}</div></a>`).join("")}
+      </div>
+      <div class="grid cols-4" style="margin-top:12px">
+        ${atalho("🎯", "Todos os temas", `${T.temas.length} folhas de estudo`, "#/temas")}
+        ${atalho("✍️", "Escrever e verificar", "sem corretor", "#/treino")}
+        ${atalho("🧩", "Exercícios de norma", "acento, crase…", "#/treino/exercicios")}
+        ${atalho("📐", "Modelos prontos", "esqueletos + exemplo", "#/modelos")}
+      </div>
+      <div style="margin-top:12px">${atalho("📖", "Vocabulário formal", "palavras para elevar a C1", "#/vocabulario")}</div>
+
+      <div class="section-title" style="font-size:1.1rem">💡 Repertório rápido</div>
+      <div id="carrossel"></div>
+
+      <div class="section-title">🧠 Revisão relâmpago <small>mnemônicos e dicas de ouro</small></div>
+      ${Object.entries(C.materias).map(([mid, m]) => `<details class="acordeao"><summary>${m.emoji} ${esc(m.nome)}</summary>
+        <div class="corpo">${m.licoes.map(l => `<div class="revisao-item"><b>${esc(l.titulo)}</b>
+          ${l.mnemonico ? `<div class="small">🧠 ${esc(l.mnemonico)}</div>` : ""}
+          ${l.dica ? `<div class="small">✅ ${esc(l.dica)}</div>` : ""}</div>`).join("")}
+          <a href="#/trilhas/${mid}" class="small">ver lições completas →</a></div>
+      </details>`).join("")}
+
+      <div class="section-title">🎒 Checklist da véspera</div>
+      <div class="card"><ul class="lista">
+        <li>Documento oficial com foto, original (documentos digitais só nos formatos aceitos pelo edital).</li>
+        <li>Caneta esferográfica de tinta <b>preta</b>, fabricada em material transparente.</li>
+        <li>Cartão de Confirmação da Inscrição: confira local, sala e horário.</li>
+        <li>Nas últimas edições, os portões abriram às 12h e fecharam às 13h (horário de Brasília), com início às 13h30 — <b>confirme no seu cartão</b>.</li>
+        <li>1º dia: Linguagens, Humanas e Redação (5h30). 2º dia: Natureza e Matemática (5h).</li>
+        <li>Na véspera: revise só mnemônicos e modelos, durma bem e separe água e lanche.</li>
+      </ul></div>`;
+
+    view.querySelectorAll("[data-acao]").forEach(b => b.onclick = () => acaoRapida(b.dataset.acao));
+    view.querySelectorAll(".reforco, .topico-btn").forEach(b => b.onclick = () =>
+      iniciarSimulado({ topicos: [b.dataset.topico], qtd: 10, priorizarErros: true }));
+    montarCarrossel("carrossel");
+  }
+
+  function acaoRapida(a) {
+    if (a === "mix10") iniciarSimulado({ qtd: 10 });
+    else if (a === "sim20") iniciarSimulado({ qtd: 20, comTempo: true, comExplica: false });
+    else if (a === "enem10") iniciarSimulado({ qtd: 10, fontes: ["enem"] });
+    else if (a === "erros") {
+      const rq = Store.get().respostasQuestoes || {};
+      const ids = Object.keys(rq).filter(k => !rq[k].acertou);
+      if (!ids.length) { toast("Você ainda não errou nenhuma questão 🎉"); return; }
+      iniciarSimulado({ ids, qtd: 20 });
+    }
+    else if (a.indexOf("area:") === 0) iniciarSimulado({ areas: [a.slice(5)], qtd: 10 });
   }
 
   // ---------------- Plano de estudos ----------------
