@@ -127,8 +127,102 @@ window.Engine = (function () {
     return BADGES.map(b => ({ ...b, conquistada: s.conquistas.includes(b.id) }));
   }
 
+  /* ========================================================
+     SISTEMA DE XP E PROGRESSÃO (nível numérico)
+     XP é derivado das ações já registradas — sempre coerente.
+     ======================================================== */
+  const XP = {
+    questaoCerta: 12,
+    questaoErrada: 4,     // errar também ensina: recompensa menor
+    licao: 60,
+    redacaoBase: 20,      // + nota/10
+    conquista: 40,
+    diaStreak: 15
+  };
+
+  function totalXP() {
+    const s = Store.get();
+    let xp = 0;
+    // questões (via simulados)
+    s.simulados.forEach(sim => {
+      sim.questoes.forEach((q, i) => {
+        xp += (sim.respostas[i] === q.correta) ? XP.questaoCerta : XP.questaoErrada;
+      });
+    });
+    xp += s.licoesConcluidas.length * XP.licao;
+    s.redacoes.forEach(r => { xp += XP.redacaoBase + Math.round((r.total || 0) / 10); });
+    xp += (s.conquistas.length || 0) * XP.conquista;
+    xp += (s.streak.dias || 0) * XP.diaStreak;
+    return xp;
+  }
+
+  // XP necessário para SUBIR do nível n para o n+1 (curva suave e crescente)
+  function custoNivel(n) { return 120 + (n - 1) * 60; }
+
+  function progressao() {
+    const xp = totalXP();
+    let nivel = 1, acumulado = 0, need = custoNivel(1);
+    while (xp >= acumulado + need) {
+      acumulado += need;
+      nivel += 1;
+      need = custoNivel(nivel);
+    }
+    const noNivel = xp - acumulado;      // XP acumulado dentro do nível atual
+    const pct = Math.round((noNivel / need) * 100);
+    return {
+      xp, nivel, noNivel, need, falta: need - noNivel, pct,
+      titulo: tituloNivel(nivel), emoji: emojiNivel(nivel)
+    };
+  }
+
+  function tituloNivel(n) {
+    if (n <= 2) return "Calouro";
+    if (n <= 4) return "Dedicado";
+    if (n <= 7) return "Focado";
+    if (n <= 10) return "Veterano";
+    if (n <= 14) return "Expert";
+    if (n <= 19) return "Mestre";
+    return "Lenda do ENEM";
+  }
+  function emojiNivel(n) {
+    if (n <= 2) return "🌱";
+    if (n <= 4) return "📗";
+    if (n <= 7) return "🎯";
+    if (n <= 10) return "⭐";
+    if (n <= 14) return "🔥";
+    if (n <= 19) return "💎";
+    return "👑";
+  }
+
+  // meta diária
+  function questoesHoje() {
+    const s = Store.get();
+    const hoje = new Date().toISOString().slice(0, 10);
+    return (s.diario && s.diario[hoje]) || 0;
+  }
+  function metaDiaria() {
+    const s = Store.get();
+    const feitas = questoesHoje();
+    const meta = s.metaDiaria || 20;
+    return { feitas, meta, pct: Math.min(100, Math.round((feitas / meta) * 100)), batida: feitas >= meta };
+  }
+
+  // detecta subida de nível desde a última vez que foi celebrada
+  function checarLevelUp() {
+    const s = Store.get();
+    const prog = progressao();
+    const antes = s.nivelVisto || 1;
+    if (prog.nivel > antes) {
+      Store.set({ nivelVisto: prog.nivel });
+      return { subiu: true, de: antes, para: prog.nivel, titulo: prog.titulo, emoji: prog.emoji };
+    }
+    if (prog.nivel !== antes) Store.set({ nivelVisto: prog.nivel });
+    return { subiu: false };
+  }
+
   return {
     statsPorArea, statsPorTopico, proficienciaGeral, nivel, recomendacoes,
-    curvaAprendizagem, verificarConquistas, todasBadges, AREA_NOME, AREAS
+    curvaAprendizagem, verificarConquistas, todasBadges, AREA_NOME, AREAS,
+    totalXP, progressao, metaDiaria, questoesHoje, checarLevelUp, XP
   };
 })();

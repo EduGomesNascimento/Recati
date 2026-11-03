@@ -11,6 +11,9 @@
   const RES = window.ENEM_RESOURCES;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+  // avatares disponíveis para o perfil
+  const AVATARES = ["🚀", "🦉", "🦊", "🐱", "🐼", "🦁", "🐢", "🦄", "🤓", "😎", "🧠", "⭐", "🔥", "🌱", "👩‍🎓", "👨‍🎓"];
+
   // estado volátil de um simulado em andamento
   let examState = null;
   let examTimer = null;
@@ -26,6 +29,14 @@
     const novas = Engine.verificarConquistas();
     if (novas.length) {
       novas.forEach((b, i) => setTimeout(() => toast(`${b.emoji} Conquista: ${b.nome}!`), i * 1200));
+    }
+  }
+
+  // verifica subida de nível de XP e comemora
+  function celebrarProgresso() {
+    const up = Engine.checarLevelUp();
+    if (up.subiu) {
+      setTimeout(() => toast(`${up.emoji} Subiu para o Nível ${up.para} — ${up.titulo}!`), 300);
     }
   }
 
@@ -70,6 +81,10 @@
         <h1>Bem-vindo(a) à sua jornada rumo ao ENEM!</h1>
         <p class="muted">Coloque seu nome uma vez. Vou lembrar de você e do seu progresso — tudo fica salvo só aqui no seu navegador.</p>
         <input type="text" id="ob-nome" placeholder="Como posso te chamar?" maxlength="24" autocomplete="off"/>
+        <h3 style="text-align:left;margin-top:8px">Escolha seu avatar</h3>
+        <div class="avatar-pick" id="ob-avatar">
+          ${AVATARES.map((a, i) => `<button type="button" class="avatar-opt ${i === 0 ? "selected" : ""}" data-val="${a}">${a}</button>`).join("")}
+        </div>
         <h3 style="text-align:left;margin-top:8px">Qual seu maior objetivo? <span class="muted small">(opcional)</span></h3>
         <div class="opt-cards" id="ob-objetivo">
           ${[["🎓", "Passar na faculdade", "Vaga no curso dos sonhos"], ["🩺", "Curso concorrido", "Medicina, Direito, Engenharia..."], ["📜", "Certificar o Ensino Médio", "450+ por área e 500 na redação"], ["🌟", "Melhorar minha nota", "Evoluir no meu ritmo"]]
@@ -82,7 +97,11 @@
         <button class="btn btn-primary block" id="ob-go" style="margin-top:10px">Começar minha jornada 🚀</button>
       </div>`;
 
-    let objetivo = null, estilo = null;
+    let objetivo = null, estilo = null, avatar = AVATARES[0];
+    view.querySelectorAll("#ob-avatar .avatar-opt").forEach(c => c.onclick = () => {
+      view.querySelectorAll("#ob-avatar .avatar-opt").forEach(x => x.classList.remove("selected"));
+      c.classList.add("selected"); avatar = c.dataset.val;
+    });
     view.querySelectorAll("#ob-objetivo .opt-card").forEach(c => c.onclick = () => {
       view.querySelectorAll("#ob-objetivo .opt-card").forEach(x => x.classList.remove("selected"));
       c.classList.add("selected"); objetivo = c.dataset.val;
@@ -94,9 +113,9 @@
     const start = () => {
       const nome = view.querySelector("#ob-nome").value.trim();
       if (!nome) { view.querySelector("#ob-nome").focus(); toast("Digite seu nome para começar 🙂"); return; }
-      Store.set({ nome, objetivo, estiloAprendizado: estilo });
+      Store.set({ nome, avatar, objetivo, estiloAprendizado: estilo });
       go("#/home"); router();
-      setTimeout(() => toast(`Vamos nessa, ${nome}! 🚀`), 400);
+      setTimeout(() => toast(`Vamos nessa, ${nome}! ${avatar}`), 400);
     };
     view.querySelector("#ob-go").onclick = start;
     view.querySelector("#ob-nome").addEventListener("keydown", e => { if (e.key === "Enter") start(); });
@@ -112,18 +131,37 @@
     const curva = Engine.curvaAprendizagem();
     const totalQ = Object.keys(s.respostasQuestoes).length;
     const licoesTotal = Object.values(C.materias).reduce((a, m) => a + m.licoes.length, 0);
+    const prog = Engine.progressao();
+    const meta = Engine.metaDiaria();
 
     const radarData = Engine.AREAS.map((a, i) => ({
       nome: Engine.AREA_NOME[a], v: areas[a].pct, cor: Charts.cores["s" + (i + 1)]
     }));
 
     view.innerHTML = `
+      <div class="card nivel-banner">
+        <div class="nivel-avatar">${esc(s.avatar || "🚀")}</div>
+        <div style="flex:1;min-width:180px">
+          <div class="muted small">Olá, ${esc(s.nome)}! ${prog.emoji}</div>
+          <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+            <h2 style="margin:0">Nível ${prog.nivel}</h2>
+            <span class="chip roxo">${esc(prog.titulo)}</span>
+          </div>
+          <div class="progress" style="margin:8px 0 4px"><span style="width:${prog.pct}%"></span></div>
+          <div class="muted small">${prog.noNivel} / ${prog.need} XP · faltam <b>${prog.falta} XP</b> para o Nível ${prog.nivel + 1}</div>
+        </div>
+        <div class="nivel-meta">
+          ${ringMeta(meta.feitas, meta.meta)}
+          <div class="muted small" style="text-align:center">meta do dia${meta.batida ? " ✅" : ""}</div>
+        </div>
+      </div>
+
       <div class="grid cols-2" style="align-items:stretch">
         <div class="card">
           <div style="display:flex;gap:14px;align-items:center">
             <div style="font-size:3rem">${nv.emoji}</div>
             <div>
-              <div class="muted small">Olá, ${esc(s.nome)}! Seu nível é</div>
+              <div class="muted small">Sua classificação de preparo</div>
               <h2 style="margin:0">${nv.rotulo}</h2>
               <span class="chip roxo">${nv.faixa}</span>
             </div>
@@ -172,6 +210,19 @@
   function statTile(icone, valor, rotulo) {
     return `<div class="card stat-tile"><div class="icone">${icone}</div>
       <div class="valor">${valor}</div><div class="rotulo">${rotulo}</div></div>`;
+  }
+  // anel SVG de meta diária (feitas/meta)
+  function ringMeta(feitas, meta) {
+    const r = 30, c = 2 * Math.PI * r, pct = Math.min(1, meta ? feitas / meta : 0);
+    const off = c * (1 - pct);
+    const cor = pct >= 1 ? "var(--verde)" : "var(--roxo)";
+    return `<svg viewBox="0 0 76 76" width="76" height="76" aria-label="Meta: ${feitas} de ${meta}">
+      <circle cx="38" cy="38" r="${r}" fill="none" stroke="var(--grid)" stroke-width="7"/>
+      <circle cx="38" cy="38" r="${r}" fill="none" stroke="${cor}" stroke-width="7" stroke-linecap="round"
+        stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 38 38)"/>
+      <text x="38" y="35" text-anchor="middle" font-size="16" font-weight="800" fill="var(--ink)">${feitas}</text>
+      <text x="38" y="50" text-anchor="middle" font-size="10" fill="var(--ink-mute)">/${meta}</text>
+    </svg>`;
   }
   function atalho(emoji, titulo, desc, hash) {
     return `<div class="card clickable" onclick="location.hash='${hash}'">
@@ -309,8 +360,9 @@
     const btn = view.querySelector("#concluir");
     if (btn) btn.onclick = () => {
       Store.marcarLicao(lid);
-      toast("Lição concluída! 🎉");
+      toast("Lição concluída! +" + Engine.XP.licao + " XP 🎉");
       celebrarConquistas();
+      celebrarProgresso();
       renderLicao(lid);
     };
   }
@@ -495,6 +547,7 @@
     examState = null;
     go("#/resultado/" + sim.id); router();
     celebrarConquistas();
+    celebrarProgresso();
   }
 
   // ---------------- Resultado ----------------
@@ -663,8 +716,9 @@
         id: "red-" + Date.now(), data: Date.now(),
         tema: R.temas[temaSel.value].titulo, texto: texto.value, notas, total: tot
       });
-      toast(`Redação salva! Nota: ${tot} 📝`);
+      toast(`Redação salva! Nota: ${tot} · +${Engine.XP.redacaoBase + Math.round(tot / 10)} XP 📝`);
       celebrarConquistas();
+      celebrarProgresso();
       renderRedacao();
     };
   }
@@ -746,25 +800,44 @@
     const nv = Engine.nivel();
     const prof = Engine.proficienciaGeral();
     const areas = Engine.statsPorArea();
+    const prog = Engine.progressao();
+    const meta = Engine.metaDiaria();
     const totalQ = Object.keys(s.respostasQuestoes).length;
     const acertosGerais = Object.values(s.respostasQuestoes).filter(r => r.acertou).length;
 
     view.innerHTML = `
       <div class="section-title">👤 Perfil de ${esc(s.nome)}</div>
-      <div class="card">
-        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-          <div style="font-size:3rem">${nv.emoji}</div>
-          <div>
-            <h2 style="margin:0">${esc(s.nome)}</h2>
-            <div class="muted small">${nv.rotulo} · ${prof}% de preparo</div>
+      <div class="card nivel-banner">
+        <button class="nivel-avatar avatar-btn" id="avatar-btn" title="Trocar avatar">${esc(s.avatar || "🚀")}</button>
+        <div style="flex:1;min-width:180px">
+          <h2 style="margin:0">${esc(s.nome)}</h2>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0">
+            <span class="chip roxo">${prog.emoji} Nível ${prog.nivel} · ${esc(prog.titulo)}</span>
+            <span class="chip azul">${prog.xp} XP</span>
+            <span class="chip cinza">${nv.rotulo} (${prof}%)</span>
+          </div>
+          <div class="progress" style="margin:6px 0 4px"><span style="width:${prog.pct}%"></span></div>
+          <div class="muted small">${prog.noNivel} / ${prog.need} XP · faltam <b>${prog.falta} XP</b> para o Nível ${prog.nivel + 1}</div>
+          <div style="margin-top:8px">
             ${s.objetivo ? `<span class="chip roxo">🎯 ${esc(s.objetivo)}</span>` : ""}
             ${s.estiloAprendizado ? `<span class="chip azul">Aprende ${esc(s.estiloAprendizado)}</span>` : ""}
           </div>
         </div>
-        <p class="muted small" style="margin-top:12px">Estudando desde ${new Date(s.criadoEm).toLocaleDateString("pt-BR")} · ${s.simulados.length} simulados · ${s.redacoes.length} redações</p>
+        <div class="nivel-meta">
+          ${ringMeta(meta.feitas, meta.meta)}
+          <div class="muted small" style="text-align:center">meta do dia${meta.batida ? " ✅" : ""}</div>
+        </div>
       </div>
+      <div class="card hidden" id="avatar-picker" style="margin-top:10px">
+        <h3>Escolha seu avatar</h3>
+        <div class="avatar-pick">
+          ${AVATARES.map(a => `<button type="button" class="avatar-opt ${a === (s.avatar || "🚀") ? "selected" : ""}" data-val="${a}">${a}</button>`).join("")}
+        </div>
+      </div>
+      <p class="muted small" style="margin:10px 2px 0">Estudando desde ${new Date(s.criadoEm).toLocaleDateString("pt-BR")} · ${s.simulados.length} simulados · ${s.redacoes.length} redações</p>
 
-      <div class="grid cols-3" style="margin-top:16px">
+      <div class="grid cols-4" style="margin-top:16px">
+        ${statTile("⭐", prog.xp, "XP total")}
         ${statTile("🔥", s.streak.dias, "dias de foco")}
         ${statTile("✅", `${acertosGerais}/${totalQ}`, "acertos")}
         ${statTile("🏅", `${s.conquistas.length}/${badges.length}`, "conquistas")}
@@ -790,6 +863,14 @@
           <button class="btn btn-danger small" id="resetar">🗑️ Apagar tudo e recomeçar</button>
         </div>
       </div>`;
+
+    const picker = view.querySelector("#avatar-picker");
+    view.querySelector("#avatar-btn").onclick = () => picker.classList.toggle("hidden");
+    view.querySelectorAll("#avatar-picker .avatar-opt").forEach(b => b.onclick = () => {
+      Store.set({ avatar: b.dataset.val });
+      toast(`Avatar atualizado! ${b.dataset.val}`);
+      renderPerfil();
+    });
 
     view.querySelector("#exportar").onclick = () => {
       const blob = new Blob([JSON.stringify(s, null, 2)], { type: "application/json" });

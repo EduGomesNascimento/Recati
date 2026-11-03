@@ -8,6 +8,7 @@ window.Store = (function () {
 
   const inicial = () => ({
     nome: null,
+    avatar: "🚀",            // emoji escolhido pelo usuário
     objetivo: null,          // curso/meta do usuário
     estiloAprendizado: null, // visual/auditivo/etc
     criadoEm: Date.now(),
@@ -18,7 +19,9 @@ window.Store = (function () {
     respostasQuestoes: {},   // qId -> {acertou:bool, tentativas:n, ultima:ts}
     conquistas: [],          // ids de badges
     streak: { dias: 0, ultimoDia: null },
-    metaDiaria: 10           // questões/dia
+    metaDiaria: 20,          // questões/dia
+    nivelVisto: 1,           // último nível de XP já celebrado
+    diario: {}               // "YYYY-MM-DD" -> nº de questões respondidas no dia
   });
 
   let cache = null;
@@ -75,6 +78,9 @@ window.Store = (function () {
       r.ultima = sim.data;
       cache.respostasQuestoes[q.id] = r;
     });
+    // contagem diária de questões respondidas (para a meta do dia)
+    const hojeKey = new Date(sim.data).toISOString().slice(0, 10);
+    cache.diario[hojeKey] = (cache.diario[hojeKey] || 0) + (sim.total || 0);
     registrarStreak();
     save();
   }
