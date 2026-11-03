@@ -7,6 +7,10 @@
   const footer = document.getElementById("footer");
   const C = window.ENEM_CONTENT;
   const Q = window.ENEM_QUESTIONS;
+  const EX = window.ENEM_EXEMPLOS || {};
+  // incidência de cada tópico no ENEM (alta | media | baixa), vinda do banco de questões
+  const INC_TOP = {};
+  Q.forEach(q => { if (q.incidencia) INC_TOP[q.topico] = q.incidencia; });
   const R = window.ENEM_REDACAO;
   const RES = window.ENEM_RESOURCES;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -76,6 +80,7 @@
       case "intensivao": renderIntensivao(); break;
       case "trilhas": param ? renderMateria(param) : renderTrilhas(); break;
       case "licao": renderLicao(param); break;
+      case "exemplos": renderExemplos(param); break;
       case "praticar": renderPraticarConfig(); break;
       case "simulado": renderSimulado(); break;
       case "resultado": renderResultado(param); break;
@@ -90,7 +95,7 @@
       default: renderHome();
     }
     // marca nav ativa (temas/treino/modelos ficam sob "Redação")
-    const navPath = ["temas", "treino", "modelos", "vocabulario"].includes(path) ? "redacao" : (path || "home");
+    const navPath = ["temas", "treino", "modelos", "vocabulario"].includes(path) ? "redacao" : path === "exemplos" ? "trilhas" : (path || "home");
     document.querySelectorAll("#mainnav button").forEach(b => {
       b.classList.toggle("active", b.dataset.nav === "#/" + navPath);
     });
@@ -351,12 +356,56 @@
         </div>`;
       });
     });
+    if (EX[mid]) html = html.replace(`<p class="muted small">${feitasTot}`, `<a class="cta-intensivao" style="margin:12px 0" href="#/exemplos/${mid}">🧪 <span><b>Exemplos resolvidos de ${esc(m.nome)}</b><br><span class="small">${EX[mid].length} situações do cotidiano, passo a passo, com a pegadinha</span></span></a><p class="muted small">${feitasTot}`);
     html += `
       <div class="card" style="margin-top:16px;text-align:center">
         <p class="muted">Terminou de estudar? Fixe o conteúdo praticando!</p>
         <button class="btn btn-primary" onclick="location.hash='#/praticar'">✏️ Praticar ${esc(m.nome)}</button>
       </div>`;
     view.innerHTML = html;
+  }
+
+  // ---------------- Exemplos resolvidos ----------------
+  function renderExemplos(mid) {
+    const lista = EX[mid];
+    if (!lista) {
+      view.innerHTML = `<div class="section-title">🧪 Exemplos resolvidos</div>
+        <p class="muted">Escolha a matéria:</p><div class="grid cols-4">${Object.keys(EX).filter(k => C.materias[k])
+          .map(k => atalho(C.materias[k].emoji, C.materias[k].nome, `${EX[k].length} exemplos`, "#/exemplos/" + k)).join("")}</div>`;
+      return;
+    }
+    const m = C.materias[mid] || { nome: mid, emoji: "🧪" };
+    const outras = Object.keys(EX).filter(k => k !== mid && C.materias[k]);
+    view.innerHTML = `
+      <button class="btn btn-ghost small" onclick="location.hash='#/trilhas/${mid}'">← ${esc(m.nome)}</button>
+      <div class="section-title" style="margin-top:12px">🧪 Exemplos resolvidos — ${m.emoji} ${esc(m.nome)}</div>
+      <div class="card"><p class="small" style="margin:0"><b>Como estudar:</b> leia a situação e o que se pede, <b>tente resolver sozinho</b> (papel e caneta!) e só depois toque em <b>“Ver resolução”</b>. Tentar antes de ver a resposta fixa muito mais.</p></div>
+      ${lista.map((e, i) => `<div class="card exemplo" style="margin-top:12px">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start;flex-wrap:wrap">
+          <h3 style="margin:0">${i + 1}. ${esc(e.titulo)}</h3><span class="chip roxo">${esc(e.tema)}</span>
+        </div>
+        <p style="margin:10px 0 6px">📍 ${esc(e.situacao)}</p>
+        <p style="margin:0"><b>❓ O que se pede:</b> ${esc(e.pede)}</p>
+        <button class="btn btn-secondary small ver-res" style="margin-top:10px" data-i="${i}">👀 Ver resolução</button>
+        <div class="resolucao" id="res-${i}" hidden>
+          <div class="bloco-especial bloco-dica"><b>💡 Conceito</b>${esc(e.conceito)}</div>
+          ${e.formula ? `<div class="formula">${esc(e.formula)}</div>` : ""}
+          <ol class="passos">${e.passos.map(p => `<li>${esc(p)}</li>`).join("")}</ol>
+          <div class="bloco-especial bloco-mnemonico"><b>✅ Resposta</b>${esc(e.resposta)}</div>
+          <div class="bloco-especial bloco-atencao"><b>⚠️ Pegadinha</b>${esc(e.pegadinha)}</div>
+        </div>
+      </div>`).join("")}
+      <div class="card" style="margin-top:16px;text-align:center">
+        <p class="muted">Agora aplique: questões de ${esc(m.nome)} (as de alta incidência primeiro).</p>
+        <button class="btn btn-primary" id="ex-praticar">✏️ 10 questões de ${esc(m.nome)}</button>
+        ${outras.length ? `<p class="small" style="margin-top:12px">Outros exemplos: ${outras.map(k => `<a href="#/exemplos/${k}">${C.materias[k].emoji} ${esc(C.materias[k].nome)}</a>`).join(" · ")}</p>` : ""}
+      </div>`;
+    view.querySelectorAll(".ver-res").forEach(b => b.onclick = () => {
+      const box = view.querySelector("#res-" + b.dataset.i);
+      box.hidden = !box.hidden;
+      b.textContent = box.hidden ? "👀 Ver resolução" : "🙈 Esconder resolução";
+    });
+    view.querySelector("#ex-praticar").onclick = () => iniciarSimulado({ materias: [mid], qtd: 10, incidencia: ["alta", "media"] });
   }
 
   // ---------------- Lição (conteúdo) ----------------
@@ -465,6 +514,7 @@
         <h3 style="margin-top:16px">Modo</h3>
         <label class="check-row"><input type="checkbox" id="cfg-tempo"><span>⏱️ Cronometrar (modo prova real)</span></label>
         <label class="check-row"><input type="checkbox" id="cfg-explica" checked><span>💬 Mostrar explicação após cada resposta</span></label>
+        <label class="check-row"><input type="checkbox" id="cfg-alta"><span>🔥 Só assuntos que MAIS caem no ENEM (alta incidência)</span></label>
         <p class="muted small" id="cfg-disp" style="margin:14px 0 0"></p>
         <button class="btn btn-primary block" style="margin-top:10px" id="cfg-start">Começar simulado 🚀</button>
       </div>
@@ -506,9 +556,10 @@
       const nivel = view.querySelector("#cfg-nivel").value;
       const comTempo = view.querySelector("#cfg-tempo").checked;
       const comExplica = view.querySelector("#cfg-explica").checked;
+      const soAlta = view.querySelector("#cfg-alta").checked;
       const modoFonte = fonteSelecionada();
 
-      iniciarSimulado({ areas, fontes: modoFonte.fontes, nivel, qtd, comTempo, comExplica });
+      iniciarSimulado({ areas, fontes: modoFonte.fontes, nivel, qtd, comTempo, comExplica, incidencia: soAlta ? ["alta"] : null });
     };
   }
 
@@ -521,6 +572,7 @@
       (!o.materias || o.materias.includes(q.materia)) &&
       (!o.topicos || o.topicos.includes(q.topico)) &&
       (!o.ids || o.ids.includes(q.id)) &&
+      (!o.incidencia || o.incidencia.includes(q.incidencia)) &&
       o.fontes.includes(q.fonte) &&
       (o.nivel === "todas" || q.nivel === o.nivel));
     pool = embaralhar(pool);
@@ -579,6 +631,7 @@
           <span class="chip roxo">${areaObj ? areaObj.emoji : ""} ${esc(q.area === "matematica" ? "Matemática" : Engine.AREA_NOME[q.area] || q.area)}</span>
           <span class="chip cinza">${esc(q.topico)}</span>
           <span class="chip ${q.nivel === "Fácil" ? "verde" : q.nivel === "Difícil" ? "vermelho" : "amarelo"}">${q.nivel}</span>
+          ${q.incidencia === "alta" ? `<span class="chip vermelho" title="Assunto de alta incidência no ENEM">🔥 Cai muito</span>` : q.incidencia === "baixa" ? `<span class="chip cinza" title="Assunto raro no ENEM">🧊 Cai pouco</span>` : ""}
           ${q.fonte && FONTE_META[q.fonte] ? `<span class="chip ${FONTE_META[q.fonte].chip}">${FONTE_META[q.fonte].emoji} ${FONTE_META[q.fonte].rotulo}${q.banca ? " · " + esc(q.banca) : ""}</span>` : ""}
         </div>
         ${st.comTempo ? `<div class="timer" id="timer">--:--</div>` : `<div class="muted small">Questão ${st.atual + 1} de ${st.questoes.length}</div>`}
@@ -1305,7 +1358,13 @@
         ${quick("⏱️", "Simulado de 20", "cronometrado, 3 min/questão", "sim20")}
         ${quick("🔁", "Refazer meus erros", nErros ? `${nErros} questão(ões) errada(s)` : "nenhum erro ainda", "erros")}
         ${quick("📘", "Só questões ENEM", "10 questões estilo oficial", "enem10")}
+        ${quick("🔥", "O que mais cai", "10 questões de alta incidência", "alta10")}
         ${areasLista.map(a => quick(a.emoji, a.nome, "10 questões da área", "area:" + a.id)).join("")}
+      </div>
+
+      <div class="section-title">🧪 Aprenda com exemplos resolvidos <small>situação → conceito → passo a passo → pegadinha</small></div>
+      <div class="grid cols-4">
+        ${Object.keys(EX).filter(k => C.materias[k]).map(k => atalho(C.materias[k].emoji, C.materias[k].nome, `${EX[k].length} exemplos resolvidos`, "#/exemplos/" + k)).join("")}
       </div>
 
       <div class="section-title">🔧 Reforce seus pontos fracos</div>
@@ -1317,10 +1376,10 @@
         </button>`).join("")}</div>`
         : `<div class="card"><p class="muted">Ainda não sei seus pontos fracos. Faça as <b>10 questões mistas</b> acima e o reforço aparece aqui automaticamente.</p></div>`}
 
-      <div class="section-title">🎯 Escolha o tópico <small>10 questões do assunto</small></div>
+      <div class="section-title">🎯 Escolha o tópico <small>🔥 cai muito · 🧊 cai pouco — priorize os 🔥</small></div>
       ${areasLista.map(a => `<details class="acordeao"><summary>${a.emoji} ${esc(a.nome)} <span class="muted small">(${Object.keys(porArea[a.id] || {}).length} tópicos)</span></summary>
         <div class="corpo topicos">${Object.entries(porArea[a.id] || {}).sort((x, y) => y[1] - x[1])
-          .map(([tp, n]) => `<button class="filtro topico-btn" data-topico="${esc(tp)}">${esc(tp)} <span class="muted">(${n})</span></button>`).join("")}</div>
+          .map(([tp, n]) => `<button class="filtro topico-btn" data-topico="${esc(tp)}">${INC_TOP[tp] === "alta" ? "🔥 " : INC_TOP[tp] === "baixa" ? "🧊 " : ""}${esc(tp)} <span class="muted">(${n})</span></button>`).join("")}</div>
       </details>`).join("")}
 
       <div class="section-title">📝 Redação</div>
@@ -1367,6 +1426,7 @@
     if (a === "mix10") iniciarSimulado({ qtd: 10 });
     else if (a === "sim20") iniciarSimulado({ qtd: 20, comTempo: true, comExplica: false });
     else if (a === "enem10") iniciarSimulado({ qtd: 10, fontes: ["enem"] });
+    else if (a === "alta10") iniciarSimulado({ qtd: 10, incidencia: ["alta"] });
     else if (a === "erros") {
       const rq = Store.get().respostasQuestoes || {};
       const ids = Object.keys(rq).filter(k => !rq[k].acertou);

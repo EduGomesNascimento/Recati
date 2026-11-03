@@ -76,7 +76,8 @@ const CURADAS = [].concat(
   require('./curated-questions-2.js'),
   require('./curated-questions-3.js'),
   require('./curated-questions-4.js'),
-  require('./curated-enem-extra.js')
+  require('./curated-enem-extra.js'),
+  require('./curated-enem-2.js')
 );
 CURADAS.forEach(q => { q.id = q.id || nid('c'); q.gerada = false; q.fonte = q.fonte || 'enem'; OUT.push(q); });
 
@@ -230,7 +231,7 @@ function genPitagoras() {
 /* --- Matemática: probabilidade (urna) --- */
 function genProbabilidade() {
   const SING = { azuis: 'azul', vermelhas: 'vermelha', verdes: 'verde' };
-  const cores = shuffle([['azuis', rint(2, 6)], ['vermelhas', rint(2, 6)], ['verdes', rint(1, 5)]]);
+  const cores = shuffle([['azuis', rint(2, 6)], ['vermelhas', rint(2, 6)], ['verdes', rint(2, 5)]]);
   const total = cores.reduce((s, c) => s + c[1], 0);
   const alvo = cores[0];
   const q = {
@@ -240,7 +241,7 @@ function genProbabilidade() {
     dica: 'Probabilidade = casos favoráveis ÷ casos totais. Some todas as bolas para obter o total.'
   };
   // trabalhamos com o NUMERADOR (sobre o mesmo total) para que todas as alternativas sejam coerentes
-  const distr = [cores[1][1], cores[2][1], total - alvo[1], alvo[1] + 1, alvo[1] - 1]
+  const distr = [cores[1][1], cores[2][1], total - alvo[1], alvo[1] + 1, alvo[1] - 1, alvo[1] + 2, alvo[1] - 2, 1, total - 1, ...Array.from({ length: total }, (_, k) => k)]
     .filter(n => n > 0 && n < total);
   return build(q, alvo[1], distr, n => `${n}/${total} (≈ ${num(n / total * 100, 1)}%)`, n => Math.round(n));
 }
@@ -653,6 +654,55 @@ function genJurosComposto() {
 }
 
 /* ---------- registro dos geradores e volumes ---------- */
+/* --- Física: resistores em série e em paralelo (2 resistores iguais ou não) --- */
+function genResistores() {
+  const pares = [[2, 2], [4, 4], [3, 6], [6, 12], [10, 10], [4, 12], [20, 30], [5, 20], [12, 24]];
+  const [r1, r2] = pick(pares);
+  const serie = rng() < 0.5;
+  const correto = serie ? r1 + r2 : (r1 * r2) / (r1 + r2);
+  const q = {
+    area: 'natureza', materia: 'fisica', topico: 'Eletrodinâmica', nivel: 'Médio', gerada: true,
+    enunciado: `Dois resistores, de ${r1} Ω e ${r2} Ω, são ligados em ${serie ? 'série' : 'paralelo'}. Qual é a resistência equivalente?`,
+    explicacao: serie
+      ? `Em série, as resistências se somam: Req = ${r1} + ${r2} = ${numMax(correto, 2)} Ω.`
+      : `Em paralelo (dois resistores): Req = (R₁·R₂)/(R₁+R₂) = (${r1}·${r2})/(${r1}+${r2}) = ${r1 * r2}/${r1 + r2} = ${numMax(correto, 2)} Ω. Em paralelo, Req é sempre MENOR que o menor resistor.`,
+    dica: 'Série: soma. Paralelo: produto ÷ soma (e o resultado fica menor que o menor resistor). Casas usam ligação em paralelo.'
+  };
+  const outro = serie ? (r1 * r2) / (r1 + r2) : r1 + r2;
+  return build(q, correto, [outro, r1 * r2, Math.abs(r2 - r1) || r1 / 4, (r1 + r2) / 2 + 1, correto * 2], x => numMax(x, 2) + ' Ω');
+}
+
+/* --- Física: corrente no aparelho e disjuntor (P = U·i) --- */
+function genCorrente() {
+  const ap = pick([['chuveiro', 4400, 220], ['chuveiro', 6600, 220], ['forno elétrico', 2200, 220], ['secador de cabelo', 1100, 110],
+    ['ferro de passar', 1100, 220], ['micro-ondas', 1320, 110], ['aquecedor', 1650, 110], ['chuveiro', 5500, 220]]);
+  const [nome, P, U] = ap;
+  const i = P / U;
+  const q = {
+    area: 'natureza', materia: 'fisica', topico: 'Eletrodinâmica', nivel: 'Médio', gerada: true,
+    enunciado: `Um ${nome} de ${num(P)} W é ligado em ${U} V. Qual a corrente elétrica que circula por ele? (Isso define o disjuntor e a espessura do fio.)`,
+    explicacao: `P = U·i → i = P/U = ${num(P)}/${U} = ${numMax(i, 2)} A. O disjuntor precisa suportar um pouco mais que essa corrente; fio fino com corrente alta aquece (efeito Joule).`,
+    dica: 'P = U·i ("PUI"). Mesma potência em 110 V exige o DOBRO da corrente que em 220 V.'
+  };
+  return build(q, i, [P * U / 1000, U / P * 100, i * 2, i / 2, P / 1000], x => numMax(x, 2) + ' A');
+}
+
+/* --- Física: pressão p = F/A (salto fino × tênis, faca afiada) --- */
+function genPressao() {
+  const m = pick([50, 60, 70, 80]);
+  const F = m * 10;
+  const areaCm2 = pick([1, 2, 4, 5, 10, 20, 25, 50, 100, 200]);
+  const A = areaCm2 / 10000; // m²
+  const p = F / A;
+  const q = {
+    area: 'natureza', materia: 'fisica', topico: 'Hidrostática', nivel: 'Médio', gerada: true,
+    enunciado: `Uma pessoa de ${m} kg está apoiada sobre uma área total de ${areaCm2} cm². Qual a pressão exercida sobre o chão? (Use g = 10 m/s²; 1 cm² = 10⁻⁴ m².)`,
+    explicacao: `Força = peso = m·g = ${m} × 10 = ${num(F)} N. Área = ${areaCm2} cm² = ${numMax(A, 4)} m². p = F/A = ${num(F)}/${numMax(A, 4)} = ${num(p)} Pa. Quanto menor a área, maior a pressão — por isso o salto fino afunda na grama e a faca afiada corta.`,
+    dica: 'p = F/A. Converta cm² → m² (× 10⁻⁴) antes de dividir.'
+  };
+  return build(q, p, [F / areaCm2, p / 10, p * 10, m / A, F * A], x => num(x) + ' Pa');
+}
+
 const GERADORES = [
   [genPorcSucessiva, 42], [genPorcSimples, 34], [genRegraTres, 42], [genVertice, 30],
   [genFuncao1, 22], [genVolumeCilindro, 26], [genPitagoras, 28], [genProbabilidade, 32],
@@ -662,7 +712,8 @@ const GERADORES = [
   [genPA, 22], [genPG, 16], [genCombinatoria, 26], [genOptica, 18],
   [genDensidade, 20], [genGenetica, 20],
   [genTrigNotavel, 20], [genSistema, 20], [genTrabalho, 18],
-  [genConcentracao, 16], [genJurosComposto, 16]
+  [genConcentracao, 16], [genJurosComposto, 16],
+  [genResistores, 16], [genCorrente, 14], [genPressao, 14]
 ];
 
 GERADORES.forEach(([gen, n]) => {
@@ -685,6 +736,25 @@ GERADORES.forEach(([gen, n]) => {
 /* ============================================================
    SAÍDA
    ============================================================ */
+/* ---------- incidência no ENEM (análise das provas 2009–2025) ----------
+   alta  = cai quase todo ano / várias questões por prova
+   media = aparece com frequência, mas não em toda prova
+   baixa = raro no ENEM (mais típico de vestibulares tradicionais) */
+const INCIDENCIA_BAIXA = new Set(['Logaritmos', 'Função composta', 'Equação exponencial', 'Geometria Analítica',
+  'Sistemas Lineares', 'Trigonometria', 'Conjuntos', 'Atomística', 'Gases', 'Progressão Geométrica',
+  'História Antiga', 'Idade Média', 'Falsos cognatos', 'Cinética química']);
+const INCIDENCIA_MEDIA = new Set(['Progressões', 'Análise Combinatória', 'Frações', 'Óptica', 'Hidrostática',
+  'Cinemática', 'Dinâmica', 'Leis de Newton', 'Trabalho e Energia', 'Eletricidade', 'Ligações químicas',
+  'Eletroquímica', 'Físico-Química', 'pH', 'Orgânica', 'Química Orgânica', 'Botânica', 'Fisiologia Vegetal',
+  'Citologia', 'Biotecnologia', 'Bioenergética', 'Fisiologia', 'Idade Moderna', 'Revolução Francesa',
+  'Segunda Guerra', 'História Geral', 'História Contemporânea', 'Filosofia moderna', 'Filosofia',
+  'Climatologia', 'Geografia Física', 'Cartografia', 'Blocos econômicos', 'Geopolítica', 'Demografia',
+  'Domínios Morfoclimáticos', 'Gramática', 'Semântica', 'Denotação e conotação', 'Leitura instrumental',
+  'Educação Física/Corpo', 'Artes', 'Literatura']);
+OUT.forEach(q => {
+  q.incidencia = INCIDENCIA_BAIXA.has(q.topico) ? 'baixa' : INCIDENCIA_MEDIA.has(q.topico) ? 'media' : 'alta';
+});
+
 const porFonte = {};
 OUT.forEach(q => { porFonte[q.fonte] = (porFonte[q.fonte] || 0) + 1; });
 

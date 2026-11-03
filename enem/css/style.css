@@ -498,3 +498,8 @@ button.card { font-family: inherit; font-size: inherit; color: inherit; width: 1
 .conectivo-topo { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .conectivo-c { font-weight: 800; color: var(--roxo-escuro); }
 .conectivo-cuidado { margin-top: 4px; color: #9a6b00; }
+
+/* exemplos resolvidos */
+.exemplo .resolucao { margin-top: 12px; }
+.exemplo .passos { margin: 10px 0; padding-left: 22px; }
+.exemplo .passos li { margin: 4px 0; }
