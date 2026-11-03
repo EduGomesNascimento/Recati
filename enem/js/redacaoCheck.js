@@ -96,6 +96,17 @@ window.RedacaoCheck = (function () {
       msg: "Concordância: com 'são', o adjetivo vai ao plural — 'são necessários/necessárias', 'são proibidos/proibidas'." },
     { re: /\b(anexo|incluso|obrigado|quite)\s+(as|os|às)\s+/g,
       msg: "Concordância: 'anexo/incluso/obrigado/quite' concordam com o termo — 'Seguem ANEXAS as fotos', 'Muito obrigadA' (se for mulher)." },
+    // ---- conectivos (coesão) ----
+    { cat: "coesao", re: /\b(sociedade|contexto|cenário|situação|época|momento|realidade|sistema|cultura|relação|período|caso)\s+onde\b/g,
+      msg: "Conectivo: 'onde' indica lugar físico. Use 'em que' ou 'na qual/no qual' — 'uma sociedade em que…'." },
+    { cat: "coesao", re: /\bna\s+medida\s+que\b/g,
+      msg: "Conectivo: a forma correta é 'na medida em que' (causa) ou 'à medida que' (proporção)." },
+    { cat: "coesao", re: /\bà\s+medida\s+em\s+que\b/g,
+      msg: "Conectivo: 'à medida em que' não existe. Use 'à medida que' (proporção) ou 'na medida em que' (causa)." },
+    { cat: "coesao", re: /\b(embora|ainda\s+que|conquanto)\s+(é|são|existe|existem|há|tem|têm|está|estão|possui|possuem|pode|podem|deve|devem)\b/g,
+      msg: "Conectivo: 'embora/ainda que' pedem subjuntivo — 'embora SEJA', 'embora EXISTA', 'embora HAJA', 'embora TENHA'." },
+    { cat: "coesao", re: /\bcujo\s+(o|a|os|as)\s+/g,
+      msg: "'Cujo' não admite artigo depois: 'cujo pai', nunca 'cujo o pai'." },
     { re: /\b(bastante)\s+(pessoas|motivos|problemas|casos|vezes|alunos|jovens)\b/g,
       msg: "Concordância: 'bastante' como adjetivo (= muitos) varia — 'bastanteS pessoas', 'bastanteS motivos'." }
   ];
@@ -150,7 +161,7 @@ window.RedacaoCheck = (function () {
     REGENCIA.forEach(r => {
       r.re.lastIndex = 0; let g;
       while ((g = r.re.exec(low))) {
-        achados.push({ cat: "regencia", grav: "alta", trecho: ctx(texto, g.index, g[0].length), idx: g.index, msg: r.msg });
+        achados.push({ cat: r.cat || "regencia", grav: "alta", trecho: ctx(texto, g.index, g[0].length), idx: g.index, msg: r.msg });
         if (r.re.lastIndex === g.index) r.re.lastIndex++;
       }
     });
@@ -243,12 +254,13 @@ window.RedacaoCheck = (function () {
   const CAT_META = {
     ortografia: { rotulo: "Ortografia", emoji: "🔤", chip: "vermelho" },
     acentuacao: { rotulo: "Acentuação", emoji: "´", chip: "amarelo" },
-    regencia: { rotulo: "Regência/Concordância", emoji: "🔗", chip: "roxo" },
+    regencia: { rotulo: "Regência/Concordância", emoji: "🧷", chip: "roxo" },
     pontuacao: { rotulo: "Vírgula (adjunto adverbial)", emoji: "，", chip: "azul" },
     truncamento: { rotulo: "Truncamento", emoji: "✂️", chip: "amarelo" },
     justaposicao: { rotulo: "Justaposição/Excesso", emoji: "📏", chip: "azul" },
     paralelismo: { rotulo: "Paralelismo", emoji: "⚖️", chip: "roxo" },
-    paragrafo: { rotulo: "Tamanho dos parágrafos", emoji: "📐", chip: "cinza" }
+    paragrafo: { rotulo: "Tamanho dos parágrafos", emoji: "📐", chip: "cinza" },
+    coesao: { rotulo: "Conectivos/Coesão", emoji: "🔗", chip: "verde" }
   };
 
   return { analisar, CAT_META, esc };

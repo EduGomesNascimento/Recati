@@ -75,17 +75,76 @@ window.ENEM_REDACAO = {
     }
   },
 
-  // conectivos por função (C4)
+  // GUIA DE CONECTIVOS (C4) — sentido, uso, pontuação e armadilhas
   conectivos: [
-    { funcao: "Iniciar o 1º desenvolvimento", lista: ["Em primeira análise", "Inicialmente", "A princípio", "Em primeiro plano"] },
-    { funcao: "Adição (2º desenvolvimento)", lista: ["Além disso", "Ademais", "Somado a isso", "Outrossim", "Paralelamente"] },
-    { funcao: "Oposição / ressalva", lista: ["Entretanto", "No entanto", "Contudo", "Todavia", "Em contrapartida"] },
-    { funcao: "Causa / explicação", lista: ["Isso porque", "visto que", "uma vez que", "já que", "em virtude de"] },
-    { funcao: "Consequência", lista: ["Por conseguinte", "Consequentemente", "Dessa forma", "Desse modo", "Assim"] },
-    { funcao: "Exemplificação", lista: ["a exemplo de", "como ilustra", "tal qual", "como comprova"] },
-    { funcao: "Conclusão", lista: ["Portanto", "Diante do exposto", "Em suma", "Logo", "Dessarte"] },
-    { funcao: "Retomar sem repetir (referenciação)", lista: ["tal problemática", "esse cenário", "a referida questão", "esse impasse", "isso"] }
+    { funcao: "Abrir o 1º desenvolvimento", itens: [
+      { c: "Em primeira análise,", sentido: "começo da argumentação", ex: "Em primeira análise, é preciso considerar o papel dos algoritmos.", cuidado: "Use só no D1; vírgula depois." },
+      { c: "Inicialmente,", sentido: "começo", ex: "Inicialmente, cabe analisar a origem do problema.", cuidado: "Vírgula depois." }
+    ]},
+    { funcao: "Adição (abrir o 2º desenvolvimento)", itens: [
+      { c: "Além disso,", sentido: "acrescenta argumento", ex: "Além disso, a falta de fiscalização agrava o quadro.", cuidado: "Abre o D2 retomando que já houve um argumento antes." },
+      { c: "Ademais,", sentido: "além disso (mais formal)", ex: "Ademais, a omissão estatal perpetua a exclusão.", cuidado: "Equivale a 'além disso'; não use os dois seguidos." },
+      { c: "Somado a isso,", sentido: "acrescenta", ex: "Somado a isso, a publicidade normaliza as apostas.", cuidado: "'Isso' precisa retomar uma ideia clara do parágrafo anterior." }
+    ]},
+    { funcao: "Oposição / ressalva", itens: [
+      { c: "Entretanto / No entanto / Contudo / Todavia", sentido: "oposição (= porém)", ex: "A lei existe. No entanto, não é cumprida.", cuidado: "No início da frase: vírgula depois. No meio: entre vírgulas ('A lei, contudo, não é cumprida')." },
+      { c: "mas", sentido: "oposição", ex: "O Brasil produz alimentos, mas milhões passam fome.", cuidado: "Vírgula ANTES de 'mas'. Prefira não começar período com 'Mas'." },
+      { c: "Em contrapartida,", sentido: "por outro lado, contraste", ex: "O agronegócio cresce; em contrapartida, a fome persiste.", cuidado: "Contraste entre dois fatos, não simples adição." }
+    ]},
+    { funcao: "Concessão (admite um fato, mas mantém a ideia)", itens: [
+      { c: "Embora / Ainda que / Conquanto", sentido: "apesar de que", ex: "Embora a lei exista, a violência persiste.", cuidado: "Pedem verbo no SUBJUNTIVO: 'embora EXISTA', nunca 'embora existe'." },
+      { c: "Apesar de / A despeito de", sentido: "concessão", ex: "Apesar dos avanços, a desigualdade persiste.", cuidado: "Seguidos de substantivo ou infinitivo: 'apesar de haver leis'." }
+    ]},
+    { funcao: "Causa / explicação", itens: [
+      { c: "Isso porque", sentido: "explica a frase anterior", ex: "O problema persiste. Isso porque faltam investimentos.", cuidado: "Ótimo para explicar o tópico frasal do parágrafo." },
+      { c: "visto que / uma vez que / já que", sentido: "porque", ex: "A medida é urgente, visto que vidas estão em risco.", cuidado: "Verbo no INDICATIVO ('visto que ESTÃO'). Vírgula antes." },
+      { c: "em virtude de / devido a", sentido: "por causa de", ex: "Em virtude da omissão estatal, o problema se agrava.", cuidado: "Seguidos de substantivo. 'Devido a' + feminino pede crase: 'devido à falta'." },
+      { c: "na medida em que", sentido: "CAUSA (= porque)", ex: "A educação é essencial, na medida em que forma cidadãos críticos.", cuidado: "Não confunda com 'à medida que' (proporção). 'Na medida que' (sem 'em') está errado." }
+    ]},
+    { funcao: "Proporção", itens: [
+      { c: "à medida que", sentido: "PROPORÇÃO (= conforme, ao passo que)", ex: "À medida que a tecnologia avança, novos desafios surgem.", cuidado: "Sempre com crase. Indica que duas coisas variam juntas — não é causa." }
+    ]},
+    { funcao: "Consequência / conclusão parcial", itens: [
+      { c: "Por conseguinte, / Consequentemente,", sentido: "como resultado", ex: "Por conseguinte, a confiança nas instituições diminui.", cuidado: "Ótimo para fechar o desenvolvimento com o efeito do argumento." },
+      { c: "Dessa forma, / Desse modo, / Assim,", sentido: "como resultado, então", ex: "Dessa forma, a desigualdade se perpetua.", cuidado: "Use no fim do parágrafo para amarrar com a tese." }
+    ]},
+    { funcao: "Finalidade (essencial na proposta)", itens: [
+      { c: "a fim de / para que / com o intuito de", sentido: "objetivo", ex: "…a fim de reduzir a evasão escolar.", cuidado: "'A fim de' é separado ('afim' = semelhante). 'Para que' pede SUBJUNTIVO: 'para que os jovens TENHAM'." },
+      { c: "por meio de / mediante", sentido: "modo / meio", ex: "…por meio de campanhas nas escolas.", cuidado: "Marca o elemento MEIO da proposta. Prefira 'por meio de': parte dos gramáticos condena 'através de' com sentido de meio." }
+    ]},
+    { funcao: "Conclusão (abrir o último parágrafo)", itens: [
+      { c: "Portanto, / Diante do exposto, / Em suma,", sentido: "conclusão", ex: "Portanto, é imprescindível combater a desinformação.", cuidado: "'Portanto' no meio da frase vem entre vírgulas: 'Cabe, portanto, ao Estado…'." }
+    ]},
+    { funcao: "Retomar sem repetir (referenciação)", itens: [
+      { c: "tal problemática / esse cenário / a referida questão", sentido: "retoma o tema", ex: "Tal problemática exige ação conjunta.", cuidado: "O termo retomado precisa estar claro. Varie para não repetir." },
+      { c: "pronomes: este, esse, aquele, o qual, cujo", sentido: "retomam termos", ex: "A escola, cujo papel é formar cidadãos, …", cuidado: "'Cujo' não leva artigo depois: 'cujo papel', nunca 'cujo o papel'." }
+    ]}
   ],
+  regrasConectivos: [
+    "Use um conectivo DIFERENTE para abrir cada parágrafo: D1 (Em primeira análise), D2 (Além disso), Conclusão (Portanto). Isso é coesão entre parágrafos (C4).",
+    "Use também conectivos DENTRO dos parágrafos (isso porque, visto que, dessa forma). A C4 avalia as duas coisas: entre e dentro dos parágrafos.",
+    "Conectivo errado muda o sentido: 'Portanto' depois de uma causa, ou 'Além disso' para uma oposição, são erros de coesão. Pergunte: qual é a relação entre as ideias?",
+    "Pontuação: conectivo no início da frase → vírgula depois ('No entanto, …'). Conectivo deslocado → entre vírgulas ('A lei, no entanto, …'). 'Mas' → vírgula antes.",
+    "Modo verbal: 'embora, ainda que, caso, para que' pedem subjuntivo; 'visto que, uma vez que, já que' pedem indicativo.",
+    "Evite 'onde' para o que não é lugar: 'uma sociedade em que (na qual)…', não 'uma sociedade onde…'.",
+    "Não empilhe conectivos ('Além disso, ademais, …') nem repita o mesmo várias vezes. Variedade com precisão vale mais que quantidade."
+  ],
+
+  // PERTINÊNCIA DO REPERTÓRIO (C2)
+  pertinencia: {
+    regra: "Repertório só pontua bem quando é PERTINENTE ao tema e PRODUTIVO no argumento: ele precisa explicar ou comprovar a ideia do parágrafo. Citação famosa sem ligação com o tema é 'repertório de bolso' e não ajuda a nota.",
+    exemplo: {
+      tema: "Desafios para a valorização da herança africana no Brasil (ENEM 2024)",
+      errado: "Citar Platão e o Mito da Caverna para falar da herança africana: o filósofo grego não tem relação com a cultura afro-brasileira — a ligação seria forçada e genérica.",
+      certo: [
+        "Lei 10.639/2003: tornou obrigatório o ensino de história e cultura afro-brasileira nas escolas.",
+        "Abdias do Nascimento e o Teatro Experimental do Negro (1944): valorização da cultura e do protagonismo negro.",
+        "Samba de Roda do Recôncavo Baiano: proclamado pela UNESCO Obra-Prima do Patrimônio Oral e Imaterial da Humanidade (2005).",
+        "Lélia Gonzalez: o conceito de 'amefricanidade', sobre a influência africana na formação cultural das Américas."
+      ]
+    },
+    teste: "Teste rápido: troque o tema por outro qualquer. Se o seu repertório continuar servindo igualzinho, ele está genérico demais — procure um mais específico."
+  },
 
   // DICAS práticas de prova
   dicas: [
@@ -93,6 +152,7 @@ window.ENEM_REDACAO = {
     { titulo: "Escreva a tese antes de tudo", texto: "Em uma frase: qual é o problema e por que ele existe? Os dois motivos viram seus dois desenvolvimentos." },
     { titulo: "Faça rascunho, mas controle o tempo", texto: "No 1º dia (Linguagens + Humanas + Redação) você tem 5h30. Reserve cerca de 1h a 1h20 para a redação e passe a limpo com folga." },
     { titulo: "Média de 6 a 8 linhas por parágrafo", texto: "4 parágrafos × 6–8 linhas = 24 a 30 linhas: texto completo sem estourar o limite de 30. Na folha cabem em média 10 a 12 palavras por linha (≈ 65–90 palavras por parágrafo). Nunca fique com 7 linhas ou menos no total (zera)." },
+    { titulo: "Repertório tem que conversar com o tema", texto: "Escolha leis, dados, autores e obras ligados ao assunto. Platão não serve para herança africana; a Lei 10.639/2003 e Abdias do Nascimento servem. Teste: se o repertório cabe em qualquer tema, ele é genérico demais." },
     { titulo: "Repertório produtivo vale mais que repertório famoso", texto: "Uma lei ou um dado bem explicado e ligado ao argumento pontua mais do que uma citação famosa solta. Sempre explique a relação com o tema." },
     { titulo: "Proposta: confira os 5 elementos", texto: "Agente, ação, meio/modo, finalidade e detalhamento. Use os marcadores 'por meio de' (meio) e 'a fim de' (finalidade) para não esquecer nenhum." },
     { titulo: "Prefira a impessoalidade", texto: "Não é proibido usar 1ª pessoa, mas o texto impessoal soa mais objetivo. Evite 'eu acho' e perguntas retóricas em excesso." },
@@ -108,7 +168,8 @@ window.ENEM_REDACAO = {
     { eixo: "Tecnologia e Comportamento", fontes: "George Orwell ('1984'); Byung-Chul Han ('Sociedade do Cansaço', 'Infocracia'); Milton Santos (meio técnico-científico-informacional); LGPD.", uso: "Vigilância, polarização por algoritmos, privacidade, hiperconectividade." },
     { eixo: "Saúde Pública", fontes: "Constituição de 1988 (art. 196 — saúde como direito de todos e dever do Estado); Josué de Castro ('Geografia da Fome'); Machado de Assis ('O Alienista').", uso: "Saneamento, saúde mental, desertos alimentares, acesso ao SUS." },
     { eixo: "Meio Ambiente", fontes: "Ailton Krenak ('Ideias para Adiar o Fim do Mundo'); racismo ambiental; Acordo de Paris; Lei de Crimes Ambientais (9.605/1998).", uso: "Mudanças climáticas, enchentes em comunidades vulneráveis, desmatamento." },
-    { eixo: "Desigualdade e Minorias", fontes: "Zygmunt Bauman ('Modernidade Líquida'); Durkheim (anomia); DUDH (1948); Florestan Fernandes.", uso: "Racismo estrutural, etarismo, população em situação de rua, meritocracia." },
+    { eixo: "Desigualdade e Minorias", fontes: "Constituição, art. 3º, IV (promover o bem de todos sem preconceito de origem, raça, sexo, cor e idade); DUDH (1948); Silvio Almeida (racismo estrutural); Adela Cortina (aporofobia).", uso: "Racismo, etarismo, capacitismo, população em situação de rua." },
+    { eixo: "Herança africana e povos originários", fontes: "Lei 10.639/2003 e Lei 11.645/2008; Abdias do Nascimento; Lélia Gonzalez; Ailton Krenak; Censo 2022 (1,69 milhão de indígenas e 1,33 milhão de quilombolas).", uso: "Valorização cultural, racismo, povos tradicionais, patrimônio imaterial." },
     { eixo: "Cultura e Identidade", fontes: "Antonio Candido ('O Direito à Literatura'); Escola de Frankfurt (Adorno/Horkheimer — Indústria Cultural); Constituição, art. 215.", uso: "Acesso à cultura, patrimônio, padronização estética e consumo cultural." }
   ],
 

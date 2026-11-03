@@ -73,8 +73,8 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Yuval Noah Harari, 'Homo Deus' / '21 Lições'", uso: "O surgimento de uma possível 'classe inútil' sem requalificação diante da automação." },
-        { ref: "Zygmunt Bauman, 'Modernidade Líquida'", uso: "A precarização e a fragilidade dos vínculos de trabalho no mundo contemporâneo." },
-        { ref: "Charles Chaplin, 'Tempos Modernos'", uso: "A desumanização do trabalhador diante da máquina — relido para a era da IA." }
+        { ref: "Charles Chaplin, 'Tempos Modernos' (1936)", uso: "A desumanização do trabalhador diante da máquina — relido para a era da IA." },
+        { ref: "Revolução Industrial e o ludismo (séc. XIX)", uso: "Trabalhadores ingleses destruíam máquinas por medo do desemprego: mostra que a tensão entre tecnologia e emprego é histórica e exige políticas de transição." }
       ],
       lembrar: "Mnemônico 'IA = Impacto + Adaptação': metade ameaça (desemprego), metade oportunidade (requalificação). Sempre proponha EDUCAÇÃO/requalificação.",
       argumentos: [
@@ -97,8 +97,8 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Byung-Chul Han, 'Sociedade do Cansaço'", uso: "A autoexploração e a cobrança por desempenho adoecem o indivíduo contemporâneo." },
-        { ref: "Zygmunt Bauman, 'Modernidade Líquida'", uso: "A fragilidade dos laços e a instabilidade geram insegurança e sofrimento psíquico." },
-        { ref: "Documentário 'O Dilema das Redes'", uso: "O design viciante das redes sociais e seu impacto na autoestima dos jovens." }
+        { ref: "Jonathan Haidt, 'A Geração Ansiosa' (2024)", uso: "Reúne pesquisas que ligam a infância passada no celular ao aumento de ansiedade e depressão em adolescentes." },
+        { ref: "Documentário 'O Dilema das Redes' (2020)", uso: "O design viciante das redes sociais e seu impacto na autoestima dos jovens." }
       ],
       lembrar: "'CANSAÇO digital': Cobrança, Autoexploração (Byung-Chul Han), Nocividade das redes, SUS/CAPS como solução. Foque na proposta de rede de apoio.",
       argumentos: [
@@ -192,7 +192,8 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Simone de Beauvoir, 'O Segundo Sexo'", uso: "'Ninguém nasce mulher, torna-se mulher' — a construção social que legitima a opressão." },
-        { ref: "Djamila Ribeiro", uso: "A importância de dar voz e visibilidade às vítimas e romper o silenciamento." }
+        { ref: "Maria da Penha Maia Fernandes", uso: "Sobreviveu a duas tentativas de assassinato pelo então marido (1983); sua luta por justiça, levada à Comissão Interamericana de Direitos Humanos (OEA), originou a Lei 11.340/2006." },
+        { ref: "Série 'Adolescência' (Netflix, 2025)", uso: "Mostra como a misoginia propagada online alcança meninos — liga violência de gênero e ambiente digital." }
       ],
       lembrar: "'ESCUDO legal': Maria da Penha (2006, doméstica) → Feminicídio (2015, virou crime autônomo em 2024) → Stalking (2021) → nudez sem consentimento (2018). Causa-raiz = cultura machista.",
       argumentos: [
@@ -214,7 +215,8 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Conceito de 'capacitismo'", uso: "O preconceito que considera a pessoa com deficiência/neurodivergência incapaz." },
-        { ref: "Modelo social da deficiência", uso: "A deficiência está nas barreiras da sociedade, não apenas no indivíduo." }
+        { ref: "Modelo social da deficiência", uso: "A deficiência está nas barreiras da sociedade, não apenas no indivíduo." },
+        { ref: "Série 'Atypical' (Netflix, 2017–2021)", uso: "Acompanha um jovem autista em busca de autonomia e expõe barreiras de inclusão na escola e no trabalho." }
       ],
       lembrar: "'INCLUIR de verdade': Identificação/diagnóstico, Normas (Lei Berenice Piana), Capacitismo (combater), Laços sociais, Universidade/escola adaptada, Inserção no trabalho, Respeito.",
       argumentos: [
@@ -304,7 +306,7 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Objetivo de Desenvolvimento Sustentável 6 (ONU)", uso: "Água potável e saneamento como meta global até 2030." },
-        { ref: "Conceito de cidadania (T. H. Marshall)", uso: "O acesso a serviços básicos é condição da cidadania plena." }
+        { ref: "Oswaldo Cruz e a Revolta da Vacina (1904)", uso: "As campanhas sanitárias no Rio de Janeiro mostram, desde o início do século XX, que saneamento é questão de saúde pública — e que exige diálogo com a população." }
       ],
       lembrar: "'ÁGUA e vida': Acesso desigual, meta 2033 (Marco), doenças evitáveis, periferia. Saneamento = saúde = cidadania.",
       argumentos: [
@@ -372,7 +374,7 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Declaração Universal dos Direitos Humanos (1948)", uso: "Ninguém será mantido em escravidão ou servidão (art. 4º)." },
-        { ref: "Conceito de dignidade humana (Kant)", uso: "O ser humano é um fim em si mesmo, nunca um meio." }
+        { ref: "Lei Áurea (1888)", uso: "A abolição formal não garantiu inclusão nem fiscalização: o trabalho escravo contemporâneo mostra que a exploração mudou de forma, mas persiste." }
       ],
       lembrar: "'CORRENTE invisível': Condição desumana, Oferta enganosa, Rural e urbano, Lista Suja, Fiscalização, dignidade (art.1º).",
       argumentos: [
@@ -462,7 +464,7 @@ window.ENEM_TEMAS = {
       ],
       repertorios: [
         { ref: "Paulo Freire, 'Pedagogia da Autonomia'", uso: "Educar exige diálogo e respeito ao outro — base de uma cultura de paz." },
-        { ref: "Zygmunt Bauman, 'Medo Líquido'", uso: "A insegurança difusa da sociedade contemporânea chega à escola." }
+        { ref: "Declaração sobre uma Cultura de Paz (ONU, 1999)", uso: "Defende educação, diálogo e respeito como base para prevenir a violência — inclusive no ambiente escolar." }
       ],
       lembrar: "'PAZ na escola': Prevenção (programas), Acolhimento psicológico, Zelo digital (cyberbullying = crime desde 2024).",
       argumentos: [

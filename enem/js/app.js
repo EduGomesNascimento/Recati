@@ -741,6 +741,18 @@
   const chipProb = p => { const m = T.probabilidades[p]; return `<span class="chip ${m.chip}">${m.emoji} ${m.rotulo}</span>`; };
   const chipDif = d => `<span class="chip ${DIF_CHIP[d] || "cinza"}">${d === "Extrema" ? "💀" : "🎚️"} ${d}</span>`;
 
+  // bloco "repertório pertinente" (exemplo certo × errado)
+  function blocoPertinencia() {
+    const P = R.pertinencia;
+    return `<div class="card">
+      <p>${esc(P.regra)}</p>
+      <p class="small muted" style="margin-top:6px"><b>Exemplo — tema:</b> ${esc(P.exemplo.tema)}</p>
+      <div class="bloco-especial bloco-atencao"><b>❌ Repertório sem relação</b>${esc(P.exemplo.errado)}</div>
+      <div class="bloco-especial bloco-dica"><b>✅ Repertórios pertinentes</b><ul class="lista">${P.exemplo.certo.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>
+      <p class="small"><b>🧪 ${esc(P.teste)}</b></p>
+    </div>`;
+  }
+
   // ---------- Redação: hub ----------
   function renderRedacao() {
     view.innerHTML = `
@@ -751,7 +763,10 @@
         ${atalho("🧩", "Exercícios de norma", "Acento, crase, concordância…", "#/treino/exercicios")}
         ${atalho("📐", "Modelos e dicas", "Esqueletos prontos + redação-modelo", "#/modelos")}
       </div>
-      <div style="margin-top:16px">${atalho("📖", "Dicionário de vocabulário formal", `${window.ENEM_VOCABULARIO.palavras.length} palavras e expressões formais, claras e atuais`, "#/vocabulario")}</div>
+      <div class="grid cols-2" style="margin-top:16px">
+        ${atalho("🔗", "Guia de conectivos", "Sentido, pontuação e armadilhas de cada conectivo", "#/modelos")}
+        ${atalho("📖", "Dicionário de vocabulário formal", `${window.ENEM_VOCABULARIO.palavras.length} palavras e expressões formais, claras e atuais`, "#/vocabulario")}
+      </div>
 
       <div class="section-title" style="font-size:1.1rem">💡 Enriquecedor de repertório</div>
       <div id="carrossel"></div>
@@ -785,6 +800,9 @@
         <ul class="lista">${R.zeram.map(z => `<li>${esc(z)}</li>`).join("")}</ul>
         <div class="bloco-especial bloco-atencao"><b>⚖️ Direitos Humanos</b>${esc(R.avisoDH)}</div>
       </div>
+
+      <div class="section-title" style="font-size:1.1rem">🎯 Repertório tem que ter relação com o tema</div>
+      ${blocoPertinencia()}
 
       <div class="section-title" style="font-size:1.1rem">📚 Repertórios por eixo</div>
       <div class="scroll-x"><table class="tabela-simples">
@@ -862,8 +880,9 @@
         <h3>📊 Dados e fontes</h3>
         <ul class="lista">${t.dados.map(d => `<li>${esc(d.texto)} <span class="fonte">— ${esc(d.fonte)}</span></li>`).join("")}</ul>
 
-        <h3>📚 Repertórios legitimados</h3>
+        <h3>📚 Repertórios pertinentes a este tema</h3>
         <ul class="lista">${t.repertorios.map(r => `<li><b>${esc(r.ref)}:</b> ${esc(r.uso)}</li>`).join("")}</ul>
+        <p class="small muted">Cada repertório acima está ligado ao assunto do tema. Use-o explicando essa ligação — não apenas citando.</p>
 
         <div class="bloco-especial bloco-mnemonico"><b>🧠 Jeito de lembrar</b>${esc(t.lembrar)}</div>
 
@@ -1156,9 +1175,21 @@
         <ul class="lista">${M.exemplo.anotacoes.map(a => `<li>${esc(a)}</li>`).join("")}</ul>
       </div>
 
-      <div class="section-title" style="font-size:1.05rem">🔗 Conectivos por função</div>
-      <div class="grid cols-2">${R.conectivos.map(c => `<div class="card"><h3>${esc(c.funcao)}</h3>
-        <div class="tema-chips">${c.lista.map(x => `<span class="chip cinza">${esc(x)}</span>`).join(" ")}</div></div>`).join("")}</div>
+      <div class="section-title" style="font-size:1.05rem" id="conectivos">🔗 Como usar os conectivos (C4)</div>
+      <div class="card">
+        <h3>📏 Regras de ouro</h3>
+        <ol class="lista">${R.regrasConectivos.map(r => `<li>${esc(r)}</li>`).join("")}</ol>
+      </div>
+      ${R.conectivos.map(g => `<details class="acordeao"><summary>${esc(g.funcao)} <span class="muted small">(${g.itens.length})</span></summary>
+        <div class="corpo">${g.itens.map(it => `<div class="conectivo">
+          <div class="conectivo-topo"><span class="conectivo-c">${esc(it.c)}</span><span class="chip cinza">${esc(it.sentido)}</span></div>
+          <div class="voc-ex small">“${esc(it.ex)}”</div>
+          <div class="small conectivo-cuidado">⚠️ ${esc(it.cuidado)}</div>
+        </div>`).join("")}</div>
+      </details>`).join("")}
+
+      <div class="section-title" style="font-size:1.05rem">🎯 Repertório pertinente (C2)</div>
+      ${blocoPertinencia()}
 
       <div class="section-title" style="font-size:1.05rem">💡 Dicas de prova</div>
       <div class="grid cols-2">${R.dicas.map(d => `<div class="card"><h3>${esc(d.titulo)}</h3><p class="small">${esc(d.texto)}</p></div>`).join("")}</div>`;

@@ -491,3 +491,10 @@ button.card { font-family: inherit; font-size: inherit; color: inherit; width: 1
   .card { box-shadow: none; border: none; padding: 0; }
   .container { padding: 0; }
 }
+
+/* guia de conectivos */
+.conectivo { padding: 10px 0; border-bottom: 1px solid var(--grid); }
+.conectivo:last-child { border-bottom: none; }
+.conectivo-topo { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.conectivo-c { font-weight: 800; color: var(--roxo-escuro); }
+.conectivo-cuidado { margin-top: 4px; color: #9a6b00; }
