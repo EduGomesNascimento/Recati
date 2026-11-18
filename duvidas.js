@@ -5,7 +5,7 @@
 
   const updateMood = () => {
     const allOpen = items.every((item) => item.open);
-    mood.src = allOpen ? "./piscando.png" : "./sorriso.png";
+    mood.src = allOpen ? "./img/piscando.png" : "./img/sorriso.png";
     mood.alt = allOpen ? "Mascote RECATI piscando" : "Mascote RECATI sorrindo";
   };
 

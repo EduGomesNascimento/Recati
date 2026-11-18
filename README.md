@@ -15,7 +15,15 @@ de projetos e demonstrações listadas abaixo.
 | `enem/` | "Rumo ao ENEM": guia de estudos com questões |
 | `imprimir/` | PrintBridge (impressão) |
 | `damp`, `damp-*` | Projeto DAMP: controle, atuadores, materiais, vídeo e perguntas da banca |
-| `assets/`, `img/` | Recursos compartilhados |
+| `img/` | Imagens do site e dos exemplos |
+| `video/` | Vídeos do mascote (intro e página de contato) |
+| `assets/` | Outros recursos compartilhados |
+| `arquivo/midia-sem-uso/` | Imagens que nenhuma página usa, guardadas caso precise |
+
+As páginas principais (`index.html`, `sobre.html`, `contato.html`,
+`duvidas.html`) ficam na raiz para manter os endereços públicos do site.
+Os artefatos de build do `exemplosnovo/` (PyInstaller e Android) não são
+versionados: gere-os de novo localmente quando precisar.
 
 ## GitHub Pages
 

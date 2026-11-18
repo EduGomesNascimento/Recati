@@ -3,14 +3,14 @@
   const mobileBootMode = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
   const VIDEO_SOURCES = mobileBootMode
     ? [
-        "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
-        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
-        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
+        "./video/Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
+        "./video/Gatinho_Pendurado_na_Borda_Preta_RS.webm",
+        "./video/Gatinho_Pendurado_na_Borda_Preta.mp4",
       ]
     : [
-        "./Gatinho_Pendurado_na_Borda_Preta_RS.webm",
-        "./Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
-        "./Gatinho_Pendurado_na_Borda_Preta.mp4",
+        "./video/Gatinho_Pendurado_na_Borda_Preta_RS.webm",
+        "./video/Gatinho_Pendurado_na_Borda_Preta_RS.mp4",
+        "./video/Gatinho_Pendurado_na_Borda_Preta.mp4",
       ];
   const START_TIME = 0.12;
   const FREEZE_TIME = 7.0;
