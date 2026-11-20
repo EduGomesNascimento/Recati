@@ -45,6 +45,15 @@
   .barra { height: 6px; background: var(--linha); border-radius: 3px; overflow: hidden; margin: 8px 0 0; }
   .barra > i { display: block; height: 100%; background: var(--primaria); width: 0; transition: width .12s linear; }
   .botoes { display: flex; gap: 8px; margin-top: 10px; }
+  .chaveTeste { display: flex; align-items: center; gap: 10px; margin: 0 2px 12px; cursor: pointer; }
+  .chaveTeste input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .chaveTeste .trilho { flex: none; width: 46px; height: 26px; border-radius: 13px; background: var(--fraco);
+    position: relative; transition: background .15s; }
+  .chaveTeste .bolinha { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%;
+    background: #fff; transition: left .15s; }
+  .chaveTeste input:checked + .trilho { background: var(--alerta); }
+  .chaveTeste input:checked + .trilho .bolinha { left: 23px; }
+  .chaveTeste input:focus-visible + .trilho { outline: 2px solid var(--primaria); outline-offset: 2px; }
   button, .seg {
     font: inherit; font-weight: 600; border-radius: 12px; border: 1px solid transparent;
     padding: 16px 10px; flex: 1; cursor: pointer; touch-action: none;
@@ -65,15 +74,6 @@
   .aviso a { color: var(--primaria); }
   code { background: var(--primaria-fraca); padding: 1px 5px; border-radius: 5px; font-size: 12px; }
   .rodape { color: var(--fraco); font-size: 12px; margin-top: 14px; text-align: center; }
-  /* navegação entre as páginas do DAMP */
-  .paginas { display: flex; gap: 6px; margin: 0 0 14px; }
-  .paginas a {
-    flex: 1; text-align: center; text-decoration: none;
-    font-size: 14px; font-weight: 600; color: var(--fraco);
-    border: 1px solid var(--linha); border-radius: 12px; padding: 10px 8px;
-  }
-  .paginas a[aria-current="page"] { color: #fff; background: var(--primaria); border-color: var(--primaria); }
-
   /* abas */
   .abas { display: flex; gap: 6px; margin: 14px 0 10px; }
   .abas button {
@@ -116,12 +116,20 @@
     white-space: pre-wrap; word-break: break-all; user-select: text;
   }
   [hidden] { display: none !important; }
+  /* navegação entre as páginas do DAMP */
+  .paginas { display: flex; gap: 6px; margin: 0 0 14px; }
+  .paginas a {
+    flex: 1; text-align: center; text-decoration: none;
+    font-size: 14px; font-weight: 600; color: var(--fraco);
+    border: 1px solid var(--linha); border-radius: 12px; padding: 10px 8px;
+  }
+  .paginas a[aria-current="page"] { color: #fff; background: var(--primaria); border-color: var(--primaria); }
 </style>
 </head>
 <body>
 
 <h1>DAMP</h1>
-<div class="sub">Dispositivo Assistivo de Mão e Punho · <b>Rev. I</b> — dez chaves de fim de curso</div>
+<div class="sub">Dispositivo Assistivo de Mão e Punho · serve na <b>Rev. I</b> (dez chaves), na <b>Rev. B</b> (PCA9685) e na <b>placa CNC</b> (3 TB6612; dedos param pela corrente)</div>
 
 <nav class="paginas">
   <a href="../damp-menu/">← Menu do DAMP</a>
@@ -167,6 +175,19 @@
     <span class="pt" id="ptBat" hidden></span>
     <span class="mini" id="txtBat"></span>
   </div>
+  <div class="mini" id="txtMod" hidden style="margin:-4px 2px 10px"></div>
+
+  <div class="aviso" id="avisoMot" hidden>
+    <h2>Motores sem energia ou sem medida</h2>
+    <p id="txtAvisoMot"></p>
+  </div>
+
+  <label class="chaveTeste" id="cxBancada">
+    <input type="checkbox" id="swBancada" role="switch">
+    <span class="trilho"><span class="bolinha"></span></span>
+    <span><b>Modo teste</b> <span class="mini">(bancada: o punho ignora as chaves)</span></span>
+  </label>
+  <div class="mini" id="txtBancada" hidden style="margin:-4px 2px 10px;color:var(--alerta)"></div>
 
   <div class="cartao">
     <div class="linha"><span class="titulo">Velocidade do punho</span>
@@ -341,7 +362,7 @@ const DEDOS = [
 // CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
 // página em cache, e "atualizei o site" e "você está vendo o site atualizado"
 // são duas coisas diferentes. Com o carimbo na tela, basta olhar.
-const VERSAO = 'página de 19/09/2026 · manche + 10 chaves';
+const VERSAO = 'página de 20/11/2026 · Rev. I, Rev. B e placa CNC';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -389,6 +410,8 @@ function desconectar() {
 
 function aoDesconectar() {
   carRx = carTx = null;
+  pararDeRenovar();                      // o U1 sai do modo teste sozinho em 60 s
+  $('swBancada').checked = false;
   conexao(false);
   msg('O DAMP desconectou.');
 }
@@ -471,7 +494,13 @@ function tratarLinha(linha) {
       return;
     }
   }
-  msg(linha);                            // OK / BLOCKED / ERR / TEST
+  if (linha === 'BLOCKED') {
+    // Sozinho, "BLOCKED" não diz nada a quem está segurando o celular.
+    msg('O DAMP recusou o comando de propósito — o motivo está no aviso '
+      + 'vermelho desta tela (bateria, chaves ou INA219 do grupo).');
+    return;
+  }
+  msg(linha);                            // OK / ERR / TEST
 }
 
 /**
@@ -500,6 +529,8 @@ function analisarStatus(linha) {
     else if (k === 'JRAW') st.jraw = analisarJraw(v);
     else if (k === 'BLK')  st.blk = v;
     else if (k === 'EXP')  st.exp = v;
+    else if (k === 'MOD')  st.mod = analisarMod(v);
+    else if (k === 'BANC') st.banc = +v || 0;
     else if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
       st.motores[k] = { dir, extra: extra || '' };
@@ -586,6 +617,20 @@ function analisarJraw(v) {
  *   ele que separa "a peça morreu" de "a peça está viva e o barramento é que
  *   não anda". Com o barramento sadio, o campo é ruído — a tela não o mostra.
  */
+/**
+ * MOD=JOY:OFF,MIC:OFF,CAM:AUSENTE,MOT:111,PCA:OK — o que está plugado (Rev. B).
+ * Só existe no firmware modular; é ele que diz que os dedos NÃO têm chave
+ * (param pela corrente, medida nos INA219) em vez de "chave sumida".
+ */
+function analisarMod(v) {
+  const mod = {};
+  for (const par of v.split(',')) {
+    const i = par.indexOf(':');
+    if (i > 0) mod[par.slice(0, i)] = par.slice(i + 1);
+  }
+  return mod.MOT || mod.PCA ? mod : null;
+}
+
 function analisarCom(v) {
   const [exp, bat, boot, rst] = v.split(',');
   return { exp: exp || '?', bat: bat || '-', bootOk: boot === '1', rst: rst || '?' };
@@ -623,13 +668,26 @@ function aplicarStatus(st) {
     // A frase vale para o PAR, não para cada uma: repetida nos dois pontos ela
     // parecia dois defeitos. Sai uma vez, no primeiro, e o segundo fica com o
     // próprio nome.
-    const ruim = st.com && st.com.exp === 'OK'
+    // Na montagem modular sem expansor (MOD= presente, COM exp OFF) as duas
+    // chaves do punho entram direto no U1: '-' também é fiação.
+    const chavesNoU1 = st.mod && st.com && st.com.exp === 'OFF';
+    const ruim = (st.com && st.com.exp === 'OK') || chavesNoU1
       ? 'as duas acionadas: fiação' : 'sem chave';
     indicador('Fecha', fecha, 'fechar', ruim);
     indicador('Abre',  abre,  'abrir',  fecha === abre ? 'abrir' : ruim);
-    $('wUp').disabled   = fecha === '1';
-    $('wDown').disabled = abre  === '1';
+    // No modo bancada o firmware ignora as chaves: os botões não apagam.
+    $('wUp').disabled   = !st.banc && fecha === '1';
+    $('wDown').disabled = !st.banc && abre  === '1';
   }
+  // A chave mostra o que o FIRMWARE diz (BANC=), ou o pedido ainda a caminho.
+  $('swBancada').checked = querBancada || !!st.banc;
+  $('txtBancada').hidden = !st.banc && !querBancada;
+  $('txtBancada').textContent = st.banc
+    ? 'MODO TESTE LIGADO: o punho ignora as chaves de fim de curso. Só fora do braço. '
+      + 'Continuam valendo o tempo máximo, a parada por corrente, a bateria e o PARAR TUDO.'
+    : querBancada ? 'Pedido enviado, mas o U1 ainda não confirmou. Se continuar assim, '
+      + 'o firmware dele é antigo: grave o novo (opção 2 do gravar_u1_revb.bat).'
+    : '';
 
   // dedos: o campo extra é a posição em %
   DEDOS.forEach(d => {
@@ -646,8 +704,15 @@ function aplicarStatus(st) {
     // As chaves do dedo. Firmware sem o campo FCD= deixa os dois pontos em
     // "sem chave", que é diferente de dizer que a chave está livre.
     const c = st.fcd && st.fcd[d.n - 1];
-    indicador('FF' + d.n, c ? c.fecha : '-', 'fechar');
-    indicador('FA' + d.n, c ? c.abre  : '-', 'abrir');
+    if (!c && st.mod) {
+      // Montagem modular: os dedos NÃO têm chave, de projeto. Fechar para
+      // pela corrente (INA219) e abrir vai até o batente. Não é alerta.
+      neutro('FF' + d.n, 'fecha: para pela corrente');
+      neutro('FA' + d.n, 'abre: até o batente');
+    } else {
+      indicador('FF' + d.n, c ? c.fecha : '-', 'fechar');
+      indicador('FA' + d.n, c ? c.abre  : '-', 'abrir');
+    }
 
     // Botão apagado do lado que já encostou, igual ao punho. Quem bloqueia de
     // verdade é o firmware; isto só evita pedir o que vai voltar recusado.
@@ -672,6 +737,22 @@ function aplicarStatus(st) {
     $('tituloBloqueio' + sufixo).textContent = titulo;
     $('txtBloqueio' + sufixo).innerHTML = bloq;
   });
+
+  // O que está plugado (só no firmware modular): PCA9685, INA219, câmera.
+  if (st.mod) {
+    const m = st.mod, partes = [];
+    if (m.PCA) partes.push('PCA9685 ' + (m.PCA === 'OK' ? 'OK' : 'NÃO responde'));
+    if (m.MOT) partes.push('corrente ' + [...m.MOT].map((b, i) =>
+      'ABC'[i] + (b === '1' ? ' ok' : ' MUDO')).join(' · '));
+    if (m.CAM) partes.push('câmera ' + (m.CAM === 'OK' ? 'OK' : m.CAM === 'OFF' ? 'fora' : 'ausente'));
+    const mal = m.PCA && m.PCA !== 'OK' || (m.MOT && m.MOT.includes('0'));
+    $('txtMod').hidden = false;
+    $('txtMod').textContent = partes.join('  ·  ');
+    $('txtMod').style.color = mal ? 'var(--erro)' : 'var(--fraco)';
+    const txt = avisoGruposMudos(m.MOT);
+    $('avisoMot').hidden = !txt;
+    if (txt) $('txtAvisoMot').innerHTML = txt;
+  }
 
   if (st.bat) {
     const [volts, faixa] = st.bat.split(',');
@@ -708,11 +789,47 @@ const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
     <li>o Pico está alimentado? VSYS (39) pelos 5,1 V através do 1N5817.</li>
   </ol>`;
 
+// Os três grupos de motores e o INA219 de cada um. Na placa CNC (e na Rev. C)
+// o INA219 fica NO CAMINHO da energia do motor: VIN+ no +12 V, VIN- no VM do
+// TB6612. Sem o módulo encaixado, o TB6612 daquele grupo fica sem 12 V; e com
+// a ponte de endereço errada ele responde como OUTRO grupo.
+const GRUPOS = [
+  ['A', 'punho + mindinho/anelar (F1)', '0x40', 'SEM ponte'],
+  ['B', 'médio (F2) + indicador (F3)',  '0x41', 'ponte A0'],
+  ['C', 'polegar (F4)',                 '0x44', 'ponte A1'],
+];
+function avisoGruposMudos(mot) {
+  if (!mot || !mot.includes('0')) return '';
+  const mudos = GRUPOS.filter((g, i) => mot[i] === '0');
+  const lista = mudos.map(g => `<li><b>grupo ${g[0]}</b> — ${g[1]}: o INA219 dele
+      (${g[2]}, ${g[3]}) não respondeu</li>`).join('');
+  return `Comando para estes motores volta <b>recusado</b> (BLOCKED):
+    <ol>${lista}</ol>
+    O INA219 de cada grupo fica <b>no caminho da energia do motor</b>: sem ele
+    encaixado, o TB6612 daquele grupo não recebe os 12 V, e o firmware recusa
+    o comando de propósito.
+    <br><br>
+    Confira a <b>ponte de endereço</b> soldada <b>no módulo</b>:
+    A (de baixo) <b>sem ponte</b>, B (do meio) <b>A0</b>, C (de cima) <b>A1</b>.
+    Um módulo na posição C sem a ponte A1 responde como A — o grupo errado.`;
+}
+
 // O que o campo BLK= quer dizer. Um motivo que a página não conhece não vira
 // aviso: firmware mais novo não deve fazer a tela gritar em português torto.
 const MOTIVO_BLOQUEIO = {
+  MOTOR: `O canal selecionado não tem o <b>INA219</b> respondendo, então os
+        motores dele não recebem comando. Veja o cartão <b>Motores sem
+        energia ou sem medida</b>, logo abaixo: ele diz qual grupo e qual
+        ponte de endereço conferir.`,
+  PCA: `O <b>PCA9685</b> (que gera os sinais dos motores na montagem de
+        bancada) parou de responder, e nenhum motor anda. Confira os fios SDA,
+        SCL, 3V3 e GND dele.`,
   BAT: `A bateria está <b>crítica</b>. O manche e os botões são recusados até
-        ela subir — não é defeito do manche. Recarregue o pack.`,
+        ela subir — não é defeito do manche. Recarregue o pack.
+        <br><br>
+        <b>Ligado só no USB?</b> Então é isto mesmo: sem a bateria o +12 V fica
+        perto de 0 V e os motores ficam travados de propósito. Tire o USB e
+        ligue a bateria (nunca os dois juntos).`,
   CHAVES: `<b>AS DEZ chaves estão lendo "acionada" ao mesmo tempo.</b>
      Isso é mecanicamente impossível — dez batentes não encostam juntos. Com
      todas acionadas, cada dedo recusa os dois sentidos e o punho recusa os
@@ -993,6 +1110,11 @@ function aplicarChaves(st) {
  * portanto é fiação. Quem sabe distinguir os dois casos é quem chama, que
  * enxerga o estado do expansor; por isso o texto do '-' vem de fora.
  */
+function neutro(sufixo, texto) {
+  $('pt' + sufixo).style.background = 'var(--fraco)';
+  $('txt' + sufixo).textContent = texto;
+}
+
 function indicador(sufixo, valor, rotulo, semChave) {
   const pt = $('pt' + sufixo), tx = $('txt' + sufixo);
   if (valor === '1')      { pt.style.background = 'var(--erro)';  tx.textContent = 'fim: ' + rotulo; }
@@ -1051,6 +1173,27 @@ $('dedos').innerHTML = DEDOS.map(d => `
   </div>`).join('');
 
 segurar($('wUp'),   () => enviar('W:UP'),   () => enviar('W:STOP'));
+// MODO TESTE (bancada). O firmware só aceita 60 s por vez (BANCADA_MS): com a
+// chave ligada a página RENOVA a cada 20 s. Celular desconectou ou página
+// fechou = ninguém renova, e o U1 volta sozinho ao normal em até 60 s.
+const RENOVA_BANCADA_MS = 20000;
+let querBancada = false, timerBancada = null;
+function pararDeRenovar() { querBancada = false; clearInterval(timerBancada); timerBancada = null; }
+$('swBancada').addEventListener('change', () => {
+  const sw = $('swBancada');
+  if (sw.checked) {
+    if (!confirm('MODO TESTE: o punho vai IGNORAR as chaves de fim de curso enquanto a chave '
+        + 'estiver ligada.\n\nUse só com o aparelho FORA do braço. Quem para o fuso no fim é a '
+        + 'corrente e o tempo máximo.\n\nLigar?')) { sw.checked = false; return; }
+    querBancada = true;
+    enviar('BANCADA:ON');
+    clearInterval(timerBancada);
+    timerBancada = setInterval(() => { if (querBancada) enviar('BANCADA:ON'); }, RENOVA_BANCADA_MS);
+  } else {
+    pararDeRenovar();
+    enviar('BANCADA:OFF');
+  }
+});
 segurar($('wDown'), () => enviar('W:DOWN'), () => enviar('W:STOP'));
 segurar($('hClose'), () => enviar('HAND:CLOSE'), () => enviar('HAND:STOP'));
 segurar($('hOpen'),  () => enviar('HAND:OPEN'),  () => enviar('HAND:STOP'));
