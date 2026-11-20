@@ -727,6 +727,7 @@ function aplicarStatus(st) {
   const bloq = MOTIVO_BLOQUEIO[st.blk];
   const titulo = st.blk === 'BAT'   ? 'O manche está bloqueado'
                : st.blk === 'PUNHO' ? 'O manche está bloqueado'
+               : st.blk === 'MOTOR' ? 'O canal selecionado não vai se mover'
                :                      'Nada vai se mover';
   // O MESMO aviso nas duas abas. Quem está na de comunicação conferindo as
   // chaves é exatamente quem precisa ler isto, e um aviso que só existe na
