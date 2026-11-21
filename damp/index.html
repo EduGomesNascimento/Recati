@@ -1501,14 +1501,17 @@ function aplicarTesteMotores(st, linha) {
     const ma = corr && g in corr ? corr[g] : null;
     const t = tm[m.k];
     if (t && t.segurando && mot && mot.dir && mot.dir !== 'STOP') t.viuAndar = true;
-    if (t && t.segurando && ma !== null && ma >= 0 && Date.now() - t.desde >= ESPERA_CORRENTE_MS)
+    // -1 é "sem leitura" no firmware; outro negativo é corrente de verdade com o
+    // INA219 ao contrário (VIN+ e VIN- trocados) — conta pelo valor absoluto.
+    if (t && t.segurando && ma !== null && ma !== -1 && Date.now() - t.desde >= ESPERA_CORRENTE_MS)
       t.maxMa = Math.max(t.maxMa ?? 0, Math.abs(ma));
     const extra = !mot ? '' : m.k === 'W'
       ? ' · chaves ' + (mot.extra || '?') : ' · posição ' + (mot.extra || '?') + ' %';
     $('tmE' + m.k).innerHTML =
       'ESP32 diz: <b>' + (mot ? mot.dir : '—') + '</b>' + extra
       + '<br>INA219 do grupo ' + g + ': <b style="color:var(--' + (ina === 'ok' ? 'ok' : 'erro') + ')">'
-      + ina + '</b> · corrente ' + (ma === null ? '—' : ma < 0 ? 'sem leitura' : '<b>' + ma + ' mA</b>')
+      + ina + '</b> · corrente ' + (ma === null ? '—' : ma === -1 ? 'sem leitura'
+        : '<b>' + ma + ' mA</b>' + (ma < -1 ? ' (negativa: VIN+ e VIN− do INA219 trocados)' : ''))
       + (t ? '<br>último comando: <code>' + t.cmd + '</code> → resposta: <b>'
             + (t.resp || '(nenhuma ainda)') + '</b>' : '');
     if (t) tmVeredito(m.k);
