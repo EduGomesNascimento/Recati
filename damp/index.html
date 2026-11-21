@@ -1518,6 +1518,11 @@ function aplicarTesteMotores(st, linha) {
   }
 }
 
+function inaMudo(k, st) {
+  if (!st || !st.mod || !st.mod.MOT) return false;
+  return st.mod.MOT['ABC'.indexOf(grupoDoMotor(k, st))] === '0';
+}
+
 function tmVeredito(k) {
   const t = tm[k], st = tmUltimoSt, v = $('tmV' + k);
   if (!t) return;
@@ -1549,10 +1554,19 @@ function tmVeredito(k) {
     cls = 'mal';
   } else if (t.segurando && passou < ESPERA_CORRENTE_MS + 300) {
     txt = 'Aceito (OK). Medindo a corrente…';
+  } else if (!t.viuAndar && inaMudo(k, st)) {
+    // O firmware responde OK ao dedo e o para no tick seguinte: sem o INA219 o
+    // TB6612 do grupo não tem os 12 V (o INA219 está no caminho deles).
+    txt = 'Aceito (OK), mas <b>o INA219 do grupo ' + grupoDoMotor(k, st) + ' não responde</b>: '
+      + 'o firmware para o motor na hora, e o TB6612 do grupo nem tem os 12 V. '
+      + 'Encaixe o INA219 do grupo (ponte de endereço certa) e teste de novo.';
+    cls = 'mal';
   } else if (!t.viuAndar) {
     txt = 'Aceito (OK), mas o quadro do ESP32 <b>nunca mostrou o motor andando</b>: ele parou '
       + 'na hora — tempo máximo, parada por corrente ou fim de curso.';
     cls = 'mal';
+  } else if (t.maxMa === null && !t.segurando && passou < ESPERA_CORRENTE_MS + 400) {
+    txt = 'Soltou rápido demais para medir: <b>segure pelo menos 1 segundo</b>.';
   } else if (t.maxMa === null) {
     txt = 'Aceito e o ESP32 está acionando o motor, mas <b>não chegou medida de corrente</b> '
       + 'deste grupo: o INA219 está mudo, ou a linha DIAG? não voltou a tempo (veja no registro, '
