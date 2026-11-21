@@ -365,7 +365,7 @@
   <div class="cartao">
     <div class="linha"><span class="titulo">O que vai e o que volta</span>
       <label class="mini" style="display:flex; gap:5px; align-items:center">
-        <input type="checkbox" id="regST"> quadros ST (5 por s)</label>
+        <input type="checkbox" id="regST"> quadros ST e DIAG? automáticos</label>
       <button id="regLimpa" style="flex:none; padding:4px 10px; font-size:12px">Limpar</button>
     </div>
     <div class="mini" style="margin-top:4px">
@@ -402,7 +402,7 @@ const DEDOS = [
 // CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
 // página em cache, e "atualizei o site" e "você está vendo o site atualizado"
 // são duas coisas diferentes. Com o carimbo na tela, basta olhar.
-const VERSAO = 'página de 21/11/2026 (aba Teste) · Rev. I, Rev. B e placa CNC';
+const VERSAO = 'página de 21/11/2026 (aba Teste + corrente) · Rev. I, Rev. B e placa CNC';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -470,8 +470,8 @@ function msg(t) { $('msg').textContent = t || ''; }
 // Uma escrita GATT por vez: duas ao mesmo tempo dão "operation already in
 // progress". A fila é uma corrente de promessas.
 let fila = Promise.resolve();
-function enviar(cmd) {
-  registrar('tx', cmd + (carRx ? '' : '   (desconectado: não saiu)'));
+function enviar(cmd, automatico) {
+  registrar(automatico ? 'txauto' : 'tx', cmd + (carRx ? '' : '   (desconectado: não saiu)'));
   if (!carRx) return;
   fila = fila
     .then(() => carRx.writeValue(new TextEncoder().encode(cmd + '\n')))
@@ -497,7 +497,7 @@ function aoReceber(ev) {
 }
 
 function tratarLinha(linha) {
-  registrar(linha.startsWith('ST;') ? 'st' : 'rx', linha);
+  registrar(linha.startsWith('ST;') || linha.startsWith('DG;') ? 'st' : 'rx', linha);
   if (!linha.startsWith('ST;') && !linha.startsWith('DG;')) testeRespostaMotor(linha);
   if (linha.startsWith('ST;')) {
     const st = analisarStatus(linha);
@@ -515,6 +515,11 @@ function tratarLinha(linha) {
   // A linha crua do DIAG?. Vai para a caixa da aba de comunicação em vez de
   // virar uma mensagem de uma linha, que sumiria no quadro seguinte.
   if (linha.startsWith('DG;')) {
+    // A corrente de cada grupo (CORR=) só vem nesta linha, não no quadro de
+    // 5 Hz: a aba Teste pede DIAG? sozinha para ter o que mostrar.
+    const mc = /;CORR=([^;]*)/.exec(linha);
+    const c = mc ? analisarCorr(mc[1]) : null;
+    if (c) { corrDG = { c, t: Date.now() }; if (tmUltimoSt) aplicarTesteMotores(tmUltimoSt, null); }
     $('linhaCrua').hidden = false;
     $('linhaCrua').textContent = linha;
     // E, principalmente: com firmware antigo é DAQUI que sai o manche. O
@@ -1466,9 +1471,24 @@ function testeRespostaMotor(linha) {
 }
 
 let tmUltimoSt = null;
+// A última corrente lida da linha de diagnóstico, e por quanto tempo ela vale.
+let corrDG = null;
+const CORR_VALE_MS = 1500;
+// Na aba Teste a página pede DIAG? sozinha: devagar parada, rápido com um
+// motor andando (é aí que a corrente interessa).
+const DIAG_PARADO_MS = 1000, DIAG_ANDANDO_MS = 250;
+let diagUltimo = 0;
+setInterval(() => {
+  if (abaAtual !== 'teste' || !carRx) return;
+  const andando = Object.values(tm).some(t => t.segurando);
+  if (Date.now() - diagUltimo < (andando ? DIAG_ANDANDO_MS : DIAG_PARADO_MS)) return;
+  diagUltimo = Date.now();
+  enviar('DIAG?', true);
+}, 100);
 function aplicarTesteMotores(st, linha) {
   tmUltimoSt = st;
-  $('ultimoST').textContent = linha;
+  if (linha) $('ultimoST').textContent = linha;
+  const corr = st.corr || (corrDG && Date.now() - corrDG.t < CORR_VALE_MS ? corrDG.c : null);
   $('tBanc').innerHTML = st.banc
     ? '<b style="color:var(--alerta)">Modo teste LIGADO</b> (' + st.banc + ' s) — o punho ignora as chaves.'
     : 'Modo teste <b>desligado</b>: sem as chaves do punho ligadas, o punho vai ser recusado. '
@@ -1478,7 +1498,7 @@ function aplicarTesteMotores(st, linha) {
     $('tmG' + m.k).textContent = g;
     const mot = st.motores[m.k];
     const ina = st.mod && st.mod.MOT ? (st.mod.MOT['ABC'.indexOf(g)] === '1' ? 'ok' : 'MUDO') : '?';
-    const ma = st.corr && g in st.corr ? st.corr[g] : null;
+    const ma = corr && g in corr ? corr[g] : null;
     const t = tm[m.k];
     if (t && t.segurando && mot && mot.dir && mot.dir !== 'STOP') t.viuAndar = true;
     if (t && t.segurando && ma !== null && ma >= 0 && Date.now() - t.desde >= ESPERA_CORRENTE_MS)
@@ -1531,8 +1551,9 @@ function tmVeredito(k) {
       + 'na hora — tempo máximo, parada por corrente ou fim de curso.';
     cls = 'mal';
   } else if (t.maxMa === null) {
-    txt = 'Aceito e o ESP32 está acionando o motor, mas <b>não há medida de corrente</b> deste '
-      + 'grupo (INA219 mudo ou firmware sem CORR=). Olhe o motor.';
+    txt = 'Aceito e o ESP32 está acionando o motor, mas <b>não chegou medida de corrente</b> '
+      + 'deste grupo: o INA219 está mudo, ou a linha DIAG? não voltou a tempo (veja no registro, '
+      + 'marcando a caixinha). Olhe o motor.';
   } else if (t.maxMa < CORRENTE_MINIMA_MA) {
     txt = '<b>O ESP32 está mandando, mas o motor não puxa corrente</b> (' + t.maxMa + ' mA). '
       + 'Os 12 V não estão chegando no motor. Confira nesta ordem: o <b>VM</b> do TB6612 do grupo '
@@ -1553,7 +1574,7 @@ const REG_MAX = 150;
 const regLinhas = [];
 function registrar(tipo, texto) {
   const hora = new Date().toTimeString().slice(0, 8);
-  regLinhas.push({ tipo, txt: hora + (tipo === 'tx' ? '  → ' : '  ← ') + texto });
+  regLinhas.push({ tipo, txt: hora + (tipo === 'tx' || tipo === 'txauto' ? '  → ' : '  ← ') + texto });
   if (regLinhas.length > REG_MAX * 4) regLinhas.splice(0, regLinhas.length - REG_MAX * 4);
   desenharRegistro();
 }
@@ -1562,10 +1583,10 @@ function desenharRegistro() {
   if (!el || abaAtual !== 'teste') return;
   const comST = $('regST').checked;
   const fim = el.scrollTop + el.clientHeight >= el.scrollHeight - 4;
-  const vis = regLinhas.filter(l => comST || l.tipo !== 'st').slice(-REG_MAX);
+  const vis = regLinhas.filter(l => comST || (l.tipo !== 'st' && l.tipo !== 'txauto')).slice(-REG_MAX);
   el.innerHTML = vis.map(l => {
     const ruim = l.tipo === 'rx' && /BLOCKED|ERR/.test(l.txt);
-    const cls = ruim ? 'ruim' : l.tipo === 'tx' ? 'tx' : l.tipo === 'st' ? 'rxst' : 'rx';
+    const cls = ruim ? 'ruim' : l.tipo === 'tx' ? 'tx' : l.tipo === 'st' || l.tipo === 'txauto' ? 'rxst' : 'rx';
     return '<span class="' + cls + '">' + l.txt.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>';
   }).join('\n');
   if (fim) el.scrollTop = el.scrollHeight;
