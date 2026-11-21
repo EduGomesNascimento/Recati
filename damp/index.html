@@ -171,7 +171,7 @@
   </div>
 
   <div class="linha" style="margin:14px 2px 8px">
-    <span class="mini" style="flex:1">Joystick controlando: <b id="selecao">—</b></span>
+    <span class="mini" style="flex:1"><span id="rotSel">Joystick controlando:</span> <b id="selecao">—</b></span>
     <span class="pt" id="ptBat" hidden></span>
     <span class="mini" id="txtBat"></span>
   </div>
@@ -362,7 +362,7 @@ const DEDOS = [
 // CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
 // página em cache, e "atualizei o site" e "você está vendo o site atualizado"
 // são duas coisas diferentes. Com o carimbo na tela, basta olhar.
-const VERSAO = 'página de 20/11/2026 · Rev. I, Rev. B e placa CNC';
+const VERSAO = 'página de 21/11/2026 · Rev. I, Rev. B e placa CNC';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -724,8 +724,18 @@ function aplicarStatus(st) {
   // volta quando um comando dele é recusado; o manche não recebe nada — ele
   // simplesmente emudece, e um manche que emudece sem dizer nada é
   // indistinguível de um manche quebrado.
-  const bloq = MOTIVO_BLOQUEIO[st.blk];
-  const titulo = st.blk === 'BAT'   ? 'O manche está bloqueado'
+  // Firmware modular (MOD= no quadro) sem o Pico (COM=OFF): placa CNC ou
+  // montagem PCA. Ali as chaves do punho entram DIRETO no ESP32 e quase sempre
+  // não há manche — o texto da Rev. I (Pico, P10/P11, "clique o manche")
+  // mandaria procurar defeito numa peça que nem existe.
+  const direto = !!st.mod && (!st.com || st.com.exp === 'OFF');
+  const semManche = direto && (!st.mod.JOY || st.mod.JOY === 'OFF' || st.mod.JOY === 'AUSENTE');
+  $('rotSel').textContent = semManche ? 'Canal selecionado:' : 'Joystick controlando:';
+  const bloq = st.blk === 'PUNHO' && direto ? PUNHO_DIRETO(semManche)
+             : MOTIVO_BLOQUEIO[st.blk];
+  const titulo = st.blk === 'PUNHO' && semManche ? 'O punho está bloqueado'
+               : st.blk === 'BAT' && semManche ? 'Nada vai se mover'
+               : st.blk === 'BAT'   ? 'O manche está bloqueado'
                : st.blk === 'PUNHO' ? 'O manche está bloqueado'
                : st.blk === 'MOTOR' ? 'O canal selecionado não vai se mover'
                :                      'Nada vai se mover';
@@ -817,6 +827,28 @@ function avisoGruposMudos(mot) {
 
 // O que o campo BLK= quer dizer. Um motivo que a página não conhece não vira
 // aviso: firmware mais novo não deve fazer a tela gritar em português torto.
+// BLK=PUNHO quando as chaves do punho vão direto no ESP32 (placa CNC: barra de
+// 3 pinos "PUNHO", SOLTO no IO6 e PUXADO no IO5, 10 kΩ para o 3V3). As chaves
+// são NF de propósito: chave livre segura o pino no GND; acionada OU com o fio
+// solto, o 10 kΩ leva o pino para cima. Barra vazia = as duas "acionadas".
+function PUNHO_DIRETO(semManche) {
+  return `<b>As duas chaves do punho aparecem acionadas ao mesmo tempo.</b>
+     O fuso não pode estar nos dois extremos, então isto é fiação — e enquanto
+     durar, o punho recusa todo movimento. Os dedos não dependem disto.
+     <br><br>
+     Nesta placa as chaves vão <b>direto no ESP32</b>, na barra de 3 pinos
+     <b>PUNHO</b> da placa CNC: <b>SOLTO</b> (IO6) · <b>PUXADO</b> (IO5) ·
+     <b>GND</b>. <b>Barra vazia dá exatamente este aviso</b> — é de propósito:
+     as chaves são NF, e um fio solto tem de contar como batente.
+     <br><br>
+     Em cada KW11-3Z: o <b>COM no GND</b> e o contato <b>NF</b> no pino (não o
+     NA). Para testar na bancada sem as chaves, ligue o <b>Modo teste</b>, logo
+     abaixo.` + (semManche ? '' : `
+     <br><br>
+     <b>O manche parece morto por isso:</b> ele começa selecionando o punho.
+     Clique o botão do manche para trocar de canal.`);
+}
+
 const MOTIVO_BLOQUEIO = {
   MOTOR: `O canal selecionado não tem o <b>INA219</b> respondendo, então os
         motores dele não recebem comando. Veja o cartão <b>Motores sem
