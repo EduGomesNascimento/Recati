@@ -95,6 +95,17 @@
     padding: 9px 11px; margin-top: 9px; font-size: 12.5px; line-height: 1.45;
   }
   .conserto ol { margin: 5px 0 0; padding-left: 18px; }
+  /* aba de teste: um cartão por motor e o registro do que vai e vem */
+  .tm .estado { font-size: 12.5px; margin-top: 8px; line-height: 1.5; font-variant-numeric: tabular-nums; }
+  .tm .veredito { font-size: 12.5px; margin-top: 6px; padding: 7px 10px; border-radius: 8px;
+    background: var(--primaria-fraca); line-height: 1.45; }
+  .tm .veredito.mal { background: transparent; border: 1px solid var(--erro); }
+  .tm .veredito.bom { background: transparent; border: 1px solid var(--ok); }
+  .registro { max-height: 320px; overflow-y: auto; }
+  .registro .tx { color: var(--primaria); }
+  .registro .rx { color: var(--ok); }
+  .registro .rxst { color: var(--fraco); }
+  .registro .ruim { color: var(--erro); font-weight: 600; }
   .conserto li { margin-bottom: 3px; }
   /* barra de eixo com o ZERO NO MEIO: o manche vai para os dois lados, e uma
      barra que só cresce da esquerda mentiria sobre metade do curso. */
@@ -161,6 +172,7 @@
   <div class="abas" role="tablist">
     <button id="abaBtControle" role="tab" aria-selected="true">Controle</button>
     <button id="abaBtComunicacao" role="tab" aria-selected="false">Comunicação</button>
+    <button id="abaBtTeste" role="tab" aria-selected="false">Teste</button>
   </div>
 
 <div id="abaControle">
@@ -336,6 +348,34 @@
     da caixa: com o aparelho vestido, ninguém o vê.
   </div>
 </div><!-- abaComunicacao -->
+
+<div id="abaTeste" hidden>
+  <div class="cartao">
+    <div class="linha"><span class="titulo">Teste individual dos motores</span></div>
+    <div class="detalhe" style="margin-left:0; line-height:1.5">
+      <b>Segure</b> um botão para mover um motor só; soltar para. Cada cartão
+      mostra o que a página <b>mandou</b>, o que o ESP32 <b>respondeu</b>, o
+      estado do motor no quadro dele e a <b>corrente</b> do grupo no INA219 —
+      e, com isso, diz onde está o defeito. Só com a bateria (nunca USB junto).
+      <br><span id="tBanc">Modo teste: —</span>
+    </div>
+  </div>
+  <div id="testeMotores"></div>
+
+  <div class="cartao">
+    <div class="linha"><span class="titulo">O que vai e o que volta</span>
+      <label class="mini" style="display:flex; gap:5px; align-items:center">
+        <input type="checkbox" id="regST"> quadros ST (5 por s)</label>
+      <button id="regLimpa" style="flex:none; padding:4px 10px; font-size:12px">Limpar</button>
+    </div>
+    <div class="mini" style="margin-top:4px">
+      <span class="tx">→ página para o ESP32</span> ·
+      <span class="rx">← ESP32 para a página</span></div>
+    <pre class="crua registro" id="registro"></pre>
+    <div class="mini" style="margin-top:8px">Último quadro de estado recebido:</div>
+    <pre class="crua" id="ultimoST">—</pre>
+  </div>
+</div><!-- abaTeste -->
 </div>
 
 <div class="rodape">
@@ -362,7 +402,7 @@ const DEDOS = [
 // CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
 // página em cache, e "atualizei o site" e "você está vendo o site atualizado"
 // são duas coisas diferentes. Com o carimbo na tela, basta olhar.
-const VERSAO = 'página de 21/11/2026 · Rev. I, Rev. B e placa CNC';
+const VERSAO = 'página de 21/11/2026 (aba Teste) · Rev. I, Rev. B e placa CNC';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -431,6 +471,7 @@ function msg(t) { $('msg').textContent = t || ''; }
 // progress". A fila é uma corrente de promessas.
 let fila = Promise.resolve();
 function enviar(cmd) {
+  registrar('tx', cmd + (carRx ? '' : '   (desconectado: não saiu)'));
   if (!carRx) return;
   fila = fila
     .then(() => carRx.writeValue(new TextEncoder().encode(cmd + '\n')))
@@ -456,6 +497,8 @@ function aoReceber(ev) {
 }
 
 function tratarLinha(linha) {
+  registrar(linha.startsWith('ST;') ? 'st' : 'rx', linha);
+  if (!linha.startsWith('ST;') && !linha.startsWith('DG;')) testeRespostaMotor(linha);
   if (linha.startsWith('ST;')) {
     const st = analisarStatus(linha);
     // Enquanto o teste guiado corre, qualquer quadro em que o dedo saia de
@@ -465,6 +508,7 @@ function tratarLinha(linha) {
       if (m && m.dir && m.dir !== 'STOP') testeViuAndar = true;
     }
     aplicarStatus(st);
+    aplicarTesteMotores(st, linha);
     return;
   }
 
@@ -531,6 +575,7 @@ function analisarStatus(linha) {
     else if (k === 'EXP')  st.exp = v;
     else if (k === 'MOD')  st.mod = analisarMod(v);
     else if (k === 'BANC') st.banc = +v || 0;
+    else if (k === 'CORR') st.corr = analisarCorr(v);
     else if (k === 'W' || /^F[1-4]$/.test(k)) {
       const [dir, extra] = v.split(',');
       st.motores[k] = { dir, extra: extra || '' };
@@ -622,6 +667,16 @@ function analisarJraw(v) {
  * Só existe no firmware modular; é ele que diz que os dedos NÃO têm chave
  * (param pela corrente, medida nos INA219) em vez de "chave sumida".
  */
+/** CORR=A:412,B:-1,C:0 — corrente de cada grupo em mA (-1 = sem leitura). */
+function analisarCorr(v) {
+  const c = {};
+  for (const par of v.split(',')) {
+    const [g, ma] = par.split(':');
+    if (/^[ABC]$/.test(g) && ma !== undefined && ma !== '' && !isNaN(+ma)) c[g] = +ma;
+  }
+  return Object.keys(c).length ? c : null;
+}
+
 function analisarMod(v) {
   const mod = {};
   for (const par of v.split(',')) {
@@ -1316,16 +1371,208 @@ $('btDiag').onclick = () => {
 // --- troca de aba ---------------------------------------------------------
 // O PARAR TUDO vive na aba de controle. Trocar de aba não pode ser um jeito
 // de perder o botão com um motor andando, então a troca manda STOP! antes.
+let abaAtual = 'controle';
 function mostrarAba(qual) {
-  const com = qual === 'comunicacao';
-  if (com) enviar('STOP!');
-  $('abaControle').hidden = com;
-  $('abaComunicacao').hidden = !com;
-  $('abaBtControle').setAttribute('aria-selected', String(!com));
-  $('abaBtComunicacao').setAttribute('aria-selected', String(com));
+  // Qualquer troca para tudo: o botão que segurava um motor pode estar na aba
+  // que está saindo de vista.
+  if (qual !== abaAtual) enviar('STOP!');
+  abaAtual = qual;
+  for (const [nome, div, bt] of [['controle', 'abaControle', 'abaBtControle'],
+      ['comunicacao', 'abaComunicacao', 'abaBtComunicacao'], ['teste', 'abaTeste', 'abaBtTeste']]) {
+    $(div).hidden = qual !== nome;
+    $(bt).setAttribute('aria-selected', String(qual === nome));
+  }
 }
 $('abaBtControle').onclick     = () => mostrarAba('controle');
 $('abaBtComunicacao').onclick  = () => mostrarAba('comunicacao');
+$('abaBtTeste').onclick        = () => mostrarAba('teste');
+
+// ------------------------------------------------------------ aba de teste
+// Um motor por vez, com o caminho inteiro à vista: o comando que saiu, a
+// resposta do ESP32, o sentido que o firmware diz estar aplicando e a corrente
+// que o INA219 do grupo mede. Cada elo que falta aponta um lugar diferente.
+const MOTORES_TESTE = [
+  { k: 'W',  nome: 'Punho',             a: ['UP', 'Puxar'],     b: ['DOWN', 'Soltar'] },
+  { k: 'F1', nome: 'Mindinho + anelar', a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
+  { k: 'F2', nome: 'Médio',             a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
+  { k: 'F3', nome: 'Indicador',         a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
+  { k: 'F4', nome: 'Polegar',           a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
+];
+// Abaixo disto o motor "não está puxando corrente": o TB6612 parado consome
+// perto de zero do VM, e um motor girando em vazio já passa disso com folga.
+const CORRENTE_MINIMA_MA = 15;
+// O punho e o dedo só contam a corrente depois da partida e da rampa.
+const ESPERA_CORRENTE_MS = 600;
+
+function grupoDoMotor(k, st) {
+  // Na montagem PCA (PUNHO_NO_U7) punho e F4 trocam de driver e de INA219.
+  const pca = st && st.mod && st.mod.PCA;
+  if (k === 'W')  return pca ? 'C' : 'A';
+  if (k === 'F1') return 'A';
+  if (k === 'F4') return pca ? 'A' : 'C';
+  return 'B';
+}
+
+const tm = {};          // estado de cada cartão: comando, resposta, desde quando
+let tmPendente = null;  // o motor cujo comando ainda espera resposta
+let tmUltimo = null;    // o último motor testado (para o BLOCKED que vem sozinho)
+
+$('testeMotores').innerHTML = MOTORES_TESTE.map(m => `
+  <div class="cartao tm" id="tm${m.k}">
+    <div class="linha"><span class="titulo">${m.nome}</span>
+      <span class="mini">${m.k} · grupo <b id="tmG${m.k}">?</b></span></div>
+    <div class="botoes">
+      <button id="tmA${m.k}">${m.a[1]}</button>
+      <button id="tmB${m.k}">${m.b[1]}</button>
+    </div>
+    <div class="estado" id="tmE${m.k}">sem quadro ainda</div>
+    <div class="veredito" id="tmV${m.k}">Segure um botão para testar.</div>
+  </div>`).join('');
+
+function tmApertar(m, sentido) {
+  const cmd = m.k + ':' + sentido;
+  tm[m.k] = { cmd, resp: '', desde: Date.now(), segurando: true, viuAndar: false, maxMa: null };
+  tmPendente = tmUltimo = m.k;
+  enviar(cmd);
+  tmVeredito(m.k);
+  // Sem resposta e sem quadro (o ESP32 reiniciou) nada redesenharia o cartão.
+  setTimeout(() => tmVeredito(m.k), 1600);
+}
+function tmSoltar(m) {
+  if (tm[m.k]) tm[m.k].segurando = false;
+  enviar(m.k + ':STOP');
+}
+MOTORES_TESTE.forEach(m => {
+  segurar($('tmA' + m.k), () => tmApertar(m, m.a[0]), () => tmSoltar(m));
+  segurar($('tmB' + m.k), () => tmApertar(m, m.b[0]), () => tmSoltar(m));
+});
+
+// A resposta que chega depois de um comando é dele (OK, BLOCKED, ERR...).
+// Um BLOCKED que chega DEPOIS do OK não é resposta: é o firmware avisando que
+// parou o motor sozinho (punho forçando pela corrente, ou o tempo máximo).
+function testeRespostaMotor(linha) {
+  if (!tmPendente || !tm[tmPendente]) {
+    const t = tmUltimo && tm[tmUltimo];
+    if (t && t.resp === 'OK' && linha === 'BLOCKED' && Date.now() - t.desde < 15000) {
+      t.parouSozinho = true;
+      tmVeredito(tmUltimo);
+    }
+    return;
+  }
+  if (tm[tmPendente].resp) return;
+  tm[tmPendente].resp = linha;
+  tmVeredito(tmPendente);
+  tmPendente = null;
+}
+
+let tmUltimoSt = null;
+function aplicarTesteMotores(st, linha) {
+  tmUltimoSt = st;
+  $('ultimoST').textContent = linha;
+  $('tBanc').innerHTML = st.banc
+    ? '<b style="color:var(--alerta)">Modo teste LIGADO</b> (' + st.banc + ' s) — o punho ignora as chaves.'
+    : 'Modo teste <b>desligado</b>: sem as chaves do punho ligadas, o punho vai ser recusado. '
+      + 'Ligue o Modo teste na aba Controle.';
+  for (const m of MOTORES_TESTE) {
+    const g = grupoDoMotor(m.k, st);
+    $('tmG' + m.k).textContent = g;
+    const mot = st.motores[m.k];
+    const ina = st.mod && st.mod.MOT ? (st.mod.MOT['ABC'.indexOf(g)] === '1' ? 'ok' : 'MUDO') : '?';
+    const ma = st.corr && g in st.corr ? st.corr[g] : null;
+    const t = tm[m.k];
+    if (t && t.segurando && mot && mot.dir && mot.dir !== 'STOP') t.viuAndar = true;
+    if (t && t.segurando && ma !== null && ma >= 0 && Date.now() - t.desde >= ESPERA_CORRENTE_MS)
+      t.maxMa = Math.max(t.maxMa ?? 0, Math.abs(ma));
+    const extra = !mot ? '' : m.k === 'W'
+      ? ' · chaves ' + (mot.extra || '?') : ' · posição ' + (mot.extra || '?') + ' %';
+    $('tmE' + m.k).innerHTML =
+      'ESP32 diz: <b>' + (mot ? mot.dir : '—') + '</b>' + extra
+      + '<br>INA219 do grupo ' + g + ': <b style="color:var(--' + (ina === 'ok' ? 'ok' : 'erro') + ')">'
+      + ina + '</b> · corrente ' + (ma === null ? '—' : ma < 0 ? 'sem leitura' : '<b>' + ma + ' mA</b>')
+      + (t ? '<br>último comando: <code>' + t.cmd + '</code> → resposta: <b>'
+            + (t.resp || '(nenhuma ainda)') + '</b>' : '');
+    if (t) tmVeredito(m.k);
+  }
+}
+
+function tmVeredito(k) {
+  const t = tm[k], st = tmUltimoSt, v = $('tmV' + k);
+  if (!t) return;
+  let txt, cls = '';
+  const passou = Date.now() - t.desde;
+  if (!carRx) { txt = 'Desconectado: o comando <b>não saiu</b> da página. Conecte primeiro.'; cls = 'mal'; }
+  else if (t.resp === 'BLOCKED') {
+    const blk = st && st.blk && st.blk !== '-' ? st.blk : '';
+    txt = '<b>O ESP32 recusou</b> o comando de propósito'
+      + (blk ? ' (bloqueio: <b>' + blk + '</b>)' : '') + '. '
+      + (blk === 'BAT' ? 'Bateria crítica ou só USB.'
+        : blk === 'PUNHO' ? 'Chaves do punho: ligue o Modo teste ou ligue as chaves.'
+        : 'Veja se o INA219 do grupo está <b>ok</b> acima; o aviso vermelho da aba Controle diz o resto.');
+    cls = 'mal';
+  } else if (t.resp && t.resp !== 'OK') {
+    txt = 'Resposta inesperada: <code>' + t.resp + '</code> — o ESP32 não entendeu o comando.';
+    cls = 'mal';
+  } else if (!t.resp && passou > 1500) {
+    txt = 'Nenhuma resposta em 1,5 s. A ligação Bluetooth pode ter caído, ou o ESP32 reiniciou '
+      + '(a bateria caindo derruba ele).';
+    cls = 'mal';
+  } else if (!t.resp) {
+    txt = 'Comando enviado, esperando a resposta…';
+  } else if (t.parouSozinho) {
+    txt = '<b>Começou (OK) e o ESP32 parou o motor sozinho.</b> No punho é a parada por '
+      + '<b>corrente</b> (forçando acima do limite) ou o <b>tempo máximo</b>'
+      + (t.maxMa !== null ? '; a maior corrente vista foi <b>' + t.maxMa + ' mA</b>' : '')
+      + '. Se o punho estava livre, o limite está baixo para este motor — anote a corrente.';
+    cls = 'mal';
+  } else if (t.segurando && passou < ESPERA_CORRENTE_MS + 300) {
+    txt = 'Aceito (OK). Medindo a corrente…';
+  } else if (!t.viuAndar) {
+    txt = 'Aceito (OK), mas o quadro do ESP32 <b>nunca mostrou o motor andando</b>: ele parou '
+      + 'na hora — tempo máximo, parada por corrente ou fim de curso.';
+    cls = 'mal';
+  } else if (t.maxMa === null) {
+    txt = 'Aceito e o ESP32 está acionando o motor, mas <b>não há medida de corrente</b> deste '
+      + 'grupo (INA219 mudo ou firmware sem CORR=). Olhe o motor.';
+  } else if (t.maxMa < CORRENTE_MINIMA_MA) {
+    txt = '<b>O ESP32 está mandando, mas o motor não puxa corrente</b> (' + t.maxMa + ' mA). '
+      + 'Os 12 V não estão chegando no motor. Confira nesta ordem: o <b>VM</b> do TB6612 do grupo '
+      + '(canto de baixo à direita, ~12 V), o <b>INA219</b> bem encaixado (ele está no caminho dos '
+      + '12 V), a saída do TB6612 com o multímetro enquanto segura, o conector e o cabo, e o motor.';
+    cls = 'mal';
+  } else {
+    txt = '<b>Tudo certo no caminho:</b> o ESP32 acionou e o motor puxou até <b>' + t.maxMa
+      + ' mA</b>. Se mesmo assim nada gira, é mecânica (fuso, acoplamento) ou motor travado.';
+    cls = 'bom';
+  }
+  v.className = 'veredito' + (cls ? ' ' + cls : '');
+  v.innerHTML = txt;
+}
+
+// O registro: o que a página mandou (→) e o que o ESP32 mandou (←).
+const REG_MAX = 150;
+const regLinhas = [];
+function registrar(tipo, texto) {
+  const hora = new Date().toTimeString().slice(0, 8);
+  regLinhas.push({ tipo, txt: hora + (tipo === 'tx' ? '  → ' : '  ← ') + texto });
+  if (regLinhas.length > REG_MAX * 4) regLinhas.splice(0, regLinhas.length - REG_MAX * 4);
+  desenharRegistro();
+}
+function desenharRegistro() {
+  const el = $('registro');
+  if (!el || abaAtual !== 'teste') return;
+  const comST = $('regST').checked;
+  const fim = el.scrollTop + el.clientHeight >= el.scrollHeight - 4;
+  const vis = regLinhas.filter(l => comST || l.tipo !== 'st').slice(-REG_MAX);
+  el.innerHTML = vis.map(l => {
+    const ruim = l.tipo === 'rx' && /BLOCKED|ERR/.test(l.txt);
+    const cls = ruim ? 'ruim' : l.tipo === 'tx' ? 'tx' : l.tipo === 'st' ? 'rxst' : 'rx';
+    return '<span class="' + cls + '">' + l.txt.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>';
+  }).join('\n');
+  if (fim) el.scrollTop = el.scrollHeight;
+}
+$('regST').onchange = desenharRegistro;
+$('regLimpa').onclick = () => { regLinhas.length = 0; desenharRegistro(); };
+$('abaBtTeste').addEventListener('click', desenharRegistro);
 
 // Fechar a aba com um motor andando é o pior jeito de terminar.
 window.addEventListener('pagehide', () => { if (carRx) enviar('STOP!'); });
