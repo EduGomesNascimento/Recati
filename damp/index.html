@@ -233,6 +233,8 @@
       <button id="hOpen">Abrir mão</button>
     </div>
     <input type="range" id="hPos" min="0" max="100" value="0">
+    <div class="mini" style="margin-top:6px">Atenção: na mão inteira (e na câmera e na voz) o
+      mindinho+anelar e o indicador+médio ainda vão ao contrário. Use os botões de cada dedo.</div>
   </div>
 
   <div id="dedos"></div>
@@ -311,7 +313,7 @@
       resolver.
     </div>
     <div class="botoes">
-      <button id="btTeste">Testar o dedo indicador</button>
+      <button id="btTeste">Testar o indicador + médio</button>
     </div>
     <div class="conserto" id="saidaTeste" hidden></div>
   </div>
@@ -392,17 +394,30 @@ const NUS = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
 const RX  = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';   // navegador -> ESP32
 const TX  = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';   // ESP32 -> navegador
 
+// A montagem de 24/11/2026: o motor F2 agora move o POLEGAR, o F3 move o
+// indicador e o médio juntos, e o F4 ficou sem motor (sai da página).
+// "inverte": o motor gira ao contrário do que o firmware chama de fechar.
+// A página troca o sentido SÓ nos controles dela (botões, deslizante e
+// barra de posição desse dedo); "Fechar mão", câmera e voz vão pelo
+// firmware e continuam com esses dois dedos ao contrário.
 const DEDOS = [
-  { n: 1, nome: 'Mindinho + anelar' },
-  { n: 2, nome: 'Médio' },
-  { n: 3, nome: 'Indicador' },
-  { n: 4, nome: 'Polegar' },
+  { n: 1, nome: 'Mindinho + anelar', inverte: true },
+  { n: 2, nome: 'Polegar' },
+  { n: 3, nome: 'Indicador + médio', inverte: true },
 ];
+const INVERTIDO = { F1: true, F3: true };
+// O sentido que vai para o firmware para o dedo fazer o que o botão diz.
+function sentidoReal(k, s) {
+  if (!INVERTIDO[k]) return s;
+  return s === 'CLOSE' ? 'OPEN' : s === 'OPEN' ? 'CLOSE' : s;
+}
+// Posição: o firmware conta 0 = aberto e 100 = fechado no sentido dele.
+function posReal(k, v) { return INVERTIDO[k] ? 100 - v : v; }
 
 // CARIMBO DE VERSAO. Existe por um motivo prático: o navegador guarda esta
 // página em cache, e "atualizei o site" e "você está vendo o site atualizado"
 // são duas coisas diferentes. Com o carimbo na tela, basta olhar.
-const VERSAO = 'página de 21/11/2026 (aba Teste + corrente) · Rev. I, Rev. B e placa CNC';
+const VERSAO = 'página de 24/11/2026 (F2 = polegar, F3 = indicador + médio, F1 e F3 invertidos, sem F4) · placa CNC';
 
 const $ = id => document.getElementById(id);
 let dispositivo = null, carRx = null, carTx = null;
@@ -697,8 +712,8 @@ function analisarCom(v) {
 }
 
 const ROTULO_SEL = {
-  W: 'punho', F1: 'mindinho + anelar', F2: 'médio',
-  F3: 'indicador', F4: 'polegar', HAND: 'mão inteira',
+  W: 'punho', F1: 'mindinho + anelar', F2: 'polegar',
+  F3: 'indicador + médio', F4: 'F4 (sem motor)', HAND: 'mão inteira',
 };
 
 function aplicarStatus(st) {
@@ -753,7 +768,7 @@ function aplicarStatus(st) {
   DEDOS.forEach(d => {
     const m = st.motores['F' + d.n];
     if (!m) return;
-    const pct = parseInt(m.extra, 10) || 0;
+    const pct = posReal('F' + d.n, parseInt(m.extra, 10) || 0);
     $('pos' + d.n).textContent = pct + ' %';
     $('bar' + d.n).style.width = pct + '%';
     if (!arrastando['f' + d.n]) $('sld' + d.n).value = pct;
@@ -776,8 +791,9 @@ function aplicarStatus(st) {
 
     // Botão apagado do lado que já encostou, igual ao punho. Quem bloqueia de
     // verdade é o firmware; isto só evita pedir o que vai voltar recusado.
-    $('fc' + d.n).disabled = !!c && c.fecha === '1';
-    $('fo' + d.n).disabled = !!c && c.abre  === '1';
+    const inv = INVERTIDO['F' + d.n];
+    $('fc' + d.n).disabled = !!c && (inv ? c.abre : c.fecha) === '1';
+    $('fo' + d.n).disabled = !!c && (inv ? c.fecha : c.abre) === '1';
   });
 
   // O que está recusando o manche AGORA. O aplicativo recebe "BLOCKED" de
@@ -865,9 +881,9 @@ const CONSERTO = `<b>Enquanto isto durar, os dedos ficam bloqueados</b> — e o
 // TB6612. Sem o módulo encaixado, o TB6612 daquele grupo fica sem 12 V; e com
 // a ponte de endereço errada ele responde como OUTRO grupo.
 const GRUPOS = [
-  ['A', 'punho + mindinho/anelar (F1)', '0x40', 'SEM ponte'],
-  ['B', 'médio (F2) + indicador (F3)',  '0x41', 'ponte A0'],
-  ['C', 'polegar (F4)',                 '0x44', 'ponte A1'],
+  ['A', 'punho + mindinho/anelar (F1)',         '0x40', 'SEM ponte'],
+  ['B', 'polegar (F2) + indicador/médio (F3)',  '0x41', 'ponte A0'],
+  ['C', 'F4 (sem motor nesta montagem)',        '0x44', 'ponte A1'],
 ];
 function avisoGruposMudos(mot) {
   if (!mot || !mot.includes('0')) return '';
@@ -1093,12 +1109,12 @@ const CHAVES = [
   ['Punho · abrir',       st => st.motores.W && st.motores.W.extra[1]],
   ['Mindinho+anelar · fechar', st => st.fcd && st.fcd[0].fecha],
   ['Mindinho+anelar · abrir',  st => st.fcd && st.fcd[0].abre],
-  ['Médio · fechar',      st => st.fcd && st.fcd[1].fecha],
-  ['Médio · abrir',       st => st.fcd && st.fcd[1].abre],
-  ['Indicador · fechar',  st => st.fcd && st.fcd[2].fecha],
-  ['Indicador · abrir',   st => st.fcd && st.fcd[2].abre],
-  ['Polegar · fechar',    st => st.fcd && st.fcd[3].fecha],
-  ['Polegar · abrir',     st => st.fcd && st.fcd[3].abre],
+  ['Polegar (F2) · fechar', st => st.fcd && st.fcd[1].fecha],
+  ['Polegar (F2) · abrir',  st => st.fcd && st.fcd[1].abre],
+  ['Indicador+médio · fechar', st => st.fcd && st.fcd[2].fecha],
+  ['Indicador+médio · abrir',  st => st.fcd && st.fcd[2].abre],
+  ['F4 (sem motor) · fechar',  st => st.fcd && st.fcd[3].fecha],
+  ['F4 (sem motor) · abrir',   st => st.fcd && st.fcd[3].abre],
 ];
 
 // A ÚLTIMA VEZ que cada chave mudou de valor, e o valor anterior. É o que
@@ -1245,7 +1261,7 @@ function deslizante(el, aoSoltar, chave, aoMover) {
   el.addEventListener('pointercancel', fim);
 }
 
-// monta os quatro cartões de dedo
+// monta os cartões de dedo
 $('dedos').innerHTML = DEDOS.map(d => `
   <div class="cartao" id="cx${d.n}">
     <div class="linha">
@@ -1293,9 +1309,10 @@ segurar($('hOpen'),  () => enviar('HAND:OPEN'),  () => enviar('HAND:STOP'));
 deslizante($('hPos'), v => enviar('HAND:POS:' + v), 'hand');
 
 DEDOS.forEach(d => {
-  segurar($('fc' + d.n), () => enviar('F' + d.n + ':CLOSE'), () => enviar('F' + d.n + ':STOP'));
-  segurar($('fo' + d.n), () => enviar('F' + d.n + ':OPEN'),  () => enviar('F' + d.n + ':STOP'));
-  deslizante($('sld' + d.n), v => enviar('F' + d.n + ':POS:' + v), 'f' + d.n);
+  const k = 'F' + d.n;
+  segurar($('fc' + d.n), () => enviar(k + ':' + sentidoReal(k, 'CLOSE')), () => enviar(k + ':STOP'));
+  segurar($('fo' + d.n), () => enviar(k + ':' + sentidoReal(k, 'OPEN')),  () => enviar(k + ':STOP'));
+  deslizante($('sld' + d.n), v => enviar(k + ':POS:' + posReal(k, v)), 'f' + d.n);
 });
 
 deslizante($('spd'),  v => enviar('SPEED:' + v),  'spd', v => $('vSpd').textContent = v);
@@ -1336,11 +1353,11 @@ let testeAte = 0, testeViuAndar = false, testeResposta = '';
 $('btTeste').onclick = () => {
   const cx = $('saidaTeste');
   cx.hidden = false;
-  cx.innerHTML = 'Testando… (o dedo indicador vai tentar fechar por 1,5 s)';
+  cx.innerHTML = 'Testando… (o indicador + médio vai tentar fechar por 1,5 s)';
   testeViuAndar = false;
   testeResposta = '';
   testeAte = Date.now() + 1500;
-  enviar('F3:CLOSE');
+  enviar('F3:' + sentidoReal('F3', 'CLOSE'));
   setTimeout(() => {
     enviar('F3:STOP');
     testeAte = 0;
@@ -1398,10 +1415,9 @@ $('abaBtTeste').onclick        = () => mostrarAba('teste');
 // que o INA219 do grupo mede. Cada elo que falta aponta um lugar diferente.
 const MOTORES_TESTE = [
   { k: 'W',  nome: 'Punho',             a: ['UP', 'Puxar'],     b: ['DOWN', 'Soltar'] },
-  { k: 'F1', nome: 'Mindinho + anelar', a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
-  { k: 'F2', nome: 'Médio',             a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
-  { k: 'F3', nome: 'Indicador',         a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
-  { k: 'F4', nome: 'Polegar',           a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
+  { k: 'F1', nome: 'Mindinho + anelar', a: [sentidoReal('F1', 'CLOSE'), 'Fechar'], b: [sentidoReal('F1', 'OPEN'), 'Abrir'] },
+  { k: 'F2', nome: 'Polegar',           a: ['CLOSE', 'Fechar'], b: ['OPEN', 'Abrir'] },
+  { k: 'F3', nome: 'Indicador + médio', a: [sentidoReal('F3', 'CLOSE'), 'Fechar'], b: [sentidoReal('F3', 'OPEN'), 'Abrir'] },
 ];
 // Abaixo disto o motor "não está puxando corrente": o TB6612 parado consome
 // perto de zero do VM, e um motor girando em vazio já passa disso com folga.
